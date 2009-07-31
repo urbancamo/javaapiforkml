@@ -67,6 +67,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
+		<!-- code generation part disabled, till all files are in public maven repositories
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -103,6 +104,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 					</execution>
 				</executions>
 			</plugin>
+			 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -154,6 +156,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 			<artifactId>xmlunit</artifactId>
 			<version>1.2</version>
 		</dependency>
+		<!-- code generation part disabled, till all files are in public maven repositories
 		<dependency>
 			<groupId>de.micromata.jak</groupId>
 			<artifactId>XJCPluginJavaApiforKml</artifactId>
@@ -161,6 +164,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		 -->
 	</dependencies>
 	<repositories>
 		<repository>
