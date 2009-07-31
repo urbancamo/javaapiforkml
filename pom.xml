@@ -1,0 +1,246 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.micromata.jak</groupId>
+	<artifactId>JavaAPIforKml</artifactId>
+	<version>2.2.0-SNAPSHOT</version>
+	<name>a Java API for Kml</name>
+	<url>http://code.google.com/p/javaapiforkml/</url>
+	<description>
+This is JavaAPIforKMml, Micromata's library for use with applications that want to parse, generate and operate on KML. 
+It is an implementation of the OGC KML 2.2 standard.
+It is written entirely in Java and makes heavy use of JAXB.
+    </description>
+	<packaging>jar</packaging>
+	<organization>
+		<name>Micromata GmbH</name>
+		<url>http://micromata.de</url>
+	</organization>
+	<scm>
+		<connection>scm:svn::http://javaapiforkml.googlecode.com/svn/trunk/</connection>
+		<developerConnection>scm:svn:https://javaapiforkml.googlecode.com/svn/trunk/</developerConnection>
+	</scm>
+	<developers>
+		<developer>
+			<id>flori</id>
+			<name>Florian Bachmann</name>
+			<email>f.bachmann@micromata.de</email>
+			<organization>Micromata GmbH</organization>
+			<organizationUrl>http://www.micromata.com</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-1</timezone>
+		</developer>
+		<developer>
+			<id>ben</id>
+			<name>Bernd Kratz</name>
+			<email>b.kratz@micromata.de</email>
+			<organization>Micromata GmbH</organization>
+			<organizationUrl>http://www.micromata.com</organizationUrl>
+			<timezone>-1</timezone>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>ben</id>
+			<name>Stefan Stützer</name>
+			<email>s.stuetzer@micromata.de</email>
+			<organization>Micromata GmbH</organization>
+			<organizationUrl>http://www.micromata.com</organizationUrl>
+			<timezone>-1</timezone>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>Commercial license</name>
+			<url>/LICENSE.txt</url>
+			<comments>All rights reserved.</comments>
+			<distribution>manual</distribution>
+		</license>
+	</licenses>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>xjc-invocation</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<tasks>
+								<property name="src.dir" location="src/main" />
+								<property name="src.dir.gen" location="${src.dir}/java" />
+								<property name="schema.dir" value="${src.dir}/resources/schema" />
+								<property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd" />
+								<property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" />
+								<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask" classpathref="maven.compile.classpath" />
+								<description>generate JAK from OGC's KML schema</description>
+								<mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" />
+								<delete>
+									<fileset dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" />
+								</delete>
+								<xjc extension="true" binding="${schema.dir.kml.binding}" destdir="${src.dir.gen}" removeOldOutput="yes"
+									schema="${schema.dir}/ogckml/kml22gx.xsd">
+									<arg value="-XJavaForKmlApi" />
+								</xjc>
+								<exec executable="perl" dir="${basedir}">
+									<arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" />
+									<arg file="${src.dir.gen}/de/micromata/opengis/kml" />
+								</exec>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-xjc</artifactId>
+			<version>2.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+		</dependency>
+		<dependency>
+			<groupId>xmlunit</groupId>
+			<artifactId>xmlunit</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>de.micromata.jak</groupId>
+			<artifactId>XJCPluginJavaApiforKml</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>java.net-maven2-repository</id>
+			<url>java-net:/maven2-repository/trunk/repository/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Maven 2 Repository</name>
+			<url>http://download.java.net/maven/2</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>maven-repository.dev.java.net</id>
+			<name>Java.net Maven 1 Repository (legacy)</name>
+			<url>http://download.java.net/maven/1</url>
+			<layout>legacy</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Maven 2 Repository</name>
+			<url>http://download.java.net/maven/2</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>maven-repository.dev.java.net</id>
+			<name>Java.net Maven 1 Repository (legacy)</name>
+			<url>http://download.java.net/maven/1</url>
+			<layout>legacy</layout>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+	<reporting>
+		<outputDirectory>reports</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<id>html</id>
+						<configuration>
+							<doctitle>My API for ${project.name} ${project.version}</doctitle>
+							<windowtitle>My API for ${project.name} ${project.version}</windowtitle>
+						</configuration>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+					</reportSet>
+					<reportSet>
+						<id>test-html</id>
+						<configuration>
+							<testDoctitle>My Test API for ${project.name} ${project.version}</testDoctitle>
+							<testWindowtitle>My Test API for ${project.name} ${project.version}</testWindowtitle>
+						</configuration>
+						<reports>
+							<report>test-javadoc</report>
+						</reports>
+					</reportSet>
+
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changelog-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>

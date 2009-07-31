@@ -1,0 +1,116 @@
+
+package de.micromata.opengis.kml.v_2_2_0.gx;
+
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+
+
+/**
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "TourControlType", propOrder = {
+    "playMode"
+})
+public class TourControl
+    extends TourPrimitive
+{
+
+    @XmlElement(defaultValue = "pause")
+    protected PlayMode playMode = PlayMode.PAUSE;
+
+    public TourControl() {
+        super();
+    }
+
+    /**
+     * 
+     * @return
+     *     possible object is
+     *     {@link PlayMode}
+     *     
+     */
+    public PlayMode getPlayMode() {
+        return playMode;
+    }
+
+    /**
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link PlayMode}
+     *     
+     */
+    public void setPlayMode(PlayMode value) {
+        this.playMode = value;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = ((prime*result)+((playMode == null)? 0 :playMode.hashCode()));
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if ((obj instanceof TourControl) == false) {
+            return false;
+        }
+        TourControl other = ((TourControl) obj);
+        if (playMode == null) {
+            if (other.playMode!= null) {
+                return false;
+            }
+        } else {
+            if (playMode.equals(other.playMode) == false) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * fluent setter
+     * 
+     * @param playMode
+     *     required parameter
+     */
+    public TourControl withPlayMode(final PlayMode playMode) {
+        this.setPlayMode(playMode);
+        return this;
+    }
+
+    @Obvious
+    @Override
+    public TourControl withObjectSimpleExtension(final List<Object> objectSimpleExtension) {
+        super.withObjectSimpleExtension(objectSimpleExtension);
+        return this;
+    }
+
+    @Obvious
+    @Override
+    public TourControl withId(final String id) {
+        super.withId(id);
+        return this;
+    }
+
+    @Obvious
+    @Override
+    public TourControl withTargetId(final String targetId) {
+        super.withTargetId(targetId);
+        return this;
+    }
+
+}
