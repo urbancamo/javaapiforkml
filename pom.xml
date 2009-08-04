@@ -22,19 +22,19 @@ It is written entirely in Java and makes heavy use of JAXB.
 	</scm>
 	<developers>
 		<developer>
-			<id>flori</id>
+			<id>bachmann.florian</id>
 			<name>Florian Bachmann</name>
 			<email>f.bachmann@micromata.de</email>
 			<organization>Micromata GmbH</organization>
 			<organizationUrl>http://www.micromata.com</organizationUrl>
+			<timezone>-1</timezone>
 			<roles>
 				<role>architect</role>
 				<role>developer</role>
 			</roles>
-			<timezone>-1</timezone>
 		</developer>
 		<developer>
-			<id>ben</id>
+			<id>schnitzelhugo</id>
 			<name>Bernd Kratz</name>
 			<email>b.kratz@micromata.de</email>
 			<organization>Micromata GmbH</organization>
@@ -45,9 +45,9 @@ It is written entirely in Java and makes heavy use of JAXB.
 			</roles>
 		</developer>
 		<developer>
-			<id>ben</id>
-			<name>Stefan Stützer</name>
-			<email>s.stuetzer@micromata.de</email>
+			<id>landgraf1967</id>
+			<name>Thomas Landgraf</name>
+			<email>tl@micromata.de</email>
 			<organization>Micromata GmbH</organization>
 			<organizationUrl>http://www.micromata.com</organizationUrl>
 			<timezone>-1</timezone>
@@ -58,7 +58,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 	</developers>
 	<licenses>
 		<license>
-			<name>Commercial license</name>
+			<name>BSD license</name>
 			<url>/LICENSE.txt</url>
 			<comments>All rights reserved.</comments>
 			<distribution>manual</distribution>
@@ -67,44 +67,22 @@ It is written entirely in Java and makes heavy use of JAXB.
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-		<!-- code generation part disabled, till all files are in public maven repositories
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>xjc-invocation</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<tasks>
-								<property name="src.dir" location="src/main" />
-								<property name="src.dir.gen" location="${src.dir}/java" />
-								<property name="schema.dir" value="${src.dir}/resources/schema" />
-								<property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd" />
-								<property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" />
-								<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask" classpathref="maven.compile.classpath" />
-								<description>generate JAK from OGC's KML schema</description>
-								<mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" />
-								<delete>
-									<fileset dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" />
-								</delete>
-								<xjc extension="true" binding="${schema.dir.kml.binding}" destdir="${src.dir.gen}" removeOldOutput="yes"
-									schema="${schema.dir}/ogckml/kml22gx.xsd">
-									<arg value="-XJavaForKmlApi" />
-								</xjc>
-								<exec executable="perl" dir="${basedir}">
-									<arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" />
-									<arg file="${src.dir.gen}/de/micromata/opengis/kml" />
-								</exec>
-							</tasks>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			 -->
+			<!--
+				code generation part disabled, till all files are in public maven repositories <plugin>
+				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-antrun-plugin</artifactId> <executions> <execution>
+				<id>xjc-invocation</id> <phase>generate-sources</phase> <configuration> <tasks> <property name="src.dir"
+				location="src/main" /> <property name="src.dir.gen" location="${src.dir}/java" /> <property name="schema.dir"
+				value="${src.dir}/resources/schema" /> <property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd"
+				/> <property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" /> <taskdef name="xjc"
+				classname="com.sun.tools.xjc.XJCTask" classpathref="maven.compile.classpath" /> <description>generate JAK from OGC's
+				KML schema</description> <mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" /> <delete> <fileset
+				dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" /> </delete> <xjc extension="true"
+				binding="${schema.dir.kml.binding}" destdir="${src.dir.gen}" removeOldOutput="yes"
+				schema="${schema.dir}/ogckml/kml22gx.xsd"> <arg value="-XJavaForKmlApi" /> </xjc> <exec executable="perl"
+				dir="${basedir}"> <arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" /> <arg
+				file="${src.dir.gen}/de/micromata/opengis/kml" /> </exec> </tasks> </configuration> <goals> <goal>run</goal>
+				</goals> </execution> </executions> </plugin>
+			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -128,7 +106,30 @@ It is written entirely in Java and makes heavy use of JAXB.
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-clover2-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<license><![CDATA[QPORQwLRnqofKiVJNSQIKsdKNrrATjdKLVUWxSxJsxdmrDo
+									  mj2KlpGKhDbmto<pV8EfyyGI2L0GfmTXJbnDjh3vD0PmE2E
+									  qNNNtTmqpmmnOnooqRRsuoRMPqnOoPopOrxxtWtVSsWXSMu
+									  TWXVUqqonmqmUUnoqvnprommmmmUUnoqvnprommmmmUUDfZ
+									  oljXqXW7jY8UUnmm]]>
+					</license>
+					<generatePdf>true</generatePdf>
+					<generateXml>true</generateXml>
+					<generateHtml>true</generateHtml>
+				</configuration>
+			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.jvnet.wagon-svn</groupId>
+				<artifactId>wagon-svn</artifactId>
+				<version>1.9</version>
+			</extension>
+		</extensions>
 	</build>
 	<dependencies>
 		<dependency>
@@ -156,28 +157,26 @@ It is written entirely in Java and makes heavy use of JAXB.
 			<artifactId>xmlunit</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- code generation part disabled, till all files are in public maven repositories
-		<dependency>
-			<groupId>de.micromata.jak</groupId>
-			<artifactId>XJCPluginJavaApiforKml</artifactId>
-			<version>1.0-SNAPSHOT</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-		 -->
+		<!--
+			code generation part disabled, till all files are in public maven repositories <dependency>
+			<groupId>de.micromata.jak</groupId> <artifactId>XJCPluginJavaApiforKml</artifactId> <version>1.0-SNAPSHOT</version>
+			<type>jar</type> <scope>compile</scope> </dependency>
+		-->
 	</dependencies>
-	<repositories>
+
+	<distributionManagement>
 		<repository>
-			<id>java.net-maven2-repository</id>
+			<id>java.net-m2-repository</id>
 			<url>java-net:/maven2-repository/trunk/repository/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
 		</repository>
+	</distributionManagement>
+
+	<repositories>
 		<repository>
 			<id>maven2-repository.dev.java.net</id>
 			<name>Java.net Maven 2 Repository</name>
 			<url>http://download.java.net/maven/2</url>
+			<layout>default</layout>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
@@ -205,8 +204,6 @@ It is written entirely in Java and makes heavy use of JAXB.
 			<layout>legacy</layout>
 		</pluginRepository>
 	</pluginRepositories>
-
-
 	<reporting>
 		<outputDirectory>reports</outputDirectory>
 		<plugins>
@@ -237,7 +234,6 @@ It is written entirely in Java and makes heavy use of JAXB.
 							<report>test-javadoc</report>
 						</reports>
 					</reportSet>
-
 				</reportSets>
 			</plugin>
 			<plugin>
