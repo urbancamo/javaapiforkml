@@ -17,7 +17,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 		<url>http://micromata.de</url>
 	</organization>
 	<scm>
-		<connection>scm:svn::http://javaapiforkml.googlecode.com/svn/trunk/</connection>
+		<connection>scm:svn:http://javaapiforkml.googlecode.com/svn/trunk/</connection>
 		<developerConnection>scm:svn:https://javaapiforkml.googlecode.com/svn/trunk/</developerConnection>
 	</scm>
 	<developers>
@@ -207,7 +207,6 @@ It is written entirely in Java and makes heavy use of JAXB.
 		</pluginRepository>
 	</pluginRepositories>
 	<reporting>
-		<outputDirectory>reports</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
