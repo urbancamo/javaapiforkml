@@ -247,7 +247,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 	</reporting>
 	<profiles>
 		<profile>
-			<id>clover.report</id>
+			<id>clover.optimize</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -255,7 +255,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 						<artifactId>maven-clover2-plugin</artifactId>
 						<version>${cloverVersion}</version>
 						<configuration>
-							<snapshot>${user.home}/.clover/${groupId}-${artifactId}/clover.snapshot</snapshot>
+							<snapshot>${java.io.tmpdir}/${groupId}-${artifactId}-clover.snapshot</snapshot>
 							<license><![CDATA[QPORQwLRnqofKiVJNSQIKsdKNrrATjdKLVUWxSxJsxdmrDo
 									  mj2KlpGKhDbmto<pV8EfyyGI2L0GfmTXJbnDjh3vD0PmE2E
 									  qNNNtTmqpmmnOnooqRRsuoRMPqnOoPopOrxxtWtVSsWXSMu
@@ -263,9 +263,9 @@ It is written entirely in Java and makes heavy use of JAXB.
 									  oljXqXW7jY8UUnmm]]>
 							</license>
 							<excludes>
-								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/annotations/**/*.java</exclude>
-								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/atom/**/*.java</exclude>
-								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/**/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/annotations/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/atom/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/*.java</exclude>
 								<exclude>src/test/java/**/*.java</exclude>
 							</excludes>
 							<generatePdf>true</generatePdf>
@@ -275,7 +275,47 @@ It is written entirely in Java and makes heavy use of JAXB.
 						<executions>
 							<execution>
 								<id>clover</id>
-								<phase>integration-test</phase>
+								<goals>
+									<goal>setup</goal>
+									<goal>optimize</goal>
+									<goal>snapshot</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>clover.report</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.atlassian.maven.plugins</groupId>
+						<artifactId>maven-clover2-plugin</artifactId>
+						<version>${cloverVersion}</version>
+						<configuration>
+							<snapshot>${java.io.tmpdir}/${groupId}-${artifactId}-clover.snapshot</snapshot>
+							<license><![CDATA[QPORQwLRnqofKiVJNSQIKsdKNrrATjdKLVUWxSxJsxdmrDo
+									  mj2KlpGKhDbmto<pV8EfyyGI2L0GfmTXJbnDjh3vD0PmE2E
+									  qNNNtTmqpmmnOnooqRRsuoRMPqnOoPopOrxxtWtVSsWXSMu
+									  TWXVUqqonmqmUUnoqvnprommmmmUUnoqvnprommmmmUUDfZ
+									  oljXqXW7jY8UUnmm]]>
+							</license>
+							<excludes>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/annotations/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/atom/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/*.java</exclude>
+								<exclude>src/test/java/**/*.java</exclude>
+							</excludes>
+							<generatePdf>true</generatePdf>
+							<generateXml>true</generateXml>
+							<generateHtml>true</generateHtml>
+						</configuration>
+						<executions>
+							<execution>
+								<id>clover-report</id>
+								<phase>verify</phase>
 								<goals>
 									<goal>instrument</goal>
 									<goal>clover</goal>
