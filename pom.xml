@@ -318,6 +318,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 								<phase>verify</phase>
 								<goals>
 									<goal>instrument</goal>
+									<goal>aggregate</goal>
 									<goal>clover</goal>
 								</goals>
 							</execution>
