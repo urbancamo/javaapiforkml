@@ -64,24 +64,38 @@ It is written entirely in Java and makes heavy use of JAXB.
 			<distribution>manual</distribution>
 		</license>
 	</licenses>
+	<properties>
+		<cloverVersion>2.5.1</cloverVersion>
+	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<!--
-				code generation part disabled, till all files are in public maven repositories <plugin>
-				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-antrun-plugin</artifactId> <executions> <execution>
-				<id>xjc-invocation</id> <phase>generate-sources</phase> <configuration> <tasks> <property name="src.dir"
-				location="src/main" /> <property name="src.dir.gen" location="${src.dir}/java" /> <property name="schema.dir"
-				value="${src.dir}/resources/schema" /> <property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd"
-				/> <property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" /> <taskdef name="xjc"
-				classname="com.sun.tools.xjc.XJCTask" classpathref="maven.compile.classpath" /> <description>generate JAK from OGC's
-				KML schema</description> <mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" /> <delete> <fileset
-				dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" /> </delete> <xjc extension="true"
-				binding="${schema.dir.kml.binding}" destdir="${src.dir.gen}" removeOldOutput="yes"
-				schema="${schema.dir}/ogckml/kml22gx.xsd"> <arg value="-XJavaForKmlApi" /> </xjc> <exec executable="perl"
-				dir="${basedir}"> <arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" /> <arg
-				file="${src.dir.gen}/de/micromata/opengis/kml" /> </exec> </tasks> </configuration> <goals> <goal>run</goal>
-				</goals> </execution> </executions> </plugin>
+				code generation part disabled, till all files are in public maven
+				repositories <plugin> <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId> <executions>
+				<execution> <id>xjc-invocation</id> <phase>generate-sources</phase>
+				<configuration> <tasks> <property name="src.dir" location="src/main"
+				/> <property name="src.dir.gen" location="${src.dir}/java" />
+				<property name="schema.dir" value="${src.dir}/resources/schema" />
+				<property name="schema.dir.kml"
+				location="${schema.dir}/ogckml/ogckml22.xsd" /> <property
+				name="schema.dir.kml.binding"
+				value="${schema.dir}/ogckml/JAK_binding.xjb" /> <taskdef name="xjc"
+				classname="com.sun.tools.xjc.XJCTask"
+				classpathref="maven.compile.classpath" /> <description>generate JAK
+				from OGC's KML schema</description> <mkdir
+				dir="${src.dir.gen}/de/micromata/opengis/kml/" /> <delete> <fileset
+				dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" />
+				</delete> <xjc extension="true" binding="${schema.dir.kml.binding}"
+				destdir="${src.dir.gen}" removeOldOutput="yes"
+				schema="${schema.dir}/ogckml/kml22gx.xsd"> <arg
+				value="-XJavaForKmlApi" /> </xjc> <exec executable="perl"
+				dir="${basedir}"> <arg
+				file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" /> <arg
+				file="${src.dir.gen}/de/micromata/opengis/kml" /> </exec> </tasks>
+				</configuration> <goals> <goal>run</goal> </goals> </execution>
+				</executions> </plugin>
 			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -105,22 +119,6 @@ It is written entirely in Java and makes heavy use of JAXB.
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>com.atlassian.maven.plugins</groupId>
-				<artifactId>maven-clover2-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<license><![CDATA[QPORQwLRnqofKiVJNSQIKsdKNrrATjdKLVUWxSxJsxdmrDo
-									  mj2KlpGKhDbmto<pV8EfyyGI2L0GfmTXJbnDjh3vD0PmE2E
-									  qNNNtTmqpmmnOnooqRRsuoRMPqnOoPopOrxxtWtVSsWXSMu
-									  TWXVUqqonmqmUUnoqvnprommmmmUUnoqvnprommmmmUUDfZ
-									  oljXqXW7jY8UUnmm]]>
-					</license>
-					<generatePdf>true</generatePdf>
-					<generateXml>true</generateXml>
-					<generateHtml>true</generateHtml>
-				</configuration>
 			</plugin>
 		</plugins>
 		<extensions>
@@ -160,9 +158,11 @@ It is written entirely in Java and makes heavy use of JAXB.
 			<version>1.2</version>
 		</dependency>
 		<!--
-			code generation part disabled, till all files are in public maven repositories <dependency>
-			<groupId>de.micromata.jak</groupId> <artifactId>XJCPluginJavaApiforKml</artifactId> <version>1.0-SNAPSHOT</version>
-			<type>jar</type> <scope>compile</scope> </dependency>
+			code generation part disabled, till all files are in public maven
+			repositories <dependency> <groupId>de.micromata.jak</groupId>
+			<artifactId>XJCPluginJavaApiforKml</artifactId>
+			<version>1.0-SNAPSHOT</version> <type>jar</type>
+			<scope>compile</scope> </dependency>
 		-->
 	</dependencies>
 
@@ -229,7 +229,8 @@ It is written entirely in Java and makes heavy use of JAXB.
 						<id>test-html</id>
 						<configuration>
 							<testDoctitle>My Test API for ${project.name} ${project.version}</testDoctitle>
-							<testWindowtitle>My Test API for ${project.name} ${project.version}</testWindowtitle>
+							<testWindowtitle>My Test API for ${project.name}
+								${project.version}</testWindowtitle>
 						</configuration>
 						<reports>
 							<report>test-javadoc</report>
@@ -244,4 +245,46 @@ It is written entirely in Java and makes heavy use of JAXB.
 			</plugin>
 		</plugins>
 	</reporting>
+	<profiles>
+		<profile>
+			<id>clover.report</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.atlassian.maven.plugins</groupId>
+						<artifactId>maven-clover2-plugin</artifactId>
+						<version>${cloverVersion}</version>
+						<configuration>
+							<snapshot>${user.home}/.clover/${groupId}-${artifactId}/clover.snapshot</snapshot>
+							<license><![CDATA[QPORQwLRnqofKiVJNSQIKsdKNrrATjdKLVUWxSxJsxdmrDo
+									  mj2KlpGKhDbmto<pV8EfyyGI2L0GfmTXJbnDjh3vD0PmE2E
+									  qNNNtTmqpmmnOnooqRRsuoRMPqnOoPopOrxxtWtVSsWXSMu
+									  TWXVUqqonmqmUUnoqvnprommmmmUUnoqvnprommmmmUUDfZ
+									  oljXqXW7jY8UUnmm]]>
+							</license>
+							<excludes>
+								<exclude>de/micromata/opengis/kml/v_2_2_0/annotations/**/*.java</exclude>
+								<exclude>de/micromata/opengis/kml/v_2_2_0/atom/**/*.java</exclude>
+								<exclude>de/micromata/opengis/kml/v_2_2_0/xal/**/*.java</exclude>
+								<exclude>src/test/**/*.java</exclude>
+							</excludes>
+							<generatePdf>true</generatePdf>
+							<generateXml>true</generateXml>
+							<generateHtml>true</generateHtml>
+						</configuration>
+						<executions>
+							<execution>
+								<id>clover</id>
+								<phase>integration-test</phase>
+								<goals>
+									<goal>instrument</goal>
+									<goal>clover</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
