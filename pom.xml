@@ -263,10 +263,10 @@ It is written entirely in Java and makes heavy use of JAXB.
 									  oljXqXW7jY8UUnmm]]>
 							</license>
 							<excludes>
-								<exclude>de/micromata/opengis/kml/v_2_2_0/annotations/**/*.java</exclude>
-								<exclude>de/micromata/opengis/kml/v_2_2_0/atom/**/*.java</exclude>
-								<exclude>de/micromata/opengis/kml/v_2_2_0/xal/**/*.java</exclude>
-								<exclude>src/test/**/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/annotations/**/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/atom/**/*.java</exclude>
+								<exclude>src/main/java/de/micromata/opengis/kml/v_2_2_0/xal/**/*.java</exclude>
+								<exclude>src/test/java/**/*.java</exclude>
 							</excludes>
 							<generatePdf>true</generatePdf>
 							<generateXml>true</generateXml>
