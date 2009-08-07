@@ -1,7 +1,5 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.StringWriter;
 import java.util.logging.Logger;
 
@@ -16,9 +14,11 @@ import de.micromata.opengis.kml.v_2_2_0.LineString;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
 public final class KMLTest {
+	@SuppressWarnings("unused")
 	private final Logger LOG = Logger.getLogger(getClass().getName());
 
 	public static String TEST_FOLDER = "src/test/resources/kml-gen/";
+
 	@Test
 	public void testKml12() {
 		final Kml kml = new Kml();
@@ -37,19 +37,16 @@ public final class KMLTest {
 		ls.addToCoordinates("3528977.563, 5805502.246, 662.7");
 		ls.addToCoordinates("3528975.869, 5805501.4, 662.7");
 		final Kml unmarshalledKml = Utils.marshalAndUnmarshall(kml);
-		Utils.marshal(kml);
 		Assert.assertEquals("test", unmarshalledKml.getFeature().getName());
-
 	}
-	
-	
+
 	@Test
 	public void testKml1() {
 		final Kml kml = new Kml();
 		final Folder folder = kml.createAndSetFolder();
 		final Placemark pl = folder.createAndAddPlacemark();
 		final LineString ls = pl.createAndSetLineString();
-//		final Coordinates cs = ls.createAndSetCoordinates();
+		// final Coordinates cs = ls.createAndSetCoordinates();
 
 		folder.setName("test");
 		pl.setName("Placemark");
@@ -79,21 +76,11 @@ public final class KMLTest {
 
 		document.getFeature().add(p1);
 
-		Kml unmarshalledKml = null;
-		try {
-			final String filename = TEST_FOLDER + Utils.getCurrentMethodName(this) + ".kml";
-			kml.marshal(new File(filename), false);
-			LOG.info("------------ written file: " + filename);
-			LOG.info("length : " + Utils.getFileSizeInByte(filename));
+		final Kml unmarshalledKml = Utils.marshalAndUnmarshall(kml);
+		Assert.assertEquals("test", unmarshalledKml.getFeature().getName());
 
-			unmarshalledKml = Kml.unmarshal(new File(filename));
-			Assert.assertEquals("test", unmarshalledKml.getFeature().getName());
-		} catch (final FileNotFoundException e) {
-			LOG.info("uhoh");
-			e.printStackTrace();
-		}
 	}
-//
+
 	@Test
 	public void testKml3() {
 		final Kml kml = new Kml();
@@ -118,6 +105,5 @@ public final class KMLTest {
 		final Kml unmarshalledKml = Kml.unmarshal(out.toString());
 		Assert.assertEquals("test4", unmarshalledKml.getFeature().getName());
 	}
-
 
 }

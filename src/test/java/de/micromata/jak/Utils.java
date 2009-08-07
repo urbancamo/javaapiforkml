@@ -13,7 +13,7 @@
 // $Date: $
 //
 // ///////////////////////////////////////////////////////////////////////////
-package de.micromata.javaapiforkml;
+package de.micromata.jak;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,7 +33,7 @@ import javax.xml.transform.stream.StreamSource;
 
 import org.apache.log4j.Logger;
 
-final class Utils {
+public final class Utils {
 	private static final Logger LOG = Logger.getLogger(Utils.class.getName());
 
 	/**

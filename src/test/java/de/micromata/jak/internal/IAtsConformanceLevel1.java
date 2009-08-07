@@ -1,4 +1,4 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak.internal;
 
 /**
  * <p>
@@ -55,7 +55,7 @@ package de.micromata.javaapiforkml;
  * <li>Region</li>
  * </ol>
  */
-interface IAtsConformanceLevel1 {
+public interface IAtsConformanceLevel1 {
 	/**
 	 * <p>
 	 * ATC 1: Root element

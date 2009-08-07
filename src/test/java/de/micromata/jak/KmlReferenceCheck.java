@@ -1,4 +1,4 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak;
 
 import java.util.List;
 
@@ -62,7 +62,7 @@ import de.micromata.opengis.kml.v_2_2_0.Units;
 import de.micromata.opengis.kml.v_2_2_0.Update;
 import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
 
-class KmlReferenceCheck {
+public final class KmlReferenceCheck {
 
 	public static void ballonStyle(final BalloonStyle balloonstyle) {
 		Assert.assertEquals("ID", balloonstyle.getId());

@@ -1,4 +1,4 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak.internal;
 
 /**
  * <p>
@@ -41,7 +41,7 @@ package de.micromata.javaapiforkml;
  * <li>StyleMap</li>
  * </ol>
  */
-interface IAtsConformanceLevel2 {
+public interface IAtsConformanceLevel2 {
 	/**
 	 * <p>
 	 * ATC 42: PolyStyle

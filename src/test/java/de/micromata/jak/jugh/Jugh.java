@@ -13,7 +13,7 @@
 // $Date: $
 //
 // ///////////////////////////////////////////////////////////////////////////
-package de.micromata.javaapiforkml.jugh;
+package de.micromata.jak.jugh;
 
 import java.io.File;
 import java.io.FileNotFoundException;

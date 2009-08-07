@@ -1,4 +1,4 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak.internal;
 
 import org.junit.Test;
 

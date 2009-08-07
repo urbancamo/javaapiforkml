@@ -1,4 +1,4 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -8,6 +8,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+import de.micromata.jak.internal.IAtsConformanceLevel2;
 import de.micromata.opengis.kml.v_2_2_0.Alias;
 import de.micromata.opengis.kml.v_2_2_0.BalloonStyle;
 import de.micromata.opengis.kml.v_2_2_0.Camera;
@@ -48,12 +49,12 @@ import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
  * @author Flori (f.bachmann@micromata.de)
  * 
  */
-public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
+public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	@SuppressWarnings("unused")
 	private static final Logger LOG = Logger.getLogger(KmlReferencePojoTest.class.getName());
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc42PolyStyle()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc42PolyStyle()
 	 */
 	@Test
 	public void atc42PolyStyle() {
@@ -67,7 +68,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc43CoordinatesAltitudeMode()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc43CoordinatesAltitudeMode()
 	 */
 	@Test
 	public void atc43CoordinatesAltitudeMode() {
@@ -110,7 +111,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc44ScaleMinimalContent()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc44ScaleMinimalContent()
 	 */
 	@Test
 	public void atc44ScaleMinimalContent() {
@@ -123,7 +124,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc45KMLMinimalContent()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc45KMLMinimalContent()
 	 */
 	@Test
 	public void atc45KMLMinimalContent() {
@@ -132,7 +133,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc46ViewFormat()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc46ViewFormat()
 	 */
 	@Test
 	public void atc46ViewFormat() {
@@ -140,7 +141,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc47HttpQuery()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc47HttpQuery()
 	 */
 	@Test
 	public void atc47HttpQuery() {
@@ -148,7 +149,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc48LinearRingInPolygon()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc48LinearRingInPolygon()
 	 */
 	@Test
 	public void atc48LinearRingInPolygon() {
@@ -159,7 +160,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc49Data()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc49Data()
 	 */
 	@Test
 	public void atc49Data() {
@@ -168,7 +169,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc50ResourceMapAlias()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc50ResourceMapAlias()
 	 */
 	@Test
 	public void atc50ResourceMapAlias() {
@@ -177,7 +178,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc51LinkRefreshValues()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc51LinkRefreshValues()
 	 */
 	@Test
 	public void atc51LinkRefreshValues() {
@@ -190,7 +191,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc52PhotoOverlay()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc52PhotoOverlay()
 	 */
 	@Test
 	public void atc52PhotoOverlay() {
@@ -207,7 +208,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc53GroundOverlayMinimalContent()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc53GroundOverlayMinimalContent()
 	 */
 	@Test
 	public void atc53GroundOverlayMinimalContent() {
@@ -220,7 +221,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc54Camera()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc54Camera()
 	 */
 	@Test
 	public void atc54Camera() {
@@ -234,7 +235,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc55Location()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc55Location()
 	 */
 	@Test
 	public void atc55Location() {
@@ -244,7 +245,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc56Overlay()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc56Overlay()
 	 */
 	@Test
 	public void atc56Overlay() {
@@ -255,7 +256,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc57ScreenOverlay()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc57ScreenOverlay()
 	 */
 	@Test
 	public void atc57ScreenOverlay() {
@@ -264,7 +265,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc58BaloonStyle()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc58BaloonStyle()
 	 */
 	@Test
 	public void atc58BaloonStyle() {
@@ -272,7 +273,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc59ExtendedData()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc59ExtendedData()
 	 */
 	@Test
 	public void atc59ExtendedData() {
@@ -281,7 +282,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc60Folder()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc60Folder()
 	 */
 	@Test
 	public void atc60Folder() {
@@ -289,7 +290,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc61IconStyle()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc61IconStyle()
 	 */
 	@Test
 	public void atc61IconStyle() {
@@ -297,7 +298,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc62ImagePyramid()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc62ImagePyramid()
 	 */
 	@Test
 	public void atc62ImagePyramid() {
@@ -309,7 +310,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc63LabelStyle()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc63LabelStyle()
 	 */
 	@Test
 	public void atc63LabelStyle() {
@@ -321,7 +322,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc64ListStyle()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc64ListStyle()
 	 */
 	@Test
 	public void atc64ListStyle() {
@@ -333,7 +334,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc65Sytle()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc65Sytle()
 	 */
 	@Test
 	public void atc65Sytle() {
@@ -341,7 +342,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc66MultiGeometry()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc66MultiGeometry()
 	 */
 	@Test
 	public void atc66MultiGeometry() {
@@ -353,7 +354,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc67Placemark()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc67Placemark()
 	 */
 	@Test
 	public void atc67Placemark() {
@@ -366,7 +367,7 @@ public class AtsConformanceLevel2 implements IAtsConformanceLevel2 {
 	}
 
 	/**
-	 * @see de.micromata.javaapiforkml.IAtsConformanceLevel2#atc68StyleMap()
+	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc68StyleMap()
 	 */
 	@Test
 	public void atc68StyleMap() {

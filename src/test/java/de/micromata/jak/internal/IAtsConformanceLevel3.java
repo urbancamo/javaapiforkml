@@ -1,4 +1,4 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak.internal;
 
 /**
  * <p>
@@ -23,7 +23,7 @@ package de.micromata.javaapiforkml;
  * <li>NetworkLink-Url</li>
  * </ol>
  */
-interface IAtsConformanceLevel3 {
+public interface IAtsConformanceLevel3 {
 	/**
 	 * <p>
 	 * ATC 69: Polygon - rings

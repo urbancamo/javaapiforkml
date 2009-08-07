@@ -1,4 +1,4 @@
-package de.micromata.javaapiforkml;
+package de.micromata.jak;
 
 import java.io.FileNotFoundException;
 import java.io.StringWriter;
@@ -17,7 +17,7 @@ import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
 // needs vm-argument: -Xms2g -Xmx2g
 public final class StressTest {
-	private static final Logger LOG = Logger.getLogger(StressTest.class.getName());
+  private final Logger LOG = Logger.getLogger(getClass().getName());
 
 	private final Random randomElement = new Random();;
 
