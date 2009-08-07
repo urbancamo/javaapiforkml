@@ -250,6 +250,7 @@ It is written entirely in Java and makes heavy use of JAXB.
 								<exclude>**/de/micromata/opengis/kml/v_2_2_0/annotations/**</exclude>
 								<exclude>**/de/micromata/opengis/kml/v_2_2_0/atom/**</exclude>
 								<exclude>**/de/micromata/opengis/kml/v_2_2_0/xal/**</exclude>
+								<exclude>**/de/micromata/jak/**</exclude>
 								<exclude>**/de/micromata/jak/jugh/**</exclude>
 								<exclude>**/de/micromata/jak/incubator/**</exclude>
 								<exclude>**/de/micromata/jak/internal/**</exclude>
