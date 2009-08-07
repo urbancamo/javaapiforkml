@@ -113,6 +113,8 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.ballonStyle(balloonstyle);
 		final BalloonStyle marshalledAndBackAgain = Utils.marshalAndUnmarshall(balloonstyle);
 		KmlReferenceCheck.ballonStyle(marshalledAndBackAgain);
+		
+		KmlReferenceCheck.ballonStyle(balloonstyle, marshalledAndBackAgain);
 	}
 
 	/**

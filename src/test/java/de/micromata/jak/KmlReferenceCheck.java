@@ -71,7 +71,11 @@ public final class KmlReferenceCheck {
 		Assert.assertEquals("...", balloonstyle.getText());
 		Assert.assertEquals(DisplayMode.DEFAULT, balloonstyle.getDisplayMode());
 	}
-
+	
+	public static void ballonStyle(BalloonStyle balloonstyle, BalloonStyle marshalledAndBackAgain) {
+		Assert.assertEquals(balloonstyle, marshalledAndBackAgain);
+  }
+	
 	public static void ballonStyleExample(final Kml kml) {
 		Assert.assertEquals("BalloonStyle.kml", kml.getFeature().getName());
 		Assert.assertTrue("Document.isOpen(): ", kml.getFeature().isOpen());
@@ -1182,5 +1186,7 @@ public final class KmlReferenceCheck {
 		final Placemark placemark = (Placemark) delete.getFeature().get(0);
 		Assert.assertEquals("pa3556", placemark.getTargetId());
 	}
+
+
 
 }
