@@ -442,7 +442,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 		
 		Field icon = Utils.findField(PhotoOverlay.class, "icon");
 		Assert.assertNotNull(icon);
-		Assert.assertEquals(Link.class, icon.getType());
+		Assert.assertEquals(Icon.class, icon.getType());
 
 		Field viewVolume = Utils.findField(PhotoOverlay.class, "viewVolume");
 		Assert.assertNotNull(viewVolume);
