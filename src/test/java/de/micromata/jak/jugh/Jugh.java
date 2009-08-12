@@ -164,7 +164,7 @@ public class Jugh {
 		final Placemark placemark = kml.createAndSetPlacemark().withName("Java User Group Hessen - JUGH!");
 
 		final Style style = placemark.createAndAddStyle().withId("jugh_style");
-		style.createAndSetIconStyle().withScale(1.4).createAndSetLink().setHref("http://www.jugh.de/kml/jugh_icon.png");
+		style.createAndSetIconStyle().withScale(1.4).createAndSetIcon().setHref("http://www.jugh.de/kml/jugh_icon.png");
 		style.createAndSetLabelStyle().withScale(1.4);
 
 		// placemark.setDescription(Jugh.getBallonText());
@@ -258,7 +258,7 @@ public class Jugh {
 
 		// Create and add <Style> with an <id>. <IconStyle> and <LabelStyle> are configured.
 		final Style style = placemark.createAndAddStyle().withId("jugh_style");
-		style.createAndSetIconStyle().withScale(1.4).createAndSetLink().setHref("jugh_icon.png");
+		style.createAndSetIconStyle().withScale(1.4).createAndSetIcon().setHref("jugh_icon.png");
 		style.createAndSetLabelStyle().withScale(1.4);
 
 		// Apply style to placemark and set description.

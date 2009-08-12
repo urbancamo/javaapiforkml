@@ -19,10 +19,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <p>
  * Defines a key/value pair that maps a mode (normal or highlight) to the predefined 
  * <styleUrl>. <Pair> contains two elements (both are required): <key>, which identifies 
- * the key <styleUrl>, which references the style. For referenced style elements that 
- * are local to the KML document, a simple # referencing is used. For styles that are 
- * contained in external files, use a full URL along with # referencing. For example: 
- * <Pair> <key>normal</key> <styleUrl>http://myserver.com/populationProject.xml#example_style_off</styleUrl> 
+ * the key <styleUrl> or <Style>, which references the style. In <styleUrl>, for referenced 
+ * style elements that are local to the KML document, a simple # referencing is used. 
+ * For styles that are contained in external files, use a full URL along with # referencing. 
+ * For example: <Pair> <key>normal</key> <styleUrl>http://myserver.com/populationProject.xml#example_style_off</styleUrl> 
  * </Pair> 
  * </p>
  * 
@@ -55,7 +55,7 @@ public class Pair
      * 
      */
     @XmlElement(defaultValue = "normal")
-    protected StyleState key = StyleState.NORMAL;
+    protected StyleState key;
     /**
      * <styleurl>
      * <p>
@@ -131,6 +131,7 @@ public class Pair
     }
 
     /**
+     * @see key
      * 
      * @return
      *     possible object is
@@ -142,6 +143,7 @@ public class Pair
     }
 
     /**
+     * @see key
      * 
      * @param value
      *     allowed object is
@@ -153,6 +155,7 @@ public class Pair
     }
 
     /**
+     * @see styleUrl
      * 
      * @return
      *     possible object is
@@ -164,6 +167,7 @@ public class Pair
     }
 
     /**
+     * @see styleUrl
      * 
      * @param value
      *     allowed object is
@@ -175,12 +179,13 @@ public class Pair
     }
 
     /**
+     * @see styleSelector
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link Style}{@code>}
-     *     {@code <}{@link StyleSelector}{@code>}
      *     
      */
     public StyleSelector getStyleSelector() {
@@ -188,12 +193,13 @@ public class Pair
     }
 
     /**
+     * @see styleSelector
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link Style}{@code>}
-     *     {@code <}{@link StyleSelector}{@code>}
      *     
      */
     public void setStyleSelector(StyleSelector value) {
@@ -201,6 +207,7 @@ public class Pair
     }
 
     /**
+     * @see pairSimpleExtension
      * 
      */
     public List<Object> getPairSimpleExtension() {
@@ -211,6 +218,7 @@ public class Pair
     }
 
     /**
+     * @see pairObjectExtension
      * 
      */
     public List<AbstractObject> getPairObjectExtension() {
@@ -328,10 +336,7 @@ public class Pair
     }
 
     /**
-     * Sets the value of the pairSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPairSimpleExtension} instead.
-     * 
+     * @see pairSimpleExtension
      * 
      * @param pairSimpleExtension
      */
@@ -353,10 +358,7 @@ public class Pair
     }
 
     /**
-     * Sets the value of the pairObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPairObjectExtension} instead.
-     * 
+     * @see pairObjectExtension
      * 
      * @param pairObjectExtension
      */
@@ -377,6 +379,10 @@ public class Pair
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

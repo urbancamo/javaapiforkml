@@ -11,13 +11,6 @@ import javax.xml.bind.annotation.XmlValue;
 /**
  * <simpledata name="string">
  * <p>
- * This element assigns a value to the custom data field identified by the name attribute. 
- * The type and name of this custom data field are declared in the <Schema> element. 
- * </p>
- * <p>
- * Here is an example of defining two custom data elements: 
- * </p>
- * <p>
  * <SimpleData name="string"> This element assigns a value to the custom data field 
  * identified by the name attribute. The type and name of this custom data field are 
  * declared in the <Schema> element. Here is an example of defining two custom data 
@@ -29,6 +22,13 @@ import javax.xml.bind.annotation.XmlValue;
  * name="TrailHeadName">Mount Everest</SimpleData> <SimpleData name="TrailLength">347.45</SimpleData> 
  * <SimpleData name="ElevationGain">10000</SimpleData> </SchemaData> </ExtendedData> 
  * <Point> <coordinates>-122.000,37.002</coordinates> </Point> </Placemark> 
+ * </p>
+ * <p>
+ * Here is an example of defining two custom data elements: 
+ * </p>
+ * <p>
+ * This element assigns a value to the custom data field identified by the name attribute. 
+ * The type and name of this custom data field are declared in the <Schema> element. 
  * </p>
  * 
  * 
@@ -43,9 +43,6 @@ public class SimpleData {
     /**
      * <value>
      * <p>
-     * Value of the data pair. 
-     * </p>
-     * <p>
      * <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value> 
      * </Data> <Data name="holeYardage"> <value>234</value> </Data> <Data name="holePar"> 
      * <value>4</value> </Data> </ExtendedData> </Placemark> 
@@ -55,6 +52,9 @@ public class SimpleData {
      * <value> Value of the data pair. <Placemark> <name>Club house</name> <ExtendedData> 
      * <Data name="holeNumber"> <value>1</value> </Data> <Data name="holeYardage"> <value>234</value> 
      * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * </p>
+     * <p>
+     * Value of the data pair. 
      * </p>
      * 
      * 
@@ -96,6 +96,7 @@ public class SimpleData {
     }
 
     /**
+     * @see value
      * 
      * @return
      *     possible object is
@@ -107,6 +108,7 @@ public class SimpleData {
     }
 
     /**
+     * @see value
      * 
      * @param value
      *     allowed object is
@@ -118,6 +120,7 @@ public class SimpleData {
     }
 
     /**
+     * @see name
      * 
      * @return
      *     possible object is
@@ -129,6 +132,7 @@ public class SimpleData {
     }
 
     /**
+     * @see name
      * 
      * @param value
      *     allowed object is

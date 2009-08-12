@@ -661,7 +661,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		groundoverlay.setColor("7fffffff");
 		groundoverlay.setDrawOrder(1);
 
-		final Link icon = new Link();
+		final Icon icon = new Icon();
 		groundoverlay.setIcon(icon);
 		icon.setHref("http://www.google.com/intl/en/images/logo.gif");
 		icon.setRefreshMode(RefreshMode.ON_INTERVAL);

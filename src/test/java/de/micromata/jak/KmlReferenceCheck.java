@@ -318,7 +318,7 @@ public final class KmlReferenceCheck {
 		Assert.assertEquals(45.0d, groundoverlay.getLatLonBox().getRotation(), 0.0001d);
 	}
 
-	public static void icon(final Link icon) {
+	public static void icon(final Icon icon) {
 		Assert.assertEquals("...", icon.getHref());
 		Assert.assertEquals(RefreshMode.ON_CHANGE, icon.getRefreshMode());
 		Assert.assertEquals(4d, icon.getRefreshInterval(), 0.0001);

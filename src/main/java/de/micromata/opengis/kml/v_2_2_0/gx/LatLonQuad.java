@@ -21,17 +21,17 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * Allows non-rectangular quadrilateral ground overlays. 
  * </p>
  * <p>
+ * If a third value is inserted into any tuple (representing altitude) it will be ignored. 
+ * Altitude is set using <altitude> and <altitudeMode> (or <gx:altitudeMode>) extending 
+ * <GroundOverlay>. Allowed altitude modes are absolute, clampToGround, and clampToSeaFloor. 
+ * </p>
+ * <p>
  * Specifies the coordinates of the four corner points of a quadrilateral defining 
  * the overlay area. Exactly four coordinate tuples have to be provided, each consisting 
  * of floating point values for longitude and latitude. Insert a space between tuples. 
  * Do not include spaces within a tuple. The coordinates must be specified in counter-clockwise 
  * order with the first coordinate corresponding to the lower-left corner of the overlayed 
  * image. The shape described by these corners must be convex. 
- * </p>
- * <p>
- * If a third value is inserted into any tuple (representing altitude) it will be ignored. 
- * Altitude is set using <altitude> and <altitudeMode> (or <gx:altitudeMode>) extending 
- * <GroundOverlay>. Allowed altitude modes are absolute, clampToGround, and clampToSeaFloor. 
  * </p>
  * 
  * Syntax: 
@@ -67,11 +67,6 @@ public class LatLonQuad
     /**
      * <coordinates> (required)
      * <p>
-     * Two or more coordinate tuples, each consisting of floating point values for longitude, 
-     * latitude, and altitude. The altitude component is optional. Insert a space between 
-     * tuples. Do not include spaces within a tuple. 
-     * </p>
-     * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
      * ³ ?180 and <= 180 latitude ³ ?90 and ² 90 altitude values (optional) are in meters 
@@ -79,6 +74,11 @@ public class LatLonQuad
      * </p>
      * <p>
      * Do not include spaces between the three values that describe a coordinate. 
+     * </p>
+     * <p>
+     * Two or more coordinate tuples, each consisting of floating point values for longitude, 
+     * latitude, and altitude. The altitude component is optional. Insert a space between 
+     * tuples. Do not include spaces within a tuple. 
      * </p>
      * 
      * 
@@ -94,6 +94,10 @@ public class LatLonQuad
         super();
     }
 
+    /**
+     * @see coordinates
+     * 
+     */
     public List<Coordinate> getCoordinates() {
         if (coordinates == null) {
             coordinates = new ArrayList<Coordinate>();
@@ -137,10 +141,7 @@ public class LatLonQuad
     }
 
     /**
-     * Sets the value of the coordinates property Objects of the following type(s) are allowed in the list List<Coordinate>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withCoordinates} instead.
-     * 
+     * @see coordinates
      * 
      * @param coordinates
      */
@@ -193,6 +194,10 @@ public class LatLonQuad
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

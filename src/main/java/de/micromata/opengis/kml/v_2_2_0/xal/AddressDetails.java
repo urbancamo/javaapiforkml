@@ -152,6 +152,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see postalServiceElements
      * 
      * @return
      *     possible object is
@@ -163,6 +164,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see postalServiceElements
      * 
      * @param value
      *     allowed object is
@@ -174,6 +176,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see xalAddress
      * 
      * @return
      *     possible object is
@@ -185,6 +188,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see xalAddress
      * 
      * @param value
      *     allowed object is
@@ -196,6 +200,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see addressLines
      * 
      * @return
      *     possible object is
@@ -207,6 +212,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see addressLines
      * 
      * @param value
      *     allowed object is
@@ -218,6 +224,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see country
      * 
      * @return
      *     possible object is
@@ -229,6 +236,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see country
      * 
      * @param value
      *     allowed object is
@@ -240,6 +248,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see administrativeArea
      * 
      * @return
      *     possible object is
@@ -251,6 +260,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see administrativeArea
      * 
      * @param value
      *     allowed object is
@@ -262,6 +272,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see locality
      * 
      * @return
      *     possible object is
@@ -273,6 +284,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see locality
      * 
      * @param value
      *     allowed object is
@@ -284,6 +296,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see thoroughfare
      * 
      * @return
      *     possible object is
@@ -295,6 +308,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see thoroughfare
      * 
      * @param value
      *     allowed object is
@@ -306,6 +320,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see any
      * 
      */
     public List<Object> getAny() {
@@ -316,6 +331,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see address
      * 
      * @return
      *     possible object is
@@ -327,6 +343,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see address
      * 
      * @param value
      *     allowed object is
@@ -338,6 +355,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see currentStatus
      * 
      * @return
      *     possible object is
@@ -349,6 +367,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see currentStatus
      * 
      * @param value
      *     allowed object is
@@ -360,6 +379,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see validFromDate
      * 
      * @return
      *     possible object is
@@ -371,6 +391,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see validFromDate
      * 
      * @param value
      *     allowed object is
@@ -382,6 +403,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see validToDate
      * 
      * @return
      *     possible object is
@@ -393,6 +415,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see validToDate
      * 
      * @param value
      *     allowed object is
@@ -404,6 +427,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see usage
      * 
      * @return
      *     possible object is
@@ -415,6 +439,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see usage
      * 
      * @param value
      *     allowed object is
@@ -426,6 +451,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see addressDetailsKey
      * 
      * @return
      *     possible object is
@@ -437,6 +463,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see addressDetailsKey
      * 
      * @param value
      *     allowed object is
@@ -448,6 +475,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see code
      * 
      * @return
      *     possible object is
@@ -459,6 +487,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see code
      * 
      * @param value
      *     allowed object is
@@ -470,6 +499,7 @@ public class AddressDetails {
     }
 
     /**
+     * @see otherAttributes
      * 
      * @return
      *     always non-null
@@ -793,10 +823,7 @@ public class AddressDetails {
     }
 
     /**
-     * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
-     * 
+     * @see any
      * 
      * @param any
      */
@@ -952,6 +979,7 @@ public class AddressDetails {
         }
 
         /**
+         * @see content
          * 
          * @return
          *     possible object is
@@ -963,6 +991,7 @@ public class AddressDetails {
         }
 
         /**
+         * @see content
          * 
          * @param value
          *     allowed object is
@@ -974,6 +1003,7 @@ public class AddressDetails {
         }
 
         /**
+         * @see underscore
          * 
          * @return
          *     possible object is
@@ -985,6 +1015,7 @@ public class AddressDetails {
         }
 
         /**
+         * @see underscore
          * 
          * @param value
          *     allowed object is
@@ -996,6 +1027,7 @@ public class AddressDetails {
         }
 
         /**
+         * @see code
          * 
          * @return
          *     possible object is
@@ -1007,6 +1039,7 @@ public class AddressDetails {
         }
 
         /**
+         * @see code
          * 
          * @param value
          *     allowed object is
@@ -1018,6 +1051,7 @@ public class AddressDetails {
         }
 
         /**
+         * @see otherAttributes
          * 
          * @return
          *     always non-null

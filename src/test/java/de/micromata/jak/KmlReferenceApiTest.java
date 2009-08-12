@@ -547,7 +547,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withScale(1.0d)
 		.withHeading(0d);
 		
-		iconstyle.createAndSetLink().withHref("...");
+		iconstyle.createAndSetIcon().withHref("...");
 		
 		iconstyle.createAndSetHotSpot()
 		.withX(0.5d)
@@ -575,7 +575,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withColorMode(ColorMode.RANDOM)
 		.withScale(1.1d);
 
-		iconstyle.createAndSetLink().withHref("http://maps.google.com/mapfiles/kml/pal3/icon21.png");
+		iconstyle.createAndSetIcon().withHref("http://maps.google.com/mapfiles/kml/pal3/icon21.png");
 
 		
 		document.createAndAddPlacemark().withName("IconStyle.kml").withStyleUrl("#randomColorIcon")

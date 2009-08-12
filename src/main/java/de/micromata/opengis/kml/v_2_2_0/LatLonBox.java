@@ -61,7 +61,7 @@ public class LatLonBox
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double rotation = 0.0D;
+    protected double rotation;
     @XmlElement(name = "LatLonBoxSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> latLonBoxSimpleExtension;
@@ -91,6 +91,7 @@ public class LatLonBox
     }
 
     /**
+     * @see rotation
      * 
      * @return
      *     possible object is
@@ -102,6 +103,7 @@ public class LatLonBox
     }
 
     /**
+     * @see rotation
      * 
      * @param value
      *     allowed object is
@@ -113,6 +115,7 @@ public class LatLonBox
     }
 
     /**
+     * @see latLonBoxSimpleExtension
      * 
      */
     public List<Object> getLatLonBoxSimpleExtension() {
@@ -123,6 +126,7 @@ public class LatLonBox
     }
 
     /**
+     * @see latLonBoxObjectExtension
      * 
      */
     public List<AbstractObject> getLatLonBoxObjectExtension() {
@@ -184,10 +188,7 @@ public class LatLonBox
     }
 
     /**
-     * Sets the value of the latLonBoxSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLatLonBoxSimpleExtension} instead.
-     * 
+     * @see latLonBoxSimpleExtension
      * 
      * @param latLonBoxSimpleExtension
      */
@@ -209,10 +210,7 @@ public class LatLonBox
     }
 
     /**
-     * Sets the value of the latLonBoxObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLatLonBoxObjectExtension} instead.
-     * 
+     * @see latLonBoxObjectExtension
      * 
      * @param latLonBoxObjectExtension
      */
@@ -233,6 +231,10 @@ public class LatLonBox
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -246,6 +248,10 @@ public class LatLonBox
         return this;
     }
 
+    /**
+     * @see abstractLatLonBoxSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setAbstractLatLonBoxSimpleExtension(final List<Object> abstractLatLonBoxSimpleExtension) {
@@ -259,6 +265,10 @@ public class LatLonBox
         return this;
     }
 
+    /**
+     * @see abstractLatLonBoxObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setAbstractLatLonBoxObjectExtension(final List<AbstractObject> abstractLatLonBoxObjectExtension) {

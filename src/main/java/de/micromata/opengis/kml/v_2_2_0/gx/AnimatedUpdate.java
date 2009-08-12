@@ -45,8 +45,8 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * @see: <gx:TourPrimitive>
  * 
  * Contains: 
- * @see: <gx:duration>
  * @see: <Update>
+ * @see: <gx:duration>
  * 
  * 
  * 
@@ -63,22 +63,21 @@ public class AnimatedUpdate
     /**
      * <gx:duration>
      * <p>
-     * <gx:duration> extends gx:TourPrimitive by specifying a time-span for events. The 
-     * time is written as seconds using XML's double datatype. 
-     * </p>
-     * <p>
-     * Duration and <gx:FlyTo> 
-     * </p>
-     * <p>
-     * When a duration is included within a <gx:FlyTo> element, it specifies the length 
-     * of time that the browser takes to fly from the previous point to the specified point. 
+     * <gx:AnimatedUpdate> <gx:duration>5.0</gx:duration> <Update> .... </Update> </gx:AnimatedUpdate> 
      * </p>
      * <p>
      * <gx:FlyTo> <gx:flyToMode>bounce</gx:flyToMode> <gx:duration>10.2</gx:duration> <!-- 
      * AbstractView --> ... <!-- /AbstractView --> </gx:FlyTo> 
      * </p>
      * <p>
+     * <gx:duration> extends gx:TourPrimitive by specifying a time-span for events. The 
+     * time is written as seconds using XML's double datatype. 
+     * </p>
+     * <p>
      * Duration and <gx:AnimatedUpdate> 
+     * </p>
+     * <p>
+     * Duration and <gx:FlyTo> 
      * </p>
      * <p>
      * Specifies the length of time over which the update takes place. Integer, float, 
@@ -87,7 +86,8 @@ public class AnimatedUpdate
      * the end of the duration. 
      * </p>
      * <p>
-     * <gx:AnimatedUpdate> <gx:duration>5.0</gx:duration> <Update> .... </Update> </gx:AnimatedUpdate> 
+     * When a duration is included within a <gx:FlyTo> element, it specifies the length 
+     * of time that the browser takes to fly from the previous point to the specified point. 
      * </p>
      * 
      * Syntax: 
@@ -98,14 +98,9 @@ public class AnimatedUpdate
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double duration = 0.0D;
+    protected double duration;
     /**
      * <Update>
-     * <p>
-     * With <Update>, you can specify any number of Change, Create, and Delete tags for 
-     * a .kml file or .kmz archive that has previously been loaded with a network link. 
-     * See <Update>. 
-     * </p>
      * <p>
      * Specifies an addition, change, or deletion to KML data that has already been loaded 
      * using the specified URL. The <targetHref> specifies the .kml or .kmz file whose 
@@ -113,6 +108,11 @@ public class AnimatedUpdate
      * NetworkLinkControl. Furthermore, the file containing the NetworkLinkControl must 
      * have been loaded by a NetworkLink. See the "Topics in KML" page on Updates for a 
      * detailed example of how Update works. 
+     * </p>
+     * <p>
+     * With <Update>, you can specify any number of Change, Create, and Delete tags for 
+     * a .kml file or .kmz archive that has previously been loaded with a network link. 
+     * See <Update>. 
      * </p>
      * 
      * Syntax: 
@@ -139,6 +139,7 @@ public class AnimatedUpdate
     }
 
     /**
+     * @see duration
      * 
      * @return
      *     possible object is
@@ -150,6 +151,7 @@ public class AnimatedUpdate
     }
 
     /**
+     * @see duration
      * 
      * @param value
      *     allowed object is
@@ -161,6 +163,7 @@ public class AnimatedUpdate
     }
 
     /**
+     * @see update
      * 
      * @return
      *     possible object is
@@ -172,6 +175,7 @@ public class AnimatedUpdate
     }
 
     /**
+     * @see update
      * 
      * @param value
      *     allowed object is

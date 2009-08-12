@@ -15,17 +15,17 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <Update>
  * <p>
- * With <Update>, you can specify any number of Change, Create, and Delete tags for 
- * a .kml file or .kmz archive that has previously been loaded with a network link. 
- * See <Update>. 
- * </p>
- * <p>
  * Specifies an addition, change, or deletion to KML data that has already been loaded 
  * using the specified URL. The <targetHref> specifies the .kml or .kmz file whose 
  * data (within Google Earth) is to be modified. <Update> is always contained in a 
  * NetworkLinkControl. Furthermore, the file containing the NetworkLinkControl must 
  * have been loaded by a NetworkLink. See the "Topics in KML" page on Updates for a 
  * detailed example of how Update works. 
+ * </p>
+ * <p>
+ * With <Update>, you can specify any number of Change, Create, and Delete tags for 
+ * a .kml file or .kmz archive that has previously been loaded with a network link. 
+ * See <Update>. 
  * </p>
  * 
  * Syntax: 
@@ -56,15 +56,15 @@ public class Update {
     /**
      * <targethref> (required)
      * <p>
-     * Specifies the texture file to be fetched by Google Earth. This reference can be 
-     * a relative reference to an image file within the .kmz archive, or it can be an absolute 
-     * reference to the file (for example, a URL). 
-     * </p>
-     * <p>
      * A URL that specifies the .kml or .kmz file whose data (within Google Earth) is to 
      * be modified by an <Update> element. This KML file must already have been loaded 
      * via a <NetworkLink>. In that file, the element to be modified must already have 
      * an explicit id attribute defined for it. 
+     * </p>
+     * <p>
+     * Specifies the texture file to be fetched by Google Earth. This reference can be 
+     * a relative reference to an image file within the .kmz archive, or it can be an absolute 
+     * reference to the file (for example, a URL). 
      * </p>
      * 
      * 
@@ -74,10 +74,10 @@ public class Update {
     @XmlSchemaType(name = "anyURI")
     protected String targetHref;
     @XmlElements({
+        @XmlElement(name = "Create", type = Create.class),
         @XmlElement(name = "Delete", type = Delete.class),
         @XmlElement(name = "UpdateOpExtensionGroup"),
-        @XmlElement(name = "Change", type = Change.class),
-        @XmlElement(name = "Create", type = Create.class)
+        @XmlElement(name = "Change", type = Change.class)
     })
     protected List<Object> createOrDeleteOrChange;
     @XmlElement(name = "UpdateExtensionGroup")
@@ -107,6 +107,7 @@ public class Update {
     }
 
     /**
+     * @see targetHref
      * 
      * @return
      *     possible object is
@@ -118,6 +119,7 @@ public class Update {
     }
 
     /**
+     * @see targetHref
      * 
      * @param value
      *     allowed object is
@@ -129,6 +131,7 @@ public class Update {
     }
 
     /**
+     * @see createOrDeleteOrChange
      * 
      */
     public List<Object> getCreateOrDeleteOrChange() {
@@ -139,6 +142,7 @@ public class Update {
     }
 
     /**
+     * @see updateExtension
      * 
      */
     public List<Object> getUpdateExtension() {
@@ -201,10 +205,7 @@ public class Update {
     }
 
     /**
-     * Sets the value of the createOrDeleteOrChange property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withCreateOrDeleteOrChange} instead.
-     * 
+     * @see createOrDeleteOrChange
      * 
      * @param createOrDeleteOrChange
      */
@@ -216,7 +217,7 @@ public class Update {
      * add a value to the createOrDeleteOrChange property collection
      * 
      * @param createOrDeleteOrChange
-     *     Objects of the following type are allowed in the list: {@link Delete}{@link Object}{@link Change}{@link Create}
+     *     Objects of the following type are allowed in the list: {@link Create}{@link Delete}{@link Object}{@link Change}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -226,10 +227,7 @@ public class Update {
     }
 
     /**
-     * Sets the value of the updateExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withUpdateExtension} instead.
-     * 
+     * @see updateExtension
      * 
      * @param updateExtension
      */

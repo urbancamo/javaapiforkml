@@ -15,10 +15,6 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 /**
  * <Region>
  * <p>
- * Features and geometry associated with a Region are drawn only when the Region is 
- * active. See <Region>. 
- * </p>
- * <p>
  * A region contains a bounding box (<LatLonAltBox>) that describes an area of interest 
  * defined by geographic coordinates and altitudes. In addition, a Region contains 
  * an LOD (level of detail) extent (<Lod>) that defines a validity range of the associated 
@@ -29,6 +25,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * "Topics in KML" page on Regions for more details. In a Container or NetworkLink 
  * hierarchy, this calculation uses the Region that is the closest ancestor in the 
  * hierarchy. 
+ * </p>
+ * <p>
+ * Features and geometry associated with a Region are drawn only when the Region is 
+ * active. See <Region>. 
  * </p>
  * 
  * Syntax: 
@@ -140,6 +140,7 @@ public class Region
     }
 
     /**
+     * @see latLonAltBox
      * 
      * @return
      *     possible object is
@@ -151,6 +152,7 @@ public class Region
     }
 
     /**
+     * @see latLonAltBox
      * 
      * @param value
      *     allowed object is
@@ -162,6 +164,7 @@ public class Region
     }
 
     /**
+     * @see lod
      * 
      * @return
      *     possible object is
@@ -173,6 +176,7 @@ public class Region
     }
 
     /**
+     * @see lod
      * 
      * @param value
      *     allowed object is
@@ -184,6 +188,7 @@ public class Region
     }
 
     /**
+     * @see regionSimpleExtension
      * 
      */
     public List<Object> getRegionSimpleExtension() {
@@ -194,6 +199,7 @@ public class Region
     }
 
     /**
+     * @see regionObjectExtension
      * 
      */
     public List<AbstractObject> getRegionObjectExtension() {
@@ -301,10 +307,7 @@ public class Region
     }
 
     /**
-     * Sets the value of the regionSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withRegionSimpleExtension} instead.
-     * 
+     * @see regionSimpleExtension
      * 
      * @param regionSimpleExtension
      */
@@ -326,10 +329,7 @@ public class Region
     }
 
     /**
-     * Sets the value of the regionObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withRegionObjectExtension} instead.
-     * 
+     * @see regionObjectExtension
      * 
      * @param regionObjectExtension
      */
@@ -350,6 +350,10 @@ public class Region
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

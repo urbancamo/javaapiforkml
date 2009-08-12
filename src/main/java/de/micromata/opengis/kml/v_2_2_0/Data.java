@@ -50,9 +50,6 @@ public class Data
     /**
      * <value>
      * <p>
-     * Value of the data pair. 
-     * </p>
-     * <p>
      * <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value> 
      * </Data> <Data name="holeYardage"> <value>234</value> </Data> <Data name="holePar"> 
      * <value>4</value> </Data> </ExtendedData> </Placemark> 
@@ -62,6 +59,9 @@ public class Data
      * <value> Value of the data pair. <Placemark> <name>Club house</name> <ExtendedData> 
      * <Data name="holeNumber"> <value>1</value> </Data> <Data name="holeYardage"> <value>234</value> 
      * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * </p>
+     * <p>
+     * Value of the data pair. 
      * </p>
      * 
      * 
@@ -105,6 +105,7 @@ public class Data
     }
 
     /**
+     * @see displayName
      * 
      * @return
      *     possible object is
@@ -116,6 +117,7 @@ public class Data
     }
 
     /**
+     * @see displayName
      * 
      * @param value
      *     allowed object is
@@ -127,6 +129,7 @@ public class Data
     }
 
     /**
+     * @see value
      * 
      * @return
      *     possible object is
@@ -138,6 +141,7 @@ public class Data
     }
 
     /**
+     * @see value
      * 
      * @param value
      *     allowed object is
@@ -149,6 +153,7 @@ public class Data
     }
 
     /**
+     * @see dataExtension
      * 
      */
     public List<Object> getDataExtension() {
@@ -159,6 +164,7 @@ public class Data
     }
 
     /**
+     * @see name
      * 
      * @return
      *     possible object is
@@ -170,6 +176,7 @@ public class Data
     }
 
     /**
+     * @see name
      * 
      * @param value
      *     allowed object is
@@ -246,10 +253,7 @@ public class Data
     }
 
     /**
-     * Sets the value of the dataExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withDataExtension} instead.
-     * 
+     * @see dataExtension
      * 
      * @param dataExtension
      */
@@ -270,6 +274,10 @@ public class Data
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

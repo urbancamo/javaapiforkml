@@ -23,12 +23,12 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * page on Regions for more detail. 
  * </p>
  * <p>
- * Google Earth supports the COLLADA common profile, with the following exceptions: 
- * </p>
- * <p>
  * Google Earth supports only triangles and lines as primitive types. The maximum number 
  * of triangles allowed is 21845. Google Earth does not support animation or skinning. 
  * Google Earth does not support external geometry references. 
+ * </p>
+ * <p>
+ * Google Earth supports the COLLADA common profile, with the following exceptions: 
  * </p>
  * 
  * Syntax: 
@@ -132,10 +132,10 @@ public class Model
     /**
      * <scale>
      * <p>
-     * Resizes the icon. 
+     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
      * </p>
      * <p>
-     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
+     * Resizes the icon. 
      * </p>
      * <p>
      * Scales a model along the x, y, and z axes in the model's coordinate space. <Scale> 
@@ -150,16 +150,29 @@ public class Model
     /**
      * <link> (required). see <link>.
      * <p>
+     * <Link> specifies the location of any of the following: 
+     * </p>
+     * <p>
+     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
+     * elements are not used. 
+     * </p>
+     * <p>
+     * KML files fetched by network links Image files used in any Overlay (the <Icon> element 
+     * specifies the image in an Overlay; <Icon> has the same fields as <Link>) Model files 
+     * used in the <Model> element 
+     * </p>
+     * <p>
      * Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
      * the namespace for this element in any KML file that uses it: xmlns:atom="http://www.w3.org/2005/Atom" 
      * (see the sample that follows). 
      * </p>
      * <p>
-     * <Link> specifies the location of any of the following: 
+     * Specifies the file to load and optional refresh parameters. See <Link>. 
      * </p>
      * <p>
-     * KML files fetched by network links Image files used in any Overlay Model files used 
-     * in the <Model> element 
+     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
+     * KML releases and adds functionality for the <Region> element (introduced in KML 
+     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
      * </p>
      * <p>
      * The file is conditionally loaded and refreshed, depending on the refresh parameters 
@@ -172,6 +185,11 @@ public class Model
      * information. 
      * </p>
      * <p>
+     * Tip: To display the top-level Folder or Document within a Network Link in the List 
+     * View, assign an ID to the Folder or Document. Without this ID, only the child object 
+     * names are displayed in the List View. 
+     * </p>
+     * <p>
      * When a file is fetched, the URL that is sent to the server is composed of three 
      * pieces of information: 
      * </p>
@@ -181,23 +199,6 @@ public class Model
      * element or (b) bounding box parameters (this is the default and is used if no <viewFormat> 
      * element is included in the file). a second format string that is specified in the 
      * <httpQuery> element. 
-     * </p>
-     * <p>
-     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
-     * elements are not used. 
-     * </p>
-     * <p>
-     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
-     * KML releases and adds functionality for the <Region> element (introduced in KML 
-     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
-     * </p>
-     * <p>
-     * Specifies the file to load and optional refresh parameters. See <Link>. 
-     * </p>
-     * <p>
-     * Tip: To display the top-level Folder or Document within a Network Link in the List 
-     * View, assign an ID to the Folder or Document. Without this ID, only the child object 
-     * names are displayed in the List View. 
      * </p>
      * 
      * Syntax: 
@@ -268,12 +269,13 @@ public class Model
     }
 
     /**
+     * @see altitudeMode
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -281,12 +283,13 @@ public class Model
     }
 
     /**
+     * @see altitudeMode
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -294,6 +297,7 @@ public class Model
     }
 
     /**
+     * @see location
      * 
      * @return
      *     possible object is
@@ -305,6 +309,7 @@ public class Model
     }
 
     /**
+     * @see location
      * 
      * @param value
      *     allowed object is
@@ -316,6 +321,7 @@ public class Model
     }
 
     /**
+     * @see orientation
      * 
      * @return
      *     possible object is
@@ -327,6 +333,7 @@ public class Model
     }
 
     /**
+     * @see orientation
      * 
      * @param value
      *     allowed object is
@@ -338,6 +345,7 @@ public class Model
     }
 
     /**
+     * @see scale
      * 
      * @return
      *     possible object is
@@ -349,6 +357,7 @@ public class Model
     }
 
     /**
+     * @see scale
      * 
      * @param value
      *     allowed object is
@@ -360,6 +369,7 @@ public class Model
     }
 
     /**
+     * @see link
      * 
      * @return
      *     possible object is
@@ -371,6 +381,7 @@ public class Model
     }
 
     /**
+     * @see link
      * 
      * @param value
      *     allowed object is
@@ -382,6 +393,7 @@ public class Model
     }
 
     /**
+     * @see resourceMap
      * 
      * @return
      *     possible object is
@@ -393,6 +405,7 @@ public class Model
     }
 
     /**
+     * @see resourceMap
      * 
      * @param value
      *     allowed object is
@@ -404,6 +417,7 @@ public class Model
     }
 
     /**
+     * @see modelSimpleExtension
      * 
      */
     public List<Object> getModelSimpleExtension() {
@@ -414,6 +428,7 @@ public class Model
     }
 
     /**
+     * @see modelObjectExtension
      * 
      */
     public List<AbstractObject> getModelObjectExtension() {
@@ -609,10 +624,7 @@ public class Model
     }
 
     /**
-     * Sets the value of the modelSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withModelSimpleExtension} instead.
-     * 
+     * @see modelSimpleExtension
      * 
      * @param modelSimpleExtension
      */
@@ -634,10 +646,7 @@ public class Model
     }
 
     /**
-     * Sets the value of the modelObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withModelObjectExtension} instead.
-     * 
+     * @see modelObjectExtension
      * 
      * @param modelObjectExtension
      */
@@ -658,6 +667,10 @@ public class Model
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -671,6 +684,10 @@ public class Model
         return this;
     }
 
+    /**
+     * @see geometrySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometrySimpleExtension(final List<Object> geometrySimpleExtension) {
@@ -684,6 +701,10 @@ public class Model
         return this;
     }
 
+    /**
+     * @see geometryObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {

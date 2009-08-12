@@ -15,17 +15,17 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 /**
  * <itemicon>
  * <p>
+ * <state> Specifies the current state of the NetworkLink or Folder. Possible values 
+ * are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
+ * combined by inserting a space between two values (no comma). <href> Specifies the 
+ * URI of the image used in the List View for the Feature. 
+ * </p>
+ * <p>
  * Icon used in the List view that reflects the state of a Folder or Link fetch. Icons 
  * associated with the open and closed modes are used for Folders and Network Links. 
  * Icons associated with the error and fetching0, fetching1, and fetching2 modes are 
  * used for Network Links. The following screen capture illustrates the Google Earth 
  * icons for these states: 
- * </p>
- * <p>
- * <state> Specifies the current state of the NetworkLink or Folder. Possible values 
- * are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
- * combined by inserting a space between two values (no comma). <href> Specifies the 
- * URI of the image used in the List View for the Feature. 
  * </p>
  * 
  * 
@@ -58,14 +58,14 @@ public class ItemIcon
     /**
      * <href>
      * <p>
-     * An HTTP address or a local file specification used to load an icon. 
-     * </p>
-     * <p>
      * A URL (either an HTTP address or a local file specification). When the parent of 
      * <Link> is a NetworkLink, <href> is a KML file. When the parent of <Link> is a Model, 
-     * <href> is a COLLADA file. When the parent of <Link> is an Overlay, <href> is an 
-     * image. Relative URLs can be used in this tag and are evaluated relative to the enclosing 
-     * KML file. 
+     * <href> is a COLLADA file. When the parent of <Icon> (same fields as <Link>) is an 
+     * Overlay, <href> is an image. Relative URLs can be used in this tag and are evaluated 
+     * relative to the enclosing KML file. 
+     * </p>
+     * <p>
+     * An HTTP address or a local file specification used to load an icon. 
      * </p>
      * <p>
      * Specifies the URI of the image used in the List View for the Feature. 
@@ -104,6 +104,7 @@ public class ItemIcon
     }
 
     /**
+     * @see state
      * 
      */
     public List<ItemIconState> getState() {
@@ -114,6 +115,7 @@ public class ItemIcon
     }
 
     /**
+     * @see href
      * 
      * @return
      *     possible object is
@@ -125,6 +127,7 @@ public class ItemIcon
     }
 
     /**
+     * @see href
      * 
      * @param value
      *     allowed object is
@@ -136,6 +139,7 @@ public class ItemIcon
     }
 
     /**
+     * @see itemIconSimpleExtension
      * 
      */
     public List<Object> getItemIconSimpleExtension() {
@@ -146,6 +150,7 @@ public class ItemIcon
     }
 
     /**
+     * @see itemIconObjectExtension
      * 
      */
     public List<AbstractObject> getItemIconObjectExtension() {
@@ -221,10 +226,7 @@ public class ItemIcon
     }
 
     /**
-     * Sets the value of the state property Objects of the following type(s) are allowed in the list List<ItemIconState>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withState} instead.
-     * 
+     * @see state
      * 
      * @param state
      */
@@ -246,10 +248,7 @@ public class ItemIcon
     }
 
     /**
-     * Sets the value of the itemIconSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withItemIconSimpleExtension} instead.
-     * 
+     * @see itemIconSimpleExtension
      * 
      * @param itemIconSimpleExtension
      */
@@ -271,10 +270,7 @@ public class ItemIcon
     }
 
     /**
-     * Sets the value of the itemIconObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withItemIconObjectExtension} instead.
-     * 
+     * @see itemIconObjectExtension
      * 
      * @param itemIconObjectExtension
      */
@@ -295,6 +291,10 @@ public class ItemIcon
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

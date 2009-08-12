@@ -108,9 +108,9 @@ public class Folder
      * 
      * Extended By: 
      * @see: <Container>
+     * @see: <NetworkLink>
      * @see: <Overlay>
      * @see: <Placemark>
-     * @see: <NetworkLink>
      * @see: <gx:Tour>
      * 
      * 
@@ -147,6 +147,7 @@ public class Folder
     }
 
     /**
+     * @see feature
      * 
      */
     public List<Feature> getFeature() {
@@ -157,6 +158,7 @@ public class Folder
     }
 
     /**
+     * @see folderSimpleExtension
      * 
      */
     public List<Object> getFolderSimpleExtension() {
@@ -167,6 +169,7 @@ public class Folder
     }
 
     /**
+     * @see folderObjectExtension
      * 
      */
     public List<AbstractObject> getFolderObjectExtension() {
@@ -352,10 +355,7 @@ public class Folder
     }
 
     /**
-     * Sets the value of the feature property Objects of the following type(s) are allowed in the list List<Feature>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFeature} instead.
-     * 
+     * @see feature
      * 
      * @param feature
      */
@@ -367,7 +367,7 @@ public class Folder
      * add a value to the feature property collection
      * 
      * @param feature
-     *     Objects of the following type are allowed in the list: {@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -377,10 +377,7 @@ public class Folder
     }
 
     /**
-     * Sets the value of the folderSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFolderSimpleExtension} instead.
-     * 
+     * @see folderSimpleExtension
      * 
      * @param folderSimpleExtension
      */
@@ -402,10 +399,7 @@ public class Folder
     }
 
     /**
-     * Sets the value of the folderObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFolderObjectExtension} instead.
-     * 
+     * @see folderObjectExtension
      * 
      * @param folderObjectExtension
      */
@@ -426,6 +420,10 @@ public class Folder
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -439,6 +437,10 @@ public class Folder
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -452,6 +454,10 @@ public class Folder
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -465,6 +471,10 @@ public class Folder
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
@@ -478,6 +488,10 @@ public class Folder
         return this;
     }
 
+    /**
+     * @see containerSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setContainerSimpleExtension(final List<Object> containerSimpleExtension) {
@@ -491,6 +505,10 @@ public class Folder
         return this;
     }
 
+    /**
+     * @see containerObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setContainerObjectExtension(final List<AbstractObject> containerObjectExtension) {

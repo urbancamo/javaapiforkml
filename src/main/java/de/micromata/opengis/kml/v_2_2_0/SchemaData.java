@@ -15,12 +15,6 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 /**
  * <schemadata schemaurl="anyuri">
  * <p>
- * This element is used in conjunction with <Schema> to add typed custom data to a 
- * KML Feature. The Schema element (identified by the schemaUrl attribute) declares 
- * the custom data type. The actual data objects ("instances" of the custom data) are 
- * defined using the SchemaData element. 
- * </p>
- * <p>
  * The <schemaURL> can be a full URL, a reference to a Schema ID defined in an external 
  * KML file, or a reference to a Schema ID defined in the same KML file. All of the 
  * following specifications are acceptable: 
@@ -28,6 +22,12 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <p>
  * The Schema element is always a child of Document. The ExtendedData element is a 
  * child of the Feature that contains the custom data. 
+ * </p>
+ * <p>
+ * This element is used in conjunction with <Schema> to add typed custom data to a 
+ * KML Feature. The Schema element (identified by the schemaUrl attribute) declares 
+ * the custom data type. The actual data objects ("instances" of the custom data) are 
+ * defined using the SchemaData element. 
  * </p>
  * 
  * 
@@ -45,13 +45,6 @@ public class SchemaData
     /**
      * <simpledata name="string">
      * <p>
-     * This element assigns a value to the custom data field identified by the name attribute. 
-     * The type and name of this custom data field are declared in the <Schema> element. 
-     * </p>
-     * <p>
-     * Here is an example of defining two custom data elements: 
-     * </p>
-     * <p>
      * <SimpleData name="string"> This element assigns a value to the custom data field 
      * identified by the name attribute. The type and name of this custom data field are 
      * declared in the <Schema> element. Here is an example of defining two custom data 
@@ -63,6 +56,13 @@ public class SchemaData
      * name="TrailHeadName">Mount Everest</SimpleData> <SimpleData name="TrailLength">347.45</SimpleData> 
      * <SimpleData name="ElevationGain">10000</SimpleData> </SchemaData> </ExtendedData> 
      * <Point> <coordinates>-122.000,37.002</coordinates> </Point> </Placemark> 
+     * </p>
+     * <p>
+     * Here is an example of defining two custom data elements: 
+     * </p>
+     * <p>
+     * This element assigns a value to the custom data field identified by the name attribute. 
+     * The type and name of this custom data field are declared in the <Schema> element. 
      * </p>
      * 
      * 
@@ -81,6 +81,7 @@ public class SchemaData
     }
 
     /**
+     * @see simpleData
      * 
      */
     public List<SimpleData> getSimpleData() {
@@ -91,6 +92,7 @@ public class SchemaData
     }
 
     /**
+     * @see schemaDataExtension
      * 
      */
     public List<Object> getSchemaDataExtension() {
@@ -101,6 +103,7 @@ public class SchemaData
     }
 
     /**
+     * @see schemaUrl
      * 
      * @return
      *     possible object is
@@ -112,6 +115,7 @@ public class SchemaData
     }
 
     /**
+     * @see schemaUrl
      * 
      * @param value
      *     allowed object is
@@ -195,10 +199,7 @@ public class SchemaData
     }
 
     /**
-     * Sets the value of the simpleData property Objects of the following type(s) are allowed in the list List<SimpleData>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSimpleData} instead.
-     * 
+     * @see simpleData
      * 
      * @param simpleData
      */
@@ -220,10 +221,7 @@ public class SchemaData
     }
 
     /**
-     * Sets the value of the schemaDataExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSchemaDataExtension} instead.
-     * 
+     * @see schemaDataExtension
      * 
      * @param schemaDataExtension
      */
@@ -244,6 +242,10 @@ public class SchemaData
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

@@ -19,15 +19,15 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 /**
  * <Point>
  * <p>
- * The <Point> element acts as a <Point> inside a <Placemark> element. It draws an 
- * icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
- * <styleUrl> and <StyleSelector> fields, just as it is for <Placemark>. 
- * </p>
- * <p>
  * A geographic location defined by longitude, latitude, and (optional) altitude. When 
  * a Point is contained by a Placemark, the point itself determines the position of 
  * the Placemark's name and icon. When a Point is extruded, it is connected to the 
  * ground with a line. This "tether" uses the current LineStyle. 
+ * </p>
+ * <p>
+ * The <Point> element acts as a <Point> inside a <Placemark> element. It draws an 
+ * icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
+ * <styleUrl> and <StyleSelector> fields, just as it is for <Placemark>. 
  * </p>
  * 
  * Syntax: 
@@ -66,22 +66,16 @@ public class Point
     /**
      * <extrude>
      * <p>
-     * Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
-     * this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
-     * or absolute. Only the vertices of the LinearRing are extruded, not the center of 
-     * the geometry. The vertices are extruded toward the center of the Earth's sphere. 
-     * </p>
-     * <p>
      * Boolean value. Specifies whether to connect the LineString to the ground. To extrude 
      * a LineString, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
      * or absolute. The vertices in the LineString are extruded toward the center of the 
      * Earth's sphere. 
      * </p>
      * <p>
-     * Boolean value. Specifies whether to connect the point to the ground with a line. 
-     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
-     * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
-     * Earth's sphere. 
+     * Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
+     * this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
+     * or absolute. Only the vertices of the LinearRing are extruded, not the center of 
+     * the geometry. The vertices are extruded toward the center of the Earth's sphere. 
      * </p>
      * <p>
      * Boolean value. Specifies whether to connect the Polygon to the ground. To extrude 
@@ -90,12 +84,18 @@ public class Point
      * a rectangle turns into a box with five faces. The vertices of the Polygon are extruded 
      * toward the center of the Earth's sphere. 
      * </p>
+     * <p>
+     * Boolean value. Specifies whether to connect the point to the ground with a line. 
+     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
+     * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
+     * Earth's sphere. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean extrude = false;
+    protected Boolean extrude;
     /**
      * AltitudeMode
      * <p>
@@ -113,11 +113,6 @@ public class Point
     /**
      * <coordinates> (required)
      * <p>
-     * Two or more coordinate tuples, each consisting of floating point values for longitude, 
-     * latitude, and altitude. The altitude component is optional. Insert a space between 
-     * tuples. Do not include spaces within a tuple. 
-     * </p>
-     * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
      * ³ ?180 and <= 180 latitude ³ ?90 and ² 90 altitude values (optional) are in meters 
@@ -125,6 +120,11 @@ public class Point
      * </p>
      * <p>
      * Do not include spaces between the three values that describe a coordinate. 
+     * </p>
+     * <p>
+     * Two or more coordinate tuples, each consisting of floating point values for longitude, 
+     * latitude, and altitude. The altitude component is optional. Insert a space between 
+     * tuples. Do not include spaces within a tuple. 
      * </p>
      * 
      * 
@@ -163,6 +163,7 @@ public class Point
     }
 
     /**
+     * @see xtrude
      * 
      * @return
      *     possible object is
@@ -174,6 +175,7 @@ public class Point
     }
 
     /**
+     * @see extrude
      * 
      * @param value
      *     allowed object is
@@ -185,12 +187,13 @@ public class Point
     }
 
     /**
+     * @see altitudeMode
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -198,12 +201,13 @@ public class Point
     }
 
     /**
+     * @see altitudeMode
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -211,6 +215,7 @@ public class Point
     }
 
     /**
+     * @see pointSimpleExtension
      * 
      */
     public List<Object> getPointSimpleExtension() {
@@ -221,6 +226,7 @@ public class Point
     }
 
     /**
+     * @see pointObjectExtension
      * 
      */
     public List<AbstractObject> getPointObjectExtension() {
@@ -230,6 +236,10 @@ public class Point
         return this.pointObjectExtension;
     }
 
+    /**
+     * @see coordinates
+     * 
+     */
     public List<Coordinate> getCoordinates() {
         if (coordinates == null) {
             coordinates = new ArrayList<Coordinate>();
@@ -313,10 +323,7 @@ public class Point
     }
 
     /**
-     * Sets the value of the coordinates property Objects of the following type(s) are allowed in the list List<Coordinate>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withCoordinates} instead.
-     * 
+     * @see coordinates
      * 
      * @param coordinates
      */
@@ -370,10 +377,7 @@ public class Point
     }
 
     /**
-     * Sets the value of the pointSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPointSimpleExtension} instead.
-     * 
+     * @see pointSimpleExtension
      * 
      * @param pointSimpleExtension
      */
@@ -395,10 +399,7 @@ public class Point
     }
 
     /**
-     * Sets the value of the pointObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPointObjectExtension} instead.
-     * 
+     * @see pointObjectExtension
      * 
      * @param pointObjectExtension
      */
@@ -419,6 +420,10 @@ public class Point
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -432,6 +437,10 @@ public class Point
         return this;
     }
 
+    /**
+     * @see geometrySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometrySimpleExtension(final List<Object> geometrySimpleExtension) {
@@ -445,6 +454,10 @@ public class Point
         return this;
     }
 
+    /**
+     * @see geometryObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {

@@ -48,7 +48,7 @@ public class ViewVolume
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double leftFov = 0.0D;
+    protected double leftFov;
     /**
      * <rightfov>
      * <p>
@@ -60,7 +60,7 @@ public class ViewVolume
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double rightFov = 0.0D;
+    protected double rightFov;
     /**
      * <bottomfov>
      * <p>
@@ -72,7 +72,7 @@ public class ViewVolume
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double bottomFov = 0.0D;
+    protected double bottomFov;
     /**
      * <topfov>
      * <p>
@@ -84,13 +84,9 @@ public class ViewVolume
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double topFov = 0.0D;
+    protected double topFov;
     /**
      * <near>
-     * <p>
-     * Measurement in meters along the viewing direction from the camera viewpoint to the 
-     * PhotoOverlay shape. 
-     * </p>
      * <p>
      * <leftFov> Angle, in degrees, between the camera's viewing direction and the left 
      * side of the view volume. <rightFov> Angle, in degrees, between the camera's viewing 
@@ -99,6 +95,10 @@ public class ViewVolume
      * Angle, in degrees, between the camera's viewing direction and the top side of the 
      * view volume. <near> Measurement in meters along the viewing direction from the camera 
      * viewpoint to the PhotoOverlay shape. 
+     * </p>
+     * <p>
+     * Measurement in meters along the viewing direction from the camera viewpoint to the 
+     * PhotoOverlay shape. 
      * </p>
      * <p>
      * The field of view for a PhotoOverlay is defined by four planes, each of which is 
@@ -117,7 +117,7 @@ public class ViewVolume
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double near = 0.0D;
+    protected double near;
     @XmlElement(name = "ViewVolumeSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> viewVolumeSimpleExtension;
@@ -147,6 +147,7 @@ public class ViewVolume
     }
 
     /**
+     * @see leftFov
      * 
      * @return
      *     possible object is
@@ -158,6 +159,7 @@ public class ViewVolume
     }
 
     /**
+     * @see leftFov
      * 
      * @param value
      *     allowed object is
@@ -169,6 +171,7 @@ public class ViewVolume
     }
 
     /**
+     * @see rightFov
      * 
      * @return
      *     possible object is
@@ -180,6 +183,7 @@ public class ViewVolume
     }
 
     /**
+     * @see rightFov
      * 
      * @param value
      *     allowed object is
@@ -191,6 +195,7 @@ public class ViewVolume
     }
 
     /**
+     * @see bottomFov
      * 
      * @return
      *     possible object is
@@ -202,6 +207,7 @@ public class ViewVolume
     }
 
     /**
+     * @see bottomFov
      * 
      * @param value
      *     allowed object is
@@ -213,6 +219,7 @@ public class ViewVolume
     }
 
     /**
+     * @see topFov
      * 
      * @return
      *     possible object is
@@ -224,6 +231,7 @@ public class ViewVolume
     }
 
     /**
+     * @see topFov
      * 
      * @param value
      *     allowed object is
@@ -235,6 +243,7 @@ public class ViewVolume
     }
 
     /**
+     * @see near
      * 
      * @return
      *     possible object is
@@ -246,6 +255,7 @@ public class ViewVolume
     }
 
     /**
+     * @see near
      * 
      * @param value
      *     allowed object is
@@ -257,6 +267,7 @@ public class ViewVolume
     }
 
     /**
+     * @see viewVolumeSimpleExtension
      * 
      */
     public List<Object> getViewVolumeSimpleExtension() {
@@ -267,6 +278,7 @@ public class ViewVolume
     }
 
     /**
+     * @see viewVolumeObjectExtension
      * 
      */
     public List<AbstractObject> getViewVolumeObjectExtension() {
@@ -348,10 +360,7 @@ public class ViewVolume
     }
 
     /**
-     * Sets the value of the viewVolumeSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withViewVolumeSimpleExtension} instead.
-     * 
+     * @see viewVolumeSimpleExtension
      * 
      * @param viewVolumeSimpleExtension
      */
@@ -373,10 +382,7 @@ public class ViewVolume
     }
 
     /**
-     * Sets the value of the viewVolumeObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withViewVolumeObjectExtension} instead.
-     * 
+     * @see viewVolumeObjectExtension
      * 
      * @param viewVolumeObjectExtension
      */
@@ -397,6 +403,10 @@ public class ViewVolume
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

@@ -98,6 +98,7 @@ public abstract class Container
     }
 
     /**
+     * @see containerSimpleExtension
      * 
      */
     public List<Object> getContainerSimpleExtension() {
@@ -108,6 +109,7 @@ public abstract class Container
     }
 
     /**
+     * @see containerObjectExtension
      * 
      */
     public List<AbstractObject> getContainerObjectExtension() {
@@ -163,10 +165,7 @@ public abstract class Container
     }
 
     /**
-     * Sets the value of the containerSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withContainerSimpleExtension} instead.
-     * 
+     * @see containerSimpleExtension
      * 
      * @param containerSimpleExtension
      */
@@ -188,10 +187,7 @@ public abstract class Container
     }
 
     /**
-     * Sets the value of the containerObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withContainerObjectExtension} instead.
-     * 
+     * @see containerObjectExtension
      * 
      * @param containerObjectExtension
      */
@@ -212,6 +208,10 @@ public abstract class Container
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -225,6 +225,10 @@ public abstract class Container
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -238,6 +242,10 @@ public abstract class Container
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -251,6 +259,10 @@ public abstract class Container
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {

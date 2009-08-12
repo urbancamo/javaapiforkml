@@ -67,12 +67,12 @@ public class MultiGeometry
      * @see: <Object>
      * 
      * Extended By: 
-     * @see: <Point>
      * @see: <LineString>
      * @see: <LinearRing>
-     * @see: Polygon
-     * @see: MultiGeometry
      * @see: <Model>
+     * @see: <Point>
+     * @see: MultiGeometry
+     * @see: Polygon
      * 
      * 
      * 
@@ -108,6 +108,7 @@ public class MultiGeometry
     }
 
     /**
+     * @see geometry
      * 
      */
     public List<Geometry> getGeometry() {
@@ -118,6 +119,7 @@ public class MultiGeometry
     }
 
     /**
+     * @see multiGeometrySimpleExtension
      * 
      */
     public List<Object> getMultiGeometrySimpleExtension() {
@@ -128,6 +130,7 @@ public class MultiGeometry
     }
 
     /**
+     * @see multiGeometryObjectExtension
      * 
      */
     public List<AbstractObject> getMultiGeometryObjectExtension() {
@@ -283,10 +286,7 @@ public class MultiGeometry
     }
 
     /**
-     * Sets the value of the geometry property Objects of the following type(s) are allowed in the list List<Geometry>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withGeometry} instead.
-     * 
+     * @see geometry
      * 
      * @param geometry
      */
@@ -298,7 +298,7 @@ public class MultiGeometry
      * add a value to the geometry property collection
      * 
      * @param geometry
-     *     Objects of the following type are allowed in the list: {@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link LineString}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link LineString}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -308,10 +308,7 @@ public class MultiGeometry
     }
 
     /**
-     * Sets the value of the multiGeometrySimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withMultiGeometrySimpleExtension} instead.
-     * 
+     * @see multiGeometrySimpleExtension
      * 
      * @param multiGeometrySimpleExtension
      */
@@ -333,10 +330,7 @@ public class MultiGeometry
     }
 
     /**
-     * Sets the value of the multiGeometryObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withMultiGeometryObjectExtension} instead.
-     * 
+     * @see multiGeometryObjectExtension
      * 
      * @param multiGeometryObjectExtension
      */
@@ -357,6 +351,10 @@ public class MultiGeometry
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -370,6 +368,10 @@ public class MultiGeometry
         return this;
     }
 
+    /**
+     * @see geometrySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometrySimpleExtension(final List<Object> geometrySimpleExtension) {
@@ -383,6 +385,10 @@ public class MultiGeometry
         return this;
     }
 
+    /**
+     * @see geometryObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {

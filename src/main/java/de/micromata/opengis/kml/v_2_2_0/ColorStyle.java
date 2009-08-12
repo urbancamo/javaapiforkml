@@ -98,7 +98,7 @@ public abstract class ColorStyle
      * 
      */
     @XmlElement(defaultValue = "normal")
-    protected ColorMode colorMode = ColorMode.NORMAL;
+    protected ColorMode colorMode;
     @XmlElement(name = "AbstractColorStyleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> colorStyleSimpleExtension;
@@ -128,6 +128,7 @@ public abstract class ColorStyle
     }
 
     /**
+     * @see color
      * 
      * @return
      *     possible object is
@@ -139,6 +140,7 @@ public abstract class ColorStyle
     }
 
     /**
+     * @see color
      * 
      * @param value
      *     allowed object is
@@ -150,6 +152,7 @@ public abstract class ColorStyle
     }
 
     /**
+     * @see colorMode
      * 
      * @return
      *     possible object is
@@ -161,6 +164,7 @@ public abstract class ColorStyle
     }
 
     /**
+     * @see colorMode
      * 
      * @param value
      *     allowed object is
@@ -172,6 +176,7 @@ public abstract class ColorStyle
     }
 
     /**
+     * @see colorStyleSimpleExtension
      * 
      */
     public List<Object> getColorStyleSimpleExtension() {
@@ -182,6 +187,7 @@ public abstract class ColorStyle
     }
 
     /**
+     * @see colorStyleObjectExtension
      * 
      */
     public List<AbstractObject> getColorStyleObjectExtension() {
@@ -257,10 +263,7 @@ public abstract class ColorStyle
     }
 
     /**
-     * Sets the value of the colorStyleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withColorStyleSimpleExtension} instead.
-     * 
+     * @see colorStyleSimpleExtension
      * 
      * @param colorStyleSimpleExtension
      */
@@ -282,10 +285,7 @@ public abstract class ColorStyle
     }
 
     /**
-     * Sets the value of the colorStyleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withColorStyleObjectExtension} instead.
-     * 
+     * @see colorStyleObjectExtension
      * 
      * @param colorStyleObjectExtension
      */
@@ -306,6 +306,10 @@ public abstract class ColorStyle
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -319,6 +323,10 @@ public abstract class ColorStyle
         return this;
     }
 
+    /**
+     * @see subStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
@@ -332,6 +340,10 @@ public abstract class ColorStyle
         return this;
     }
 
+    /**
+     * @see subStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {

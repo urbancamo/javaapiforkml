@@ -15,11 +15,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 /**
  * <LabelStyle>
  * <p>
- * Specifies how the <name> of a Feature is drawn in the 3D viewer. A custom color, 
- * color mode, and scale for the label (name) can be specified. 
+ * Note: The <labelColor> tag is deprecated. Use <LabelStyle> instead. 
  * </p>
  * <p>
- * Note: The <labelColor> tag is deprecated. Use <LabelStyle> instead. 
+ * Specifies how the <name> of a Feature is drawn in the 3D viewer. A custom color, 
+ * color mode, and scale for the label (name) can be specified. 
  * </p>
  * 
  * Syntax: 
@@ -55,10 +55,10 @@ public class LabelStyle
     /**
      * <scale>
      * <p>
-     * Resizes the icon. 
+     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
      * </p>
      * <p>
-     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
+     * Resizes the icon. 
      * </p>
      * <p>
      * Scales a model along the x, y, and z axes in the model's coordinate space. <Scale> 
@@ -69,7 +69,7 @@ public class LabelStyle
      * 
      */
     @XmlElement(defaultValue = "1.0")
-    protected double scale = 1.0D;
+    protected double scale;
     @XmlElement(name = "LabelStyleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> labelStyleSimpleExtension;
@@ -99,6 +99,7 @@ public class LabelStyle
     }
 
     /**
+     * @see scale
      * 
      * @return
      *     possible object is
@@ -110,6 +111,7 @@ public class LabelStyle
     }
 
     /**
+     * @see scale
      * 
      * @param value
      *     allowed object is
@@ -121,6 +123,7 @@ public class LabelStyle
     }
 
     /**
+     * @see labelStyleSimpleExtension
      * 
      */
     public List<Object> getLabelStyleSimpleExtension() {
@@ -131,6 +134,7 @@ public class LabelStyle
     }
 
     /**
+     * @see labelStyleObjectExtension
      * 
      */
     public List<AbstractObject> getLabelStyleObjectExtension() {
@@ -192,10 +196,7 @@ public class LabelStyle
     }
 
     /**
-     * Sets the value of the labelStyleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLabelStyleSimpleExtension} instead.
-     * 
+     * @see labelStyleSimpleExtension
      * 
      * @param labelStyleSimpleExtension
      */
@@ -217,10 +218,7 @@ public class LabelStyle
     }
 
     /**
-     * Sets the value of the labelStyleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLabelStyleObjectExtension} instead.
-     * 
+     * @see labelStyleObjectExtension
      * 
      * @param labelStyleObjectExtension
      */
@@ -241,6 +239,10 @@ public class LabelStyle
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -254,6 +256,10 @@ public class LabelStyle
         return this;
     }
 
+    /**
+     * @see subStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
@@ -267,6 +273,10 @@ public class LabelStyle
         return this;
     }
 
+    /**
+     * @see subStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
@@ -280,6 +290,10 @@ public class LabelStyle
         return this;
     }
 
+    /**
+     * @see colorStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleSimpleExtension(final List<Object> colorStyleSimpleExtension) {
@@ -293,6 +307,10 @@ public class LabelStyle
         return this;
     }
 
+    /**
+     * @see colorStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {

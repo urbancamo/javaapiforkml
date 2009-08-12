@@ -22,6 +22,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "basicLinkObjectExtension"
 })
 @XmlSeeAlso({
+    Icon.class,
     Link.class
 })
 public class BasicLink

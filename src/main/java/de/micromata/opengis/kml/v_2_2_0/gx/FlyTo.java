@@ -36,9 +36,9 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * @see: <gx:TourPrimitive>
  * 
  * Contains: 
+ * @see: <AbstractView>
  * @see: <gx:duration>
  * @see: <gx:flyToMode>
- * @see: <AbstractView>
  * 
  * 
  * 
@@ -56,22 +56,21 @@ public class FlyTo
     /**
      * <gx:duration>
      * <p>
-     * <gx:duration> extends gx:TourPrimitive by specifying a time-span for events. The 
-     * time is written as seconds using XML's double datatype. 
-     * </p>
-     * <p>
-     * Duration and <gx:FlyTo> 
-     * </p>
-     * <p>
-     * When a duration is included within a <gx:FlyTo> element, it specifies the length 
-     * of time that the browser takes to fly from the previous point to the specified point. 
+     * <gx:AnimatedUpdate> <gx:duration>5.0</gx:duration> <Update> .... </Update> </gx:AnimatedUpdate> 
      * </p>
      * <p>
      * <gx:FlyTo> <gx:flyToMode>bounce</gx:flyToMode> <gx:duration>10.2</gx:duration> <!-- 
      * AbstractView --> ... <!-- /AbstractView --> </gx:FlyTo> 
      * </p>
      * <p>
+     * <gx:duration> extends gx:TourPrimitive by specifying a time-span for events. The 
+     * time is written as seconds using XML's double datatype. 
+     * </p>
+     * <p>
      * Duration and <gx:AnimatedUpdate> 
+     * </p>
+     * <p>
+     * Duration and <gx:FlyTo> 
      * </p>
      * <p>
      * Specifies the length of time over which the update takes place. Integer, float, 
@@ -80,7 +79,8 @@ public class FlyTo
      * the end of the duration. 
      * </p>
      * <p>
-     * <gx:AnimatedUpdate> <gx:duration>5.0</gx:duration> <Update> .... </Update> </gx:AnimatedUpdate> 
+     * When a duration is included within a <gx:FlyTo> element, it specifies the length 
+     * of time that the browser takes to fly from the previous point to the specified point. 
      * </p>
      * 
      * Syntax: 
@@ -91,18 +91,18 @@ public class FlyTo
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double duration = 0.0D;
+    protected double duration;
     @XmlElement(defaultValue = "bounce")
-    protected FlyToMode flyToMode = FlyToMode.BOUNCE;
+    protected FlyToMode flyToMode;
     /**
      * <abstractview>
      * <p>
-     * This is an abstract element and cannot be used directly in a KML file. This element 
-     * is extended by the <Camera> and <LookAt> elements. 
-     * </p>
-     * <p>
      * Defines a viewpoint associated with any element derived from Feature. See <Camera> 
      * and <LookAt>. 
+     * </p>
+     * <p>
+     * This is an abstract element and cannot be used directly in a KML file. This element 
+     * is extended by the <Camera> and <LookAt> elements. 
      * </p>
      * 
      * Syntax: 
@@ -130,6 +130,7 @@ public class FlyTo
     }
 
     /**
+     * @see duration
      * 
      * @return
      *     possible object is
@@ -141,6 +142,7 @@ public class FlyTo
     }
 
     /**
+     * @see duration
      * 
      * @param value
      *     allowed object is
@@ -152,6 +154,7 @@ public class FlyTo
     }
 
     /**
+     * @see flyToMode
      * 
      * @return
      *     possible object is
@@ -163,6 +166,7 @@ public class FlyTo
     }
 
     /**
+     * @see flyToMode
      * 
      * @param value
      *     allowed object is
@@ -174,12 +178,13 @@ public class FlyTo
     }
 
     /**
+     * @see abstractView
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -187,12 +192,13 @@ public class FlyTo
     }
 
     /**
+     * @see abstractView
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {

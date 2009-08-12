@@ -84,6 +84,7 @@ public class Create {
     }
 
     /**
+     * @see container
      * 
      */
     public List<Container> getContainer() {
@@ -156,10 +157,7 @@ public class Create {
     }
 
     /**
-     * Sets the value of the container property Objects of the following type(s) are allowed in the list List<Container>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withContainer} instead.
-     * 
+     * @see container
      * 
      * @param container
      */
@@ -171,7 +169,7 @@ public class Create {
      * add a value to the container property collection
      * 
      * @param container
-     *     Objects of the following type are allowed in the list: {@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

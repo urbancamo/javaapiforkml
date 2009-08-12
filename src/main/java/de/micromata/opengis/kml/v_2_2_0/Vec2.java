@@ -70,6 +70,7 @@ public class Vec2 {
     }
 
     /**
+     * @see x
      * 
      */
     public double getX() {
@@ -77,6 +78,7 @@ public class Vec2 {
     }
 
     /**
+     * @see x
      * 
      */
     public void setX(double value) {
@@ -84,6 +86,7 @@ public class Vec2 {
     }
 
     /**
+     * @see y
      * 
      */
     public double getY() {
@@ -91,6 +94,7 @@ public class Vec2 {
     }
 
     /**
+     * @see y
      * 
      */
     public void setY(double value) {
@@ -98,6 +102,7 @@ public class Vec2 {
     }
 
     /**
+     * @see xunits
      * 
      * @return
      *     possible object is
@@ -113,6 +118,7 @@ public class Vec2 {
     }
 
     /**
+     * @see xunits
      * 
      * @param value
      *     allowed object is
@@ -124,6 +130,7 @@ public class Vec2 {
     }
 
     /**
+     * @see yunits
      * 
      * @return
      *     possible object is
@@ -139,6 +146,7 @@ public class Vec2 {
     }
 
     /**
+     * @see yunits
      * 
      * @param value
      *     allowed object is

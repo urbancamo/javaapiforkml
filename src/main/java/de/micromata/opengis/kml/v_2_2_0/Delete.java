@@ -14,15 +14,15 @@ import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 /**
  * <delete>
  * <p>
+ * Child elements for <Delete>, which are the only elements that can be deleted, are 
+ * Document, Folder, GroundOverlay, Placemark, and ScreenOverlay. 
+ * </p>
+ * <p>
  * Deletes features from a complex element that has already been loaded via a <NetworkLink>. 
  * The <targetHref> element in <Update> specifies the .kml or .kmz file containing 
  * the data to be deleted. Within that file, the element to be deleted must already 
  * have an explicit id defined for it. The <Delete> element references this id in the 
  * targetId attribute. 
- * </p>
- * <p>
- * Child elements for <Delete>, which are the only elements that can be deleted, are 
- * Document, Folder, GroundOverlay, Placemark, and ScreenOverlay. 
  * </p>
  * 
  * 
@@ -67,9 +67,9 @@ public class Delete {
      * 
      * Extended By: 
      * @see: <Container>
+     * @see: <NetworkLink>
      * @see: <Overlay>
      * @see: <Placemark>
-     * @see: <NetworkLink>
      * @see: <gx:Tour>
      * 
      * 
@@ -83,6 +83,7 @@ public class Delete {
     }
 
     /**
+     * @see feature
      * 
      */
     public List<Feature> getFeature() {
@@ -245,10 +246,7 @@ public class Delete {
     }
 
     /**
-     * Sets the value of the feature property Objects of the following type(s) are allowed in the list List<Feature>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFeature} instead.
-     * 
+     * @see feature
      * 
      * @param feature
      */
@@ -260,7 +258,7 @@ public class Delete {
      * add a value to the feature property collection
      * 
      * @param feature
-     *     Objects of the following type are allowed in the list: {@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

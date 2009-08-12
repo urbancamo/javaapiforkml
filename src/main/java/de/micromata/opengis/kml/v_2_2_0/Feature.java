@@ -55,9 +55,9 @@ import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
  * 
  * Extended By: 
  * @see: <Container>
+ * @see: <NetworkLink>
  * @see: <Overlay>
  * @see: <Placemark>
- * @see: <NetworkLink>
  * @see: <gx:Tour>
  * 
  * 
@@ -121,7 +121,7 @@ public abstract class Feature
      * 
      */
     @XmlElement(defaultValue = "1")
-    protected Boolean visibility = false;
+    protected Boolean visibility;
     /**
      * <open>
      * <p>
@@ -134,7 +134,7 @@ public abstract class Feature
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean open = false;
+    protected Boolean open;
     /**
      * <atom:author>
      * <p>
@@ -144,16 +144,16 @@ public abstract class Feature
      * ascription elements used in KML are as follows: 
      * </p>
      * <p>
-     * These elements are defined in the Atom Syndication Format. The complete specification 
-     * is found at http://atompub.org. (see the sample that follows). 
-     * </p>
-     * <p>
-     * These elements are defined in the Atom Syndication Format. The complete specification 
-     * is found at http://atompub.org. (see the sample that follows). 
-     * </p>
-     * <p>
      * The <atom:author> element is the parent element for <atom:name>, which specifies 
      * the author of the KML feature. 
+     * </p>
+     * <p>
+     * These elements are defined in the Atom Syndication Format. The complete specification 
+     * is found at http://atompub.org. (see the sample that follows). 
+     * </p>
+     * <p>
+     * These elements are defined in the Atom Syndication Format. The complete specification 
+     * is found at http://atompub.org. (see the sample that follows). 
      * </p>
      * 
      * 
@@ -164,16 +164,29 @@ public abstract class Feature
     /**
      * <link> (required). see <link>.
      * <p>
+     * <Link> specifies the location of any of the following: 
+     * </p>
+     * <p>
+     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
+     * elements are not used. 
+     * </p>
+     * <p>
+     * KML files fetched by network links Image files used in any Overlay (the <Icon> element 
+     * specifies the image in an Overlay; <Icon> has the same fields as <Link>) Model files 
+     * used in the <Model> element 
+     * </p>
+     * <p>
      * Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
      * the namespace for this element in any KML file that uses it: xmlns:atom="http://www.w3.org/2005/Atom" 
      * (see the sample that follows). 
      * </p>
      * <p>
-     * <Link> specifies the location of any of the following: 
+     * Specifies the file to load and optional refresh parameters. See <Link>. 
      * </p>
      * <p>
-     * KML files fetched by network links Image files used in any Overlay Model files used 
-     * in the <Model> element 
+     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
+     * KML releases and adds functionality for the <Region> element (introduced in KML 
+     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
      * </p>
      * <p>
      * The file is conditionally loaded and refreshed, depending on the refresh parameters 
@@ -186,6 +199,11 @@ public abstract class Feature
      * information. 
      * </p>
      * <p>
+     * Tip: To display the top-level Folder or Document within a Network Link in the List 
+     * View, assign an ID to the Folder or Document. Without this ID, only the child object 
+     * names are displayed in the List View. 
+     * </p>
+     * <p>
      * When a file is fetched, the URL that is sent to the server is composed of three 
      * pieces of information: 
      * </p>
@@ -195,23 +213,6 @@ public abstract class Feature
      * element or (b) bounding box parameters (this is the default and is used if no <viewFormat> 
      * element is included in the file). a second format string that is specified in the 
      * <httpQuery> element. 
-     * </p>
-     * <p>
-     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
-     * elements are not used. 
-     * </p>
-     * <p>
-     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
-     * KML releases and adds functionality for the <Region> element (introduced in KML 
-     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
-     * </p>
-     * <p>
-     * Specifies the file to load and optional refresh parameters. See <Link>. 
-     * </p>
-     * <p>
-     * Tip: To display the top-level Folder or Document within a Network Link in the List 
-     * View, assign an ID to the Folder or Document. Without this ID, only the child object 
-     * names are displayed in the List View. 
      * </p>
      * 
      * Syntax: 
@@ -310,6 +311,14 @@ public abstract class Feature
     /**
      * <description>
      * <p>
+     * The supported content for the <description> element changed from Google Earth 4.3 
+     * to 5.0. Specific information for each version is listed out below, followed by information 
+     * common to both. 
+     * </p>
+     * <p>
+     * User-supplied content that appears in the description balloon. 
+     * </p>
+     * <p>
      * User-supplied content that appears in the description balloon. The supported content 
      * for the <description> element changed from Google Earth 4.3 to 5.0. Specific information 
      * for each version is listed out below, followed by information common to both. Google 
@@ -326,14 +335,6 @@ public abstract class Feature
      * by content contained within a iFrame. There are no exceptions to this rule. Doctype 
      * declarations are ignored. 
      * </p>
-     * <p>
-     * User-supplied content that appears in the description balloon. 
-     * </p>
-     * <p>
-     * The supported content for the <description> element changed from Google Earth 4.3 
-     * to 5.0. Specific information for each version is listed out below, followed by information 
-     * common to both. 
-     * </p>
      * 
      * 
      * 
@@ -342,12 +343,12 @@ public abstract class Feature
     /**
      * <abstractview>
      * <p>
-     * This is an abstract element and cannot be used directly in a KML file. This element 
-     * is extended by the <Camera> and <LookAt> elements. 
-     * </p>
-     * <p>
      * Defines a viewpoint associated with any element derived from Feature. See <Camera> 
      * and <LookAt>. 
+     * </p>
+     * <p>
+     * This is an abstract element and cannot be used directly in a KML file. This element 
+     * is extended by the <Camera> and <LookAt> elements. 
      * </p>
      * 
      * Syntax: 
@@ -446,10 +447,6 @@ public abstract class Feature
     /**
      * <Region>
      * <p>
-     * Features and geometry associated with a Region are drawn only when the Region is 
-     * active. See <Region>. 
-     * </p>
-     * <p>
      * A region contains a bounding box (<LatLonAltBox>) that describes an area of interest 
      * defined by geographic coordinates and altitudes. In addition, a Region contains 
      * an LOD (level of detail) extent (<Lod>) that defines a validity range of the associated 
@@ -460,6 +457,10 @@ public abstract class Feature
      * "Topics in KML" page on Regions for more details. In a Container or NetworkLink 
      * hierarchy, this calculation uses the Region that is the closest ancestor in the 
      * hierarchy. 
+     * </p>
+     * <p>
+     * Features and geometry associated with a Region are drawn only when the Region is 
+     * active. See <Region>. 
      * </p>
      * 
      * Syntax: 
@@ -504,27 +505,27 @@ public abstract class Feature
     /**
      * <extendeddata>
      * <p>
-     * The ExtendedData element offers three techniques for adding custom data to a KML 
-     * Feature (NetworkLink, Placemark, GroundOverlay, PhotoOverlay, ScreenOverlay, Document, 
-     * Folder). These techniques are 
-     * </p>
-     * <p>
      * Adding untyped data/value pairs using the <Data> element (basic) Declaring new typed 
      * fields using the <Schema> element and then instancing them using the <SchemaData> 
      * element (advanced) Referring to XML elements defined in other namespaces by referencing 
      * the external namespace within the KML file (basic) 
      * </p>
      * <p>
-     * These techniques can be combined within a single KML file or Feature for different 
-     * pieces of data. 
+     * Allows you to add custom data to a KML file. This data can be (1) data that references 
+     * an external XML schema, (2) untyped data/value pairs, or (3) typed data. A given 
+     * KML Feature can contain a combination of these types of custom data. 
      * </p>
      * <p>
      * For more information, see Adding Custom Data in "Topics in KML." 
      * </p>
      * <p>
-     * Allows you to add custom data to a KML file. This data can be (1) data that references 
-     * an external XML schema, (2) untyped data/value pairs, or (3) typed data. A given 
-     * KML Feature can contain a combination of these types of custom data. 
+     * The ExtendedData element offers three techniques for adding custom data to a KML 
+     * Feature (NetworkLink, Placemark, GroundOverlay, PhotoOverlay, ScreenOverlay, Document, 
+     * Folder). These techniques are 
+     * </p>
+     * <p>
+     * These techniques can be combined within a single KML file or Feature for different 
+     * pieces of data. 
      * </p>
      * 
      * Syntax: 
@@ -591,6 +592,7 @@ public abstract class Feature
     }
 
     /**
+     * @see name
      * 
      * @return
      *     possible object is
@@ -602,6 +604,7 @@ public abstract class Feature
     }
 
     /**
+     * @see name
      * 
      * @param value
      *     allowed object is
@@ -613,6 +616,7 @@ public abstract class Feature
     }
 
     /**
+     * @see isibility
      * 
      * @return
      *     possible object is
@@ -624,6 +628,7 @@ public abstract class Feature
     }
 
     /**
+     * @see visibility
      * 
      * @param value
      *     allowed object is
@@ -635,6 +640,7 @@ public abstract class Feature
     }
 
     /**
+     * @see pen
      * 
      * @return
      *     possible object is
@@ -646,6 +652,7 @@ public abstract class Feature
     }
 
     /**
+     * @see open
      * 
      * @param value
      *     allowed object is
@@ -657,6 +664,7 @@ public abstract class Feature
     }
 
     /**
+     * @see atomAuthor
      * 
      * @return
      *     possible object is
@@ -668,6 +676,7 @@ public abstract class Feature
     }
 
     /**
+     * @see atomAuthor
      * 
      * @param value
      *     allowed object is
@@ -679,6 +688,7 @@ public abstract class Feature
     }
 
     /**
+     * @see atomLink
      * 
      * @return
      *     possible object is
@@ -690,6 +700,7 @@ public abstract class Feature
     }
 
     /**
+     * @see atomLink
      * 
      * @param value
      *     allowed object is
@@ -701,6 +712,7 @@ public abstract class Feature
     }
 
     /**
+     * @see address
      * 
      * @return
      *     possible object is
@@ -712,6 +724,7 @@ public abstract class Feature
     }
 
     /**
+     * @see address
      * 
      * @param value
      *     allowed object is
@@ -723,6 +736,7 @@ public abstract class Feature
     }
 
     /**
+     * @see xalAddressDetails
      * 
      * @return
      *     possible object is
@@ -734,6 +748,7 @@ public abstract class Feature
     }
 
     /**
+     * @see xalAddressDetails
      * 
      * @param value
      *     allowed object is
@@ -745,6 +760,7 @@ public abstract class Feature
     }
 
     /**
+     * @see phoneNumber
      * 
      * @return
      *     possible object is
@@ -756,6 +772,7 @@ public abstract class Feature
     }
 
     /**
+     * @see phoneNumber
      * 
      * @param value
      *     allowed object is
@@ -767,6 +784,7 @@ public abstract class Feature
     }
 
     /**
+     * @see snippet
      * 
      * @return
      *     possible object is
@@ -778,6 +796,7 @@ public abstract class Feature
     }
 
     /**
+     * @see snippet
      * 
      * @param value
      *     allowed object is
@@ -789,6 +808,7 @@ public abstract class Feature
     }
 
     /**
+     * @see snippetd
      * 
      * @return
      *     possible object is
@@ -800,6 +820,7 @@ public abstract class Feature
     }
 
     /**
+     * @see snippetd
      * 
      * @param value
      *     allowed object is
@@ -811,6 +832,7 @@ public abstract class Feature
     }
 
     /**
+     * @see description
      * 
      * @return
      *     possible object is
@@ -822,6 +844,7 @@ public abstract class Feature
     }
 
     /**
+     * @see description
      * 
      * @param value
      *     allowed object is
@@ -833,12 +856,13 @@ public abstract class Feature
     }
 
     /**
+     * @see abstractView
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -846,12 +870,13 @@ public abstract class Feature
     }
 
     /**
+     * @see abstractView
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -859,12 +884,13 @@ public abstract class Feature
     }
 
     /**
+     * @see timePrimitive
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link TimeStamp}{@code>}
      *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
+     *     {@code <}{@link TimeStamp}{@code>}
      *     
      */
     public TimePrimitive getTimePrimitive() {
@@ -872,12 +898,13 @@ public abstract class Feature
     }
 
     /**
+     * @see timePrimitive
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link TimeStamp}{@code>}
      *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
+     *     {@code <}{@link TimeStamp}{@code>}
      *     
      */
     public void setTimePrimitive(TimePrimitive value) {
@@ -885,6 +912,7 @@ public abstract class Feature
     }
 
     /**
+     * @see styleUrl
      * 
      * @return
      *     possible object is
@@ -896,6 +924,7 @@ public abstract class Feature
     }
 
     /**
+     * @see styleUrl
      * 
      * @param value
      *     allowed object is
@@ -907,6 +936,7 @@ public abstract class Feature
     }
 
     /**
+     * @see styleSelector
      * 
      */
     public List<StyleSelector> getStyleSelector() {
@@ -917,6 +947,7 @@ public abstract class Feature
     }
 
     /**
+     * @see region
      * 
      * @return
      *     possible object is
@@ -928,6 +959,7 @@ public abstract class Feature
     }
 
     /**
+     * @see region
      * 
      * @param value
      *     allowed object is
@@ -939,6 +971,7 @@ public abstract class Feature
     }
 
     /**
+     * @see metadata
      * 
      * @return
      *     possible object is
@@ -950,6 +983,7 @@ public abstract class Feature
     }
 
     /**
+     * @see metadata
      * 
      * @param value
      *     allowed object is
@@ -961,6 +995,7 @@ public abstract class Feature
     }
 
     /**
+     * @see extendedData
      * 
      * @return
      *     possible object is
@@ -972,6 +1007,7 @@ public abstract class Feature
     }
 
     /**
+     * @see extendedData
      * 
      * @param value
      *     allowed object is
@@ -983,6 +1019,7 @@ public abstract class Feature
     }
 
     /**
+     * @see featureSimpleExtension
      * 
      */
     public List<Object> getFeatureSimpleExtension() {
@@ -993,6 +1030,7 @@ public abstract class Feature
     }
 
     /**
+     * @see featureObjectExtension
      * 
      */
     public List<AbstractObject> getFeatureObjectExtension() {
@@ -1448,10 +1486,7 @@ public abstract class Feature
     }
 
     /**
-     * Sets the value of the styleSelector property Objects of the following type(s) are allowed in the list List<StyleSelector>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withStyleSelector} instead.
-     * 
+     * @see styleSelector
      * 
      * @param styleSelector
      */
@@ -1463,7 +1498,7 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1473,10 +1508,7 @@ public abstract class Feature
     }
 
     /**
-     * Sets the value of the featureSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFeatureSimpleExtension} instead.
-     * 
+     * @see featureSimpleExtension
      * 
      * @param featureSimpleExtension
      */
@@ -1488,7 +1520,7 @@ public abstract class Feature
      * add a value to the featureSimpleExtension property collection
      * 
      * @param featureSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Boolean}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1498,10 +1530,7 @@ public abstract class Feature
     }
 
     /**
-     * Sets the value of the featureObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFeatureObjectExtension} instead.
-     * 
+     * @see featureObjectExtension
      * 
      * @param featureObjectExtension
      */
@@ -1522,6 +1551,10 @@ public abstract class Feature
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

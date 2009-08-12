@@ -28,6 +28,16 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * the great circle; however, a LinearRing (by itself) with an <altitudeMode> of clampToGround 
  * follows lines of constant latitude. 
  * </p>
+ * <p>
+ * The <coordinates> for polygons must be specified in counterclockwise order. Polygons 
+ * follow the "right-hand rule," which states that if you place the fingers of your 
+ * right hand in the direction in which the coordinates are specified, your thumb points 
+ * in the general direction of the geometric normal for the polygon. (In 3D graphics, 
+ * the geometric normal is used for lighting and points away from the front face of 
+ * the polygon.) Since Google Earth fills only the front face of polygons, you will 
+ * achieve the desired effect only when the coordinates are specified in the proper 
+ * order. Otherwise, the polygon will be gray. 
+ * </p>
  * 
  * Syntax: 
  * <pre><strong>&lt;Polygon id="ID"&gt;</strong>
@@ -77,22 +87,16 @@ public class Polygon
     /**
      * <extrude>
      * <p>
-     * Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
-     * this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
-     * or absolute. Only the vertices of the LinearRing are extruded, not the center of 
-     * the geometry. The vertices are extruded toward the center of the Earth's sphere. 
-     * </p>
-     * <p>
      * Boolean value. Specifies whether to connect the LineString to the ground. To extrude 
      * a LineString, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
      * or absolute. The vertices in the LineString are extruded toward the center of the 
      * Earth's sphere. 
      * </p>
      * <p>
-     * Boolean value. Specifies whether to connect the point to the ground with a line. 
-     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
-     * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
-     * Earth's sphere. 
+     * Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
+     * this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
+     * or absolute. Only the vertices of the LinearRing are extruded, not the center of 
+     * the geometry. The vertices are extruded toward the center of the Earth's sphere. 
      * </p>
      * <p>
      * Boolean value. Specifies whether to connect the Polygon to the ground. To extrude 
@@ -101,24 +105,30 @@ public class Polygon
      * a rectangle turns into a box with five faces. The vertices of the Polygon are extruded 
      * toward the center of the Earth's sphere. 
      * </p>
+     * <p>
+     * Boolean value. Specifies whether to connect the point to the ground with a line. 
+     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
+     * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
+     * Earth's sphere. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean extrude = false;
+    protected Boolean extrude;
     /**
      * <tessellate>
-     * <p>
-     * Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
-     * To enable tessellation, the value for <altitudeMode> must be clampToGround or clampToSeaFloor. 
-     * Very large LinearRings should enable tessellation so that they follow the curvature 
-     * of the earth (otherwise, they may go underground and be hidden). 
-     * </p>
      * <p>
      * Boolean value. Specifies whether to allow the LineString to follow the terrain. 
      * To enable tessellation, the altitude mode must be clampToGround or clampToSeaFloor. 
      * Very large LineStrings should enable tessellation so that they follow the curvature 
+     * of the earth (otherwise, they may go underground and be hidden). 
+     * </p>
+     * <p>
+     * Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
+     * To enable tessellation, the value for <altitudeMode> must be clampToGround or clampToSeaFloor. 
+     * Very large LinearRings should enable tessellation so that they follow the curvature 
      * of the earth (otherwise, they may go underground and be hidden). 
      * </p>
      * <p>
@@ -132,7 +142,7 @@ public class Polygon
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean tessellate = false;
+    protected Boolean tessellate;
     /**
      * AltitudeMode
      * <p>
@@ -197,6 +207,7 @@ public class Polygon
     }
 
     /**
+     * @see xtrude
      * 
      * @return
      *     possible object is
@@ -208,6 +219,7 @@ public class Polygon
     }
 
     /**
+     * @see extrude
      * 
      * @param value
      *     allowed object is
@@ -219,6 +231,7 @@ public class Polygon
     }
 
     /**
+     * @see essellate
      * 
      * @return
      *     possible object is
@@ -230,6 +243,7 @@ public class Polygon
     }
 
     /**
+     * @see tessellate
      * 
      * @param value
      *     allowed object is
@@ -241,12 +255,13 @@ public class Polygon
     }
 
     /**
+     * @see altitudeMode
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -254,12 +269,13 @@ public class Polygon
     }
 
     /**
+     * @see altitudeMode
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -267,6 +283,7 @@ public class Polygon
     }
 
     /**
+     * @see outerBoundaryIs
      * 
      * @return
      *     possible object is
@@ -278,6 +295,7 @@ public class Polygon
     }
 
     /**
+     * @see outerBoundaryIs
      * 
      * @param value
      *     allowed object is
@@ -289,6 +307,7 @@ public class Polygon
     }
 
     /**
+     * @see innerBoundaryIs
      * 
      */
     public List<Boundary> getInnerBoundaryIs() {
@@ -299,6 +318,7 @@ public class Polygon
     }
 
     /**
+     * @see polygonSimpleExtension
      * 
      */
     public List<Object> getPolygonSimpleExtension() {
@@ -309,6 +329,7 @@ public class Polygon
     }
 
     /**
+     * @see polygonObjectExtension
      * 
      */
     public List<AbstractObject> getPolygonObjectExtension() {
@@ -445,10 +466,7 @@ public class Polygon
     }
 
     /**
-     * Sets the value of the innerBoundaryIs property Objects of the following type(s) are allowed in the list List<Boundary>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withInnerBoundaryIs} instead.
-     * 
+     * @see innerBoundaryIs
      * 
      * @param innerBoundaryIs
      */
@@ -470,10 +488,7 @@ public class Polygon
     }
 
     /**
-     * Sets the value of the polygonSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPolygonSimpleExtension} instead.
-     * 
+     * @see polygonSimpleExtension
      * 
      * @param polygonSimpleExtension
      */
@@ -495,10 +510,7 @@ public class Polygon
     }
 
     /**
-     * Sets the value of the polygonObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPolygonObjectExtension} instead.
-     * 
+     * @see polygonObjectExtension
      * 
      * @param polygonObjectExtension
      */
@@ -519,6 +531,10 @@ public class Polygon
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -532,6 +548,10 @@ public class Polygon
         return this;
     }
 
+    /**
+     * @see geometrySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometrySimpleExtension(final List<Object> geometrySimpleExtension) {
@@ -545,6 +565,10 @@ public class Polygon
         return this;
     }
 
+    /**
+     * @see geometryObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {

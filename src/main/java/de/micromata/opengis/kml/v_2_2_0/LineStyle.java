@@ -60,7 +60,7 @@ public class LineStyle
      * 
      */
     @XmlElement(defaultValue = "1.0")
-    protected double width = 1.0D;
+    protected double width;
     @XmlElement(name = "LineStyleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> lineStyleSimpleExtension;
@@ -90,6 +90,7 @@ public class LineStyle
     }
 
     /**
+     * @see width
      * 
      * @return
      *     possible object is
@@ -101,6 +102,7 @@ public class LineStyle
     }
 
     /**
+     * @see width
      * 
      * @param value
      *     allowed object is
@@ -112,6 +114,7 @@ public class LineStyle
     }
 
     /**
+     * @see lineStyleSimpleExtension
      * 
      */
     public List<Object> getLineStyleSimpleExtension() {
@@ -122,6 +125,7 @@ public class LineStyle
     }
 
     /**
+     * @see lineStyleObjectExtension
      * 
      */
     public List<AbstractObject> getLineStyleObjectExtension() {
@@ -183,10 +187,7 @@ public class LineStyle
     }
 
     /**
-     * Sets the value of the lineStyleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLineStyleSimpleExtension} instead.
-     * 
+     * @see lineStyleSimpleExtension
      * 
      * @param lineStyleSimpleExtension
      */
@@ -208,10 +209,7 @@ public class LineStyle
     }
 
     /**
-     * Sets the value of the lineStyleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLineStyleObjectExtension} instead.
-     * 
+     * @see lineStyleObjectExtension
      * 
      * @param lineStyleObjectExtension
      */
@@ -232,6 +230,10 @@ public class LineStyle
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -245,6 +247,10 @@ public class LineStyle
         return this;
     }
 
+    /**
+     * @see subStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
@@ -258,6 +264,10 @@ public class LineStyle
         return this;
     }
 
+    /**
+     * @see subStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
@@ -271,6 +281,10 @@ public class LineStyle
         return this;
     }
 
+    /**
+     * @see colorStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleSimpleExtension(final List<Object> colorStyleSimpleExtension) {
@@ -284,6 +298,10 @@ public class LineStyle
         return this;
     }
 
+    /**
+     * @see colorStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {

@@ -12,18 +12,12 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
+import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 
 
 /**
  * <PhotoOverlay>
- * <p>
- * The <PhotoOverlay> element allows you to geographically locate a photograph on the 
- * Earth and to specify viewing parameters for this PhotoOverlay. The PhotoOverlay 
- * can be a simple 2D rectangle, a partial or full cylinder, or a sphere (for spherical 
- * panoramas). The overlay is placed at the specified location and oriented toward 
- * the viewpoint. 
- * </p>
  * <p>
  * Because <PhotoOverlay> is derived from <Feature>, it can contain one of the two 
  * elements derived from <AbstractView>—either <Camera> or <LookAt>. The Camera (or 
@@ -34,22 +28,29 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * photo—is oriented toward the viewpoint. 
  * </p>
  * <p>
+ * For more information, see the "Topics in KML" page on PhotoOverlay. 
+ * </p>
+ * <p>
+ * The <PhotoOverlay> element allows you to geographically locate a photograph on the 
+ * Earth and to specify viewing parameters for this PhotoOverlay. The PhotoOverlay 
+ * can be a simple 2D rectangle, a partial or full cylinder, or a sphere (for spherical 
+ * panoramas). The overlay is placed at the specified location and oriented toward 
+ * the viewpoint. 
+ * </p>
+ * <p>
  * The URL for the PhotoOverlay image is specified in the <Icon> tag, which is inherited 
  * from <Overlay>. The <Icon> tag must contain an <href> element that specifies the 
  * image file to use for the PhotoOverlay. In the case of a very large image, the <href> 
  * is a special URL that indexes into a pyramid of images of varying resolutions (see 
  * ImagePyramid). 
  * </p>
- * <p>
- * For more information, see the "Topics in KML" page on PhotoOverlay. 
- * </p>
  * 
  * Extends: 
  * @see: <Overlay>
  * 
  * Contained By: 
- * @see: <Folder>
  * @see: <Document>
+ * @see: <Folder>
  * @see: <kml>
  * 
  * 
@@ -87,7 +88,7 @@ public class PhotoOverlay
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double rotation = 0.0D;
+    protected double rotation;
     /**
      * <viewvolume>
      * <p>
@@ -129,15 +130,15 @@ public class PhotoOverlay
     /**
      * <Point>
      * <p>
-     * The <Point> element acts as a <Point> inside a <Placemark> element. It draws an 
-     * icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
-     * <styleUrl> and <StyleSelector> fields, just as it is for <Placemark>. 
-     * </p>
-     * <p>
      * A geographic location defined by longitude, latitude, and (optional) altitude. When 
      * a Point is contained by a Placemark, the point itself determines the position of 
      * the Placemark's name and icon. When a Point is extruded, it is connected to the 
      * ground with a line. This "tether" uses the current LineStyle. 
+     * </p>
+     * <p>
+     * The <Point> element acts as a <Point> inside a <Placemark> element. It draws an 
+     * icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
+     * <styleUrl> and <StyleSelector> fields, just as it is for <Placemark>. 
      * </p>
      * 
      * Syntax: 
@@ -175,7 +176,7 @@ public class PhotoOverlay
      * 
      */
     @XmlElement(defaultValue = "rectangle")
-    protected Shape shape = Shape.RECTANGLE;
+    protected Shape shape;
     @XmlElement(name = "PhotoOverlaySimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> photoOverlaySimpleExtension;
@@ -205,6 +206,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see rotation
      * 
      * @return
      *     possible object is
@@ -216,6 +218,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see rotation
      * 
      * @param value
      *     allowed object is
@@ -227,6 +230,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see viewVolume
      * 
      * @return
      *     possible object is
@@ -238,6 +242,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see viewVolume
      * 
      * @param value
      *     allowed object is
@@ -249,6 +254,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see imagePyramid
      * 
      * @return
      *     possible object is
@@ -260,6 +266,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see imagePyramid
      * 
      * @param value
      *     allowed object is
@@ -271,6 +278,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see point
      * 
      * @return
      *     possible object is
@@ -282,6 +290,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see point
      * 
      * @param value
      *     allowed object is
@@ -293,6 +302,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see shape
      * 
      * @return
      *     possible object is
@@ -304,6 +314,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see shape
      * 
      * @param value
      *     allowed object is
@@ -315,6 +326,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see photoOverlaySimpleExtension
      * 
      */
     public List<Object> getPhotoOverlaySimpleExtension() {
@@ -325,6 +337,7 @@ public class PhotoOverlay
     }
 
     /**
+     * @see photoOverlayObjectExtension
      * 
      */
     public List<AbstractObject> getPhotoOverlayObjectExtension() {
@@ -474,10 +487,7 @@ public class PhotoOverlay
     }
 
     /**
-     * Sets the value of the photoOverlaySimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPhotoOverlaySimpleExtension} instead.
-     * 
+     * @see photoOverlaySimpleExtension
      * 
      * @param photoOverlaySimpleExtension
      */
@@ -499,10 +509,7 @@ public class PhotoOverlay
     }
 
     /**
-     * Sets the value of the photoOverlayObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPhotoOverlayObjectExtension} instead.
-     * 
+     * @see photoOverlayObjectExtension
      * 
      * @param photoOverlayObjectExtension
      */
@@ -523,6 +530,10 @@ public class PhotoOverlay
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -536,6 +547,10 @@ public class PhotoOverlay
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -549,6 +564,10 @@ public class PhotoOverlay
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -562,6 +581,10 @@ public class PhotoOverlay
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
@@ -575,6 +598,10 @@ public class PhotoOverlay
         return this;
     }
 
+    /**
+     * @see overlaySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setOverlaySimpleExtension(final List<Object> overlaySimpleExtension) {
@@ -588,6 +615,10 @@ public class PhotoOverlay
         return this;
     }
 
+    /**
+     * @see overlayObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setOverlayObjectExtension(final List<AbstractObject> overlayObjectExtension) {
@@ -729,7 +760,7 @@ public class PhotoOverlay
 
     @Obvious
     @Override
-    public PhotoOverlay withAtomLink(final de.micromata.opengis.kml.v_2_2_0.atom.Link atomLink) {
+    public PhotoOverlay withAtomLink(final Link atomLink) {
         super.withAtomLink(atomLink);
         return this;
     }
@@ -855,7 +886,7 @@ public class PhotoOverlay
 
     @Obvious
     @Override
-    public PhotoOverlay withIcon(final de.micromata.opengis.kml.v_2_2_0.Link icon) {
+    public PhotoOverlay withIcon(final Icon icon) {
         super.withIcon(icon);
         return this;
     }

@@ -84,6 +84,7 @@ public abstract class StyleSelector
     }
 
     /**
+     * @see styleSelectorSimpleExtension
      * 
      */
     public List<Object> getStyleSelectorSimpleExtension() {
@@ -94,6 +95,7 @@ public abstract class StyleSelector
     }
 
     /**
+     * @see styleSelectorObjectExtension
      * 
      */
     public List<AbstractObject> getStyleSelectorObjectExtension() {
@@ -149,10 +151,7 @@ public abstract class StyleSelector
     }
 
     /**
-     * Sets the value of the styleSelectorSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withStyleSelectorSimpleExtension} instead.
-     * 
+     * @see styleSelectorSimpleExtension
      * 
      * @param styleSelectorSimpleExtension
      */
@@ -174,10 +173,7 @@ public abstract class StyleSelector
     }
 
     /**
-     * Sets the value of the styleSelectorObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withStyleSelectorObjectExtension} instead.
-     * 
+     * @see styleSelectorObjectExtension
      * 
      * @param styleSelectorObjectExtension
      */
@@ -198,6 +194,10 @@ public abstract class StyleSelector
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

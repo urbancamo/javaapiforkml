@@ -65,22 +65,16 @@ public class LineString
     /**
      * <extrude>
      * <p>
-     * Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
-     * this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
-     * or absolute. Only the vertices of the LinearRing are extruded, not the center of 
-     * the geometry. The vertices are extruded toward the center of the Earth's sphere. 
-     * </p>
-     * <p>
      * Boolean value. Specifies whether to connect the LineString to the ground. To extrude 
      * a LineString, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
      * or absolute. The vertices in the LineString are extruded toward the center of the 
      * Earth's sphere. 
      * </p>
      * <p>
-     * Boolean value. Specifies whether to connect the point to the ground with a line. 
-     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
-     * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
-     * Earth's sphere. 
+     * Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
+     * this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
+     * or absolute. Only the vertices of the LinearRing are extruded, not the center of 
+     * the geometry. The vertices are extruded toward the center of the Earth's sphere. 
      * </p>
      * <p>
      * Boolean value. Specifies whether to connect the Polygon to the ground. To extrude 
@@ -89,24 +83,30 @@ public class LineString
      * a rectangle turns into a box with five faces. The vertices of the Polygon are extruded 
      * toward the center of the Earth's sphere. 
      * </p>
+     * <p>
+     * Boolean value. Specifies whether to connect the point to the ground with a line. 
+     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
+     * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
+     * Earth's sphere. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean extrude = false;
+    protected Boolean extrude;
     /**
      * <tessellate>
-     * <p>
-     * Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
-     * To enable tessellation, the value for <altitudeMode> must be clampToGround or clampToSeaFloor. 
-     * Very large LinearRings should enable tessellation so that they follow the curvature 
-     * of the earth (otherwise, they may go underground and be hidden). 
-     * </p>
      * <p>
      * Boolean value. Specifies whether to allow the LineString to follow the terrain. 
      * To enable tessellation, the altitude mode must be clampToGround or clampToSeaFloor. 
      * Very large LineStrings should enable tessellation so that they follow the curvature 
+     * of the earth (otherwise, they may go underground and be hidden). 
+     * </p>
+     * <p>
+     * Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
+     * To enable tessellation, the value for <altitudeMode> must be clampToGround or clampToSeaFloor. 
+     * Very large LinearRings should enable tessellation so that they follow the curvature 
      * of the earth (otherwise, they may go underground and be hidden). 
      * </p>
      * <p>
@@ -120,7 +120,7 @@ public class LineString
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean tessellate = false;
+    protected Boolean tessellate;
     /**
      * AltitudeMode
      * <p>
@@ -138,11 +138,6 @@ public class LineString
     /**
      * <coordinates> (required)
      * <p>
-     * Two or more coordinate tuples, each consisting of floating point values for longitude, 
-     * latitude, and altitude. The altitude component is optional. Insert a space between 
-     * tuples. Do not include spaces within a tuple. 
-     * </p>
-     * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
      * ³ ?180 and <= 180 latitude ³ ?90 and ² 90 altitude values (optional) are in meters 
@@ -150,6 +145,11 @@ public class LineString
      * </p>
      * <p>
      * Do not include spaces between the three values that describe a coordinate. 
+     * </p>
+     * <p>
+     * Two or more coordinate tuples, each consisting of floating point values for longitude, 
+     * latitude, and altitude. The altitude component is optional. Insert a space between 
+     * tuples. Do not include spaces within a tuple. 
      * </p>
      * 
      * 
@@ -188,6 +188,7 @@ public class LineString
     }
 
     /**
+     * @see xtrude
      * 
      * @return
      *     possible object is
@@ -199,6 +200,7 @@ public class LineString
     }
 
     /**
+     * @see extrude
      * 
      * @param value
      *     allowed object is
@@ -210,6 +212,7 @@ public class LineString
     }
 
     /**
+     * @see essellate
      * 
      * @return
      *     possible object is
@@ -221,6 +224,7 @@ public class LineString
     }
 
     /**
+     * @see tessellate
      * 
      * @param value
      *     allowed object is
@@ -232,12 +236,13 @@ public class LineString
     }
 
     /**
+     * @see altitudeMode
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -245,12 +250,13 @@ public class LineString
     }
 
     /**
+     * @see altitudeMode
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -258,6 +264,7 @@ public class LineString
     }
 
     /**
+     * @see lineStringSimpleExtension
      * 
      */
     public List<Object> getLineStringSimpleExtension() {
@@ -268,6 +275,7 @@ public class LineString
     }
 
     /**
+     * @see lineStringObjectExtension
      * 
      */
     public List<AbstractObject> getLineStringObjectExtension() {
@@ -277,6 +285,10 @@ public class LineString
         return this.lineStringObjectExtension;
     }
 
+    /**
+     * @see coordinates
+     * 
+     */
     public List<Coordinate> getCoordinates() {
         if (coordinates == null) {
             coordinates = new ArrayList<Coordinate>();
@@ -370,10 +382,7 @@ public class LineString
     }
 
     /**
-     * Sets the value of the coordinates property Objects of the following type(s) are allowed in the list List<Coordinate>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withCoordinates} instead.
-     * 
+     * @see coordinates
      * 
      * @param coordinates
      */
@@ -427,10 +436,7 @@ public class LineString
     }
 
     /**
-     * Sets the value of the lineStringSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLineStringSimpleExtension} instead.
-     * 
+     * @see lineStringSimpleExtension
      * 
      * @param lineStringSimpleExtension
      */
@@ -452,10 +458,7 @@ public class LineString
     }
 
     /**
-     * Sets the value of the lineStringObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLineStringObjectExtension} instead.
-     * 
+     * @see lineStringObjectExtension
      * 
      * @param lineStringObjectExtension
      */
@@ -476,6 +479,10 @@ public class LineString
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -489,6 +496,10 @@ public class LineString
         return this;
     }
 
+    /**
+     * @see geometrySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometrySimpleExtension(final List<Object> geometrySimpleExtension) {
@@ -502,6 +513,10 @@ public class LineString
         return this;
     }
 
+    /**
+     * @see geometryObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {

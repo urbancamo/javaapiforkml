@@ -21,7 +21,7 @@ public class Wait
 {
 
     @XmlElement(defaultValue = "0.0")
-    protected double duration = 0.0D;
+    protected double duration;
 
     public Wait() {
         super();

@@ -88,7 +88,7 @@ public class NetworkLink
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean refreshVisibility = false;
+    protected Boolean refreshVisibility;
     /**
      * <flytoview>
      * <p>
@@ -105,7 +105,7 @@ public class NetworkLink
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected Boolean flyToView = false;
+    protected Boolean flyToView;
     /**
      * <Url>
      * 
@@ -117,16 +117,29 @@ public class NetworkLink
     /**
      * <link> (required). see <link>.
      * <p>
+     * <Link> specifies the location of any of the following: 
+     * </p>
+     * <p>
+     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
+     * elements are not used. 
+     * </p>
+     * <p>
+     * KML files fetched by network links Image files used in any Overlay (the <Icon> element 
+     * specifies the image in an Overlay; <Icon> has the same fields as <Link>) Model files 
+     * used in the <Model> element 
+     * </p>
+     * <p>
      * Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
      * the namespace for this element in any KML file that uses it: xmlns:atom="http://www.w3.org/2005/Atom" 
      * (see the sample that follows). 
      * </p>
      * <p>
-     * <Link> specifies the location of any of the following: 
+     * Specifies the file to load and optional refresh parameters. See <Link>. 
      * </p>
      * <p>
-     * KML files fetched by network links Image files used in any Overlay Model files used 
-     * in the <Model> element 
+     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
+     * KML releases and adds functionality for the <Region> element (introduced in KML 
+     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
      * </p>
      * <p>
      * The file is conditionally loaded and refreshed, depending on the refresh parameters 
@@ -139,6 +152,11 @@ public class NetworkLink
      * information. 
      * </p>
      * <p>
+     * Tip: To display the top-level Folder or Document within a Network Link in the List 
+     * View, assign an ID to the Folder or Document. Without this ID, only the child object 
+     * names are displayed in the List View. 
+     * </p>
+     * <p>
      * When a file is fetched, the URL that is sent to the server is composed of three 
      * pieces of information: 
      * </p>
@@ -148,23 +166,6 @@ public class NetworkLink
      * element or (b) bounding box parameters (this is the default and is used if no <viewFormat> 
      * element is included in the file). a second format string that is specified in the 
      * <httpQuery> element. 
-     * </p>
-     * <p>
-     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
-     * elements are not used. 
-     * </p>
-     * <p>
-     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
-     * KML releases and adds functionality for the <Region> element (introduced in KML 
-     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
-     * </p>
-     * <p>
-     * Specifies the file to load and optional refresh parameters. See <Link>. 
-     * </p>
-     * <p>
-     * Tip: To display the top-level Folder or Document within a Network Link in the List 
-     * View, assign an ID to the Folder or Document. Without this ID, only the child object 
-     * names are displayed in the List View. 
      * </p>
      * 
      * Syntax: 
@@ -228,6 +229,7 @@ public class NetworkLink
     }
 
     /**
+     * @see efreshVisibility
      * 
      * @return
      *     possible object is
@@ -239,6 +241,7 @@ public class NetworkLink
     }
 
     /**
+     * @see refreshVisibility
      * 
      * @param value
      *     allowed object is
@@ -250,6 +253,7 @@ public class NetworkLink
     }
 
     /**
+     * @see lyToView
      * 
      * @return
      *     possible object is
@@ -261,6 +265,7 @@ public class NetworkLink
     }
 
     /**
+     * @see flyToView
      * 
      * @param value
      *     allowed object is
@@ -272,6 +277,7 @@ public class NetworkLink
     }
 
     /**
+     * @see url
      * 
      * @return
      *     possible object is
@@ -283,6 +289,7 @@ public class NetworkLink
     }
 
     /**
+     * @see url
      * 
      * @param value
      *     allowed object is
@@ -294,6 +301,7 @@ public class NetworkLink
     }
 
     /**
+     * @see link
      * 
      * @return
      *     possible object is
@@ -305,6 +313,7 @@ public class NetworkLink
     }
 
     /**
+     * @see link
      * 
      * @param value
      *     allowed object is
@@ -316,6 +325,7 @@ public class NetworkLink
     }
 
     /**
+     * @see networkLinkSimpleExtension
      * 
      */
     public List<Object> getNetworkLinkSimpleExtension() {
@@ -326,6 +336,7 @@ public class NetworkLink
     }
 
     /**
+     * @see networkLinkObjectExtension
      * 
      */
     public List<AbstractObject> getNetworkLinkObjectExtension() {
@@ -453,10 +464,7 @@ public class NetworkLink
     }
 
     /**
-     * Sets the value of the networkLinkSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withNetworkLinkSimpleExtension} instead.
-     * 
+     * @see networkLinkSimpleExtension
      * 
      * @param networkLinkSimpleExtension
      */
@@ -478,10 +486,7 @@ public class NetworkLink
     }
 
     /**
-     * Sets the value of the networkLinkObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withNetworkLinkObjectExtension} instead.
-     * 
+     * @see networkLinkObjectExtension
      * 
      * @param networkLinkObjectExtension
      */
@@ -502,6 +507,10 @@ public class NetworkLink
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -515,6 +524,10 @@ public class NetworkLink
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -528,6 +541,10 @@ public class NetworkLink
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -541,6 +558,10 @@ public class NetworkLink
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {

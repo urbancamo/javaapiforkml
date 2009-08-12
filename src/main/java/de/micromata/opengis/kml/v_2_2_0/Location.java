@@ -41,39 +41,43 @@ public class Location
     /**
      * <longitude>
      * <p>
-     * Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
-     * Values east of the Meridian range from 0 to 180 degrees. 
-     * </p>
-     * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
      * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
+     * <p>
+     * Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
+     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * Values east of the Meridian range from 0 to 180 degrees. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double longitude = 0.0D;
+    protected double longitude;
     /**
      * <latitude>
-     * <p>
-     * Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
-     * Values range from ?90 degrees to 90 degrees. 
-     * </p>
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
      * (0 degrees). Values range from ?90 degrees to 90 degrees. 
      * </p>
+     * <p>
+     * Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
+     * Values range from ?90 degrees to 90 degrees. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double latitude = 0.0D;
+    protected double latitude;
     /**
      * <altitude>
+     * <p>
+     * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
+     * altitude mode. 
+     * </p>
      * <p>
      * Distance of the camera from the earth's surface, in meters. Interpreted according 
      * to the Camera's <altitudeMode> or <gx:altitudeMode>. 
@@ -82,16 +86,12 @@ public class Location
      * Specifies the distance above the earth's surface, in meters, and is interpreted 
      * according to the altitude mode. 
      * </p>
-     * <p>
-     * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
-     * altitude mode. 
-     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double altitude = 0.0D;
+    protected double altitude;
     @XmlElement(name = "LocationSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> locationSimpleExtension;
@@ -121,6 +121,7 @@ public class Location
     }
 
     /**
+     * @see longitude
      * 
      * @return
      *     possible object is
@@ -132,6 +133,7 @@ public class Location
     }
 
     /**
+     * @see longitude
      * 
      * @param value
      *     allowed object is
@@ -143,6 +145,7 @@ public class Location
     }
 
     /**
+     * @see latitude
      * 
      * @return
      *     possible object is
@@ -154,6 +157,7 @@ public class Location
     }
 
     /**
+     * @see latitude
      * 
      * @param value
      *     allowed object is
@@ -165,6 +169,7 @@ public class Location
     }
 
     /**
+     * @see altitude
      * 
      * @return
      *     possible object is
@@ -176,6 +181,7 @@ public class Location
     }
 
     /**
+     * @see altitude
      * 
      * @param value
      *     allowed object is
@@ -187,6 +193,7 @@ public class Location
     }
 
     /**
+     * @see locationSimpleExtension
      * 
      */
     public List<Object> getLocationSimpleExtension() {
@@ -197,6 +204,7 @@ public class Location
     }
 
     /**
+     * @see locationObjectExtension
      * 
      */
     public List<AbstractObject> getLocationObjectExtension() {
@@ -268,10 +276,7 @@ public class Location
     }
 
     /**
-     * Sets the value of the locationSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLocationSimpleExtension} instead.
-     * 
+     * @see locationSimpleExtension
      * 
      * @param locationSimpleExtension
      */
@@ -293,10 +298,7 @@ public class Location
     }
 
     /**
-     * Sets the value of the locationObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLocationObjectExtension} instead.
-     * 
+     * @see locationObjectExtension
      * 
      * @param locationObjectExtension
      */
@@ -317,6 +319,10 @@ public class Location
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

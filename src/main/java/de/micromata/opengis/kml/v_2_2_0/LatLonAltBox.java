@@ -47,7 +47,7 @@ public class LatLonAltBox
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double minAltitude = 0.0D;
+    protected double minAltitude;
     /**
      * <maxaltitude>
      * <p>
@@ -58,7 +58,7 @@ public class LatLonAltBox
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double maxAltitude = 0.0D;
+    protected double maxAltitude;
     /**
      * AltitudeMode
      * <p>
@@ -102,6 +102,7 @@ public class LatLonAltBox
     }
 
     /**
+     * @see minAltitude
      * 
      * @return
      *     possible object is
@@ -113,6 +114,7 @@ public class LatLonAltBox
     }
 
     /**
+     * @see minAltitude
      * 
      * @param value
      *     allowed object is
@@ -124,6 +126,7 @@ public class LatLonAltBox
     }
 
     /**
+     * @see maxAltitude
      * 
      * @return
      *     possible object is
@@ -135,6 +138,7 @@ public class LatLonAltBox
     }
 
     /**
+     * @see maxAltitude
      * 
      * @param value
      *     allowed object is
@@ -146,12 +150,13 @@ public class LatLonAltBox
     }
 
     /**
+     * @see altitudeMode
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -159,12 +164,13 @@ public class LatLonAltBox
     }
 
     /**
+     * @see altitudeMode
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -172,6 +178,7 @@ public class LatLonAltBox
     }
 
     /**
+     * @see latLonAltBoxSimpleExtension
      * 
      */
     public List<Object> getLatLonAltBoxSimpleExtension() {
@@ -182,6 +189,7 @@ public class LatLonAltBox
     }
 
     /**
+     * @see latLonAltBoxObjectExtension
      * 
      */
     public List<AbstractObject> getLatLonAltBoxObjectExtension() {
@@ -258,10 +266,7 @@ public class LatLonAltBox
     }
 
     /**
-     * Sets the value of the latLonAltBoxSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLatLonAltBoxSimpleExtension} instead.
-     * 
+     * @see latLonAltBoxSimpleExtension
      * 
      * @param latLonAltBoxSimpleExtension
      */
@@ -283,10 +288,7 @@ public class LatLonAltBox
     }
 
     /**
-     * Sets the value of the latLonAltBoxObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLatLonAltBoxObjectExtension} instead.
-     * 
+     * @see latLonAltBoxObjectExtension
      * 
      * @param latLonAltBoxObjectExtension
      */
@@ -307,6 +309,10 @@ public class LatLonAltBox
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -320,6 +326,10 @@ public class LatLonAltBox
         return this;
     }
 
+    /**
+     * @see abstractLatLonBoxSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setAbstractLatLonBoxSimpleExtension(final List<Object> abstractLatLonBoxSimpleExtension) {
@@ -333,6 +343,10 @@ public class LatLonAltBox
         return this;
     }
 
+    /**
+     * @see abstractLatLonBoxObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setAbstractLatLonBoxObjectExtension(final List<AbstractObject> abstractLatLonBoxObjectExtension) {

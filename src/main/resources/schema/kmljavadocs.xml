@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:kml xmlns:ns2="http://www.opengis.net/kml/2.2">
+<ns2:JaxbJavaDocElements xmlns:ns2="http://www.opengis.net/kml/2.2">
     <elements>
         <className>targethref</className>
         <javaDoc>&lt;targethref&gt; (required)
-&lt;p&gt;
-Specifies the texture file to be fetched by Google Earth. This reference can be 
-a relative reference to an image file within the .kmz archive, or it can be an absolute 
-reference to the file (for example, a URL). 
-&lt;/p&gt;
 &lt;p&gt;
 A URL that specifies the .kml or .kmz file whose data (within Google Earth) is to 
 be modified by an &lt;Update&gt; element. This KML file must already have been loaded 
 via a &lt;NetworkLink&gt;. In that file, the element to be modified must already have 
 an explicit id attribute defined for it. 
+&lt;/p&gt;
+&lt;p&gt;
+Specifies the texture file to be fetched by Google Earth. This reference can be 
+a relative reference to an image file within the .kmz archive, or it can be an absolute 
+reference to the file (for example, a URL). 
 &lt;/p&gt;
 
 </javaDoc>
@@ -100,10 +100,6 @@ Contained By:
         <className>region</className>
         <javaDoc>&lt;Region&gt;
 &lt;p&gt;
-Features and geometry associated with a Region are drawn only when the Region is 
-active. See &lt;Region&gt;. 
-&lt;/p&gt;
-&lt;p&gt;
 A region contains a bounding box (&lt;LatLonAltBox&gt;) that describes an area of interest 
 defined by geographic coordinates and altitudes. In addition, a Region contains 
 an LOD (level of detail) extent (&lt;Lod&gt;) that defines a validity range of the associated 
@@ -114,6 +110,10 @@ is onRegion, the Link or Icon is loaded only when the Region is active. See the
 &quot;Topics in KML&quot; page on Regions for more details. In a Container or NetworkLink 
 hierarchy, this calculation uses the Region that is the closest ancestor in the 
 hierarchy. 
+&lt;/p&gt;
+&lt;p&gt;
+Features and geometry associated with a Region are drawn only when the Region is 
+active. See &lt;Region&gt;. 
 &lt;/p&gt;
 
 Syntax: 
@@ -149,26 +149,26 @@ Contained By:
         <className>screenoverlay</className>
         <javaDoc>&lt;ScreenOverlay&gt;
 &lt;p&gt;
-This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
-are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
-by the &lt;size&gt; element. Positioning of the overlay is handled by mapping a point 
-in the image specified by &lt;overlayXY&gt; to a point on the screen specified by &lt;screenXY&gt;. 
-Then the image is rotated by &lt;rotation&gt; degrees about a point relative to the screen 
-specified by &lt;rotationXY&gt;. 
-&lt;/p&gt;
-&lt;p&gt;
-This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
-are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
-by the &lt;size&gt; element. Positioning of the overlay is handled by mapping a point 
-in the image specified by &lt;overlayXY&gt; to a point on the screen specified by &lt;screenXY&gt;. 
-Then the image is rotated by &lt;rotation&gt; degrees about a point relative to the screen 
-specified by &lt;rotationXY&gt;. 
-&lt;/p&gt;
-&lt;p&gt;
 The &lt;href&gt; child of &lt;Icon&gt; specifies the image to be used as the overlay. This file 
 can be either on a local file system or on a web server. If this element is omitted 
 or contains no &lt;href&gt;, a rectangle is drawn using the color and size defined by 
 the screen overlay. 
+&lt;/p&gt;
+&lt;p&gt;
+This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
+are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
+by the &lt;size&gt; element. Positioning of the overlay is handled by mapping a point 
+in the image specified by &lt;overlayXY&gt; to a point on the screen specified by &lt;screenXY&gt;. 
+Then the image is rotated by &lt;rotation&gt; degrees about a point relative to the screen 
+specified by &lt;rotationXY&gt;. 
+&lt;/p&gt;
+&lt;p&gt;
+This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
+are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
+by the &lt;size&gt; element. Positioning of the overlay is handled by mapping a point 
+in the image specified by &lt;overlayXY&gt; to a point on the screen specified by &lt;screenXY&gt;. 
+Then the image is rotated by &lt;rotation&gt; degrees about a point relative to the screen 
+specified by &lt;rotationXY&gt;. 
 &lt;/p&gt;
 
 Syntax: 
@@ -361,13 +361,6 @@ URL along with # referencing. Examples are &lt;styleUrl&gt;#myIconStyleID&lt;/st
         <className>tilt</className>
         <javaDoc>&lt;tilt&gt;
 &lt;p&gt;
-Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
-the view is aimed straight down toward the earth (the most common case). A value 
-for 90 for &lt;tilt&gt; indicates that the view is aimed toward the horizon. Values greater 
-than 90 indicate that the view is pointed up into the sky. Values for &lt;tilt&gt; are 
-clamped at +180 degrees. 
-&lt;/p&gt;
-&lt;p&gt;
 Angle between the direction of the LookAt position and the normal to the surface 
 of the earth. (See diagram below.) Values range from 0 to 90 degrees. Values for 
 &lt;tilt&gt; cannot be negative. A &lt;tilt&gt; value of 0 degrees indicates viewing from directly 
@@ -376,6 +369,13 @@ above. A &lt;tilt&gt; value of 90 degrees indicates viewing along the horizon.
 &lt;p&gt;
 Rotation about the x axis. A positive rotation is clockwise around the x axis and 
 specified in degrees from 0 to 360. 
+&lt;/p&gt;
+&lt;p&gt;
+Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
+the view is aimed straight down toward the earth (the most common case). A value 
+for 90 for &lt;tilt&gt; indicates that the view is aimed toward the horizon. Values greater 
+than 90 indicate that the view is pointed up into the sky. Values for &lt;tilt&gt; are 
+clamped at +180 degrees. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -423,10 +423,10 @@ first loaded into the Places panel. 0=collapsed (the default), 1=expanded. See a
         <className>scale</className>
         <javaDoc>&lt;scale&gt;
 &lt;p&gt;
-Resizes the icon. 
+Note: The &lt;geomScale&gt; tag has been deprecated. Use &lt;scale&gt; instead. 
 &lt;/p&gt;
 &lt;p&gt;
-Note: The &lt;geomScale&gt; tag has been deprecated. Use &lt;scale&gt; instead. 
+Resizes the icon. 
 &lt;/p&gt;
 &lt;p&gt;
 Scales a model along the x, y, and z axes in the model's coordinate space. &lt;Scale&gt; 
@@ -489,6 +489,16 @@ mode, and fill.
 Note: In Google Earth, a Polygon with an &lt;altitudeMode&gt; of clampToGround follows 
 the great circle; however, a LinearRing (by itself) with an &lt;altitudeMode&gt; of clampToGround 
 follows lines of constant latitude. 
+&lt;/p&gt;
+&lt;p&gt;
+The &lt;coordinates&gt; for polygons must be specified in counterclockwise order. Polygons 
+follow the &quot;right-hand rule,&quot; which states that if you place the fingers of your 
+right hand in the direction in which the coordinates are specified, your thumb points 
+in the general direction of the geometric normal for the polygon. (In 3D graphics, 
+the geometric normal is used for lighting and points away from the front face of 
+the polygon.) Since Google Earth fills only the front face of polygons, you will 
+achieve the desired effect only when the coordinates are specified in the proper 
+order. Otherwise, the polygon will be gray. 
 &lt;/p&gt;
 
 Syntax: 
@@ -662,15 +672,15 @@ Foreground color for text. The default is black (ff000000).
         <className>tessellate</className>
         <javaDoc>&lt;tessellate&gt;
 &lt;p&gt;
-Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
-To enable tessellation, the value for &lt;altitudeMode&gt; must be clampToGround or clampToSeaFloor. 
-Very large LinearRings should enable tessellation so that they follow the curvature 
-of the earth (otherwise, they may go underground and be hidden). 
-&lt;/p&gt;
-&lt;p&gt;
 Boolean value. Specifies whether to allow the LineString to follow the terrain. 
 To enable tessellation, the altitude mode must be clampToGround or clampToSeaFloor. 
 Very large LineStrings should enable tessellation so that they follow the curvature 
+of the earth (otherwise, they may go underground and be hidden). 
+&lt;/p&gt;
+&lt;p&gt;
+Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
+To enable tessellation, the value for &lt;altitudeMode&gt; must be clampToGround or clampToSeaFloor. 
+Very large LinearRings should enable tessellation so that they follow the curvature 
 of the earth (otherwise, they may go underground and be hidden). 
 &lt;/p&gt;
 &lt;p&gt;
@@ -725,6 +735,31 @@ to display.
         <className>screenxy</className>
         <javaDoc>&lt;screenxy&gt;
 &lt;p&gt;
+Center the image: 
+&lt;/p&gt;
+&lt;p&gt;
+Center the image: &lt;ScreenOverlay&gt; &lt;overlayXY x=&quot;0.5&quot; y=&quot;0.5&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; 
+&lt;screenXY x=&quot;0.5&quot; y=&quot;0.5&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; &lt;/ScreenOverlay&gt; 
+Place the image on the top left: &lt;ScreenOverlay&gt; &lt;overlayXY x=&quot;0&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; 
+yunits=&quot;fraction&quot;/&gt; &lt;screenXY x=&quot;0&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; 
+&lt;/ScreenOverlay&gt; Place the image at the right of the screen: &lt;ScreenOverlay&gt; &lt;overlayXY 
+x=&quot;1&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; &lt;screenXY x=&quot;1&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; 
+yunits=&quot;fraction&quot;/&gt; &lt;/ScreenOverlay&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+For example, &lt;screenXY x=&quot;.5&quot; y=&quot;.5&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; indicates 
+a point in the middle of the screen. 
+&lt;/p&gt;
+&lt;p&gt;
+Here are some examples: 
+&lt;/p&gt;
+&lt;p&gt;
+Place the image at the right of the screen: 
+&lt;/p&gt;
+&lt;p&gt;
+Place the image on the top left: 
+&lt;/p&gt;
+&lt;p&gt;
 Specifies a point relative to the screen origin that the overlay image is mapped 
 to. The x and y values can be specified in three different ways: as pixels (&quot;pixels&quot;), 
 as fractions of the screen (&quot;fraction&quot;), or as inset pixels (&quot;insetPixels&quot;), which 
@@ -742,37 +777,24 @@ is specified. A value of fraction indicates the y value is a fraction of the scr
 A value of &quot;pixels&quot; indicates the y value in pixels. A value of &quot;insetPixels&quot; indicates 
 the indent from the top edge of the screen. 
 &lt;/p&gt;
-&lt;p&gt;
-For example, &lt;screenXY x=&quot;.5&quot; y=&quot;.5&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; indicates 
-a point in the middle of the screen. 
-&lt;/p&gt;
-&lt;p&gt;
-Here are some examples: 
-&lt;/p&gt;
-&lt;p&gt;
-Center the image: 
-&lt;/p&gt;
-&lt;p&gt;
-Place the image on the top left: 
-&lt;/p&gt;
-&lt;p&gt;
-Place the image at the right of the screen: 
-&lt;/p&gt;
-&lt;p&gt;
-Center the image: &lt;ScreenOverlay&gt; &lt;overlayXY x=&quot;0.5&quot; y=&quot;0.5&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; 
-&lt;screenXY x=&quot;0.5&quot; y=&quot;0.5&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; &lt;/ScreenOverlay&gt; 
-Place the image on the top left: &lt;ScreenOverlay&gt; &lt;overlayXY x=&quot;0&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; 
-yunits=&quot;fraction&quot;/&gt; &lt;screenXY x=&quot;0&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; 
-&lt;/ScreenOverlay&gt; Place the image at the right of the screen: &lt;ScreenOverlay&gt; &lt;overlayXY 
-x=&quot;1&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; yunits=&quot;fraction&quot;/&gt; &lt;screenXY x=&quot;1&quot; y=&quot;1&quot; xunits=&quot;fraction&quot; 
-yunits=&quot;fraction&quot;/&gt; &lt;/ScreenOverlay&gt; 
-&lt;/p&gt;
 
 </javaDoc>
     </elements>
     <elements>
         <className>camera</className>
         <javaDoc>&lt;Camera&gt;
+&lt;p&gt;
+&lt;Camera&gt; can also contain a TimePrimitive (&lt;gx:TimeSpan&gt; or &lt;gx:TimeStamp&gt;). Time 
+values in Camera affect historical imagery, sunlight, and the display of time-stamped 
+features. For more information, read Time with AbstractViews in the Time and Animation 
+chapter of the Developer's Guide. 
+&lt;/p&gt;
+&lt;p&gt;
+&lt;Camera&gt; provides full six-degrees-of-freedom control over the view, so you can 
+position the Camera in space and then rotate it around the X, Y, and Z axes. Most 
+importantly, you can tilt the camera view so that you're looking above the horizon 
+into the sky. 
+&lt;/p&gt;
 &lt;p&gt;
 Defines the virtual camera that views the scene. This element defines the position 
 of the camera relative to the Earth's surface as well as the viewing direction of 
@@ -783,19 +805,17 @@ any Feature or of &lt;NetworkLinkControl&gt;. A parent element cannot contain bo
 and a &lt;LookAt&gt; at the same time. 
 &lt;/p&gt;
 &lt;p&gt;
-&lt;Camera&gt; provides full six-degrees-of-freedom control over the view, so you can 
-position the Camera in space and then rotate it around the X, Y, and Z axes. Most 
-importantly, you can tilt the camera view so that you're looking above the horizon 
-into the sky. 
-&lt;/p&gt;
-&lt;p&gt;
-&lt;Camera&gt; can also contain a TimePrimitive (&lt;gx:TimeSpan&gt; or &lt;gx:TimeStamp&gt;). Time 
-values in Camera affect historical imagery, sunlight, and the display of time-stamped 
-features. For more information, read Time with AbstractViews in the Time and Animation 
-chapter of the Developer's Guide. 
-&lt;/p&gt;
-&lt;p&gt;
 Defining a View 
+&lt;/p&gt;
+&lt;p&gt;
+The X axis points toward the right of the camera and is called the right vector. 
+The Y axis defines the &quot;up&quot; direction relative to the screen and is called the up 
+vector. The Z axis points from the center of the screen toward the eye point. The 
+camera looks down the −Z axis, which is called the view vector. 
+&lt;/p&gt;
+&lt;p&gt;
+The following diagram shows the X, Y, and Z axes, which are attached to the virtual 
+camera. 
 &lt;/p&gt;
 &lt;p&gt;
 Within a Feature or &lt;NetworkLinkControl&gt;, use either a &lt;Camera&gt; or a &lt;LookAt&gt; object 
@@ -805,16 +825,6 @@ specify a view that is not on the Earth's surface. The &lt;LookAt&gt; object def
 viewpoint in terms of what is being viewed. The &lt;LookAt&gt; object is more limited 
 in scope than &lt;Camera&gt; and generally requires that the view direction intersect 
 the Earth's surface. 
-&lt;/p&gt;
-&lt;p&gt;
-The following diagram shows the X, Y, and Z axes, which are attached to the virtual 
-camera. 
-&lt;/p&gt;
-&lt;p&gt;
-The X axis points toward the right of the camera and is called the right vector. 
-The Y axis defines the &quot;up&quot; direction relative to the screen and is called the up 
-vector. The Z axis points from the center of the screen toward the eye point. The 
-camera looks down the −Z axis, which is called the view vector. 
 &lt;/p&gt;
 
 Syntax: 
@@ -898,13 +908,6 @@ Extended By:
         <className>photooverlay</className>
         <javaDoc>&lt;PhotoOverlay&gt;
 &lt;p&gt;
-The &lt;PhotoOverlay&gt; element allows you to geographically locate a photograph on the 
-Earth and to specify viewing parameters for this PhotoOverlay. The PhotoOverlay 
-can be a simple 2D rectangle, a partial or full cylinder, or a sphere (for spherical 
-panoramas). The overlay is placed at the specified location and oriented toward 
-the viewpoint. 
-&lt;/p&gt;
-&lt;p&gt;
 Because &lt;PhotoOverlay&gt; is derived from &lt;Feature&gt;, it can contain one of the two 
 elements derived from &lt;AbstractView&gt;—either &lt;Camera&gt; or &lt;LookAt&gt;. The Camera (or 
 LookAt) specifies a viewpoint and a viewing direction (also referred to as a view 
@@ -914,22 +917,29 @@ vector. The normal of this plane—that is, its front, which is the part with th
 photo—is oriented toward the viewpoint. 
 &lt;/p&gt;
 &lt;p&gt;
+For more information, see the &quot;Topics in KML&quot; page on PhotoOverlay. 
+&lt;/p&gt;
+&lt;p&gt;
+The &lt;PhotoOverlay&gt; element allows you to geographically locate a photograph on the 
+Earth and to specify viewing parameters for this PhotoOverlay. The PhotoOverlay 
+can be a simple 2D rectangle, a partial or full cylinder, or a sphere (for spherical 
+panoramas). The overlay is placed at the specified location and oriented toward 
+the viewpoint. 
+&lt;/p&gt;
+&lt;p&gt;
 The URL for the PhotoOverlay image is specified in the &lt;Icon&gt; tag, which is inherited 
 from &lt;Overlay&gt;. The &lt;Icon&gt; tag must contain an &lt;href&gt; element that specifies the 
 image file to use for the PhotoOverlay. In the case of a very large image, the &lt;href&gt; 
 is a special URL that indexes into a pyramid of images of varying resolutions (see 
 ImagePyramid). 
 &lt;/p&gt;
-&lt;p&gt;
-For more information, see the &quot;Topics in KML&quot; page on PhotoOverlay. 
-&lt;/p&gt;
 
 Extends: 
 @see: &lt;Overlay&gt;
 
 Contained By: 
-@see: &lt;Folder&gt;
 @see: &lt;Document&gt;
+@see: &lt;Folder&gt;
 @see: &lt;kml&gt;
 
 </javaDoc>
@@ -954,11 +964,11 @@ Values range from 0 to 360 degrees.
 &lt;/p&gt;
 &lt;p&gt;
 Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-diagram.) Values range from 0 to 360 degrees. 
+diagram below.) Values range from 0 to 360 degrees. 
 &lt;/p&gt;
 &lt;p&gt;
 Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-diagram below.) Values range from 0 to 360 degrees. 
+diagram.) Values range from 0 to 360 degrees. 
 &lt;/p&gt;
 &lt;p&gt;
 Rotation about the z axis (normal to the Earth's surface). A value of 0 (the default) 
@@ -992,11 +1002,6 @@ Use of these elements within &lt;Icon&gt; has been deprecated.
         <className>coordinates</className>
         <javaDoc>&lt;coordinates&gt; (required)
 &lt;p&gt;
-Two or more coordinate tuples, each consisting of floating point values for longitude, 
-latitude, and altitude. The altitude component is optional. Insert a space between 
-tuples. Do not include spaces within a tuple. 
-&lt;/p&gt;
-&lt;p&gt;
 A single tuple consisting of floating point values for longitude, latitude, and 
 altitude (in that order). Longitude and latitude values are in degrees, where longitude 
 ≥ −180 and &lt;= 180 latitude ≥ −90 and ≤ 90 altitude values (optional) are in meters 
@@ -1005,6 +1010,11 @@ above sea level
 &lt;p&gt;
 Do not include spaces between the three values that describe a coordinate. 
 &lt;/p&gt;
+&lt;p&gt;
+Two or more coordinate tuples, each consisting of floating point values for longitude, 
+latitude, and altitude. The altitude component is optional. Insert a space between 
+tuples. Do not include spaces within a tuple. 
+&lt;/p&gt;
 
 </javaDoc>
     </elements>
@@ -1012,17 +1022,17 @@ Do not include spaces between the three values that describe a coordinate.
         <className>update</className>
         <javaDoc>&lt;Update&gt;
 &lt;p&gt;
-With &lt;Update&gt;, you can specify any number of Change, Create, and Delete tags for 
-a .kml file or .kmz archive that has previously been loaded with a network link. 
-See &lt;Update&gt;. 
-&lt;/p&gt;
-&lt;p&gt;
 Specifies an addition, change, or deletion to KML data that has already been loaded 
 using the specified URL. The &lt;targetHref&gt; specifies the .kml or .kmz file whose 
 data (within Google Earth) is to be modified. &lt;Update&gt; is always contained in a 
 NetworkLinkControl. Furthermore, the file containing the NetworkLinkControl must 
 have been loaded by a NetworkLink. See the &quot;Topics in KML&quot; page on Updates for a 
 detailed example of how Update works. 
+&lt;/p&gt;
+&lt;p&gt;
+With &lt;Update&gt;, you can specify any number of Change, Create, and Delete tags for 
+a .kml file or .kmz archive that has previously been loaded with a network link. 
+See &lt;Update&gt;. 
 &lt;/p&gt;
 
 Syntax: 
@@ -1185,8 +1195,8 @@ Syntax:
 &lt;strong&gt;&amp;lt;/NetworkLinkControl&amp;gt;&lt;/strong&gt;&lt;/pre&gt;
 
 See Also: 
-&lt;Update&gt;
 &lt;NetworkLink&gt;
+&lt;Update&gt;
 
 </javaDoc>
     </elements>
@@ -1220,8 +1230,8 @@ Extends:
 @see: &lt;ColorStyle&gt;
 
 Contains: 
-@see: &lt;href&gt;
 @see: &lt;Icon&gt;
+@see: &lt;href&gt;
 
 Contained By: 
 @see: &lt;Style&gt;
@@ -1310,17 +1320,17 @@ Contained By:
         <className>icon</className>
         <javaDoc>&lt;icon&gt; see also &lt;icon&gt;.
 &lt;p&gt;
-Defines an image associated with an Icon style or overlay. &lt;Icon&gt; has the same child 
-elements as &lt;Link&gt;. The required &lt;href&gt; child element defines the location of the 
-image to be used as the overlay or as the icon for the placemark. This location 
-can either be on a local file system or a remote web server. 
-&lt;/p&gt;
-&lt;p&gt;
 &lt;Icon&gt; &lt;href&gt;Sunset.jpg&lt;/href&gt; &lt;/Icon&gt; 
 &lt;/p&gt;
 &lt;p&gt;
 A custom Icon. In &lt;IconStyle&gt;, the only child element of &lt;Icon&gt; is &lt;href&gt;: &lt;href&gt;: 
 An HTTP address or a local file specification used to load an icon. 
+&lt;/p&gt;
+&lt;p&gt;
+Defines an image associated with an Icon style or overlay. &lt;Icon&gt; has the same child 
+elements as &lt;Link&gt;. The required &lt;href&gt; child element defines the location of the 
+image to be used as the overlay or as the icon for the placemark. This location 
+can either be on a local file system or a remote web server. 
 &lt;/p&gt;
 &lt;p&gt;
 Defines the image associated with the Overlay. The &lt;href&gt; element defines the location 
@@ -1347,8 +1357,8 @@ Syntax:
 
 Contained By: 
 @see: &lt;GroundOverlay&gt;
-@see: &lt;ScreenOverlay&gt;
 @see: &lt;IconStyle&gt;
+@see: &lt;ScreenOverlay&gt;
 
 </javaDoc>
     </elements>
@@ -1373,6 +1383,15 @@ See &lt;longitude&gt; in &lt;Model&gt;
         <className>bgcolor</className>
         <javaDoc>&lt;bgcolor&gt;
 &lt;p&gt;
+Background color for the Snippet. Color and opacity values are expressed in hexadecimal 
+notation. The range of values for any one color is 0 to 255 (00 to ff). For alpha, 
+00 is fully transparent and ff is fully opaque. The order of expression is aabbggrr, 
+where aa=alpha (00 to ff); bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to 
+ff). For example, if you want to apply a blue color with 50 percent opacity to an 
+overlay, you would specify the following: &lt;color&gt;7fff0000&lt;/color&gt;, where alpha=0x7f, 
+blue=0xff, green=0x00, and red=0x00. 
+&lt;/p&gt;
+&lt;p&gt;
 Background color of the balloon (optional). Color and opacity (alpha) values are 
 expressed in hexadecimal notation. The range of values for any one color is 0 to 
 255 (00 to ff). The order of expression is aabbggrr, where aa=alpha (00 to ff); 
@@ -1385,15 +1404,6 @@ where alpha=0x7f, blue=0xff, green=0x00, and red=0x00. The default is opaque whi
 &lt;p&gt;
 Note: The use of the &lt;color&gt; element within &lt;BalloonStyle&gt; has been deprecated. 
 Use &lt;bgColor&gt; instead. 
-&lt;/p&gt;
-&lt;p&gt;
-Background color for the Snippet. Color and opacity values are expressed in hexadecimal 
-notation. The range of values for any one color is 0 to 255 (00 to ff). For alpha, 
-00 is fully transparent and ff is fully opaque. The order of expression is aabbggrr, 
-where aa=alpha (00 to ff); bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to 
-ff). For example, if you want to apply a blue color with 50 percent opacity to an 
-overlay, you would specify the following: &lt;color&gt;7fff0000&lt;/color&gt;, where alpha=0x7f, 
-blue=0xff, green=0x00, and red=0x00. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -1412,15 +1422,15 @@ elements, which create multiple cut-outs inside the Polygon.
         <className>point</className>
         <javaDoc>&lt;Point&gt;
 &lt;p&gt;
-The &lt;Point&gt; element acts as a &lt;Point&gt; inside a &lt;Placemark&gt; element. It draws an 
-icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
-&lt;styleUrl&gt; and &lt;StyleSelector&gt; fields, just as it is for &lt;Placemark&gt;. 
-&lt;/p&gt;
-&lt;p&gt;
 A geographic location defined by longitude, latitude, and (optional) altitude. When 
 a Point is contained by a Placemark, the point itself determines the position of 
 the Placemark's name and icon. When a Point is extruded, it is connected to the 
 ground with a line. This &quot;tether&quot; uses the current LineStyle. 
+&lt;/p&gt;
+&lt;p&gt;
+The &lt;Point&gt; element acts as a &lt;Point&gt; inside a &lt;Placemark&gt; element. It draws an 
+icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
+&lt;styleUrl&gt; and &lt;StyleSelector&gt; fields, just as it is for &lt;Placemark&gt;. 
 &lt;/p&gt;
 
 Syntax: 
@@ -1470,12 +1480,12 @@ Extends:
 @see: &lt;Object&gt;
 
 Extended By: 
-@see: &lt;Point&gt;
 @see: &lt;LineString&gt;
 @see: &lt;LinearRing&gt;
-@see: Polygon
-@see: MultiGeometry
 @see: &lt;Model&gt;
+@see: &lt;Point&gt;
+@see: MultiGeometry
+@see: Polygon
 
 </javaDoc>
     </elements>
@@ -1494,9 +1504,6 @@ size.&quot;
         <className>value</className>
         <javaDoc>&lt;value&gt;
 &lt;p&gt;
-Value of the data pair. 
-&lt;/p&gt;
-&lt;p&gt;
 &lt;Placemark&gt; &lt;name&gt;Club house&lt;/name&gt; &lt;ExtendedData&gt; &lt;Data name=&quot;holeNumber&quot;&gt; &lt;value&gt;1&lt;/value&gt; 
 &lt;/Data&gt; &lt;Data name=&quot;holeYardage&quot;&gt; &lt;value&gt;234&lt;/value&gt; &lt;/Data&gt; &lt;Data name=&quot;holePar&quot;&gt; 
 &lt;value&gt;4&lt;/value&gt; &lt;/Data&gt; &lt;/ExtendedData&gt; &lt;/Placemark&gt; 
@@ -1507,6 +1514,9 @@ Value of the data pair.
 &lt;Data name=&quot;holeNumber&quot;&gt; &lt;value&gt;1&lt;/value&gt; &lt;/Data&gt; &lt;Data name=&quot;holeYardage&quot;&gt; &lt;value&gt;234&lt;/value&gt; 
 &lt;/Data&gt; &lt;Data name=&quot;holePar&quot;&gt; &lt;value&gt;4&lt;/value&gt; &lt;/Data&gt; &lt;/ExtendedData&gt; &lt;/Placemark&gt; 
 &lt;/p&gt;
+&lt;p&gt;
+Value of the data pair. 
+&lt;/p&gt;
 
 </javaDoc>
     </elements>
@@ -1514,14 +1524,14 @@ Value of the data pair.
         <className>href</className>
         <javaDoc>&lt;href&gt;
 &lt;p&gt;
-An HTTP address or a local file specification used to load an icon. 
-&lt;/p&gt;
-&lt;p&gt;
 A URL (either an HTTP address or a local file specification). When the parent of 
 &lt;Link&gt; is a NetworkLink, &lt;href&gt; is a KML file. When the parent of &lt;Link&gt; is a Model, 
-&lt;href&gt; is a COLLADA file. When the parent of &lt;Link&gt; is an Overlay, &lt;href&gt; is an 
-image. Relative URLs can be used in this tag and are evaluated relative to the enclosing 
-KML file. 
+&lt;href&gt; is a COLLADA file. When the parent of &lt;Icon&gt; (same fields as &lt;Link&gt;) is an 
+Overlay, &lt;href&gt; is an image. Relative URLs can be used in this tag and are evaluated 
+relative to the enclosing KML file. 
+&lt;/p&gt;
+&lt;p&gt;
+An HTTP address or a local file specification used to load an icon. 
 &lt;/p&gt;
 &lt;p&gt;
 Specifies the URI of the image used in the List View for the Feature. 
@@ -1533,11 +1543,11 @@ Specifies the URI of the image used in the List View for the Feature.
         <className>labelstyle</className>
         <javaDoc>&lt;LabelStyle&gt;
 &lt;p&gt;
-Specifies how the &lt;name&gt; of a Feature is drawn in the 3D viewer. A custom color, 
-color mode, and scale for the label (name) can be specified. 
+Note: The &lt;labelColor&gt; tag is deprecated. Use &lt;LabelStyle&gt; instead. 
 &lt;/p&gt;
 &lt;p&gt;
-Note: The &lt;labelColor&gt; tag is deprecated. Use &lt;LabelStyle&gt; instead. 
+Specifies how the &lt;name&gt; of a Feature is drawn in the 3D viewer. A custom color, 
+color mode, and scale for the label (name) can be specified. 
 &lt;/p&gt;
 
 Syntax: 
@@ -1564,10 +1574,10 @@ Contained By:
 &lt;p&gt;
 Defines a key/value pair that maps a mode (normal or highlight) to the predefined 
 &lt;styleUrl&gt;. &lt;Pair&gt; contains two elements (both are required): &lt;key&gt;, which identifies 
-the key &lt;styleUrl&gt;, which references the style. For referenced style elements that 
-are local to the KML document, a simple # referencing is used. For styles that are 
-contained in external files, use a full URL along with # referencing. For example: 
-&lt;Pair&gt; &lt;key&gt;normal&lt;/key&gt; &lt;styleUrl&gt;http://myserver.com/populationProject.xml#example_style_off&lt;/styleUrl&gt; 
+the key &lt;styleUrl&gt; or &lt;Style&gt;, which references the style. In &lt;styleUrl&gt;, for referenced 
+style elements that are local to the KML document, a simple # referencing is used. 
+For styles that are contained in external files, use a full URL along with # referencing. 
+For example: &lt;Pair&gt; &lt;key&gt;normal&lt;/key&gt; &lt;styleUrl&gt;http://myserver.com/populationProject.xml#example_style_off&lt;/styleUrl&gt; 
 &lt;/Pair&gt; 
 &lt;/p&gt;
 
@@ -1577,17 +1587,17 @@ contained in external files, use a full URL along with # referencing. For exampl
         <className>itemicon</className>
         <javaDoc>&lt;itemicon&gt;
 &lt;p&gt;
+&lt;state&gt; Specifies the current state of the NetworkLink or Folder. Possible values 
+are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
+combined by inserting a space between two values (no comma). &lt;href&gt; Specifies the 
+URI of the image used in the List View for the Feature. 
+&lt;/p&gt;
+&lt;p&gt;
 Icon used in the List view that reflects the state of a Folder or Link fetch. Icons 
 associated with the open and closed modes are used for Folders and Network Links. 
 Icons associated with the error and fetching0, fetching1, and fetching2 modes are 
 used for Network Links. The following screen capture illustrates the Google Earth 
 icons for these states: 
-&lt;/p&gt;
-&lt;p&gt;
-&lt;state&gt; Specifies the current state of the NetworkLink or Folder. Possible values 
-are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
-combined by inserting a space between two values (no comma). &lt;href&gt; Specifies the 
-URI of the image used in the List View for the Feature. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -1596,11 +1606,6 @@ URI of the image used in the List View for the Feature.
         <className>tourprimitive</className>
         <javaDoc>&lt;gx:TourPrimitive&gt;
 &lt;p&gt;
-This is an abstract element and cannot be used directly in a KML file. This element 
-is extended by the &lt;gx:FlyTo&gt;, &lt;gx:AnimatedUpdate&gt;, &lt;gx:TourControl&gt;, &lt;gx:Wait&gt;, 
-and &lt;gx:SoundCue&gt; elements. 
-&lt;/p&gt;
-&lt;p&gt;
 Elements extended from gx:TourPrimitive provide instructions to KML browsers during 
 tours, including points to fly to and the duration of those flights, pauses, updates 
 to KML features, and sound files to play. 
@@ -1608,6 +1613,11 @@ to KML features, and sound files to play.
 &lt;p&gt;
 These elements must be contained within a &lt;gx:Playlist&gt; element, which in turn is 
 contained with a &lt;gx:Tour&gt; element. 
+&lt;/p&gt;
+&lt;p&gt;
+This is an abstract element and cannot be used directly in a KML file. This element 
+is extended by the &lt;gx:FlyTo&gt;, &lt;gx:AnimatedUpdate&gt;, &lt;gx:TourControl&gt;, &lt;gx:Wait&gt;, 
+and &lt;gx:SoundCue&gt; elements. 
 &lt;/p&gt;
 
 Syntax: 
@@ -1642,15 +1652,15 @@ Contained By:
         <className>delete</className>
         <javaDoc>&lt;delete&gt;
 &lt;p&gt;
+Child elements for &lt;Delete&gt;, which are the only elements that can be deleted, are 
+Document, Folder, GroundOverlay, Placemark, and ScreenOverlay. 
+&lt;/p&gt;
+&lt;p&gt;
 Deletes features from a complex element that has already been loaded via a &lt;NetworkLink&gt;. 
 The &lt;targetHref&gt; element in &lt;Update&gt; specifies the .kml or .kmz file containing 
 the data to be deleted. Within that file, the element to be deleted must already 
 have an explicit id defined for it. The &lt;Delete&gt; element references this id in the 
 targetId attribute. 
-&lt;/p&gt;
-&lt;p&gt;
-Child elements for &lt;Delete&gt;, which are the only elements that can be deleted, are 
-Document, Folder, GroundOverlay, Placemark, and ScreenOverlay. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -1659,16 +1669,29 @@ Document, Folder, GroundOverlay, Placemark, and ScreenOverlay.
         <className>link</className>
         <javaDoc>&lt;link&gt; (required). see &lt;link&gt;.
 &lt;p&gt;
+&lt;Link&gt; specifies the location of any of the following: 
+&lt;/p&gt;
+&lt;p&gt;
+If the file specified in &lt;href&gt; is a local file, the &lt;viewFormat&gt; and &lt;httpQuery&gt; 
+elements are not used. 
+&lt;/p&gt;
+&lt;p&gt;
+KML files fetched by network links Image files used in any Overlay (the &lt;Icon&gt; element 
+specifies the image in an Overlay; &lt;Icon&gt; has the same fields as &lt;Link&gt;) Model files 
+used in the &lt;Model&gt; element 
+&lt;/p&gt;
+&lt;p&gt;
 Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
 the namespace for this element in any KML file that uses it: xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot; 
 (see the sample that follows). 
 &lt;/p&gt;
 &lt;p&gt;
-&lt;Link&gt; specifies the location of any of the following: 
+Specifies the file to load and optional refresh parameters. See &lt;Link&gt;. 
 &lt;/p&gt;
 &lt;p&gt;
-KML files fetched by network links Image files used in any Overlay Model files used 
-in the &lt;Model&gt; element 
+The &lt;Link&gt; element replaces the &lt;Url&gt; element of &lt;NetworkLink&gt; contained in earlier 
+KML releases and adds functionality for the &lt;Region&gt; element (introduced in KML 
+2.1). In Google Earth releases 3.0 and earlier, the &lt;Link&gt; element is ignored. 
 &lt;/p&gt;
 &lt;p&gt;
 The file is conditionally loaded and refreshed, depending on the refresh parameters 
@@ -1681,6 +1704,11 @@ and provides a set of optional viewing parameters that can be sent to the server
 information. 
 &lt;/p&gt;
 &lt;p&gt;
+Tip: To display the top-level Folder or Document within a Network Link in the List 
+View, assign an ID to the Folder or Document. Without this ID, only the child object 
+names are displayed in the List View. 
+&lt;/p&gt;
+&lt;p&gt;
 When a file is fetched, the URL that is sent to the server is composed of three 
 pieces of information: 
 &lt;/p&gt;
@@ -1690,23 +1718,6 @@ string that is created from (a) parameters that you specify in the &lt;viewForma
 element or (b) bounding box parameters (this is the default and is used if no &lt;viewFormat&gt; 
 element is included in the file). a second format string that is specified in the 
 &lt;httpQuery&gt; element. 
-&lt;/p&gt;
-&lt;p&gt;
-If the file specified in &lt;href&gt; is a local file, the &lt;viewFormat&gt; and &lt;httpQuery&gt; 
-elements are not used. 
-&lt;/p&gt;
-&lt;p&gt;
-The &lt;Link&gt; element replaces the &lt;Url&gt; element of &lt;NetworkLink&gt; contained in earlier 
-KML releases and adds functionality for the &lt;Region&gt; element (introduced in KML 
-2.1). In Google Earth releases 3.0 and earlier, the &lt;Link&gt; element is ignored. 
-&lt;/p&gt;
-&lt;p&gt;
-Specifies the file to load and optional refresh parameters. See &lt;Link&gt;. 
-&lt;/p&gt;
-&lt;p&gt;
-Tip: To display the top-level Folder or Document within a Network Link in the List 
-View, assign an ID to the Folder or Document. Without this ID, only the child object 
-names are displayed in the List View. 
 &lt;/p&gt;
 
 Syntax: 
@@ -1742,10 +1753,6 @@ See Also:
         <className>near</className>
         <javaDoc>&lt;near&gt;
 &lt;p&gt;
-Measurement in meters along the viewing direction from the camera viewpoint to the 
-PhotoOverlay shape. 
-&lt;/p&gt;
-&lt;p&gt;
 &lt;leftFov&gt; Angle, in degrees, between the camera's viewing direction and the left 
 side of the view volume. &lt;rightFov&gt; Angle, in degrees, between the camera's viewing 
 direction and the right side of the view volume. &lt;bottomFov&gt; Angle, in degrees, 
@@ -1753,6 +1760,10 @@ between the camera's viewing direction and the bottom side of the view volume. &
 Angle, in degrees, between the camera's viewing direction and the top side of the 
 view volume. &lt;near&gt; Measurement in meters along the viewing direction from the camera 
 viewpoint to the PhotoOverlay shape. 
+&lt;/p&gt;
+&lt;p&gt;
+Measurement in meters along the viewing direction from the camera viewpoint to the 
+PhotoOverlay shape. 
 &lt;/p&gt;
 &lt;p&gt;
 The field of view for a PhotoOverlay is defined by four planes, each of which is 
@@ -1773,6 +1784,10 @@ The following diagrams show the four field-of-view angles within this pyramid:
         <className>change</className>
         <javaDoc>&lt;change&gt;
 &lt;p&gt;
+Children of this element are the element(s) to be modified, which are identified 
+by the targetId attribute. 
+&lt;/p&gt;
+&lt;p&gt;
 Modifies the values in an element that has already been loaded with a &lt;NetworkLink&gt;. 
 Within the Change element, the child to be modified must include a targetId attribute 
 that references the original element's id. 
@@ -1782,10 +1797,6 @@ This update can be considered a &quot;sparse update&quot;: in the modified eleme
 values listed in &lt;Change&gt; are replaced; all other values remained untouched. When 
 &lt;Change&gt; is applied to a set of coordinates, the new coordinates replace the current 
 coordinates. 
-&lt;/p&gt;
-&lt;p&gt;
-Children of this element are the element(s) to be modified, which are identified 
-by the targetId attribute. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -1826,8 +1837,8 @@ Extends:
 @see: &lt;gx:TourPrimitive&gt;
 
 Contains: 
-@see: &lt;gx:duration&gt;
 @see: &lt;Update&gt;
+@see: &lt;gx:duration&gt;
 
 </javaDoc>
     </elements>
@@ -1861,20 +1872,20 @@ Extended By:
         <className>kml</className>
         <javaDoc>&lt;kml&gt;
 &lt;p&gt;
-The root element of a KML file. This element is required. It follows the xml declaration 
-at the beginning of the file. The hint attribute is used as a signal to Google Earth 
-to display the file as celestial data. 
+&lt;kml xmlns=&quot;http://www.opengis.net/kml/2.2&quot;&gt; &lt;NetworkLinkControl&gt; ... &lt;/NetworkLinkControl&gt; 
+&lt;!-- 0 or 1 Feature elements --&gt; &lt;/kml&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+A basic &lt;kml&gt; element contains 0 or 1 Feature and 0 or 1 NetworkLinkControl: 
 &lt;/p&gt;
 &lt;p&gt;
 The &lt;kml&gt; element may also include the namespace for any external XML schemas that 
 are referenced within the file. 
 &lt;/p&gt;
 &lt;p&gt;
-A basic &lt;kml&gt; element contains 0 or 1 Feature and 0 or 1 NetworkLinkControl: 
-&lt;/p&gt;
-&lt;p&gt;
-&lt;kml xmlns=&quot;http://www.opengis.net/kml/2.2&quot;&gt; &lt;NetworkLinkControl&gt; ... &lt;/NetworkLinkControl&gt; 
-&lt;!-- 0 or 1 Feature elements --&gt; &lt;/kml&gt; 
+The root element of a KML file. This element is required. It follows the xml declaration 
+at the beginning of the file. The hint attribute is used as a signal to Google Earth 
+to display the file as celestial data. 
 &lt;/p&gt;
 
 Syntax: 
@@ -1977,12 +1988,12 @@ and then located, positioned, and scaled in Google Earth. See the &quot;Topics i
 page on Regions for more detail. 
 &lt;/p&gt;
 &lt;p&gt;
-Google Earth supports the COLLADA common profile, with the following exceptions: 
-&lt;/p&gt;
-&lt;p&gt;
 Google Earth supports only triangles and lines as primitive types. The maximum number 
 of triangles allowed is 21845. Google Earth does not support animation or skinning. 
 Google Earth does not support external geometry references. 
+&lt;/p&gt;
+&lt;p&gt;
+Google Earth supports the COLLADA common profile, with the following exceptions: 
 &lt;/p&gt;
 
 Syntax: 
@@ -2124,11 +2135,11 @@ string.) The following parameters are supported: [clientVersion] [kmlVersion] [c
         <className>timespan</className>
         <javaDoc>&lt;gx:TimeSpan&gt; and &lt;gx:TimeStamp&gt;
 &lt;p&gt;
-Represents an extent in time bounded by begin and end dateTimes. 
-&lt;/p&gt;
-&lt;p&gt;
 If &lt;begin&gt; or &lt;end&gt; is missing, then that end of the period is unbounded (see Example 
 below). 
+&lt;/p&gt;
+&lt;p&gt;
+Represents an extent in time bounded by begin and end dateTimes. 
 &lt;/p&gt;
 &lt;p&gt;
 The dateTime is defined according to XML Schema time (see XML Schema Part 2: Datatypes 
@@ -2168,17 +2179,6 @@ See &lt;hotSpot&gt; in &lt;IconStyle&gt;, &lt;ScreenOverlay&gt;
         <className>roll</className>
         <javaDoc>&lt;roll&gt;
 &lt;p&gt;
-Rotation, in degrees, of the camera around the Z axis. Values range from −180 to 
-+180 degrees. 
-&lt;/p&gt;
-&lt;p&gt;
-Rotation about the y axis. A positive rotation is clockwise around the y axis and 
-specified in degrees from 0 to 360. 
-&lt;/p&gt;
-&lt;p&gt;
-This diagram illustrates the typical orientation of a model's axes: 
-&lt;/p&gt;
-&lt;p&gt;
 &lt;heading&gt; Rotation about the z axis (normal to the Earth's surface). A value of 
 0 (the default) equals North. A positive rotation is clockwise around the z axis 
 and specified in degrees from 0 to 360. &lt;tilt&gt; Rotation about the x axis. A positive 
@@ -2186,6 +2186,17 @@ rotation is clockwise around the x axis and specified in degrees from 0 to 360.
 &lt;roll&gt; Rotation about the y axis. A positive rotation is clockwise around the y 
 axis and specified in degrees from 0 to 360. This diagram illustrates the typical 
 orientation of a model's axes: 
+&lt;/p&gt;
+&lt;p&gt;
+Rotation about the y axis. A positive rotation is clockwise around the y axis and 
+specified in degrees from 0 to 360. 
+&lt;/p&gt;
+&lt;p&gt;
+Rotation, in degrees, of the camera around the Z axis. Values range from −180 to 
++180 degrees. 
+&lt;/p&gt;
+&lt;p&gt;
+This diagram illustrates the typical orientation of a model's axes: 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2305,9 +2316,9 @@ Extends:
 @see: &lt;gx:TourPrimitive&gt;
 
 Contains: 
+@see: &lt;AbstractView&gt;
 @see: &lt;gx:duration&gt;
 @see: &lt;gx:flyToMode&gt;
-@see: &lt;AbstractView&gt;
 
 </javaDoc>
     </elements>
@@ -2367,23 +2378,23 @@ Contained By:
         <className>size</className>
         <javaDoc>&lt;size&gt;
 &lt;p&gt;
+For example: 
+&lt;/p&gt;
+&lt;p&gt;
 Specifies the size of the image for the screen overlay, as follows: A value of −1 
 indicates to use the native dimension A value of 0 indicates to maintain the aspect 
 ratio A value of n sets the value of the dimension 
 &lt;/p&gt;
 &lt;p&gt;
-For example: 
-&lt;/p&gt;
-&lt;p&gt;
-To force the image to retain its original x and y dimensions, set the values to 
-−1: 
+To force the image to resize to 100px by 500px: 
 &lt;/p&gt;
 &lt;p&gt;
 To force the image to retain its horizontal dimension, but to take up 20 percent 
 of the vertical screen space: 
 &lt;/p&gt;
 &lt;p&gt;
-To force the image to resize to 100px by 500px: 
+To force the image to retain its original x and y dimensions, set the values to 
+−1: 
 &lt;/p&gt;
 &lt;p&gt;
 To force the image to retain its original x and y dimensions, set the values to 
@@ -2453,9 +2464,9 @@ Extends:
 
 Extended By: 
 @see: &lt;Container&gt;
+@see: &lt;NetworkLink&gt;
 @see: &lt;Overlay&gt;
 @see: &lt;Placemark&gt;
-@see: &lt;NetworkLink&gt;
 @see: &lt;gx:Tour&gt;
 
 </javaDoc>
@@ -2485,22 +2496,16 @@ of view, like a wide-angle lens, focuses on a large part of the scene.
         <className>extrude</className>
         <javaDoc>&lt;extrude&gt;
 &lt;p&gt;
-Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
-this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
-or absolute. Only the vertices of the LinearRing are extruded, not the center of 
-the geometry. The vertices are extruded toward the center of the Earth's sphere. 
-&lt;/p&gt;
-&lt;p&gt;
 Boolean value. Specifies whether to connect the LineString to the ground. To extrude 
 a LineString, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
 or absolute. The vertices in the LineString are extruded toward the center of the 
 Earth's sphere. 
 &lt;/p&gt;
 &lt;p&gt;
-Boolean value. Specifies whether to connect the point to the ground with a line. 
-To extrude a Point, the value for &lt;altitudeMode&gt; must be either relativeToGround, 
-relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
-Earth's sphere. 
+Boolean value. Specifies whether to connect the LinearRing to the ground. To extrude 
+this geometry, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
+or absolute. Only the vertices of the LinearRing are extruded, not the center of 
+the geometry. The vertices are extruded toward the center of the Earth's sphere. 
 &lt;/p&gt;
 &lt;p&gt;
 Boolean value. Specifies whether to connect the Polygon to the ground. To extrude 
@@ -2508,6 +2513,12 @@ a Polygon, the altitude mode must be either relativeToGround, relativeToSeaFloor
 or absolute. Only the vertices are extruded, not the geometry itself (for example, 
 a rectangle turns into a box with five faces. The vertices of the Polygon are extruded 
 toward the center of the Earth's sphere. 
+&lt;/p&gt;
+&lt;p&gt;
+Boolean value. Specifies whether to connect the point to the ground with a line. 
+To extrude a Point, the value for &lt;altitudeMode&gt; must be either relativeToGround, 
+relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
+Earth's sphere. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2521,12 +2532,6 @@ toward the center of the Earth's sphere.
         <className>schemadata</className>
         <javaDoc>&lt;schemadata schemaurl=&quot;anyuri&quot;&gt;
 &lt;p&gt;
-This element is used in conjunction with &lt;Schema&gt; to add typed custom data to a 
-KML Feature. The Schema element (identified by the schemaUrl attribute) declares 
-the custom data type. The actual data objects (&quot;instances&quot; of the custom data) are 
-defined using the SchemaData element. 
-&lt;/p&gt;
-&lt;p&gt;
 The &lt;schemaURL&gt; can be a full URL, a reference to a Schema ID defined in an external 
 KML file, or a reference to a Schema ID defined in the same KML file. All of the 
 following specifications are acceptable: 
@@ -2534,6 +2539,12 @@ following specifications are acceptable:
 &lt;p&gt;
 The Schema element is always a child of Document. The ExtendedData element is a 
 child of the Feature that contains the custom data. 
+&lt;/p&gt;
+&lt;p&gt;
+This element is used in conjunction with &lt;Schema&gt; to add typed custom data to a 
+KML Feature. The Schema element (identified by the schemaUrl attribute) declares 
+the custom data type. The actual data objects (&quot;instances&quot; of the custom data) are 
+defined using the SchemaData element. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2574,13 +2585,6 @@ to the LookAt position. (See diagram below.)
         <className>simpledata</className>
         <javaDoc>&lt;simpledata name=&quot;string&quot;&gt;
 &lt;p&gt;
-This element assigns a value to the custom data field identified by the name attribute. 
-The type and name of this custom data field are declared in the &lt;Schema&gt; element. 
-&lt;/p&gt;
-&lt;p&gt;
-Here is an example of defining two custom data elements: 
-&lt;/p&gt;
-&lt;p&gt;
 &lt;SimpleData name=&quot;string&quot;&gt; This element assigns a value to the custom data field 
 identified by the name attribute. The type and name of this custom data field are 
 declared in the &lt;Schema&gt; element. Here is an example of defining two custom data 
@@ -2592,6 +2596,13 @@ trail&lt;/name&gt; &lt;ExtendedData&gt; &lt;SchemaData schemaUrl=&quot;#TrailHea
 name=&quot;TrailHeadName&quot;&gt;Mount Everest&lt;/SimpleData&gt; &lt;SimpleData name=&quot;TrailLength&quot;&gt;347.45&lt;/SimpleData&gt; 
 &lt;SimpleData name=&quot;ElevationGain&quot;&gt;10000&lt;/SimpleData&gt; &lt;/SchemaData&gt; &lt;/ExtendedData&gt; 
 &lt;Point&gt; &lt;coordinates&gt;-122.000,37.002&lt;/coordinates&gt; &lt;/Point&gt; &lt;/Placemark&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+Here is an example of defining two custom data elements: 
+&lt;/p&gt;
+&lt;p&gt;
+This element assigns a value to the custom data field identified by the name attribute. 
+The type and name of this custom data field are declared in the &lt;Schema&gt; element. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2609,6 +2620,11 @@ Width in pixels of the original image.
         <className>text</className>
         <javaDoc>&lt;text&gt;
 &lt;p&gt;
+For example, in the following KML excerpt, $[name] and $[description] fields will 
+be replaced by the &lt;name&gt; and &lt;description&gt; fields found in the Feature elements 
+that use this BalloonStyle: &lt;text&gt;This is $[name], whose description is:&lt;br/&gt;$[description]&lt;/text&gt; 
+&lt;/p&gt;
+&lt;p&gt;
 Text displayed in the balloon. If no text is specified, Google Earth draws the default 
 balloon (with the Feature &lt;name&gt; in boldface, the Feature &lt;description&gt;, links for 
 driving directions, a white background, and a tail that is attached to the point 
@@ -2622,11 +2638,6 @@ substitutes that information in the balloon. To include To here - From here driv
 directions in the balloon, use the $[geDirections] tag. To prevent the driving directions 
 links from appearing in a balloon, include the &lt;text&gt; element with some content, 
 or with $[description] to substitute the basic Feature &lt;description&gt;. 
-&lt;/p&gt;
-&lt;p&gt;
-For example, in the following KML excerpt, $[name] and $[description] fields will 
-be replaced by the &lt;name&gt; and &lt;description&gt; fields found in the Feature elements 
-that use this BalloonStyle: &lt;text&gt;This is $[name], whose description is:&lt;br/&gt;$[description]&lt;/text&gt; 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2674,12 +2685,12 @@ Point relative to the screen about which the screen overlay is rotated.
         <className>latitude</className>
         <javaDoc>&lt;latitude&gt;
 &lt;p&gt;
-Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
-Values range from −90 degrees to 90 degrees. 
-&lt;/p&gt;
-&lt;p&gt;
 Latitude of the point the camera is looking at. Degrees north or south of the Equator 
 (0 degrees). Values range from −90 degrees to 90 degrees. 
+&lt;/p&gt;
+&lt;p&gt;
+Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
+Values range from −90 degrees to 90 degrees. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2691,17 +2702,17 @@ Latitude of the point the camera is looking at. Degrees north or south of the Eq
 Allows non-rectangular quadrilateral ground overlays. 
 &lt;/p&gt;
 &lt;p&gt;
+If a third value is inserted into any tuple (representing altitude) it will be ignored. 
+Altitude is set using &lt;altitude&gt; and &lt;altitudeMode&gt; (or &lt;gx:altitudeMode&gt;) extending 
+&lt;GroundOverlay&gt;. Allowed altitude modes are absolute, clampToGround, and clampToSeaFloor. 
+&lt;/p&gt;
+&lt;p&gt;
 Specifies the coordinates of the four corner points of a quadrilateral defining 
 the overlay area. Exactly four coordinate tuples have to be provided, each consisting 
 of floating point values for longitude and latitude. Insert a space between tuples. 
 Do not include spaces within a tuple. The coordinates must be specified in counter-clockwise 
 order with the first coordinate corresponding to the lower-left corner of the overlayed 
 image. The shape described by these corners must be convex. 
-&lt;/p&gt;
-&lt;p&gt;
-If a third value is inserted into any tuple (representing altitude) it will be ignored. 
-Altitude is set using &lt;altitude&gt; and &lt;altitudeMode&gt; (or &lt;gx:altitudeMode&gt;) extending 
-&lt;GroundOverlay&gt;. Allowed altitude modes are absolute, clampToGround, and clampToSeaFloor. 
 &lt;/p&gt;
 
 Syntax: 
@@ -2745,16 +2756,16 @@ browsers such as Google Earth, and in other applications such as Google Maps. Th
 ascription elements used in KML are as follows: 
 &lt;/p&gt;
 &lt;p&gt;
-These elements are defined in the Atom Syndication Format. The complete specification 
-is found at http://atompub.org. (see the sample that follows). 
-&lt;/p&gt;
-&lt;p&gt;
-These elements are defined in the Atom Syndication Format. The complete specification 
-is found at http://atompub.org. (see the sample that follows). 
-&lt;/p&gt;
-&lt;p&gt;
 The &lt;atom:author&gt; element is the parent element for &lt;atom:name&gt;, which specifies 
 the author of the KML feature. 
+&lt;/p&gt;
+&lt;p&gt;
+These elements are defined in the Atom Syndication Format. The complete specification 
+is found at http://atompub.org. (see the sample that follows). 
+&lt;/p&gt;
+&lt;p&gt;
+These elements are defined in the Atom Syndication Format. The complete specification 
+is found at http://atompub.org. (see the sample that follows). 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2763,22 +2774,21 @@ the author of the KML feature.
         <className>duration</className>
         <javaDoc>&lt;gx:duration&gt;
 &lt;p&gt;
-&lt;gx:duration&gt; extends gx:TourPrimitive by specifying a time-span for events. The 
-time is written as seconds using XML's double datatype. 
-&lt;/p&gt;
-&lt;p&gt;
-Duration and &lt;gx:FlyTo&gt; 
-&lt;/p&gt;
-&lt;p&gt;
-When a duration is included within a &lt;gx:FlyTo&gt; element, it specifies the length 
-of time that the browser takes to fly from the previous point to the specified point. 
+&lt;gx:AnimatedUpdate&gt; &lt;gx:duration&gt;5.0&lt;/gx:duration&gt; &lt;Update&gt; .... &lt;/Update&gt; &lt;/gx:AnimatedUpdate&gt; 
 &lt;/p&gt;
 &lt;p&gt;
 &lt;gx:FlyTo&gt; &lt;gx:flyToMode&gt;bounce&lt;/gx:flyToMode&gt; &lt;gx:duration&gt;10.2&lt;/gx:duration&gt; &lt;!-- 
 AbstractView --&gt; ... &lt;!-- /AbstractView --&gt; &lt;/gx:FlyTo&gt; 
 &lt;/p&gt;
 &lt;p&gt;
+&lt;gx:duration&gt; extends gx:TourPrimitive by specifying a time-span for events. The 
+time is written as seconds using XML's double datatype. 
+&lt;/p&gt;
+&lt;p&gt;
 Duration and &lt;gx:AnimatedUpdate&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+Duration and &lt;gx:FlyTo&gt; 
 &lt;/p&gt;
 &lt;p&gt;
 Specifies the length of time over which the update takes place. Integer, float, 
@@ -2787,7 +2797,8 @@ boolean, string, and other values that don't lend to interpolation are updated a
 the end of the duration. 
 &lt;/p&gt;
 &lt;p&gt;
-&lt;gx:AnimatedUpdate&gt; &lt;gx:duration&gt;5.0&lt;/gx:duration&gt; &lt;Update&gt; .... &lt;/Update&gt; &lt;/gx:AnimatedUpdate&gt; 
+When a duration is included within a &lt;gx:FlyTo&gt; element, it specifies the length 
+of time that the browser takes to fly from the previous point to the specified point. 
 &lt;/p&gt;
 
 Syntax: 
@@ -2800,16 +2811,16 @@ Syntax:
         <className>altitude</className>
         <javaDoc>&lt;altitude&gt;
 &lt;p&gt;
+Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
+altitude mode. 
+&lt;/p&gt;
+&lt;p&gt;
 Distance of the camera from the earth's surface, in meters. Interpreted according 
 to the Camera's &lt;altitudeMode&gt; or &lt;gx:altitudeMode&gt;. 
 &lt;/p&gt;
 &lt;p&gt;
 Specifies the distance above the earth's surface, in meters, and is interpreted 
 according to the altitude mode. 
-&lt;/p&gt;
-&lt;p&gt;
-Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
-altitude mode. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -2871,11 +2882,11 @@ Syntax:
 &amp;lt;/gx:Tour&amp;gt;&lt;/pre&gt;
 
 Contains: 
-@see: gx:Playlist
-@see: gx:TourPrimitive
 @see: &lt;gx:Playlist&gt;
 @see: &lt;gx:Tour&gt;
 @see: &lt;gx:Tour&gt; &lt;gx:Playlist&gt; &lt;!-- gx:TourPrimitive --&gt; ... &lt;!-- /gx:TourPrimitive --&gt; &lt;!--- Any number of gx:TourPrimitive elements can be included ---&gt; &lt;/gx:Playlist&gt; &lt;/gx:Tour&gt;
+@see: gx:Playlist
+@see: gx:TourPrimitive
 
 </javaDoc>
     </elements>
@@ -3073,12 +3084,12 @@ the user's viewpoint to be drawn.
         <className>longitude</className>
         <javaDoc>&lt;longitude&gt;
 &lt;p&gt;
-Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
+Longitude of the point the camera is looking at. Angular distance in degrees, relative 
 to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
 Values east of the Meridian range from 0 to 180 degrees. 
 &lt;/p&gt;
 &lt;p&gt;
-Longitude of the point the camera is looking at. Angular distance in degrees, relative 
+Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
 to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
 Values east of the Meridian range from 0 to 180 degrees. 
 &lt;/p&gt;
@@ -3140,27 +3151,27 @@ Document or Folder (not the URL of the file that loaded the intervening updates)
         <className>extendeddata</className>
         <javaDoc>&lt;extendeddata&gt;
 &lt;p&gt;
-The ExtendedData element offers three techniques for adding custom data to a KML 
-Feature (NetworkLink, Placemark, GroundOverlay, PhotoOverlay, ScreenOverlay, Document, 
-Folder). These techniques are 
-&lt;/p&gt;
-&lt;p&gt;
 Adding untyped data/value pairs using the &lt;Data&gt; element (basic) Declaring new typed 
 fields using the &lt;Schema&gt; element and then instancing them using the &lt;SchemaData&gt; 
 element (advanced) Referring to XML elements defined in other namespaces by referencing 
 the external namespace within the KML file (basic) 
 &lt;/p&gt;
 &lt;p&gt;
-These techniques can be combined within a single KML file or Feature for different 
-pieces of data. 
+Allows you to add custom data to a KML file. This data can be (1) data that references 
+an external XML schema, (2) untyped data/value pairs, or (3) typed data. A given 
+KML Feature can contain a combination of these types of custom data. 
 &lt;/p&gt;
 &lt;p&gt;
 For more information, see Adding Custom Data in &quot;Topics in KML.&quot; 
 &lt;/p&gt;
 &lt;p&gt;
-Allows you to add custom data to a KML file. This data can be (1) data that references 
-an external XML schema, (2) untyped data/value pairs, or (3) typed data. A given 
-KML Feature can contain a combination of these types of custom data. 
+The ExtendedData element offers three techniques for adding custom data to a KML 
+Feature (NetworkLink, Placemark, GroundOverlay, PhotoOverlay, ScreenOverlay, Document, 
+Folder). These techniques are 
+&lt;/p&gt;
+&lt;p&gt;
+These techniques can be combined within a single KML file or Feature for different 
+pieces of data. 
 &lt;/p&gt;
 
 Syntax: 
@@ -3181,8 +3192,7 @@ Schema
         <className>viewformat</className>
         <javaDoc>&lt;viewformat&gt;
 &lt;p&gt;
-Specifies the format of the query string that is appended to the Link's &lt;href&gt; before 
-the file is fetched.(If the &lt;href&gt; specifies a local file, this element is ignored.) 
+BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth] 
 &lt;/p&gt;
 &lt;p&gt;
 If you specify a &lt;viewRefreshMode&gt; of onStop and do not include the &lt;viewFormat&gt; 
@@ -3190,14 +3200,15 @@ tag in the file, the following information is automatically appended to the quer
 string: 
 &lt;/p&gt;
 &lt;p&gt;
-BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth] 
+If you specify an empty &lt;viewFormat&gt; tag, no information is appended to the query 
+string. 
+&lt;/p&gt;
+&lt;p&gt;
+Specifies the format of the query string that is appended to the Link's &lt;href&gt; before 
+the file is fetched.(If the &lt;href&gt; specifies a local file, this element is ignored.) 
 &lt;/p&gt;
 &lt;p&gt;
 This information matches the Web Map Service (WMS) bounding box specification. 
-&lt;/p&gt;
-&lt;p&gt;
-If you specify an empty &lt;viewFormat&gt; tag, no information is appended to the query 
-string. 
 &lt;/p&gt;
 &lt;p&gt;
 You can also specify a custom set of viewing parameters to add to the query string. 
@@ -3224,12 +3235,6 @@ of view for the camera [horizPixels], [vertPixels] - size in pixels of the 3D vi
         <className>sourcehref</className>
         <javaDoc>&lt;sourcehref&gt;
 &lt;p&gt;
-Is the path specified for the texture file in the Collada .dae file. 
-&lt;/p&gt;
-&lt;p&gt;
-Is the path specified for the texture file in the Collada .dae file. 
-&lt;/p&gt;
-&lt;p&gt;
 &lt;targetHref&gt; Specifies the texture file to be fetched by Google Earth. This reference 
 can be a relative reference to an image file within the .kmz archive, or it can 
 be an absolute reference to the file (for example, a URL). &lt;sourceHref&gt; Is the path 
@@ -3245,6 +3250,12 @@ the path as being relative to the .dae file that references it. Absolute path: I
 the texture name is an absolute path (c:\mytexture.jpg) or a network path (for example, 
 http://myserver.com/mytexture.jpg), Google Earth looks for the file in the specified 
 location, regardless of where the .dae file is located. 
+&lt;/p&gt;
+&lt;p&gt;
+Is the path specified for the texture file in the Collada .dae file. 
+&lt;/p&gt;
+&lt;p&gt;
+Is the path specified for the texture file in the Collada .dae file. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -3286,6 +3297,10 @@ See any element that extends &lt;ColorStyle&gt;
         <className>document</className>
         <javaDoc>&lt;Document&gt;
 &lt;p&gt;
+&lt;Document&gt; &lt;Style id=&quot;myPrettyDocument&quot;&gt; &lt;ListStyle&gt; ... &lt;/ListStyle&gt; &lt;/Style&gt; &lt;styleUrl#myPrettyDocument&quot;&gt; 
+... &lt;/Document&gt; 
+&lt;/p&gt;
+&lt;p&gt;
 A Document is a container for features and styles. This element is required if your 
 KML file uses shared styles. It is recommended that you use shared styles, which 
 require the following steps: 
@@ -3295,7 +3310,7 @@ Define all Styles in a Document. Assign a unique ID to each Style. Within a give
 Feature or StyleMap, reference the Style's ID using a &lt;styleUrl&gt; element. 
 &lt;/p&gt;
 &lt;p&gt;
-Note that shared styles are not inherited by the Features in the Document. 
+Do not put shared styles within a Folder. 
 &lt;/p&gt;
 &lt;p&gt;
 Each Feature must explicitly reference the styles it uses in a &lt;styleUrl&gt; element. 
@@ -3303,11 +3318,7 @@ For a Style that applies to a Document (such as ListStyle), the Document itself
 must explicitly reference the &lt;styleUrl&gt;. For example: 
 &lt;/p&gt;
 &lt;p&gt;
-&lt;Document&gt; &lt;Style id=&quot;myPrettyDocument&quot;&gt; &lt;ListStyle&gt; ... &lt;/ListStyle&gt; &lt;/Style&gt; &lt;styleUrl#myPrettyDocument&quot;&gt; 
-... &lt;/Document&gt; 
-&lt;/p&gt;
-&lt;p&gt;
-Do not put shared styles within a Folder. 
+Note that shared styles are not inherited by the Features in the Document. 
 &lt;/p&gt;
 &lt;p&gt;
 The following example illustrates use of a shared style. 
@@ -3342,8 +3353,8 @@ Extends:
 
 Contains: 
 @see: &lt;Feature&gt;
-@see: &lt;StyleSelector&gt;
 @see: &lt;Schema&gt;
+@see: &lt;StyleSelector&gt;
 
 </javaDoc>
     </elements>
@@ -3351,12 +3362,12 @@ Contains:
         <className>abstractview</className>
         <javaDoc>&lt;abstractview&gt;
 &lt;p&gt;
-This is an abstract element and cannot be used directly in a KML file. This element 
-is extended by the &lt;Camera&gt; and &lt;LookAt&gt; elements. 
-&lt;/p&gt;
-&lt;p&gt;
 Defines a viewpoint associated with any element derived from Feature. See &lt;Camera&gt; 
 and &lt;LookAt&gt;. 
+&lt;/p&gt;
+&lt;p&gt;
+This is an abstract element and cannot be used directly in a KML file. This element 
+is extended by the &lt;Camera&gt; and &lt;LookAt&gt; elements. 
 &lt;/p&gt;
 
 Syntax: 
@@ -3550,6 +3561,14 @@ the view volume.
         <className>description</className>
         <javaDoc>&lt;description&gt;
 &lt;p&gt;
+The supported content for the &lt;description&gt; element changed from Google Earth 4.3 
+to 5.0. Specific information for each version is listed out below, followed by information 
+common to both. 
+&lt;/p&gt;
+&lt;p&gt;
+User-supplied content that appears in the description balloon. 
+&lt;/p&gt;
+&lt;p&gt;
 User-supplied content that appears in the description balloon. The supported content 
 for the &lt;description&gt; element changed from Google Earth 4.3 to 5.0. Specific information 
 for each version is listed out below, followed by information common to both. Google 
@@ -3565,14 +3584,6 @@ Content that has been compressed into a KMZ file can be accessed, even if on the
 local filesystem. Cookies are completely disabled, including cookies set or read 
 by content contained within a iFrame. There are no exceptions to this rule. Doctype 
 declarations are ignored. 
-&lt;/p&gt;
-&lt;p&gt;
-User-supplied content that appears in the description balloon. 
-&lt;/p&gt;
-&lt;p&gt;
-The supported content for the &lt;description&gt; element changed from Google Earth 4.3 
-to 5.0. Specific information for each version is listed out below, followed by information 
-common to both. 
 &lt;/p&gt;
 
 </javaDoc>
@@ -3596,4 +3607,4 @@ period is unbounded.
 
 </javaDoc>
     </elements>
-</ns2:kml>
+</ns2:JaxbJavaDocElements>

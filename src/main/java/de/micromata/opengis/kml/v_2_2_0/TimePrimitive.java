@@ -80,6 +80,7 @@ public abstract class TimePrimitive
     }
 
     /**
+     * @see timePrimitiveSimpleExtension
      * 
      */
     public List<Object> getTimePrimitiveSimpleExtension() {
@@ -90,6 +91,7 @@ public abstract class TimePrimitive
     }
 
     /**
+     * @see timePrimitiveObjectExtension
      * 
      */
     public List<AbstractObject> getTimePrimitiveObjectExtension() {
@@ -145,10 +147,7 @@ public abstract class TimePrimitive
     }
 
     /**
-     * Sets the value of the timePrimitiveSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withTimePrimitiveSimpleExtension} instead.
-     * 
+     * @see timePrimitiveSimpleExtension
      * 
      * @param timePrimitiveSimpleExtension
      */
@@ -170,10 +169,7 @@ public abstract class TimePrimitive
     }
 
     /**
-     * Sets the value of the timePrimitiveObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withTimePrimitiveObjectExtension} instead.
-     * 
+     * @see timePrimitiveObjectExtension
      * 
      * @param timePrimitiveObjectExtension
      */
@@ -194,6 +190,10 @@ public abstract class TimePrimitive
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

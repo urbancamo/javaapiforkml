@@ -35,20 +35,20 @@ import org.xml.sax.SAXException;
 /**
  * <kml>
  * <p>
- * The root element of a KML file. This element is required. It follows the xml declaration 
- * at the beginning of the file. The hint attribute is used as a signal to Google Earth 
- * to display the file as celestial data. 
+ * <kml xmlns="http://www.opengis.net/kml/2.2"> <NetworkLinkControl> ... </NetworkLinkControl> 
+ * <!-- 0 or 1 Feature elements --> </kml> 
+ * </p>
+ * <p>
+ * A basic <kml> element contains 0 or 1 Feature and 0 or 1 NetworkLinkControl: 
  * </p>
  * <p>
  * The <kml> element may also include the namespace for any external XML schemas that 
  * are referenced within the file. 
  * </p>
  * <p>
- * A basic <kml> element contains 0 or 1 Feature and 0 or 1 NetworkLinkControl: 
- * </p>
- * <p>
- * <kml xmlns="http://www.opengis.net/kml/2.2"> <NetworkLinkControl> ... </NetworkLinkControl> 
- * <!-- 0 or 1 Feature elements --> </kml> 
+ * The root element of a KML file. This element is required. It follows the xml declaration 
+ * at the beginning of the file. The hint attribute is used as a signal to Google Earth 
+ * to display the file as celestial data. 
  * </p>
  * 
  * Syntax: 
@@ -88,8 +88,8 @@ public class Kml {
      * <strong>&lt;/NetworkLinkControl&gt;</strong></pre>
      * 
      * See Also: 
-     * <Update>
      * <NetworkLink>
+     * <Update>
      * 
      * 
      * 
@@ -129,9 +129,9 @@ public class Kml {
      * 
      * Extended By: 
      * @see: <Container>
+     * @see: <NetworkLink>
      * @see: <Overlay>
      * @see: <Placemark>
-     * @see: <NetworkLink>
      * @see: <gx:Tour>
      * 
      * 
@@ -173,6 +173,7 @@ public class Kml {
     }
 
     /**
+     * @see networkLinkControl
      * 
      * @return
      *     possible object is
@@ -184,6 +185,7 @@ public class Kml {
     }
 
     /**
+     * @see networkLinkControl
      * 
      * @param value
      *     allowed object is
@@ -195,18 +197,19 @@ public class Kml {
     }
 
     /**
+     * @see feature
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
      *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     
@@ -216,18 +219,19 @@ public class Kml {
     }
 
     /**
+     * @see feature
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
      *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     
@@ -237,6 +241,7 @@ public class Kml {
     }
 
     /**
+     * @see kmlSimpleExtension
      * 
      */
     public List<Object> getKmlSimpleExtension() {
@@ -247,6 +252,7 @@ public class Kml {
     }
 
     /**
+     * @see kmlObjectExtension
      * 
      */
     public List<AbstractObject> getKmlObjectExtension() {
@@ -257,6 +263,7 @@ public class Kml {
     }
 
     /**
+     * @see hint
      * 
      * @return
      *     possible object is
@@ -268,6 +275,7 @@ public class Kml {
     }
 
     /**
+     * @see hint
      * 
      * @param value
      *     allowed object is
@@ -495,10 +503,7 @@ public class Kml {
     }
 
     /**
-     * Sets the value of the kmlSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withKmlSimpleExtension} instead.
-     * 
+     * @see kmlSimpleExtension
      * 
      * @param kmlSimpleExtension
      */
@@ -520,10 +525,7 @@ public class Kml {
     }
 
     /**
-     * Sets the value of the kmlObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withKmlObjectExtension} instead.
-     * 
+     * @see kmlObjectExtension
      * 
      * @param kmlObjectExtension
      */
@@ -599,6 +601,10 @@ public class Kml {
         return this;
     }
 
+    /**
+     * @see jaxbContext
+     * 
+     */
     private JAXBContext getJaxbContext()
         throws JAXBException
     {
@@ -608,6 +614,10 @@ public class Kml {
         return jc;
     }
 
+    /**
+     * @see ateMarshaller
+     * 
+     */
     private Marshaller createMarshaller()
         throws JAXBException
     {
@@ -618,7 +628,7 @@ public class Kml {
     }
 
     /**
-     * Java to KML
+     * @see shal
      * 
      */
     public boolean marshal(final OutputStream outputstream)
@@ -637,7 +647,7 @@ public class Kml {
     }
 
     /**
-     * Java to KML
+     * @see shal
      * 
      */
     public boolean marshal(final Writer writer) {
@@ -654,7 +664,7 @@ public class Kml {
     }
 
     /**
-     * Java to KML
+     * @see shal
      * 
      */
     public boolean marshal(final File filename, final boolean zipped)
@@ -667,6 +677,10 @@ public class Kml {
         return this.marshal(out);
     }
 
+    /**
+     * @see idate
+     * 
+     */
     private static boolean validate(final Unmarshaller unmarshaller) {
         try {
             SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -681,7 +695,7 @@ public class Kml {
     }
 
     /**
-     * KML to Java
+     * @see arshal
      * 
      */
     public static Kml unmarshal(final File file, final boolean validate) {
@@ -700,7 +714,7 @@ public class Kml {
     }
 
     /**
-     * KML to Java
+     * @see arshal
      * 
      */
     public static Kml unmarshal(final File file) {
@@ -708,7 +722,7 @@ public class Kml {
     }
 
     /**
-     * KML to Java
+     * @see arshal
      * 
      */
     public static Kml unmarshal(final String content) {

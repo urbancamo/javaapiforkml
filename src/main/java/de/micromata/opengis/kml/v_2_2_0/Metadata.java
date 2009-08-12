@@ -30,6 +30,7 @@ public class Metadata {
     }
 
     /**
+     * @see any
      * 
      */
     public List<Object> getAny() {
@@ -72,10 +73,7 @@ public class Metadata {
     }
 
     /**
-     * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
-     * 
+     * @see any
      * 
      * @param any
      */
@@ -87,7 +85,7 @@ public class Metadata {
      * add a value to the any property collection
      * 
      * @param any
-     *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
+     *     Objects of the following type are allowed in the list: {@link Element}{@link Object}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

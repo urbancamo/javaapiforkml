@@ -56,7 +56,7 @@ public class PolyStyle
      * 
      */
     @XmlElement(defaultValue = "1")
-    protected Boolean fill = false;
+    protected Boolean fill;
     /**
      * <outline>
      * <p>
@@ -68,7 +68,7 @@ public class PolyStyle
      * 
      */
     @XmlElement(defaultValue = "1")
-    protected Boolean outline = false;
+    protected Boolean outline;
     @XmlElement(name = "PolyStyleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> polyStyleSimpleExtension;
@@ -98,6 +98,7 @@ public class PolyStyle
     }
 
     /**
+     * @see ill
      * 
      * @return
      *     possible object is
@@ -109,6 +110,7 @@ public class PolyStyle
     }
 
     /**
+     * @see fill
      * 
      * @param value
      *     allowed object is
@@ -120,6 +122,7 @@ public class PolyStyle
     }
 
     /**
+     * @see utline
      * 
      * @return
      *     possible object is
@@ -131,6 +134,7 @@ public class PolyStyle
     }
 
     /**
+     * @see outline
      * 
      * @param value
      *     allowed object is
@@ -142,6 +146,7 @@ public class PolyStyle
     }
 
     /**
+     * @see polyStyleSimpleExtension
      * 
      */
     public List<Object> getPolyStyleSimpleExtension() {
@@ -152,6 +157,7 @@ public class PolyStyle
     }
 
     /**
+     * @see polyStyleObjectExtension
      * 
      */
     public List<AbstractObject> getPolyStyleObjectExtension() {
@@ -227,10 +233,7 @@ public class PolyStyle
     }
 
     /**
-     * Sets the value of the polyStyleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPolyStyleSimpleExtension} instead.
-     * 
+     * @see polyStyleSimpleExtension
      * 
      * @param polyStyleSimpleExtension
      */
@@ -252,10 +255,7 @@ public class PolyStyle
     }
 
     /**
-     * Sets the value of the polyStyleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPolyStyleObjectExtension} instead.
-     * 
+     * @see polyStyleObjectExtension
      * 
      * @param polyStyleObjectExtension
      */
@@ -276,6 +276,10 @@ public class PolyStyle
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -289,6 +293,10 @@ public class PolyStyle
         return this;
     }
 
+    /**
+     * @see subStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
@@ -302,6 +310,10 @@ public class PolyStyle
         return this;
     }
 
+    /**
+     * @see subStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
@@ -315,6 +327,10 @@ public class PolyStyle
         return this;
     }
 
+    /**
+     * @see colorStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleSimpleExtension(final List<Object> colorStyleSimpleExtension) {
@@ -328,6 +344,10 @@ public class PolyStyle
         return this;
     }
 
+    /**
+     * @see colorStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {

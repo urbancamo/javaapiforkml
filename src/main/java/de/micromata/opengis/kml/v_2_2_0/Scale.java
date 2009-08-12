@@ -15,10 +15,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 /**
  * <scale>
  * <p>
- * Resizes the icon. 
+ * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
  * </p>
  * <p>
- * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
+ * Resizes the icon. 
  * </p>
  * <p>
  * Scales a model along the x, y, and z axes in the model's coordinate space. <Scale> 
@@ -51,11 +51,11 @@ public class Scale
      * 
      */
     @XmlElement(defaultValue = "1.0")
-    protected double x = 1.0D;
+    protected double x;
     @XmlElement(defaultValue = "1.0")
-    protected double y = 1.0D;
+    protected double y;
     @XmlElement(defaultValue = "1.0")
-    protected double z = 1.0D;
+    protected double z;
     @XmlElement(name = "ScaleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> scaleSimpleExtension;
@@ -85,6 +85,7 @@ public class Scale
     }
 
     /**
+     * @see x
      * 
      * @return
      *     possible object is
@@ -96,6 +97,7 @@ public class Scale
     }
 
     /**
+     * @see x
      * 
      * @param value
      *     allowed object is
@@ -107,6 +109,7 @@ public class Scale
     }
 
     /**
+     * @see y
      * 
      * @return
      *     possible object is
@@ -118,6 +121,7 @@ public class Scale
     }
 
     /**
+     * @see y
      * 
      * @param value
      *     allowed object is
@@ -129,6 +133,7 @@ public class Scale
     }
 
     /**
+     * @see z
      * 
      * @return
      *     possible object is
@@ -140,6 +145,7 @@ public class Scale
     }
 
     /**
+     * @see z
      * 
      * @param value
      *     allowed object is
@@ -151,6 +157,7 @@ public class Scale
     }
 
     /**
+     * @see scaleSimpleExtension
      * 
      */
     public List<Object> getScaleSimpleExtension() {
@@ -161,6 +168,7 @@ public class Scale
     }
 
     /**
+     * @see scaleObjectExtension
      * 
      */
     public List<AbstractObject> getScaleObjectExtension() {
@@ -232,10 +240,7 @@ public class Scale
     }
 
     /**
-     * Sets the value of the scaleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withScaleSimpleExtension} instead.
-     * 
+     * @see scaleSimpleExtension
      * 
      * @param scaleSimpleExtension
      */
@@ -257,10 +262,7 @@ public class Scale
     }
 
     /**
-     * Sets the value of the scaleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withScaleObjectExtension} instead.
-     * 
+     * @see scaleObjectExtension
      * 
      * @param scaleObjectExtension
      */
@@ -281,6 +283,10 @@ public class Scale
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

@@ -55,10 +55,10 @@ public class StyleMap
      * <p>
      * Defines a key/value pair that maps a mode (normal or highlight) to the predefined 
      * <styleUrl>. <Pair> contains two elements (both are required): <key>, which identifies 
-     * the key <styleUrl>, which references the style. For referenced style elements that 
-     * are local to the KML document, a simple # referencing is used. For styles that are 
-     * contained in external files, use a full URL along with # referencing. For example: 
-     * <Pair> <key>normal</key> <styleUrl>http://myserver.com/populationProject.xml#example_style_off</styleUrl> 
+     * the key <styleUrl> or <Style>, which references the style. In <styleUrl>, for referenced 
+     * style elements that are local to the KML document, a simple # referencing is used. 
+     * For styles that are contained in external files, use a full URL along with # referencing. 
+     * For example: <Pair> <key>normal</key> <styleUrl>http://myserver.com/populationProject.xml#example_style_off</styleUrl> 
      * </Pair> 
      * </p>
      * 
@@ -96,6 +96,7 @@ public class StyleMap
     }
 
     /**
+     * @see pair
      * 
      */
     public List<Pair> getPair() {
@@ -106,6 +107,7 @@ public class StyleMap
     }
 
     /**
+     * @see styleMapSimpleExtension
      * 
      */
     public List<Object> getStyleMapSimpleExtension() {
@@ -116,6 +118,7 @@ public class StyleMap
     }
 
     /**
+     * @see styleMapObjectExtension
      * 
      */
     public List<AbstractObject> getStyleMapObjectExtension() {
@@ -196,10 +199,7 @@ public class StyleMap
     }
 
     /**
-     * Sets the value of the pair property Objects of the following type(s) are allowed in the list List<Pair>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPair} instead.
-     * 
+     * @see pair
      * 
      * @param pair
      */
@@ -221,10 +221,7 @@ public class StyleMap
     }
 
     /**
-     * Sets the value of the styleMapSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withStyleMapSimpleExtension} instead.
-     * 
+     * @see styleMapSimpleExtension
      * 
      * @param styleMapSimpleExtension
      */
@@ -246,10 +243,7 @@ public class StyleMap
     }
 
     /**
-     * Sets the value of the styleMapObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withStyleMapObjectExtension} instead.
-     * 
+     * @see styleMapObjectExtension
      * 
      * @param styleMapObjectExtension
      */
@@ -270,6 +264,10 @@ public class StyleMap
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -283,6 +281,10 @@ public class StyleMap
         return this;
     }
 
+    /**
+     * @see styleSelectorSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelectorSimpleExtension(final List<Object> styleSelectorSimpleExtension) {
@@ -296,6 +298,10 @@ public class StyleMap
         return this;
     }
 
+    /**
+     * @see styleSelectorObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelectorObjectExtension(final List<AbstractObject> styleSelectorObjectExtension) {

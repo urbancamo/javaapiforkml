@@ -68,7 +68,7 @@ public class Lod
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double minLodPixels = 0.0D;
+    protected double minLodPixels;
     /**
      * <maxlodpixels>
      * <p>
@@ -81,7 +81,7 @@ public class Lod
      * 
      */
     @XmlElement(defaultValue = "-1.0")
-    protected double maxLodPixels = -1.0D;
+    protected double maxLodPixels;
     /**
      * <minfadeextent>
      * <p>
@@ -94,7 +94,7 @@ public class Lod
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double minFadeExtent = 0.0D;
+    protected double minFadeExtent;
     /**
      * <maxfadeextent>
      * <p>
@@ -115,7 +115,7 @@ public class Lod
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double maxFadeExtent = 0.0D;
+    protected double maxFadeExtent;
     @XmlElement(name = "LodSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> lodSimpleExtension;
@@ -145,6 +145,7 @@ public class Lod
     }
 
     /**
+     * @see minLodPixels
      * 
      * @return
      *     possible object is
@@ -156,6 +157,7 @@ public class Lod
     }
 
     /**
+     * @see minLodPixels
      * 
      * @param value
      *     allowed object is
@@ -167,6 +169,7 @@ public class Lod
     }
 
     /**
+     * @see maxLodPixels
      * 
      * @return
      *     possible object is
@@ -178,6 +181,7 @@ public class Lod
     }
 
     /**
+     * @see maxLodPixels
      * 
      * @param value
      *     allowed object is
@@ -189,6 +193,7 @@ public class Lod
     }
 
     /**
+     * @see minFadeExtent
      * 
      * @return
      *     possible object is
@@ -200,6 +205,7 @@ public class Lod
     }
 
     /**
+     * @see minFadeExtent
      * 
      * @param value
      *     allowed object is
@@ -211,6 +217,7 @@ public class Lod
     }
 
     /**
+     * @see maxFadeExtent
      * 
      * @return
      *     possible object is
@@ -222,6 +229,7 @@ public class Lod
     }
 
     /**
+     * @see maxFadeExtent
      * 
      * @param value
      *     allowed object is
@@ -233,6 +241,7 @@ public class Lod
     }
 
     /**
+     * @see lodSimpleExtension
      * 
      */
     public List<Object> getLodSimpleExtension() {
@@ -243,6 +252,7 @@ public class Lod
     }
 
     /**
+     * @see lodObjectExtension
      * 
      */
     public List<AbstractObject> getLodObjectExtension() {
@@ -319,10 +329,7 @@ public class Lod
     }
 
     /**
-     * Sets the value of the lodSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLodSimpleExtension} instead.
-     * 
+     * @see lodSimpleExtension
      * 
      * @param lodSimpleExtension
      */
@@ -344,10 +351,7 @@ public class Lod
     }
 
     /**
-     * Sets the value of the lodObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLodObjectExtension} instead.
-     * 
+     * @see lodObjectExtension
      * 
      * @param lodObjectExtension
      */
@@ -368,6 +372,10 @@ public class Lod
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

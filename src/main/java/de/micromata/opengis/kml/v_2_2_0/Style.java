@@ -99,8 +99,8 @@ public class Style
      * @see: <ColorStyle>
      * 
      * Contains: 
-     * @see: <href>
      * @see: <Icon>
+     * @see: <href>
      * 
      * Contained By: 
      * @see: <Style>
@@ -113,11 +113,11 @@ public class Style
     /**
      * <LabelStyle>
      * <p>
-     * Specifies how the <name> of a Feature is drawn in the 3D viewer. A custom color, 
-     * color mode, and scale for the label (name) can be specified. 
+     * Note: The <labelColor> tag is deprecated. Use <LabelStyle> instead. 
      * </p>
      * <p>
-     * Note: The <labelColor> tag is deprecated. Use <LabelStyle> instead. 
+     * Specifies how the <name> of a Feature is drawn in the 3D viewer. A custom color, 
+     * color mode, and scale for the label (name) can be specified. 
      * </p>
      * 
      * Syntax: 
@@ -283,6 +283,7 @@ public class Style
     }
 
     /**
+     * @see iconStyle
      * 
      * @return
      *     possible object is
@@ -294,6 +295,7 @@ public class Style
     }
 
     /**
+     * @see iconStyle
      * 
      * @param value
      *     allowed object is
@@ -305,6 +307,7 @@ public class Style
     }
 
     /**
+     * @see labelStyle
      * 
      * @return
      *     possible object is
@@ -316,6 +319,7 @@ public class Style
     }
 
     /**
+     * @see labelStyle
      * 
      * @param value
      *     allowed object is
@@ -327,6 +331,7 @@ public class Style
     }
 
     /**
+     * @see lineStyle
      * 
      * @return
      *     possible object is
@@ -338,6 +343,7 @@ public class Style
     }
 
     /**
+     * @see lineStyle
      * 
      * @param value
      *     allowed object is
@@ -349,6 +355,7 @@ public class Style
     }
 
     /**
+     * @see polyStyle
      * 
      * @return
      *     possible object is
@@ -360,6 +367,7 @@ public class Style
     }
 
     /**
+     * @see polyStyle
      * 
      * @param value
      *     allowed object is
@@ -371,6 +379,7 @@ public class Style
     }
 
     /**
+     * @see balloonStyle
      * 
      * @return
      *     possible object is
@@ -382,6 +391,7 @@ public class Style
     }
 
     /**
+     * @see balloonStyle
      * 
      * @param value
      *     allowed object is
@@ -393,6 +403,7 @@ public class Style
     }
 
     /**
+     * @see listStyle
      * 
      * @return
      *     possible object is
@@ -404,6 +415,7 @@ public class Style
     }
 
     /**
+     * @see listStyle
      * 
      * @param value
      *     allowed object is
@@ -415,6 +427,7 @@ public class Style
     }
 
     /**
+     * @see styleSimpleExtension
      * 
      */
     public List<Object> getStyleSimpleExtension() {
@@ -425,6 +438,7 @@ public class Style
     }
 
     /**
+     * @see styleObjectExtension
      * 
      */
     public List<AbstractObject> getStyleObjectExtension() {
@@ -636,10 +650,7 @@ public class Style
     }
 
     /**
-     * Sets the value of the styleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withStyleSimpleExtension} instead.
-     * 
+     * @see styleSimpleExtension
      * 
      * @param styleSimpleExtension
      */
@@ -661,10 +672,7 @@ public class Style
     }
 
     /**
-     * Sets the value of the styleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withStyleObjectExtension} instead.
-     * 
+     * @see styleObjectExtension
      * 
      * @param styleObjectExtension
      */
@@ -685,6 +693,10 @@ public class Style
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -698,6 +710,10 @@ public class Style
         return this;
     }
 
+    /**
+     * @see styleSelectorSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelectorSimpleExtension(final List<Object> styleSelectorSimpleExtension) {
@@ -711,6 +727,10 @@ public class Style
         return this;
     }
 
+    /**
+     * @see styleSelectorObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelectorObjectExtension(final List<AbstractObject> styleSelectorObjectExtension) {

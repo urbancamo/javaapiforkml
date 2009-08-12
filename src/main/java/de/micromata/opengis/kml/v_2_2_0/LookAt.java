@@ -71,39 +71,43 @@ public class LookAt
     /**
      * <longitude>
      * <p>
-     * Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
-     * Values east of the Meridian range from 0 to 180 degrees. 
-     * </p>
-     * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
      * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
+     * <p>
+     * Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
+     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * Values east of the Meridian range from 0 to 180 degrees. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double longitude = 0.0D;
+    protected double longitude;
     /**
      * <latitude>
-     * <p>
-     * Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
-     * Values range from ?90 degrees to 90 degrees. 
-     * </p>
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
      * (0 degrees). Values range from ?90 degrees to 90 degrees. 
      * </p>
+     * <p>
+     * Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
+     * Values range from ?90 degrees to 90 degrees. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double latitude = 0.0D;
+    protected double latitude;
     /**
      * <altitude>
+     * <p>
+     * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
+     * altitude mode. 
+     * </p>
      * <p>
      * Distance of the camera from the earth's surface, in meters. Interpreted according 
      * to the Camera's <altitudeMode> or <gx:altitudeMode>. 
@@ -112,16 +116,12 @@ public class LookAt
      * Specifies the distance above the earth's surface, in meters, and is interpreted 
      * according to the altitude mode. 
      * </p>
-     * <p>
-     * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
-     * altitude mode. 
-     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double altitude = 0.0D;
+    protected double altitude;
     /**
      * <heading>
      * <p>
@@ -130,11 +130,11 @@ public class LookAt
      * </p>
      * <p>
      * Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-     * diagram.) Values range from 0 to 360 degrees. 
+     * diagram below.) Values range from 0 to 360 degrees. 
      * </p>
      * <p>
      * Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-     * diagram below.) Values range from 0 to 360 degrees. 
+     * diagram.) Values range from 0 to 360 degrees. 
      * </p>
      * <p>
      * Rotation about the z axis (normal to the Earth's surface). A value of 0 (the default) 
@@ -146,16 +146,9 @@ public class LookAt
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double heading = 0.0D;
+    protected double heading;
     /**
      * <tilt>
-     * <p>
-     * Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
-     * the view is aimed straight down toward the earth (the most common case). A value 
-     * for 90 for <tilt> indicates that the view is aimed toward the horizon. Values greater 
-     * than 90 indicate that the view is pointed up into the sky. Values for <tilt> are 
-     * clamped at +180 degrees. 
-     * </p>
      * <p>
      * Angle between the direction of the LookAt position and the normal to the surface 
      * of the earth. (See diagram below.) Values range from 0 to 90 degrees. Values for 
@@ -166,12 +159,19 @@ public class LookAt
      * Rotation about the x axis. A positive rotation is clockwise around the x axis and 
      * specified in degrees from 0 to 360. 
      * </p>
+     * <p>
+     * Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
+     * the view is aimed straight down toward the earth (the most common case). A value 
+     * for 90 for <tilt> indicates that the view is aimed toward the horizon. Values greater 
+     * than 90 indicate that the view is pointed up into the sky. Values for <tilt> are 
+     * clamped at +180 degrees. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double tilt = 0.0D;
+    protected double tilt;
     /**
      * <range> (required)
      * <p>
@@ -183,7 +183,7 @@ public class LookAt
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double range = 0.0D;
+    protected double range;
     /**
      * AltitudeMode
      * <p>
@@ -227,6 +227,7 @@ public class LookAt
     }
 
     /**
+     * @see longitude
      * 
      * @return
      *     possible object is
@@ -238,6 +239,7 @@ public class LookAt
     }
 
     /**
+     * @see longitude
      * 
      * @param value
      *     allowed object is
@@ -249,6 +251,7 @@ public class LookAt
     }
 
     /**
+     * @see latitude
      * 
      * @return
      *     possible object is
@@ -260,6 +263,7 @@ public class LookAt
     }
 
     /**
+     * @see latitude
      * 
      * @param value
      *     allowed object is
@@ -271,6 +275,7 @@ public class LookAt
     }
 
     /**
+     * @see altitude
      * 
      * @return
      *     possible object is
@@ -282,6 +287,7 @@ public class LookAt
     }
 
     /**
+     * @see altitude
      * 
      * @param value
      *     allowed object is
@@ -293,6 +299,7 @@ public class LookAt
     }
 
     /**
+     * @see heading
      * 
      * @return
      *     possible object is
@@ -304,6 +311,7 @@ public class LookAt
     }
 
     /**
+     * @see heading
      * 
      * @param value
      *     allowed object is
@@ -315,6 +323,7 @@ public class LookAt
     }
 
     /**
+     * @see tilt
      * 
      * @return
      *     possible object is
@@ -326,6 +335,7 @@ public class LookAt
     }
 
     /**
+     * @see tilt
      * 
      * @param value
      *     allowed object is
@@ -337,6 +347,7 @@ public class LookAt
     }
 
     /**
+     * @see range
      * 
      * @return
      *     possible object is
@@ -348,6 +359,7 @@ public class LookAt
     }
 
     /**
+     * @see range
      * 
      * @param value
      *     allowed object is
@@ -359,12 +371,13 @@ public class LookAt
     }
 
     /**
+     * @see altitudeMode
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -372,12 +385,13 @@ public class LookAt
     }
 
     /**
+     * @see altitudeMode
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -385,6 +399,7 @@ public class LookAt
     }
 
     /**
+     * @see lookAtSimpleExtension
      * 
      */
     public List<Object> getLookAtSimpleExtension() {
@@ -395,6 +410,7 @@ public class LookAt
     }
 
     /**
+     * @see lookAtObjectExtension
      * 
      */
     public List<AbstractObject> getLookAtObjectExtension() {
@@ -491,10 +507,7 @@ public class LookAt
     }
 
     /**
-     * Sets the value of the lookAtSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLookAtSimpleExtension} instead.
-     * 
+     * @see lookAtSimpleExtension
      * 
      * @param lookAtSimpleExtension
      */
@@ -516,10 +529,7 @@ public class LookAt
     }
 
     /**
-     * Sets the value of the lookAtObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withLookAtObjectExtension} instead.
-     * 
+     * @see lookAtObjectExtension
      * 
      * @param lookAtObjectExtension
      */
@@ -540,6 +550,10 @@ public class LookAt
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -553,6 +567,10 @@ public class LookAt
         return this;
     }
 
+    /**
+     * @see abstractViewSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setAbstractViewSimpleExtension(final List<Object> abstractViewSimpleExtension) {
@@ -566,6 +584,10 @@ public class LookAt
         return this;
     }
 
+    /**
+     * @see abstractViewObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setAbstractViewObjectExtension(final List<AbstractObject> abstractViewObjectExtension) {

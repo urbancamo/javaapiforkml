@@ -29,12 +29,12 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * @see: <Object>
  * 
  * Extended By: 
- * @see: <Point>
  * @see: <LineString>
  * @see: <LinearRing>
- * @see: Polygon
- * @see: MultiGeometry
  * @see: <Model>
+ * @see: <Point>
+ * @see: MultiGeometry
+ * @see: Polygon
  * 
  * 
  * 
@@ -85,6 +85,7 @@ public abstract class Geometry
     }
 
     /**
+     * @see geometrySimpleExtension
      * 
      */
     public List<Object> getGeometrySimpleExtension() {
@@ -95,6 +96,7 @@ public abstract class Geometry
     }
 
     /**
+     * @see geometryObjectExtension
      * 
      */
     public List<AbstractObject> getGeometryObjectExtension() {
@@ -150,10 +152,7 @@ public abstract class Geometry
     }
 
     /**
-     * Sets the value of the geometrySimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withGeometrySimpleExtension} instead.
-     * 
+     * @see geometrySimpleExtension
      * 
      * @param geometrySimpleExtension
      */
@@ -175,10 +174,7 @@ public abstract class Geometry
     }
 
     /**
-     * Sets the value of the geometryObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withGeometryObjectExtension} instead.
-     * 
+     * @see geometryObjectExtension
      * 
      * @param geometryObjectExtension
      */
@@ -199,6 +195,10 @@ public abstract class Geometry
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

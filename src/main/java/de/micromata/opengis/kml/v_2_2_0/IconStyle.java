@@ -41,8 +41,8 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * @see: <ColorStyle>
  * 
  * Contains: 
- * @see: <href>
  * @see: <Icon>
+ * @see: <href>
  * 
  * Contained By: 
  * @see: <Style>
@@ -67,10 +67,10 @@ public class IconStyle
     /**
      * <scale>
      * <p>
-     * Resizes the icon. 
+     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
      * </p>
      * <p>
-     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
+     * Resizes the icon. 
      * </p>
      * <p>
      * Scales a model along the x, y, and z axes in the model's coordinate space. <Scale> 
@@ -81,7 +81,7 @@ public class IconStyle
      * 
      */
     @XmlElement(defaultValue = "1.0")
-    protected double scale = 1.0D;
+    protected double scale;
     /**
      * <heading>
      * <p>
@@ -90,11 +90,11 @@ public class IconStyle
      * </p>
      * <p>
      * Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-     * diagram.) Values range from 0 to 360 degrees. 
+     * diagram below.) Values range from 0 to 360 degrees. 
      * </p>
      * <p>
      * Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-     * diagram below.) Values range from 0 to 360 degrees. 
+     * diagram.) Values range from 0 to 360 degrees. 
      * </p>
      * <p>
      * Rotation about the z axis (normal to the Earth's surface). A value of 0 (the default) 
@@ -106,21 +106,21 @@ public class IconStyle
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double heading = 0.0D;
+    protected double heading;
     /**
      * <icon> see also <icon>.
-     * <p>
-     * Defines an image associated with an Icon style or overlay. <Icon> has the same child 
-     * elements as <Link>. The required <href> child element defines the location of the 
-     * image to be used as the overlay or as the icon for the placemark. This location 
-     * can either be on a local file system or a remote web server. 
-     * </p>
      * <p>
      * <Icon> <href>Sunset.jpg</href> </Icon> 
      * </p>
      * <p>
      * A custom Icon. In <IconStyle>, the only child element of <Icon> is <href>: <href>: 
      * An HTTP address or a local file specification used to load an icon. 
+     * </p>
+     * <p>
+     * Defines an image associated with an Icon style or overlay. <Icon> has the same child 
+     * elements as <Link>. The required <href> child element defines the location of the 
+     * image to be used as the overlay or as the icon for the placemark. This location 
+     * can either be on a local file system or a remote web server. 
      * </p>
      * <p>
      * Defines the image associated with the Overlay. The <href> element defines the location 
@@ -147,14 +147,14 @@ public class IconStyle
      * 
      * Contained By: 
      * @see: <GroundOverlay>
-     * @see: <ScreenOverlay>
      * @see: <IconStyle>
+     * @see: <ScreenOverlay>
      * 
      * 
      * 
      */
     @XmlElement(name = "Icon")
-    protected BasicLink icon;
+    protected Icon icon;
     /**
      * <hotspot x="0.5" y="0.5" xunits="fraction" yunits="fraction">
      * <p>
@@ -209,6 +209,7 @@ public class IconStyle
     }
 
     /**
+     * @see scale
      * 
      * @return
      *     possible object is
@@ -220,6 +221,7 @@ public class IconStyle
     }
 
     /**
+     * @see scale
      * 
      * @param value
      *     allowed object is
@@ -231,6 +233,7 @@ public class IconStyle
     }
 
     /**
+     * @see heading
      * 
      * @return
      *     possible object is
@@ -242,6 +245,7 @@ public class IconStyle
     }
 
     /**
+     * @see heading
      * 
      * @param value
      *     allowed object is
@@ -253,28 +257,31 @@ public class IconStyle
     }
 
     /**
+     * @see icon
      * 
      * @return
      *     possible object is
      *     {@link BasicLink}
      *     
      */
-    public BasicLink getIcon() {
+    public Icon getIcon() {
         return icon;
     }
 
     /**
+     * @see icon
      * 
      * @param value
      *     allowed object is
      *     {@link BasicLink}
      *     
      */
-    public void setIcon(BasicLink value) {
+    public void setIcon(Icon value) {
         this.icon = value;
     }
 
     /**
+     * @see hotSpot
      * 
      * @return
      *     possible object is
@@ -286,6 +293,7 @@ public class IconStyle
     }
 
     /**
+     * @see hotSpot
      * 
      * @param value
      *     allowed object is
@@ -297,6 +305,7 @@ public class IconStyle
     }
 
     /**
+     * @see iconStyleSimpleExtension
      * 
      */
     public List<Object> getIconStyleSimpleExtension() {
@@ -307,6 +316,7 @@ public class IconStyle
     }
 
     /**
+     * @see iconStyleObjectExtension
      * 
      */
     public List<AbstractObject> getIconStyleObjectExtension() {
@@ -393,17 +403,17 @@ public class IconStyle
     }
 
     /**
-     * Creates a new instance of {@link Link} and set it to icon.
+     * Creates a new instance of {@link Icon} and set it to icon.
      * 
      * This method is a short version for:
      * <code>
-     * Link link = new Link();
-     * this.setIcon(link); </code>
+     * Icon icon = new Icon();
+     * this.setIcon(icon); </code>
      * 
      * 
      */
-    public Link createAndSetLink() {
-        Link newValue = new Link();
+    public Icon createAndSetIcon() {
+        Icon newValue = new Icon();
         this.setIcon(newValue);
         return newValue;
     }
@@ -425,10 +435,7 @@ public class IconStyle
     }
 
     /**
-     * Sets the value of the iconStyleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withIconStyleSimpleExtension} instead.
-     * 
+     * @see iconStyleSimpleExtension
      * 
      * @param iconStyleSimpleExtension
      */
@@ -450,10 +457,7 @@ public class IconStyle
     }
 
     /**
-     * Sets the value of the iconStyleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withIconStyleObjectExtension} instead.
-     * 
+     * @see iconStyleObjectExtension
      * 
      * @param iconStyleObjectExtension
      */
@@ -474,6 +478,10 @@ public class IconStyle
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -487,6 +495,10 @@ public class IconStyle
         return this;
     }
 
+    /**
+     * @see subStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
@@ -500,6 +512,10 @@ public class IconStyle
         return this;
     }
 
+    /**
+     * @see subStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
@@ -513,6 +529,10 @@ public class IconStyle
         return this;
     }
 
+    /**
+     * @see colorStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleSimpleExtension(final List<Object> colorStyleSimpleExtension) {
@@ -526,6 +546,10 @@ public class IconStyle
         return this;
     }
 
+    /**
+     * @see colorStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {
@@ -567,7 +591,7 @@ public class IconStyle
      * @param icon
      *     required parameter
      */
-    public IconStyle withIcon(final BasicLink icon) {
+    public IconStyle withIcon(final Icon icon) {
         this.setIcon(icon);
         return this;
     }

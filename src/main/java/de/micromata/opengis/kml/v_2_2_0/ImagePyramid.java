@@ -58,7 +58,7 @@ public class ImagePyramid
      * 
      */
     @XmlElement(defaultValue = "256")
-    protected int tileSize = 256;
+    protected int tileSize;
     /**
      * <maxwidth>
      * <p>
@@ -69,7 +69,7 @@ public class ImagePyramid
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected int maxWidth = 0;
+    protected int maxWidth;
     /**
      * <maxheight>
      * <p>
@@ -80,7 +80,7 @@ public class ImagePyramid
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected int maxHeight = 0;
+    protected int maxHeight;
     /**
      * GridOrigin
      * <p>
@@ -94,7 +94,7 @@ public class ImagePyramid
      * 
      */
     @XmlElement(defaultValue = "lowerLeft")
-    protected GridOrigin gridOrigin = GridOrigin.LOWER_LEFT;
+    protected GridOrigin gridOrigin;
     @XmlElement(name = "ImagePyramidSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> imagePyramidSimpleExtension;
@@ -124,6 +124,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see tileSize
      * 
      * @return
      *     possible object is
@@ -135,6 +136,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see tileSize
      * 
      * @param value
      *     allowed object is
@@ -146,6 +148,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see maxWidth
      * 
      * @return
      *     possible object is
@@ -157,6 +160,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see maxWidth
      * 
      * @param value
      *     allowed object is
@@ -168,6 +172,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see maxHeight
      * 
      * @return
      *     possible object is
@@ -179,6 +184,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see maxHeight
      * 
      * @param value
      *     allowed object is
@@ -190,6 +196,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see gridOrigin
      * 
      * @return
      *     possible object is
@@ -201,6 +208,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see gridOrigin
      * 
      * @param value
      *     allowed object is
@@ -212,6 +220,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see imagePyramidSimpleExtension
      * 
      */
     public List<Object> getImagePyramidSimpleExtension() {
@@ -222,6 +231,7 @@ public class ImagePyramid
     }
 
     /**
+     * @see imagePyramidObjectExtension
      * 
      */
     public List<AbstractObject> getImagePyramidObjectExtension() {
@@ -299,10 +309,7 @@ public class ImagePyramid
     }
 
     /**
-     * Sets the value of the imagePyramidSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withImagePyramidSimpleExtension} instead.
-     * 
+     * @see imagePyramidSimpleExtension
      * 
      * @param imagePyramidSimpleExtension
      */
@@ -324,10 +331,7 @@ public class ImagePyramid
     }
 
     /**
-     * Sets the value of the imagePyramidObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withImagePyramidObjectExtension} instead.
-     * 
+     * @see imagePyramidObjectExtension
      * 
      * @param imagePyramidObjectExtension
      */
@@ -348,6 +352,10 @@ public class ImagePyramid
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

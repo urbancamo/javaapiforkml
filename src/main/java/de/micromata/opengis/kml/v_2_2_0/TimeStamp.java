@@ -88,6 +88,7 @@ public class TimeStamp
     }
 
     /**
+     * @see when
      * 
      * @return
      *     possible object is
@@ -99,6 +100,7 @@ public class TimeStamp
     }
 
     /**
+     * @see when
      * 
      * @param value
      *     allowed object is
@@ -110,6 +112,7 @@ public class TimeStamp
     }
 
     /**
+     * @see timeStampSimpleExtension
      * 
      */
     public List<Object> getTimeStampSimpleExtension() {
@@ -120,6 +123,7 @@ public class TimeStamp
     }
 
     /**
+     * @see timeStampObjectExtension
      * 
      */
     public List<AbstractObject> getTimeStampObjectExtension() {
@@ -185,10 +189,7 @@ public class TimeStamp
     }
 
     /**
-     * Sets the value of the timeStampSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withTimeStampSimpleExtension} instead.
-     * 
+     * @see timeStampSimpleExtension
      * 
      * @param timeStampSimpleExtension
      */
@@ -210,10 +211,7 @@ public class TimeStamp
     }
 
     /**
-     * Sets the value of the timeStampObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withTimeStampObjectExtension} instead.
-     * 
+     * @see timeStampObjectExtension
      * 
      * @param timeStampObjectExtension
      */
@@ -234,6 +232,10 @@ public class TimeStamp
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -247,6 +249,10 @@ public class TimeStamp
         return this;
     }
 
+    /**
+     * @see timePrimitiveSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setTimePrimitiveSimpleExtension(final List<Object> timePrimitiveSimpleExtension) {
@@ -260,6 +266,10 @@ public class TimeStamp
         return this;
     }
 
+    /**
+     * @see timePrimitiveObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setTimePrimitiveObjectExtension(final List<AbstractObject> timePrimitiveObjectExtension) {

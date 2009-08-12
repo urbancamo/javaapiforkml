@@ -15,11 +15,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 /**
  * <gx:TimeSpan> and <gx:TimeStamp>
  * <p>
- * Represents an extent in time bounded by begin and end dateTimes. 
- * </p>
- * <p>
  * If <begin> or <end> is missing, then that end of the period is unbounded (see Example 
  * below). 
+ * </p>
+ * <p>
+ * Represents an extent in time bounded by begin and end dateTimes. 
  * </p>
  * <p>
  * The dateTime is defined according to XML Schema time (see XML Schema Part 2: Datatypes 
@@ -107,6 +107,7 @@ public class TimeSpan
     }
 
     /**
+     * @see begin
      * 
      * @return
      *     possible object is
@@ -118,6 +119,7 @@ public class TimeSpan
     }
 
     /**
+     * @see begin
      * 
      * @param value
      *     allowed object is
@@ -129,6 +131,7 @@ public class TimeSpan
     }
 
     /**
+     * @see end
      * 
      * @return
      *     possible object is
@@ -140,6 +143,7 @@ public class TimeSpan
     }
 
     /**
+     * @see end
      * 
      * @param value
      *     allowed object is
@@ -151,6 +155,7 @@ public class TimeSpan
     }
 
     /**
+     * @see timeSpanSimpleExtension
      * 
      */
     public List<Object> getTimeSpanSimpleExtension() {
@@ -161,6 +166,7 @@ public class TimeSpan
     }
 
     /**
+     * @see timeSpanObjectExtension
      * 
      */
     public List<AbstractObject> getTimeSpanObjectExtension() {
@@ -236,10 +242,7 @@ public class TimeSpan
     }
 
     /**
-     * Sets the value of the timeSpanSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withTimeSpanSimpleExtension} instead.
-     * 
+     * @see timeSpanSimpleExtension
      * 
      * @param timeSpanSimpleExtension
      */
@@ -261,10 +264,7 @@ public class TimeSpan
     }
 
     /**
-     * Sets the value of the timeSpanObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withTimeSpanObjectExtension} instead.
-     * 
+     * @see timeSpanObjectExtension
      * 
      * @param timeSpanObjectExtension
      */
@@ -285,6 +285,10 @@ public class TimeSpan
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -298,6 +302,10 @@ public class TimeSpan
         return this;
     }
 
+    /**
+     * @see timePrimitiveSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setTimePrimitiveSimpleExtension(final List<Object> timePrimitiveSimpleExtension) {
@@ -311,6 +319,10 @@ public class TimeSpan
         return this;
     }
 
+    /**
+     * @see timePrimitiveObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setTimePrimitiveObjectExtension(final List<AbstractObject> timePrimitiveObjectExtension) {

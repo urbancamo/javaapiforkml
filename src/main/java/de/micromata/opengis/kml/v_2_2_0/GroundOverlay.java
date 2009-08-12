@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
+import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 
@@ -92,6 +93,10 @@ public class GroundOverlay
     /**
      * <altitude>
      * <p>
+     * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
+     * altitude mode. 
+     * </p>
+     * <p>
      * Distance of the camera from the earth's surface, in meters. Interpreted according 
      * to the Camera's <altitudeMode> or <gx:altitudeMode>. 
      * </p>
@@ -99,16 +104,12 @@ public class GroundOverlay
      * Specifies the distance above the earth's surface, in meters, and is interpreted 
      * according to the altitude mode. 
      * </p>
-     * <p>
-     * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
-     * altitude mode. 
-     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double altitude = 0.0D;
+    protected double altitude;
     /**
      * AltitudeMode
      * <p>
@@ -175,6 +176,7 @@ public class GroundOverlay
     }
 
     /**
+     * @see altitude
      * 
      * @return
      *     possible object is
@@ -186,6 +188,7 @@ public class GroundOverlay
     }
 
     /**
+     * @see altitude
      * 
      * @param value
      *     allowed object is
@@ -197,12 +200,13 @@ public class GroundOverlay
     }
 
     /**
+     * @see altitudeMode
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -210,12 +214,13 @@ public class GroundOverlay
     }
 
     /**
+     * @see altitudeMode
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -223,6 +228,7 @@ public class GroundOverlay
     }
 
     /**
+     * @see latLonBox
      * 
      * @return
      *     possible object is
@@ -234,6 +240,7 @@ public class GroundOverlay
     }
 
     /**
+     * @see latLonBox
      * 
      * @param value
      *     allowed object is
@@ -245,6 +252,7 @@ public class GroundOverlay
     }
 
     /**
+     * @see groundOverlaySimpleExtension
      * 
      */
     public List<Object> getGroundOverlaySimpleExtension() {
@@ -255,6 +263,7 @@ public class GroundOverlay
     }
 
     /**
+     * @see groundOverlayObjectExtension
      * 
      */
     public List<AbstractObject> getGroundOverlayObjectExtension() {
@@ -352,10 +361,7 @@ public class GroundOverlay
     }
 
     /**
-     * Sets the value of the groundOverlaySimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withGroundOverlaySimpleExtension} instead.
-     * 
+     * @see groundOverlaySimpleExtension
      * 
      * @param groundOverlaySimpleExtension
      */
@@ -377,10 +383,7 @@ public class GroundOverlay
     }
 
     /**
-     * Sets the value of the groundOverlayObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withGroundOverlayObjectExtension} instead.
-     * 
+     * @see groundOverlayObjectExtension
      * 
      * @param groundOverlayObjectExtension
      */
@@ -401,6 +404,10 @@ public class GroundOverlay
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -414,6 +421,10 @@ public class GroundOverlay
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -427,6 +438,10 @@ public class GroundOverlay
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -440,6 +455,10 @@ public class GroundOverlay
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
@@ -453,6 +472,10 @@ public class GroundOverlay
         return this;
     }
 
+    /**
+     * @see overlaySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setOverlaySimpleExtension(final List<Object> overlaySimpleExtension) {
@@ -466,6 +489,10 @@ public class GroundOverlay
         return this;
     }
 
+    /**
+     * @see overlayObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setOverlayObjectExtension(final List<AbstractObject> overlayObjectExtension) {
@@ -585,7 +612,7 @@ public class GroundOverlay
 
     @Obvious
     @Override
-    public GroundOverlay withAtomLink(final de.micromata.opengis.kml.v_2_2_0.atom.Link atomLink) {
+    public GroundOverlay withAtomLink(final Link atomLink) {
         super.withAtomLink(atomLink);
         return this;
     }
@@ -711,7 +738,7 @@ public class GroundOverlay
 
     @Obvious
     @Override
-    public GroundOverlay withIcon(final de.micromata.opengis.kml.v_2_2_0.Link icon) {
+    public GroundOverlay withIcon(final Icon icon) {
         super.withIcon(icon);
         return this;
     }

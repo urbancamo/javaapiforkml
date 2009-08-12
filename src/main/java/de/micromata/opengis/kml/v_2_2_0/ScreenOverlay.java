@@ -12,32 +12,33 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
+import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 
 
 /**
  * <ScreenOverlay>
  * <p>
- * This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
- * are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
- * by the <size> element. Positioning of the overlay is handled by mapping a point 
- * in the image specified by <overlayXY> to a point on the screen specified by <screenXY>. 
- * Then the image is rotated by <rotation> degrees about a point relative to the screen 
- * specified by <rotationXY>. 
- * </p>
- * <p>
- * This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
- * are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
- * by the <size> element. Positioning of the overlay is handled by mapping a point 
- * in the image specified by <overlayXY> to a point on the screen specified by <screenXY>. 
- * Then the image is rotated by <rotation> degrees about a point relative to the screen 
- * specified by <rotationXY>. 
- * </p>
- * <p>
  * The <href> child of <Icon> specifies the image to be used as the overlay. This file 
  * can be either on a local file system or on a web server. If this element is omitted 
  * or contains no <href>, a rectangle is drawn using the color and size defined by 
  * the screen overlay. 
+ * </p>
+ * <p>
+ * This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
+ * are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
+ * by the <size> element. Positioning of the overlay is handled by mapping a point 
+ * in the image specified by <overlayXY> to a point on the screen specified by <screenXY>. 
+ * Then the image is rotated by <rotation> degrees about a point relative to the screen 
+ * specified by <rotationXY>. 
+ * </p>
+ * <p>
+ * This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
+ * are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
+ * by the <size> element. Positioning of the overlay is handled by mapping a point 
+ * in the image specified by <overlayXY> to a point on the screen specified by <screenXY>. 
+ * Then the image is rotated by <rotation> degrees about a point relative to the screen 
+ * specified by <rotationXY>. 
  * </p>
  * 
  * Syntax: 
@@ -134,6 +135,31 @@ public class ScreenOverlay
     /**
      * <screenxy>
      * <p>
+     * Center the image: 
+     * </p>
+     * <p>
+     * Center the image: <ScreenOverlay> <overlayXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> 
+     * <screenXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> </ScreenOverlay> 
+     * Place the image on the top left: <ScreenOverlay> <overlayXY x="0" y="1" xunits="fraction" 
+     * yunits="fraction"/> <screenXY x="0" y="1" xunits="fraction" yunits="fraction"/> 
+     * </ScreenOverlay> Place the image at the right of the screen: <ScreenOverlay> <overlayXY 
+     * x="1" y="1" xunits="fraction" yunits="fraction"/> <screenXY x="1" y="1" xunits="fraction" 
+     * yunits="fraction"/> </ScreenOverlay> 
+     * </p>
+     * <p>
+     * For example, <screenXY x=".5" y=".5" xunits="fraction" yunits="fraction"/> indicates 
+     * a point in the middle of the screen. 
+     * </p>
+     * <p>
+     * Here are some examples: 
+     * </p>
+     * <p>
+     * Place the image at the right of the screen: 
+     * </p>
+     * <p>
+     * Place the image on the top left: 
+     * </p>
+     * <p>
      * Specifies a point relative to the screen origin that the overlay image is mapped 
      * to. The x and y values can be specified in three different ways: as pixels ("pixels"), 
      * as fractions of the screen ("fraction"), or as inset pixels ("insetPixels"), which 
@@ -150,31 +176,6 @@ public class ScreenOverlay
      * is specified. A value of fraction indicates the y value is a fraction of the screen. 
      * A value of "pixels" indicates the y value in pixels. A value of "insetPixels" indicates 
      * the indent from the top edge of the screen. 
-     * </p>
-     * <p>
-     * For example, <screenXY x=".5" y=".5" xunits="fraction" yunits="fraction"/> indicates 
-     * a point in the middle of the screen. 
-     * </p>
-     * <p>
-     * Here are some examples: 
-     * </p>
-     * <p>
-     * Center the image: 
-     * </p>
-     * <p>
-     * Place the image on the top left: 
-     * </p>
-     * <p>
-     * Place the image at the right of the screen: 
-     * </p>
-     * <p>
-     * Center the image: <ScreenOverlay> <overlayXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> 
-     * <screenXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> </ScreenOverlay> 
-     * Place the image on the top left: <ScreenOverlay> <overlayXY x="0" y="1" xunits="fraction" 
-     * yunits="fraction"/> <screenXY x="0" y="1" xunits="fraction" yunits="fraction"/> 
-     * </ScreenOverlay> Place the image at the right of the screen: <ScreenOverlay> <overlayXY 
-     * x="1" y="1" xunits="fraction" yunits="fraction"/> <screenXY x="1" y="1" xunits="fraction" 
-     * yunits="fraction"/> </ScreenOverlay> 
      * </p>
      * 
      * 
@@ -194,23 +195,23 @@ public class ScreenOverlay
     /**
      * <size>
      * <p>
+     * For example: 
+     * </p>
+     * <p>
      * Specifies the size of the image for the screen overlay, as follows: A value of ?1 
      * indicates to use the native dimension A value of 0 indicates to maintain the aspect 
      * ratio A value of n sets the value of the dimension 
      * </p>
      * <p>
-     * For example: 
-     * </p>
-     * <p>
-     * To force the image to retain its original x and y dimensions, set the values to 
-     * ?1: 
+     * To force the image to resize to 100px by 500px: 
      * </p>
      * <p>
      * To force the image to retain its horizontal dimension, but to take up 20 percent 
      * of the vertical screen space: 
      * </p>
      * <p>
-     * To force the image to resize to 100px by 500px: 
+     * To force the image to retain its original x and y dimensions, set the values to 
+     * ?1: 
      * </p>
      * <p>
      * To force the image to retain its original x and y dimensions, set the values to 
@@ -241,7 +242,7 @@ public class ScreenOverlay
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double rotation = 0.0D;
+    protected double rotation;
     @XmlElement(name = "ScreenOverlaySimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> screenOverlaySimpleExtension;
@@ -271,6 +272,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see overlayXY
      * 
      * @return
      *     possible object is
@@ -282,6 +284,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see overlayXY
      * 
      * @param value
      *     allowed object is
@@ -293,6 +296,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see screenXY
      * 
      * @return
      *     possible object is
@@ -304,6 +308,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see screenXY
      * 
      * @param value
      *     allowed object is
@@ -315,6 +320,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see rotationXY
      * 
      * @return
      *     possible object is
@@ -326,6 +332,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see rotationXY
      * 
      * @param value
      *     allowed object is
@@ -337,6 +344,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see size
      * 
      * @return
      *     possible object is
@@ -348,6 +356,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see size
      * 
      * @param value
      *     allowed object is
@@ -359,6 +368,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see rotation
      * 
      * @return
      *     possible object is
@@ -370,6 +380,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see rotation
      * 
      * @param value
      *     allowed object is
@@ -381,6 +392,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see screenOverlaySimpleExtension
      * 
      */
     public List<Object> getScreenOverlaySimpleExtension() {
@@ -391,6 +403,7 @@ public class ScreenOverlay
     }
 
     /**
+     * @see screenOverlayObjectExtension
      * 
      */
     public List<AbstractObject> getScreenOverlayObjectExtension() {
@@ -556,10 +569,7 @@ public class ScreenOverlay
     }
 
     /**
-     * Sets the value of the screenOverlaySimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withScreenOverlaySimpleExtension} instead.
-     * 
+     * @see screenOverlaySimpleExtension
      * 
      * @param screenOverlaySimpleExtension
      */
@@ -581,10 +591,7 @@ public class ScreenOverlay
     }
 
     /**
-     * Sets the value of the screenOverlayObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withScreenOverlayObjectExtension} instead.
-     * 
+     * @see screenOverlayObjectExtension
      * 
      * @param screenOverlayObjectExtension
      */
@@ -605,6 +612,10 @@ public class ScreenOverlay
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -618,6 +629,10 @@ public class ScreenOverlay
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -631,6 +646,10 @@ public class ScreenOverlay
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -644,6 +663,10 @@ public class ScreenOverlay
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
@@ -657,6 +680,10 @@ public class ScreenOverlay
         return this;
     }
 
+    /**
+     * @see overlaySimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setOverlaySimpleExtension(final List<Object> overlaySimpleExtension) {
@@ -670,6 +697,10 @@ public class ScreenOverlay
         return this;
     }
 
+    /**
+     * @see overlayObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setOverlayObjectExtension(final List<AbstractObject> overlayObjectExtension) {
@@ -811,7 +842,7 @@ public class ScreenOverlay
 
     @Obvious
     @Override
-    public ScreenOverlay withAtomLink(final de.micromata.opengis.kml.v_2_2_0.atom.Link atomLink) {
+    public ScreenOverlay withAtomLink(final Link atomLink) {
         super.withAtomLink(atomLink);
         return this;
     }
@@ -937,7 +968,7 @@ public class ScreenOverlay
 
     @Obvious
     @Override
-    public ScreenOverlay withIcon(final de.micromata.opengis.kml.v_2_2_0.Link icon) {
+    public ScreenOverlay withIcon(final Icon icon) {
         super.withIcon(icon);
         return this;
     }

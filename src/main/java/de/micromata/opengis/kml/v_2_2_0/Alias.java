@@ -39,15 +39,15 @@ public class Alias
     /**
      * <targethref> (required)
      * <p>
-     * Specifies the texture file to be fetched by Google Earth. This reference can be 
-     * a relative reference to an image file within the .kmz archive, or it can be an absolute 
-     * reference to the file (for example, a URL). 
-     * </p>
-     * <p>
      * A URL that specifies the .kml or .kmz file whose data (within Google Earth) is to 
      * be modified by an <Update> element. This KML file must already have been loaded 
      * via a <NetworkLink>. In that file, the element to be modified must already have 
      * an explicit id attribute defined for it. 
+     * </p>
+     * <p>
+     * Specifies the texture file to be fetched by Google Earth. This reference can be 
+     * a relative reference to an image file within the .kmz archive, or it can be an absolute 
+     * reference to the file (for example, a URL). 
      * </p>
      * 
      * 
@@ -57,12 +57,6 @@ public class Alias
     protected String targetHref;
     /**
      * <sourcehref>
-     * <p>
-     * Is the path specified for the texture file in the Collada .dae file. 
-     * </p>
-     * <p>
-     * Is the path specified for the texture file in the Collada .dae file. 
-     * </p>
      * <p>
      * <targetHref> Specifies the texture file to be fetched by Google Earth. This reference 
      * can be a relative reference to an image file within the .kmz archive, or it can 
@@ -79,6 +73,12 @@ public class Alias
      * the texture name is an absolute path (c:\mytexture.jpg) or a network path (for example, 
      * http://myserver.com/mytexture.jpg), Google Earth looks for the file in the specified 
      * location, regardless of where the .dae file is located. 
+     * </p>
+     * <p>
+     * Is the path specified for the texture file in the Collada .dae file. 
+     * </p>
+     * <p>
+     * Is the path specified for the texture file in the Collada .dae file. 
      * </p>
      * 
      * 
@@ -115,6 +115,7 @@ public class Alias
     }
 
     /**
+     * @see targetHref
      * 
      * @return
      *     possible object is
@@ -126,6 +127,7 @@ public class Alias
     }
 
     /**
+     * @see targetHref
      * 
      * @param value
      *     allowed object is
@@ -137,6 +139,7 @@ public class Alias
     }
 
     /**
+     * @see sourceHref
      * 
      * @return
      *     possible object is
@@ -148,6 +151,7 @@ public class Alias
     }
 
     /**
+     * @see sourceHref
      * 
      * @param value
      *     allowed object is
@@ -159,6 +163,7 @@ public class Alias
     }
 
     /**
+     * @see aliasSimpleExtension
      * 
      */
     public List<Object> getAliasSimpleExtension() {
@@ -169,6 +174,7 @@ public class Alias
     }
 
     /**
+     * @see aliasObjectExtension
      * 
      */
     public List<AbstractObject> getAliasObjectExtension() {
@@ -244,10 +250,7 @@ public class Alias
     }
 
     /**
-     * Sets the value of the aliasSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAliasSimpleExtension} instead.
-     * 
+     * @see aliasSimpleExtension
      * 
      * @param aliasSimpleExtension
      */
@@ -269,10 +272,7 @@ public class Alias
     }
 
     /**
-     * Sets the value of the aliasObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAliasObjectExtension} instead.
-     * 
+     * @see aliasObjectExtension
      * 
      * @param aliasObjectExtension
      */
@@ -293,6 +293,10 @@ public class Alias
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

@@ -11,11 +11,6 @@ import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 /**
  * <gx:TourPrimitive>
  * <p>
- * This is an abstract element and cannot be used directly in a KML file. This element 
- * is extended by the <gx:FlyTo>, <gx:AnimatedUpdate>, <gx:TourControl>, <gx:Wait>, 
- * and <gx:SoundCue> elements. 
- * </p>
- * <p>
  * Elements extended from gx:TourPrimitive provide instructions to KML browsers during 
  * tours, including points to fly to and the duration of those flights, pauses, updates 
  * to KML features, and sound files to play. 
@@ -23,6 +18,11 @@ import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
  * <p>
  * These elements must be contained within a <gx:Playlist> element, which in turn is 
  * contained with a <gx:Tour> element. 
+ * </p>
+ * <p>
+ * This is an abstract element and cannot be used directly in a KML file. This element 
+ * is extended by the <gx:FlyTo>, <gx:AnimatedUpdate>, <gx:TourControl>, <gx:Wait>, 
+ * and <gx:SoundCue> elements. 
  * </p>
  * 
  * Syntax: 

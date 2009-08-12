@@ -21,7 +21,7 @@ public class TourControl
 {
 
     @XmlElement(defaultValue = "pause")
-    protected PlayMode playMode = PlayMode.PAUSE;
+    protected PlayMode playMode;
 
     public TourControl() {
         super();

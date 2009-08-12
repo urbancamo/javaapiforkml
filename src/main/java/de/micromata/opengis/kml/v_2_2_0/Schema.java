@@ -77,6 +77,7 @@ public class Schema {
     }
 
     /**
+     * @see simpleField
      * 
      */
     public List<SimpleField> getSimpleField() {
@@ -87,6 +88,7 @@ public class Schema {
     }
 
     /**
+     * @see schemaExtension
      * 
      */
     public List<Object> getSchemaExtension() {
@@ -97,6 +99,7 @@ public class Schema {
     }
 
     /**
+     * @see name
      * 
      * @return
      *     possible object is
@@ -108,6 +111,7 @@ public class Schema {
     }
 
     /**
+     * @see name
      * 
      * @param value
      *     allowed object is
@@ -119,6 +123,7 @@ public class Schema {
     }
 
     /**
+     * @see id
      * 
      * @return
      *     possible object is
@@ -130,6 +135,7 @@ public class Schema {
     }
 
     /**
+     * @see id
      * 
      * @param value
      *     allowed object is
@@ -218,10 +224,7 @@ public class Schema {
     }
 
     /**
-     * Sets the value of the simpleField property Objects of the following type(s) are allowed in the list List<SimpleField>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSimpleField} instead.
-     * 
+     * @see simpleField
      * 
      * @param simpleField
      */
@@ -243,10 +246,7 @@ public class Schema {
     }
 
     /**
-     * Sets the value of the schemaExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSchemaExtension} instead.
-     * 
+     * @see schemaExtension
      * 
      * @param schemaExtension
      */

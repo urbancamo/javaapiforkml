@@ -42,11 +42,11 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * &lt;/gx:Tour&gt;</pre>
  * 
  * Contains: 
- * @see: gx:Playlist
- * @see: gx:TourPrimitive
  * @see: <gx:Playlist>
  * @see: <gx:Tour>
  * @see: <gx:Tour> <gx:Playlist> <!-- gx:TourPrimitive --> ... <!-- /gx:TourPrimitive --> <!--- Any number of gx:TourPrimitive elements can be included ---> </gx:Playlist> </gx:Tour>
+ * @see: gx:Playlist
+ * @see: gx:TourPrimitive
  * 
  * 
  * 
@@ -67,6 +67,7 @@ public class Tour
     }
 
     /**
+     * @see playlist
      * 
      * @return
      *     possible object is
@@ -78,6 +79,7 @@ public class Tour
     }
 
     /**
+     * @see playlist
      * 
      * @param value
      *     allowed object is

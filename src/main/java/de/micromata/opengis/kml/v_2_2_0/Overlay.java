@@ -125,21 +125,21 @@ public abstract class Overlay
      * 
      */
     @XmlElement(defaultValue = "0")
-    protected int drawOrder = 0;
+    protected int drawOrder;
     /**
      * <icon> see also <icon>.
-     * <p>
-     * Defines an image associated with an Icon style or overlay. <Icon> has the same child 
-     * elements as <Link>. The required <href> child element defines the location of the 
-     * image to be used as the overlay or as the icon for the placemark. This location 
-     * can either be on a local file system or a remote web server. 
-     * </p>
      * <p>
      * <Icon> <href>Sunset.jpg</href> </Icon> 
      * </p>
      * <p>
      * A custom Icon. In <IconStyle>, the only child element of <Icon> is <href>: <href>: 
      * An HTTP address or a local file specification used to load an icon. 
+     * </p>
+     * <p>
+     * Defines an image associated with an Icon style or overlay. <Icon> has the same child 
+     * elements as <Link>. The required <href> child element defines the location of the 
+     * image to be used as the overlay or as the icon for the placemark. This location 
+     * can either be on a local file system or a remote web server. 
      * </p>
      * <p>
      * Defines the image associated with the Overlay. The <href> element defines the location 
@@ -166,14 +166,14 @@ public abstract class Overlay
      * 
      * Contained By: 
      * @see: <GroundOverlay>
-     * @see: <ScreenOverlay>
      * @see: <IconStyle>
+     * @see: <ScreenOverlay>
      * 
      * 
      * 
      */
     @XmlElement(name = "Icon")
-    protected de.micromata.opengis.kml.v_2_2_0.Link icon;
+    protected Icon icon;
     @XmlElement(name = "AbstractOverlaySimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> overlaySimpleExtension;
@@ -203,6 +203,7 @@ public abstract class Overlay
     }
 
     /**
+     * @see color
      * 
      * @return
      *     possible object is
@@ -214,6 +215,7 @@ public abstract class Overlay
     }
 
     /**
+     * @see color
      * 
      * @param value
      *     allowed object is
@@ -225,6 +227,7 @@ public abstract class Overlay
     }
 
     /**
+     * @see drawOrder
      * 
      * @return
      *     possible object is
@@ -236,6 +239,7 @@ public abstract class Overlay
     }
 
     /**
+     * @see drawOrder
      * 
      * @param value
      *     allowed object is
@@ -247,28 +251,31 @@ public abstract class Overlay
     }
 
     /**
+     * @see icon
      * 
      * @return
      *     possible object is
      *     {@link de.micromata.opengis.kml.v_2_2_0.Link}
      *     
      */
-    public de.micromata.opengis.kml.v_2_2_0.Link getIcon() {
+    public Icon getIcon() {
         return icon;
     }
 
     /**
+     * @see icon
      * 
      * @param value
      *     allowed object is
      *     {@link de.micromata.opengis.kml.v_2_2_0.Link}
      *     
      */
-    public void setIcon(de.micromata.opengis.kml.v_2_2_0.Link value) {
+    public void setIcon(Icon value) {
         this.icon = value;
     }
 
     /**
+     * @see overlaySimpleExtension
      * 
      */
     public List<Object> getOverlaySimpleExtension() {
@@ -279,6 +286,7 @@ public abstract class Overlay
     }
 
     /**
+     * @see overlayObjectExtension
      * 
      */
     public List<AbstractObject> getOverlayObjectExtension() {
@@ -358,26 +366,23 @@ public abstract class Overlay
     }
 
     /**
-     * Creates a new instance of {@link de.micromata.opengis.kml.v_2_2_0.Link} and set it to icon.
+     * Creates a new instance of {@link Icon} and set it to icon.
      * 
      * This method is a short version for:
      * <code>
-     * Link link = new Link();
-     * this.setIcon(link); </code>
+     * Icon icon = new Icon();
+     * this.setIcon(icon); </code>
      * 
      * 
      */
-    public de.micromata.opengis.kml.v_2_2_0.Link createAndSetIcon() {
-        de.micromata.opengis.kml.v_2_2_0.Link newValue = new de.micromata.opengis.kml.v_2_2_0.Link();
+    public Icon createAndSetIcon() {
+        Icon newValue = new Icon();
         this.setIcon(newValue);
         return newValue;
     }
 
     /**
-     * Sets the value of the overlaySimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withOverlaySimpleExtension} instead.
-     * 
+     * @see overlaySimpleExtension
      * 
      * @param overlaySimpleExtension
      */
@@ -399,10 +404,7 @@ public abstract class Overlay
     }
 
     /**
-     * Sets the value of the overlayObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withOverlayObjectExtension} instead.
-     * 
+     * @see overlayObjectExtension
      * 
      * @param overlayObjectExtension
      */
@@ -423,6 +425,10 @@ public abstract class Overlay
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -436,6 +442,10 @@ public abstract class Overlay
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -449,6 +459,10 @@ public abstract class Overlay
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -462,6 +476,10 @@ public abstract class Overlay
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
@@ -503,7 +521,7 @@ public abstract class Overlay
      * @param icon
      *     required parameter
      */
-    public Overlay withIcon(final de.micromata.opengis.kml.v_2_2_0.Link icon) {
+    public Overlay withIcon(final Icon icon) {
         this.setIcon(icon);
         return this;
     }

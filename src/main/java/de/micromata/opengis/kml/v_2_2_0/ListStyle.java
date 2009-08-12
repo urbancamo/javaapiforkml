@@ -77,9 +77,18 @@ public class ListStyle
      * 
      */
     @XmlElement(defaultValue = "check")
-    protected ListItemType listItemType = ListItemType.CHECK;
+    protected ListItemType listItemType;
     /**
      * <bgcolor>
+     * <p>
+     * Background color for the Snippet. Color and opacity values are expressed in hexadecimal 
+     * notation. The range of values for any one color is 0 to 255 (00 to ff). For alpha, 
+     *  00 is fully transparent and ff is fully opaque. The order of expression is aabbggrr, 
+     * where aa=alpha (00 to ff); bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to 
+     * ff). For example, if you want to apply a blue color with 50 percent opacity to an 
+     * overlay, you would specify the following: <color>7fff0000</color>, where alpha=0x7f, 
+     * blue=0xff, green=0x00, and red=0x00. 
+     * </p>
      * <p>
      * Background color of the balloon (optional). Color and opacity (alpha) values are 
      * expressed in hexadecimal notation. The range of values for any one color is 0 to 
@@ -94,15 +103,6 @@ public class ListStyle
      * Note: The use of the <color> element within <BalloonStyle> has been deprecated. 
      * Use <bgColor> instead. 
      * </p>
-     * <p>
-     * Background color for the Snippet. Color and opacity values are expressed in hexadecimal 
-     * notation. The range of values for any one color is 0 to 255 (00 to ff). For alpha, 
-     *  00 is fully transparent and ff is fully opaque. The order of expression is aabbggrr, 
-     * where aa=alpha (00 to ff); bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to 
-     * ff). For example, if you want to apply a blue color with 50 percent opacity to an 
-     * overlay, you would specify the following: <color>7fff0000</color>, where alpha=0x7f, 
-     * blue=0xff, green=0x00, and red=0x00. 
-     * </p>
      * 
      * 
      * 
@@ -113,17 +113,17 @@ public class ListStyle
     /**
      * <itemicon>
      * <p>
+     * <state> Specifies the current state of the NetworkLink or Folder. Possible values 
+     * are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
+     * combined by inserting a space between two values (no comma). <href> Specifies the 
+     * URI of the image used in the List View for the Feature. 
+     * </p>
+     * <p>
      * Icon used in the List view that reflects the state of a Folder or Link fetch. Icons 
      * associated with the open and closed modes are used for Folders and Network Links. 
      * Icons associated with the error and fetching0, fetching1, and fetching2 modes are 
      * used for Network Links. The following screen capture illustrates the Google Earth 
      * icons for these states: 
-     * </p>
-     * <p>
-     * <state> Specifies the current state of the NetworkLink or Folder. Possible values 
-     * are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
-     * combined by inserting a space between two values (no comma). <href> Specifies the 
-     * URI of the image used in the List View for the Feature. 
      * </p>
      * 
      * 
@@ -132,7 +132,7 @@ public class ListStyle
     @XmlElement(name = "ItemIcon")
     protected List<ItemIcon> itemIcon;
     @XmlElement(defaultValue = "2")
-    protected int maxSnippetLines = 2;
+    protected int maxSnippetLines;
     @XmlElement(name = "ListStyleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> listStyleSimpleExtension;
@@ -162,6 +162,7 @@ public class ListStyle
     }
 
     /**
+     * @see listItemType
      * 
      * @return
      *     possible object is
@@ -173,6 +174,7 @@ public class ListStyle
     }
 
     /**
+     * @see listItemType
      * 
      * @param value
      *     allowed object is
@@ -184,6 +186,7 @@ public class ListStyle
     }
 
     /**
+     * @see bgColor
      * 
      * @return
      *     possible object is
@@ -195,6 +198,7 @@ public class ListStyle
     }
 
     /**
+     * @see bgColor
      * 
      * @param value
      *     allowed object is
@@ -206,6 +210,7 @@ public class ListStyle
     }
 
     /**
+     * @see itemIcon
      * 
      */
     public List<ItemIcon> getItemIcon() {
@@ -216,6 +221,7 @@ public class ListStyle
     }
 
     /**
+     * @see maxSnippetLines
      * 
      * @return
      *     possible object is
@@ -227,6 +233,7 @@ public class ListStyle
     }
 
     /**
+     * @see maxSnippetLines
      * 
      * @param value
      *     allowed object is
@@ -238,6 +245,7 @@ public class ListStyle
     }
 
     /**
+     * @see listStyleSimpleExtension
      * 
      */
     public List<Object> getListStyleSimpleExtension() {
@@ -248,6 +256,7 @@ public class ListStyle
     }
 
     /**
+     * @see listStyleObjectExtension
      * 
      */
     public List<AbstractObject> getListStyleObjectExtension() {
@@ -352,10 +361,7 @@ public class ListStyle
     }
 
     /**
-     * Sets the value of the itemIcon property Objects of the following type(s) are allowed in the list List<ItemIcon>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withItemIcon} instead.
-     * 
+     * @see itemIcon
      * 
      * @param itemIcon
      */
@@ -377,10 +383,7 @@ public class ListStyle
     }
 
     /**
-     * Sets the value of the listStyleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withListStyleSimpleExtension} instead.
-     * 
+     * @see listStyleSimpleExtension
      * 
      * @param listStyleSimpleExtension
      */
@@ -402,10 +405,7 @@ public class ListStyle
     }
 
     /**
-     * Sets the value of the listStyleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withListStyleObjectExtension} instead.
-     * 
+     * @see listStyleObjectExtension
      * 
      * @param listStyleObjectExtension
      */
@@ -426,6 +426,10 @@ public class ListStyle
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -439,6 +443,10 @@ public class ListStyle
         return this;
     }
 
+    /**
+     * @see subStyleSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
@@ -452,6 +460,10 @@ public class ListStyle
         return this;
     }
 
+    /**
+     * @see subStyleObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {

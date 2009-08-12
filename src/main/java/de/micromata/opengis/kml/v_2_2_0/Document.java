@@ -21,6 +21,10 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 /**
  * <Document>
  * <p>
+ * <Document> <Style id="myPrettyDocument"> <ListStyle> ... </ListStyle> </Style> <styleUrl#myPrettyDocument"> 
+ * ... </Document> 
+ * </p>
+ * <p>
  * A Document is a container for features and styles. This element is required if your 
  * KML file uses shared styles. It is recommended that you use shared styles, which 
  * require the following steps: 
@@ -30,7 +34,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * Feature or StyleMap, reference the Style's ID using a <styleUrl> element. 
  * </p>
  * <p>
- * Note that shared styles are not inherited by the Features in the Document. 
+ * Do not put shared styles within a Folder. 
  * </p>
  * <p>
  * Each Feature must explicitly reference the styles it uses in a <styleUrl> element. 
@@ -38,11 +42,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * must explicitly reference the <styleUrl>. For example: 
  * </p>
  * <p>
- * <Document> <Style id="myPrettyDocument"> <ListStyle> ... </ListStyle> </Style> <styleUrl#myPrettyDocument"> 
- * ... </Document> 
- * </p>
- * <p>
- * Do not put shared styles within a Folder. 
+ * Note that shared styles are not inherited by the Features in the Document. 
  * </p>
  * <p>
  * The following example illustrates use of a shared style. 
@@ -77,8 +77,8 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * 
  * Contains: 
  * @see: <Feature>
- * @see: <StyleSelector>
  * @see: <Schema>
+ * @see: <StyleSelector>
  * 
  * 
  * 
@@ -157,9 +157,9 @@ public class Document
      * 
      * Extended By: 
      * @see: <Container>
+     * @see: <NetworkLink>
      * @see: <Overlay>
      * @see: <Placemark>
-     * @see: <NetworkLink>
      * @see: <gx:Tour>
      * 
      * 
@@ -196,6 +196,7 @@ public class Document
     }
 
     /**
+     * @see schema
      * 
      */
     public List<Schema> getSchema() {
@@ -206,6 +207,7 @@ public class Document
     }
 
     /**
+     * @see feature
      * 
      */
     public List<Feature> getFeature() {
@@ -216,6 +218,7 @@ public class Document
     }
 
     /**
+     * @see documentSimpleExtension
      * 
      */
     public List<Object> getDocumentSimpleExtension() {
@@ -226,6 +229,7 @@ public class Document
     }
 
     /**
+     * @see documentObjectExtension
      * 
      */
     public List<AbstractObject> getDocumentObjectExtension() {
@@ -436,10 +440,7 @@ public class Document
     }
 
     /**
-     * Sets the value of the schema property Objects of the following type(s) are allowed in the list List<Schema>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSchema} instead.
-     * 
+     * @see schema
      * 
      * @param schema
      */
@@ -461,10 +462,7 @@ public class Document
     }
 
     /**
-     * Sets the value of the feature property Objects of the following type(s) are allowed in the list List<Feature>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFeature} instead.
-     * 
+     * @see feature
      * 
      * @param feature
      */
@@ -476,7 +474,7 @@ public class Document
      * add a value to the feature property collection
      * 
      * @param feature
-     *     Objects of the following type are allowed in the list: {@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -486,10 +484,7 @@ public class Document
     }
 
     /**
-     * Sets the value of the documentSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withDocumentSimpleExtension} instead.
-     * 
+     * @see documentSimpleExtension
      * 
      * @param documentSimpleExtension
      */
@@ -511,10 +506,7 @@ public class Document
     }
 
     /**
-     * Sets the value of the documentObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withDocumentObjectExtension} instead.
-     * 
+     * @see documentObjectExtension
      * 
      * @param documentObjectExtension
      */
@@ -535,6 +527,10 @@ public class Document
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -548,6 +544,10 @@ public class Document
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -561,6 +561,10 @@ public class Document
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -574,6 +578,10 @@ public class Document
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
@@ -587,6 +595,10 @@ public class Document
         return this;
     }
 
+    /**
+     * @see containerSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setContainerSimpleExtension(final List<Object> containerSimpleExtension) {
@@ -600,6 +612,10 @@ public class Document
         return this;
     }
 
+    /**
+     * @see containerObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setContainerObjectExtension(final List<AbstractObject> containerObjectExtension) {

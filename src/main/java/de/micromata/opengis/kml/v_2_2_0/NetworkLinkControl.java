@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  * <strong>&lt;/NetworkLinkControl&gt;</strong></pre>
  * 
  * See Also: 
- * <Update>
  * <NetworkLink>
+ * <Update>
  * 
  * 
  * 
@@ -72,7 +72,7 @@ public class NetworkLinkControl {
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double minRefreshPeriod = 0.0D;
+    protected double minRefreshPeriod;
     /**
      * <maxsessionlength>
      * <p>
@@ -85,7 +85,7 @@ public class NetworkLinkControl {
      * 
      */
     @XmlElement(defaultValue = "-1.0")
-    protected double maxSessionLength = -1.0D;
+    protected double maxSessionLength;
     /**
      * <cookie>
      * <p>
@@ -159,17 +159,17 @@ public class NetworkLinkControl {
     /**
      * <Update>
      * <p>
-     * With <Update>, you can specify any number of Change, Create, and Delete tags for 
-     * a .kml file or .kmz archive that has previously been loaded with a network link. 
-     * See <Update>. 
-     * </p>
-     * <p>
      * Specifies an addition, change, or deletion to KML data that has already been loaded 
      * using the specified URL. The <targetHref> specifies the .kml or .kmz file whose 
      * data (within Google Earth) is to be modified. <Update> is always contained in a 
      * NetworkLinkControl. Furthermore, the file containing the NetworkLinkControl must 
      * have been loaded by a NetworkLink. See the "Topics in KML" page on Updates for a 
      * detailed example of how Update works. 
+     * </p>
+     * <p>
+     * With <Update>, you can specify any number of Change, Create, and Delete tags for 
+     * a .kml file or .kmz archive that has previously been loaded with a network link. 
+     * See <Update>. 
      * </p>
      * 
      * Syntax: 
@@ -193,12 +193,12 @@ public class NetworkLinkControl {
     /**
      * <abstractview>
      * <p>
-     * This is an abstract element and cannot be used directly in a KML file. This element 
-     * is extended by the <Camera> and <LookAt> elements. 
-     * </p>
-     * <p>
      * Defines a viewpoint associated with any element derived from Feature. See <Camera> 
      * and <LookAt>. 
+     * </p>
+     * <p>
+     * This is an abstract element and cannot be used directly in a KML file. This element 
+     * is extended by the <Camera> and <LookAt> elements. 
      * </p>
      * 
      * Syntax: 
@@ -249,6 +249,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see minRefreshPeriod
      * 
      * @return
      *     possible object is
@@ -260,6 +261,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see minRefreshPeriod
      * 
      * @param value
      *     allowed object is
@@ -271,6 +273,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see maxSessionLength
      * 
      * @return
      *     possible object is
@@ -282,6 +285,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see maxSessionLength
      * 
      * @param value
      *     allowed object is
@@ -293,6 +297,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see cookie
      * 
      * @return
      *     possible object is
@@ -304,6 +309,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see cookie
      * 
      * @param value
      *     allowed object is
@@ -315,6 +321,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see message
      * 
      * @return
      *     possible object is
@@ -326,6 +333,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see message
      * 
      * @param value
      *     allowed object is
@@ -337,6 +345,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see linkName
      * 
      * @return
      *     possible object is
@@ -348,6 +357,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see linkName
      * 
      * @param value
      *     allowed object is
@@ -359,6 +369,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see linkDescription
      * 
      * @return
      *     possible object is
@@ -370,6 +381,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see linkDescription
      * 
      * @param value
      *     allowed object is
@@ -381,6 +393,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see linkSnippet
      * 
      * @return
      *     possible object is
@@ -392,6 +405,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see linkSnippet
      * 
      * @param value
      *     allowed object is
@@ -403,6 +417,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see expires
      * 
      * @return
      *     possible object is
@@ -414,6 +429,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see expires
      * 
      * @param value
      *     allowed object is
@@ -425,6 +441,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see update
      * 
      * @return
      *     possible object is
@@ -436,6 +453,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see update
      * 
      * @param value
      *     allowed object is
@@ -447,12 +465,13 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see abstractView
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -460,12 +479,13 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see abstractView
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link AbstractView}{@code>}
      *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -473,6 +493,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see networkLinkControlSimpleExtension
      * 
      */
     public List<Object> getNetworkLinkControlSimpleExtension() {
@@ -483,6 +504,7 @@ public class NetworkLinkControl {
     }
 
     /**
+     * @see networkLinkControlObjectExtension
      * 
      */
     public List<AbstractObject> getNetworkLinkControlObjectExtension() {
@@ -694,10 +716,7 @@ public class NetworkLinkControl {
     }
 
     /**
-     * Sets the value of the networkLinkControlSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withNetworkLinkControlSimpleExtension} instead.
-     * 
+     * @see networkLinkControlSimpleExtension
      * 
      * @param networkLinkControlSimpleExtension
      */
@@ -719,10 +738,7 @@ public class NetworkLinkControl {
     }
 
     /**
-     * Sets the value of the networkLinkControlObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withNetworkLinkControlObjectExtension} instead.
-     * 
+     * @see networkLinkControlObjectExtension
      * 
      * @param networkLinkControlObjectExtension
      */

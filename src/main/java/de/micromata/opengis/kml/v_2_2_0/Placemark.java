@@ -92,12 +92,12 @@ public class Placemark
      * @see: <Object>
      * 
      * Extended By: 
-     * @see: <Point>
      * @see: <LineString>
      * @see: <LinearRing>
-     * @see: Polygon
-     * @see: MultiGeometry
      * @see: <Model>
+     * @see: <Point>
+     * @see: MultiGeometry
+     * @see: Polygon
      * 
      * 
      * 
@@ -133,16 +133,17 @@ public class Placemark
     }
 
     /**
+     * @see geometry
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Point}{@code>}
-     *     {@code <}{@link LinearRing}{@code>}
      *     {@code <}{@link LineString}{@code>}
      *     {@code <}{@link Geometry}{@code>}
-     *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link Point}{@code>}
      *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link Polygon}{@code>}
+     *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link LinearRing}{@code>}
      *     
      */
     public Geometry getGeometry() {
@@ -150,16 +151,17 @@ public class Placemark
     }
 
     /**
+     * @see geometry
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Point}{@code>}
-     *     {@code <}{@link LinearRing}{@code>}
      *     {@code <}{@link LineString}{@code>}
      *     {@code <}{@link Geometry}{@code>}
-     *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link Point}{@code>}
      *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link Polygon}{@code>}
+     *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link LinearRing}{@code>}
      *     
      */
     public void setGeometry(Geometry value) {
@@ -167,6 +169,7 @@ public class Placemark
     }
 
     /**
+     * @see placemarkSimpleExtension
      * 
      */
     public List<Object> getPlacemarkSimpleExtension() {
@@ -177,6 +180,7 @@ public class Placemark
     }
 
     /**
+     * @see placemarkObjectExtension
      * 
      */
     public List<AbstractObject> getPlacemarkObjectExtension() {
@@ -338,10 +342,7 @@ public class Placemark
     }
 
     /**
-     * Sets the value of the placemarkSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPlacemarkSimpleExtension} instead.
-     * 
+     * @see placemarkSimpleExtension
      * 
      * @param placemarkSimpleExtension
      */
@@ -363,10 +364,7 @@ public class Placemark
     }
 
     /**
-     * Sets the value of the placemarkObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPlacemarkObjectExtension} instead.
-     * 
+     * @see placemarkObjectExtension
      * 
      * @param placemarkObjectExtension
      */
@@ -387,6 +385,10 @@ public class Placemark
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
@@ -400,6 +402,10 @@ public class Placemark
         return this;
     }
 
+    /**
+     * @see styleSelector
+     * 
+     */
     @Obvious
     @Override
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
@@ -413,6 +419,10 @@ public class Placemark
         return this;
     }
 
+    /**
+     * @see featureSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
@@ -426,6 +436,10 @@ public class Placemark
         return this;
     }
 
+    /**
+     * @see featureObjectExtension
+     * 
+     */
     @Obvious
     @Override
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {

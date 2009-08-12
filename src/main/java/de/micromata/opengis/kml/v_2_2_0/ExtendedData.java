@@ -15,27 +15,27 @@ import org.w3c.dom.Element;
 /**
  * <extendeddata>
  * <p>
- * The ExtendedData element offers three techniques for adding custom data to a KML 
- * Feature (NetworkLink, Placemark, GroundOverlay, PhotoOverlay, ScreenOverlay, Document, 
- * Folder). These techniques are 
- * </p>
- * <p>
  * Adding untyped data/value pairs using the <Data> element (basic) Declaring new typed 
  * fields using the <Schema> element and then instancing them using the <SchemaData> 
  * element (advanced) Referring to XML elements defined in other namespaces by referencing 
  * the external namespace within the KML file (basic) 
  * </p>
  * <p>
- * These techniques can be combined within a single KML file or Feature for different 
- * pieces of data. 
+ * Allows you to add custom data to a KML file. This data can be (1) data that references 
+ * an external XML schema, (2) untyped data/value pairs, or (3) typed data. A given 
+ * KML Feature can contain a combination of these types of custom data. 
  * </p>
  * <p>
  * For more information, see Adding Custom Data in "Topics in KML." 
  * </p>
  * <p>
- * Allows you to add custom data to a KML file. This data can be (1) data that references 
- * an external XML schema, (2) untyped data/value pairs, or (3) typed data. A given 
- * KML Feature can contain a combination of these types of custom data. 
+ * The ExtendedData element offers three techniques for adding custom data to a KML 
+ * Feature (NetworkLink, Placemark, GroundOverlay, PhotoOverlay, ScreenOverlay, Document, 
+ * Folder). These techniques are 
+ * </p>
+ * <p>
+ * These techniques can be combined within a single KML file or Feature for different 
+ * pieces of data. 
  * </p>
  * 
  * Syntax: 
@@ -83,12 +83,6 @@ public class ExtendedData {
     /**
      * <schemadata schemaurl="anyuri">
      * <p>
-     * This element is used in conjunction with <Schema> to add typed custom data to a 
-     * KML Feature. The Schema element (identified by the schemaUrl attribute) declares 
-     * the custom data type. The actual data objects ("instances" of the custom data) are 
-     * defined using the SchemaData element. 
-     * </p>
-     * <p>
      * The <schemaURL> can be a full URL, a reference to a Schema ID defined in an external 
      * KML file, or a reference to a Schema ID defined in the same KML file. All of the 
      * following specifications are acceptable: 
@@ -96,6 +90,12 @@ public class ExtendedData {
      * <p>
      * The Schema element is always a child of Document. The ExtendedData element is a 
      * child of the Feature that contains the custom data. 
+     * </p>
+     * <p>
+     * This element is used in conjunction with <Schema> to add typed custom data to a 
+     * KML Feature. The Schema element (identified by the schemaUrl attribute) declares 
+     * the custom data type. The actual data objects ("instances" of the custom data) are 
+     * defined using the SchemaData element. 
      * </p>
      * 
      * 
@@ -111,6 +111,7 @@ public class ExtendedData {
     }
 
     /**
+     * @see data
      * 
      */
     public List<Data> getData() {
@@ -121,6 +122,7 @@ public class ExtendedData {
     }
 
     /**
+     * @see schemaData
      * 
      */
     public List<SchemaData> getSchemaData() {
@@ -131,6 +133,7 @@ public class ExtendedData {
     }
 
     /**
+     * @see any
      * 
      */
     public List<Object> getAny() {
@@ -225,10 +228,7 @@ public class ExtendedData {
     }
 
     /**
-     * Sets the value of the data property Objects of the following type(s) are allowed in the list List<Data>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withData} instead.
-     * 
+     * @see data
      * 
      * @param data
      */
@@ -250,10 +250,7 @@ public class ExtendedData {
     }
 
     /**
-     * Sets the value of the schemaData property Objects of the following type(s) are allowed in the list List<SchemaData>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSchemaData} instead.
-     * 
+     * @see schemaData
      * 
      * @param schemaData
      */
@@ -275,10 +272,7 @@ public class ExtendedData {
     }
 
     /**
-     * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
-     * 
+     * @see any
      * 
      * @param any
      */
@@ -290,7 +284,7 @@ public class ExtendedData {
      * add a value to the any property collection
      * 
      * @param any
-     *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
+     *     Objects of the following type are allowed in the list: {@link Element}{@link Object}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

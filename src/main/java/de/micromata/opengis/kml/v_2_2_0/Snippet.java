@@ -33,9 +33,6 @@ public class Snippet {
     /**
      * <value>
      * <p>
-     * Value of the data pair. 
-     * </p>
-     * <p>
      * <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value> 
      * </Data> <Data name="holeYardage"> <value>234</value> </Data> <Data name="holePar"> 
      * <value>4</value> </Data> </ExtendedData> </Placemark> 
@@ -45,6 +42,9 @@ public class Snippet {
      * <value> Value of the data pair. <Placemark> <name>Club house</name> <ExtendedData> 
      * <Data name="holeNumber"> <value>1</value> </Data> <Data name="holeYardage"> <value>234</value> 
      * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * </p>
+     * <p>
+     * Value of the data pair. 
      * </p>
      * 
      * 
@@ -60,6 +60,7 @@ public class Snippet {
     }
 
     /**
+     * @see value
      * 
      * @return
      *     possible object is
@@ -71,6 +72,7 @@ public class Snippet {
     }
 
     /**
+     * @see value
      * 
      * @param value
      *     allowed object is
@@ -82,6 +84,7 @@ public class Snippet {
     }
 
     /**
+     * @see maxLines
      * 
      */
     public int getMaxLines() {
@@ -89,6 +92,7 @@ public class Snippet {
     }
 
     /**
+     * @see maxLines
      * 
      */
     public void setMaxLines(int value) {

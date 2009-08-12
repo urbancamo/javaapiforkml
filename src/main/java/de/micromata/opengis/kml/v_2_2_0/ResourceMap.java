@@ -69,6 +69,7 @@ public class ResourceMap
     }
 
     /**
+     * @see alias
      * 
      */
     public List<Alias> getAlias() {
@@ -79,6 +80,7 @@ public class ResourceMap
     }
 
     /**
+     * @see resourceMapSimpleExtension
      * 
      */
     public List<Object> getResourceMapSimpleExtension() {
@@ -89,6 +91,7 @@ public class ResourceMap
     }
 
     /**
+     * @see resourceMapObjectExtension
      * 
      */
     public List<AbstractObject> getResourceMapObjectExtension() {
@@ -169,10 +172,7 @@ public class ResourceMap
     }
 
     /**
-     * Sets the value of the alias property Objects of the following type(s) are allowed in the list List<Alias>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAlias} instead.
-     * 
+     * @see alias
      * 
      * @param alias
      */
@@ -194,10 +194,7 @@ public class ResourceMap
     }
 
     /**
-     * Sets the value of the resourceMapSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withResourceMapSimpleExtension} instead.
-     * 
+     * @see resourceMapSimpleExtension
      * 
      * @param resourceMapSimpleExtension
      */
@@ -219,10 +216,7 @@ public class ResourceMap
     }
 
     /**
-     * Sets the value of the resourceMapObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withResourceMapObjectExtension} instead.
-     * 
+     * @see resourceMapObjectExtension
      * 
      * @param resourceMapObjectExtension
      */
@@ -243,6 +237,10 @@ public class ResourceMap
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

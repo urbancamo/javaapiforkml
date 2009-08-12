@@ -63,7 +63,7 @@ public abstract class AbstractLatLonBox
      * 
      */
     @XmlElement(defaultValue = "180.0")
-    protected double north = 180.0D;
+    protected double north;
     /**
      * <south> (required)
      * <p>
@@ -75,14 +75,14 @@ public abstract class AbstractLatLonBox
      * 
      */
     @XmlElement(defaultValue = "-180.0")
-    protected double south = -180.0D;
+    protected double south;
     /**
      * <east> (required)
      * 
      * 
      */
     @XmlElement(defaultValue = "180.0")
-    protected double east = 180.0D;
+    protected double east;
     /**
      * <west> (required)
      * <p>
@@ -94,7 +94,7 @@ public abstract class AbstractLatLonBox
      * 
      */
     @XmlElement(defaultValue = "-180.0")
-    protected double west = -180.0D;
+    protected double west;
     @XmlElement(name = "AbstractLatLonBoxSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> abstractLatLonBoxSimpleExtension;
@@ -124,6 +124,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see north
      * 
      * @return
      *     possible object is
@@ -135,6 +136,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see north
      * 
      * @param value
      *     allowed object is
@@ -146,6 +148,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see south
      * 
      * @return
      *     possible object is
@@ -157,6 +160,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see south
      * 
      * @param value
      *     allowed object is
@@ -168,6 +172,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see east
      * 
      * @return
      *     possible object is
@@ -179,6 +184,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see east
      * 
      * @param value
      *     allowed object is
@@ -190,6 +196,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see west
      * 
      * @return
      *     possible object is
@@ -201,6 +208,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see west
      * 
      * @param value
      *     allowed object is
@@ -212,6 +220,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see abstractLatLonBoxSimpleExtension
      * 
      */
     public List<Object> getAbstractLatLonBoxSimpleExtension() {
@@ -222,6 +231,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
+     * @see abstractLatLonBoxObjectExtension
      * 
      */
     public List<AbstractObject> getAbstractLatLonBoxObjectExtension() {
@@ -298,10 +308,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * Sets the value of the abstractLatLonBoxSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAbstractLatLonBoxSimpleExtension} instead.
-     * 
+     * @see abstractLatLonBoxSimpleExtension
      * 
      * @param abstractLatLonBoxSimpleExtension
      */
@@ -323,10 +330,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * Sets the value of the abstractLatLonBoxObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAbstractLatLonBoxObjectExtension} instead.
-     * 
+     * @see abstractLatLonBoxObjectExtension
      * 
      * @param abstractLatLonBoxObjectExtension
      */
@@ -347,6 +351,10 @@ public abstract class AbstractLatLonBox
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

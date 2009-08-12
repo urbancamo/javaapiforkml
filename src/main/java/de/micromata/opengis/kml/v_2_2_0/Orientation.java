@@ -44,11 +44,11 @@ public class Orientation
      * </p>
      * <p>
      * Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-     * diagram.) Values range from 0 to 360 degrees. 
+     * diagram below.) Values range from 0 to 360 degrees. 
      * </p>
      * <p>
      * Direction (that is, North, South, East, West), in degrees. Default=0 (North). (See 
-     * diagram below.) Values range from 0 to 360 degrees. 
+     * diagram.) Values range from 0 to 360 degrees. 
      * </p>
      * <p>
      * Rotation about the z axis (normal to the Earth's surface). A value of 0 (the default) 
@@ -60,16 +60,9 @@ public class Orientation
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double heading = 0.0D;
+    protected double heading;
     /**
      * <tilt>
-     * <p>
-     * Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
-     * the view is aimed straight down toward the earth (the most common case). A value 
-     * for 90 for <tilt> indicates that the view is aimed toward the horizon. Values greater 
-     * than 90 indicate that the view is pointed up into the sky. Values for <tilt> are 
-     * clamped at +180 degrees. 
-     * </p>
      * <p>
      * Angle between the direction of the LookAt position and the normal to the surface 
      * of the earth. (See diagram below.) Values range from 0 to 90 degrees. Values for 
@@ -80,25 +73,21 @@ public class Orientation
      * Rotation about the x axis. A positive rotation is clockwise around the x axis and 
      * specified in degrees from 0 to 360. 
      * </p>
+     * <p>
+     * Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
+     * the view is aimed straight down toward the earth (the most common case). A value 
+     * for 90 for <tilt> indicates that the view is aimed toward the horizon. Values greater 
+     * than 90 indicate that the view is pointed up into the sky. Values for <tilt> are 
+     * clamped at +180 degrees. 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double tilt = 0.0D;
+    protected double tilt;
     /**
      * <roll>
-     * <p>
-     * Rotation, in degrees, of the camera around the Z axis. Values range from ?180 to 
-     * +180 degrees. 
-     * </p>
-     * <p>
-     * Rotation about the y axis. A positive rotation is clockwise around the y axis and 
-     * specified in degrees from 0 to 360. 
-     * </p>
-     * <p>
-     * This diagram illustrates the typical orientation of a model's axes: 
-     * </p>
      * <p>
      * <heading> Rotation about the z axis (normal to the Earth's surface). A value of 
      *  0 (the default) equals North. A positive rotation is clockwise around the z axis 
@@ -108,12 +97,23 @@ public class Orientation
      * axis and specified in degrees from 0 to 360. This diagram illustrates the typical 
      * orientation of a model's axes: 
      * </p>
+     * <p>
+     * Rotation about the y axis. A positive rotation is clockwise around the y axis and 
+     * specified in degrees from 0 to 360. 
+     * </p>
+     * <p>
+     * Rotation, in degrees, of the camera around the Z axis. Values range from ?180 to 
+     * +180 degrees. 
+     * </p>
+     * <p>
+     * This diagram illustrates the typical orientation of a model's axes: 
+     * </p>
      * 
      * 
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double roll = 0.0D;
+    protected double roll;
     @XmlElement(name = "OrientationSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> orientationSimpleExtension;
@@ -143,6 +143,7 @@ public class Orientation
     }
 
     /**
+     * @see heading
      * 
      * @return
      *     possible object is
@@ -154,6 +155,7 @@ public class Orientation
     }
 
     /**
+     * @see heading
      * 
      * @param value
      *     allowed object is
@@ -165,6 +167,7 @@ public class Orientation
     }
 
     /**
+     * @see tilt
      * 
      * @return
      *     possible object is
@@ -176,6 +179,7 @@ public class Orientation
     }
 
     /**
+     * @see tilt
      * 
      * @param value
      *     allowed object is
@@ -187,6 +191,7 @@ public class Orientation
     }
 
     /**
+     * @see roll
      * 
      * @return
      *     possible object is
@@ -198,6 +203,7 @@ public class Orientation
     }
 
     /**
+     * @see roll
      * 
      * @param value
      *     allowed object is
@@ -209,6 +215,7 @@ public class Orientation
     }
 
     /**
+     * @see orientationSimpleExtension
      * 
      */
     public List<Object> getOrientationSimpleExtension() {
@@ -219,6 +226,7 @@ public class Orientation
     }
 
     /**
+     * @see orientationObjectExtension
      * 
      */
     public List<AbstractObject> getOrientationObjectExtension() {
@@ -290,10 +298,7 @@ public class Orientation
     }
 
     /**
-     * Sets the value of the orientationSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withOrientationSimpleExtension} instead.
-     * 
+     * @see orientationSimpleExtension
      * 
      * @param orientationSimpleExtension
      */
@@ -315,10 +320,7 @@ public class Orientation
     }
 
     /**
-     * Sets the value of the orientationObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withOrientationObjectExtension} instead.
-     * 
+     * @see orientationObjectExtension
      * 
      * @param orientationObjectExtension
      */
@@ -339,6 +341,10 @@ public class Orientation
         return this;
     }
 
+    /**
+     * @see objectSimpleExtension
+     * 
+     */
     @Obvious
     @Override
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {

@@ -21,16 +21,16 @@ import javax.xml.bind.annotation.XmlType;
  * ascription elements used in KML are as follows: 
  * </p>
  * <p>
- * These elements are defined in the Atom Syndication Format. The complete specification 
- * is found at http://atompub.org. (see the sample that follows). 
- * </p>
- * <p>
- * These elements are defined in the Atom Syndication Format. The complete specification 
- * is found at http://atompub.org. (see the sample that follows). 
- * </p>
- * <p>
  * The <atom:author> element is the parent element for <atom:name>, which specifies 
  * the author of the KML feature. 
+ * </p>
+ * <p>
+ * These elements are defined in the Atom Syndication Format. The complete specification 
+ * is found at http://atompub.org. (see the sample that follows). 
+ * </p>
+ * <p>
+ * These elements are defined in the Atom Syndication Format. The complete specification 
+ * is found at http://atompub.org. (see the sample that follows). 
  * </p>
  * 
  * 
@@ -50,6 +50,7 @@ public class Author {
     }
 
     /**
+     * @see nameOrUriOrEmail
      * 
      */
     public List<String> getNameOrUriOrEmail() {
@@ -92,10 +93,7 @@ public class Author {
     }
 
     /**
-     * Sets the value of the nameOrUriOrEmail property Objects of the following type(s) are allowed in the list List<String>.
-     * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withNameOrUriOrEmail} instead.
-     * 
+     * @see nameOrUriOrEmail
      * 
      * @param nameOrUriOrEmail
      */
