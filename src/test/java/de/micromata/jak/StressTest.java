@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.junit.Before;
 import org.junit.Test;
 
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
@@ -17,26 +19,33 @@ import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
 // needs vm-argument: -Xms2g -Xmx2g
 public final class StressTest {
-  private final Logger LOG = Logger.getLogger(getClass().getName());
+	private static final String LOG4J_LOCATION = "src/main/java/log4j.properties";
+
+	private final Logger LOG = Logger.getLogger(getClass().getName());
 
 	private final Random randomElement = new Random();;
+
+	@Before
+	public void setUp() {
+		PropertyConfigurator.configure(LOG4J_LOCATION);
+	}
 
 	@Test
 	public void stess() throws FileNotFoundException {
 		coordinates(1);
 		coordinates(5);
-//		coordinates(10);
-//		coordinates(50);
-//		coordinates(100);
-//		coordinates(500);
-//		coordinates(1000);
-//		coordinates(5000);
-//		coordinates(10000);
-//		coordinates(50000);
-//		coordinates(100000);
-//		coordinates(500000);
-//		coordinates(1000000);
-//		coordinates(5000000);
+		// coordinates(10);
+		// coordinates(50);
+		// coordinates(100);
+		// coordinates(500);
+		// coordinates(1000);
+		// coordinates(5000);
+		// coordinates(10000);
+		// coordinates(50000);
+		// coordinates(100000);
+		// coordinates(500000);
+		// coordinates(1000000);
+		// coordinates(5000000);
 	}
 
 	private void coordinates(int coordinates) throws FileNotFoundException {
@@ -79,8 +88,8 @@ public final class StressTest {
 	}
 
 	private Statistics coordinates(String filename, int coordinates, boolean useStringConstructor) throws FileNotFoundException {
-    Runtime r = Runtime.getRuntime();
-    r.gc();
+		Runtime r = Runtime.getRuntime();
+		r.gc();
 
 		Statistics stats = new Statistics(filename, coordinates);
 
@@ -107,20 +116,20 @@ public final class StressTest {
 		StringWriter out = new StringWriter();
 		// measure the marshal part
 		stats.getTimeMarhsal().start();
-		//kml.marshal(new File(filename), false);
+		// kml.marshal(new File(filename), false);
 		kml.marshal(out);
 		stats.getTimeMarhsal().end();
 		coords.clear();
 		kml = null;
-		
+
 		// measure the unmarshal part
 		stats.getTimeUnmarhsal().start();
-		//Kml.unmarshal(new File(filename), false);
-	 	Kml.unmarshal(out.toString());
+		// Kml.unmarshal(new File(filename), false);
+		Kml.unmarshal(out.toString());
 		stats.getTimeUnmarhsal().end();
 		return stats;
 	}
-	
+
 	/**
 	 * Longitude and latitude values are in degrees, where
 	 * <ul>
@@ -157,7 +166,6 @@ public final class StressTest {
 		return (randomElement.nextDouble() * maxRandom) + minRandom;
 	}
 
-	
 	final class Statistics {
 		private Time timeCreate = new Time();
 
@@ -205,6 +213,7 @@ public final class StressTest {
 		}
 
 	}
+
 	final class Time {
 		private long start = 0; // start timing
 
