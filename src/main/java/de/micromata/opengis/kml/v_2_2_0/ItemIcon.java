@@ -310,6 +310,7 @@ public class ItemIcon
 
     /**
      * fluent setter
+     * @see #setState(List<ItemIconState>)
      * 
      * @param state
      *     required parameter
@@ -321,6 +322,7 @@ public class ItemIcon
 
     /**
      * fluent setter
+     * @see #setHref(String)
      * 
      * @param href
      *     required parameter
@@ -332,6 +334,7 @@ public class ItemIcon
 
     /**
      * fluent setter
+     * @see #setItemIconSimpleExtension(List<Object>)
      * 
      * @param itemIconSimpleExtension
      *     required parameter
@@ -343,6 +346,7 @@ public class ItemIcon
 
     /**
      * fluent setter
+     * @see #setItemIconObjectExtension(List<AbstractObject>)
      * 
      * @param itemIconObjectExtension
      *     required parameter

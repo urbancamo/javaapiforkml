@@ -220,6 +220,7 @@ public abstract class AbstractObject {
 
     /**
      * fluent setter
+     * @see #setObjectSimpleExtension(List<Object>)
      * 
      * @param objectSimpleExtension
      *     required parameter
@@ -231,6 +232,7 @@ public abstract class AbstractObject {
 
     /**
      * fluent setter
+     * @see #setId(String)
      * 
      * @param id
      *     required parameter
@@ -242,6 +244,7 @@ public abstract class AbstractObject {
 
     /**
      * fluent setter
+     * @see #setTargetId(String)
      * 
      * @param targetId
      *     required parameter

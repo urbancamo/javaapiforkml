@@ -209,6 +209,7 @@ public abstract class TimePrimitive
 
     /**
      * fluent setter
+     * @see #setTimePrimitiveSimpleExtension(List<Object>)
      * 
      * @param timePrimitiveSimpleExtension
      *     required parameter
@@ -220,6 +221,7 @@ public abstract class TimePrimitive
 
     /**
      * fluent setter
+     * @see #setTimePrimitiveObjectExtension(List<AbstractObject>)
      * 
      * @param timePrimitiveObjectExtension
      *     required parameter

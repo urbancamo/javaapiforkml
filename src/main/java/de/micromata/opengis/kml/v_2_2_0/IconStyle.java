@@ -565,6 +565,7 @@ public class IconStyle
 
     /**
      * fluent setter
+     * @see #setScale(double)
      * 
      * @param scale
      *     required parameter
@@ -576,6 +577,7 @@ public class IconStyle
 
     /**
      * fluent setter
+     * @see #setHeading(double)
      * 
      * @param heading
      *     required parameter
@@ -587,6 +589,7 @@ public class IconStyle
 
     /**
      * fluent setter
+     * @see #setIcon(Icon)
      * 
      * @param icon
      *     required parameter
@@ -598,6 +601,7 @@ public class IconStyle
 
     /**
      * fluent setter
+     * @see #setHotSpot(Vec2)
      * 
      * @param hotSpot
      *     required parameter
@@ -609,6 +613,7 @@ public class IconStyle
 
     /**
      * fluent setter
+     * @see #setIconStyleSimpleExtension(List<Object>)
      * 
      * @param iconStyleSimpleExtension
      *     required parameter
@@ -620,6 +625,7 @@ public class IconStyle
 
     /**
      * fluent setter
+     * @see #setIconStyleObjectExtension(List<AbstractObject>)
      * 
      * @param iconStyleObjectExtension
      *     required parameter

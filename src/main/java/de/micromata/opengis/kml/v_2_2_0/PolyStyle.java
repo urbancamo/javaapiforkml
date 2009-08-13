@@ -98,7 +98,6 @@ public class PolyStyle
     }
 
     /**
-     * @see ill
      * 
      * @return
      *     possible object is
@@ -122,7 +121,6 @@ public class PolyStyle
     }
 
     /**
-     * @see utline
      * 
      * @return
      *     possible object is
@@ -363,6 +361,7 @@ public class PolyStyle
 
     /**
      * fluent setter
+     * @see #setFill(Boolean)
      * 
      * @param fill
      *     required parameter
@@ -374,6 +373,7 @@ public class PolyStyle
 
     /**
      * fluent setter
+     * @see #setOutline(Boolean)
      * 
      * @param outline
      *     required parameter
@@ -385,6 +385,7 @@ public class PolyStyle
 
     /**
      * fluent setter
+     * @see #setPolyStyleSimpleExtension(List<Object>)
      * 
      * @param polyStyleSimpleExtension
      *     required parameter
@@ -396,6 +397,7 @@ public class PolyStyle
 
     /**
      * fluent setter
+     * @see #setPolyStyleObjectExtension(List<AbstractObject>)
      * 
      * @param polyStyleObjectExtension
      *     required parameter

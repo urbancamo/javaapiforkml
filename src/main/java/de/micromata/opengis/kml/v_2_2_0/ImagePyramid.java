@@ -371,6 +371,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
+     * @see #setTileSize(int)
      * 
      * @param tileSize
      *     required parameter
@@ -382,6 +383,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
+     * @see #setMaxWidth(int)
      * 
      * @param maxWidth
      *     required parameter
@@ -393,6 +395,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
+     * @see #setMaxHeight(int)
      * 
      * @param maxHeight
      *     required parameter
@@ -404,6 +407,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
+     * @see #setGridOrigin(GridOrigin)
      * 
      * @param gridOrigin
      *     required parameter
@@ -415,6 +419,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
+     * @see #setImagePyramidSimpleExtension(List<Object>)
      * 
      * @param imagePyramidSimpleExtension
      *     required parameter
@@ -426,6 +431,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
+     * @see #setImagePyramidObjectExtension(List<AbstractObject>)
      * 
      * @param imagePyramidObjectExtension
      *     required parameter

@@ -716,6 +716,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
+     * @see #setOverlayXY(Vec2)
      * 
      * @param overlayXY
      *     required parameter
@@ -727,6 +728,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
+     * @see #setScreenXY(Vec2)
      * 
      * @param screenXY
      *     required parameter
@@ -738,6 +740,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
+     * @see #setRotationXY(Vec2)
      * 
      * @param rotationXY
      *     required parameter
@@ -749,6 +752,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
+     * @see #setSize(Vec2)
      * 
      * @param size
      *     required parameter
@@ -760,6 +764,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
+     * @see #setRotation(double)
      * 
      * @param rotation
      *     required parameter
@@ -771,6 +776,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
+     * @see #setScreenOverlaySimpleExtension(List<Object>)
      * 
      * @param screenOverlaySimpleExtension
      *     required parameter
@@ -782,6 +788,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
+     * @see #setScreenOverlayObjectExtension(List<AbstractObject>)
      * 
      * @param screenOverlayObjectExtension
      *     required parameter

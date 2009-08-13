@@ -302,6 +302,7 @@ public class Scale
 
     /**
      * fluent setter
+     * @see #setX(double)
      * 
      * @param x
      *     required parameter
@@ -313,6 +314,7 @@ public class Scale
 
     /**
      * fluent setter
+     * @see #setY(double)
      * 
      * @param y
      *     required parameter
@@ -324,6 +326,7 @@ public class Scale
 
     /**
      * fluent setter
+     * @see #setZ(double)
      * 
      * @param z
      *     required parameter
@@ -335,6 +338,7 @@ public class Scale
 
     /**
      * fluent setter
+     * @see #setScaleSimpleExtension(List<Object>)
      * 
      * @param scaleSimpleExtension
      *     required parameter
@@ -346,6 +350,7 @@ public class Scale
 
     /**
      * fluent setter
+     * @see #setScaleObjectExtension(List<AbstractObject>)
      * 
      * @param scaleObjectExtension
      *     required parameter

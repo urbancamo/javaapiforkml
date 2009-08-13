@@ -83,6 +83,7 @@ public class SoundCue
 
     /**
      * fluent setter
+     * @see #setHref(String)
      * 
      * @param href
      *     required parameter

@@ -570,6 +570,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -581,6 +582,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setPostBoxNumberPrefix(PostBoxNumberPrefix)
      * 
      * @param postBoxNumberPrefix
      *     required parameter
@@ -592,6 +594,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setPostBoxNumberSuffix(PostBoxNumberSuffix)
      * 
      * @param postBoxNumberSuffix
      *     required parameter
@@ -603,6 +606,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setPostBoxNumberExtension(PostBoxNumberExtension)
      * 
      * @param postBoxNumberExtension
      *     required parameter
@@ -614,6 +618,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setFirm(Firm)
      * 
      * @param firm
      *     required parameter
@@ -625,6 +630,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setPostalCode(PostalCode)
      * 
      * @param postalCode
      *     required parameter
@@ -636,6 +642,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -647,6 +654,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -658,6 +666,7 @@ public class PostBox {
 
     /**
      * fluent setter
+     * @see #setIndicator(String)
      * 
      * @param indicator
      *     required parameter
@@ -786,6 +795,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -797,6 +807,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -927,6 +938,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -938,6 +950,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setNumberExtensionSeparator(String)
          * 
          * @param numberExtensionSeparator
          *     required parameter
@@ -1103,6 +1116,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1114,6 +1128,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setNumberPrefixSeparator(String)
          * 
          * @param numberPrefixSeparator
          *     required parameter
@@ -1125,6 +1140,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1290,6 +1306,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1301,6 +1318,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setNumberSuffixSeparator(String)
          * 
          * @param numberSuffixSeparator
          *     required parameter
@@ -1312,6 +1330,7 @@ public class PostBox {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

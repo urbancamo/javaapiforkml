@@ -360,6 +360,7 @@ public class Orientation
 
     /**
      * fluent setter
+     * @see #setHeading(double)
      * 
      * @param heading
      *     required parameter
@@ -371,6 +372,7 @@ public class Orientation
 
     /**
      * fluent setter
+     * @see #setTilt(double)
      * 
      * @param tilt
      *     required parameter
@@ -382,6 +384,7 @@ public class Orientation
 
     /**
      * fluent setter
+     * @see #setRoll(double)
      * 
      * @param roll
      *     required parameter
@@ -393,6 +396,7 @@ public class Orientation
 
     /**
      * fluent setter
+     * @see #setOrientationSimpleExtension(List<Object>)
      * 
      * @param orientationSimpleExtension
      *     required parameter
@@ -404,6 +408,7 @@ public class Orientation
 
     /**
      * fluent setter
+     * @see #setOrientationObjectExtension(List<AbstractObject>)
      * 
      * @param orientationObjectExtension
      *     required parameter

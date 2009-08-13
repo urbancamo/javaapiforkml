@@ -204,9 +204,9 @@ public class GroundOverlay
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -218,9 +218,9 @@ public class GroundOverlay
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -508,6 +508,7 @@ public class GroundOverlay
 
     /**
      * fluent setter
+     * @see #setAltitude(double)
      * 
      * @param altitude
      *     required parameter
@@ -519,6 +520,7 @@ public class GroundOverlay
 
     /**
      * fluent setter
+     * @see #setAltitudeMode(Object)
      * 
      * @param altitudeMode
      *     required parameter
@@ -530,6 +532,7 @@ public class GroundOverlay
 
     /**
      * fluent setter
+     * @see #setLatLonBox(LatLonBox)
      * 
      * @param latLonBox
      *     required parameter
@@ -541,6 +544,7 @@ public class GroundOverlay
 
     /**
      * fluent setter
+     * @see #setGroundOverlaySimpleExtension(List<Object>)
      * 
      * @param groundOverlaySimpleExtension
      *     required parameter
@@ -552,6 +556,7 @@ public class GroundOverlay
 
     /**
      * fluent setter
+     * @see #setGroundOverlayObjectExtension(List<AbstractObject>)
      * 
      * @param groundOverlayObjectExtension
      *     required parameter

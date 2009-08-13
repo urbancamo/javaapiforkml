@@ -202,6 +202,7 @@ public class BasicLink
 
     /**
      * fluent setter
+     * @see #setHref(String)
      * 
      * @param href
      *     required parameter
@@ -213,6 +214,7 @@ public class BasicLink
 
     /**
      * fluent setter
+     * @see #setBasicLinkSimpleExtension(List<Object>)
      * 
      * @param basicLinkSimpleExtension
      *     required parameter
@@ -224,6 +226,7 @@ public class BasicLink
 
     /**
      * fluent setter
+     * @see #setBasicLinkObjectExtension(List<AbstractObject>)
      * 
      * @param basicLinkObjectExtension
      *     required parameter

@@ -634,6 +634,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
+     * @see #setRotation(double)
      * 
      * @param rotation
      *     required parameter
@@ -645,6 +646,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
+     * @see #setViewVolume(ViewVolume)
      * 
      * @param viewVolume
      *     required parameter
@@ -656,6 +658,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
+     * @see #setImagePyramid(ImagePyramid)
      * 
      * @param imagePyramid
      *     required parameter
@@ -667,6 +670,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
+     * @see #setPoint(Point)
      * 
      * @param point
      *     required parameter
@@ -678,6 +682,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
+     * @see #setShape(Shape)
      * 
      * @param shape
      *     required parameter
@@ -689,6 +694,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
+     * @see #setPhotoOverlaySimpleExtension(List<Object>)
      * 
      * @param photoOverlaySimpleExtension
      *     required parameter
@@ -700,6 +706,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
+     * @see #setPhotoOverlayObjectExtension(List<AbstractObject>)
      * 
      * @param photoOverlayObjectExtension
      *     required parameter

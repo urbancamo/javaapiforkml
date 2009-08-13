@@ -201,17 +201,17 @@ public class Kml {
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link Tour}{@code>}
      *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -223,17 +223,17 @@ public class Kml {
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link Tour}{@code>}
      *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     
      */
     public void setFeature(Feature value) {
@@ -548,6 +548,7 @@ public class Kml {
 
     /**
      * fluent setter
+     * @see #setNetworkLinkControl(NetworkLinkControl)
      * 
      * @param networkLinkControl
      *     required parameter
@@ -559,6 +560,7 @@ public class Kml {
 
     /**
      * fluent setter
+     * @see #setFeature(Feature)
      * 
      * @param feature
      *     required parameter
@@ -570,6 +572,7 @@ public class Kml {
 
     /**
      * fluent setter
+     * @see #setKmlSimpleExtension(List<Object>)
      * 
      * @param kmlSimpleExtension
      *     required parameter
@@ -581,6 +584,7 @@ public class Kml {
 
     /**
      * fluent setter
+     * @see #setKmlObjectExtension(List<AbstractObject>)
      * 
      * @param kmlObjectExtension
      *     required parameter
@@ -592,6 +596,7 @@ public class Kml {
 
     /**
      * fluent setter
+     * @see #setHint(String)
      * 
      * @param hint
      *     required parameter
@@ -614,10 +619,6 @@ public class Kml {
         return jc;
     }
 
-    /**
-     * @see ateMarshaller
-     * 
-     */
     private Marshaller createMarshaller()
         throws JAXBException
     {
@@ -628,7 +629,10 @@ public class Kml {
     }
 
     /**
-     * @see shal
+     * Java to KML
+     * The object graph is marshalled to an OutputStream object.
+     * The object is not saved as a zipped .kmz file (boolean is false).
+     * @see marshal(final File, final boolean)
      * 
      */
     public boolean marshal(final OutputStream outputstream)
@@ -647,7 +651,10 @@ public class Kml {
     }
 
     /**
-     * @see shal
+     * Java to KML
+     * The object graph is marshalled to a Writer object.
+     * The object is not saved as a zipped .kmz file (boolean is false).
+     * @see marshal(final File, final boolean)
      * 
      */
     public boolean marshal(final Writer writer) {
@@ -664,7 +671,12 @@ public class Kml {
     }
 
     /**
-     * @see shal
+     * Java to KML
+     * The object graph is marshalled to a File object.
+     * The boolean value indicates whether the File object is saved as a zipped .kmz file or not.
+     * <b>Warning:</b>
+     * <b>THE KMZ FEATURE, ISN'T WORKING YET!</b>
+     * 
      * 
      */
     public boolean marshal(final File filename, final boolean zipped)
@@ -678,9 +690,18 @@ public class Kml {
     }
 
     /**
-     * @see idate
+     * Java to KML
+     * The object graph is marshalled to a File object.
+     * The object is not saved as a zipped .kmz file (boolean is false).
+     * @see marshal(final File, final boolean)
      * 
      */
+    public boolean marshal(final File filename)
+        throws FileNotFoundException
+    {
+        return this.marshal(filename, false);
+    }
+
     private static boolean validate(final Unmarshaller unmarshaller) {
         try {
             SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -695,7 +716,11 @@ public class Kml {
     }
 
     /**
-     * @see arshal
+     * KML to Java
+     * KML given as a file object is transformed into a graph of Java objects.
+     * The boolean value indicates, whether the File object should be validated 
+     * automatically during unmarshalling and be checked if the object graph meets 
+     * all constraints defined in OGC's KML schema specification.
      * 
      */
     public static Kml unmarshal(final File file, final boolean validate) {
@@ -714,7 +739,12 @@ public class Kml {
     }
 
     /**
-     * @see arshal
+     * KML to Java
+     * KML given as a file object is transformed into a graph of Java objects.
+     * Similar to the method: 
+     * unmarshal(final File, final boolean) 
+     * but with the exception that the File object is not validated (boolean is false). 
+     * 
      * 
      */
     public static Kml unmarshal(final File file) {
@@ -722,7 +752,11 @@ public class Kml {
     }
 
     /**
-     * @see arshal
+     * KML to Java
+     * Similar to the other unmarshal methods 
+     * 
+     * but with the exception that it transforms a String into a graph of Java objects. 
+     * 
      * 
      */
     public static Kml unmarshal(final String content) {

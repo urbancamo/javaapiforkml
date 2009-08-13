@@ -174,7 +174,7 @@ public class Jugh {
 
 		try {
 			kml.marshal(System.out);
-			kml.marshal(new File("jughBallon.kml"), false);
+			// kml.marshal(new File("jughBallon.kml"), false);
 		} catch (FileNotFoundException e) {
 			LOG.info("Can't create file");
 		}
@@ -243,7 +243,7 @@ public class Jugh {
 
 		try {
 			kml.marshal(System.out);
-			kml.marshal(new File("jugh.kml"), false);
+			// kml.marshal(new File("jugh.kml"), false);
 		} catch (FileNotFoundException e) {
 			LOG.info("Can't create file");
 		}

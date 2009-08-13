@@ -397,6 +397,7 @@ public class PostalRoute {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -408,6 +409,7 @@ public class PostalRoute {
 
     /**
      * fluent setter
+     * @see #setPostBox(PostBox)
      * 
      * @param postBox
      *     required parameter
@@ -419,6 +421,7 @@ public class PostalRoute {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -430,6 +433,7 @@ public class PostalRoute {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -593,6 +597,7 @@ public class PostalRoute {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -604,6 +609,7 @@ public class PostalRoute {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -615,6 +621,7 @@ public class PostalRoute {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -745,6 +752,7 @@ public class PostalRoute {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -756,6 +764,7 @@ public class PostalRoute {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

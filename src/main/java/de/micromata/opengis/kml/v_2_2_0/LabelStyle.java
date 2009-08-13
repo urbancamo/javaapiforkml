@@ -326,6 +326,7 @@ public class LabelStyle
 
     /**
      * fluent setter
+     * @see #setScale(double)
      * 
      * @param scale
      *     required parameter
@@ -337,6 +338,7 @@ public class LabelStyle
 
     /**
      * fluent setter
+     * @see #setLabelStyleSimpleExtension(List<Object>)
      * 
      * @param labelStyleSimpleExtension
      *     required parameter
@@ -348,6 +350,7 @@ public class LabelStyle
 
     /**
      * fluent setter
+     * @see #setLabelStyleObjectExtension(List<AbstractObject>)
      * 
      * @param labelStyleObjectExtension
      *     required parameter

@@ -359,6 +359,7 @@ public abstract class ColorStyle
 
     /**
      * fluent setter
+     * @see #setColor(String)
      * 
      * @param color
      *     required parameter
@@ -370,6 +371,7 @@ public abstract class ColorStyle
 
     /**
      * fluent setter
+     * @see #setColorMode(ColorMode)
      * 
      * @param colorMode
      *     required parameter
@@ -381,6 +383,7 @@ public abstract class ColorStyle
 
     /**
      * fluent setter
+     * @see #setColorStyleSimpleExtension(List<Object>)
      * 
      * @param colorStyleSimpleExtension
      *     required parameter
@@ -392,6 +395,7 @@ public abstract class ColorStyle
 
     /**
      * fluent setter
+     * @see #setColorStyleObjectExtension(List<AbstractObject>)
      * 
      * @param colorStyleObjectExtension
      *     required parameter

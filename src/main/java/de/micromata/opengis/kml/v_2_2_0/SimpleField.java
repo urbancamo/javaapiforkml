@@ -197,6 +197,7 @@ public class SimpleField {
 
     /**
      * fluent setter
+     * @see #setDisplayName(String)
      * 
      * @param displayName
      *     required parameter
@@ -208,6 +209,7 @@ public class SimpleField {
 
     /**
      * fluent setter
+     * @see #setSimpleFieldExtension(List<Object>)
      * 
      * @param simpleFieldExtension
      *     required parameter
@@ -219,6 +221,7 @@ public class SimpleField {
 
     /**
      * fluent setter
+     * @see #setType(String)
      * 
      * @param type
      *     required parameter
@@ -230,6 +233,7 @@ public class SimpleField {
 
     /**
      * fluent setter
+     * @see #setName(String)
      * 
      * @param name
      *     required parameter

@@ -188,7 +188,6 @@ public class LineString
     }
 
     /**
-     * @see xtrude
      * 
      * @return
      *     possible object is
@@ -212,7 +211,6 @@ public class LineString
     }
 
     /**
-     * @see essellate
      * 
      * @return
      *     possible object is
@@ -240,9 +238,9 @@ public class LineString
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -254,9 +252,9 @@ public class LineString
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -532,6 +530,7 @@ public class LineString
 
     /**
      * fluent setter
+     * @see #setExtrude(Boolean)
      * 
      * @param extrude
      *     required parameter
@@ -543,6 +542,7 @@ public class LineString
 
     /**
      * fluent setter
+     * @see #setTessellate(Boolean)
      * 
      * @param tessellate
      *     required parameter
@@ -554,6 +554,7 @@ public class LineString
 
     /**
      * fluent setter
+     * @see #setAltitudeMode(Object)
      * 
      * @param altitudeMode
      *     required parameter
@@ -565,6 +566,7 @@ public class LineString
 
     /**
      * fluent setter
+     * @see #setCoordinates(List<Coordinate>)
      * 
      * @param coordinates
      *     required parameter
@@ -576,6 +578,7 @@ public class LineString
 
     /**
      * fluent setter
+     * @see #setLineStringSimpleExtension(List<Object>)
      * 
      * @param lineStringSimpleExtension
      *     required parameter
@@ -587,6 +590,7 @@ public class LineString
 
     /**
      * fluent setter
+     * @see #setLineStringObjectExtension(List<AbstractObject>)
      * 
      * @param lineStringObjectExtension
      *     required parameter

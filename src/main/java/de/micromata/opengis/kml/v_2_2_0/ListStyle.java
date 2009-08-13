@@ -479,6 +479,7 @@ public class ListStyle
 
     /**
      * fluent setter
+     * @see #setListItemType(ListItemType)
      * 
      * @param listItemType
      *     required parameter
@@ -490,6 +491,7 @@ public class ListStyle
 
     /**
      * fluent setter
+     * @see #setBgColor(String)
      * 
      * @param bgColor
      *     required parameter
@@ -501,6 +503,7 @@ public class ListStyle
 
     /**
      * fluent setter
+     * @see #setItemIcon(List<ItemIcon>)
      * 
      * @param itemIcon
      *     required parameter
@@ -512,6 +515,7 @@ public class ListStyle
 
     /**
      * fluent setter
+     * @see #setMaxSnippetLines(int)
      * 
      * @param maxSnippetLines
      *     required parameter
@@ -523,6 +527,7 @@ public class ListStyle
 
     /**
      * fluent setter
+     * @see #setListStyleSimpleExtension(List<Object>)
      * 
      * @param listStyleSimpleExtension
      *     required parameter
@@ -534,6 +539,7 @@ public class ListStyle
 
     /**
      * fluent setter
+     * @see #setListStyleObjectExtension(List<AbstractObject>)
      * 
      * @param listStyleObjectExtension
      *     required parameter

@@ -313,6 +313,7 @@ public class MailStop {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -324,6 +325,7 @@ public class MailStop {
 
     /**
      * fluent setter
+     * @see #setMailStopName(MailStopName)
      * 
      * @param mailStopName
      *     required parameter
@@ -335,6 +337,7 @@ public class MailStop {
 
     /**
      * fluent setter
+     * @see #setMailStopNumber(MailStopNumber)
      * 
      * @param mailStopNumber
      *     required parameter
@@ -346,6 +349,7 @@ public class MailStop {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -357,6 +361,7 @@ public class MailStop {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -520,6 +525,7 @@ public class MailStop {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -531,6 +537,7 @@ public class MailStop {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -542,6 +549,7 @@ public class MailStop {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -707,6 +715,7 @@ public class MailStop {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -718,6 +727,7 @@ public class MailStop {
 
         /**
          * fluent setter
+         * @see #setNameNumberSeparator(String)
          * 
          * @param nameNumberSeparator
          *     required parameter
@@ -729,6 +739,7 @@ public class MailStop {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

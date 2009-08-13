@@ -422,6 +422,7 @@ public class ViewVolume
 
     /**
      * fluent setter
+     * @see #setLeftFov(double)
      * 
      * @param leftFov
      *     required parameter
@@ -433,6 +434,7 @@ public class ViewVolume
 
     /**
      * fluent setter
+     * @see #setRightFov(double)
      * 
      * @param rightFov
      *     required parameter
@@ -444,6 +446,7 @@ public class ViewVolume
 
     /**
      * fluent setter
+     * @see #setBottomFov(double)
      * 
      * @param bottomFov
      *     required parameter
@@ -455,6 +458,7 @@ public class ViewVolume
 
     /**
      * fluent setter
+     * @see #setTopFov(double)
      * 
      * @param topFov
      *     required parameter
@@ -466,6 +470,7 @@ public class ViewVolume
 
     /**
      * fluent setter
+     * @see #setNear(double)
      * 
      * @param near
      *     required parameter
@@ -477,6 +482,7 @@ public class ViewVolume
 
     /**
      * fluent setter
+     * @see #setViewVolumeSimpleExtension(List<Object>)
      * 
      * @param viewVolumeSimpleExtension
      *     required parameter
@@ -488,6 +494,7 @@ public class ViewVolume
 
     /**
      * fluent setter
+     * @see #setViewVolumeObjectExtension(List<AbstractObject>)
      * 
      * @param viewVolumeObjectExtension
      *     required parameter

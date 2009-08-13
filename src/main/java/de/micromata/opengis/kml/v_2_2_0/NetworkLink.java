@@ -229,7 +229,6 @@ public class NetworkLink
     }
 
     /**
-     * @see efreshVisibility
      * 
      * @return
      *     possible object is
@@ -253,7 +252,6 @@ public class NetworkLink
     }
 
     /**
-     * @see lyToView
      * 
      * @return
      *     possible object is
@@ -577,6 +575,7 @@ public class NetworkLink
 
     /**
      * fluent setter
+     * @see #setRefreshVisibility(Boolean)
      * 
      * @param refreshVisibility
      *     required parameter
@@ -588,6 +587,7 @@ public class NetworkLink
 
     /**
      * fluent setter
+     * @see #setFlyToView(Boolean)
      * 
      * @param flyToView
      *     required parameter
@@ -599,6 +599,7 @@ public class NetworkLink
 
     /**
      * fluent setter
+     * @see #setUrl(Link)
      * 
      * @param url
      *     required parameter
@@ -610,6 +611,7 @@ public class NetworkLink
 
     /**
      * fluent setter
+     * @see #setLink(Link)
      * 
      * @param link
      *     required parameter
@@ -621,6 +623,7 @@ public class NetworkLink
 
     /**
      * fluent setter
+     * @see #setNetworkLinkSimpleExtension(List<Object>)
      * 
      * @param networkLinkSimpleExtension
      *     required parameter
@@ -632,6 +635,7 @@ public class NetworkLink
 
     /**
      * fluent setter
+     * @see #setNetworkLinkObjectExtension(List<AbstractObject>)
      * 
      * @param networkLinkObjectExtension
      *     required parameter

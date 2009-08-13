@@ -256,6 +256,7 @@ public class ResourceMap
 
     /**
      * fluent setter
+     * @see #setAlias(List<Alias>)
      * 
      * @param alias
      *     required parameter
@@ -267,6 +268,7 @@ public class ResourceMap
 
     /**
      * fluent setter
+     * @see #setResourceMapSimpleExtension(List<Object>)
      * 
      * @param resourceMapSimpleExtension
      *     required parameter
@@ -278,6 +280,7 @@ public class ResourceMap
 
     /**
      * fluent setter
+     * @see #setResourceMapObjectExtension(List<AbstractObject>)
      * 
      * @param resourceMapObjectExtension
      *     required parameter

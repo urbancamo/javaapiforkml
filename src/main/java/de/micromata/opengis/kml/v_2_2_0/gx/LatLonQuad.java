@@ -213,6 +213,7 @@ public class LatLonQuad
 
     /**
      * fluent setter
+     * @see #setCoordinates(List<Coordinate>)
      * 
      * @param coordinates
      *     required parameter

@@ -317,6 +317,7 @@ public class LineStyle
 
     /**
      * fluent setter
+     * @see #setWidth(double)
      * 
      * @param width
      *     required parameter
@@ -328,6 +329,7 @@ public class LineStyle
 
     /**
      * fluent setter
+     * @see #setLineStyleSimpleExtension(List<Object>)
      * 
      * @param lineStyleSimpleExtension
      *     required parameter
@@ -339,6 +341,7 @@ public class LineStyle
 
     /**
      * fluent setter
+     * @see #setLineStyleObjectExtension(List<AbstractObject>)
      * 
      * @param lineStyleObjectExtension
      *     required parameter

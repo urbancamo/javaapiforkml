@@ -650,6 +650,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setRefreshMode(RefreshMode)
      * 
      * @param refreshMode
      *     required parameter
@@ -661,6 +662,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setRefreshInterval(double)
      * 
      * @param refreshInterval
      *     required parameter
@@ -672,6 +674,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setViewRefreshMode(ViewRefreshMode)
      * 
      * @param viewRefreshMode
      *     required parameter
@@ -683,6 +686,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setViewRefreshTime(double)
      * 
      * @param viewRefreshTime
      *     required parameter
@@ -694,6 +698,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setViewBoundScale(double)
      * 
      * @param viewBoundScale
      *     required parameter
@@ -705,6 +710,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setViewFormat(String)
      * 
      * @param viewFormat
      *     required parameter
@@ -716,6 +722,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setHttpQuery(String)
      * 
      * @param httpQuery
      *     required parameter
@@ -727,6 +734,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setLinkSimpleExtension(List<Object>)
      * 
      * @param linkSimpleExtension
      *     required parameter
@@ -738,6 +746,7 @@ public class Link
 
     /**
      * fluent setter
+     * @see #setLinkObjectExtension(List<AbstractObject>)
      * 
      * @param linkObjectExtension
      *     required parameter

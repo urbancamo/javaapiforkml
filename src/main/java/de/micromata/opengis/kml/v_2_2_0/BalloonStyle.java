@@ -531,6 +531,7 @@ public class BalloonStyle
 
     /**
      * fluent setter
+     * @see #setColor(String)
      * 
      * @param color
      *     required parameter
@@ -542,6 +543,7 @@ public class BalloonStyle
 
     /**
      * fluent setter
+     * @see #setBgColor(String)
      * 
      * @param bgColor
      *     required parameter
@@ -553,6 +555,7 @@ public class BalloonStyle
 
     /**
      * fluent setter
+     * @see #setTextColor(String)
      * 
      * @param textColor
      *     required parameter
@@ -564,6 +567,7 @@ public class BalloonStyle
 
     /**
      * fluent setter
+     * @see #setText(String)
      * 
      * @param text
      *     required parameter
@@ -575,6 +579,7 @@ public class BalloonStyle
 
     /**
      * fluent setter
+     * @see #setDisplayMode(DisplayMode)
      * 
      * @param displayMode
      *     required parameter
@@ -586,6 +591,7 @@ public class BalloonStyle
 
     /**
      * fluent setter
+     * @see #setBalloonStyleSimpleExtension(List<Object>)
      * 
      * @param balloonStyleSimpleExtension
      *     required parameter
@@ -597,6 +603,7 @@ public class BalloonStyle
 
     /**
      * fluent setter
+     * @see #setBalloonStyleObjectExtension(List<AbstractObject>)
      * 
      * @param balloonStyleObjectExtension
      *     required parameter

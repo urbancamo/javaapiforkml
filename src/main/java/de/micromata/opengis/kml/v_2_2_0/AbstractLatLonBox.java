@@ -370,6 +370,7 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
+     * @see #setNorth(double)
      * 
      * @param north
      *     required parameter
@@ -381,6 +382,7 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
+     * @see #setSouth(double)
      * 
      * @param south
      *     required parameter
@@ -392,6 +394,7 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
+     * @see #setEast(double)
      * 
      * @param east
      *     required parameter
@@ -403,6 +406,7 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
+     * @see #setWest(double)
      * 
      * @param west
      *     required parameter
@@ -414,6 +418,7 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
+     * @see #setAbstractLatLonBoxSimpleExtension(List<Object>)
      * 
      * @param abstractLatLonBoxSimpleExtension
      *     required parameter
@@ -425,6 +430,7 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
+     * @see #setAbstractLatLonBoxObjectExtension(List<AbstractObject>)
      * 
      * @param abstractLatLonBoxObjectExtension
      *     required parameter

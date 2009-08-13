@@ -427,9 +427,9 @@ public class Camera
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -441,9 +441,9 @@ public class Camera
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -655,6 +655,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setLongitude(double)
      * 
      * @param longitude
      *     required parameter
@@ -666,6 +667,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setLatitude(double)
      * 
      * @param latitude
      *     required parameter
@@ -677,6 +679,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setAltitude(double)
      * 
      * @param altitude
      *     required parameter
@@ -688,6 +691,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setHeading(double)
      * 
      * @param heading
      *     required parameter
@@ -699,6 +703,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setTilt(double)
      * 
      * @param tilt
      *     required parameter
@@ -710,6 +715,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setRoll(double)
      * 
      * @param roll
      *     required parameter
@@ -721,6 +727,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setAltitudeMode(Object)
      * 
      * @param altitudeMode
      *     required parameter
@@ -732,6 +739,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setCameraSimpleExtension(List<Object>)
      * 
      * @param cameraSimpleExtension
      *     required parameter
@@ -743,6 +751,7 @@ public class Camera
 
     /**
      * fluent setter
+     * @see #setCameraObjectExtension(List<AbstractObject>)
      * 
      * @param cameraObjectExtension
      *     required parameter

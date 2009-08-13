@@ -183,8 +183,8 @@ public class FlyTo
      * @return
      *     possible object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -197,8 +197,8 @@ public class FlyTo
      * @param value
      *     allowed object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -287,6 +287,7 @@ public class FlyTo
 
     /**
      * fluent setter
+     * @see #setDuration(double)
      * 
      * @param duration
      *     required parameter
@@ -298,6 +299,7 @@ public class FlyTo
 
     /**
      * fluent setter
+     * @see #setFlyToMode(FlyToMode)
      * 
      * @param flyToMode
      *     required parameter
@@ -309,6 +311,7 @@ public class FlyTo
 
     /**
      * fluent setter
+     * @see #setAbstractView(AbstractView)
      * 
      * @param abstractView
      *     required parameter

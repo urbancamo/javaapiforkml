@@ -338,6 +338,7 @@ public class TimeSpan
 
     /**
      * fluent setter
+     * @see #setBegin(String)
      * 
      * @param begin
      *     required parameter
@@ -349,6 +350,7 @@ public class TimeSpan
 
     /**
      * fluent setter
+     * @see #setEnd(String)
      * 
      * @param end
      *     required parameter
@@ -360,6 +362,7 @@ public class TimeSpan
 
     /**
      * fluent setter
+     * @see #setTimeSpanSimpleExtension(List<Object>)
      * 
      * @param timeSpanSimpleExtension
      *     required parameter
@@ -371,6 +374,7 @@ public class TimeSpan
 
     /**
      * fluent setter
+     * @see #setTimeSpanObjectExtension(List<AbstractObject>)
      * 
      * @param timeSpanObjectExtension
      *     required parameter

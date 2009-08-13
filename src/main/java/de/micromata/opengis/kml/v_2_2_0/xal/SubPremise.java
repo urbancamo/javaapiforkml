@@ -801,6 +801,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -812,6 +813,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setSubPremiseName(List<SubPremiseName>)
      * 
      * @param subPremiseName
      *     required parameter
@@ -823,6 +825,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setSubPremiseNumber(List<SubPremiseNumber>)
      * 
      * @param subPremiseNumber
      *     required parameter
@@ -834,6 +837,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setSubPremiseNumberPrefix(List<SubPremiseNumberPrefix>)
      * 
      * @param subPremiseNumberPrefix
      *     required parameter
@@ -845,6 +849,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setSubPremiseNumberSuffix(List<SubPremiseNumberSuffix>)
      * 
      * @param subPremiseNumberSuffix
      *     required parameter
@@ -856,6 +861,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setBuildingName(List<BuildingName>)
      * 
      * @param buildingName
      *     required parameter
@@ -867,6 +873,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setFirm(Firm)
      * 
      * @param firm
      *     required parameter
@@ -878,6 +885,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setMailStop(MailStop)
      * 
      * @param mailStop
      *     required parameter
@@ -889,6 +897,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setPostalCode(PostalCode)
      * 
      * @param postalCode
      *     required parameter
@@ -900,6 +909,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setSubPremise(SubPremise)
      * 
      * @param subPremise
      *     required parameter
@@ -911,6 +921,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -922,6 +933,7 @@ public class SubPremise {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -1039,6 +1051,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1050,6 +1063,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1250,6 +1264,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1261,6 +1276,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1272,6 +1288,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setTypeOccurrence(String)
          * 
          * @param typeOccurrence
          *     required parameter
@@ -1283,6 +1300,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1588,6 +1606,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1599,6 +1618,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setIndicator(String)
          * 
          * @param indicator
          *     required parameter
@@ -1610,6 +1630,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setIndicatorOccurrence(String)
          * 
          * @param indicatorOccurrence
          *     required parameter
@@ -1621,6 +1642,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setNumberTypeOccurrence(String)
          * 
          * @param numberTypeOccurrence
          *     required parameter
@@ -1632,6 +1654,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setPremiseNumberSeparator(String)
          * 
          * @param premiseNumberSeparator
          *     required parameter
@@ -1643,6 +1666,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1654,6 +1678,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1854,6 +1879,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1865,6 +1891,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setNumberPrefixSeparator(String)
          * 
          * @param numberPrefixSeparator
          *     required parameter
@@ -1876,6 +1903,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1887,6 +1915,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -2087,6 +2116,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -2098,6 +2128,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setNumberSuffixSeparator(String)
          * 
          * @param numberSuffixSeparator
          *     required parameter
@@ -2109,6 +2140,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -2120,6 +2152,7 @@ public class SubPremise {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

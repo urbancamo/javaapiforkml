@@ -391,6 +391,7 @@ public class Lod
 
     /**
      * fluent setter
+     * @see #setMinLodPixels(double)
      * 
      * @param minLodPixels
      *     required parameter
@@ -402,6 +403,7 @@ public class Lod
 
     /**
      * fluent setter
+     * @see #setMaxLodPixels(double)
      * 
      * @param maxLodPixels
      *     required parameter
@@ -413,6 +415,7 @@ public class Lod
 
     /**
      * fluent setter
+     * @see #setMinFadeExtent(double)
      * 
      * @param minFadeExtent
      *     required parameter
@@ -424,6 +427,7 @@ public class Lod
 
     /**
      * fluent setter
+     * @see #setMaxFadeExtent(double)
      * 
      * @param maxFadeExtent
      *     required parameter
@@ -435,6 +439,7 @@ public class Lod
 
     /**
      * fluent setter
+     * @see #setLodSimpleExtension(List<Object>)
      * 
      * @param lodSimpleExtension
      *     required parameter
@@ -446,6 +451,7 @@ public class Lod
 
     /**
      * fluent setter
+     * @see #setLodObjectExtension(List<AbstractObject>)
      * 
      * @param lodObjectExtension
      *     required parameter

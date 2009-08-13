@@ -846,6 +846,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setPostalServiceElements(PostalServiceElements)
      * 
      * @param postalServiceElements
      *     required parameter
@@ -857,6 +858,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -868,6 +870,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setAddress(String)
      * 
      * @param address
      *     required parameter
@@ -879,6 +882,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setCurrentStatus(String)
      * 
      * @param currentStatus
      *     required parameter
@@ -890,6 +894,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setValidFromDate(String)
      * 
      * @param validFromDate
      *     required parameter
@@ -901,6 +906,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setValidToDate(String)
      * 
      * @param validToDate
      *     required parameter
@@ -912,6 +918,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setUsage(String)
      * 
      * @param usage
      *     required parameter
@@ -923,6 +930,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setAddressDetailsKey(String)
      * 
      * @param addressDetailsKey
      *     required parameter
@@ -934,6 +942,7 @@ public class AddressDetails {
 
     /**
      * fluent setter
+     * @see #setCode(String)
      * 
      * @param code
      *     required parameter
@@ -1114,6 +1123,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1125,6 +1135,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1136,6 +1147,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1630,6 +1642,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAddressLine(List<AddressLine>)
          * 
          * @param addressLine
          *     required parameter
@@ -1641,6 +1654,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setCountryNameCode(List<CountryNameCode>)
          * 
          * @param countryNameCode
          *     required parameter
@@ -1652,6 +1666,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setCountryName(List<CountryName>)
          * 
          * @param countryName
          *     required parameter
@@ -1663,6 +1678,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAny(List<Object>)
          * 
          * @param any
          *     required parameter
@@ -1826,6 +1842,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -1837,6 +1854,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setScheme(String)
              * 
              * @param scheme
              *     required parameter
@@ -1848,6 +1866,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -2527,6 +2546,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAddressIdentifier(List<AddressIdentifier>)
          * 
          * @param addressIdentifier
          *     required parameter
@@ -2538,6 +2558,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setEndorsementLineCode(EndorsementLineCode)
          * 
          * @param endorsementLineCode
          *     required parameter
@@ -2549,6 +2570,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setKeyLineCode(KeyLineCode)
          * 
          * @param keyLineCode
          *     required parameter
@@ -2560,6 +2582,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setBarcode(Barcode)
          * 
          * @param barcode
          *     required parameter
@@ -2571,6 +2594,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setSortingCode(SortingCode)
          * 
          * @param sortingCode
          *     required parameter
@@ -2582,6 +2606,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAddressLatitude(AddressLatitude)
          * 
          * @param addressLatitude
          *     required parameter
@@ -2593,6 +2618,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAddressLatitudeDirection(AddressLatitudeDirection)
          * 
          * @param addressLatitudeDirection
          *     required parameter
@@ -2604,6 +2630,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAddressLongitude(AddressLongitude)
          * 
          * @param addressLongitude
          *     required parameter
@@ -2615,6 +2642,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAddressLongitudeDirection(AddressLongitudeDirection)
          * 
          * @param addressLongitudeDirection
          *     required parameter
@@ -2626,6 +2654,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setSupplementaryPostalServiceData(List<SupplementaryPostalServiceData>)
          * 
          * @param supplementaryPostalServiceData
          *     required parameter
@@ -2637,6 +2666,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setAny(List<Object>)
          * 
          * @param any
          *     required parameter
@@ -2648,6 +2678,7 @@ public class AddressDetails {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -2846,6 +2877,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -2857,6 +2889,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setIdentifier(String)
              * 
              * @param identifier
              *     required parameter
@@ -2868,6 +2901,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -2879,6 +2913,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -3044,6 +3079,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -3055,6 +3091,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -3066,6 +3103,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -3231,6 +3269,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -3242,6 +3281,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -3253,6 +3293,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -3418,6 +3459,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -3429,6 +3471,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -3440,6 +3483,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -3605,6 +3649,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -3616,6 +3661,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -3627,6 +3673,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -3792,6 +3839,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -3803,6 +3851,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -3814,6 +3863,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -3979,6 +4029,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -3990,6 +4041,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -4001,6 +4053,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -4166,6 +4219,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -4177,6 +4231,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -4188,6 +4243,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -4306,6 +4362,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -4317,6 +4374,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -4482,6 +4540,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -4493,6 +4552,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -4504,6 +4564,7 @@ public class AddressDetails {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter

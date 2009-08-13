@@ -470,8 +470,8 @@ public class NetworkLinkControl {
      * @return
      *     possible object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -484,8 +484,8 @@ public class NetworkLinkControl {
      * @param value
      *     allowed object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -761,6 +761,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setMinRefreshPeriod(double)
      * 
      * @param minRefreshPeriod
      *     required parameter
@@ -772,6 +773,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setMaxSessionLength(double)
      * 
      * @param maxSessionLength
      *     required parameter
@@ -783,6 +785,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setCookie(String)
      * 
      * @param cookie
      *     required parameter
@@ -794,6 +797,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setMessage(String)
      * 
      * @param message
      *     required parameter
@@ -805,6 +809,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setLinkName(String)
      * 
      * @param linkName
      *     required parameter
@@ -816,6 +821,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setLinkDescription(String)
      * 
      * @param linkDescription
      *     required parameter
@@ -827,6 +833,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setLinkSnippet(Snippet)
      * 
      * @param linkSnippet
      *     required parameter
@@ -838,6 +845,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setExpires(String)
      * 
      * @param expires
      *     required parameter
@@ -849,6 +857,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setUpdate(Update)
      * 
      * @param update
      *     required parameter
@@ -860,6 +869,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setAbstractView(AbstractView)
      * 
      * @param abstractView
      *     required parameter
@@ -871,6 +881,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setNetworkLinkControlSimpleExtension(List<Object>)
      * 
      * @param networkLinkControlSimpleExtension
      *     required parameter
@@ -882,6 +893,7 @@ public class NetworkLinkControl {
 
     /**
      * fluent setter
+     * @see #setNetworkLinkControlObjectExtension(List<AbstractObject>)
      * 
      * @param networkLinkControlObjectExtension
      *     required parameter

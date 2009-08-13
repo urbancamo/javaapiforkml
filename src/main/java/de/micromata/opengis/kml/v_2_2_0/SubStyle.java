@@ -169,6 +169,7 @@ public abstract class SubStyle
 
     /**
      * fluent setter
+     * @see #setSubStyleSimpleExtension(List<Object>)
      * 
      * @param subStyleSimpleExtension
      *     required parameter
@@ -180,6 +181,7 @@ public abstract class SubStyle
 
     /**
      * fluent setter
+     * @see #setSubStyleObjectExtension(List<AbstractObject>)
      * 
      * @param subStyleObjectExtension
      *     required parameter

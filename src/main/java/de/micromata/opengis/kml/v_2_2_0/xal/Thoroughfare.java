@@ -50,8 +50,8 @@ public class Thoroughfare {
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
     @XmlElements({
-        @XmlElement(name = "ThoroughfareNumberRange", type = Thoroughfare.ThoroughfareNumberRange.class),
-        @XmlElement(name = "ThoroughfareNumber", type = ThoroughfareNumber.class)
+        @XmlElement(name = "ThoroughfareNumber", type = ThoroughfareNumber.class),
+        @XmlElement(name = "ThoroughfareNumberRange", type = Thoroughfare.ThoroughfareNumberRange.class)
     })
     protected List<Object> thoroughfareNumberOrThoroughfareNumberRange;
     @XmlElement(name = "ThoroughfareNumberPrefix")
@@ -985,7 +985,7 @@ public class Thoroughfare {
      * add a value to the thoroughfareNumberOrThoroughfareNumberRange property collection
      * 
      * @param thoroughfareNumberOrThoroughfareNumberRange
-     *     Objects of the following type are allowed in the list: {@link Thoroughfare.ThoroughfareNumberRange}{@link ThoroughfareNumber}
+     *     Objects of the following type are allowed in the list: {@link ThoroughfareNumber}{@link Thoroughfare.ThoroughfareNumberRange}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1096,6 +1096,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -1107,6 +1108,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfareNumberOrThoroughfareNumberRange(List<Object>)
      * 
      * @param thoroughfareNumberOrThoroughfareNumberRange
      *     required parameter
@@ -1118,6 +1120,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfareNumberPrefix(List<ThoroughfareNumberPrefix>)
      * 
      * @param thoroughfareNumberPrefix
      *     required parameter
@@ -1129,6 +1132,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfareNumberSuffix(List<ThoroughfareNumberSuffix>)
      * 
      * @param thoroughfareNumberSuffix
      *     required parameter
@@ -1140,6 +1144,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfarePreDirection(ThoroughfarePreDirection)
      * 
      * @param thoroughfarePreDirection
      *     required parameter
@@ -1151,6 +1156,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfareLeading(ThoroughfareLeadingType)
      * 
      * @param thoroughfareLeading
      *     required parameter
@@ -1162,6 +1168,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfareName(List<ThoroughfareName>)
      * 
      * @param thoroughfareName
      *     required parameter
@@ -1173,6 +1180,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfareTrailing(ThoroughfareTrailingType)
      * 
      * @param thoroughfareTrailing
      *     required parameter
@@ -1184,6 +1192,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setThoroughfarePostDirection(ThoroughfarePostDirection)
      * 
      * @param thoroughfarePostDirection
      *     required parameter
@@ -1195,6 +1204,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setDependentThoroughfare(DependentThoroughfare)
      * 
      * @param dependentThoroughfare
      *     required parameter
@@ -1206,6 +1216,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -1217,6 +1228,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -1228,6 +1240,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setXalDependentThoroughfares(String)
      * 
      * @param xalDependentThoroughfares
      *     required parameter
@@ -1239,6 +1252,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setDependentThoroughfaresIndicator(String)
      * 
      * @param dependentThoroughfaresIndicator
      *     required parameter
@@ -1250,6 +1264,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setDependentThoroughfaresConnector(String)
      * 
      * @param dependentThoroughfaresConnector
      *     required parameter
@@ -1261,6 +1276,7 @@ public class Thoroughfare {
 
     /**
      * fluent setter
+     * @see #setDependentThoroughfares(String)
      * 
      * @param dependentThoroughfares
      *     required parameter
@@ -1732,6 +1748,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setAddressLine(List<AddressLine>)
          * 
          * @param addressLine
          *     required parameter
@@ -1743,6 +1760,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setThoroughfarePreDirection(ThoroughfarePreDirection)
          * 
          * @param thoroughfarePreDirection
          *     required parameter
@@ -1754,6 +1772,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setThoroughfareLeading(ThoroughfareLeadingType)
          * 
          * @param thoroughfareLeading
          *     required parameter
@@ -1765,6 +1784,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setThoroughfareName(List<ThoroughfareName>)
          * 
          * @param thoroughfareName
          *     required parameter
@@ -1776,6 +1796,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setThoroughfareTrailing(ThoroughfareTrailingType)
          * 
          * @param thoroughfareTrailing
          *     required parameter
@@ -1787,6 +1808,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setThoroughfarePostDirection(ThoroughfarePostDirection)
          * 
          * @param thoroughfarePostDirection
          *     required parameter
@@ -1798,6 +1820,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setAny(List<Object>)
          * 
          * @param any
          *     required parameter
@@ -1809,6 +1832,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -2298,6 +2322,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setAddressLine(List<AddressLine>)
          * 
          * @param addressLine
          *     required parameter
@@ -2309,6 +2334,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setRange(String)
          * 
          * @param range
          *     required parameter
@@ -2320,6 +2346,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setIndicator(String)
          * 
          * @param indicator
          *     required parameter
@@ -2331,6 +2358,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setSeparator(String)
          * 
          * @param separator
          *     required parameter
@@ -2342,6 +2370,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setIndicatorOccurrence(String)
          * 
          * @param indicatorOccurrence
          *     required parameter
@@ -2353,6 +2382,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setNumberRangeOccurrence(String)
          * 
          * @param numberRangeOccurrence
          *     required parameter
@@ -2364,6 +2394,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -2375,6 +2406,7 @@ public class Thoroughfare {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -2395,8 +2427,8 @@ public class Thoroughfare {
         public static class ThoroughfareNumberFrom {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class)
             })
@@ -2511,7 +2543,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
+             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link String}{@link ThoroughfareNumberPrefix}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2522,6 +2554,7 @@ public class Thoroughfare {
 
             /**
              * fluent setter
+             * @see #setContent(List<Object>)
              * 
              * @param content
              *     required parameter
@@ -2533,6 +2566,7 @@ public class Thoroughfare {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -2555,8 +2589,8 @@ public class Thoroughfare {
         public static class ThoroughfareNumberTo {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class)
             })
@@ -2671,7 +2705,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
+             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link String}{@link ThoroughfareNumberPrefix}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2682,6 +2716,7 @@ public class Thoroughfare {
 
             /**
              * fluent setter
+             * @see #setContent(List<Object>)
              * 
              * @param content
              *     required parameter
@@ -2693,6 +2728,7 @@ public class Thoroughfare {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter

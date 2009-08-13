@@ -213,6 +213,7 @@ public abstract class StyleSelector
 
     /**
      * fluent setter
+     * @see #setStyleSelectorSimpleExtension(List<Object>)
      * 
      * @param styleSelectorSimpleExtension
      *     required parameter
@@ -224,6 +225,7 @@ public abstract class StyleSelector
 
     /**
      * fluent setter
+     * @see #setStyleSelectorObjectExtension(List<AbstractObject>)
      * 
      * @param styleSelectorObjectExtension
      *     required parameter

@@ -807,6 +807,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -818,6 +819,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setLocalityName(List<LocalityName>)
      * 
      * @param localityName
      *     required parameter
@@ -829,6 +831,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setThoroughfare(Thoroughfare)
      * 
      * @param thoroughfare
      *     required parameter
@@ -840,6 +843,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setPremise(Premise)
      * 
      * @param premise
      *     required parameter
@@ -851,6 +855,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setDependentLocality(DependentLocality)
      * 
      * @param dependentLocality
      *     required parameter
@@ -862,6 +867,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setPostalCode(PostalCode)
      * 
      * @param postalCode
      *     required parameter
@@ -873,6 +879,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -884,6 +891,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -895,6 +903,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setUsage(String)
      * 
      * @param usage
      *     required parameter
@@ -906,6 +915,7 @@ public class Locality {
 
     /**
      * fluent setter
+     * @see #setIndicator(String)
      * 
      * @param indicator
      *     required parameter
@@ -1069,6 +1079,7 @@ public class Locality {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1080,6 +1091,7 @@ public class Locality {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1091,6 +1103,7 @@ public class Locality {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

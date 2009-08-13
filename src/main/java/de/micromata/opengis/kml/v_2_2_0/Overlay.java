@@ -495,6 +495,7 @@ public abstract class Overlay
 
     /**
      * fluent setter
+     * @see #setColor(String)
      * 
      * @param color
      *     required parameter
@@ -506,6 +507,7 @@ public abstract class Overlay
 
     /**
      * fluent setter
+     * @see #setDrawOrder(int)
      * 
      * @param drawOrder
      *     required parameter
@@ -517,6 +519,7 @@ public abstract class Overlay
 
     /**
      * fluent setter
+     * @see #setIcon(Icon)
      * 
      * @param icon
      *     required parameter
@@ -528,6 +531,7 @@ public abstract class Overlay
 
     /**
      * fluent setter
+     * @see #setOverlaySimpleExtension(List<Object>)
      * 
      * @param overlaySimpleExtension
      *     required parameter
@@ -539,6 +543,7 @@ public abstract class Overlay
 
     /**
      * fluent setter
+     * @see #setOverlayObjectExtension(List<AbstractObject>)
      * 
      * @param overlayObjectExtension
      *     required parameter

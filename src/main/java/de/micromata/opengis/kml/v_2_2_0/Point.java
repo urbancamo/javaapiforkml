@@ -163,7 +163,6 @@ public class Point
     }
 
     /**
-     * @see xtrude
      * 
      * @return
      *     possible object is
@@ -191,9 +190,9 @@ public class Point
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -205,9 +204,9 @@ public class Point
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -473,6 +472,7 @@ public class Point
 
     /**
      * fluent setter
+     * @see #setExtrude(Boolean)
      * 
      * @param extrude
      *     required parameter
@@ -484,6 +484,7 @@ public class Point
 
     /**
      * fluent setter
+     * @see #setAltitudeMode(Object)
      * 
      * @param altitudeMode
      *     required parameter
@@ -495,6 +496,7 @@ public class Point
 
     /**
      * fluent setter
+     * @see #setCoordinates(List<Coordinate>)
      * 
      * @param coordinates
      *     required parameter
@@ -506,6 +508,7 @@ public class Point
 
     /**
      * fluent setter
+     * @see #setPointSimpleExtension(List<Object>)
      * 
      * @param pointSimpleExtension
      *     required parameter
@@ -517,6 +520,7 @@ public class Point
 
     /**
      * fluent setter
+     * @see #setPointObjectExtension(List<AbstractObject>)
      * 
      * @param pointObjectExtension
      *     required parameter

@@ -312,6 +312,7 @@ public class Alias
 
     /**
      * fluent setter
+     * @see #setTargetHref(String)
      * 
      * @param targetHref
      *     required parameter
@@ -323,6 +324,7 @@ public class Alias
 
     /**
      * fluent setter
+     * @see #setSourceHref(String)
      * 
      * @param sourceHref
      *     required parameter
@@ -334,6 +336,7 @@ public class Alias
 
     /**
      * fluent setter
+     * @see #setAliasSimpleExtension(List<Object>)
      * 
      * @param aliasSimpleExtension
      *     required parameter
@@ -345,6 +348,7 @@ public class Alias
 
     /**
      * fluent setter
+     * @see #setAliasObjectExtension(List<AbstractObject>)
      * 
      * @param aliasObjectExtension
      *     required parameter

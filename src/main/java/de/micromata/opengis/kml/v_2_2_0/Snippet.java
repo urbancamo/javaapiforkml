@@ -137,6 +137,7 @@ public class Snippet {
 
     /**
      * fluent setter
+     * @see #setValue(String)
      * 
      * @param value
      *     required parameter
@@ -148,6 +149,7 @@ public class Snippet {
 
     /**
      * fluent setter
+     * @see #setMaxLines(int)
      * 
      * @param maxLines
      *     required parameter

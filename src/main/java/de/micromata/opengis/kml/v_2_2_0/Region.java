@@ -369,6 +369,7 @@ public class Region
 
     /**
      * fluent setter
+     * @see #setLatLonAltBox(LatLonAltBox)
      * 
      * @param latLonAltBox
      *     required parameter
@@ -380,6 +381,7 @@ public class Region
 
     /**
      * fluent setter
+     * @see #setLod(Lod)
      * 
      * @param lod
      *     required parameter
@@ -391,6 +393,7 @@ public class Region
 
     /**
      * fluent setter
+     * @see #setRegionSimpleExtension(List<Object>)
      * 
      * @param regionSimpleExtension
      *     required parameter
@@ -402,6 +405,7 @@ public class Region
 
     /**
      * fluent setter
+     * @see #setRegionObjectExtension(List<AbstractObject>)
      * 
      * @param regionObjectExtension
      *     required parameter

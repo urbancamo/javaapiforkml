@@ -203,6 +203,7 @@ public class ThoroughfareNumberSuffix {
 
     /**
      * fluent setter
+     * @see #setContent(String)
      * 
      * @param content
      *     required parameter
@@ -214,6 +215,7 @@ public class ThoroughfareNumberSuffix {
 
     /**
      * fluent setter
+     * @see #setNumberSuffixSeparator(String)
      * 
      * @param numberSuffixSeparator
      *     required parameter
@@ -225,6 +227,7 @@ public class ThoroughfareNumberSuffix {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -236,6 +239,7 @@ public class ThoroughfareNumberSuffix {
 
     /**
      * fluent setter
+     * @see #setCode(String)
      * 
      * @param code
      *     required parameter

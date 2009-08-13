@@ -212,6 +212,7 @@ public class Vec2 {
 
     /**
      * fluent setter
+     * @see #setX(double)
      * 
      * @param x
      *     required parameter
@@ -223,6 +224,7 @@ public class Vec2 {
 
     /**
      * fluent setter
+     * @see #setY(double)
      * 
      * @param y
      *     required parameter
@@ -234,6 +236,7 @@ public class Vec2 {
 
     /**
      * fluent setter
+     * @see #setXunits(Units)
      * 
      * @param xunits
      *     required parameter
@@ -245,6 +248,7 @@ public class Vec2 {
 
     /**
      * fluent setter
+     * @see #setYunits(Units)
      * 
      * @param yunits
      *     required parameter

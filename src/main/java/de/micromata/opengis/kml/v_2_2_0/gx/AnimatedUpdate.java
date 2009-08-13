@@ -246,6 +246,7 @@ public class AnimatedUpdate
 
     /**
      * fluent setter
+     * @see #setDuration(double)
      * 
      * @param duration
      *     required parameter
@@ -257,6 +258,7 @@ public class AnimatedUpdate
 
     /**
      * fluent setter
+     * @see #setUpdate(Update)
      * 
      * @param update
      *     required parameter

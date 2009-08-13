@@ -338,6 +338,7 @@ public class Location
 
     /**
      * fluent setter
+     * @see #setLongitude(double)
      * 
      * @param longitude
      *     required parameter
@@ -349,6 +350,7 @@ public class Location
 
     /**
      * fluent setter
+     * @see #setLatitude(double)
      * 
      * @param latitude
      *     required parameter
@@ -360,6 +362,7 @@ public class Location
 
     /**
      * fluent setter
+     * @see #setAltitude(double)
      * 
      * @param altitude
      *     required parameter
@@ -371,6 +374,7 @@ public class Location
 
     /**
      * fluent setter
+     * @see #setLocationSimpleExtension(List<Object>)
      * 
      * @param locationSimpleExtension
      *     required parameter
@@ -382,6 +386,7 @@ public class Location
 
     /**
      * fluent setter
+     * @see #setLocationObjectExtension(List<AbstractObject>)
      * 
      * @param locationObjectExtension
      *     required parameter

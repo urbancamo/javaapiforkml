@@ -183,9 +183,9 @@ public class Pair
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link Style}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
-     *     {@code <}{@link Style}{@code>}
      *     
      */
     public StyleSelector getStyleSelector() {
@@ -197,9 +197,9 @@ public class Pair
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link Style}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
-     *     {@code <}{@link Style}{@code>}
      *     
      */
     public void setStyleSelector(StyleSelector value) {
@@ -398,6 +398,7 @@ public class Pair
 
     /**
      * fluent setter
+     * @see #setKey(StyleState)
      * 
      * @param key
      *     required parameter
@@ -409,6 +410,7 @@ public class Pair
 
     /**
      * fluent setter
+     * @see #setStyleUrl(String)
      * 
      * @param styleUrl
      *     required parameter
@@ -420,6 +422,7 @@ public class Pair
 
     /**
      * fluent setter
+     * @see #setStyleSelector(StyleSelector)
      * 
      * @param styleSelector
      *     required parameter
@@ -431,6 +434,7 @@ public class Pair
 
     /**
      * fluent setter
+     * @see #setPairSimpleExtension(List<Object>)
      * 
      * @param pairSimpleExtension
      *     required parameter
@@ -442,6 +446,7 @@ public class Pair
 
     /**
      * fluent setter
+     * @see #setPairObjectExtension(List<AbstractObject>)
      * 
      * @param pairObjectExtension
      *     required parameter

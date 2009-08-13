@@ -269,6 +269,7 @@ public class Schema {
 
     /**
      * fluent setter
+     * @see #setSimpleField(List<SimpleField>)
      * 
      * @param simpleField
      *     required parameter
@@ -280,6 +281,7 @@ public class Schema {
 
     /**
      * fluent setter
+     * @see #setSchemaExtension(List<Object>)
      * 
      * @param schemaExtension
      *     required parameter
@@ -291,6 +293,7 @@ public class Schema {
 
     /**
      * fluent setter
+     * @see #setName(String)
      * 
      * @param name
      *     required parameter
@@ -302,6 +305,7 @@ public class Schema {
 
     /**
      * fluent setter
+     * @see #setId(String)
      * 
      * @param id
      *     required parameter

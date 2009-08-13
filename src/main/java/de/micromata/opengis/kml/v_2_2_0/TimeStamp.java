@@ -285,6 +285,7 @@ public class TimeStamp
 
     /**
      * fluent setter
+     * @see #setWhen(String)
      * 
      * @param when
      *     required parameter
@@ -296,6 +297,7 @@ public class TimeStamp
 
     /**
      * fluent setter
+     * @see #setTimeStampSimpleExtension(List<Object>)
      * 
      * @param timeStampSimpleExtension
      *     required parameter
@@ -307,6 +309,7 @@ public class TimeStamp
 
     /**
      * fluent setter
+     * @see #setTimeStampObjectExtension(List<AbstractObject>)
      * 
      * @param timeStampObjectExtension
      *     required parameter

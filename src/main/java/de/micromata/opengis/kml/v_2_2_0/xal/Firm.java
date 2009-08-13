@@ -439,6 +439,7 @@ public class Firm {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -450,6 +451,7 @@ public class Firm {
 
     /**
      * fluent setter
+     * @see #setFirmName(List<FirmName>)
      * 
      * @param firmName
      *     required parameter
@@ -461,6 +463,7 @@ public class Firm {
 
     /**
      * fluent setter
+     * @see #setDepartment(List<Department>)
      * 
      * @param department
      *     required parameter
@@ -472,6 +475,7 @@ public class Firm {
 
     /**
      * fluent setter
+     * @see #setMailStop(MailStop)
      * 
      * @param mailStop
      *     required parameter
@@ -483,6 +487,7 @@ public class Firm {
 
     /**
      * fluent setter
+     * @see #setPostalCode(PostalCode)
      * 
      * @param postalCode
      *     required parameter
@@ -494,6 +499,7 @@ public class Firm {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -505,6 +511,7 @@ public class Firm {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -668,6 +675,7 @@ public class Firm {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -679,6 +687,7 @@ public class Firm {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -690,6 +699,7 @@ public class Firm {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

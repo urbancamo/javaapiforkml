@@ -273,9 +273,9 @@ public class Model
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -287,9 +287,9 @@ public class Model
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -720,6 +720,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setAltitudeMode(Object)
      * 
      * @param altitudeMode
      *     required parameter
@@ -731,6 +732,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setLocation(Location)
      * 
      * @param location
      *     required parameter
@@ -742,6 +744,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setOrientation(Orientation)
      * 
      * @param orientation
      *     required parameter
@@ -753,6 +756,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setScale(Scale)
      * 
      * @param scale
      *     required parameter
@@ -764,6 +768,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setLink(Link)
      * 
      * @param link
      *     required parameter
@@ -775,6 +780,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setResourceMap(ResourceMap)
      * 
      * @param resourceMap
      *     required parameter
@@ -786,6 +792,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setModelSimpleExtension(List<Object>)
      * 
      * @param modelSimpleExtension
      *     required parameter
@@ -797,6 +804,7 @@ public class Model
 
     /**
      * fluent setter
+     * @see #setModelObjectExtension(List<AbstractObject>)
      * 
      * @param modelObjectExtension
      *     required parameter

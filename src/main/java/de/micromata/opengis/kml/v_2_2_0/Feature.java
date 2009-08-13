@@ -616,7 +616,6 @@ public abstract class Feature
     }
 
     /**
-     * @see isibility
      * 
      * @return
      *     possible object is
@@ -640,7 +639,6 @@ public abstract class Feature
     }
 
     /**
-     * @see pen
      * 
      * @return
      *     possible object is
@@ -861,8 +859,8 @@ public abstract class Feature
      * @return
      *     possible object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -875,8 +873,8 @@ public abstract class Feature
      * @param value
      *     allowed object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -888,9 +886,9 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link TimeStamp}{@code>}
      *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimeStamp}{@code>}
      *     
      */
     public TimePrimitive getTimePrimitive() {
@@ -902,9 +900,9 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link TimeStamp}{@code>}
      *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimeStamp}{@code>}
      *     
      */
     public void setTimePrimitive(TimePrimitive value) {
@@ -1498,7 +1496,7 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1520,7 +1518,7 @@ public abstract class Feature
      * add a value to the featureSimpleExtension property collection
      * 
      * @param featureSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Boolean}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1570,6 +1568,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setName(String)
      * 
      * @param name
      *     required parameter
@@ -1581,6 +1580,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setVisibility(Boolean)
      * 
      * @param visibility
      *     required parameter
@@ -1592,6 +1592,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setOpen(Boolean)
      * 
      * @param open
      *     required parameter
@@ -1603,6 +1604,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setAtomAuthor(Author)
      * 
      * @param atomAuthor
      *     required parameter
@@ -1614,6 +1616,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setAtomLink(Link)
      * 
      * @param atomLink
      *     required parameter
@@ -1625,6 +1628,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setAddress(String)
      * 
      * @param address
      *     required parameter
@@ -1636,6 +1640,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setXalAddressDetails(AddressDetails)
      * 
      * @param xalAddressDetails
      *     required parameter
@@ -1647,6 +1652,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setPhoneNumber(String)
      * 
      * @param phoneNumber
      *     required parameter
@@ -1658,6 +1664,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setSnippet(Snippet)
      * 
      * @param snippet
      *     required parameter
@@ -1669,6 +1676,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setSnippetd(String)
      * 
      * @param snippetd
      *     required parameter
@@ -1680,6 +1688,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setDescription(String)
      * 
      * @param description
      *     required parameter
@@ -1691,6 +1700,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setAbstractView(AbstractView)
      * 
      * @param abstractView
      *     required parameter
@@ -1702,6 +1712,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setTimePrimitive(TimePrimitive)
      * 
      * @param timePrimitive
      *     required parameter
@@ -1713,6 +1724,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setStyleUrl(String)
      * 
      * @param styleUrl
      *     required parameter
@@ -1724,6 +1736,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setStyleSelector(List<StyleSelector>)
      * 
      * @param styleSelector
      *     required parameter
@@ -1735,6 +1748,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setRegion(Region)
      * 
      * @param region
      *     required parameter
@@ -1746,6 +1760,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setMetadata(Metadata)
      * 
      * @param metadata
      *     required parameter
@@ -1757,6 +1772,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setExtendedData(ExtendedData)
      * 
      * @param extendedData
      *     required parameter
@@ -1768,6 +1784,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setFeatureSimpleExtension(List<Object>)
      * 
      * @param featureSimpleExtension
      *     required parameter
@@ -1779,6 +1796,7 @@ public abstract class Feature
 
     /**
      * fluent setter
+     * @see #setFeatureObjectExtension(List<AbstractObject>)
      * 
      * @param featureObjectExtension
      *     required parameter

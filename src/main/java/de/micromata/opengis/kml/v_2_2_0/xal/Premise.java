@@ -1038,6 +1038,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -1049,6 +1050,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setPremiseName(List<PremiseName>)
      * 
      * @param premiseName
      *     required parameter
@@ -1060,6 +1062,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setPremiseNumberPrefix(List<PremiseNumberPrefix>)
      * 
      * @param premiseNumberPrefix
      *     required parameter
@@ -1071,6 +1074,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setPremiseNumberSuffix(List<PremiseNumberSuffix>)
      * 
      * @param premiseNumberSuffix
      *     required parameter
@@ -1082,6 +1086,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setBuildingName(List<BuildingName>)
      * 
      * @param buildingName
      *     required parameter
@@ -1093,6 +1098,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setSubPremise(List<SubPremise>)
      * 
      * @param subPremise
      *     required parameter
@@ -1104,6 +1110,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setFirm(Firm)
      * 
      * @param firm
      *     required parameter
@@ -1115,6 +1122,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setMailStop(MailStop)
      * 
      * @param mailStop
      *     required parameter
@@ -1126,6 +1134,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setPostalCode(PostalCode)
      * 
      * @param postalCode
      *     required parameter
@@ -1137,6 +1146,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setPremise(Premise)
      * 
      * @param premise
      *     required parameter
@@ -1148,6 +1158,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -1159,6 +1170,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -1170,6 +1182,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setXalPremiseDependency(String)
      * 
      * @param xalPremiseDependency
      *     required parameter
@@ -1181,6 +1194,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setPremiseDependency(String)
      * 
      * @param premiseDependency
      *     required parameter
@@ -1192,6 +1206,7 @@ public class Premise {
 
     /**
      * fluent setter
+     * @see #setPremiseThoroughfareConnector(String)
      * 
      * @param premiseThoroughfareConnector
      *     required parameter
@@ -1320,6 +1335,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1331,6 +1347,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1531,6 +1548,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1542,6 +1560,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1553,6 +1572,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setTypeOccurrence(String)
          * 
          * @param typeOccurrence
          *     required parameter
@@ -1564,6 +1584,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1948,6 +1969,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setRange(String)
          * 
          * @param range
          *     required parameter
@@ -1959,6 +1981,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setIndicator(String)
          * 
          * @param indicator
          *     required parameter
@@ -1970,6 +1993,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setSeparator(String)
          * 
          * @param separator
          *     required parameter
@@ -1981,6 +2005,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1992,6 +2017,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setIndicatorOccurence(String)
          * 
          * @param indicatorOccurence
          *     required parameter
@@ -2003,6 +2029,7 @@ public class Premise {
 
         /**
          * fluent setter
+         * @see #setNumberRangeOccurence(String)
          * 
          * @param numberRangeOccurence
          *     required parameter
@@ -2318,6 +2345,7 @@ public class Premise {
 
             /**
              * fluent setter
+             * @see #setAddressLine(List<AddressLine>)
              * 
              * @param addressLine
              *     required parameter
@@ -2329,6 +2357,7 @@ public class Premise {
 
             /**
              * fluent setter
+             * @see #setPremiseNumberPrefix(List<PremiseNumberPrefix>)
              * 
              * @param premiseNumberPrefix
              *     required parameter
@@ -2340,6 +2369,7 @@ public class Premise {
 
             /**
              * fluent setter
+             * @see #setPremiseNumberSuffix(List<PremiseNumberSuffix>)
              * 
              * @param premiseNumberSuffix
              *     required parameter
@@ -2657,6 +2687,7 @@ public class Premise {
 
             /**
              * fluent setter
+             * @see #setAddressLine(List<AddressLine>)
              * 
              * @param addressLine
              *     required parameter
@@ -2668,6 +2699,7 @@ public class Premise {
 
             /**
              * fluent setter
+             * @see #setPremiseNumberPrefix(List<PremiseNumberPrefix>)
              * 
              * @param premiseNumberPrefix
              *     required parameter
@@ -2679,6 +2711,7 @@ public class Premise {
 
             /**
              * fluent setter
+             * @see #setPremiseNumberSuffix(List<PremiseNumberSuffix>)
              * 
              * @param premiseNumberSuffix
              *     required parameter

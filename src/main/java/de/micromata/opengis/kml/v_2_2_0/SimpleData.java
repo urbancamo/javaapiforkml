@@ -187,6 +187,7 @@ public class SimpleData {
 
     /**
      * fluent setter
+     * @see #setValue(String)
      * 
      * @param value
      *     required parameter

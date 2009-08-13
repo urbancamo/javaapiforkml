@@ -193,7 +193,6 @@ public class LinearRing
     }
 
     /**
-     * @see xtrude
      * 
      * @return
      *     possible object is
@@ -217,7 +216,6 @@ public class LinearRing
     }
 
     /**
-     * @see essellate
      * 
      * @return
      *     possible object is
@@ -245,9 +243,9 @@ public class LinearRing
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -259,9 +257,9 @@ public class LinearRing
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -537,6 +535,7 @@ public class LinearRing
 
     /**
      * fluent setter
+     * @see #setExtrude(Boolean)
      * 
      * @param extrude
      *     required parameter
@@ -548,6 +547,7 @@ public class LinearRing
 
     /**
      * fluent setter
+     * @see #setTessellate(Boolean)
      * 
      * @param tessellate
      *     required parameter
@@ -559,6 +559,7 @@ public class LinearRing
 
     /**
      * fluent setter
+     * @see #setAltitudeMode(Object)
      * 
      * @param altitudeMode
      *     required parameter
@@ -570,6 +571,7 @@ public class LinearRing
 
     /**
      * fluent setter
+     * @see #setCoordinates(List<Coordinate>)
      * 
      * @param coordinates
      *     required parameter
@@ -581,6 +583,7 @@ public class LinearRing
 
     /**
      * fluent setter
+     * @see #setLinearRingSimpleExtension(List<Object>)
      * 
      * @param linearRingSimpleExtension
      *     required parameter
@@ -592,6 +595,7 @@ public class LinearRing
 
     /**
      * fluent setter
+     * @see #setLinearRingObjectExtension(List<AbstractObject>)
      * 
      * @param linearRingObjectExtension
      *     required parameter

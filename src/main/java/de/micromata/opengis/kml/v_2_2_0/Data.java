@@ -293,6 +293,7 @@ public class Data
 
     /**
      * fluent setter
+     * @see #setDisplayName(String)
      * 
      * @param displayName
      *     required parameter
@@ -304,6 +305,7 @@ public class Data
 
     /**
      * fluent setter
+     * @see #setDataExtension(List<Object>)
      * 
      * @param dataExtension
      *     required parameter
@@ -315,6 +317,7 @@ public class Data
 
     /**
      * fluent setter
+     * @see #setName(String)
      * 
      * @param name
      *     required parameter

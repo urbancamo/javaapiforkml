@@ -278,6 +278,7 @@ public abstract class Container
 
     /**
      * fluent setter
+     * @see #setContainerSimpleExtension(List<Object>)
      * 
      * @param containerSimpleExtension
      *     required parameter
@@ -289,6 +290,7 @@ public abstract class Container
 
     /**
      * fluent setter
+     * @see #setContainerObjectExtension(List<AbstractObject>)
      * 
      * @param containerObjectExtension
      *     required parameter

@@ -79,6 +79,7 @@ public class Wait
 
     /**
      * fluent setter
+     * @see #setDuration(double)
      * 
      * @param duration
      *     required parameter

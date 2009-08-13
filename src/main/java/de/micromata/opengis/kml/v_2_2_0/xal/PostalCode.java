@@ -390,6 +390,7 @@ public class PostalCode {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -401,6 +402,7 @@ public class PostalCode {
 
     /**
      * fluent setter
+     * @see #setPostalCodeNumber(List<PostalCodeNumber>)
      * 
      * @param postalCodeNumber
      *     required parameter
@@ -412,6 +414,7 @@ public class PostalCode {
 
     /**
      * fluent setter
+     * @see #setPostalCodeNumberExtension(List<PostalCodeNumberExtension>)
      * 
      * @param postalCodeNumberExtension
      *     required parameter
@@ -423,6 +426,7 @@ public class PostalCode {
 
     /**
      * fluent setter
+     * @see #setPostTown(PostTown)
      * 
      * @param postTown
      *     required parameter
@@ -434,6 +438,7 @@ public class PostalCode {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -445,6 +450,7 @@ public class PostalCode {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -608,6 +614,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -619,6 +626,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -630,6 +638,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -830,6 +839,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -841,6 +851,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -852,6 +863,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setNumberExtensionSeparator(String)
          * 
          * @param numberExtensionSeparator
          *     required parameter
@@ -863,6 +875,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1135,6 +1148,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setAddressLine(List<AddressLine>)
          * 
          * @param addressLine
          *     required parameter
@@ -1146,6 +1160,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setPostTownName(List<PostTownName>)
          * 
          * @param postTownName
          *     required parameter
@@ -1157,6 +1172,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setPostTownSuffix(PostTownSuffix)
          * 
          * @param postTownSuffix
          *     required parameter
@@ -1168,6 +1184,7 @@ public class PostalCode {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1331,6 +1348,7 @@ public class PostalCode {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -1342,6 +1360,7 @@ public class PostalCode {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -1353,6 +1372,7 @@ public class PostalCode {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter
@@ -1483,6 +1503,7 @@ public class PostalCode {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -1494,6 +1515,7 @@ public class PostalCode {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter

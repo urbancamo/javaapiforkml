@@ -382,6 +382,7 @@ public class Link {
 
     /**
      * fluent setter
+     * @see #setRel(String)
      * 
      * @param rel
      *     required parameter
@@ -393,6 +394,7 @@ public class Link {
 
     /**
      * fluent setter
+     * @see #setType(String)
      * 
      * @param type
      *     required parameter
@@ -404,6 +406,7 @@ public class Link {
 
     /**
      * fluent setter
+     * @see #setHreflang(String)
      * 
      * @param hreflang
      *     required parameter
@@ -415,6 +418,7 @@ public class Link {
 
     /**
      * fluent setter
+     * @see #setTitle(String)
      * 
      * @param title
      *     required parameter
@@ -426,6 +430,7 @@ public class Link {
 
     /**
      * fluent setter
+     * @see #setLength(String)
      * 
      * @param length
      *     required parameter

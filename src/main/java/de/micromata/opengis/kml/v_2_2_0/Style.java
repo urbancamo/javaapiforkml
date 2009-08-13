@@ -746,6 +746,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setIconStyle(IconStyle)
      * 
      * @param iconStyle
      *     required parameter
@@ -757,6 +758,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setLabelStyle(LabelStyle)
      * 
      * @param labelStyle
      *     required parameter
@@ -768,6 +770,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setLineStyle(LineStyle)
      * 
      * @param lineStyle
      *     required parameter
@@ -779,6 +782,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setPolyStyle(PolyStyle)
      * 
      * @param polyStyle
      *     required parameter
@@ -790,6 +794,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setBalloonStyle(BalloonStyle)
      * 
      * @param balloonStyle
      *     required parameter
@@ -801,6 +806,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setListStyle(ListStyle)
      * 
      * @param listStyle
      *     required parameter
@@ -812,6 +818,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setStyleSimpleExtension(List<Object>)
      * 
      * @param styleSimpleExtension
      *     required parameter
@@ -823,6 +830,7 @@ public class Style
 
     /**
      * fluent setter
+     * @see #setStyleObjectExtension(List<AbstractObject>)
      * 
      * @param styleObjectExtension
      *     required parameter

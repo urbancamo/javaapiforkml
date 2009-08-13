@@ -378,6 +378,7 @@ public class Department {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -389,6 +390,7 @@ public class Department {
 
     /**
      * fluent setter
+     * @see #setDepartmentName(List<DepartmentName>)
      * 
      * @param departmentName
      *     required parameter
@@ -400,6 +402,7 @@ public class Department {
 
     /**
      * fluent setter
+     * @see #setMailStop(MailStop)
      * 
      * @param mailStop
      *     required parameter
@@ -411,6 +414,7 @@ public class Department {
 
     /**
      * fluent setter
+     * @see #setPostalCode(PostalCode)
      * 
      * @param postalCode
      *     required parameter
@@ -422,6 +426,7 @@ public class Department {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -433,6 +438,7 @@ public class Department {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -596,6 +602,7 @@ public class Department {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -607,6 +614,7 @@ public class Department {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -618,6 +626,7 @@ public class Department {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

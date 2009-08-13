@@ -116,6 +116,7 @@ public class Author {
 
     /**
      * fluent setter
+     * @see #setNameOrUriOrEmail(List<String>)
      * 
      * @param nameOrUriOrEmail
      *     required parameter

@@ -586,6 +586,7 @@ public class AdministrativeArea {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -597,6 +598,7 @@ public class AdministrativeArea {
 
     /**
      * fluent setter
+     * @see #setAdministrativeAreaName(List<AdministrativeAreaName>)
      * 
      * @param administrativeAreaName
      *     required parameter
@@ -608,6 +610,7 @@ public class AdministrativeArea {
 
     /**
      * fluent setter
+     * @see #setSubAdministrativeArea(SubAdministrativeArea)
      * 
      * @param subAdministrativeArea
      *     required parameter
@@ -619,6 +622,7 @@ public class AdministrativeArea {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -630,6 +634,7 @@ public class AdministrativeArea {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -641,6 +646,7 @@ public class AdministrativeArea {
 
     /**
      * fluent setter
+     * @see #setUsage(String)
      * 
      * @param usage
      *     required parameter
@@ -652,6 +658,7 @@ public class AdministrativeArea {
 
     /**
      * fluent setter
+     * @see #setIndicator(String)
      * 
      * @param indicator
      *     required parameter
@@ -815,6 +822,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -826,6 +834,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -837,6 +846,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -1359,6 +1369,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setAddressLine(List<AddressLine>)
          * 
          * @param addressLine
          *     required parameter
@@ -1370,6 +1381,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setSubAdministrativeAreaName(List<SubAdministrativeAreaName>)
          * 
          * @param subAdministrativeAreaName
          *     required parameter
@@ -1381,6 +1393,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setAny(List<Object>)
          * 
          * @param any
          *     required parameter
@@ -1392,6 +1405,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -1403,6 +1417,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setUsage(String)
          * 
          * @param usage
          *     required parameter
@@ -1414,6 +1429,7 @@ public class AdministrativeArea {
 
         /**
          * fluent setter
+         * @see #setIndicator(String)
          * 
          * @param indicator
          *     required parameter
@@ -1577,6 +1593,7 @@ public class AdministrativeArea {
 
             /**
              * fluent setter
+             * @see #setContent(String)
              * 
              * @param content
              *     required parameter
@@ -1588,6 +1605,7 @@ public class AdministrativeArea {
 
             /**
              * fluent setter
+             * @see #setUnderscore(String)
              * 
              * @param underscore
              *     required parameter
@@ -1599,6 +1617,7 @@ public class AdministrativeArea {
 
             /**
              * fluent setter
+             * @see #setCode(String)
              * 
              * @param code
              *     required parameter

@@ -261,6 +261,7 @@ public class SchemaData
 
     /**
      * fluent setter
+     * @see #setSimpleData(List<SimpleData>)
      * 
      * @param simpleData
      *     required parameter
@@ -272,6 +273,7 @@ public class SchemaData
 
     /**
      * fluent setter
+     * @see #setSchemaDataExtension(List<Object>)
      * 
      * @param schemaDataExtension
      *     required parameter
@@ -283,6 +285,7 @@ public class SchemaData
 
     /**
      * fluent setter
+     * @see #setSchemaUrl(String)
      * 
      * @param schemaUrl
      *     required parameter

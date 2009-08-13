@@ -214,6 +214,7 @@ public abstract class Geometry
 
     /**
      * fluent setter
+     * @see #setGeometrySimpleExtension(List<Object>)
      * 
      * @param geometrySimpleExtension
      *     required parameter
@@ -225,6 +226,7 @@ public abstract class Geometry
 
     /**
      * fluent setter
+     * @see #setGeometryObjectExtension(List<AbstractObject>)
      * 
      * @param geometryObjectExtension
      *     required parameter

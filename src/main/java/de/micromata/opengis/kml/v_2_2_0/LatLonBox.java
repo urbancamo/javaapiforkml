@@ -284,6 +284,7 @@ public class LatLonBox
 
     /**
      * fluent setter
+     * @see #setRotation(double)
      * 
      * @param rotation
      *     required parameter
@@ -295,6 +296,7 @@ public class LatLonBox
 
     /**
      * fluent setter
+     * @see #setLatLonBoxSimpleExtension(List<Object>)
      * 
      * @param latLonBoxSimpleExtension
      *     required parameter
@@ -306,6 +308,7 @@ public class LatLonBox
 
     /**
      * fluent setter
+     * @see #setLatLonBoxObjectExtension(List<AbstractObject>)
      * 
      * @param latLonBoxObjectExtension
      *     required parameter

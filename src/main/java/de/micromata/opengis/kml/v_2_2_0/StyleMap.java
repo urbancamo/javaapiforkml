@@ -317,6 +317,7 @@ public class StyleMap
 
     /**
      * fluent setter
+     * @see #setPair(List<Pair>)
      * 
      * @param pair
      *     required parameter
@@ -328,6 +329,7 @@ public class StyleMap
 
     /**
      * fluent setter
+     * @see #setStyleMapSimpleExtension(List<Object>)
      * 
      * @param styleMapSimpleExtension
      *     required parameter
@@ -339,6 +341,7 @@ public class StyleMap
 
     /**
      * fluent setter
+     * @see #setStyleMapObjectExtension(List<AbstractObject>)
      * 
      * @param styleMapObjectExtension
      *     required parameter

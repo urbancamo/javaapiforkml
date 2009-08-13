@@ -207,7 +207,6 @@ public class Polygon
     }
 
     /**
-     * @see xtrude
      * 
      * @return
      *     possible object is
@@ -231,7 +230,6 @@ public class Polygon
     }
 
     /**
-     * @see essellate
      * 
      * @return
      *     possible object is
@@ -259,9 +257,9 @@ public class Polygon
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -273,9 +271,9 @@ public class Polygon
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -584,6 +582,7 @@ public class Polygon
 
     /**
      * fluent setter
+     * @see #setExtrude(Boolean)
      * 
      * @param extrude
      *     required parameter
@@ -595,6 +594,7 @@ public class Polygon
 
     /**
      * fluent setter
+     * @see #setTessellate(Boolean)
      * 
      * @param tessellate
      *     required parameter
@@ -606,6 +606,7 @@ public class Polygon
 
     /**
      * fluent setter
+     * @see #setAltitudeMode(Object)
      * 
      * @param altitudeMode
      *     required parameter
@@ -617,6 +618,7 @@ public class Polygon
 
     /**
      * fluent setter
+     * @see #setOuterBoundaryIs(Boundary)
      * 
      * @param outerBoundaryIs
      *     required parameter
@@ -628,6 +630,7 @@ public class Polygon
 
     /**
      * fluent setter
+     * @see #setInnerBoundaryIs(List<Boundary>)
      * 
      * @param innerBoundaryIs
      *     required parameter
@@ -639,6 +642,7 @@ public class Polygon
 
     /**
      * fluent setter
+     * @see #setPolygonSimpleExtension(List<Object>)
      * 
      * @param polygonSimpleExtension
      *     required parameter
@@ -650,6 +654,7 @@ public class Polygon
 
     /**
      * fluent setter
+     * @see #setPolygonObjectExtension(List<AbstractObject>)
      * 
      * @param polygonObjectExtension
      *     required parameter

@@ -523,6 +523,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setAddressLine(List<AddressLine>)
      * 
      * @param addressLine
      *     required parameter
@@ -534,6 +535,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setPostOfficeName(List<PostOfficeName>)
      * 
      * @param postOfficeName
      *     required parameter
@@ -545,6 +547,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setPostOfficeNumber(PostOfficeNumber)
      * 
      * @param postOfficeNumber
      *     required parameter
@@ -556,6 +559,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setPostalRoute(PostalRoute)
      * 
      * @param postalRoute
      *     required parameter
@@ -567,6 +571,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setPostBox(PostBox)
      * 
      * @param postBox
      *     required parameter
@@ -578,6 +583,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setPostalCode(PostalCode)
      * 
      * @param postalCode
      *     required parameter
@@ -589,6 +595,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -600,6 +607,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setUnderscore(String)
      * 
      * @param underscore
      *     required parameter
@@ -611,6 +619,7 @@ public class PostOffice {
 
     /**
      * fluent setter
+     * @see #setIndicator(String)
      * 
      * @param indicator
      *     required parameter
@@ -774,6 +783,7 @@ public class PostOffice {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -785,6 +795,7 @@ public class PostOffice {
 
         /**
          * fluent setter
+         * @see #setUnderscore(String)
          * 
          * @param underscore
          *     required parameter
@@ -796,6 +807,7 @@ public class PostOffice {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter
@@ -996,6 +1008,7 @@ public class PostOffice {
 
         /**
          * fluent setter
+         * @see #setContent(String)
          * 
          * @param content
          *     required parameter
@@ -1007,6 +1020,7 @@ public class PostOffice {
 
         /**
          * fluent setter
+         * @see #setIndicator(String)
          * 
          * @param indicator
          *     required parameter
@@ -1018,6 +1032,7 @@ public class PostOffice {
 
         /**
          * fluent setter
+         * @see #setIndicatorOccurrence(String)
          * 
          * @param indicatorOccurrence
          *     required parameter
@@ -1029,6 +1044,7 @@ public class PostOffice {
 
         /**
          * fluent setter
+         * @see #setCode(String)
          * 
          * @param code
          *     required parameter

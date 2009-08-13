@@ -240,6 +240,7 @@ public class XAL {
 
     /**
      * fluent setter
+     * @see #setAny(List<Object>)
      * 
      * @param any
      *     required parameter
@@ -251,6 +252,7 @@ public class XAL {
 
     /**
      * fluent setter
+     * @see #setVersion(String)
      * 
      * @param version
      *     required parameter

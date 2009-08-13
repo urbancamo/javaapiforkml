@@ -143,6 +143,7 @@ public class Tour
 
     /**
      * fluent setter
+     * @see #setPlaylist(Playlist)
      * 
      * @param playlist
      *     required parameter

@@ -195,6 +195,7 @@ public class Boundary {
 
     /**
      * fluent setter
+     * @see #setLinearRing(LinearRing)
      * 
      * @param linearRing
      *     required parameter
@@ -206,6 +207,7 @@ public class Boundary {
 
     /**
      * fluent setter
+     * @see #setBoundarySimpleExtension(List<Object>)
      * 
      * @param boundarySimpleExtension
      *     required parameter
@@ -217,6 +219,7 @@ public class Boundary {
 
     /**
      * fluent setter
+     * @see #setBoundaryObjectExtension(List<AbstractObject>)
      * 
      * @param boundaryObjectExtension
      *     required parameter
