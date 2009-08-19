@@ -846,7 +846,7 @@ public class Kml {
      * 
      * 
      */
-    public static Kml[] unmarshalFromKMZ(
+    public static Kml[] unmarshalFromKmz(
         @NotNull
         File file)
         throws IOException

@@ -49,74 +49,7 @@ import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.LineString;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
-class KmzHelper {
-	private static int missingNameCounter = 1;
 
-	public static boolean createKmz(@NotNull String name, @NotNull Kml kmzFile, Kml... additionalFiles) throws IOException {
-		ZipOutputStream out = new ZipOutputStream(new FileOutputStream(name));
-		out.setComment("KMZ-file created with Java API for KML");
-		addKmzFile(kmzFile, out, true);
-
-		for (Kml kml : additionalFiles) {
-			addKmzFile(kml, out, false);
-		}
-
-		out.close();
-		missingNameCounter = 1;
-		return false;
-	}
-
-	private static void addKmzFile(Kml kmzFile, ZipOutputStream out, boolean mainfile) throws IOException, FileNotFoundException {
-		String fileName = null;
-		if (kmzFile.getFeature() == null || kmzFile.getFeature().getName() == null || kmzFile.getFeature().getName().length() == 0) {
-			fileName = "noFeatureNameSet" + (missingNameCounter++) + ".kml";
-		} else {
-			fileName = kmzFile.getFeature().getName();
-			if (!fileName.endsWith(".kml")) {
-				fileName += ".kml";
-			}
-		}
-		if (mainfile) {
-			fileName = "doc.kml";
-		}
-		out.putNextEntry(new ZipEntry(URLEncoder.encode(fileName, "UTF-8")));
-		kmzFile.marshal(out);
-
-		out.closeEntry();
-	}
-	
-	public static Kml[] unmarshalKMZ(File file) throws ZipException, IOException {
-		final Kml[] EMPTY_KML_ARRAY = new Kml[0];
-
-		ZipFile zip = new ZipFile(file);
-		Enumeration< ? extends ZipEntry> entries = zip.entries();
-		if (!file.exists()) {
-			return EMPTY_KML_ARRAY;
-		}
-		ArrayList<Kml> kmlfiles = new ArrayList<Kml>();
-		while (entries.hasMoreElements()) {
-			ZipEntry entry = (ZipEntry) entries.nextElement();
-
-			// is directory
-			if (entry.getName().contains("__MACOSX") || entry.getName().contains(".DS_STORE")) {
-				continue;
-			}
-
-			String entryName = URLDecoder.decode(entry.getName(), "UTF-8");
-
-			System.out.println("element: " + entryName);
-			if (!entry.getName().endsWith(".kml")) {
-				continue;
-			}
-			InputStream in = zip.getInputStream(entry);
-			Kml unmarshal = Kml.unmarshal(in);
-			kmlfiles.add(unmarshal);
-		}
-		zip.close();
-
-		return kmlfiles.toArray(EMPTY_KML_ARRAY);
-	}
-}
 
 public class KmzTest {
 	@Test
@@ -141,7 +74,7 @@ public class KmzTest {
 		kmlmain.marshalAsKmz("kmzFileMain3.kmz", kml1, kml2, kml3, kml4, kml5, kml6, kml7);
 		
 
-		Kml[] unmarshalKMZ = Kml.unmarshalFromKMZ(new File("kmzFileMain3.kmz"));
+		Kml[] unmarshalKMZ = Kml.unmarshalFromKmz(new File("kmzFileMain3.kmz"));
 
 		for (Kml kml : unmarshalKMZ) {
 			String name = null;
