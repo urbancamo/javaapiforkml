@@ -194,7 +194,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		document.setAtomAuthor(author);
 		document.setAtomLink(new de.micromata.opengis.kml.v_2_2_0.atom.Link("..."));
 		document.setAddress("...");
-		document.setXalAddressDetails(null);
+		document.setXalAddressDetails(createAddressDetails());
 		document.setPhoneNumber("...");
 		final Snippet snippet = new Snippet();
 		snippet.setMaxLines(2);

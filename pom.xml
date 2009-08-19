@@ -5,13 +5,9 @@
 	<artifactId>JavaAPIforKml</artifactId>
 	<version>2.2.0-SNAPSHOT</version>
 	<name>a Java API for Kml</name>
-	<url>http://code.google.com/p/javaapiforkml/</url>
-	<description>
-This is JavaAPIforKMml, Micromata's library for use with applications that want to parse, generate and operate on KML. 
-It is an implementation of the OGC KML 2.2 standard.
-It is written entirely in Java and makes heavy use of JAXB.
-    </description>
+	<description>This is JavaAPIforKMml, Micromata's library for use with applications that want to parse, generate and operate on KML. It is an implementation of the OGC KML 2.2 standard. It is written entirely in Java and makes heavy use of JAXB.</description>
 	<packaging>jar</packaging>
+	<url>http://code.google.com/p/javaapiforkml/</url>
 	<organization>
 		<name>Micromata GmbH</name>
 		<url>http://micromata.de</url>
