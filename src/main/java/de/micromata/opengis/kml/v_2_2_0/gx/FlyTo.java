@@ -183,8 +183,8 @@ public class FlyTo
      * @return
      *     possible object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
      *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -197,8 +197,8 @@ public class FlyTo
      * @param value
      *     allowed object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
      *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {

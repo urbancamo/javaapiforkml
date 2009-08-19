@@ -470,8 +470,8 @@ public class NetworkLinkControl {
      * @return
      *     possible object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
      *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -484,8 +484,8 @@ public class NetworkLinkControl {
      * @param value
      *     allowed object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
      *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {

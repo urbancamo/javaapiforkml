@@ -74,9 +74,9 @@ public class Update {
     @XmlSchemaType(name = "anyURI")
     protected String targetHref;
     @XmlElements({
+        @XmlElement(name = "Create", type = Create.class),
         @XmlElement(name = "Delete", type = Delete.class),
         @XmlElement(name = "UpdateOpExtensionGroup"),
-        @XmlElement(name = "Create", type = Create.class),
         @XmlElement(name = "Change", type = Change.class)
     })
     protected List<Object> createOrDeleteOrChange;
@@ -217,7 +217,7 @@ public class Update {
      * add a value to the createOrDeleteOrChange property collection
      * 
      * @param createOrDeleteOrChange
-     *     Objects of the following type are allowed in the list: {@link Delete}{@link Object}{@link Create}{@link Change}
+     *     Objects of the following type are allowed in the list: {@link Create}{@link Delete}{@link Object}{@link Change}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

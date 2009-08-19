@@ -4,11 +4,18 @@ package de.micromata.opengis.kml.v_2_2_0;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.io.Writer;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
@@ -28,6 +35,8 @@ import javax.xml.namespace.QName;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import com.sun.istack.NotNull;
+import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import org.xml.sax.SAXException;
 
@@ -166,6 +175,7 @@ public class Kml {
     protected String hint;
     private transient JAXBContext jc = null;
     private transient Marshaller m = null;
+    private transient int missingNameCounter = (1);
     private final static String SCHEMA_LOCATION = "src/main/resources/schema/ogckml/ogckml22.xsd";
 
     public Kml() {
@@ -201,17 +211,17 @@ public class Kml {
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link Tour}{@code>}
      *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link Folder}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -223,17 +233,17 @@ public class Kml {
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link Tour}{@code>}
      *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Container}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link Folder}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
      *     
      */
     public void setFeature(Feature value) {
@@ -624,15 +634,41 @@ public class Kml {
     {
         if (m == null) {
             m = this.getJaxbContext().createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
         }
         return m;
     }
 
     /**
+     * Internal method
+     * 
+     */
+    private void addKmzFile(Kml kmzFile, ZipOutputStream out, boolean mainfile)
+        throws IOException
+    {
+        String fileName = null;
+        if (((kmzFile.getFeature() == null)||(kmzFile.getFeature().getName() == null))||(kmzFile.getFeature().getName().length() == 0)) {
+            fileName = (("noFeatureNameSet"+ missingNameCounter ++)+".kml");
+        } else {
+            fileName = kmzFile.getFeature().getName();
+            if (!fileName.endsWith(".kml")) {
+                fileName += ".kml";
+            }
+        }
+        if (mainfile) {
+            fileName = "doc.kml";
+        }
+        out.putNextEntry(new ZipEntry(URLEncoder.encode(fileName, "UTF-8")));
+        kmzFile.marshal(out);
+        out.closeEntry();
+    }
+
+    /**
      * Java to KML
      * The object graph is marshalled to an OutputStream object.
-     * The object is not saved as a zipped .kmz file (boolean is false).
-     * @see marshal(final File, final boolean)
+     * The object is not saved as a zipped .kmz file.
+     * @see marshalKmz(String, Kml...)
      * 
      */
     public boolean marshal(final OutputStream outputstream)
@@ -641,7 +677,6 @@ public class Kml {
         try {
             m = this.createMarshaller();
             JAXBElement<Kml> jaxbRootElement = new JAXBElement<Kml>(new QName("http://www.opengis.net/kml/2.2", "kml"), Kml.class, this);
-            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(jaxbRootElement, outputstream);
             return true;
         } catch (JAXBException _x) {
@@ -653,15 +688,14 @@ public class Kml {
     /**
      * Java to KML
      * The object graph is marshalled to a Writer object.
-     * The object is not saved as a zipped .kmz file (boolean is false).
-     * @see marshal(final File, final boolean)
+     * The object is not saved as a zipped .kmz file.
+     * @see marshalKmz(String, Kml...)
      * 
      */
     public boolean marshal(final Writer writer) {
         try {
             m = this.createMarshaller();
             JAXBElement<Kml> jaxbRootElement = new JAXBElement<Kml>(new QName("http://www.opengis.net/kml/2.2", "kml"), Kml.class, this);
-            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(jaxbRootElement, writer);
             return true;
         } catch (JAXBException _x) {
@@ -672,34 +706,51 @@ public class Kml {
 
     /**
      * Java to KML
-     * The object graph is marshalled to a File object.
-     * The boolean value indicates whether the File object is saved as a zipped .kmz file or not.
-     * <b>Warning:</b>
-     * <b>THE KMZ FEATURE, ISN'T WORKING YET!</b>
+     * The object graph is printed to the console.
+     * (Nothing is saved, nor saved. Just printed.)
      * 
      * 
      */
-    public boolean marshal(final File filename, final boolean zipped)
-        throws FileNotFoundException
-    {
-        OutputStream out = new FileOutputStream(filename);
-        if (zipped == true) {
-            out = new ZipOutputStream(out);
+    public boolean marshal() {
+        try {
+            m = this.createMarshaller();
+            JAXBElement<Kml> jaxbRootElement = new JAXBElement<Kml>(new QName("http://www.opengis.net/kml/2.2", "kml"), Kml.class, this);
+            m.marshal(jaxbRootElement, System.out);
+            return true;
+        } catch (JAXBException _x) {
+            _x.printStackTrace();
+            return false;
         }
-        return this.marshal(out);
     }
 
     /**
      * Java to KML
      * The object graph is marshalled to a File object.
-     * The object is not saved as a zipped .kmz file (boolean is false).
-     * @see marshal(final File, final boolean)
+     * The object is not saved as a zipped .kmz file.
+     * @see marshalKmz(String, Kml...)
      * 
      */
     public boolean marshal(final File filename)
         throws FileNotFoundException
     {
-        return this.marshal(filename, false);
+        OutputStream out = new FileOutputStream(filename);
+        return this.marshal(out);
+    }
+
+    public boolean marshalAsKmz(
+        @NotNull
+        String name, Kml... additionalFiles)
+        throws IOException
+    {
+        ZipOutputStream out = new ZipOutputStream(new FileOutputStream(name));
+        out.setComment("KMZ-file created with Java API for KML. Visit us: http://code.google.com/p/javaapiforkml/");
+        this.addKmzFile(this, out, true);
+        for (Kml kml: additionalFiles) {
+            this.addKmzFile(kml, out, false);
+        }
+        out.close();
+        missingNameCounter = 1;
+        return false;
     }
 
     private static boolean validate(final Unmarshaller unmarshaller) {
@@ -729,8 +780,7 @@ public class Kml {
             if (validate == true) {
                 Kml.validate(unmarshaller);
             }
-            StreamSource filesource = new StreamSource(file);
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(filesource));
+            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(new StreamSource(file)));
             return jaxbRootElement;
         } catch (JAXBException _x) {
             _x.printStackTrace();
@@ -743,8 +793,7 @@ public class Kml {
      * KML given as a file object is transformed into a graph of Java objects.
      * Similar to the method: 
      * unmarshal(final File, final boolean) 
-     * but with the exception that the File object is not validated (boolean is false). 
-     * 
+     * with the exception that the File object is not validated (boolean is false). 
      * 
      */
     public static Kml unmarshal(final File file) {
@@ -755,20 +804,109 @@ public class Kml {
      * KML to Java
      * Similar to the other unmarshal methods 
      * 
-     * but with the exception that it transforms a String into a graph of Java objects. 
+     * with the exception that it transforms a String into a graph of Java objects. 
      * 
      * 
      */
     public static Kml unmarshal(final String content) {
         try {
-            StringReader string = new StringReader(content);
             Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(string));
+            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(new StringReader(content)));
             return jaxbRootElement;
         } catch (JAXBException _x) {
             _x.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * KML to Java
+     * Similar to the other unmarshal methods 
+     * 
+     * with the exception that it transforms a InputStream into a graph of Java objects. 
+     * 
+     * 
+     */
+    public static Kml unmarshal(final InputStream content) {
+        try {
+            Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
+            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(content));
+            return jaxbRootElement;
+        } catch (JAXBException _x) {
+            _x.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * KMZ to Java
+     * Similar to the other unmarshal methods
+     * 
+     * with the exception that it transforms a KMZ-file into a graph of Java objects. 
+     * 
+     * 
+     */
+    public static Kml[] unmarshalFromKMZ(
+        @NotNull
+        File file)
+        throws IOException
+    {
+        Kml[] EMPTY_KML_ARRAY = (new Kml[0]);
+        if (!file.getName().endsWith(".kmz")) {
+            return EMPTY_KML_ARRAY;
+        }
+        ZipFile zip = new ZipFile(file);
+        Enumeration<? extends ZipEntry> entries = zip.entries();
+        if (!file.exists()) {
+            return EMPTY_KML_ARRAY;
+        }
+        ArrayList<Kml> kmlfiles = new ArrayList<Kml>();
+        while (entries.hasMoreElements()) {
+            ZipEntry entry = ((ZipEntry) entries.nextElement());
+            if (entry.getName().contains("__MACOSX")||entry.getName().contains(".DS_STORE")) {
+                continue;
+            }
+            String entryName = URLDecoder.decode(entry.getName(), "UTF-8");
+            if (entryName.endsWith("*.kml")) {
+                continue;
+            }
+            InputStream in = zip.getInputStream(entry);
+            Kml unmarshal = Kml.unmarshal(in);
+            kmlfiles.add(unmarshal);
+        }
+        zip.close();
+        return kmlfiles.toArray(EMPTY_KML_ARRAY);
+    }
+
+    private final class NameSpaceBeautyfier
+        extends NamespacePrefixMapper
+    {
+
+
+        /**
+         * Internal method!
+         * <p>Customizing Namespace Prefixes During Marshalling to a more readable format.</p>
+         * <p>The default output is like:</p>
+         * <pre>{@code&lt;kml ... xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:ns4="http://www.google.com/kml/ext/2.2"&gt;}</pre>
+         * <p>is changed to:</p>
+         * <pre>{@code &lt;kml ... xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:gx="http://www.google.com/kml/ext/2.2"&gt;}</pre><p>What it does:</p>
+         * <p>namespaceUri: http://www.w3.org/2005/Atom              prefix: atom</p><p>namespaceUri: urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 prefix: xal</p><p>namespaceUri: http://www.google.com/kml/ext/2.2        prefix: gx</p><p>namespaceUri: anything else prefix: null</p>
+         * 
+         */
+        @Override
+        public String getPreferredPrefix(String namespaceUri, String suggestion, boolean requirePrefix) {
+            if (namespaceUri.matches("http://www.w3.org/\\d{4}/Atom")) {
+                return "atom";
+            }
+            if (namespaceUri.matches("urn:oasis:names:tc:ciq:xsdschema:xAL:.*?")) {
+                return "xal";
+            }
+            if (namespaceUri.matches("http://www.google.com/kml/ext/.*?")) {
+                return "gx";
+            }
+            return null;
+        }
+
     }
 
 }

@@ -50,8 +50,8 @@ public class Thoroughfare {
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
     @XmlElements({
-        @XmlElement(name = "ThoroughfareNumber", type = ThoroughfareNumber.class),
-        @XmlElement(name = "ThoroughfareNumberRange", type = Thoroughfare.ThoroughfareNumberRange.class)
+        @XmlElement(name = "ThoroughfareNumberRange", type = Thoroughfare.ThoroughfareNumberRange.class),
+        @XmlElement(name = "ThoroughfareNumber", type = ThoroughfareNumber.class)
     })
     protected List<Object> thoroughfareNumberOrThoroughfareNumberRange;
     @XmlElement(name = "ThoroughfareNumberPrefix")
@@ -985,7 +985,7 @@ public class Thoroughfare {
      * add a value to the thoroughfareNumberOrThoroughfareNumberRange property collection
      * 
      * @param thoroughfareNumberOrThoroughfareNumberRange
-     *     Objects of the following type are allowed in the list: {@link ThoroughfareNumber}{@link Thoroughfare.ThoroughfareNumberRange}
+     *     Objects of the following type are allowed in the list: {@link Thoroughfare.ThoroughfareNumberRange}{@link ThoroughfareNumber}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -2427,8 +2427,8 @@ public class Thoroughfare {
         public static class ThoroughfareNumberFrom {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class)
             })
@@ -2543,7 +2543,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link String}{@link ThoroughfareNumberPrefix}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
+             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2589,8 +2589,8 @@ public class Thoroughfare {
         public static class ThoroughfareNumberTo {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class)
             })
@@ -2705,7 +2705,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link String}{@link ThoroughfareNumberPrefix}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
+             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */

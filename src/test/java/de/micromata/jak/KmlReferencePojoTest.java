@@ -95,7 +95,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
 @SuppressWarnings("deprecation")
 public final class KmlReferencePojoTest implements IKMLReference {
 	@SuppressWarnings("unused")
-  private static final Logger LOG = Logger.getLogger(KmlReferencePojoTest.class.getName());
+	private static final Logger LOG = Logger.getLogger(KmlReferencePojoTest.class.getName());
 
 	/**
 	 * @see de.micromata.jak.internal.IKMLReference#ballonStyle()
@@ -113,7 +113,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.ballonStyle(balloonstyle);
 		final BalloonStyle marshalledAndBackAgain = Utils.marshalAndUnmarshall(balloonstyle);
 		KmlReferenceCheck.ballonStyle(marshalledAndBackAgain);
-		
+
 		KmlReferenceCheck.ballonStyle(balloonstyle, marshalledAndBackAgain);
 	}
 
@@ -151,7 +151,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark.setGeometry(point);
 		final List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-122.370533,37.823842,0));
+		coord.add(new Coordinate(-122.370533, 37.823842, 0));
 
 		KmlReferenceCheck.ballonStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -194,8 +194,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		document.setAtomAuthor(author);
 		document.setAtomLink(new de.micromata.opengis.kml.v_2_2_0.atom.Link("..."));
 		document.setAddress("...");
-		final AddressDetails addressDetails = createAddressDetails();
-		document.setXalAddressDetails(addressDetails);
+		document.setXalAddressDetails(null);
 		document.setPhoneNumber("...");
 		final Snippet snippet = new Snippet();
 		snippet.setMaxLines(2);
@@ -225,7 +224,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		AddressDetails.Address xalAddress = new AddressDetails.Address();
 		AddressLines addressLines = new AddressLines(new ArrayList<AddressLine>());
-		
+
 		Locality locality = new Locality(postBox, new LargeMailUser(), new PostOffice(), postalRoute);
 		AdministrativeArea administrativeArea = new AdministrativeArea(locality, new PostOffice(), new PostalCode());
 		Thoroughfare thoroughfare = new Thoroughfare(new DependentLocality(postBox, new LargeMailUser(), new PostOffice(), postalRoute),
@@ -265,7 +264,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark1.setGeometry(point1);
 		List<Coordinate> coord1 = new ArrayList<Coordinate>();
 		point1.setCoordinates(coord1);
-		coord1.add(new Coordinate(-122.371,37.816,0));
+		coord1.add(new Coordinate(-122.371, 37.816, 0));
 
 		final Placemark placemark2 = new Placemark();
 		document.getFeature().add(placemark2);
@@ -277,7 +276,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark2.setGeometry(point2);
 		List<Coordinate> coord2 = new ArrayList<Coordinate>();
 		point2.setCoordinates(coord2);
-		coord2.add(new Coordinate(-122.370,37.817,0));
+		coord2.add(new Coordinate(-122.370, 37.817, 0));
 
 		KmlReferenceCheck.documentExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -295,14 +294,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		data.setName("string");
 		data.setDisplayName("...");
-//		data.setValue("...");
+		// data.setValue("...");
 
 		final SchemaData schemaData = new SchemaData();
 		extendedData.getSchemaData().add(schemaData);
 
 		schemaData.setSchemaUrl("anyURI");
 		final SimpleData sd = new SimpleData("");
-//		sd.setName("");
+		// sd.setName("");
 		sd.setValue("...");
 		schemaData.getSimpleData().add(sd);
 
@@ -327,12 +326,10 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		final Data data1 = new Data("1");
 		extendedData.getData().add(data1);
 		data1.setName("holeNumber");
-//		data1.setValue("1");
 
 		final Data data2 = new Data("4");
 		extendedData.getData().add(data2);
 		data2.setName("holePar");
-//		data2.setValue("4");
 
 		KmlReferenceCheck.extendedDataValue(placemark);
 		final Placemark marshalledAndBackAgain = Utils.marshalAndUnmarshall(placemark);
@@ -355,13 +352,10 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		schemaData1.setSchemaUrl("#TrailHeadTypeId");
 		extendedData1.getSchemaData().add(schemaData1);
 		final SimpleData sd11 = new SimpleData("TrailHeadName");
-//		sd11.setName("TrailHeadName");
 		sd11.setValue("Pi in the sky");
 		final SimpleData sd12 = new SimpleData("TrailLength");
-//		sd12.setName("TrailLength");
 		sd12.setValue("3.14159");
 		final SimpleData sd13 = new SimpleData("ElevationGain");
-//		sd13.setName("ElevationGain");
 		sd13.setValue("10");
 		schemaData1.getSimpleData().add(sd11);
 		schemaData1.getSimpleData().add(sd12);
@@ -371,7 +365,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark1.setGeometry(point1);
 		List<Coordinate> coord1 = new ArrayList<Coordinate>();
 		point1.setCoordinates(coord1);
-		coord1.add(new Coordinate(-122.000,37.002));
+		coord1.add(new Coordinate(-122.000, 37.002));
 
 		final Placemark placemark2 = new Placemark();
 		document.getFeature().add(placemark2);
@@ -384,13 +378,10 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		extendedData2.getSchemaData().add(schemaData2);
 
 		final SimpleData sd21 = new SimpleData("TrailHeadName");
-//		sd21.setName("TrailHeadName");
 		sd21.setValue("Mount Everest");
 		final SimpleData sd22 = new SimpleData("TrailLength");
-//		sd22.setName("TrailLength");
 		sd22.setValue("347.45");
 		final SimpleData sd23 = new SimpleData("ElevationGain");
-//		sd23.setName("ElevationGain");
 		sd23.setValue("10000");
 		schemaData2.getSimpleData().add(sd21);
 		schemaData2.getSimpleData().add(sd22);
@@ -400,7 +391,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark2.setGeometry(point2);
 		List<Coordinate> coord2 = new ArrayList<Coordinate>();
 		point2.setCoordinates(coord2);
-		coord2.add(new Coordinate(-122.000,37.002));
+		coord2.add(new Coordinate(-122.000, 37.002));
 
 		KmlReferenceCheck.extendedDataSimpleData(document);
 		final Document marshalledAndBackAgain = Utils.marshalAndUnmarshall(document);
@@ -439,7 +430,6 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		author.getNameOrUriOrEmail().add("J. K. Rowling");
 		final de.micromata.opengis.kml.v_2_2_0.atom.Link link = new de.micromata.opengis.kml.v_2_2_0.atom.Link("http://www.harrypotter.com");
 		document.setAtomLink(link);
-//		link.setHref("http://www.harrypotter.com");
 
 		final Placemark placemark1 = new Placemark();
 		document.getFeature().add(placemark1);
@@ -449,7 +439,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark1.setGeometry(point1);
 		List<Coordinate> coord1 = new ArrayList<Coordinate>();
 		point1.setCoordinates(coord1);
-		coord1.add(new Coordinate(1,1));
+		coord1.add(new Coordinate(1, 1));
 
 		final Placemark placemark2 = new Placemark();
 		document.getFeature().add(placemark2);
@@ -459,7 +449,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark2.setGeometry(point2);
 		List<Coordinate> coord2 = new ArrayList<Coordinate>();
 		point2.setCoordinates(coord2);
-		coord2.add(new Coordinate(1,2));
+		coord2.add(new Coordinate(1, 2));
 
 		KmlReferenceCheck.featureAscriptionElement(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -531,7 +521,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark1.setGeometry(point1);
 		List<Coordinate> coord1 = new ArrayList<Coordinate>();
 		point1.setCoordinates(coord1);
-		coord1.add(new Coordinate(-122.377588,37.830266,0));
+		coord1.add(new Coordinate(-122.377588, 37.830266, 0));
 
 		final Placemark placemark2 = new Placemark();
 		folder.getFeature().add(placemark2);
@@ -546,10 +536,10 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		boundary.setLinearRing(linearRing);
 		List<Coordinate> coord2 = new ArrayList<Coordinate>();
 		linearRing.setCoordinates(coord2);
-		coord2.add(new Coordinate(-122.377830,37.830445,0));
-		coord2.add(new Coordinate(-122.377576,37.830631,0));
-		coord2.add(new Coordinate(-122.377840,37.830642,0));
-		coord2.add(new Coordinate(-122.377830,37.830445,0));
+		coord2.add(new Coordinate(-122.377830, 37.830445, 0));
+		coord2.add(new Coordinate(-122.377576, 37.830631, 0));
+		coord2.add(new Coordinate(-122.377840, 37.830642, 0));
+		coord2.add(new Coordinate(-122.377830, 37.830445, 0));
 
 		final Placemark placemark3 = new Placemark();
 		folder.getFeature().add(placemark3);
@@ -560,8 +550,8 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		lineString.setTessellate(true);
 		List<Coordinate> coord3 = new ArrayList<Coordinate>();
 		lineString.setCoordinates(coord3);
-		coord3.add(new Coordinate(-122.378009,37.830128,0));
-		coord3.add(new Coordinate(-122.377885,37.830379,0));
+		coord3.add(new Coordinate(-122.378009, 37.830128, 0));
+		coord3.add(new Coordinate(-122.377885, 37.830379, 0));
 
 		KmlReferenceCheck.folderExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -571,7 +561,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 	/**
 	 * @see de.micromata.jak.internal.IKMLReference#groundOverlay()
 	 */
-  @Test
+	@Test
 	public void groundOverlay() {
 		final GroundOverlay groundoverlay = new GroundOverlay();
 		// inherited from Feature element
@@ -757,9 +747,9 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark.setStyleUrl("#randomColorIcon");
 		final Point point = new Point();
 		placemark.setGeometry(point);
-		List<Coordinate> coord  = new ArrayList<Coordinate>();
+		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-122.36868,37.831145,0));
+		coord.add(new Coordinate(-122.36868, 37.831145, 0));
 
 		KmlReferenceCheck.iconStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -823,7 +813,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark.setGeometry(point);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-122.367375,37.829192,0));
+		coord.add(new Coordinate(-122.367375, 37.829192, 0));
 
 		KmlReferenceCheck.labelStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -843,7 +833,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		linearring.setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);// setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		linearring.setCoordinates(coord);
-		coord.add(new Coordinate(0.0,0.0,0.0));
+		coord.add(new Coordinate(0.0, 0.0, 0.0));
 
 		KmlReferenceCheck.linearRing(linearring);
 		final LinearRing marshalledAndBackAgain = Utils.marshalAndUnmarshall(linearring);
@@ -873,11 +863,11 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		linearring.setCoordinates(coord);
-		coord.add(new Coordinate(-122.365662,37.826988,0));
-		coord.add(new Coordinate(-122.365202,37.826302,0));
-		coord.add(new Coordinate(-122.364581,37.82655,0));
-		coord.add(new Coordinate(-122.365038,37.827237,0));
-		coord.add(new Coordinate(-122.365662,37.826988,0));
+		coord.add(new Coordinate(-122.365662, 37.826988, 0));
+		coord.add(new Coordinate(-122.365202, 37.826302, 0));
+		coord.add(new Coordinate(-122.364581, 37.82655, 0));
+		coord.add(new Coordinate(-122.365038, 37.827237, 0));
+		coord.add(new Coordinate(-122.365662, 37.826988, 0));
 
 		KmlReferenceCheck.linearRingExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -897,7 +887,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		linestring.setCoordinates(coord);
-		coord.add(new Coordinate(0.0,0.0,0.0));
+		coord.add(new Coordinate(0.0, 0.0, 0.0));
 
 		KmlReferenceCheck.lineString(linestring);
 		final LineString marshalledAndBackAgain = Utils.marshalAndUnmarshall(linestring);
@@ -933,8 +923,8 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		linestring1.setTessellate(true);
 		List<Coordinate> coord1 = new ArrayList<Coordinate>();
 		linestring1.setCoordinates(coord1);
-		coord1.add(new Coordinate(-122.364383,37.824664,0));
-		coord1.add(new Coordinate(-122.364152,37.824322,0));
+		coord1.add(new Coordinate(-122.364383, 37.824664, 0));
+		coord1.add(new Coordinate(-122.364152, 37.824322, 0));
 
 		final Placemark placemark2 = new Placemark();
 		document.getFeature().add(placemark2);
@@ -945,8 +935,8 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		linestring2.setTessellate(true);
 		List<Coordinate> coord2 = new ArrayList<Coordinate>();
 		linestring2.setCoordinates(coord2);
-		coord2.add(new Coordinate(-122.364167,37.824787,50));
-		coord2.add(new Coordinate(-122.363917,37.824423,50));
+		coord2.add(new Coordinate(-122.364167, 37.824787, 50));
+		coord2.add(new Coordinate(-122.363917, 37.824423, 50));
 
 		KmlReferenceCheck.lineStringExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -1001,8 +991,8 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		linestring.setTessellate(true);
 		List<Coordinate> coord1 = new ArrayList<Coordinate>();
 		linestring.setCoordinates(coord1);
-		coord1.add(new Coordinate(-122.364383,37.824664,0));
-		coord1.add(new Coordinate(-122.364152,37.824322,0));
+		coord1.add(new Coordinate(-122.364383, 37.824664, 0));
+		coord1.add(new Coordinate(-122.364152, 37.824322, 0));
 
 		KmlReferenceCheck.lineStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
@@ -1077,7 +1067,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.listStyle(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#lookAt()
 	 */
 	@Test
@@ -1099,7 +1089,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.lookAt(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#lookAtExample()
 	 */
 	@Test
@@ -1110,7 +1100,6 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark.setName("LookAt.kml");
 		final LookAt lookat = new LookAt();
 		placemark.setAbstractView(lookat);
-		// TODO <gx:TimeStamp> <when>1994</when> </gx:TimeStamp>
 
 		lookat.setLongitude(-122.363);
 		lookat.setLatitude(37.81);
@@ -1124,14 +1113,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark.setGeometry(point);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-122.363,37.82,0));
+		coord.add(new Coordinate(-122.363, 37.82, 0));
 
 		KmlReferenceCheck.lookAtExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.lookAtExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#model()
 	 */
 	@Test
@@ -1173,7 +1162,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.model(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#modelLocation()
 	 */
 	@Test
@@ -1188,7 +1177,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.modelLocation(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#modelOrientation()
 	 */
 	@Test
@@ -1203,7 +1192,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.modelOrientation(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#modelScale()
 	 */
 	@Test
@@ -1219,7 +1208,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.modelScale(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#modelResourceMap()
 	 */
 	@Test
@@ -1233,7 +1222,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.modelResourceMap(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#modelExample()
 	 */
 	@Test
@@ -1262,7 +1251,6 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		final Link link = new Link();
 		model.setLink(link);
 		link.setHref("house.dae");
-		// TODO <refreshMode>once</refreshMode>
 		link.setRefreshMode(RefreshMode.ON_CHANGE);
 
 		final ResourceMap resourcemap = new ResourceMap();
@@ -1287,7 +1275,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.modelExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#multiGeometry()
 	 */
 	@Test
@@ -1300,7 +1288,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.multiGeometry(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#multiGeometryExample()
 	 */
 	@Test
@@ -1315,22 +1303,22 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		multigeometry.getGeometry().add(linestring1);
 		List<Coordinate> coord1 = new ArrayList<Coordinate>();
 		linestring1.setCoordinates(coord1);
-		coord1.add(new Coordinate(-122.4425587930444,37.80666418607323,0));
-		coord1.add(new Coordinate(-122.4428379594768,37.80663578323093,0));
+		coord1.add(new Coordinate(-122.4425587930444, 37.80666418607323, 0));
+		coord1.add(new Coordinate(-122.4428379594768, 37.80663578323093, 0));
 
 		final LineString linestring2 = new LineString();
 		multigeometry.getGeometry().add(linestring2);
 		List<Coordinate> coord2 = new ArrayList<Coordinate>();
 		linestring2.setCoordinates(coord2);
-		coord2.add(new Coordinate(-122.4425509770566,37.80662588061205,0));
-		coord2.add(new Coordinate(-122.4428340530617,37.8065999493009,0));
+		coord2.add(new Coordinate(-122.4425509770566, 37.80662588061205, 0));
+		coord2.add(new Coordinate(-122.4428340530617, 37.8065999493009, 0));
 
 		KmlReferenceCheck.multiGeometryExample(placemark);
 		final Placemark marshalledAndBackAgain = Utils.marshalAndUnmarshall(placemark);
 		KmlReferenceCheck.multiGeometryExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#networkLink()
 	 */
 	@Test
@@ -1378,7 +1366,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.networkLink(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#networkLinkExample()
 	 */
 	@Test
@@ -1399,7 +1387,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.networkLinkExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#networkLinkControl()
 	 */
 	@Test
@@ -1424,7 +1412,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.networkLinkControl(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#networkLinkControlExample()
 	 */
 	@Test
@@ -1442,7 +1430,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.networkLinkControlExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#overlayIcon()
 	 */
 	@Test
@@ -1455,7 +1443,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.overlayIcon(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#photoOverlay()
 	 */
 	@Test
@@ -1512,7 +1500,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		photooverlay.setPoint(point);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(0.0,0.0,0.0));
+		coord.add(new Coordinate(0.0, 0.0, 0.0));
 
 		photooverlay.setShape(Shape.RECTANGLE);
 
@@ -1521,7 +1509,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.photoOverlay(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#photoOverlayExample()
 	 */
 	@Test
@@ -1556,14 +1544,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		photooverlay.setPoint(point);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(1,1));
+		coord.add(new Coordinate(1, 1));
 
 		KmlReferenceCheck.photoOverlayExample(photooverlay);
 		final PhotoOverlay marshalledAndBackAgain = Utils.marshalAndUnmarshall(photooverlay);
 		KmlReferenceCheck.photoOverlayExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#placemark()
 	 */
 	@Test
@@ -1600,7 +1588,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.placemark(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#placemarkExample()
 	 */
 	@Test
@@ -1622,14 +1610,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark.setGeometry(point);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-90.86948943473118,48.25450093195546,0));
+		coord.add(new Coordinate(-90.86948943473118, 48.25450093195546, 0));
 
 		KmlReferenceCheck.placemarkExample(placemark);
 		final Placemark marshalledAndBackAgain = Utils.marshalAndUnmarshall(placemark);
 		KmlReferenceCheck.placemarkExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#point()
 	 */
 	@Test
@@ -1640,14 +1628,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		point.setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(0.0,0.0,0.0));
+		coord.add(new Coordinate(0.0, 0.0, 0.0));
 
 		KmlReferenceCheck.point(point);
 		final Point marshalledAndBackAgain = Utils.marshalAndUnmarshall(point);
 		KmlReferenceCheck.point(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#pointExample()
 	 */
 	@Test
@@ -1655,14 +1643,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		final Point point = new Point();
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-90.86948943473118,48.25450093195546));
+		coord.add(new Coordinate(-90.86948943473118, 48.25450093195546));
 
 		KmlReferenceCheck.pointExample(point);
 		final Point marshalledAndBackAgain = Utils.marshalAndUnmarshall(point);
 		KmlReferenceCheck.pointExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#polygon()
 	 */
 	@Test
@@ -1681,7 +1669,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> outercoord = new ArrayList<Coordinate>();
 		outerlinearring.setCoordinates(outercoord);
-		outercoord.add(new Coordinate(0.0,0.0,0.0));
+		outercoord.add(new Coordinate(0.0, 0.0, 0.0));
 
 		final Boundary innerboundary = new Boundary();
 		polygon.getInnerBoundaryIs().add(innerboundary);
@@ -1691,14 +1679,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> innercoord = new ArrayList<Coordinate>();
 		innerlinearring.setCoordinates(innercoord);
-		innercoord.add(new Coordinate(0.0,0.0,0.0));
+		innercoord.add(new Coordinate(0.0, 0.0, 0.0));
 
 		KmlReferenceCheck.polygon(polygon);
 		final Polygon marshalledAndBackAgain = Utils.marshalAndUnmarshall(polygon);
 		KmlReferenceCheck.polygon(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#polygonExample()
 	 */
 	@Test
@@ -1726,11 +1714,11 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> outercoord = new ArrayList<Coordinate>();
 		outerlinearring.setCoordinates(outercoord);
-		outercoord.add(new Coordinate(-122.366278,37.818844,30));
-		outercoord.add(new Coordinate(-122.365248,37.819267,30));
-		outercoord.add(new Coordinate(-122.365640,37.819861,30));
-		outercoord.add(new Coordinate(-122.366669,37.819429,30));
-		outercoord.add(new Coordinate(-122.366278,37.818844,30));
+		outercoord.add(new Coordinate(-122.366278, 37.818844, 30));
+		outercoord.add(new Coordinate(-122.365248, 37.819267, 30));
+		outercoord.add(new Coordinate(-122.365640, 37.819861, 30));
+		outercoord.add(new Coordinate(-122.366669, 37.819429, 30));
+		outercoord.add(new Coordinate(-122.366278, 37.818844, 30));
 
 		final Boundary innerboundary = new Boundary();
 		polygon.getInnerBoundaryIs().add(innerboundary);
@@ -1740,18 +1728,18 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> innercoord = new ArrayList<Coordinate>();
 		innerlinearring.setCoordinates(innercoord);
-		innercoord.add(new Coordinate(-122.366212,37.818977,30));
-		innercoord.add(new Coordinate(-122.365424,37.819294,30));
-		innercoord.add(new Coordinate(-122.365704,37.819731,30));
-		innercoord.add(new Coordinate(-122.366488,37.819402,30));
-		innercoord.add(new Coordinate(-122.366212,37.818977,30));
+		innercoord.add(new Coordinate(-122.366212, 37.818977, 30));
+		innercoord.add(new Coordinate(-122.365424, 37.819294, 30));
+		innercoord.add(new Coordinate(-122.365704, 37.819731, 30));
+		innercoord.add(new Coordinate(-122.366488, 37.819402, 30));
+		innercoord.add(new Coordinate(-122.366212, 37.818977, 30));
 
 		KmlReferenceCheck.polygonExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.polygonExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#polyStyle()
 	 */
 	@Test
@@ -1771,7 +1759,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.polyStyle(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#polyStyleExample()
 	 */
 	@Test
@@ -1811,11 +1799,11 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> outercoord = new ArrayList<Coordinate>();
 		outerlinearring.setCoordinates(outercoord);
-		outercoord.add(new Coordinate(-122.3662784465226,37.81884427772081,30));
-		outercoord.add(new Coordinate(-122.3652480684771,37.81926777010555,30));
-		outercoord.add(new Coordinate(-122.365640222455,37.81986126286519,30));
-		outercoord.add(new Coordinate(-122.36666937925,37.81942987753481,30));
-		outercoord.add(new Coordinate(-122.3662784465226,37.81884427772081,30));
+		outercoord.add(new Coordinate(-122.3662784465226, 37.81884427772081, 30));
+		outercoord.add(new Coordinate(-122.3652480684771, 37.81926777010555, 30));
+		outercoord.add(new Coordinate(-122.365640222455, 37.81986126286519, 30));
+		outercoord.add(new Coordinate(-122.36666937925, 37.81942987753481, 30));
+		outercoord.add(new Coordinate(-122.3662784465226, 37.81884427772081, 30));
 
 		final Boundary innerboundary = new Boundary();
 		polygon.getInnerBoundaryIs().add(innerboundary);
@@ -1825,18 +1813,18 @@ public final class KmlReferencePojoTest implements IKMLReference {
 
 		List<Coordinate> innercoord = new ArrayList<Coordinate>();
 		innerlinearring.setCoordinates(innercoord);
-		innercoord.add(new Coordinate(-122.366212593918,37.81897719083808,30));
-		innercoord.add(new Coordinate(-122.3654241733188,37.81929450992014,30));
-		innercoord.add(new Coordinate(-122.3657048517827,37.81973175302663,30));
-		innercoord.add(new Coordinate(-122.3664882465854,37.81940249291773,30));
-		innercoord.add(new Coordinate(-122.366212593918,37.81897719083808,30));
+		innercoord.add(new Coordinate(-122.366212593918, 37.81897719083808, 30));
+		innercoord.add(new Coordinate(-122.3654241733188, 37.81929450992014, 30));
+		innercoord.add(new Coordinate(-122.3657048517827, 37.81973175302663, 30));
+		innercoord.add(new Coordinate(-122.3664882465854, 37.81940249291773, 30));
+		innercoord.add(new Coordinate(-122.366212593918, 37.81897719083808, 30));
 
 		KmlReferenceCheck.polyStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.polyStyleExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#region()
 	 */
 	@Test
@@ -1866,7 +1854,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.region(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#regionLatLonAltBox()
 	 */
 	@Test
@@ -1885,7 +1873,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.regionLatLonAltBox(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#regionLod()
 	 */
 	@Test
@@ -1901,7 +1889,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.regionLod(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#regionExample()
 	 */
 	@Test
@@ -1930,7 +1918,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.regionExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#schema()
 	 */
 	@Test
@@ -1950,7 +1938,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.schema(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#schemaExample()
 	 */
 	@Test
@@ -1987,7 +1975,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.schemaExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#screenOverlay()
 	 */
 	@Test
@@ -2052,7 +2040,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.screenOverlay(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#screenOverlayExample()
 	 */
 	@Test
@@ -2095,7 +2083,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.screenOverlayExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#style()
 	 */
 	@Test
@@ -2116,7 +2104,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.style(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#styleExample()
 	 */
 	@Test
@@ -2171,7 +2159,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.styleExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#styleMap()
 	 */
 	@Test
@@ -2191,7 +2179,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.styleMap(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#styleMapPair()
 	 */
 	@Test
@@ -2205,7 +2193,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.styleMapPair(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#styleMapExample()
 	 */
 	@Test
@@ -2270,14 +2258,14 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		p1.setGeometry(point);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-122.368987,37.817634,0));
+		coord.add(new Coordinate(-122.368987, 37.817634, 0));
 
 		KmlReferenceCheck.styleMapExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.styleMapExample(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#timeSpan()
 	 */
 	@Test
@@ -2291,7 +2279,7 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.timeSpan(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#timeStamp()
 	 */
 	@Test
@@ -2304,13 +2292,13 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		KmlReferenceCheck.timeStamp(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#updateChange()
 	 */
 	@Test
 	public void updateChange() {
 		final NetworkLinkControl networklink = new NetworkLinkControl();
-		final Update update = new Update("http://www/~sam/January14Data/Point.kml",  new ArrayList<Object>());
+		final Update update = new Update("http://www/~sam/January14Data/Point.kml", new ArrayList<Object>());
 		networklink.setUpdate(update);
 
 		final Change change = new Change();
@@ -2321,19 +2309,19 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		point.setTargetId("point123");
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-95.48,40.43,0));
+		coord.add(new Coordinate(-95.48, 40.43, 0));
 
 		KmlReferenceCheck.updateChange(networklink);
 		final NetworkLinkControl marshalledAndBackAgain = Utils.marshalAndUnmarshall(networklink);
 		KmlReferenceCheck.updateChange(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#updateCreate()
 	 */
 	@Test
 	public void updateCreate() {
-		final Update update = new Update("http://myserver.com/Point.kml",  new ArrayList<Object>());
+		final Update update = new Update("http://myserver.com/Point.kml", new ArrayList<Object>());
 		final Create create = new Create();
 		update.getCreateOrDeleteOrChange().add(create);
 
@@ -2348,19 +2336,19 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		placemark.setGeometry(point);
 		List<Coordinate> coord = new ArrayList<Coordinate>();
 		point.setCoordinates(coord);
-		coord.add(new Coordinate(-95.48,40.43,0));
+		coord.add(new Coordinate(-95.48, 40.43, 0));
 
 		KmlReferenceCheck.updateCreate(update);
 		final Update marshalledAndBackAgain = Utils.marshalAndUnmarshall(update);
 		KmlReferenceCheck.updateCreate(marshalledAndBackAgain);
 	}
 
-  /**
+	/**
 	 * @see de.micromata.jak.internal.IKMLReference#updateDelete()
 	 */
 	@Test
 	public void updateDelete() {
-		final Update update = new Update("http://www.foo.com/Point.kml",  new ArrayList<Object>());
+		final Update update = new Update("http://www.foo.com/Point.kml", new ArrayList<Object>());
 
 		final Delete delete = new Delete();
 		update.getCreateOrDeleteOrChange().add(delete);

@@ -137,13 +137,13 @@ public class Placemark
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Polygon}{@code>}
-     *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link LineString}{@code>}
      *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link Point}{@code>}
+     *     {@code <}{@link Model}{@code>}
+     *     {@code <}{@link Polygon}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
      *     {@code <}{@link LinearRing}{@code>}
-     *     {@code <}{@link Point}{@code>}
      *     
      */
     public Geometry getGeometry() {
@@ -155,13 +155,13 @@ public class Placemark
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Polygon}{@code>}
-     *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link LineString}{@code>}
      *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link Point}{@code>}
+     *     {@code <}{@link Model}{@code>}
+     *     {@code <}{@link Polygon}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
      *     {@code <}{@link LinearRing}{@code>}
-     *     {@code <}{@link Point}{@code>}
      *     
      */
     public void setGeometry(Geometry value) {
