@@ -1,4 +1,4 @@
-#Fri Aug 07 12:39:14 CEST 2009
+#Tue Aug 25 10:12:06 CEST 2009
 block_filters=SourceDirective, static, private
 eclipse.preferences.version=1
 exclude_filter=**/de/micromata/jak/**,**/de/micromata/opengis/kml/v_2_2_0/annotations/**,**/de/micromata/opengis/kml/v_2_2_0/atom/**,**/de/micromata/opengis/kml/v_2_2_0/xal/**

@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.namespace.QName;
 
@@ -22,6 +23,7 @@ import javax.xml.namespace.QName;
     "addressLine",
     "any"
 })
+@XmlRootElement(name = "AddressLines", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class AddressLines {
 
     @XmlElement(name = "AddressLine", required = true)

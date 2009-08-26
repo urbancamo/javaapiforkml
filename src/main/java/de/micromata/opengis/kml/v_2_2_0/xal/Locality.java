@@ -933,6 +933,7 @@ public class Locality {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "LocalityName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class LocalityName {
 
         @XmlValue

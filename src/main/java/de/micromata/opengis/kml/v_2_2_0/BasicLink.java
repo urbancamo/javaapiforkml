@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
@@ -25,6 +26,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     Icon.class,
     Link.class
 })
+@XmlRootElement(name = "BasicLink", namespace = "http://www.opengis.net/kml/2.2")
 public class BasicLink
     extends AbstractObject
 {

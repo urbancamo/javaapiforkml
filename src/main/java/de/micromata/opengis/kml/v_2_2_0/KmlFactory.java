@@ -10,7 +10,6 @@ import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
 import de.micromata.opengis.kml.v_2_2_0.gx.SoundCue;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import de.micromata.opengis.kml.v_2_2_0.gx.TourControl;
-import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
 import de.micromata.opengis.kml.v_2_2_0.gx.Wait;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressLine;
@@ -624,14 +623,6 @@ public final class KmlFactory {
      */
     public static TourControl createGxTourControl() {
         return new TourControl();
-    }
-
-    /**
-     * Create an instance of {@link TourPrimitive}
-     * 
-     */
-    public static TourPrimitive createGxTourPrimitive() {
-        return new TourPrimitive();
     }
 
     /**

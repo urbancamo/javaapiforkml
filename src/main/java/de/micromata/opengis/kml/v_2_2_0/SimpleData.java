@@ -4,6 +4,7 @@ package de.micromata.opengis.kml.v_2_2_0;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
@@ -38,6 +39,7 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "SimpleDataType", propOrder = {
     "value"
 })
+@XmlRootElement(name = "SimpleData", namespace = "http://www.opengis.net/kml/2.2")
 public class SimpleData {
 
     /**

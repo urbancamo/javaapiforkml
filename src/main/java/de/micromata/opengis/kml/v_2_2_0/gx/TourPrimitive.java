@@ -63,7 +63,7 @@ import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
     SoundCue.class,
     TourControl.class
 })
-public class TourPrimitive
+public abstract class TourPrimitive
     extends AbstractObject
 {
 

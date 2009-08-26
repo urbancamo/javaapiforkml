@@ -1300,6 +1300,7 @@ public class Thoroughfare {
         "thoroughfarePostDirection",
         "any"
     })
+    @XmlRootElement(name = "DependentThoroughfare", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class DependentThoroughfare {
 
         @XmlElement(name = "AddressLine")
@@ -1854,6 +1855,7 @@ public class Thoroughfare {
         "thoroughfareNumberFrom",
         "thoroughfareNumberTo"
     })
+    @XmlRootElement(name = "ThoroughfareNumberRange", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class ThoroughfareNumberRange {
 
         @XmlElement(name = "AddressLine")
@@ -2424,13 +2426,14 @@ public class Thoroughfare {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "ThoroughfareNumberFrom", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class ThoroughfareNumberFrom {
 
             @XmlElementRefs({
+                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
                 @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
-                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class)
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class)
             })
             @XmlMixed
             protected List<Object> content;
@@ -2543,7 +2546,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
+             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumber}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumberPrefix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2586,13 +2589,14 @@ public class Thoroughfare {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "ThoroughfareNumberTo", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class ThoroughfareNumberTo {
 
             @XmlElementRefs({
+                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
                 @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
-                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class)
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class)
             })
             @XmlMixed
             protected List<Object> content;
@@ -2705,7 +2709,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
+             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumber}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumberPrefix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */

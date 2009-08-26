@@ -468,6 +468,7 @@ public class PostalCode {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostalCodeNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostalCodeNumber {
 
         @XmlValue
@@ -658,6 +659,7 @@ public class PostalCode {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostalCodeNumberExtension", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostalCodeNumberExtension {
 
         @XmlValue
@@ -897,6 +899,7 @@ public class PostalCode {
         "postTownName",
         "postTownSuffix"
     })
+    @XmlRootElement(name = "PostTown", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostTown {
 
         @XmlElement(name = "AddressLine")
@@ -1202,6 +1205,7 @@ public class PostalCode {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "PostTownName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class PostTownName {
 
             @XmlValue
@@ -1392,6 +1396,7 @@ public class PostalCode {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "PostTownSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class PostTownSuffix {
 
             @XmlValue

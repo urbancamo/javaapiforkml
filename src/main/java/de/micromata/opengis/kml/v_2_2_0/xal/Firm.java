@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
@@ -29,6 +30,7 @@ import javax.xml.namespace.QName;
     "postalCode",
     "any"
 })
+@XmlRootElement(name = "Firm", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class Firm {
 
     @XmlElement(name = "AddressLine")
@@ -529,6 +531,7 @@ public class Firm {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "FirmName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class FirmName {
 
         @XmlValue

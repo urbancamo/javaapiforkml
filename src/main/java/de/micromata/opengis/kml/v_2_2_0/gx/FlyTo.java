@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.AbstractView;
 import de.micromata.opengis.kml.v_2_2_0.Camera;
@@ -49,6 +50,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "flyToMode",
     "abstractView"
 })
+@XmlRootElement(name = "FlyTo", namespace = "http://www.google.com/kml/ext/2.2")
 public class FlyTo
     extends TourPrimitive
 {

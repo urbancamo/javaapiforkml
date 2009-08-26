@@ -5,6 +5,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
@@ -16,6 +17,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlType(name = "TourControlType", propOrder = {
     "playMode"
 })
+@XmlRootElement(name = "TourControl", namespace = "http://www.google.com/kml/ext/2.2")
 public class TourControl
     extends TourPrimitive
 {

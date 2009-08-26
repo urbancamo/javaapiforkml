@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 import de.micromata.opengis.kml.v_2_2_0.AbstractView;
@@ -55,6 +56,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 @XmlType(name = "TourType", propOrder = {
     "playlist"
 })
+@XmlRootElement(name = "Tour", namespace = "http://www.google.com/kml/ext/2.2")
 public class Tour
     extends Feature
 {

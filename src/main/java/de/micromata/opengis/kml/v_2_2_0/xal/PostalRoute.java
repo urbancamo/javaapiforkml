@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
@@ -28,6 +29,7 @@ import javax.xml.namespace.QName;
     "postBox",
     "any"
 })
+@XmlRootElement(name = "PostalRoute", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class PostalRoute {
 
     @XmlElement(name = "AddressLine")
@@ -451,6 +453,7 @@ public class PostalRoute {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostalRouteName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostalRouteName {
 
         @XmlValue
@@ -641,6 +644,7 @@ public class PostalRoute {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostalRouteNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostalRouteNumber {
 
         @XmlValue

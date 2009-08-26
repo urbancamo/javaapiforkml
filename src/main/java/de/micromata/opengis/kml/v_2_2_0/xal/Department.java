@@ -456,6 +456,7 @@ public class Department {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "DepartmentName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class DepartmentName {
 
         @XmlValue

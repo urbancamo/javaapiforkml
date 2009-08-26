@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import org.w3c.dom.Element;
 
@@ -20,6 +21,7 @@ import org.w3c.dom.Element;
     "any"
 })
 @Deprecated
+@XmlRootElement(name = "Metadata", namespace = "http://www.opengis.net/kml/2.2")
 public class Metadata {
 
     @XmlAnyElement(lax = true)
@@ -85,7 +87,7 @@ public class Metadata {
      * add a value to the any property collection
      * 
      * @param any
-     *     Objects of the following type are allowed in the list: {@link Element}{@link Object}
+     *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
@@ -27,6 +28,7 @@ import javax.xml.namespace.QName;
     "mailStopNumber",
     "any"
 })
+@XmlRootElement(name = "MailStop", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class MailStop {
 
     @XmlElement(name = "AddressLine")
@@ -379,6 +381,7 @@ public class MailStop {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "MailStopName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class MailStopName {
 
         @XmlValue
@@ -569,6 +572,7 @@ public class MailStop {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "MailStopNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class MailStopNumber {
 
         @XmlValue

@@ -1224,6 +1224,7 @@ public class Premise {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PremiseLocation", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PremiseLocation {
 
         @XmlValue
@@ -1367,6 +1368,7 @@ public class Premise {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PremiseName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PremiseName {
 
         @XmlValue
@@ -1605,6 +1607,7 @@ public class Premise {
         "premiseNumberRangeFrom",
         "premiseNumberRangeTo"
     })
+    @XmlRootElement(name = "PremiseNumberRange", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PremiseNumberRange {
 
         @XmlElement(name = "PremiseNumberRangeFrom", required = true)
@@ -2050,6 +2053,7 @@ public class Premise {
             "premiseNumber",
             "premiseNumberSuffix"
         })
+        @XmlRootElement(name = "PremiseNumberRangeFrom", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class PremiseNumberRangeFrom {
 
             @XmlElement(name = "AddressLine")
@@ -2392,6 +2396,7 @@ public class Premise {
             "premiseNumber",
             "premiseNumberSuffix"
         })
+        @XmlRootElement(name = "PremiseNumberRangeTo", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class PremiseNumberRangeTo {
 
             @XmlElement(name = "AddressLine")

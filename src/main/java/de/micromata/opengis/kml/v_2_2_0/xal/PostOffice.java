@@ -637,6 +637,7 @@ public class PostOffice {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostOfficeName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostOfficeName {
 
         @XmlValue
@@ -827,6 +828,7 @@ public class PostOffice {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostOfficeNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostOfficeNumber {
 
         @XmlValue

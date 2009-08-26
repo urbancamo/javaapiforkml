@@ -676,6 +676,7 @@ public class AdministrativeArea {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "AdministrativeAreaName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class AdministrativeAreaName {
 
         @XmlValue
@@ -871,6 +872,7 @@ public class AdministrativeArea {
         "postalCode",
         "any"
     })
+    @XmlRootElement(name = "SubAdministrativeArea", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class SubAdministrativeArea {
 
         @XmlElement(name = "AddressLine")
@@ -1447,6 +1449,7 @@ public class AdministrativeArea {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "SubAdministrativeAreaName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class SubAdministrativeAreaName {
 
             @XmlValue

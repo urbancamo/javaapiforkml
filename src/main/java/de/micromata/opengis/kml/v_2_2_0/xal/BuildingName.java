@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
@@ -22,6 +23,7 @@ import javax.xml.namespace.QName;
 @XmlType(name = "BuildingNameType", propOrder = {
     "content"
 })
+@XmlRootElement(name = "BuildingName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class BuildingName {
 
     @XmlValue

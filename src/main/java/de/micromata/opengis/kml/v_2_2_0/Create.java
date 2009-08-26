@@ -7,6 +7,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -34,6 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "CreateType", propOrder = {
     "container"
 })
+@XmlRootElement(name = "Create", namespace = "http://www.opengis.net/kml/2.2")
 public class Create {
 
     /**
@@ -169,7 +171,7 @@ public class Create {
      * add a value to the container property collection
      * 
      * @param container
-     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

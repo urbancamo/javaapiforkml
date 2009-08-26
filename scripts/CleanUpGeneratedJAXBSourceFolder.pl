@@ -52,6 +52,13 @@ sub removeJAXBElementForOneJavaFile {
 		return 0;
 	}
 	
+	if ($filehandle =~ /gx\/AltitudeMode.java/ ) {
+		$removeddeprecatedfiles++;
+		unlink($filehandle);
+		return 0;
+	}
+	
+	
 	$fileCount++;
 
 	#iterate over each line in file and replace every JAXBElement occurence
@@ -166,12 +173,10 @@ sub removeJAXBElementForOneJavaFile {
 	    # @XmlElement(name = "AbstractFeatureSimpleExtensionGroup")
 		$currentJavaFile[$i] =~ s/(\@XmlElementRef\()(name = "AbstractFeatureSimpleExtensionGroup")(, namespace = .*?)(\))/\@XmlElement($2)/g;
 		
-		if ($filehandle =~ /Playlist.java/) {
-
-			$currentJavaFile[$i] =~ s/import javax.xml.bind.annotation.XmlElementRef;/import javax.xml.bind.annotation.XmlElement;/g;
-			$currentJavaFile[$i] =~ s/(\@XmlElementRef\()(name = "AbstractTourPrimitiveGroup")(, namespace = .*?)(\))/\@XmlElement($2)/g;
-		}
-
+		#@XmlElementRef(name = "AbstractTourPrimitiveGroup", namespace = "http://www.google.com/kml/ext/2.2")
+		$currentJavaFile[$i] =~ s/(\@XmlElement\()(name = "AbstractTourPrimitiveGroup")(, namespace = .*?)(\))/\@XmlElementRef($2)/g;
+		#@XmlElement(name = "AbstractTourPrimitiveGroup")
+	
 	    # protected List<?> featureSimpleExtensions;
 		# -->	
 		# @XmlElement(name = "AbstractFeatureSimpleExtensionGroup")

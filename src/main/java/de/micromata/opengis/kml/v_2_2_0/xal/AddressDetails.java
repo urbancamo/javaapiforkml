@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
@@ -48,6 +49,7 @@ import javax.xml.namespace.QName;
     "thoroughfare",
     "any"
 })
+@XmlRootElement(name = "AddressDetails", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class AddressDetails {
 
     @XmlElement(name = "PostalServiceElements")
@@ -970,6 +972,7 @@ public class AddressDetails {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "Address", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class Address {
 
         @XmlValue
@@ -1173,6 +1176,7 @@ public class AddressDetails {
         "thoroughfare",
         "any"
     })
+    @XmlRootElement(name = "Country", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class Country {
 
         @XmlElement(name = "AddressLine")
@@ -1696,6 +1700,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "CountryNameCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class CountryNameCode {
 
             @XmlValue
@@ -1898,6 +1903,7 @@ public class AddressDetails {
         "supplementaryPostalServiceData",
         "any"
     })
+    @XmlRootElement(name = "PostalServiceElements", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostalServiceElements {
 
         @XmlElement(name = "AddressIdentifier")
@@ -2696,6 +2702,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "AddressIdentifier", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class AddressIdentifier {
 
             @XmlValue
@@ -2933,6 +2940,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "AddressLatitude", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class AddressLatitude {
 
             @XmlValue
@@ -3123,6 +3131,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "AddressLatitudeDirection", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class AddressLatitudeDirection {
 
             @XmlValue
@@ -3313,6 +3322,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "AddressLongitude", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class AddressLongitude {
 
             @XmlValue
@@ -3503,6 +3513,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "AddressLongitudeDirection", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class AddressLongitudeDirection {
 
             @XmlValue
@@ -3693,6 +3704,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "Barcode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class Barcode {
 
             @XmlValue
@@ -3883,6 +3895,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "EndorsementLineCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class EndorsementLineCode {
 
             @XmlValue
@@ -4073,6 +4086,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "KeyLineCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class KeyLineCode {
 
             @XmlValue
@@ -4261,6 +4275,7 @@ public class AddressDetails {
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "")
+        @XmlRootElement(name = "SortingCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class SortingCode {
 
             @XmlAttribute(name = "Type")
@@ -4394,6 +4409,7 @@ public class AddressDetails {
         @XmlType(name = "", propOrder = {
             "content"
         })
+        @XmlRootElement(name = "SupplementaryPostalServiceData", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
         public static class SupplementaryPostalServiceData {
 
             @XmlValue

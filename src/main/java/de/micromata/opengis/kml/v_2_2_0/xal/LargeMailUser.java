@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
@@ -32,6 +33,7 @@ import javax.xml.namespace.QName;
     "postalCode",
     "any"
 })
+@XmlRootElement(name = "LargeMailUser", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class LargeMailUser {
 
     @XmlElement(name = "AddressLine")
@@ -727,6 +729,7 @@ public class LargeMailUser {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "LargeMailUserIdentifier", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class LargeMailUserIdentifier {
 
         @XmlValue
@@ -963,6 +966,7 @@ public class LargeMailUser {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "LargeMailUserName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class LargeMailUserName {
 
         @XmlValue

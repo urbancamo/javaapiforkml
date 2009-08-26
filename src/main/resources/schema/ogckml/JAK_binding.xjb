@@ -71,8 +71,8 @@
 		
 	<jaxb:bindings schemaLocation="ogckml22.xsd" node="/xs:schema">
 		<!-- rename the package 'oasis/names/tc/ciq/xsdschema/xal/_2/' to the following:  -->
-		<jaxb:schemaBindings>
-			<jaxb:package name="de.micromata.opengis.kml.v_2_2_0" />
+		<jaxb:schemaBindings xmlns="default namespace">
+			<jaxb:package name="de.micromata.opengis.kml.v_2_2_0" xmlns="default namespace" />
 		</jaxb:schemaBindings>
 
 		<jaxb:bindings node="//xs:element[@name='altitudeMode']">

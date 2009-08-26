@@ -6,7 +6,8 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
@@ -19,11 +20,12 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlType(name = "PlaylistType", propOrder = {
     "tourPrimitive"
 })
+@XmlRootElement(name = "Playlist", namespace = "http://www.google.com/kml/ext/2.2")
 public class Playlist
     extends AbstractObject
 {
 
-    @XmlElement(name = "AbstractTourPrimitiveGroup")
+    @XmlElementRef(name = "AbstractTourPrimitiveGroup", namespace = "http://www.google.com/kml/ext/2.2")
     protected List<TourPrimitive> tourPrimitive;
 
     public Playlist() {
@@ -166,7 +168,7 @@ public class Playlist
      * add a value to the tourPrimitive property collection
      * 
      * @param tourPrimitive
-     *     Objects of the following type are allowed in the list: {@code <}{@link TourControl}{@code>}{@link JAXBElement}{@code <}{@link FlyTo}{@code>}{@link JAXBElement}{@code <}{@link SoundCue}{@code>}{@link JAXBElement}{@code <}{@link AnimatedUpdate}{@code>}{@link JAXBElement}{@code <}{@link TourPrimitive}{@code>}{@link JAXBElement}{@code <}{@link Wait}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link SoundCue}{@code>}{@link JAXBElement}{@code <}{@link TourControl}{@code>}{@link JAXBElement}{@code <}{@link AnimatedUpdate}{@code>}{@link JAXBElement}{@code <}{@link Wait}{@code>}{@link JAXBElement}{@code <}{@link TourPrimitive}{@code>}{@link JAXBElement}{@code <}{@link FlyTo}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

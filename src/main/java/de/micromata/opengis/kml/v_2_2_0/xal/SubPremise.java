@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlAnyAttribute;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
@@ -37,6 +38,7 @@ import javax.xml.namespace.QName;
     "subPremise",
     "any"
 })
+@XmlRootElement(name = "SubPremise", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
 public class SubPremise {
 
     @XmlElement(name = "AddressLine")
@@ -951,6 +953,7 @@ public class SubPremise {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "SubPremiseLocation", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class SubPremiseLocation {
 
         @XmlValue
@@ -1083,6 +1086,7 @@ public class SubPremise {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "SubPremiseName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class SubPremiseName {
 
         @XmlValue
@@ -1320,6 +1324,7 @@ public class SubPremise {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "SubPremiseNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class SubPremiseNumber {
 
         @XmlValue
@@ -1698,6 +1703,7 @@ public class SubPremise {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "SubPremiseNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class SubPremiseNumberPrefix {
 
         @XmlValue
@@ -1935,6 +1941,7 @@ public class SubPremise {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "SubPremiseNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class SubPremiseNumberSuffix {
 
         @XmlValue

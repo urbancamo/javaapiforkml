@@ -3,7 +3,6 @@ package de.micromata.opengis.kml.v_2_2_0;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -21,7 +20,6 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlType(name = "altitudeModeEnumType")
 @XmlEnum
-@XmlRootElement(name = "altitudeMode", namespace = "http://www.opengis.net/kml/2.2")
 public enum AltitudeMode {
 
     @XmlEnumValue("clampToGround")
@@ -29,7 +27,11 @@ public enum AltitudeMode {
     @XmlEnumValue("relativeToGround")
     RELATIVE_TO_GROUND("relativeToGround"),
     @XmlEnumValue("absolute")
-    ABSOLUTE("absolute");
+    ABSOLUTE("absolute"),
+    @XmlEnumValue("clampToSeaFloor")
+    CLAMP_TO_SEA_FLOOR("clampToSeaFloor"),
+    @XmlEnumValue("relativeToSeaFloor")
+    RELATIVE_TO_SEA_FLOOR("relativeToSeaFloor");
     private final String value;
 
     AltitudeMode(String v) {

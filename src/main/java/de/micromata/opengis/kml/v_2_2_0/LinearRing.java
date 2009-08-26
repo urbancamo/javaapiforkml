@@ -62,7 +62,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "linearRingSimpleExtension",
     "linearRingObjectExtension"
 })
-@XmlRootElement(name = "LienarRing", namespace = "http://www.opengis.net/kml/2.2")
+@XmlRootElement(name = "LinearRing", namespace = "http://www.opengis.net/kml/2.2")
 public class LinearRing
     extends Geometry
 {
@@ -243,8 +243,8 @@ public class LinearRing
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
      *     
      */
@@ -257,8 +257,8 @@ public class LinearRing
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
      *     
      */

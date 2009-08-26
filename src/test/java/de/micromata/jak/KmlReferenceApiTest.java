@@ -101,7 +101,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#ballonStyle()
+	 * @see de.micromata.jak.internal.IKmlReference#ballonStyle()
 	 */
 	@Test
 	public void ballonStyle() {
@@ -120,7 +120,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#ballonStyleExample()
+	 * @see de.micromata.jak.internal.IKmlReference#ballonStyleExample()
 	 */
 	@Test
 	public void ballonStyleExample() {
@@ -153,7 +153,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#camera()
+	 * @see de.micromata.jak.internal.IKmlReference#camera()
 	 */
 	@Test
 	public void camera() {
@@ -174,7 +174,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#document()
+	 * @see de.micromata.jak.internal.IKmlReference#document()
 	 */
 	@Test
 	public void document() {
@@ -226,7 +226,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#documentExample()
+	 * @see de.micromata.jak.internal.IKmlReference#documentExample()
 	 */
 	@Test
 	public void documentExample() {
@@ -248,7 +248,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#extendedData()
+	 * @see de.micromata.jak.internal.IKmlReference#extendedData()
 	 */
 	@Test
 	public void extendedData() {
@@ -265,7 +265,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#extendedDataValue()
+	 * @see de.micromata.jak.internal.IKmlReference#extendedDataValue()
 	 */
 	@Test
 	public void extendedDataValue() {
@@ -281,7 +281,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#extendedDataSimpleData()
+	 * @see de.micromata.jak.internal.IKmlReference#extendedDataSimpleData()
 	 */
 	@Test
 	public void extendedDataSimpleData() {
@@ -311,7 +311,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#extendedDataNameSapcePrefix()
+	 * @see de.micromata.jak.internal.IKmlReference#extendedDataNameSapcePrefix()
 	 */
 	// FIXME: <ExtendedData xmlns:prefix="camp">
 	// FIXME: <camp:number>14</camp:number>
@@ -330,7 +330,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#featureAscriptionElement()
+	 * @see de.micromata.jak.internal.IKmlReference#featureAscriptionElement()
 	 */
 	@Test
 	public void featureAscriptionElement() {
@@ -353,7 +353,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#folder()
+	 * @see de.micromata.jak.internal.IKmlReference#folder()
 	 */
 	@Test
 	public void folder() {
@@ -384,7 +384,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#folderExample()
+	 * @see de.micromata.jak.internal.IKmlReference#folderExample()
 	 */
 	@Test
 	public void folderExample() {
@@ -417,7 +417,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#groundOverlay()
+	 * @see de.micromata.jak.internal.IKmlReference#groundOverlay()
 	 */
 	@Test
 	public void groundOverlay() {
@@ -465,7 +465,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#groundOverlayLatLonBox()
+	 * @see de.micromata.jak.internal.IKmlReference#groundOverlayLatLonBox()
 	 */
 	@Test
 	public void groundOverlayLatLonBox() {
@@ -483,7 +483,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#groundOverlayExample()
+	 * @see de.micromata.jak.internal.IKmlReference#groundOverlayExample()
 	 */
 	@Test
 	public void groundOverlayExample() {
@@ -514,7 +514,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#icon()
+	 * @see de.micromata.jak.internal.IKmlReference#icon()
 	 */
 	@Test
 	public void icon() {
@@ -534,7 +534,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#iconStyle()
+	 * @see de.micromata.jak.internal.IKmlReference#iconStyle()
 	 */
 	@Test
 	public void iconStyle() {
@@ -562,7 +562,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#iconStyleExample()
+	 * @see de.micromata.jak.internal.IKmlReference#iconStyleExample()
 	 */
 	@Test
 	public void iconStyleExample() {
@@ -588,7 +588,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#kml()
+	 * @see de.micromata.jak.internal.IKmlReference#kml()
 	 */
 	@Test
 	public void kml() {
@@ -601,7 +601,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#labelStyle()
+	 * @see de.micromata.jak.internal.IKmlReference#labelStyle()
 	 */
 	@Test
 	public void labelStyle() {
@@ -620,7 +620,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#labelStyleExample()
+	 * @see de.micromata.jak.internal.IKmlReference#labelStyleExample()
 	 */
 	@Test
 	public void labelStyleExample() {
@@ -643,7 +643,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#linearRing()
+	 * @see de.micromata.jak.internal.IKmlReference#linearRing()
 	 */
 	@Test
 	public void linearRing() {
@@ -662,7 +662,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#linearRingExample()
+	 * @see de.micromata.jak.internal.IKmlReference#linearRingExample()
 	 */
 	@Test
 	public void linearRingExample() {
@@ -684,7 +684,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#lineString()
+	 * @see de.micromata.jak.internal.IKmlReference#lineString()
 	 */
 	@Test
 	public void lineString() {
@@ -702,7 +702,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#lineStringExample()
+	 * @see de.micromata.jak.internal.IKmlReference#lineStringExample()
 	 */
 	@Test
 	public void lineStringExample() {
@@ -733,7 +733,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#lineStyle()
+	 * @see de.micromata.jak.internal.IKmlReference#lineStyle()
 	 */
 	@Test
 	public void lineStyle() {
@@ -752,7 +752,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#lineStyleExample()
+	 * @see de.micromata.jak.internal.IKmlReference#lineStyleExample()
 	 */
 	@Test
 	public void lineStyleExample() {
@@ -776,7 +776,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#link()
+	 * @see de.micromata.jak.internal.IKmlReference#link()
 	 */
 	@Test
 	public void link() {
@@ -798,7 +798,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#linkExample()
+	 * @see de.micromata.jak.internal.IKmlReference#linkExample()
 	 */
 	@Test
 	public void linkExample() {
@@ -823,7 +823,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#listStyle()
+	 * @see de.micromata.jak.internal.IKmlReference#listStyle()
 	 */
 	@Test
 	public void listStyle() {
@@ -842,7 +842,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#lookAt()
+	 * @see de.micromata.jak.internal.IKmlReference#lookAt()
 	 */
 	@Test
 	public void lookAt() {
@@ -865,7 +865,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#lookAtExample()
+	 * @see de.micromata.jak.internal.IKmlReference#lookAtExample()
 	 */
 	@Test
 	public void lookAtExample() {
@@ -890,7 +890,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#model()
+	 * @see de.micromata.jak.internal.IKmlReference#model()
 	 */
 	@Test
 	public void model() {
@@ -908,7 +908,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#modelLocation()
+	 * @see de.micromata.jak.internal.IKmlReference#modelLocation()
 	 */
 	@Test
 	public void modelLocation() {
@@ -924,7 +924,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#modelOrientation()
+	 * @see de.micromata.jak.internal.IKmlReference#modelOrientation()
 	 */
 	@Test
 	public void modelOrientation() {
@@ -940,7 +940,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#modelScale()
+	 * @see de.micromata.jak.internal.IKmlReference#modelScale()
 	 */
 	@Test
 	public void modelScale() {
@@ -957,7 +957,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#modelResourceMap()
+	 * @see de.micromata.jak.internal.IKmlReference#modelResourceMap()
 	 */
 	@Test
 	public void modelResourceMap() {
@@ -972,7 +972,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#modelExample()
+	 * @see de.micromata.jak.internal.IKmlReference#modelExample()
 	 */
 	@Test
 	public void modelExample() {
@@ -1007,7 +1007,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#multiGeometry()
+	 * @see de.micromata.jak.internal.IKmlReference#multiGeometry()
 	 */
 	@Test
 	public void multiGeometry() {
@@ -1020,7 +1020,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#multiGeometryExample()
+	 * @see de.micromata.jak.internal.IKmlReference#multiGeometryExample()
 	 */
 	@Test
 	public void multiGeometryExample() {
@@ -1044,7 +1044,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#networkLink()
+	 * @see de.micromata.jak.internal.IKmlReference#networkLink()
 	 */
 	@Test
 	public void networkLink() {
@@ -1082,7 +1082,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#networkLinkExample()
+	 * @see de.micromata.jak.internal.IKmlReference#networkLinkExample()
 	 */
 	@Test
 	public void networkLinkExample() {
@@ -1098,7 +1098,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#networkLinkControl()
+	 * @see de.micromata.jak.internal.IKmlReference#networkLinkControl()
 	 */
 	@Test
 	public void networkLinkControl() {
@@ -1123,7 +1123,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#networkLinkControlExample()
+	 * @see de.micromata.jak.internal.IKmlReference#networkLinkControlExample()
 	 */
 	@Test
 	public void networkLinkControlExample() {
@@ -1141,7 +1141,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#overlayIcon()
+	 * @see de.micromata.jak.internal.IKmlReference#overlayIcon()
 	 */
 	@Test
 	public void overlayIcon() {
@@ -1154,7 +1154,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#photoOverlay()
+	 * @see de.micromata.jak.internal.IKmlReference#photoOverlay()
 	 */
 	@Test
 	public void photoOverlay() {
@@ -1210,7 +1210,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#photoOverlayExample()
+	 * @see de.micromata.jak.internal.IKmlReference#photoOverlayExample()
 	 */
 	@Test
 	public void photoOverlayExample() {
@@ -1246,7 +1246,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#placemark()
+	 * @see de.micromata.jak.internal.IKmlReference#placemark()
 	 */
 	@Test
 	public void placemark() {
@@ -1280,7 +1280,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#placemarkExample()
+	 * @see de.micromata.jak.internal.IKmlReference#placemarkExample()
 	 */
 	@Test
 	public void placemarkExample() {
@@ -1305,7 +1305,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#point()
+	 * @see de.micromata.jak.internal.IKmlReference#point()
 	 */
 	@Test
 	public void point() {
@@ -1322,7 +1322,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#pointExample()
+	 * @see de.micromata.jak.internal.IKmlReference#pointExample()
 	 */
 	@Test
 	public void pointExample() {
@@ -1336,7 +1336,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#polygon()
+	 * @see de.micromata.jak.internal.IKmlReference#polygon()
 	 */
 	@Test
 	public void polygon() {
@@ -1361,7 +1361,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#polygonExample()
+	 * @see de.micromata.jak.internal.IKmlReference#polygonExample()
 	 */
 	@Test
 	public void polygonExample() {
@@ -1390,7 +1390,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#polyStyle()
+	 * @see de.micromata.jak.internal.IKmlReference#polyStyle()
 	 */
 	@Test
 	public void polyStyle() {
@@ -1411,7 +1411,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#polyStyleExample()
+	 * @see de.micromata.jak.internal.IKmlReference#polyStyleExample()
 	 */
 	@Test
 	public void polyStyleExample() {
@@ -1444,7 +1444,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#region()
+	 * @see de.micromata.jak.internal.IKmlReference#region()
 	 */
 	@Test
 	public void region() {
@@ -1472,7 +1472,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#regionLatLonAltBox()
+	 * @see de.micromata.jak.internal.IKmlReference#regionLatLonAltBox()
 	 */
 	@Test
 	public void regionLatLonAltBox() {
@@ -1492,7 +1492,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#regionLod()
+	 * @see de.micromata.jak.internal.IKmlReference#regionLod()
 	 */
 	@Test
 	public void regionLod() {
@@ -1509,7 +1509,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#regionExample()
+	 * @see de.micromata.jak.internal.IKmlReference#regionExample()
 	 */
 	@Test
 	public void regionExample() {
@@ -1537,7 +1537,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#schema()
+	 * @see de.micromata.jak.internal.IKmlReference#schema()
 	 */
 	@Test
 	public void schema() {
@@ -1557,7 +1557,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#schemaExample()
+	 * @see de.micromata.jak.internal.IKmlReference#schemaExample()
 	 */
 	@Test
 	public void schemaExample() {
@@ -1590,7 +1590,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#screenOverlay()
+	 * @see de.micromata.jak.internal.IKmlReference#screenOverlay()
 	 */
 	@Test
 	public void screenOverlay() {
@@ -1640,7 +1640,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#screenOverlayExample()
+	 * @see de.micromata.jak.internal.IKmlReference#screenOverlayExample()
 	 */
 	@Test
 	public void screenOverlayExample() {
@@ -1678,7 +1678,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#style()
+	 * @see de.micromata.jak.internal.IKmlReference#style()
 	 */
 	@Test
 	public void style() {
@@ -1700,7 +1700,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#styleExample()
+	 * @see de.micromata.jak.internal.IKmlReference#styleExample()
 	 */
 	@Test
 	public void styleExample() {
@@ -1733,7 +1733,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#styleMap()
+	 * @see de.micromata.jak.internal.IKmlReference#styleMap()
 	 */
 	@Test
 	public void styleMap() {
@@ -1749,7 +1749,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#styleMapPair()
+	 * @see de.micromata.jak.internal.IKmlReference#styleMapPair()
 	 */
 	@Test
 	public void styleMapPair() {
@@ -1764,7 +1764,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#styleMapExample()
+	 * @see de.micromata.jak.internal.IKmlReference#styleMapExample()
 	 */
 	@Test
 	public void styleMapExample() {
@@ -1795,7 +1795,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#timeSpan()
+	 * @see de.micromata.jak.internal.IKmlReference#timeSpan()
 	 */
 	@Test
 	public void timeSpan() {
@@ -1810,7 +1810,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#timeStamp()
+	 * @see de.micromata.jak.internal.IKmlReference#timeStamp()
 	 */
 	@Test
 	public void timeStamp() {
@@ -1824,7 +1824,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#updateChange()
+	 * @see de.micromata.jak.internal.IKmlReference#updateChange()
 	 */
 	@Test
 	public void updateChange() {
@@ -1843,7 +1843,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#updateCreate()
+	 * @see de.micromata.jak.internal.IKmlReference#updateCreate()
 	 */
 	@Test
 	public void updateCreate() {
@@ -1861,7 +1861,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 	/**
 	 * 
-	 * @see de.micromata.jak.internal.IKMLReference#updateDelete()
+	 * @see de.micromata.jak.internal.IKmlReference#updateDelete()
 	 */
 	@Test
 	public void updateDelete() {

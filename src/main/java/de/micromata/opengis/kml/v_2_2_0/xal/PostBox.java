@@ -684,6 +684,7 @@ public class PostBox {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostBoxNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostBoxNumber {
 
         @XmlValue
@@ -827,6 +828,7 @@ public class PostBox {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostBoxNumberExtension", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostBoxNumberExtension {
 
         @XmlValue
@@ -970,6 +972,7 @@ public class PostBox {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostBoxNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostBoxNumberPrefix {
 
         @XmlValue
@@ -1160,6 +1163,7 @@ public class PostBox {
     @XmlType(name = "", propOrder = {
         "content"
     })
+    @XmlRootElement(name = "PostBoxNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     public static class PostBoxNumberSuffix {
 
         @XmlValue
