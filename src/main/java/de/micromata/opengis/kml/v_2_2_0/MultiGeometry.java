@@ -298,7 +298,7 @@ public class MultiGeometry
      * add a value to the geometry property collection
      * 
      * @param geometry
-     *     Objects of the following type are allowed in the list: {@code <}{@link LineString}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link MultiGeometry}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link LineString}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

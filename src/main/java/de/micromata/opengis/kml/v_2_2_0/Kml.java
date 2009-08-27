@@ -37,6 +37,7 @@ import javax.xml.validation.SchemaFactory;
 import com.sun.istack.NotNull;
 import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
+import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
 
@@ -210,17 +211,17 @@ public class Kml {
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
      *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Container}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -232,17 +233,17 @@ public class Kml {
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
      *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Container}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
      *     
      */
     public void setFeature(Feature value) {
@@ -694,6 +695,27 @@ public class Kml {
         try {
             m = this.createMarshaller();
             m.marshal(this, writer);
+            return true;
+        } catch (JAXBException _x) {
+            _x.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
+     * Java to KML
+     * The object graph is marshalled to a Contenthandler object.
+     * Useful if  marshaller cis needed to generate CDATA blocks.
+     * {@link https://jaxb.dev.java.net/faq/}
+     * {@link http://code.google.com/p/javaapiforkml/issues/detail?id=7}
+     * The object is not saved as a zipped .kmz file.
+     * @see marshalKmz(String, Kml...)
+     * 
+     */
+    public boolean marshal(final ContentHandler contenthandler) {
+        try {
+            m = this.createMarshaller();
+            m.marshal(this, contenthandler);
             return true;
         } catch (JAXBException _x) {
             _x.printStackTrace();
