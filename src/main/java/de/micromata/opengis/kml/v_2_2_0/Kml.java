@@ -211,17 +211,17 @@ public class Kml {
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -233,17 +233,17 @@ public class Kml {
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
      *     
      */
     public void setFeature(Feature value) {

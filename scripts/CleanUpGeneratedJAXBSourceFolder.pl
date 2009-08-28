@@ -174,7 +174,7 @@ sub removeJAXBElementForOneJavaFile {
 		$currentJavaFile[$i] =~ s/(\@XmlElementRef\()(name = "AbstractFeatureSimpleExtensionGroup")(, namespace = .*?)(\))/\@XmlElement($2)/g;
 		
 		#@XmlElementRef(name = "AbstractTourPrimitiveGroup", namespace = "http://www.google.com/kml/ext/2.2")
-		$currentJavaFile[$i] =~ s/(\@XmlElement\()(name = "AbstractFeatureObjectExtensionGroup".*?)(\))/\@XmlElementRef($2)/g;
+		#$currentJavaFile[$i] =~ s/(\@XmlElement\()(name = "AbstractFeatureObjectExtensionGroup".*?)(\))/\@XmlElementRef($2)/g;
 		$currentJavaFile[$i] =~ s/(\@XmlElement\()(name = "AbstractTourPrimitiveGroup")(, namespace = .*?)(\))/\@XmlElementRef($2)/g;
 		#@XmlElement(name = "AbstractTourPrimitiveGroup")
 	
