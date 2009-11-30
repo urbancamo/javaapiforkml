@@ -77,12 +77,13 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
     "overlayObjectExtension"
 })
 @XmlSeeAlso({
-    ScreenOverlay.class,
     PhotoOverlay.class,
+    ScreenOverlay.class,
     GroundOverlay.class
 })
 public abstract class Overlay
     extends Feature
+    implements Cloneable
 {
 
     /**
@@ -712,6 +713,22 @@ public abstract class Overlay
     public Overlay withFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
         super.withFeatureObjectExtension(featureObjectExtension);
         return this;
+    }
+
+    @Override
+    public Overlay clone() {
+        Overlay copy;
+        copy = ((Overlay) super.clone());
+        copy.icon = ((icon == null)?null:((Icon) icon.clone()));
+        copy.overlaySimpleExtension = new ArrayList<Object>((getOverlaySimpleExtension().size()));
+        for (Object iter: overlaySimpleExtension) {
+            copy.overlaySimpleExtension.add(iter);
+        }
+        copy.overlayObjectExtension = new ArrayList<AbstractObject>((getOverlayObjectExtension().size()));
+        for (AbstractObject iter: overlayObjectExtension) {
+            copy.overlayObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

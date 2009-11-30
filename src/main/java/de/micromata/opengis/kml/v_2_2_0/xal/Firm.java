@@ -31,7 +31,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "Firm", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class Firm {
+public class Firm implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -523,6 +524,35 @@ public class Firm {
         return this;
     }
 
+    @Override
+    public Firm clone() {
+        Firm copy;
+        try {
+            copy = ((Firm) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.firmName = new ArrayList<Firm.FirmName>((getFirmName().size()));
+        for (Firm.FirmName iter: firmName) {
+            copy.firmName.add(iter.clone());
+        }
+        copy.department = new ArrayList<Department>((getDepartment().size()));
+        for (Department iter: department) {
+            copy.department.add(iter.clone());
+        }
+        copy.mailStop = ((mailStop == null)?null:((MailStop) mailStop.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -532,7 +562,8 @@ public class Firm {
         "content"
     })
     @XmlRootElement(name = "FirmName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class FirmName {
+    public static class FirmName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -710,6 +741,17 @@ public class Firm {
         public Firm.FirmName withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public Firm.FirmName clone() {
+            Firm.FirmName copy;
+            try {
+                copy = ((Firm.FirmName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

@@ -49,6 +49,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 })
 public abstract class TimePrimitive
     extends AbstractObject
+    implements Cloneable
 {
 
     @XmlElement(name = "AbstractTimePrimitiveSimpleExtensionGroup")
@@ -250,6 +251,21 @@ public abstract class TimePrimitive
     public TimePrimitive withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public TimePrimitive clone() {
+        TimePrimitive copy;
+        copy = ((TimePrimitive) super.clone());
+        copy.timePrimitiveSimpleExtension = new ArrayList<Object>((getTimePrimitiveSimpleExtension().size()));
+        for (Object iter: timePrimitiveSimpleExtension) {
+            copy.timePrimitiveSimpleExtension.add(iter);
+        }
+        copy.timePrimitiveObjectExtension = new ArrayList<AbstractObject>((getTimePrimitiveObjectExtension().size()));
+        for (AbstractObject iter: timePrimitiveObjectExtension) {
+            copy.timePrimitiveObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

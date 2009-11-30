@@ -34,6 +34,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Orientation", namespace = "http://www.opengis.net/kml/2.2")
 public class Orientation
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -102,7 +103,7 @@ public class Orientation
      * specified in degrees from 0 to 360. 
      * </p>
      * <p>
-     * Rotation, in degrees, of the camera around the Z axis. Values range from ?180 to 
+     * Rotation, in degrees, of the camera around the Z axis. Values range from −180 to 
      * +180 degrees. 
      * </p>
      * <p>
@@ -437,6 +438,21 @@ public class Orientation
     public Orientation withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Orientation clone() {
+        Orientation copy;
+        copy = ((Orientation) super.clone());
+        copy.orientationSimpleExtension = new ArrayList<Object>((getOrientationSimpleExtension().size()));
+        for (Object iter: orientationSimpleExtension) {
+            copy.orientationSimpleExtension.add(iter);
+        }
+        copy.orientationObjectExtension = new ArrayList<AbstractObject>((getOrientationObjectExtension().size()));
+        for (AbstractObject iter: orientationObjectExtension) {
+            copy.orientationObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

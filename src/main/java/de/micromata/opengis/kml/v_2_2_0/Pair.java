@@ -40,6 +40,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Pair", namespace = "http://www.opengis.net/kml/2.2")
 public class Pair
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -80,8 +81,8 @@ public class Pair
      * that contains it. A style defined as the child of a <Document> is called a "shared 
      * style." A shared style must have an id defined for it. This id is referenced by 
      * one or more Features within the <Document>. In cases where a style element is defined 
-     * both in a shared style and in an inline style for a FeatureÑthat is, a Folder, GroundOverlay, 
-     * NetworkLink, Placemark, or ScreenOverlayÑthe value for the Feature's inline style 
+     * both in a shared style and in an inline style for a Featureâ€”that is, a Folder, GroundOverlay, 
+     * NetworkLink, Placemark, or ScreenOverlayâ€”the value for the Feature's inline style 
      * takes precedence over the value for the shared style. 
      * </p>
      * 
@@ -183,9 +184,9 @@ public class Pair
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link Style}{@code>}
-     *     {@code <}{@link StyleMap}{@code>}
      *     
      */
     public StyleSelector getStyleSelector() {
@@ -197,9 +198,9 @@ public class Pair
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link Style}{@code>}
-     *     {@code <}{@link StyleMap}{@code>}
      *     
      */
     public void setStyleSelector(StyleSelector value) {
@@ -475,6 +476,22 @@ public class Pair
     public Pair withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Pair clone() {
+        Pair copy;
+        copy = ((Pair) super.clone());
+        copy.styleSelector = ((styleSelector == null)?null:((StyleSelector ) styleSelector.clone()));
+        copy.pairSimpleExtension = new ArrayList<Object>((getPairSimpleExtension().size()));
+        for (Object iter: pairSimpleExtension) {
+            copy.pairSimpleExtension.add(iter);
+        }
+        copy.pairObjectExtension = new ArrayList<AbstractObject>((getPairObjectExtension().size()));
+        for (AbstractObject iter: pairObjectExtension) {
+            copy.pairObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

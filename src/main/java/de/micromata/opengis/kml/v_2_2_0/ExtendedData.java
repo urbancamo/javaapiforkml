@@ -60,7 +60,8 @@ import org.w3c.dom.Element;
     "any"
 })
 @XmlRootElement(name = "ExtendedData", namespace = "http://www.opengis.net/kml/2.2")
-public class ExtendedData {
+public class ExtendedData implements Cloneable
+{
 
     /**
      * <data name ="string">
@@ -327,6 +328,29 @@ public class ExtendedData {
     public ExtendedData withAny(final List<Object> any) {
         this.setAny(any);
         return this;
+    }
+
+    @Override
+    public ExtendedData clone() {
+        ExtendedData copy;
+        try {
+            copy = ((ExtendedData) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.data = new ArrayList<Data>((getData().size()));
+        for (Data iter: data) {
+            copy.data.add(iter.clone());
+        }
+        copy.schemaData = new ArrayList<SchemaData>((getSchemaData().size()));
+        for (SchemaData iter: schemaData) {
+            copy.schemaData.add(iter.clone());
+        }
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
     }
 
 }

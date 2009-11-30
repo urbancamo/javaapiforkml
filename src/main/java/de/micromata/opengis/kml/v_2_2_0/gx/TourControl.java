@@ -20,6 +20,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "TourControl", namespace = "http://www.google.com/kml/ext/2.2")
 public class TourControl
     extends TourPrimitive
+    implements Cloneable
 {
 
     @XmlElement(defaultValue = "pause")
@@ -114,6 +115,13 @@ public class TourControl
     public TourControl withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public TourControl clone() {
+        TourControl copy;
+        copy = ((TourControl) super.clone());
+        return copy;
     }
 
 }

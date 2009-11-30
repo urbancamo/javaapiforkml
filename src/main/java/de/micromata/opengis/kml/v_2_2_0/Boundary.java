@@ -21,7 +21,8 @@ import javax.xml.bind.annotation.XmlType;
     "boundaryObjectExtension"
 })
 @XmlRootElement(name = "Boundary", namespace = "http://www.opengis.net/kml/2.2")
-public class Boundary {
+public class Boundary implements Cloneable
+{
 
     @XmlElement(name = "LinearRing")
     protected LinearRing linearRing;
@@ -229,6 +230,26 @@ public class Boundary {
     public Boundary withBoundaryObjectExtension(final List<AbstractObject> boundaryObjectExtension) {
         this.setBoundaryObjectExtension(boundaryObjectExtension);
         return this;
+    }
+
+    @Override
+    public Boundary clone() {
+        Boundary copy;
+        try {
+            copy = ((Boundary) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.linearRing = ((linearRing == null)?null:((LinearRing) linearRing.clone()));
+        copy.boundarySimpleExtension = new ArrayList<Object>((getBoundarySimpleExtension().size()));
+        for (Object iter: boundarySimpleExtension) {
+            copy.boundarySimpleExtension.add(iter);
+        }
+        copy.boundaryObjectExtension = new ArrayList<AbstractObject>((getBoundaryObjectExtension().size()));
+        for (AbstractObject iter: boundaryObjectExtension) {
+            copy.boundaryObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

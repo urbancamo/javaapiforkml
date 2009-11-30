@@ -48,6 +48,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "MultiGeometry", namespace = "http://www.opengis.net/kml/2.2")
 public class MultiGeometry
     extends Geometry
+    implements Cloneable
 {
 
     /**
@@ -196,16 +197,16 @@ public class MultiGeometry
     }
 
     /**
-     * Creates a new instance of {@link LinearRing} and adds it to geometry.
+     * Creates a new instance of {@link Model} and adds it to geometry.
      * This method is a short version for:
      * <code>
-     * LinearRing linearRing = new LinearRing();
-     * this.getGeometry().add(linearRing); </code>
+     * Model model = new Model();
+     * this.getGeometry().add(model); </code>
      * 
      * 
      */
-    public LinearRing createAndAddLinearRing() {
-        LinearRing newValue = new LinearRing();
+    public Model createAndAddModel() {
+        Model newValue = new Model();
         this.getGeometry().add(newValue);
         return newValue;
     }
@@ -226,16 +227,31 @@ public class MultiGeometry
     }
 
     /**
-     * Creates a new instance of {@link Model} and adds it to geometry.
+     * Creates a new instance of {@link Polygon} and adds it to geometry.
      * This method is a short version for:
      * <code>
-     * Model model = new Model();
-     * this.getGeometry().add(model); </code>
+     * Polygon polygon = new Polygon();
+     * this.getGeometry().add(polygon); </code>
      * 
      * 
      */
-    public Model createAndAddModel() {
-        Model newValue = new Model();
+    public Polygon createAndAddPolygon() {
+        Polygon newValue = new Polygon();
+        this.getGeometry().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LinearRing} and adds it to geometry.
+     * This method is a short version for:
+     * <code>
+     * LinearRing linearRing = new LinearRing();
+     * this.getGeometry().add(linearRing); </code>
+     * 
+     * 
+     */
+    public LinearRing createAndAddLinearRing() {
+        LinearRing newValue = new LinearRing();
         this.getGeometry().add(newValue);
         return newValue;
     }
@@ -271,21 +287,6 @@ public class MultiGeometry
     }
 
     /**
-     * Creates a new instance of {@link Polygon} and adds it to geometry.
-     * This method is a short version for:
-     * <code>
-     * Polygon polygon = new Polygon();
-     * this.getGeometry().add(polygon); </code>
-     * 
-     * 
-     */
-    public Polygon createAndAddPolygon() {
-        Polygon newValue = new Polygon();
-        this.getGeometry().add(newValue);
-        return newValue;
-    }
-
-    /**
      * @see geometry
      * 
      * @param geometry
@@ -298,7 +299,7 @@ public class MultiGeometry
      * add a value to the geometry property collection
      * 
      * @param geometry
-     *     Objects of the following type are allowed in the list: {@code <}{@link LineString}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link LineString}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -471,6 +472,25 @@ public class MultiGeometry
     public MultiGeometry withGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {
         super.withGeometryObjectExtension(geometryObjectExtension);
         return this;
+    }
+
+    @Override
+    public MultiGeometry clone() {
+        MultiGeometry copy;
+        copy = ((MultiGeometry) super.clone());
+        copy.geometry = new ArrayList<Geometry>((getGeometry().size()));
+        for (Geometry iter: geometry) {
+            copy.geometry.add(iter.clone());
+        }
+        copy.multiGeometrySimpleExtension = new ArrayList<Object>((getMultiGeometrySimpleExtension().size()));
+        for (Object iter: multiGeometrySimpleExtension) {
+            copy.multiGeometrySimpleExtension.add(iter);
+        }
+        copy.multiGeometryObjectExtension = new ArrayList<AbstractObject>((getMultiGeometryObjectExtension().size()));
+        for (AbstractObject iter: multiGeometryObjectExtension) {
+            copy.multiGeometryObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

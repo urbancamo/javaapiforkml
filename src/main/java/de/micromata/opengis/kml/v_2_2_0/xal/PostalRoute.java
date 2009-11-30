@@ -30,7 +30,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "PostalRoute", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class PostalRoute {
+public class PostalRoute implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -445,6 +446,31 @@ public class PostalRoute {
         return this;
     }
 
+    @Override
+    public PostalRoute clone() {
+        PostalRoute copy;
+        try {
+            copy = ((PostalRoute) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.postalRouteName = new ArrayList<PostalRoute.PostalRouteName>((getPostalRouteName().size()));
+        for (PostalRoute.PostalRouteName iter: postalRouteName) {
+            copy.postalRouteName.add(iter.clone());
+        }
+        copy.postalRouteNumber = ((postalRouteNumber == null)?null:((PostalRoute.PostalRouteNumber) postalRouteNumber.clone()));
+        copy.postBox = ((postBox == null)?null:((PostBox) postBox.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -454,7 +480,8 @@ public class PostalRoute {
         "content"
     })
     @XmlRootElement(name = "PostalRouteName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostalRouteName {
+    public static class PostalRouteName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -634,6 +661,17 @@ public class PostalRoute {
             return this;
         }
 
+        @Override
+        public PostalRoute.PostalRouteName clone() {
+            PostalRoute.PostalRouteName copy;
+            try {
+                copy = ((PostalRoute.PostalRouteName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -645,7 +683,8 @@ public class PostalRoute {
         "content"
     })
     @XmlRootElement(name = "PostalRouteNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostalRouteNumber {
+    public static class PostalRouteNumber implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -776,6 +815,17 @@ public class PostalRoute {
         public PostalRoute.PostalRouteNumber withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public PostalRoute.PostalRouteNumber clone() {
+            PostalRoute.PostalRouteNumber copy;
+            try {
+                copy = ((PostalRoute.PostalRouteNumber) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

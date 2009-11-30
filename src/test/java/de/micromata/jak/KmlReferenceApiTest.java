@@ -233,7 +233,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Kml kml = KmlFactory.createKml();
 		final Document document = kml.createAndSetDocument().withName("Document.kml").withOpen(true);
 		final Style style = document.createAndAddStyle().withId("exampleStyleDocument");
-		final LabelStyle labelStyle = style.createAndSetLabelStyle().withColor("ff0000cc");
+		style.createAndSetLabelStyle().withColor("ff0000cc");
 
 		final Placemark placemark1 = document.createAndAddPlacemark().withName("Document Feature 1").withStyleUrl("#exampleStyleDocument");
 		placemark1.createAndSetPoint().createAndSetCoordinates().add(new Coordinate(-122.371,37.816,0));
@@ -628,7 +628,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Document document = kml.createAndSetDocument();
 		final Style style = document.createAndAddStyle().withId("randomLabelColor");
 
-		final LabelStyle labelstyle = style.createAndSetLabelStyle()
+		style.createAndSetLabelStyle()
 		.withColor("ff0000cc")
 		.withColorMode(ColorMode.RANDOM)
 		.withScale(1.5d);
@@ -709,7 +709,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Kml kml = KmlFactory.createKml();
 		final Document document = kml.createAndSetDocument().withName("LineString.kml").withOpen(true);
 
-		final LookAt lookat = document.createAndSetLookAt()
+		document.createAndSetLookAt()
 		.withLongitude(-122.36415)
 		.withLatitude(37.824553)
 		.withRange(150.0d)
@@ -985,7 +985,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 		model.createAndSetScale().withX(1.0).withY(1.0).withZ(1.0);
 
-		final Link link = model.createAndSetLink().withHref("house.dae").withRefreshMode(RefreshMode.ON_CHANGE);
+		model.createAndSetLink().withHref("house.dae").withRefreshMode(RefreshMode.ON_CHANGE);
 
 		final ResourceMap resourcemap = model.createAndSetResourceMap();
 		resourcemap.createAndAddAlias()
@@ -1128,7 +1128,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	@Test
 	public void networkLinkControlExample() {
 		final Kml kml = KmlFactory.createKml();
-		final NetworkLinkControl networklinkcontrol = kml.createAndSetNetworkLinkControl()
+		kml.createAndSetNetworkLinkControl()
 		.withMessage("This is a pop-up message. You will only see this once")
 		.withCookie("cookie=sometext")
 		.withLinkName("New KML features")
@@ -1515,7 +1515,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	public void regionExample() {
 		final Region region = KmlFactory.createRegion();
 
-		final LatLonAltBox latlonBox = region.createAndSetLatLonAltBox()
+		region.createAndSetLatLonAltBox()
 		.withNorth(50.625)
 		.withSouth(45.0d)
 		.withEast(28.125)
@@ -1524,7 +1524,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withMaxAltitude(50.0)
 		.withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
 
-		final Lod lod = region.createAndSetLod()
+		region.createAndSetLod()
 		.withMinLodPixels(128.0)
 		.withMaxLodPixels(1024.0)
 		.withMinFadeExtent(128.0)

@@ -34,7 +34,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "LargeMailUser", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class LargeMailUser {
+public class LargeMailUser implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -472,11 +473,11 @@ public class LargeMailUser {
      * 
      * @param postalCode
      *     required parameter
+     * @param dependentLocality
+     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
-     *     required parameter
-     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -721,6 +722,38 @@ public class LargeMailUser {
         return this;
     }
 
+    @Override
+    public LargeMailUser clone() {
+        LargeMailUser copy;
+        try {
+            copy = ((LargeMailUser) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.largeMailUserName = new ArrayList<LargeMailUser.LargeMailUserName>((getLargeMailUserName().size()));
+        for (LargeMailUser.LargeMailUserName iter: largeMailUserName) {
+            copy.largeMailUserName.add(iter.clone());
+        }
+        copy.largeMailUserIdentifier = ((largeMailUserIdentifier == null)?null:((LargeMailUser.LargeMailUserIdentifier) largeMailUserIdentifier.clone()));
+        copy.buildingName = new ArrayList<BuildingName>((getBuildingName().size()));
+        for (BuildingName iter: buildingName) {
+            copy.buildingName.add(iter.clone());
+        }
+        copy.department = ((department == null)?null:((Department) department.clone()));
+        copy.postBox = ((postBox == null)?null:((PostBox) postBox.clone()));
+        copy.thoroughfare = ((thoroughfare == null)?null:((Thoroughfare) thoroughfare.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -730,7 +763,8 @@ public class LargeMailUser {
         "content"
     })
     @XmlRootElement(name = "LargeMailUserIdentifier", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class LargeMailUserIdentifier {
+    public static class LargeMailUserIdentifier implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -956,6 +990,17 @@ public class LargeMailUser {
             return this;
         }
 
+        @Override
+        public LargeMailUser.LargeMailUserIdentifier clone() {
+            LargeMailUser.LargeMailUserIdentifier copy;
+            try {
+                copy = ((LargeMailUser.LargeMailUserIdentifier) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -967,7 +1012,8 @@ public class LargeMailUser {
         "content"
     })
     @XmlRootElement(name = "LargeMailUserName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class LargeMailUserName {
+    public static class LargeMailUserName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1143,6 +1189,17 @@ public class LargeMailUser {
         public LargeMailUser.LargeMailUserName withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public LargeMailUser.LargeMailUserName clone() {
+            LargeMailUser.LargeMailUserName copy;
+            try {
+                copy = ((LargeMailUser.LargeMailUserName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

@@ -45,6 +45,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "TimeStamp", namespace = "http://www.opengis.net/kml/2.2")
 public class TimeStamp
     extends TimePrimitive
+    implements Cloneable
 {
 
     /**
@@ -352,6 +353,21 @@ public class TimeStamp
     public TimeStamp withTimePrimitiveObjectExtension(final List<AbstractObject> timePrimitiveObjectExtension) {
         super.withTimePrimitiveObjectExtension(timePrimitiveObjectExtension);
         return this;
+    }
+
+    @Override
+    public TimeStamp clone() {
+        TimeStamp copy;
+        copy = ((TimeStamp) super.clone());
+        copy.timeStampSimpleExtension = new ArrayList<Object>((getTimeStampSimpleExtension().size()));
+        for (Object iter: timeStampSimpleExtension) {
+            copy.timeStampSimpleExtension.add(iter);
+        }
+        copy.timeStampObjectExtension = new ArrayList<AbstractObject>((getTimeStampObjectExtension().size()));
+        for (AbstractObject iter: timeStampObjectExtension) {
+            copy.timeStampObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

@@ -60,6 +60,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "AnimatedUpdate", namespace = "http://www.google.com/kml/ext/2.2")
 public class AnimatedUpdate
     extends TourPrimitive
+    implements Cloneable
 {
 
     /**
@@ -289,6 +290,14 @@ public class AnimatedUpdate
     public AnimatedUpdate withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public AnimatedUpdate clone() {
+        AnimatedUpdate copy;
+        copy = ((AnimatedUpdate) super.clone());
+        copy.update = ((update == null)?null:((Update) update.clone()));
+        return copy;
     }
 
 }

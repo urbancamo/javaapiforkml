@@ -39,6 +39,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Scale", namespace = "http://www.opengis.net/kml/2.2")
 public class Scale
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -379,6 +380,21 @@ public class Scale
     public Scale withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Scale clone() {
+        Scale copy;
+        copy = ((Scale) super.clone());
+        copy.scaleSimpleExtension = new ArrayList<Object>((getScaleSimpleExtension().size()));
+        for (Object iter: scaleSimpleExtension) {
+            copy.scaleSimpleExtension.add(iter);
+        }
+        copy.scaleObjectExtension = new ArrayList<AbstractObject>((getScaleObjectExtension().size()));
+        for (AbstractObject iter: scaleObjectExtension) {
+            copy.scaleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

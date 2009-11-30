@@ -35,6 +35,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "LatLonAltBox", namespace = "http://www.opengis.net/kml/2.2")
 public class LatLonAltBox
     extends AbstractLatLonBox
+    implements Cloneable
 {
 
     /**
@@ -155,8 +156,8 @@ public class LatLonAltBox
      * @return
      *     possible object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -169,8 +170,8 @@ public class LatLonAltBox
      * @param value
      *     allowed object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -481,6 +482,21 @@ public class LatLonAltBox
     public LatLonAltBox withAbstractLatLonBoxObjectExtension(final List<AbstractObject> abstractLatLonBoxObjectExtension) {
         super.withAbstractLatLonBoxObjectExtension(abstractLatLonBoxObjectExtension);
         return this;
+    }
+
+    @Override
+    public LatLonAltBox clone() {
+        LatLonAltBox copy;
+        copy = ((LatLonAltBox) super.clone());
+        copy.latLonAltBoxSimpleExtension = new ArrayList<Object>((getLatLonAltBoxSimpleExtension().size()));
+        for (Object iter: latLonAltBoxSimpleExtension) {
+            copy.latLonAltBoxSimpleExtension.add(iter);
+        }
+        copy.latLonAltBoxObjectExtension = new ArrayList<AbstractObject>((getLatLonAltBoxObjectExtension().size()));
+        for (AbstractObject iter: latLonAltBoxObjectExtension) {
+            copy.latLonAltBoxObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

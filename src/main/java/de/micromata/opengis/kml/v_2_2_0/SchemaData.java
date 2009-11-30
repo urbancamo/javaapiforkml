@@ -42,6 +42,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "SchemaData", namespace = "http://www.opengis.net/kml/2.2")
 public class SchemaData
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -316,6 +317,21 @@ public class SchemaData
     public SchemaData withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public SchemaData clone() {
+        SchemaData copy;
+        copy = ((SchemaData) super.clone());
+        copy.simpleData = new ArrayList<SimpleData>((getSimpleData().size()));
+        for (SimpleData iter: simpleData) {
+            copy.simpleData.add(iter.clone());
+        }
+        copy.schemaDataExtension = new ArrayList<Object>((getSchemaDataExtension().size()));
+        for (Object iter: schemaDataExtension) {
+            copy.schemaDataExtension.add(iter);
+        }
+        return copy;
     }
 
 }

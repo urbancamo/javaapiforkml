@@ -71,6 +71,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Region", namespace = "http://www.opengis.net/kml/2.2")
 public class Region
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -98,7 +99,7 @@ public class Region
      * the Region is active. If this limit is not reached, the associated geometry is considered 
      * to be too far from the user's viewpoint to be drawn. <maxLodPixels> Measurement 
      * in screen pixels that represents the maximum limit of the visibility range for a 
-     * given Region. A value of ?1, the default, indicates "active to infinite size." <minFadeExtent> 
+     * given Region. A value of −1, the default, indicates "active to infinite size." <minFadeExtent> 
      * Distance over which the geometry fades, from fully opaque to fully transparent. 
      * This ramp value, expressed in screen pixels, is applied at the minimum end of the 
      * LOD (visibility) limits. <maxFadeExtent> Distance over which the geometry fades, 
@@ -434,6 +435,23 @@ public class Region
     public Region withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Region clone() {
+        Region copy;
+        copy = ((Region) super.clone());
+        copy.latLonAltBox = ((latLonAltBox == null)?null:((LatLonAltBox) latLonAltBox.clone()));
+        copy.lod = ((lod == null)?null:((Lod) lod.clone()));
+        copy.regionSimpleExtension = new ArrayList<Object>((getRegionSimpleExtension().size()));
+        for (Object iter: regionSimpleExtension) {
+            copy.regionSimpleExtension.add(iter);
+        }
+        copy.regionObjectExtension = new ArrayList<AbstractObject>((getRegionObjectExtension().size()));
+        for (AbstractObject iter: regionObjectExtension) {
+            copy.regionObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

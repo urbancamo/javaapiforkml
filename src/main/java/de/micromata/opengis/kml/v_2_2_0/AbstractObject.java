@@ -41,32 +41,33 @@ import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
     "objectSimpleExtension"
 })
 @XmlSeeAlso({
-    Playlist.class,
     LatLonQuad.class,
+    Playlist.class,
     TourPrimitive.class,
-    Region.class,
-    TimePrimitive.class,
-    ItemIcon.class,
-    Scale.class,
     Pair.class,
-    ViewVolume.class,
-    Alias.class,
-    Location.class,
-    Lod.class,
-    ResourceMap.class,
-    ImagePyramid.class,
-    SchemaData.class,
     Orientation.class,
-    Feature.class,
-    StyleSelector.class,
-    AbstractView.class,
-    SubStyle.class,
+    TimePrimitive.class,
+    Scale.class,
+    Region.class,
+    ItemIcon.class,
+    Alias.class,
     Data.class,
+    SchemaData.class,
     Geometry.class,
+    ImagePyramid.class,
+    ResourceMap.class,
+    SubStyle.class,
+    AbstractView.class,
+    StyleSelector.class,
+    ViewVolume.class,
+    Lod.class,
+    Location.class,
+    Feature.class,
     AbstractLatLonBox.class,
     BasicLink.class
 })
-public abstract class AbstractObject {
+public abstract class AbstractObject implements Cloneable
+{
 
     @XmlElement(name = "ObjectSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -252,6 +253,21 @@ public abstract class AbstractObject {
     public AbstractObject withTargetId(final String targetId) {
         this.setTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public AbstractObject clone() {
+        AbstractObject copy;
+        try {
+            copy = ((AbstractObject) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.objectSimpleExtension = new ArrayList<Object>((getObjectSimpleExtension().size()));
+        for (Object iter: objectSimpleExtension) {
+            copy.objectSimpleExtension.add(iter);
+        }
+        return copy;
     }
 
 }

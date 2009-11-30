@@ -64,6 +64,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "LatLonQuad", namespace = "http://www.google.com/kml/ext/2.2")
 public class LatLonQuad
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -71,7 +72,7 @@ public class LatLonQuad
      * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
-     * ³ ?180 and <= 180 latitude ³ ?90 and ² 90 altitude values (optional) are in meters 
+     * â‰¥ âˆ’180 and <= 180 latitude â‰¥ âˆ’90 and â‰¤ 90 altitude values (optional) are in meters 
      * above sea level 
      * </p>
      * <p>
@@ -169,11 +170,11 @@ public class LatLonQuad
     /**
      * add a value to the coordinates property collection
      * 
+     * @param altitude
+     *     required parameter
      * @param longitude
      *     required parameter
      * @param latitude
-     *     required parameter
-     * @param altitude
      *     required parameter
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
@@ -262,6 +263,17 @@ public class LatLonQuad
         List<Coordinate> newValue = new ArrayList<Coordinate>();
         this.setCoordinates(newValue);
         return newValue;
+    }
+
+    @Override
+    public LatLonQuad clone() {
+        LatLonQuad copy;
+        copy = ((LatLonQuad) super.clone());
+        copy.coordinates = new ArrayList<Coordinate>((getCoordinates().size()));
+        for (Coordinate iter: coordinates) {
+            copy.coordinates.add(iter.clone());
+        }
+        return copy;
     }
 
 }

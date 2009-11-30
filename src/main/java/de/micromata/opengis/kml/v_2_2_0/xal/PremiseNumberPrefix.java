@@ -22,7 +22,8 @@ import javax.xml.namespace.QName;
     "value"
 })
 @XmlRootElement(name = "PremiseNumberPrefix")
-public class PremiseNumberPrefix {
+public class PremiseNumberPrefix implements Cloneable
+{
 
     @XmlValue
     protected String value;
@@ -247,6 +248,17 @@ public class PremiseNumberPrefix {
     public PremiseNumberPrefix withCode(final String code) {
         this.setCode(code);
         return this;
+    }
+
+    @Override
+    public PremiseNumberPrefix clone() {
+        PremiseNumberPrefix copy;
+        try {
+            copy = ((PremiseNumberPrefix) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

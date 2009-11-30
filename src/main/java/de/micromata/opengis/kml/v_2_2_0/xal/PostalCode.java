@@ -30,7 +30,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "PostalCode")
-public class PostalCode {
+public class PostalCode implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -460,6 +461,34 @@ public class PostalCode {
         return this;
     }
 
+    @Override
+    public PostalCode clone() {
+        PostalCode copy;
+        try {
+            copy = ((PostalCode) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.postalCodeNumber = new ArrayList<PostalCode.PostalCodeNumber>((getPostalCodeNumber().size()));
+        for (PostalCode.PostalCodeNumber iter: postalCodeNumber) {
+            copy.postalCodeNumber.add(iter.clone());
+        }
+        copy.postalCodeNumberExtension = new ArrayList<PostalCode.PostalCodeNumberExtension>((getPostalCodeNumberExtension().size()));
+        for (PostalCode.PostalCodeNumberExtension iter: postalCodeNumberExtension) {
+            copy.postalCodeNumberExtension.add(iter.clone());
+        }
+        copy.postTown = ((postTown == null)?null:((PostalCode.PostTown) postTown.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -469,7 +498,8 @@ public class PostalCode {
         "content"
     })
     @XmlRootElement(name = "PostalCodeNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostalCodeNumber {
+    public static class PostalCodeNumber implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -649,6 +679,17 @@ public class PostalCode {
             return this;
         }
 
+        @Override
+        public PostalCode.PostalCodeNumber clone() {
+            PostalCode.PostalCodeNumber copy;
+            try {
+                copy = ((PostalCode.PostalCodeNumber) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -660,7 +701,8 @@ public class PostalCode {
         "content"
     })
     @XmlRootElement(name = "PostalCodeNumberExtension", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostalCodeNumberExtension {
+    public static class PostalCodeNumberExtension implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -887,6 +929,17 @@ public class PostalCode {
             return this;
         }
 
+        @Override
+        public PostalCode.PostalCodeNumberExtension clone() {
+            PostalCode.PostalCodeNumberExtension copy;
+            try {
+                copy = ((PostalCode.PostalCodeNumberExtension) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -900,7 +953,8 @@ public class PostalCode {
         "postTownSuffix"
     })
     @XmlRootElement(name = "PostTown", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostTown {
+    public static class PostTown implements Cloneable
+    {
 
         @XmlElement(name = "AddressLine")
         protected List<AddressLine> addressLine;
@@ -1197,6 +1251,26 @@ public class PostalCode {
             return this;
         }
 
+        @Override
+        public PostalCode.PostTown clone() {
+            PostalCode.PostTown copy;
+            try {
+                copy = ((PostalCode.PostTown) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+            for (AddressLine iter: addressLine) {
+                copy.addressLine.add(iter.clone());
+            }
+            copy.postTownName = new ArrayList<PostalCode.PostTown.PostTownName>((getPostTownName().size()));
+            for (PostalCode.PostTown.PostTownName iter: postTownName) {
+                copy.postTownName.add(iter.clone());
+            }
+            copy.postTownSuffix = ((postTownSuffix == null)?null:((PostalCode.PostTown.PostTownSuffix) postTownSuffix.clone()));
+            return copy;
+        }
+
 
         /**
          * 
@@ -1206,7 +1280,8 @@ public class PostalCode {
             "content"
         })
         @XmlRootElement(name = "PostTownName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class PostTownName {
+        public static class PostTownName implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -1386,6 +1461,17 @@ public class PostalCode {
                 return this;
             }
 
+            @Override
+            public PostalCode.PostTown.PostTownName clone() {
+                PostalCode.PostTown.PostTownName copy;
+                try {
+                    copy = ((PostalCode.PostTown.PostTownName) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -1397,7 +1483,8 @@ public class PostalCode {
             "content"
         })
         @XmlRootElement(name = "PostTownSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class PostTownSuffix {
+        public static class PostTownSuffix implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -1528,6 +1615,17 @@ public class PostalCode {
             public PostalCode.PostTown.PostTownSuffix withCode(final String code) {
                 this.setCode(code);
                 return this;
+            }
+
+            @Override
+            public PostalCode.PostTown.PostTownSuffix clone() {
+                PostalCode.PostTown.PostTownSuffix copy;
+                try {
+                    copy = ((PostalCode.PostTown.PostTownSuffix) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
             }
 
         }

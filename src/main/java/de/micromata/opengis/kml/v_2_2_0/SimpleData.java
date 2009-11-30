@@ -40,7 +40,8 @@ import javax.xml.bind.annotation.XmlValue;
     "value"
 })
 @XmlRootElement(name = "SimpleData", namespace = "http://www.opengis.net/kml/2.2")
-public class SimpleData {
+public class SimpleData implements Cloneable
+{
 
     /**
      * <value>
@@ -197,6 +198,17 @@ public class SimpleData {
     public SimpleData withValue(final String value) {
         this.setValue(value);
         return this;
+    }
+
+    @Override
+    public SimpleData clone() {
+        SimpleData copy;
+        try {
+            copy = ((SimpleData) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

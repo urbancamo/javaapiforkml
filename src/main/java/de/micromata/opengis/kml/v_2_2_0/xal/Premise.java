@@ -41,7 +41,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "Premise")
-public class Premise {
+public class Premise implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -89,11 +90,11 @@ public class Premise {
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param premiseNumber
-     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumber
      *     required parameter
      */
     public Premise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -693,9 +694,9 @@ public class Premise {
      * this.setPremiseNumberRange(premiseNumberRange); </code>
      * 
      * 
-     * @param premiseNumberRangeTo
-     *     required parameter
      * @param premiseNumberRangeFrom
+     *     required parameter
+     * @param premiseNumberRangeTo
      *     required parameter
      */
     public Premise.PremiseNumberRange createAndSetPremiseNumberRange(final Premise.PremiseNumberRange.PremiseNumberRangeFrom premiseNumberRangeFrom, final Premise.PremiseNumberRange.PremiseNumberRangeTo premiseNumberRangeTo) {
@@ -823,11 +824,11 @@ public class Premise {
      * this.setPremise(premise); </code>
      * 
      * 
-     * @param premiseNumber
-     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumber
      *     required parameter
      */
     public Premise createAndSetPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -1216,6 +1217,55 @@ public class Premise {
         return this;
     }
 
+    @Override
+    public Premise clone() {
+        Premise copy;
+        try {
+            copy = ((Premise) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.premiseName = new ArrayList<Premise.PremiseName>((getPremiseName().size()));
+        for (Premise.PremiseName iter: premiseName) {
+            copy.premiseName.add(iter.clone());
+        }
+        copy.premiseLocation = ((premiseLocation == null)?null:((Premise.PremiseLocation) premiseLocation.clone()));
+        copy.premiseNumber = new ArrayList<PremiseNumber>((getPremiseNumber().size()));
+        for (PremiseNumber iter: premiseNumber) {
+            copy.premiseNumber.add(iter.clone());
+        }
+        copy.premiseNumberRange = ((premiseNumberRange == null)?null:((Premise.PremiseNumberRange) premiseNumberRange.clone()));
+        copy.premiseNumberPrefix = new ArrayList<PremiseNumberPrefix>((getPremiseNumberPrefix().size()));
+        for (PremiseNumberPrefix iter: premiseNumberPrefix) {
+            copy.premiseNumberPrefix.add(iter.clone());
+        }
+        copy.premiseNumberSuffix = new ArrayList<PremiseNumberSuffix>((getPremiseNumberSuffix().size()));
+        for (PremiseNumberSuffix iter: premiseNumberSuffix) {
+            copy.premiseNumberSuffix.add(iter.clone());
+        }
+        copy.buildingName = new ArrayList<BuildingName>((getBuildingName().size()));
+        for (BuildingName iter: buildingName) {
+            copy.buildingName.add(iter.clone());
+        }
+        copy.subPremise = new ArrayList<SubPremise>((getSubPremise().size()));
+        for (SubPremise iter: subPremise) {
+            copy.subPremise.add(iter.clone());
+        }
+        copy.firm = ((firm == null)?null:((Firm) firm.clone()));
+        copy.mailStop = ((mailStop == null)?null:((MailStop) mailStop.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.premise = ((premise == null)?null:((Premise) premise.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -1225,7 +1275,8 @@ public class Premise {
         "content"
     })
     @XmlRootElement(name = "PremiseLocation", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PremiseLocation {
+    public static class PremiseLocation implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1358,6 +1409,17 @@ public class Premise {
             return this;
         }
 
+        @Override
+        public Premise.PremiseLocation clone() {
+            Premise.PremiseLocation copy;
+            try {
+                copy = ((Premise.PremiseLocation) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1369,7 +1431,8 @@ public class Premise {
         "content"
     })
     @XmlRootElement(name = "PremiseName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PremiseName {
+    public static class PremiseName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1596,6 +1659,17 @@ public class Premise {
             return this;
         }
 
+        @Override
+        public Premise.PremiseName clone() {
+            Premise.PremiseName copy;
+            try {
+                copy = ((Premise.PremiseName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1608,7 +1682,8 @@ public class Premise {
         "premiseNumberRangeTo"
     })
     @XmlRootElement(name = "PremiseNumberRange", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PremiseNumberRange {
+    public static class PremiseNumberRange implements Cloneable
+    {
 
         @XmlElement(name = "PremiseNumberRangeFrom", required = true)
         protected Premise.PremiseNumberRange.PremiseNumberRangeFrom premiseNumberRangeFrom;
@@ -1636,9 +1711,9 @@ public class Premise {
         /**
          * Value constructor with only mandatory fields
          * 
-         * @param premiseNumberRangeTo
-         *     required parameter
          * @param premiseNumberRangeFrom
+         *     required parameter
+         * @param premiseNumberRangeTo
          *     required parameter
          */
         public PremiseNumberRange(final Premise.PremiseNumberRange.PremiseNumberRangeFrom premiseNumberRangeFrom, final Premise.PremiseNumberRange.PremiseNumberRangeTo premiseNumberRangeTo) {
@@ -2042,6 +2117,19 @@ public class Premise {
             return this;
         }
 
+        @Override
+        public Premise.PremiseNumberRange clone() {
+            Premise.PremiseNumberRange copy;
+            try {
+                copy = ((Premise.PremiseNumberRange) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            copy.premiseNumberRangeFrom = ((premiseNumberRangeFrom == null)?null:((Premise.PremiseNumberRange.PremiseNumberRangeFrom) premiseNumberRangeFrom.clone()));
+            copy.premiseNumberRangeTo = ((premiseNumberRangeTo == null)?null:((Premise.PremiseNumberRange.PremiseNumberRangeTo) premiseNumberRangeTo.clone()));
+            return copy;
+        }
+
 
         /**
          * 
@@ -2054,7 +2142,8 @@ public class Premise {
             "premiseNumberSuffix"
         })
         @XmlRootElement(name = "PremiseNumberRangeFrom", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class PremiseNumberRangeFrom {
+        public static class PremiseNumberRangeFrom implements Cloneable
+        {
 
             @XmlElement(name = "AddressLine")
             protected List<AddressLine> addressLine;
@@ -2383,6 +2472,33 @@ public class Premise {
                 return this;
             }
 
+            @Override
+            public Premise.PremiseNumberRange.PremiseNumberRangeFrom clone() {
+                Premise.PremiseNumberRange.PremiseNumberRangeFrom copy;
+                try {
+                    copy = ((Premise.PremiseNumberRange.PremiseNumberRangeFrom) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+                for (AddressLine iter: addressLine) {
+                    copy.addressLine.add(iter.clone());
+                }
+                copy.premiseNumberPrefix = new ArrayList<PremiseNumberPrefix>((getPremiseNumberPrefix().size()));
+                for (PremiseNumberPrefix iter: premiseNumberPrefix) {
+                    copy.premiseNumberPrefix.add(iter.clone());
+                }
+                copy.premiseNumber = new ArrayList<PremiseNumber>((getPremiseNumber().size()));
+                for (PremiseNumber iter: premiseNumber) {
+                    copy.premiseNumber.add(iter.clone());
+                }
+                copy.premiseNumberSuffix = new ArrayList<PremiseNumberSuffix>((getPremiseNumberSuffix().size()));
+                for (PremiseNumberSuffix iter: premiseNumberSuffix) {
+                    copy.premiseNumberSuffix.add(iter.clone());
+                }
+                return copy;
+            }
+
         }
 
 
@@ -2397,7 +2513,8 @@ public class Premise {
             "premiseNumberSuffix"
         })
         @XmlRootElement(name = "PremiseNumberRangeTo", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class PremiseNumberRangeTo {
+        public static class PremiseNumberRangeTo implements Cloneable
+        {
 
             @XmlElement(name = "AddressLine")
             protected List<AddressLine> addressLine;
@@ -2724,6 +2841,33 @@ public class Premise {
             public Premise.PremiseNumberRange.PremiseNumberRangeTo withPremiseNumberSuffix(final List<PremiseNumberSuffix> premiseNumberSuffix) {
                 this.setPremiseNumberSuffix(premiseNumberSuffix);
                 return this;
+            }
+
+            @Override
+            public Premise.PremiseNumberRange.PremiseNumberRangeTo clone() {
+                Premise.PremiseNumberRange.PremiseNumberRangeTo copy;
+                try {
+                    copy = ((Premise.PremiseNumberRange.PremiseNumberRangeTo) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+                for (AddressLine iter: addressLine) {
+                    copy.addressLine.add(iter.clone());
+                }
+                copy.premiseNumberPrefix = new ArrayList<PremiseNumberPrefix>((getPremiseNumberPrefix().size()));
+                for (PremiseNumberPrefix iter: premiseNumberPrefix) {
+                    copy.premiseNumberPrefix.add(iter.clone());
+                }
+                copy.premiseNumber = new ArrayList<PremiseNumber>((getPremiseNumber().size()));
+                for (PremiseNumber iter: premiseNumber) {
+                    copy.premiseNumber.add(iter.clone());
+                }
+                copy.premiseNumberSuffix = new ArrayList<PremiseNumberSuffix>((getPremiseNumberSuffix().size()));
+                for (PremiseNumberSuffix iter: premiseNumberSuffix) {
+                    copy.premiseNumberSuffix.add(iter.clone());
+                }
+                return copy;
             }
 
         }

@@ -36,7 +36,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "Locality")
-public class Locality {
+public class Locality implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -75,13 +76,13 @@ public class Locality {
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param postBox
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param largeMailUser
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param largeMailUser
+     * @param postBox
      *     required parameter
      */
     public Locality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -655,11 +656,11 @@ public class Locality {
      * 
      * @param postalCode
      *     required parameter
+     * @param dependentLocality
+     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
-     *     required parameter
-     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -677,11 +678,11 @@ public class Locality {
      * this.setPremise(premise); </code>
      * 
      * 
-     * @param premiseNumber
-     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumber
      *     required parameter
      */
     public Premise createAndSetPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -699,13 +700,13 @@ public class Locality {
      * this.setDependentLocality(dependentLocality); </code>
      * 
      * 
-     * @param postBox
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param largeMailUser
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param largeMailUser
+     * @param postBox
      *     required parameter
      */
     public DependentLocality createAndSetDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -925,6 +926,37 @@ public class Locality {
         return this;
     }
 
+    @Override
+    public Locality clone() {
+        Locality copy;
+        try {
+            copy = ((Locality) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.localityName = new ArrayList<Locality.LocalityName>((getLocalityName().size()));
+        for (Locality.LocalityName iter: localityName) {
+            copy.localityName.add(iter.clone());
+        }
+        copy.postBox = ((postBox == null)?null:((PostBox) postBox.clone()));
+        copy.largeMailUser = ((largeMailUser == null)?null:((LargeMailUser) largeMailUser.clone()));
+        copy.postOffice = ((postOffice == null)?null:((PostOffice) postOffice.clone()));
+        copy.postalRoute = ((postalRoute == null)?null:((PostalRoute) postalRoute.clone()));
+        copy.thoroughfare = ((thoroughfare == null)?null:((Thoroughfare) thoroughfare.clone()));
+        copy.premise = ((premise == null)?null:((Premise) premise.clone()));
+        copy.dependentLocality = ((dependentLocality == null)?null:((DependentLocality) dependentLocality.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -934,7 +966,8 @@ public class Locality {
         "content"
     })
     @XmlRootElement(name = "LocalityName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class LocalityName {
+    public static class LocalityName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1112,6 +1145,17 @@ public class Locality {
         public Locality.LocalityName withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public Locality.LocalityName clone() {
+            Locality.LocalityName copy;
+            try {
+                copy = ((Locality.LocalityName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

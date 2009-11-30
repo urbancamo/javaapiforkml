@@ -93,6 +93,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 @XmlRootElement(name = "Document", namespace = "http://www.opengis.net/kml/2.2")
 public class Document
     extends Container
+    implements Cloneable
 {
 
     /**
@@ -335,16 +336,16 @@ public class Document
     }
 
     /**
-     * Creates a new instance of {@link ScreenOverlay} and adds it to feature.
+     * Creates a new instance of {@link NetworkLink} and adds it to feature.
      * This method is a short version for:
      * <code>
-     * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.getFeature().add(screenOverlay); </code>
+     * NetworkLink networkLink = new NetworkLink();
+     * this.getFeature().add(networkLink); </code>
      * 
      * 
      */
-    public ScreenOverlay createAndAddScreenOverlay() {
-        ScreenOverlay newValue = new ScreenOverlay();
+    public NetworkLink createAndAddNetworkLink() {
+        NetworkLink newValue = new NetworkLink();
         this.getFeature().add(newValue);
         return newValue;
     }
@@ -365,6 +366,21 @@ public class Document
     }
 
     /**
+     * Creates a new instance of {@link ScreenOverlay} and adds it to feature.
+     * This method is a short version for:
+     * <code>
+     * ScreenOverlay screenOverlay = new ScreenOverlay();
+     * this.getFeature().add(screenOverlay); </code>
+     * 
+     * 
+     */
+    public ScreenOverlay createAndAddScreenOverlay() {
+        ScreenOverlay newValue = new ScreenOverlay();
+        this.getFeature().add(newValue);
+        return newValue;
+    }
+
+    /**
      * Creates a new instance of {@link GroundOverlay} and adds it to feature.
      * This method is a short version for:
      * <code>
@@ -380,16 +396,16 @@ public class Document
     }
 
     /**
-     * Creates a new instance of {@link NetworkLink} and adds it to feature.
+     * Creates a new instance of {@link Document} and adds it to feature.
      * This method is a short version for:
      * <code>
-     * NetworkLink networkLink = new NetworkLink();
-     * this.getFeature().add(networkLink); </code>
+     * Document document = new Document();
+     * this.getFeature().add(document); </code>
      * 
      * 
      */
-    public NetworkLink createAndAddNetworkLink() {
-        NetworkLink newValue = new NetworkLink();
+    public Document createAndAddDocument() {
+        Document newValue = new Document();
         this.getFeature().add(newValue);
         return newValue;
     }
@@ -405,21 +421,6 @@ public class Document
      */
     public Folder createAndAddFolder() {
         Folder newValue = new Folder();
-        this.getFeature().add(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Document} and adds it to feature.
-     * This method is a short version for:
-     * <code>
-     * Document document = new Document();
-     * this.getFeature().add(document); </code>
-     * 
-     * 
-     */
-    public Document createAndAddDocument() {
-        Document newValue = new Document();
         this.getFeature().add(newValue);
         return newValue;
     }
@@ -474,7 +475,7 @@ public class Document
      * add a value to the feature property collection
      * 
      * @param feature
-     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -850,6 +851,29 @@ public class Document
     public Document withContainerObjectExtension(final List<AbstractObject> containerObjectExtension) {
         super.withContainerObjectExtension(containerObjectExtension);
         return this;
+    }
+
+    @Override
+    public Document clone() {
+        Document copy;
+        copy = ((Document) super.clone());
+        copy.schema = new ArrayList<Schema>((getSchema().size()));
+        for (Schema iter: schema) {
+            copy.schema.add(iter.clone());
+        }
+        copy.feature = new ArrayList<Feature>((getFeature().size()));
+        for (Feature iter: feature) {
+            copy.feature.add(iter.clone());
+        }
+        copy.documentSimpleExtension = new ArrayList<Object>((getDocumentSimpleExtension().size()));
+        for (Object iter: documentSimpleExtension) {
+            copy.documentSimpleExtension.add(iter);
+        }
+        copy.documentObjectExtension = new ArrayList<AbstractObject>((getDocumentObjectExtension().size()));
+        for (AbstractObject iter: documentObjectExtension) {
+            copy.documentObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

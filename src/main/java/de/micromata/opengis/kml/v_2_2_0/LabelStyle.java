@@ -50,6 +50,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "LabelStyle", namespace = "http://www.opengis.net/kml/2.2")
 public class LabelStyle
     extends ColorStyle
+    implements Cloneable
 {
 
     /**
@@ -421,6 +422,21 @@ public class LabelStyle
     public LabelStyle withColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {
         super.withColorStyleObjectExtension(colorStyleObjectExtension);
         return this;
+    }
+
+    @Override
+    public LabelStyle clone() {
+        LabelStyle copy;
+        copy = ((LabelStyle) super.clone());
+        copy.labelStyleSimpleExtension = new ArrayList<Object>((getLabelStyleSimpleExtension().size()));
+        for (Object iter: labelStyleSimpleExtension) {
+            copy.labelStyleSimpleExtension.add(iter);
+        }
+        copy.labelStyleObjectExtension = new ArrayList<AbstractObject>((getLabelStyleObjectExtension().size()));
+        for (AbstractObject iter: labelStyleObjectExtension) {
+            copy.labelStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

@@ -41,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
     "nameOrUriOrEmail"
 })
 @XmlRootElement(name = "author")
-public class Author {
+public class Author implements Cloneable
+{
 
     protected List<String> nameOrUriOrEmail;
 
@@ -124,6 +125,21 @@ public class Author {
     public Author withNameOrUriOrEmail(final List<String> nameOrUriOrEmail) {
         this.setNameOrUriOrEmail(nameOrUriOrEmail);
         return this;
+    }
+
+    @Override
+    public Author clone() {
+        Author copy;
+        try {
+            copy = ((Author) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.nameOrUriOrEmail = new ArrayList<String>((getNameOrUriOrEmail().size()));
+        for (String iter: nameOrUriOrEmail) {
+            copy.nameOrUriOrEmail.add(iter);
+        }
+        return copy;
     }
 
 }

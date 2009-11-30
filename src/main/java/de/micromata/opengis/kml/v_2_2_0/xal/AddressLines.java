@@ -24,7 +24,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "AddressLines", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class AddressLines {
+public class AddressLines implements Cloneable
+{
 
     @XmlElement(name = "AddressLine", required = true)
     protected List<AddressLine> addressLine;
@@ -199,6 +200,25 @@ public class AddressLines {
     public AddressLines withAny(final List<Object> any) {
         this.setAny(any);
         return this;
+    }
+
+    @Override
+    public AddressLines clone() {
+        AddressLines copy;
+        try {
+            copy = ((AddressLines) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
     }
 
 }

@@ -32,7 +32,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "AdministrativeArea")
-public class AdministrativeArea {
+public class AdministrativeArea implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -65,9 +66,9 @@ public class AdministrativeArea {
      * 
      * @param postalCode
      *     required parameter
-     * @param locality
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param locality
      *     required parameter
      */
     public AdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -442,9 +443,9 @@ public class AdministrativeArea {
      * 
      * @param postalCode
      *     required parameter
-     * @param locality
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param locality
      *     required parameter
      */
     public AdministrativeArea.SubAdministrativeArea createAndSetSubAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -462,13 +463,13 @@ public class AdministrativeArea {
      * this.setLocality(locality); </code>
      * 
      * 
-     * @param postBox
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param largeMailUser
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param largeMailUser
+     * @param postBox
      *     required parameter
      */
     public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -668,6 +669,33 @@ public class AdministrativeArea {
         return this;
     }
 
+    @Override
+    public AdministrativeArea clone() {
+        AdministrativeArea copy;
+        try {
+            copy = ((AdministrativeArea) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.administrativeAreaName = new ArrayList<AdministrativeArea.AdministrativeAreaName>((getAdministrativeAreaName().size()));
+        for (AdministrativeArea.AdministrativeAreaName iter: administrativeAreaName) {
+            copy.administrativeAreaName.add(iter.clone());
+        }
+        copy.subAdministrativeArea = ((subAdministrativeArea == null)?null:((AdministrativeArea.SubAdministrativeArea) subAdministrativeArea.clone()));
+        copy.locality = ((locality == null)?null:((Locality) locality.clone()));
+        copy.postOffice = ((postOffice == null)?null:((PostOffice) postOffice.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -677,7 +705,8 @@ public class AdministrativeArea {
         "content"
     })
     @XmlRootElement(name = "AdministrativeAreaName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class AdministrativeAreaName {
+    public static class AdministrativeAreaName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -857,6 +886,17 @@ public class AdministrativeArea {
             return this;
         }
 
+        @Override
+        public AdministrativeArea.AdministrativeAreaName clone() {
+            AdministrativeArea.AdministrativeAreaName copy;
+            try {
+                copy = ((AdministrativeArea.AdministrativeAreaName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -873,7 +913,8 @@ public class AdministrativeArea {
         "any"
     })
     @XmlRootElement(name = "SubAdministrativeArea", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class SubAdministrativeArea {
+    public static class SubAdministrativeArea implements Cloneable
+    {
 
         @XmlElement(name = "AddressLine")
         protected List<AddressLine> addressLine;
@@ -904,9 +945,9 @@ public class AdministrativeArea {
          * 
          * @param postalCode
          *     required parameter
-         * @param locality
-         *     required parameter
          * @param postOffice
+         *     required parameter
+         * @param locality
          *     required parameter
          */
         public SubAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -1247,13 +1288,13 @@ public class AdministrativeArea {
          * this.setLocality(locality); </code>
          * 
          * 
-         * @param postBox
-         *     required parameter
          * @param postOffice
+         *     required parameter
+         * @param largeMailUser
          *     required parameter
          * @param postalRoute
          *     required parameter
-         * @param largeMailUser
+         * @param postBox
          *     required parameter
          */
         public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -1441,6 +1482,32 @@ public class AdministrativeArea {
             return this;
         }
 
+        @Override
+        public AdministrativeArea.SubAdministrativeArea clone() {
+            AdministrativeArea.SubAdministrativeArea copy;
+            try {
+                copy = ((AdministrativeArea.SubAdministrativeArea) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+            for (AddressLine iter: addressLine) {
+                copy.addressLine.add(iter.clone());
+            }
+            copy.subAdministrativeAreaName = new ArrayList<AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName>((getSubAdministrativeAreaName().size()));
+            for (AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName iter: subAdministrativeAreaName) {
+                copy.subAdministrativeAreaName.add(iter.clone());
+            }
+            copy.locality = ((locality == null)?null:((Locality) locality.clone()));
+            copy.postOffice = ((postOffice == null)?null:((PostOffice) postOffice.clone()));
+            copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+            copy.any = new ArrayList<Object>((getAny().size()));
+            for (Object iter: any) {
+                copy.any.add(iter);
+            }
+            return copy;
+        }
+
 
         /**
          * 
@@ -1450,7 +1517,8 @@ public class AdministrativeArea {
             "content"
         })
         @XmlRootElement(name = "SubAdministrativeAreaName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class SubAdministrativeAreaName {
+        public static class SubAdministrativeAreaName implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -1628,6 +1696,17 @@ public class AdministrativeArea {
             public AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName withCode(final String code) {
                 this.setCode(code);
                 return this;
+            }
+
+            @Override
+            public AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName clone() {
+                AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName copy;
+                try {
+                    copy = ((AdministrativeArea.SubAdministrativeArea.SubAdministrativeAreaName) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
             }
 
         }

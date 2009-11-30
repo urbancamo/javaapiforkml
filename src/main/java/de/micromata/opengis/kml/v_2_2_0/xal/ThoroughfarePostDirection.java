@@ -22,7 +22,8 @@ import javax.xml.namespace.QName;
     "content"
 })
 @XmlRootElement(name = "ThoroughfarePostDirection", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class ThoroughfarePostDirection {
+public class ThoroughfarePostDirection implements Cloneable
+{
 
     @XmlValue
     protected String content;
@@ -200,6 +201,17 @@ public class ThoroughfarePostDirection {
     public ThoroughfarePostDirection withCode(final String code) {
         this.setCode(code);
         return this;
+    }
+
+    @Override
+    public ThoroughfarePostDirection clone() {
+        ThoroughfarePostDirection copy;
+        try {
+            copy = ((ThoroughfarePostDirection) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

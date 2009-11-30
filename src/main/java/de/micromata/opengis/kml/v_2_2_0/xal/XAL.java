@@ -26,7 +26,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "xAL")
-public class XAL {
+public class XAL implements Cloneable
+{
 
     @XmlElement(name = "AddressDetails", required = true)
     protected List<AddressDetails> xalAddressDetails;
@@ -169,17 +170,17 @@ public class XAL {
      * this.getXalAddressDetails().add(addressDetails); </code>
      * 
      * 
-     * @param xalAddress
+     * @param administrativeArea
      *     required parameter
      * @param addressLines
      *     required parameter
-     * @param country
-     *     required parameter
      * @param locality
      *     required parameter
-     * @param administrativeArea
-     *     required parameter
      * @param thoroughfare
+     *     required parameter
+     * @param xalAddress
+     *     required parameter
+     * @param country
      *     required parameter
      */
     public AddressDetails createAndAddXalAddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {
@@ -260,6 +261,25 @@ public class XAL {
     public XAL withVersion(final String version) {
         this.setVersion(version);
         return this;
+    }
+
+    @Override
+    public XAL clone() {
+        XAL copy;
+        try {
+            copy = ((XAL) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.xalAddressDetails = new ArrayList<AddressDetails>((getXalAddressDetails().size()));
+        for (AddressDetails iter: xalAddressDetails) {
+            copy.xalAddressDetails.add(iter.clone());
+        }
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
     }
 
 }

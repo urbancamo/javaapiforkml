@@ -56,6 +56,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "ListStyle", namespace = "http://www.opengis.net/kml/2.2")
 public class ListStyle
     extends SubStyle
+    implements Cloneable
 {
 
     /**
@@ -65,7 +66,7 @@ public class ListStyle
      * (default) - The Feature's visibility is tied to its item's checkbox. radioFolder 
      * - When specified for a Container, only one of the Container's items is visible at 
      * a time checkOffOnly - When specified for a Container or Network Link, prevents all 
-     * items from being made visible at onceÑthat is, the user can turn everything in the 
+     * items from being made visible at onceâ€”that is, the user can turn everything in the 
      * Container or Network Link off but cannot turn everything on at the same time. This 
      * setting is useful for Containers or Network Links containing large amounts of data. 
      * checkHideChildren - Use a normal checkbox for visibility but do not display the 
@@ -582,6 +583,25 @@ public class ListStyle
     public ListStyle withSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
         super.withSubStyleObjectExtension(subStyleObjectExtension);
         return this;
+    }
+
+    @Override
+    public ListStyle clone() {
+        ListStyle copy;
+        copy = ((ListStyle) super.clone());
+        copy.itemIcon = new ArrayList<ItemIcon>((getItemIcon().size()));
+        for (ItemIcon iter: itemIcon) {
+            copy.itemIcon.add(iter.clone());
+        }
+        copy.listStyleSimpleExtension = new ArrayList<Object>((getListStyleSimpleExtension().size()));
+        for (Object iter: listStyleSimpleExtension) {
+            copy.listStyleSimpleExtension.add(iter);
+        }
+        copy.listStyleObjectExtension = new ArrayList<AbstractObject>((getListStyleObjectExtension().size()));
+        for (AbstractObject iter: listStyleObjectExtension) {
+            copy.listStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

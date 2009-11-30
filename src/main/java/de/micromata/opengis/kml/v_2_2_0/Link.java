@@ -111,6 +111,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Link", namespace = "http://www.opengis.net/kml/2.2")
 public class Link
     extends BasicLink
+    implements Cloneable
 {
 
     /**
@@ -796,6 +797,21 @@ public class Link
     public Link withBasicLinkObjectExtension(final List<AbstractObject> basicLinkObjectExtension) {
         super.withBasicLinkObjectExtension(basicLinkObjectExtension);
         return this;
+    }
+
+    @Override
+    public Link clone() {
+        Link copy;
+        copy = ((Link) super.clone());
+        copy.linkSimpleExtension = new ArrayList<Object>((getLinkSimpleExtension().size()));
+        for (Object iter: linkSimpleExtension) {
+            copy.linkSimpleExtension.add(iter);
+        }
+        copy.linkObjectExtension = new ArrayList<AbstractObject>((getLinkObjectExtension().size()));
+        for (AbstractObject iter: linkObjectExtension) {
+            copy.linkObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

@@ -22,7 +22,8 @@ import javax.xml.namespace.QName;
     "content"
 })
 @XmlRootElement(name = "ThoroughfareTrailing", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class ThoroughfareTrailingType {
+public class ThoroughfareTrailingType implements Cloneable
+{
 
     @XmlValue
     protected String content;
@@ -200,6 +201,17 @@ public class ThoroughfareTrailingType {
     public ThoroughfareTrailingType withCode(final String code) {
         this.setCode(code);
         return this;
+    }
+
+    @Override
+    public ThoroughfareTrailingType clone() {
+        ThoroughfareTrailingType copy;
+        try {
+            copy = ((ThoroughfareTrailingType) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

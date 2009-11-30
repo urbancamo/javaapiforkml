@@ -53,6 +53,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "BalloonStyle", namespace = "http://www.opengis.net/kml/2.2")
 public class BalloonStyle
     extends SubStyle
+    implements Cloneable
 {
 
     /**
@@ -646,6 +647,21 @@ public class BalloonStyle
     public BalloonStyle withSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
         super.withSubStyleObjectExtension(subStyleObjectExtension);
         return this;
+    }
+
+    @Override
+    public BalloonStyle clone() {
+        BalloonStyle copy;
+        copy = ((BalloonStyle) super.clone());
+        copy.balloonStyleSimpleExtension = new ArrayList<Object>((getBalloonStyleSimpleExtension().size()));
+        for (Object iter: balloonStyleSimpleExtension) {
+            copy.balloonStyleSimpleExtension.add(iter);
+        }
+        copy.balloonStyleObjectExtension = new ArrayList<AbstractObject>((getBalloonStyleObjectExtension().size()));
+        for (AbstractObject iter: balloonStyleObjectExtension) {
+            copy.balloonStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

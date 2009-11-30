@@ -114,11 +114,11 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Coordinate}
      * 
+     * @param altitude
+     *     required parameter
      * @param longitude
      *     required parameter
      * @param latitude
-     *     required parameter
-     * @param altitude
      *     required parameter
      */
     public static Coordinate createCoordinate(final double longitude, final double latitude, final double altitude) {
@@ -636,17 +636,17 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link AddressDetails}
      * 
-     * @param xalAddress
+     * @param administrativeArea
      *     required parameter
      * @param addressLines
      *     required parameter
-     * @param country
-     *     required parameter
      * @param locality
      *     required parameter
-     * @param administrativeArea
-     *     required parameter
      * @param thoroughfare
+     *     required parameter
+     * @param xalAddress
+     *     required parameter
+     * @param country
      *     required parameter
      */
     public static AddressDetails createXalAddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {
@@ -676,9 +676,9 @@ public final class KmlFactory {
      * 
      * @param postalCode
      *     required parameter
-     * @param locality
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param locality
      *     required parameter
      */
     public static AdministrativeArea createXalAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -712,13 +712,13 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link DependentLocality}
      * 
-     * @param postBox
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param largeMailUser
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param largeMailUser
+     * @param postBox
      *     required parameter
      */
     public static DependentLocality createXalDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -744,13 +744,13 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Locality}
      * 
-     * @param postBox
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param largeMailUser
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param largeMailUser
+     * @param postBox
      *     required parameter
      */
     public static Locality createXalLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -806,11 +806,11 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Premise}
      * 
-     * @param premiseNumber
-     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumber
      *     required parameter
      */
     public static Premise createXalPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -856,11 +856,11 @@ public final class KmlFactory {
      * 
      * @param postalCode
      *     required parameter
+     * @param dependentLocality
+     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
-     *     required parameter
-     * @param dependentLocality
      *     required parameter
      */
     public static Thoroughfare createXalThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {

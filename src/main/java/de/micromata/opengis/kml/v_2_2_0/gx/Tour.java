@@ -59,6 +59,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 @XmlRootElement(name = "Tour", namespace = "http://www.google.com/kml/ext/2.2")
 public class Tour
     extends Feature
+    implements Cloneable
 {
 
     @XmlElement(name = "Playlist")
@@ -314,6 +315,14 @@ public class Tour
     public Tour withFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
         super.withFeatureObjectExtension(featureObjectExtension);
         return this;
+    }
+
+    @Override
+    public Tour clone() {
+        Tour copy;
+        copy = ((Tour) super.clone());
+        copy.playlist = ((playlist == null)?null:((Playlist) playlist.clone()));
+        return copy;
     }
 
 }

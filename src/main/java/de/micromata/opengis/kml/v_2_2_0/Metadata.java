@@ -22,7 +22,8 @@ import org.w3c.dom.Element;
 })
 @Deprecated
 @XmlRootElement(name = "Metadata", namespace = "http://www.opengis.net/kml/2.2")
-public class Metadata {
+public class Metadata implements Cloneable
+{
 
     @XmlAnyElement(lax = true)
     protected List<Object> any;
@@ -106,6 +107,21 @@ public class Metadata {
     public Metadata withAny(final List<Object> any) {
         this.setAny(any);
         return this;
+    }
+
+    @Override
+    public Metadata clone() {
+        Metadata copy;
+        try {
+            copy = ((Metadata) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
     }
 
 }

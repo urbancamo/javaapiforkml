@@ -22,7 +22,8 @@ import javax.xml.namespace.QName;
     "content"
 })
 @XmlRootElement(name = "CountryName")
-public class CountryName {
+public class CountryName implements Cloneable
+{
 
     @XmlValue
     protected String content;
@@ -200,6 +201,17 @@ public class CountryName {
     public CountryName withCode(final String code) {
         this.setCode(code);
         return this;
+    }
+
+    @Override
+    public CountryName clone() {
+        CountryName copy;
+        try {
+            copy = ((CountryName) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

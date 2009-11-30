@@ -37,6 +37,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "ViewVolume", namespace = "http://www.opengis.net/kml/2.2")
 public class ViewVolume
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -525,6 +526,21 @@ public class ViewVolume
     public ViewVolume withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public ViewVolume clone() {
+        ViewVolume copy;
+        copy = ((ViewVolume) super.clone());
+        copy.viewVolumeSimpleExtension = new ArrayList<Object>((getViewVolumeSimpleExtension().size()));
+        for (Object iter: viewVolumeSimpleExtension) {
+            copy.viewVolumeSimpleExtension.add(iter);
+        }
+        copy.viewVolumeObjectExtension = new ArrayList<AbstractObject>((getViewVolumeObjectExtension().size()));
+        for (AbstractObject iter: viewVolumeObjectExtension) {
+            copy.viewVolumeObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

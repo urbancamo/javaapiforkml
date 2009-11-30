@@ -22,8 +22,8 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * that contains it. A style defined as the child of a <Document> is called a "shared 
  * style." A shared style must have an id defined for it. This id is referenced by 
  * one or more Features within the <Document>. In cases where a style element is defined 
- * both in a shared style and in an inline style for a FeatureÑthat is, a Folder, GroundOverlay, 
- * NetworkLink, Placemark, or ScreenOverlayÑthe value for the Feature's inline style 
+ * both in a shared style and in an inline style for a Featureâ€”that is, a Folder, GroundOverlay, 
+ * NetworkLink, Placemark, or ScreenOverlayâ€”the value for the Feature's inline style 
  * takes precedence over the value for the shared style. 
  * </p>
  * 
@@ -53,6 +53,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 })
 public abstract class StyleSelector
     extends AbstractObject
+    implements Cloneable
 {
 
     @XmlElement(name = "AbstractStyleSelectorSimpleExtensionGroup")
@@ -254,6 +255,21 @@ public abstract class StyleSelector
     public StyleSelector withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public StyleSelector clone() {
+        StyleSelector copy;
+        copy = ((StyleSelector) super.clone());
+        copy.styleSelectorSimpleExtension = new ArrayList<Object>((getStyleSelectorSimpleExtension().size()));
+        for (Object iter: styleSelectorSimpleExtension) {
+            copy.styleSelectorSimpleExtension.add(iter);
+        }
+        copy.styleSelectorObjectExtension = new ArrayList<AbstractObject>((getStyleSelectorObjectExtension().size()));
+        for (AbstractObject iter: styleSelectorObjectExtension) {
+            copy.styleSelectorObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

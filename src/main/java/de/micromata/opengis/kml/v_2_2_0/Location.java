@@ -36,18 +36,19 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Location", namespace = "http://www.opengis.net/kml/2.2")
 public class Location
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
      * <longitude>
      * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
      * <p>
      * Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
      * 
@@ -60,11 +61,11 @@ public class Location
      * <latitude>
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
-     * (0 degrees). Values range from ?90 degrees to 90 degrees. 
+     * (0 degrees). Values range from −90 degrees to 90 degrees. 
      * </p>
      * <p>
      * Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
-     * Values range from ?90 degrees to 90 degrees. 
+     * Values range from −90 degrees to 90 degrees. 
      * </p>
      * 
      * 
@@ -415,6 +416,21 @@ public class Location
     public Location withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Location clone() {
+        Location copy;
+        copy = ((Location) super.clone());
+        copy.locationSimpleExtension = new ArrayList<Object>((getLocationSimpleExtension().size()));
+        for (Object iter: locationSimpleExtension) {
+            copy.locationSimpleExtension.add(iter);
+        }
+        copy.locationObjectExtension = new ArrayList<AbstractObject>((getLocationObjectExtension().size()));
+        for (AbstractObject iter: locationObjectExtension) {
+            copy.locationObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

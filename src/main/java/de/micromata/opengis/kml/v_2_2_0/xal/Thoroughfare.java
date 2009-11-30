@@ -45,7 +45,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "Thoroughfare")
-public class Thoroughfare {
+public class Thoroughfare implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -103,11 +104,11 @@ public class Thoroughfare {
      * 
      * @param postalCode
      *     required parameter
+     * @param dependentLocality
+     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
-     *     required parameter
-     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -875,13 +876,13 @@ public class Thoroughfare {
      * this.setDependentLocality(dependentLocality); </code>
      * 
      * 
-     * @param postBox
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param largeMailUser
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param largeMailUser
+     * @param postBox
      *     required parameter
      */
     public DependentLocality createAndSetDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -899,11 +900,11 @@ public class Thoroughfare {
      * this.setPremise(premise); </code>
      * 
      * 
-     * @param premiseNumber
-     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
+     *     required parameter
+     * @param premiseNumber
      *     required parameter
      */
     public Premise createAndSetPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -1286,6 +1287,50 @@ public class Thoroughfare {
         return this;
     }
 
+    @Override
+    public Thoroughfare clone() {
+        Thoroughfare copy;
+        try {
+            copy = ((Thoroughfare) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.thoroughfareNumberOrThoroughfareNumberRange = new ArrayList<Object>((getThoroughfareNumberOrThoroughfareNumberRange().size()));
+        for (Object iter: thoroughfareNumberOrThoroughfareNumberRange) {
+            copy.thoroughfareNumberOrThoroughfareNumberRange.add(iter);
+        }
+        copy.thoroughfareNumberPrefix = new ArrayList<ThoroughfareNumberPrefix>((getThoroughfareNumberPrefix().size()));
+        for (ThoroughfareNumberPrefix iter: thoroughfareNumberPrefix) {
+            copy.thoroughfareNumberPrefix.add(iter.clone());
+        }
+        copy.thoroughfareNumberSuffix = new ArrayList<ThoroughfareNumberSuffix>((getThoroughfareNumberSuffix().size()));
+        for (ThoroughfareNumberSuffix iter: thoroughfareNumberSuffix) {
+            copy.thoroughfareNumberSuffix.add(iter.clone());
+        }
+        copy.thoroughfarePreDirection = ((thoroughfarePreDirection == null)?null:((ThoroughfarePreDirection) thoroughfarePreDirection.clone()));
+        copy.thoroughfareLeading = ((thoroughfareLeading == null)?null:((ThoroughfareLeadingType) thoroughfareLeading.clone()));
+        copy.thoroughfareName = new ArrayList<ThoroughfareName>((getThoroughfareName().size()));
+        for (ThoroughfareName iter: thoroughfareName) {
+            copy.thoroughfareName.add(iter.clone());
+        }
+        copy.thoroughfareTrailing = ((thoroughfareTrailing == null)?null:((ThoroughfareTrailingType) thoroughfareTrailing.clone()));
+        copy.thoroughfarePostDirection = ((thoroughfarePostDirection == null)?null:((ThoroughfarePostDirection) thoroughfarePostDirection.clone()));
+        copy.dependentThoroughfare = ((dependentThoroughfare == null)?null:((Thoroughfare.DependentThoroughfare) dependentThoroughfare.clone()));
+        copy.dependentLocality = ((dependentLocality == null)?null:((DependentLocality) dependentLocality.clone()));
+        copy.premise = ((premise == null)?null:((Premise) premise.clone()));
+        copy.firm = ((firm == null)?null:((Firm) firm.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -1301,7 +1346,8 @@ public class Thoroughfare {
         "any"
     })
     @XmlRootElement(name = "DependentThoroughfare", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class DependentThoroughfare {
+    public static class DependentThoroughfare implements Cloneable
+    {
 
         @XmlElement(name = "AddressLine")
         protected List<AddressLine> addressLine;
@@ -1843,6 +1889,33 @@ public class Thoroughfare {
             return this;
         }
 
+        @Override
+        public Thoroughfare.DependentThoroughfare clone() {
+            Thoroughfare.DependentThoroughfare copy;
+            try {
+                copy = ((Thoroughfare.DependentThoroughfare) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+            for (AddressLine iter: addressLine) {
+                copy.addressLine.add(iter.clone());
+            }
+            copy.thoroughfarePreDirection = ((thoroughfarePreDirection == null)?null:((ThoroughfarePreDirection) thoroughfarePreDirection.clone()));
+            copy.thoroughfareLeading = ((thoroughfareLeading == null)?null:((ThoroughfareLeadingType) thoroughfareLeading.clone()));
+            copy.thoroughfareName = new ArrayList<ThoroughfareName>((getThoroughfareName().size()));
+            for (ThoroughfareName iter: thoroughfareName) {
+                copy.thoroughfareName.add(iter.clone());
+            }
+            copy.thoroughfareTrailing = ((thoroughfareTrailing == null)?null:((ThoroughfareTrailingType) thoroughfareTrailing.clone()));
+            copy.thoroughfarePostDirection = ((thoroughfarePostDirection == null)?null:((ThoroughfarePostDirection) thoroughfarePostDirection.clone()));
+            copy.any = new ArrayList<Object>((getAny().size()));
+            for (Object iter: any) {
+                copy.any.add(iter);
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1856,7 +1929,8 @@ public class Thoroughfare {
         "thoroughfareNumberTo"
     })
     @XmlRootElement(name = "ThoroughfareNumberRange", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class ThoroughfareNumberRange {
+    public static class ThoroughfareNumberRange implements Cloneable
+    {
 
         @XmlElement(name = "AddressLine")
         protected List<AddressLine> addressLine;
@@ -1891,9 +1965,9 @@ public class Thoroughfare {
         /**
          * Value constructor with only mandatory fields
          * 
-         * @param thoroughfareNumberTo
-         *     required parameter
          * @param thoroughfareNumberFrom
+         *     required parameter
+         * @param thoroughfareNumberTo
          *     required parameter
          */
         public ThoroughfareNumberRange(final Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom thoroughfareNumberFrom, final Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo thoroughfareNumberTo) {
@@ -2418,6 +2492,23 @@ public class Thoroughfare {
             return this;
         }
 
+        @Override
+        public Thoroughfare.ThoroughfareNumberRange clone() {
+            Thoroughfare.ThoroughfareNumberRange copy;
+            try {
+                copy = ((Thoroughfare.ThoroughfareNumberRange) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+            for (AddressLine iter: addressLine) {
+                copy.addressLine.add(iter.clone());
+            }
+            copy.thoroughfareNumberFrom = ((thoroughfareNumberFrom == null)?null:((Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom) thoroughfareNumberFrom.clone()));
+            copy.thoroughfareNumberTo = ((thoroughfareNumberTo == null)?null:((Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo) thoroughfareNumberTo.clone()));
+            return copy;
+        }
+
 
         /**
          * 
@@ -2427,13 +2518,14 @@ public class Thoroughfare {
             "content"
         })
         @XmlRootElement(name = "ThoroughfareNumberFrom", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class ThoroughfareNumberFrom {
+        public static class ThoroughfareNumberFrom implements Cloneable
+        {
 
             @XmlElementRefs({
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class)
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class)
             })
             @XmlMixed
             protected List<Object> content;
@@ -2546,7 +2638,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumber}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumberPrefix}
+             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link String}{@link AddressLine}{@link ThoroughfareNumberPrefix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2579,6 +2671,21 @@ public class Thoroughfare {
                 return this;
             }
 
+            @Override
+            public Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom clone() {
+                Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom copy;
+                try {
+                    copy = ((Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                copy.content = new ArrayList<Object>((getContent().size()));
+                for (Object iter: content) {
+                    copy.content.add(iter);
+                }
+                return copy;
+            }
+
         }
 
 
@@ -2590,13 +2697,14 @@ public class Thoroughfare {
             "content"
         })
         @XmlRootElement(name = "ThoroughfareNumberTo", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class ThoroughfareNumberTo {
+        public static class ThoroughfareNumberTo implements Cloneable
+        {
 
             @XmlElementRefs({
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class)
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class)
             })
             @XmlMixed
             protected List<Object> content;
@@ -2709,7 +2817,7 @@ public class Thoroughfare {
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link AddressLine}{@link ThoroughfareNumber}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumberPrefix}
+             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link String}{@link AddressLine}{@link ThoroughfareNumberPrefix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2740,6 +2848,21 @@ public class Thoroughfare {
             public Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo withCode(final String code) {
                 this.setCode(code);
                 return this;
+            }
+
+            @Override
+            public Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo clone() {
+                Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo copy;
+                try {
+                    copy = ((Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                copy.content = new ArrayList<Object>((getContent().size()));
+                for (Object iter: content) {
+                    copy.content.add(iter);
+                }
+                return copy;
             }
 
         }

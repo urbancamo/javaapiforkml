@@ -51,7 +51,8 @@ import javax.xml.bind.annotation.XmlType;
     "updateExtension"
 })
 @XmlRootElement(name = "Update", namespace = "http://www.opengis.net/kml/2.2")
-public class Update {
+public class Update implements Cloneable
+{
 
     /**
      * <targethref> (required)
@@ -75,9 +76,9 @@ public class Update {
     protected String targetHref;
     @XmlElements({
         @XmlElement(name = "UpdateOpExtensionGroup"),
+        @XmlElement(name = "Delete", type = Delete.class),
         @XmlElement(name = "Create", type = Create.class),
-        @XmlElement(name = "Change", type = Change.class),
-        @XmlElement(name = "Delete", type = Delete.class)
+        @XmlElement(name = "Change", type = Change.class)
     })
     protected List<Object> createOrDeleteOrChange;
     @XmlElement(name = "UpdateExtensionGroup")
@@ -217,7 +218,7 @@ public class Update {
      * add a value to the createOrDeleteOrChange property collection
      * 
      * @param createOrDeleteOrChange
-     *     Objects of the following type are allowed in the list: {@link Object}{@link Create}{@link Change}{@link Delete}
+     *     Objects of the following type are allowed in the list: {@link Object}{@link Delete}{@link Create}{@link Change}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -258,6 +259,25 @@ public class Update {
     public Update withUpdateExtension(final List<Object> updateExtension) {
         this.setUpdateExtension(updateExtension);
         return this;
+    }
+
+    @Override
+    public Update clone() {
+        Update copy;
+        try {
+            copy = ((Update) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.createOrDeleteOrChange = new ArrayList<Object>((getCreateOrDeleteOrChange().size()));
+        for (Object iter: createOrDeleteOrChange) {
+            copy.createOrDeleteOrChange.add(iter);
+        }
+        copy.updateExtension = new ArrayList<Object>((getUpdateExtension().size()));
+        for (Object iter: updateExtension) {
+            copy.updateExtension.add(iter);
+        }
+        return copy;
     }
 
 }

@@ -30,7 +30,8 @@ import javax.xml.bind.annotation.XmlValue;
 })
 @Deprecated
 @XmlRootElement(name = "Snippet", namespace = "http://www.opengis.net/kml/2.2")
-public class Snippet {
+public class Snippet implements Cloneable
+{
 
     /**
      * <value>
@@ -159,6 +160,17 @@ public class Snippet {
     public Snippet withMaxLines(final int maxLines) {
         this.setMaxLines(maxLines);
         return this;
+    }
+
+    @Override
+    public Snippet clone() {
+        Snippet copy;
+        try {
+            copy = ((Snippet) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

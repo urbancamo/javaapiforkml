@@ -68,6 +68,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Style", namespace = "http://www.opengis.net/kml/2.2")
 public class Style
     extends StyleSelector
+    implements Cloneable
 {
 
     /**
@@ -873,6 +874,27 @@ public class Style
     public Style withStyleSelectorObjectExtension(final List<AbstractObject> styleSelectorObjectExtension) {
         super.withStyleSelectorObjectExtension(styleSelectorObjectExtension);
         return this;
+    }
+
+    @Override
+    public Style clone() {
+        Style copy;
+        copy = ((Style) super.clone());
+        copy.iconStyle = ((iconStyle == null)?null:((IconStyle) iconStyle.clone()));
+        copy.labelStyle = ((labelStyle == null)?null:((LabelStyle) labelStyle.clone()));
+        copy.lineStyle = ((lineStyle == null)?null:((LineStyle) lineStyle.clone()));
+        copy.polyStyle = ((polyStyle == null)?null:((PolyStyle) polyStyle.clone()));
+        copy.balloonStyle = ((balloonStyle == null)?null:((BalloonStyle) balloonStyle.clone()));
+        copy.listStyle = ((listStyle == null)?null:((ListStyle) listStyle.clone()));
+        copy.styleSimpleExtension = new ArrayList<Object>((getStyleSimpleExtension().size()));
+        for (Object iter: styleSimpleExtension) {
+            copy.styleSimpleExtension.add(iter);
+        }
+        copy.styleObjectExtension = new ArrayList<AbstractObject>((getStyleObjectExtension().size()));
+        for (AbstractObject iter: styleObjectExtension) {
+            copy.styleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

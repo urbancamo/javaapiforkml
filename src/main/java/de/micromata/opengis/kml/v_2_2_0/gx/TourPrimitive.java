@@ -57,19 +57,27 @@ import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbstractTourPrimitiveType")
 @XmlSeeAlso({
-    Wait.class,
-    FlyTo.class,
     AnimatedUpdate.class,
+    TourControl.class,
+    Wait.class,
     SoundCue.class,
-    TourControl.class
+    FlyTo.class
 })
 public abstract class TourPrimitive
     extends AbstractObject
+    implements Cloneable
 {
 
 
     public TourPrimitive() {
         super();
+    }
+
+    @Override
+    public TourPrimitive clone() {
+        TourPrimitive copy;
+        copy = ((TourPrimitive) super.clone());
+        return copy;
     }
 
 }

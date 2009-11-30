@@ -34,6 +34,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Alias", namespace = "http://www.opengis.net/kml/2.2")
 public class Alias
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -377,6 +378,21 @@ public class Alias
     public Alias withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Alias clone() {
+        Alias copy;
+        copy = ((Alias) super.clone());
+        copy.aliasSimpleExtension = new ArrayList<Object>((getAliasSimpleExtension().size()));
+        for (Object iter: aliasSimpleExtension) {
+            copy.aliasSimpleExtension.add(iter);
+        }
+        copy.aliasObjectExtension = new ArrayList<AbstractObject>((getAliasObjectExtension().size()));
+        for (AbstractObject iter: aliasObjectExtension) {
+            copy.aliasObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

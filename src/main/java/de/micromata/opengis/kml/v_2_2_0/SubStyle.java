@@ -21,12 +21,13 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "subStyleObjectExtension"
 })
 @XmlSeeAlso({
-    BalloonStyle.class,
     ListStyle.class,
+    BalloonStyle.class,
     ColorStyle.class
 })
 public abstract class SubStyle
     extends AbstractObject
+    implements Cloneable
 {
 
     @XmlElement(name = "AbstractSubStyleSimpleExtensionGroup")
@@ -210,6 +211,21 @@ public abstract class SubStyle
     public SubStyle withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public SubStyle clone() {
+        SubStyle copy;
+        copy = ((SubStyle) super.clone());
+        copy.subStyleSimpleExtension = new ArrayList<Object>((getSubStyleSimpleExtension().size()));
+        for (Object iter: subStyleSimpleExtension) {
+            copy.subStyleSimpleExtension.add(iter);
+        }
+        copy.subStyleObjectExtension = new ArrayList<AbstractObject>((getSubStyleObjectExtension().size()));
+        for (AbstractObject iter: subStyleObjectExtension) {
+            copy.subStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

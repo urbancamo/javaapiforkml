@@ -33,7 +33,6 @@ import javax.xml.transform.stream.StreamSource;
 
 import org.apache.log4j.Logger;
 
-
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 
 public final class Utils {
@@ -106,6 +105,7 @@ public final class Utils {
 	private static Marshaller createMarshaller(JAXBContext jc) throws JAXBException, PropertyException {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new NameSpaceBeautyfier());
 		return m;
 	}
 
@@ -203,15 +203,15 @@ public final class Utils {
 		try {
 			JAXBContext jc = createJAXBContext(clazz);
 			Marshaller m = createMarshaller(jc);
-			 m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new NameSpaceBeautyfier());
+
 			m.marshal(object, System.out);
 		} catch (JAXBException e) {
 			LOG.info("Exception encountered " + e);
 		}
 		return unmarshalledKml;
 	}
-	
-	 private static <T> JAXBContext createJAXBContext(Class<T> clazz) throws JAXBException {
+
+	private static <T> JAXBContext createJAXBContext(Class<T> clazz) throws JAXBException {
 		JAXBContext jc = JAXBContext.newInstance(clazz);
 		return jc;
 	}

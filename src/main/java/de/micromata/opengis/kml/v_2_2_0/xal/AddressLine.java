@@ -22,7 +22,8 @@ import javax.xml.namespace.QName;
     "content"
 })
 @XmlRootElement(name = "AddressLine")
-public class AddressLine {
+public class AddressLine implements Cloneable
+{
 
     @XmlValue
     protected String content;
@@ -200,6 +201,17 @@ public class AddressLine {
     public AddressLine withCode(final String code) {
         this.setCode(code);
         return this;
+    }
+
+    @Override
+    public AddressLine clone() {
+        AddressLine copy;
+        try {
+            copy = ((AddressLine) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

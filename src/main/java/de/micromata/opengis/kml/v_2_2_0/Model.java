@@ -85,6 +85,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Model", namespace = "http://www.opengis.net/kml/2.2")
 public class Model
     extends Geometry
+    implements Cloneable
 {
 
     /**
@@ -274,8 +275,8 @@ public class Model
      * @return
      *     possible object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -288,8 +289,8 @@ public class Model
      * @param value
      *     allowed object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -847,6 +848,26 @@ public class Model
     public Model withGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {
         super.withGeometryObjectExtension(geometryObjectExtension);
         return this;
+    }
+
+    @Override
+    public Model clone() {
+        Model copy;
+        copy = ((Model) super.clone());
+        copy.location = ((location == null)?null:((Location) location.clone()));
+        copy.orientation = ((orientation == null)?null:((Orientation) orientation.clone()));
+        copy.scale = ((scale == null)?null:((Scale) scale.clone()));
+        copy.link = ((link == null)?null:((Link) link.clone()));
+        copy.resourceMap = ((resourceMap == null)?null:((ResourceMap) resourceMap.clone()));
+        copy.modelSimpleExtension = new ArrayList<Object>((getModelSimpleExtension().size()));
+        for (Object iter: modelSimpleExtension) {
+            copy.modelSimpleExtension.add(iter);
+        }
+        copy.modelObjectExtension = new ArrayList<AbstractObject>((getModelObjectExtension().size()));
+        for (AbstractObject iter: modelObjectExtension) {
+            copy.modelObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

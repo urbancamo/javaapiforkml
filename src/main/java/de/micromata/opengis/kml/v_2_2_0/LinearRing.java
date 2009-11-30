@@ -65,6 +65,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "LinearRing", namespace = "http://www.opengis.net/kml/2.2")
 public class LinearRing
     extends Geometry
+    implements Cloneable
 {
 
     /**
@@ -99,6 +100,7 @@ public class LinearRing
      * 
      */
     @XmlElement(defaultValue = "0")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean extrude;
     /**
      * <tessellate>
@@ -125,6 +127,7 @@ public class LinearRing
      * 
      */
     @XmlElement(defaultValue = "0")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean tessellate;
     /**
      * AltitudeMode
@@ -145,7 +148,7 @@ public class LinearRing
      * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
-     * ³ ?180 and <= 180 latitude ³ ?90 and ² 90 altitude values (optional) are in meters 
+     * â‰¥ âˆ’180 and <= 180 latitude â‰¥ âˆ’90 and â‰¤ 90 altitude values (optional) are in meters 
      * above sea level 
      * </p>
      * <p>
@@ -244,8 +247,8 @@ public class LinearRing
      * @return
      *     possible object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -258,8 +261,8 @@ public class LinearRing
      * @param value
      *     allowed object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -411,11 +414,11 @@ public class LinearRing
     /**
      * add a value to the coordinates property collection
      * 
+     * @param altitude
+     *     required parameter
      * @param longitude
      *     required parameter
      * @param latitude
-     *     required parameter
-     * @param altitude
      *     required parameter
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
@@ -656,6 +659,25 @@ public class LinearRing
         List<Coordinate> newValue = new ArrayList<Coordinate>();
         this.setCoordinates(newValue);
         return newValue;
+    }
+
+    @Override
+    public LinearRing clone() {
+        LinearRing copy;
+        copy = ((LinearRing) super.clone());
+        copy.coordinates = new ArrayList<Coordinate>((getCoordinates().size()));
+        for (Coordinate iter: coordinates) {
+            copy.coordinates.add(iter.clone());
+        }
+        copy.linearRingSimpleExtension = new ArrayList<Object>((getLinearRingSimpleExtension().size()));
+        for (Object iter: linearRingSimpleExtension) {
+            copy.linearRingSimpleExtension.add(iter);
+        }
+        copy.linearRingObjectExtension = new ArrayList<AbstractObject>((getLinearRingObjectExtension().size()));
+        for (AbstractObject iter: linearRingObjectExtension) {
+            copy.linearRingObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

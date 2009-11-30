@@ -15,39 +15,14 @@
 // ///////////////////////////////////////////////////////////////////////////
 package de.micromata.jak.incubator;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringReader;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipException;
-import java.util.zip.ZipFile;
-import java.util.zip.ZipOutputStream;
-
-import junit.framework.Assert;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
 
-import com.sun.istack.NotNull;
-
-import de.micromata.jak.Utils;
-import de.micromata.opengis.kml.v_2_2_0.Document;
-import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
-import de.micromata.opengis.kml.v_2_2_0.LineString;
-import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
 
 
@@ -107,7 +82,7 @@ public class KmzTest {
 	}
 
 	@Test
-	public void HelloKML() {
+	public void helloKML() {
 
 		final Kml kml = new Kml();
 		kml.createAndSetPlacemark().withName("London, UK").withOpen(true).createAndSetPoint().addToCoordinates(-0.126236, 51.500152);

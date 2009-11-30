@@ -4,6 +4,7 @@ package de.micromata.opengis.kml.v_2_2_0;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -31,13 +32,15 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.transform.stream.StreamSource;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.sax.SAXSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import com.sun.istack.NotNull;
 import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import org.xml.sax.ContentHandler;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 
@@ -74,7 +77,8 @@ import org.xml.sax.SAXException;
     "kmlObjectExtension"
 })
 @XmlRootElement(name = "kml", namespace = "http://www.opengis.net/kml/2.2")
-public class Kml {
+public class Kml implements Cloneable
+{
 
     /**
      * <NetworkLinkControl>
@@ -211,17 +215,17 @@ public class Kml {
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link PhotoOverlay}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
+     *     {@code <}{@link Folder}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -233,17 +237,17 @@ public class Kml {
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link PhotoOverlay}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
+     *     {@code <}{@link Folder}{@code>}
+     *     {@code <}{@link GroundOverlay}{@code>}
      *     
      */
     public void setFeature(Feature value) {
@@ -401,17 +405,17 @@ public class Kml {
     }
 
     /**
-     * Creates a new instance of {@link ScreenOverlay} and set it to feature.
+     * Creates a new instance of {@link NetworkLink} and set it to feature.
      * 
      * This method is a short version for:
      * <code>
-     * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.setFeature(screenOverlay); </code>
+     * NetworkLink networkLink = new NetworkLink();
+     * this.setFeature(networkLink); </code>
      * 
      * 
      */
-    public ScreenOverlay createAndSetScreenOverlay() {
-        ScreenOverlay newValue = new ScreenOverlay();
+    public NetworkLink createAndSetNetworkLink() {
+        NetworkLink newValue = new NetworkLink();
         this.setFeature(newValue);
         return newValue;
     }
@@ -433,6 +437,22 @@ public class Kml {
     }
 
     /**
+     * Creates a new instance of {@link ScreenOverlay} and set it to feature.
+     * 
+     * This method is a short version for:
+     * <code>
+     * ScreenOverlay screenOverlay = new ScreenOverlay();
+     * this.setFeature(screenOverlay); </code>
+     * 
+     * 
+     */
+    public ScreenOverlay createAndSetScreenOverlay() {
+        ScreenOverlay newValue = new ScreenOverlay();
+        this.setFeature(newValue);
+        return newValue;
+    }
+
+    /**
      * Creates a new instance of {@link GroundOverlay} and set it to feature.
      * 
      * This method is a short version for:
@@ -449,17 +469,17 @@ public class Kml {
     }
 
     /**
-     * Creates a new instance of {@link NetworkLink} and set it to feature.
+     * Creates a new instance of {@link Document} and set it to feature.
      * 
      * This method is a short version for:
      * <code>
-     * NetworkLink networkLink = new NetworkLink();
-     * this.setFeature(networkLink); </code>
+     * Document document = new Document();
+     * this.setFeature(document); </code>
      * 
      * 
      */
-    public NetworkLink createAndSetNetworkLink() {
-        NetworkLink newValue = new NetworkLink();
+    public Document createAndSetDocument() {
+        Document newValue = new Document();
         this.setFeature(newValue);
         return newValue;
     }
@@ -476,22 +496,6 @@ public class Kml {
      */
     public Folder createAndSetFolder() {
         Folder newValue = new Folder();
-        this.setFeature(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Document} and set it to feature.
-     * 
-     * This method is a short version for:
-     * <code>
-     * Document document = new Document();
-     * this.setFeature(document); </code>
-     * 
-     * 
-     */
-    public Document createAndSetDocument() {
-        Document newValue = new Document();
         this.setFeature(newValue);
         return newValue;
     }
@@ -798,9 +802,17 @@ public class Kml {
             if (validate == true) {
                 Kml.validate(unmarshaller);
             }
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(new StreamSource(file)));
+            InputSource input = new InputSource(new FileReader(file));
+            SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(validate), input);
+            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
             return jaxbRootElement;
+        } catch (SAXException _x) {
+            _x.printStackTrace();
+        } catch (ParserConfigurationException _x) {
+            _x.printStackTrace();
         } catch (JAXBException _x) {
+            _x.printStackTrace();
+        } catch (FileNotFoundException _x) {
             _x.printStackTrace();
         }
         return null;
@@ -829,8 +841,14 @@ public class Kml {
     public static Kml unmarshal(final String content) {
         try {
             Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(new StringReader(content)));
+            InputSource input = new InputSource(new StringReader(content));
+            SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
+            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
             return jaxbRootElement;
+        } catch (SAXException _x) {
+            _x.printStackTrace();
+        } catch (ParserConfigurationException _x) {
+            _x.printStackTrace();
         } catch (JAXBException _x) {
             _x.printStackTrace();
         }
@@ -848,8 +866,14 @@ public class Kml {
     public static Kml unmarshal(final InputStream content) {
         try {
             Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(content));
+            InputSource input = new InputSource(content);
+            SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
+            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
             return jaxbRootElement;
+        } catch (SAXException _x) {
+            _x.printStackTrace();
+        } catch (ParserConfigurationException _x) {
+            _x.printStackTrace();
         } catch (JAXBException _x) {
             _x.printStackTrace();
         }
@@ -885,7 +909,7 @@ public class Kml {
                 continue;
             }
             String entryName = URLDecoder.decode(entry.getName(), "UTF-8");
-            if (entryName.endsWith("*.kml")) {
+            if (!entryName.endsWith(".kml")) {
                 continue;
             }
             InputStream in = zip.getInputStream(entry);
@@ -896,7 +920,28 @@ public class Kml {
         return kmlfiles.toArray(EMPTY_KML_ARRAY);
     }
 
-    private final class NameSpaceBeautyfier
+    @Override
+    public Kml clone() {
+        Kml copy;
+        try {
+            copy = ((Kml) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.networkLinkControl = ((networkLinkControl == null)?null:((NetworkLinkControl) networkLinkControl.clone()));
+        copy.feature = ((feature == null)?null:((Feature ) feature.clone()));
+        copy.kmlSimpleExtension = new ArrayList<Object>((getKmlSimpleExtension().size()));
+        for (Object iter: kmlSimpleExtension) {
+            copy.kmlSimpleExtension.add(iter);
+        }
+        copy.kmlObjectExtension = new ArrayList<AbstractObject>((getKmlObjectExtension().size()));
+        for (AbstractObject iter: kmlObjectExtension) {
+            copy.kmlObjectExtension.add(iter.clone());
+        }
+        return copy;
+    }
+
+    private final static class NameSpaceBeautyfier
         extends NamespacePrefixMapper
     {
 

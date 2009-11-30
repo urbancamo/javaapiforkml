@@ -42,6 +42,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "ItemIcon", namespace = "http://www.opengis.net/kml/2.2")
 public class ItemIcon
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -377,6 +378,25 @@ public class ItemIcon
     public ItemIcon withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public ItemIcon clone() {
+        ItemIcon copy;
+        copy = ((ItemIcon) super.clone());
+        copy.state = new ArrayList<ItemIconState>((getState().size()));
+        for (ItemIconState iter: state) {
+            copy.state.add(iter);
+        }
+        copy.itemIconSimpleExtension = new ArrayList<Object>((getItemIconSimpleExtension().size()));
+        for (Object iter: itemIconSimpleExtension) {
+            copy.itemIconSimpleExtension.add(iter);
+        }
+        copy.itemIconObjectExtension = new ArrayList<AbstractObject>((getItemIconObjectExtension().size()));
+        for (AbstractObject iter: itemIconObjectExtension) {
+            copy.itemIconObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

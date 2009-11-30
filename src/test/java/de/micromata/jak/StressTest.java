@@ -167,11 +167,11 @@ public final class StressTest {
 	}
 
 	final class Statistics {
-		private Time timeCreate = new Time();
+		final private Time timeCreate = new Time();
 
-		private Time timeMarhsal = new Time();
+		final private Time timeMarhsal = new Time();
 
-		private Time timeUnmarhsal = new Time();
+		final private Time timeUnmarhsal = new Time();
 
 		private String filename;
 
@@ -214,7 +214,7 @@ public final class StressTest {
 
 	}
 
-	final class Time {
+	class Time {
 		private long start = 0; // start timing
 
 		private long end = 0; // start timing

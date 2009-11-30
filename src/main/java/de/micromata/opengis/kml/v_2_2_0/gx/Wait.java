@@ -20,6 +20,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Wait", namespace = "http://www.google.com/kml/ext/2.2")
 public class Wait
     extends TourPrimitive
+    implements Cloneable
 {
 
     @XmlElement(defaultValue = "0.0")
@@ -110,6 +111,13 @@ public class Wait
     public Wait withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Wait clone() {
+        Wait copy;
+        copy = ((Wait) super.clone());
+        return copy;
     }
 
 }

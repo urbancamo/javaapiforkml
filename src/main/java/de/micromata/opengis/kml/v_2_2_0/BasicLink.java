@@ -29,6 +29,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "BasicLink", namespace = "http://www.opengis.net/kml/2.2")
 public class BasicLink
     extends AbstractObject
+    implements Cloneable
 {
 
     protected String href;
@@ -257,6 +258,21 @@ public class BasicLink
     public BasicLink withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public BasicLink clone() {
+        BasicLink copy;
+        copy = ((BasicLink) super.clone());
+        copy.basicLinkSimpleExtension = new ArrayList<Object>((getBasicLinkSimpleExtension().size()));
+        for (Object iter: basicLinkSimpleExtension) {
+            copy.basicLinkSimpleExtension.add(iter);
+        }
+        copy.basicLinkObjectExtension = new ArrayList<AbstractObject>((getBasicLinkObjectExtension().size()));
+        for (AbstractObject iter: basicLinkObjectExtension) {
+            copy.basicLinkObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

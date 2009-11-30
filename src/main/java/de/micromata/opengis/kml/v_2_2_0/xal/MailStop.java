@@ -29,7 +29,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "MailStop", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class MailStop {
+public class MailStop implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -373,6 +374,27 @@ public class MailStop {
         return this;
     }
 
+    @Override
+    public MailStop clone() {
+        MailStop copy;
+        try {
+            copy = ((MailStop) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.mailStopName = ((mailStopName == null)?null:((MailStop.MailStopName) mailStopName.clone()));
+        copy.mailStopNumber = ((mailStopNumber == null)?null:((MailStop.MailStopNumber) mailStopNumber.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -382,7 +404,8 @@ public class MailStop {
         "content"
     })
     @XmlRootElement(name = "MailStopName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class MailStopName {
+    public static class MailStopName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -562,6 +585,17 @@ public class MailStop {
             return this;
         }
 
+        @Override
+        public MailStop.MailStopName clone() {
+            MailStop.MailStopName copy;
+            try {
+                copy = ((MailStop.MailStopName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -573,7 +607,8 @@ public class MailStop {
         "content"
     })
     @XmlRootElement(name = "MailStopNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class MailStopNumber {
+    public static class MailStopNumber implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -751,6 +786,17 @@ public class MailStop {
         public MailStop.MailStopNumber withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public MailStop.MailStopNumber clone() {
+            MailStop.MailStopNumber copy;
+            try {
+                copy = ((MailStop.MailStopNumber) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

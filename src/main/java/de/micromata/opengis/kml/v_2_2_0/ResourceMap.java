@@ -26,6 +26,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "ResourceMap", namespace = "http://www.opengis.net/kml/2.2")
 public class ResourceMap
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -311,6 +312,25 @@ public class ResourceMap
     public ResourceMap withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public ResourceMap clone() {
+        ResourceMap copy;
+        copy = ((ResourceMap) super.clone());
+        copy.alias = new ArrayList<Alias>((getAlias().size()));
+        for (Alias iter: alias) {
+            copy.alias.add(iter.clone());
+        }
+        copy.resourceMapSimpleExtension = new ArrayList<Object>((getResourceMapSimpleExtension().size()));
+        for (Object iter: resourceMapSimpleExtension) {
+            copy.resourceMapSimpleExtension.add(iter);
+        }
+        copy.resourceMapObjectExtension = new ArrayList<AbstractObject>((getResourceMapObjectExtension().size()));
+        for (AbstractObject iter: resourceMapObjectExtension) {
+            copy.resourceMapObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

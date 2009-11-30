@@ -48,7 +48,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "schemaExtension"
 })
 @XmlRootElement(name = "Schema", namespace = "http://www.opengis.net/kml/2.2")
-public class Schema {
+public class Schema implements Cloneable
+{
 
     @XmlElement(name = "SimpleField")
     protected List<SimpleField> simpleField;
@@ -313,6 +314,25 @@ public class Schema {
     public Schema withId(final String id) {
         this.setId(id);
         return this;
+    }
+
+    @Override
+    public Schema clone() {
+        Schema copy;
+        try {
+            copy = ((Schema) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.simpleField = new ArrayList<SimpleField>((getSimpleField().size()));
+        for (SimpleField iter: simpleField) {
+            copy.simpleField.add(iter.clone());
+        }
+        copy.schemaExtension = new ArrayList<Object>((getSchemaExtension().size()));
+        for (Object iter: schemaExtension) {
+            copy.schemaExtension.add(iter);
+        }
+        return copy;
     }
 
 }

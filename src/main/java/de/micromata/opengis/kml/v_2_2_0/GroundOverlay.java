@@ -88,6 +88,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 @XmlRootElement(name = "GroundOverlay", namespace = "http://www.opengis.net/kml/2.2")
 public class GroundOverlay
     extends Overlay
+    implements Cloneable
 {
 
     /**
@@ -129,15 +130,15 @@ public class GroundOverlay
      * <p>
      * Specifies where the top, bottom, right, and left sides of a bounding box for the 
      * ground overlay are aligned. <north> Specifies the latitude of the north edge of 
-     * the bounding box, in decimal degrees from 0 to ±90. <south> Specifies the latitude 
-     * of the south edge of the bounding box, in decimal degrees from 0 to ±90. <east> 
+     * the bounding box, in decimal degrees from 0 to Â±90. <south> Specifies the latitude 
+     * of the south edge of the bounding box, in decimal degrees from 0 to Â±90. <east> 
      * Specifies the longitude of the east edge of the bounding box, in decimal degrees 
-     * from 0 to ±180. (For overlays that overlap the meridian of 180¡ longitude, values 
+     * from 0 to Â±180. (For overlays that overlap the meridian of 180Â° longitude, values 
      * can extend beyond that range.) <west> Specifies the longitude of the west edge of 
-     * the bounding box, in decimal degrees from 0 to ±180. (For overlays that overlap 
-     * the meridian of 180¡ longitude, values can extend beyond that range.) <rotation> 
+     * the bounding box, in decimal degrees from 0 to Â±180. (For overlays that overlap 
+     * the meridian of 180Â° longitude, values can extend beyond that range.) <rotation> 
      * Specifies a rotation of the overlay about its center, in degrees. Values can be 
-     * ±180. The default is 0 (north). Rotations are specified in a counterclockwise direction. 
+     * Â±180. The default is 0 (north). Rotations are specified in a counterclockwise direction. 
      * <LatLonBox> <north>48.25475939255556</north> <south>48.25207367852141</south> <east>-90.86591508839973</east> 
      * <west>-90.8714285289695</west> <rotation>39.37878630116985</rotation> </LatLonBox> 
      * </p>
@@ -205,8 +206,8 @@ public class GroundOverlay
      * @return
      *     possible object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -219,8 +220,8 @@ public class GroundOverlay
      * @param value
      *     allowed object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -395,7 +396,7 @@ public class GroundOverlay
      * add a value to the groundOverlayObjectExtension property collection
      * 
      * @param groundOverlayObjectExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link LatLonQuad}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link LatLonQuad}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -760,6 +761,22 @@ public class GroundOverlay
     public GroundOverlay withOverlayObjectExtension(final List<AbstractObject> overlayObjectExtension) {
         super.withOverlayObjectExtension(overlayObjectExtension);
         return this;
+    }
+
+    @Override
+    public GroundOverlay clone() {
+        GroundOverlay copy;
+        copy = ((GroundOverlay) super.clone());
+        copy.latLonBox = ((latLonBox == null)?null:((LatLonBox) latLonBox.clone()));
+        copy.groundOverlaySimpleExtension = new ArrayList<Object>((getGroundOverlaySimpleExtension().size()));
+        for (Object iter: groundOverlaySimpleExtension) {
+            copy.groundOverlaySimpleExtension.add(iter);
+        }
+        copy.groundOverlayObjectExtension = new ArrayList<AbstractObject>((getGroundOverlayObjectExtension().size()));
+        for (AbstractObject iter: groundOverlayObjectExtension) {
+            copy.groundOverlayObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

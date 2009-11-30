@@ -25,7 +25,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * the Region is active. If this limit is not reached, the associated geometry is considered 
  * to be too far from the user's viewpoint to be drawn. <maxLodPixels> Measurement 
  * in screen pixels that represents the maximum limit of the visibility range for a 
- * given Region. A value of ?1, the default, indicates "active to infinite size." <minFadeExtent> 
+ * given Region. A value of −1, the default, indicates "active to infinite size." <minFadeExtent> 
  * Distance over which the geometry fades, from fully opaque to fully transparent. 
  * This ramp value, expressed in screen pixels, is applied at the minimum end of the 
  * LOD (visibility) limits. <maxFadeExtent> Distance over which the geometry fades, 
@@ -48,6 +48,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Lod", namespace = "http://www.opengis.net/kml/2.2")
 public class Lod
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -73,7 +74,7 @@ public class Lod
      * <maxlodpixels>
      * <p>
      * Measurement in screen pixels that represents the maximum limit of the visibility 
-     * range for a given Region. A value of ?1, the default, indicates "active to infinite 
+     * range for a given Region. A value of −1, the default, indicates "active to infinite 
      * size." 
      * </p>
      * 
@@ -480,6 +481,21 @@ public class Lod
     public Lod withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Lod clone() {
+        Lod copy;
+        copy = ((Lod) super.clone());
+        copy.lodSimpleExtension = new ArrayList<Object>((getLodSimpleExtension().size()));
+        for (Object iter: lodSimpleExtension) {
+            copy.lodSimpleExtension.add(iter);
+        }
+        copy.lodObjectExtension = new ArrayList<AbstractObject>((getLodObjectExtension().size()));
+        for (AbstractObject iter: lodObjectExtension) {
+            copy.lodObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

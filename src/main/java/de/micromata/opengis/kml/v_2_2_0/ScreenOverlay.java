@@ -102,6 +102,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 @XmlRootElement(name = "ScreenOverlay", namespace = "http://www.opengis.net/kml/2.2")
 public class ScreenOverlay
     extends Overlay
+    implements Cloneable
 {
 
     /**
@@ -114,7 +115,7 @@ public class ScreenOverlay
      * The x and y values can be specified in three different ways: as pixels ("pixels"), 
      * as fractions of the image ("fraction"), or as inset pixels ("insetPixels"), which 
      * is an offset in pixels from the upper right corner of the image. The x and y positions 
-     * can be specified in different ways�for example, x can be in pixels and y can be 
+     * can be specified in different ways—for example, x can be in pixels and y can be 
      * a fraction. The origin of the coordinate system is in the lower left corner of the 
      * image. x - Either the number of pixels, a fractional component of the image, or 
      * a pixel inset indicating the x component of a point on the overlay image. y - Either 
@@ -164,7 +165,7 @@ public class ScreenOverlay
      * to. The x and y values can be specified in three different ways: as pixels ("pixels"), 
      * as fractions of the screen ("fraction"), or as inset pixels ("insetPixels"), which 
      * is an offset in pixels from the upper right corner of the screen. The x and y positions 
-     * can be specified in different ways�for example, x can be in pixels and y can be 
+     * can be specified in different ways—for example, x can be in pixels and y can be 
      * a fraction. The origin of the coordinate system is in the lower left corner of the 
      * screen. x - Either the number of pixels, a fractional component of the screen, or 
      * a pixel inset indicating the x component of a point on the screen. y - Either the 
@@ -198,7 +199,7 @@ public class ScreenOverlay
      * For example: 
      * </p>
      * <p>
-     * Specifies the size of the image for the screen overlay, as follows: A value of ?1 
+     * Specifies the size of the image for the screen overlay, as follows: A value of −1 
      * indicates to use the native dimension A value of 0 indicates to maintain the aspect 
      * ratio A value of n sets the value of the dimension 
      * </p>
@@ -211,11 +212,11 @@ public class ScreenOverlay
      * </p>
      * <p>
      * To force the image to retain its original x and y dimensions, set the values to 
-     * ?1: 
+     * −1: 
      * </p>
      * <p>
      * To force the image to retain its original x and y dimensions, set the values to 
-     * ?1: <size x="-1" y="-1" xunits="fraction" yunits="fraction"/> To force the image 
+     * −1: <size x="-1" y="-1" xunits="fraction" yunits="fraction"/> To force the image 
      * to retain its horizontal dimension, but to take up 20 percent of the vertical screen 
      * space: <size x="-1" y="0.2" xunits="fraction" yunits="fraction"/> To force the image 
      * to resize to 100px by 500px: <size x="100" y="500" xunits="pixels" yunits="pixels"/> 
@@ -233,7 +234,7 @@ public class ScreenOverlay
      * </p>
      * <p>
      * Indicates the angle of rotation of the parent object. A value of 0 means no rotation. 
-     * The value is an angle in degrees counterclockwise starting from north. Use �180 
+     * The value is an angle in degrees counterclockwise starting from north. Use ±180 
      * to indicate the rotation of the parent object from 0. The center of the <rotation>, 
      * if not (.5,.5), is specified in <rotationXY>. 
      * </p>
@@ -992,6 +993,25 @@ public class ScreenOverlay
     public ScreenOverlay withOverlayObjectExtension(final List<AbstractObject> overlayObjectExtension) {
         super.withOverlayObjectExtension(overlayObjectExtension);
         return this;
+    }
+
+    @Override
+    public ScreenOverlay clone() {
+        ScreenOverlay copy;
+        copy = ((ScreenOverlay) super.clone());
+        copy.overlayXY = ((overlayXY == null)?null:((Vec2) overlayXY.clone()));
+        copy.screenXY = ((screenXY == null)?null:((Vec2) screenXY.clone()));
+        copy.rotationXY = ((rotationXY == null)?null:((Vec2) rotationXY.clone()));
+        copy.size = ((size == null)?null:((Vec2) size.clone()));
+        copy.screenOverlaySimpleExtension = new ArrayList<Object>((getScreenOverlaySimpleExtension().size()));
+        for (Object iter: screenOverlaySimpleExtension) {
+            copy.screenOverlaySimpleExtension.add(iter);
+        }
+        copy.screenOverlayObjectExtension = new ArrayList<AbstractObject>((getScreenOverlayObjectExtension().size()));
+        for (AbstractObject iter: screenOverlayObjectExtension) {
+            copy.screenOverlayObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

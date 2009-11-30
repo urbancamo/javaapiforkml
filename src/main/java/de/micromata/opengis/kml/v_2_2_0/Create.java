@@ -36,7 +36,8 @@ import javax.xml.bind.annotation.XmlType;
     "container"
 })
 @XmlRootElement(name = "Create", namespace = "http://www.opengis.net/kml/2.2")
-public class Create {
+public class Create implements Cloneable
+{
 
     /**
      * <Container>
@@ -129,21 +130,6 @@ public class Create {
     }
 
     /**
-     * Creates a new instance of {@link Folder} and adds it to container.
-     * This method is a short version for:
-     * <code>
-     * Folder folder = new Folder();
-     * this.getContainer().add(folder); </code>
-     * 
-     * 
-     */
-    public Folder createAndAddFolder() {
-        Folder newValue = new Folder();
-        this.getContainer().add(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Document} and adds it to container.
      * This method is a short version for:
      * <code>
@@ -154,6 +140,21 @@ public class Create {
      */
     public Document createAndAddDocument() {
         Document newValue = new Document();
+        this.getContainer().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Folder} and adds it to container.
+     * This method is a short version for:
+     * <code>
+     * Folder folder = new Folder();
+     * this.getContainer().add(folder); </code>
+     * 
+     * 
+     */
+    public Folder createAndAddFolder() {
+        Folder newValue = new Folder();
         this.getContainer().add(newValue);
         return newValue;
     }
@@ -190,6 +191,21 @@ public class Create {
     public Create withContainer(final List<Container> container) {
         this.setContainer(container);
         return this;
+    }
+
+    @Override
+    public Create clone() {
+        Create copy;
+        try {
+            copy = ((Create) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.container = new ArrayList<Container>((getContainer().size()));
+        for (Container iter: container) {
+            copy.container.add(iter.clone());
+        }
+        return copy;
     }
 
 }

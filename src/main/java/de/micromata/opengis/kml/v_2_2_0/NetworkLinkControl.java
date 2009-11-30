@@ -56,7 +56,8 @@ import javax.xml.bind.annotation.XmlType;
     "networkLinkControlObjectExtension"
 })
 @XmlRootElement(name = "NetworkLinkControl", namespace = "http://www.opengis.net/kml/2.2")
-public class NetworkLinkControl {
+public class NetworkLinkControl implements Cloneable
+{
 
     /**
      * <minrefreshperiod>
@@ -469,9 +470,9 @@ public class NetworkLinkControl {
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -483,9 +484,9 @@ public class NetworkLinkControl {
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -684,22 +685,6 @@ public class NetworkLinkControl {
     }
 
     /**
-     * Creates a new instance of {@link LookAt} and set it to abstractView.
-     * 
-     * This method is a short version for:
-     * <code>
-     * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
-     * 
-     * 
-     */
-    public LookAt createAndSetLookAt() {
-        LookAt newValue = new LookAt();
-        this.setAbstractView(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
@@ -711,6 +696,22 @@ public class NetworkLinkControl {
      */
     public Camera createAndSetCamera() {
         Camera newValue = new Camera();
+        this.setAbstractView(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LookAt} and set it to abstractView.
+     * 
+     * This method is a short version for:
+     * <code>
+     * LookAt lookAt = new LookAt();
+     * this.setAbstractView(lookAt); </code>
+     * 
+     * 
+     */
+    public LookAt createAndSetLookAt() {
+        LookAt newValue = new LookAt();
         this.setAbstractView(newValue);
         return newValue;
     }
@@ -901,6 +902,28 @@ public class NetworkLinkControl {
     public NetworkLinkControl withNetworkLinkControlObjectExtension(final List<AbstractObject> networkLinkControlObjectExtension) {
         this.setNetworkLinkControlObjectExtension(networkLinkControlObjectExtension);
         return this;
+    }
+
+    @Override
+    public NetworkLinkControl clone() {
+        NetworkLinkControl copy;
+        try {
+            copy = ((NetworkLinkControl) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.linkSnippet = ((linkSnippet == null)?null:((Snippet) linkSnippet.clone()));
+        copy.update = ((update == null)?null:((Update) update.clone()));
+        copy.abstractView = ((abstractView == null)?null:((AbstractView ) abstractView.clone()));
+        copy.networkLinkControlSimpleExtension = new ArrayList<Object>((getNetworkLinkControlSimpleExtension().size()));
+        for (Object iter: networkLinkControlSimpleExtension) {
+            copy.networkLinkControlSimpleExtension.add(iter);
+        }
+        copy.networkLinkControlObjectExtension = new ArrayList<AbstractObject>((getNetworkLinkControlObjectExtension().size()));
+        for (AbstractObject iter: networkLinkControlObjectExtension) {
+            copy.networkLinkControlObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

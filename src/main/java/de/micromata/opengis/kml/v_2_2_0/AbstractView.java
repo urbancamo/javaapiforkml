@@ -23,11 +23,12 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "abstractViewObjectExtension"
 })
 @XmlSeeAlso({
-    LookAt.class,
-    Camera.class
+    Camera.class,
+    LookAt.class
 })
 public abstract class AbstractView
     extends AbstractObject
+    implements Cloneable
 {
 
     @XmlElement(name = "AbstractViewSimpleExtensionGroup")
@@ -211,6 +212,21 @@ public abstract class AbstractView
     public AbstractView withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public AbstractView clone() {
+        AbstractView copy;
+        copy = ((AbstractView) super.clone());
+        copy.abstractViewSimpleExtension = new ArrayList<Object>((getAbstractViewSimpleExtension().size()));
+        for (Object iter: abstractViewSimpleExtension) {
+            copy.abstractViewSimpleExtension.add(iter);
+        }
+        copy.abstractViewObjectExtension = new ArrayList<AbstractObject>((getAbstractViewObjectExtension().size()));
+        for (AbstractObject iter: abstractViewObjectExtension) {
+            copy.abstractViewObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

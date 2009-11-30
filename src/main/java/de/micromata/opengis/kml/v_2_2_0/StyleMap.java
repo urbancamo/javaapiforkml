@@ -48,6 +48,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "StyleMap", namespace = "http://www.opengis.net/kml/2.2")
 public class StyleMap
     extends StyleSelector
+    implements Cloneable
 {
 
     /**
@@ -384,6 +385,25 @@ public class StyleMap
     public StyleMap withStyleSelectorObjectExtension(final List<AbstractObject> styleSelectorObjectExtension) {
         super.withStyleSelectorObjectExtension(styleSelectorObjectExtension);
         return this;
+    }
+
+    @Override
+    public StyleMap clone() {
+        StyleMap copy;
+        copy = ((StyleMap) super.clone());
+        copy.pair = new ArrayList<Pair>((getPair().size()));
+        for (Pair iter: pair) {
+            copy.pair.add(iter.clone());
+        }
+        copy.styleMapSimpleExtension = new ArrayList<Object>((getStyleMapSimpleExtension().size()));
+        for (Object iter: styleMapSimpleExtension) {
+            copy.styleMapSimpleExtension.add(iter);
+        }
+        copy.styleMapObjectExtension = new ArrayList<AbstractObject>((getStyleMapObjectExtension().size()));
+        for (AbstractObject iter: styleMapObjectExtension) {
+            copy.styleMapObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

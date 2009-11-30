@@ -73,6 +73,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Icon", namespace = "http://www.opengis.net/kml/2.2")
 public class Icon
     extends BasicLink
+    implements Cloneable
 {
 
     /**
@@ -760,6 +761,21 @@ public class Icon
     public Icon withBasicLinkObjectExtension(final List<AbstractObject> basicLinkObjectExtension) {
         super.withBasicLinkObjectExtension(basicLinkObjectExtension);
         return this;
+    }
+
+    @Override
+    public Icon clone() {
+        Icon copy;
+        copy = ((Icon) super.clone());
+        copy.linkSimpleExtension = new ArrayList<Object>((getLinkSimpleExtension().size()));
+        for (Object iter: linkSimpleExtension) {
+            copy.linkSimpleExtension.add(iter);
+        }
+        copy.linkObjectExtension = new ArrayList<AbstractObject>((getLinkObjectExtension().size()));
+        for (AbstractObject iter: linkObjectExtension) {
+            copy.linkObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

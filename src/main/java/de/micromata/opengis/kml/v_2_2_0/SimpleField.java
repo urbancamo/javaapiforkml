@@ -20,7 +20,8 @@ import javax.xml.bind.annotation.XmlType;
     "simpleFieldExtension"
 })
 @XmlRootElement(name = "SimpleField", namespace = "http://www.opengis.net/kml/2.2")
-public class SimpleField {
+public class SimpleField implements Cloneable
+{
 
     protected String displayName;
     @XmlElement(name = "SimpleFieldExtension")
@@ -243,6 +244,21 @@ public class SimpleField {
     public SimpleField withName(final String name) {
         this.setName(name);
         return this;
+    }
+
+    @Override
+    public SimpleField clone() {
+        SimpleField copy;
+        try {
+            copy = ((SimpleField) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.simpleFieldExtension = new ArrayList<Object>((getSimpleFieldExtension().size()));
+        for (Object iter: simpleFieldExtension) {
+            copy.simpleFieldExtension.add(iter);
+        }
+        return copy;
     }
 
 }

@@ -62,11 +62,12 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
     "containerObjectExtension"
 })
 @XmlSeeAlso({
-    Folder.class,
-    Document.class
+    Document.class,
+    Folder.class
 })
 public abstract class Container
     extends Feature
+    implements Cloneable
 {
 
     @XmlElement(name = "AbstractContainerSimpleExtensionGroup")
@@ -459,6 +460,21 @@ public abstract class Container
     public Container withFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
         super.withFeatureObjectExtension(featureObjectExtension);
         return this;
+    }
+
+    @Override
+    public Container clone() {
+        Container copy;
+        copy = ((Container) super.clone());
+        copy.containerSimpleExtension = new ArrayList<Object>((getContainerSimpleExtension().size()));
+        for (Object iter: containerSimpleExtension) {
+            copy.containerSimpleExtension.add(iter);
+        }
+        copy.containerObjectExtension = new ArrayList<AbstractObject>((getContainerObjectExtension().size()));
+        for (AbstractObject iter: containerObjectExtension) {
+            copy.containerObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

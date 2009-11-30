@@ -96,7 +96,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
 @XmlRootElement(name = "link")
-public class Link {
+public class Link implements Cloneable
+{
 
     /**
      * <href>
@@ -438,6 +439,17 @@ public class Link {
     public Link withLength(final String length) {
         this.setLength(length);
         return this;
+    }
+
+    @Override
+    public Link clone() {
+        Link copy;
+        try {
+            copy = ((Link) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

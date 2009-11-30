@@ -53,6 +53,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "FlyTo", namespace = "http://www.google.com/kml/ext/2.2")
 public class FlyTo
     extends TourPrimitive
+    implements Cloneable
 {
 
     /**
@@ -184,9 +185,9 @@ public class FlyTo
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -198,9 +199,9 @@ public class FlyTo
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -256,22 +257,6 @@ public class FlyTo
     }
 
     /**
-     * Creates a new instance of {@link LookAt} and set it to abstractView.
-     * 
-     * This method is a short version for:
-     * <code>
-     * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
-     * 
-     * 
-     */
-    public LookAt createAndSetLookAt() {
-        LookAt newValue = new LookAt();
-        this.setAbstractView(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
@@ -283,6 +268,22 @@ public class FlyTo
      */
     public Camera createAndSetCamera() {
         Camera newValue = new Camera();
+        this.setAbstractView(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LookAt} and set it to abstractView.
+     * 
+     * This method is a short version for:
+     * <code>
+     * LookAt lookAt = new LookAt();
+     * this.setAbstractView(lookAt); </code>
+     * 
+     * 
+     */
+    public LookAt createAndSetLookAt() {
+        LookAt newValue = new LookAt();
         this.setAbstractView(newValue);
         return newValue;
     }
@@ -342,6 +343,14 @@ public class FlyTo
     public FlyTo withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public FlyTo clone() {
+        FlyTo copy;
+        copy = ((FlyTo) super.clone());
+        copy.abstractView = ((abstractView == null)?null:((AbstractView ) abstractView.clone()));
+        return copy;
     }
 
 }

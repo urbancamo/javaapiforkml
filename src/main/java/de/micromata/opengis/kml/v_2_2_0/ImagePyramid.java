@@ -46,6 +46,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "ImagePyramid", namespace = "http://www.opengis.net/kml/2.2")
 public class ImagePyramid
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -462,6 +463,21 @@ public class ImagePyramid
     public ImagePyramid withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public ImagePyramid clone() {
+        ImagePyramid copy;
+        copy = ((ImagePyramid) super.clone());
+        copy.imagePyramidSimpleExtension = new ArrayList<Object>((getImagePyramidSimpleExtension().size()));
+        for (Object iter: imagePyramidSimpleExtension) {
+            copy.imagePyramidSimpleExtension.add(iter);
+        }
+        copy.imagePyramidObjectExtension = new ArrayList<AbstractObject>((getImagePyramidObjectExtension().size()));
+        for (AbstractObject iter: imagePyramidObjectExtension) {
+            copy.imagePyramidObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

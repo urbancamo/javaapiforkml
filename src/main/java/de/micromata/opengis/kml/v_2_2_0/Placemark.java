@@ -73,6 +73,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 @XmlRootElement(name = "Placemark", namespace = "http://www.opengis.net/kml/2.2")
 public class Placemark
     extends Feature
+    implements Cloneable
 {
 
     /**
@@ -137,13 +138,13 @@ public class Placemark
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link LineString}{@code>}
-     *     {@code <}{@link Point}{@code>}
      *     {@code <}{@link LinearRing}{@code>}
-     *     {@code <}{@link Polygon}{@code>}
-     *     {@code <}{@link Geometry}{@code>}
      *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link Polygon}{@code>}
+     *     {@code <}{@link Point}{@code>}
+     *     {@code <}{@link LineString}{@code>}
      *     
      */
     public Geometry getGeometry() {
@@ -155,13 +156,13 @@ public class Placemark
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link LineString}{@code>}
-     *     {@code <}{@link Point}{@code>}
      *     {@code <}{@link LinearRing}{@code>}
-     *     {@code <}{@link Polygon}{@code>}
-     *     {@code <}{@link Geometry}{@code>}
      *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
+     *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link Polygon}{@code>}
+     *     {@code <}{@link Point}{@code>}
+     *     {@code <}{@link LineString}{@code>}
      *     
      */
     public void setGeometry(Geometry value) {
@@ -246,17 +247,17 @@ public class Placemark
     }
 
     /**
-     * Creates a new instance of {@link LinearRing} and set it to geometry.
+     * Creates a new instance of {@link Model} and set it to geometry.
      * 
      * This method is a short version for:
      * <code>
-     * LinearRing linearRing = new LinearRing();
-     * this.setGeometry(linearRing); </code>
+     * Model model = new Model();
+     * this.setGeometry(model); </code>
      * 
      * 
      */
-    public LinearRing createAndSetLinearRing() {
-        LinearRing newValue = new LinearRing();
+    public Model createAndSetModel() {
+        Model newValue = new Model();
         this.setGeometry(newValue);
         return newValue;
     }
@@ -278,17 +279,33 @@ public class Placemark
     }
 
     /**
-     * Creates a new instance of {@link Model} and set it to geometry.
+     * Creates a new instance of {@link Polygon} and set it to geometry.
      * 
      * This method is a short version for:
      * <code>
-     * Model model = new Model();
-     * this.setGeometry(model); </code>
+     * Polygon polygon = new Polygon();
+     * this.setGeometry(polygon); </code>
      * 
      * 
      */
-    public Model createAndSetModel() {
-        Model newValue = new Model();
+    public Polygon createAndSetPolygon() {
+        Polygon newValue = new Polygon();
+        this.setGeometry(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LinearRing} and set it to geometry.
+     * 
+     * This method is a short version for:
+     * <code>
+     * LinearRing linearRing = new LinearRing();
+     * this.setGeometry(linearRing); </code>
+     * 
+     * 
+     */
+    public LinearRing createAndSetLinearRing() {
+        LinearRing newValue = new LinearRing();
         this.setGeometry(newValue);
         return newValue;
     }
@@ -321,22 +338,6 @@ public class Placemark
      */
     public LineString createAndSetLineString() {
         LineString newValue = new LineString();
-        this.setGeometry(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link Polygon} and set it to geometry.
-     * 
-     * This method is a short version for:
-     * <code>
-     * Polygon polygon = new Polygon();
-     * this.setGeometry(polygon); </code>
-     * 
-     * 
-     */
-    public Polygon createAndSetPolygon() {
-        Polygon newValue = new Polygon();
         this.setGeometry(newValue);
         return newValue;
     }
@@ -648,6 +649,22 @@ public class Placemark
     public Placemark withFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
         super.withFeatureObjectExtension(featureObjectExtension);
         return this;
+    }
+
+    @Override
+    public Placemark clone() {
+        Placemark copy;
+        copy = ((Placemark) super.clone());
+        copy.geometry = ((geometry == null)?null:((Geometry ) geometry.clone()));
+        copy.placemarkSimpleExtension = new ArrayList<Object>((getPlacemarkSimpleExtension().size()));
+        for (Object iter: placemarkSimpleExtension) {
+            copy.placemarkSimpleExtension.add(iter);
+        }
+        copy.placemarkObjectExtension = new ArrayList<AbstractObject>((getPlacemarkObjectExtension().size()));
+        for (AbstractObject iter: placemarkObjectExtension) {
+            copy.placemarkObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

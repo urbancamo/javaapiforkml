@@ -48,6 +48,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "LineStyle", namespace = "http://www.opengis.net/kml/2.2")
 public class LineStyle
     extends ColorStyle
+    implements Cloneable
 {
 
     /**
@@ -412,6 +413,21 @@ public class LineStyle
     public LineStyle withColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {
         super.withColorStyleObjectExtension(colorStyleObjectExtension);
         return this;
+    }
+
+    @Override
+    public LineStyle clone() {
+        LineStyle copy;
+        copy = ((LineStyle) super.clone());
+        copy.lineStyleSimpleExtension = new ArrayList<Object>((getLineStyleSimpleExtension().size()));
+        for (Object iter: lineStyleSimpleExtension) {
+            copy.lineStyleSimpleExtension.add(iter);
+        }
+        copy.lineStyleObjectExtension = new ArrayList<AbstractObject>((getLineStyleObjectExtension().size()));
+        for (AbstractObject iter: lineStyleObjectExtension) {
+            copy.lineStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

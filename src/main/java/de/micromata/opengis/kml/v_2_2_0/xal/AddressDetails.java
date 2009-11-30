@@ -50,7 +50,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "AddressDetails", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class AddressDetails {
+public class AddressDetails implements Cloneable
+{
 
     @XmlElement(name = "PostalServiceElements")
     protected AddressDetails.PostalServiceElements postalServiceElements;
@@ -121,17 +122,17 @@ public class AddressDetails {
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param xalAddress
+     * @param administrativeArea
      *     required parameter
      * @param addressLines
      *     required parameter
-     * @param country
-     *     required parameter
      * @param locality
      *     required parameter
-     * @param administrativeArea
-     *     required parameter
      * @param thoroughfare
+     *     required parameter
+     * @param xalAddress
+     *     required parameter
+     * @param country
      *     required parameter
      */
     public AddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {
@@ -741,9 +742,9 @@ public class AddressDetails {
      * this.setCountry(country); </code>
      * 
      * 
-     * @param locality
-     *     required parameter
      * @param administrativeArea
+     *     required parameter
+     * @param locality
      *     required parameter
      * @param thoroughfare
      *     required parameter
@@ -765,9 +766,9 @@ public class AddressDetails {
      * 
      * @param postalCode
      *     required parameter
-     * @param locality
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param locality
      *     required parameter
      */
     public AdministrativeArea createAndSetAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -785,13 +786,13 @@ public class AddressDetails {
      * this.setLocality(locality); </code>
      * 
      * 
-     * @param postBox
-     *     required parameter
      * @param postOffice
+     *     required parameter
+     * @param largeMailUser
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param largeMailUser
+     * @param postBox
      *     required parameter
      */
     public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -811,11 +812,11 @@ public class AddressDetails {
      * 
      * @param postalCode
      *     required parameter
+     * @param dependentLocality
+     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
-     *     required parameter
-     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -954,6 +955,28 @@ public class AddressDetails {
         return this;
     }
 
+    @Override
+    public AddressDetails clone() {
+        AddressDetails copy;
+        try {
+            copy = ((AddressDetails) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.postalServiceElements = ((postalServiceElements == null)?null:((AddressDetails.PostalServiceElements) postalServiceElements.clone()));
+        copy.xalAddress = ((xalAddress == null)?null:((AddressDetails.Address) xalAddress.clone()));
+        copy.addressLines = ((addressLines == null)?null:((AddressLines) addressLines.clone()));
+        copy.country = ((country == null)?null:((AddressDetails.Country) country.clone()));
+        copy.administrativeArea = ((administrativeArea == null)?null:((AdministrativeArea) administrativeArea.clone()));
+        copy.locality = ((locality == null)?null:((Locality) locality.clone()));
+        copy.thoroughfare = ((thoroughfare == null)?null:((Thoroughfare) thoroughfare.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * <address>
@@ -973,7 +996,8 @@ public class AddressDetails {
         "content"
     })
     @XmlRootElement(name = "Address", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class Address {
+    public static class Address implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1160,6 +1184,17 @@ public class AddressDetails {
             return this;
         }
 
+        @Override
+        public AddressDetails.Address clone() {
+            AddressDetails.Address copy;
+            try {
+                copy = ((AddressDetails.Address) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1177,7 +1212,8 @@ public class AddressDetails {
         "any"
     })
     @XmlRootElement(name = "Country", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class Country {
+    public static class Country implements Cloneable
+    {
 
         @XmlElement(name = "AddressLine")
         protected List<AddressLine> addressLine;
@@ -1199,9 +1235,9 @@ public class AddressDetails {
         /**
          * Value constructor with only mandatory fields
          * 
-         * @param locality
-         *     required parameter
          * @param administrativeArea
+         *     required parameter
+         * @param locality
          *     required parameter
          * @param thoroughfare
          *     required parameter
@@ -1485,9 +1521,9 @@ public class AddressDetails {
          * 
          * @param postalCode
          *     required parameter
-         * @param locality
-         *     required parameter
          * @param postOffice
+         *     required parameter
+         * @param locality
          *     required parameter
          */
         public AdministrativeArea createAndSetAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -1505,13 +1541,13 @@ public class AddressDetails {
          * this.setLocality(locality); </code>
          * 
          * 
-         * @param postBox
-         *     required parameter
          * @param postOffice
+         *     required parameter
+         * @param largeMailUser
          *     required parameter
          * @param postalRoute
          *     required parameter
-         * @param largeMailUser
+         * @param postBox
          *     required parameter
          */
         public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -1531,11 +1567,11 @@ public class AddressDetails {
          * 
          * @param postalCode
          *     required parameter
+         * @param dependentLocality
+         *     required parameter
          * @param premise
          *     required parameter
          * @param firm
-         *     required parameter
-         * @param dependentLocality
          *     required parameter
          */
         public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -1692,6 +1728,36 @@ public class AddressDetails {
             return this;
         }
 
+        @Override
+        public AddressDetails.Country clone() {
+            AddressDetails.Country copy;
+            try {
+                copy = ((AddressDetails.Country) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+            for (AddressLine iter: addressLine) {
+                copy.addressLine.add(iter.clone());
+            }
+            copy.countryNameCode = new ArrayList<AddressDetails.Country.CountryNameCode>((getCountryNameCode().size()));
+            for (AddressDetails.Country.CountryNameCode iter: countryNameCode) {
+                copy.countryNameCode.add(iter.clone());
+            }
+            copy.countryName = new ArrayList<CountryName>((getCountryName().size()));
+            for (CountryName iter: countryName) {
+                copy.countryName.add(iter.clone());
+            }
+            copy.administrativeArea = ((administrativeArea == null)?null:((AdministrativeArea) administrativeArea.clone()));
+            copy.locality = ((locality == null)?null:((Locality) locality.clone()));
+            copy.thoroughfare = ((thoroughfare == null)?null:((Thoroughfare) thoroughfare.clone()));
+            copy.any = new ArrayList<Object>((getAny().size()));
+            for (Object iter: any) {
+                copy.any.add(iter);
+            }
+            return copy;
+        }
+
 
         /**
          * 
@@ -1701,7 +1767,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "CountryNameCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class CountryNameCode {
+        public static class CountryNameCode implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -1881,6 +1948,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.Country.CountryNameCode clone() {
+                AddressDetails.Country.CountryNameCode copy;
+                try {
+                    copy = ((AddressDetails.Country.CountryNameCode) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
     }
@@ -1904,7 +1982,8 @@ public class AddressDetails {
         "any"
     })
     @XmlRootElement(name = "PostalServiceElements", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostalServiceElements {
+    public static class PostalServiceElements implements Cloneable
+    {
 
         @XmlElement(name = "AddressIdentifier")
         protected List<AddressDetails.PostalServiceElements.AddressIdentifier> addressIdentifier;
@@ -2694,6 +2773,37 @@ public class AddressDetails {
             return this;
         }
 
+        @Override
+        public AddressDetails.PostalServiceElements clone() {
+            AddressDetails.PostalServiceElements copy;
+            try {
+                copy = ((AddressDetails.PostalServiceElements) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            copy.addressIdentifier = new ArrayList<AddressDetails.PostalServiceElements.AddressIdentifier>((getAddressIdentifier().size()));
+            for (AddressDetails.PostalServiceElements.AddressIdentifier iter: addressIdentifier) {
+                copy.addressIdentifier.add(iter.clone());
+            }
+            copy.endorsementLineCode = ((endorsementLineCode == null)?null:((AddressDetails.PostalServiceElements.EndorsementLineCode) endorsementLineCode.clone()));
+            copy.keyLineCode = ((keyLineCode == null)?null:((AddressDetails.PostalServiceElements.KeyLineCode) keyLineCode.clone()));
+            copy.barcode = ((barcode == null)?null:((AddressDetails.PostalServiceElements.Barcode) barcode.clone()));
+            copy.sortingCode = ((sortingCode == null)?null:((AddressDetails.PostalServiceElements.SortingCode) sortingCode.clone()));
+            copy.addressLatitude = ((addressLatitude == null)?null:((AddressDetails.PostalServiceElements.AddressLatitude) addressLatitude.clone()));
+            copy.addressLatitudeDirection = ((addressLatitudeDirection == null)?null:((AddressDetails.PostalServiceElements.AddressLatitudeDirection) addressLatitudeDirection.clone()));
+            copy.addressLongitude = ((addressLongitude == null)?null:((AddressDetails.PostalServiceElements.AddressLongitude) addressLongitude.clone()));
+            copy.addressLongitudeDirection = ((addressLongitudeDirection == null)?null:((AddressDetails.PostalServiceElements.AddressLongitudeDirection) addressLongitudeDirection.clone()));
+            copy.supplementaryPostalServiceData = new ArrayList<AddressDetails.PostalServiceElements.SupplementaryPostalServiceData>((getSupplementaryPostalServiceData().size()));
+            for (AddressDetails.PostalServiceElements.SupplementaryPostalServiceData iter: supplementaryPostalServiceData) {
+                copy.supplementaryPostalServiceData.add(iter.clone());
+            }
+            copy.any = new ArrayList<Object>((getAny().size()));
+            for (Object iter: any) {
+                copy.any.add(iter);
+            }
+            return copy;
+        }
+
 
         /**
          * 
@@ -2703,7 +2813,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "AddressIdentifier", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class AddressIdentifier {
+        public static class AddressIdentifier implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -2930,6 +3041,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.AddressIdentifier clone() {
+                AddressDetails.PostalServiceElements.AddressIdentifier copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.AddressIdentifier) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -2941,7 +3063,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "AddressLatitude", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class AddressLatitude {
+        public static class AddressLatitude implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -3121,6 +3244,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.AddressLatitude clone() {
+                AddressDetails.PostalServiceElements.AddressLatitude copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.AddressLatitude) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -3132,7 +3266,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "AddressLatitudeDirection", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class AddressLatitudeDirection {
+        public static class AddressLatitudeDirection implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -3312,6 +3447,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.AddressLatitudeDirection clone() {
+                AddressDetails.PostalServiceElements.AddressLatitudeDirection copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.AddressLatitudeDirection) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -3323,7 +3469,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "AddressLongitude", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class AddressLongitude {
+        public static class AddressLongitude implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -3503,6 +3650,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.AddressLongitude clone() {
+                AddressDetails.PostalServiceElements.AddressLongitude copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.AddressLongitude) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -3514,7 +3672,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "AddressLongitudeDirection", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class AddressLongitudeDirection {
+        public static class AddressLongitudeDirection implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -3694,6 +3853,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.AddressLongitudeDirection clone() {
+                AddressDetails.PostalServiceElements.AddressLongitudeDirection copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.AddressLongitudeDirection) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -3705,7 +3875,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "Barcode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class Barcode {
+        public static class Barcode implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -3885,6 +4056,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.Barcode clone() {
+                AddressDetails.PostalServiceElements.Barcode copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.Barcode) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -3896,7 +4078,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "EndorsementLineCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class EndorsementLineCode {
+        public static class EndorsementLineCode implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -4076,6 +4259,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.EndorsementLineCode clone() {
+                AddressDetails.PostalServiceElements.EndorsementLineCode copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.EndorsementLineCode) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -4087,7 +4281,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "KeyLineCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class KeyLineCode {
+        public static class KeyLineCode implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -4267,6 +4462,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.KeyLineCode clone() {
+                AddressDetails.PostalServiceElements.KeyLineCode copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.KeyLineCode) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -4276,7 +4482,8 @@ public class AddressDetails {
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "")
         @XmlRootElement(name = "SortingCode", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class SortingCode {
+        public static class SortingCode implements Cloneable
+        {
 
             @XmlAttribute(name = "Type")
             @XmlSchemaType(name = "anySimpleType")
@@ -4399,6 +4606,17 @@ public class AddressDetails {
                 return this;
             }
 
+            @Override
+            public AddressDetails.PostalServiceElements.SortingCode clone() {
+                AddressDetails.PostalServiceElements.SortingCode copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.SortingCode) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
+            }
+
         }
 
 
@@ -4410,7 +4628,8 @@ public class AddressDetails {
             "content"
         })
         @XmlRootElement(name = "SupplementaryPostalServiceData", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-        public static class SupplementaryPostalServiceData {
+        public static class SupplementaryPostalServiceData implements Cloneable
+        {
 
             @XmlValue
             protected String content;
@@ -4588,6 +4807,17 @@ public class AddressDetails {
             public AddressDetails.PostalServiceElements.SupplementaryPostalServiceData withCode(final String code) {
                 this.setCode(code);
                 return this;
+            }
+
+            @Override
+            public AddressDetails.PostalServiceElements.SupplementaryPostalServiceData clone() {
+                AddressDetails.PostalServiceElements.SupplementaryPostalServiceData copy;
+                try {
+                    copy = ((AddressDetails.PostalServiceElements.SupplementaryPostalServiceData) super.clone());
+                } catch (CloneNotSupportedException _x) {
+                    throw new InternalError((_x.toString()));
+                }
+                return copy;
             }
 
         }

@@ -30,7 +30,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "Department")
-public class Department {
+public class Department implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -448,6 +449,31 @@ public class Department {
         return this;
     }
 
+    @Override
+    public Department clone() {
+        Department copy;
+        try {
+            copy = ((Department) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.departmentName = new ArrayList<Department.DepartmentName>((getDepartmentName().size()));
+        for (Department.DepartmentName iter: departmentName) {
+            copy.departmentName.add(iter.clone());
+        }
+        copy.mailStop = ((mailStop == null)?null:((MailStop) mailStop.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -457,7 +483,8 @@ public class Department {
         "content"
     })
     @XmlRootElement(name = "DepartmentName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class DepartmentName {
+    public static class DepartmentName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -635,6 +662,17 @@ public class Department {
         public Department.DepartmentName withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public Department.DepartmentName clone() {
+            Department.DepartmentName copy;
+            try {
+                copy = ((Department.DepartmentName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

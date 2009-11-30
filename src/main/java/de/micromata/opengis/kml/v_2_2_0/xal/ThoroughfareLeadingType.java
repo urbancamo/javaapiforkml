@@ -22,7 +22,8 @@ import javax.xml.namespace.QName;
     "content"
 })
 @XmlRootElement(name = "ThoroughfareLeading", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class ThoroughfareLeadingType {
+public class ThoroughfareLeadingType implements Cloneable
+{
 
     @XmlValue
     protected String content;
@@ -200,6 +201,17 @@ public class ThoroughfareLeadingType {
     public ThoroughfareLeadingType withCode(final String code) {
         this.setCode(code);
         return this;
+    }
+
+    @Override
+    public ThoroughfareLeadingType clone() {
+        ThoroughfareLeadingType copy;
+        try {
+            copy = ((ThoroughfareLeadingType) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

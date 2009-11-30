@@ -14,14 +14,15 @@ import javax.xml.bind.annotation.XmlType;
 
 
 @XmlRootElement(name = "Coordinate", namespace = "http://www.opengis.net/kml/2.2")
-public class Coordinate {
+public class Coordinate implements Cloneable
+{
 
 
-    protected double longitude = 0.0D;
+    protected double longitude;
 
-    protected double latitude = 0.0D;
+    protected double latitude;
 
-    protected double altitude = 0.0D;
+    protected double altitude;
 
     /**
      * Default no-arg constructor is private. Use overloaded constructor instead! (Temporary solution, till a better and more suitable ObjectFactory is created.) 
@@ -187,6 +188,17 @@ public class Coordinate {
     public Coordinate withAltitude(final double altitude) {
         this.setAltitude(altitude);
         return this;
+    }
+
+    @Override
+    public Coordinate clone() {
+        Coordinate copy;
+        try {
+            copy = ((Coordinate) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

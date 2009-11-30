@@ -23,7 +23,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "vec2Type")
 @XmlRootElement(name = "Vec2", namespace = "http://www.opengis.net/kml/2.2")
-public class Vec2 {
+public class Vec2 implements Cloneable
+{
 
     /**
      * <x>, <y>, <w>, <h>
@@ -258,6 +259,17 @@ public class Vec2 {
     public Vec2 withYunits(final Units yunits) {
         this.setYunits(yunits);
         return this;
+    }
+
+    @Override
+    public Vec2 clone() {
+        Vec2 copy;
+        try {
+            copy = ((Vec2) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

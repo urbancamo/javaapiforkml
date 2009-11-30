@@ -44,7 +44,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * The X axis points toward the right of the camera and is called the right vector. 
  * The Y axis defines the "up" direction relative to the screen and is called the up 
  * vector. The Z axis points from the center of the screen toward the eye point. The 
- * camera looks down the ?Z axis, which is called the view vector. 
+ * camera looks down the −Z axis, which is called the view vector. 
  * </p>
  * <p>
  * The following diagram shows the X, Y, and Z axes, which are attached to the virtual 
@@ -102,18 +102,19 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Camera", namespace = "http://www.opengis.net/kml/2.2")
 public class Camera
     extends AbstractView
+    implements Cloneable
 {
 
     /**
      * <longitude>
      * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
      * <p>
      * Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
      * 
@@ -126,11 +127,11 @@ public class Camera
      * <latitude>
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
-     * (0 degrees). Values range from ?90 degrees to 90 degrees. 
+     * (0 degrees). Values range from −90 degrees to 90 degrees. 
      * </p>
      * <p>
      * Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
-     * Values range from ?90 degrees to 90 degrees. 
+     * Values range from −90 degrees to 90 degrees. 
      * </p>
      * 
      * 
@@ -224,7 +225,7 @@ public class Camera
      * specified in degrees from 0 to 360. 
      * </p>
      * <p>
-     * Rotation, in degrees, of the camera around the Z axis. Values range from ?180 to 
+     * Rotation, in degrees, of the camera around the Z axis. Values range from −180 to 
      * +180 degrees. 
      * </p>
      * <p>
@@ -428,8 +429,8 @@ public class Camera
      * @return
      *     possible object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -442,8 +443,8 @@ public class Camera
      * @param value
      *     allowed object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -794,6 +795,21 @@ public class Camera
     public Camera withAbstractViewObjectExtension(final List<AbstractObject> abstractViewObjectExtension) {
         super.withAbstractViewObjectExtension(abstractViewObjectExtension);
         return this;
+    }
+
+    @Override
+    public Camera clone() {
+        Camera copy;
+        copy = ((Camera) super.clone());
+        copy.cameraSimpleExtension = new ArrayList<Object>((getCameraSimpleExtension().size()));
+        for (Object iter: cameraSimpleExtension) {
+            copy.cameraSimpleExtension.add(iter);
+        }
+        copy.cameraObjectExtension = new ArrayList<AbstractObject>((getCameraObjectExtension().size()));
+        for (AbstractObject iter: cameraObjectExtension) {
+            copy.cameraObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

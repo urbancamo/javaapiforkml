@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
@@ -82,6 +83,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Polygon", namespace = "http://www.opengis.net/kml/2.2")
 public class Polygon
     extends Geometry
+    implements Cloneable
 {
 
     /**
@@ -116,6 +118,7 @@ public class Polygon
      * 
      */
     @XmlElement(defaultValue = "0")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean extrude;
     /**
      * <tessellate>
@@ -142,6 +145,7 @@ public class Polygon
      * 
      */
     @XmlElement(defaultValue = "0")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean tessellate;
     /**
      * AltitudeMode
@@ -258,8 +262,8 @@ public class Polygon
      * @return
      *     possible object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -272,8 +276,8 @@ public class Polygon
      * @param value
      *     allowed object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -697,6 +701,26 @@ public class Polygon
     public Polygon withGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {
         super.withGeometryObjectExtension(geometryObjectExtension);
         return this;
+    }
+
+    @Override
+    public Polygon clone() {
+        Polygon copy;
+        copy = ((Polygon) super.clone());
+        copy.outerBoundaryIs = ((outerBoundaryIs == null)?null:((Boundary) outerBoundaryIs.clone()));
+        copy.innerBoundaryIs = new ArrayList<Boundary>((getInnerBoundaryIs().size()));
+        for (Boundary iter: innerBoundaryIs) {
+            copy.innerBoundaryIs.add(iter.clone());
+        }
+        copy.polygonSimpleExtension = new ArrayList<Object>((getPolygonSimpleExtension().size()));
+        for (Object iter: polygonSimpleExtension) {
+            copy.polygonSimpleExtension.add(iter);
+        }
+        copy.polygonObjectExtension = new ArrayList<AbstractObject>((getPolygonObjectExtension().size()));
+        for (AbstractObject iter: polygonObjectExtension) {
+            copy.polygonObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

@@ -20,12 +20,12 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * <PhotoOverlay>
  * <p>
  * Because <PhotoOverlay> is derived from <Feature>, it can contain one of the two 
- * elements derived from <AbstractView>Ñeither <Camera> or <LookAt>. The Camera (or 
+ * elements derived from <AbstractView>â€”either <Camera> or <LookAt>. The Camera (or 
  * LookAt) specifies a viewpoint and a viewing direction (also referred to as a view 
  * vector). The PhotoOverlay is positioned in relation to the viewpoint. Specifically, 
  * the plane of a 2D rectangular image is orthogonal (at right angles to) the view 
- * vector. The normal of this planeÑthat is, its front, which is the part with the 
- * photoÑis oriented toward the viewpoint. 
+ * vector. The normal of this planeâ€”that is, its front, which is the part with the 
+ * photoâ€”is oriented toward the viewpoint. 
  * </p>
  * <p>
  * For more information, see the "Topics in KML" page on PhotoOverlay. 
@@ -69,6 +69,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 @XmlRootElement(name = "PhotoOverlay", namespace = "http://www.opengis.net/kml/2.2")
 public class PhotoOverlay
     extends Overlay
+    implements Cloneable
 {
 
     /**
@@ -79,7 +80,7 @@ public class PhotoOverlay
      * </p>
      * <p>
      * Indicates the angle of rotation of the parent object. A value of 0 means no rotation. 
-     * The value is an angle in degrees counterclockwise starting from north. Use ±180 
+     * The value is an angle in degrees counterclockwise starting from north. Use Â±180 
      * to indicate the rotation of the parent object from 0. The center of the <rotation>, 
      * if not (.5,.5), is specified in <rotationXY>. 
      * </p>
@@ -910,6 +911,24 @@ public class PhotoOverlay
     public PhotoOverlay withOverlayObjectExtension(final List<AbstractObject> overlayObjectExtension) {
         super.withOverlayObjectExtension(overlayObjectExtension);
         return this;
+    }
+
+    @Override
+    public PhotoOverlay clone() {
+        PhotoOverlay copy;
+        copy = ((PhotoOverlay) super.clone());
+        copy.viewVolume = ((viewVolume == null)?null:((ViewVolume) viewVolume.clone()));
+        copy.imagePyramid = ((imagePyramid == null)?null:((ImagePyramid) imagePyramid.clone()));
+        copy.point = ((point == null)?null:((Point) point.clone()));
+        copy.photoOverlaySimpleExtension = new ArrayList<Object>((getPhotoOverlaySimpleExtension().size()));
+        for (Object iter: photoOverlaySimpleExtension) {
+            copy.photoOverlaySimpleExtension.add(iter);
+        }
+        copy.photoOverlayObjectExtension = new ArrayList<AbstractObject>((getPhotoOverlayObjectExtension().size()));
+        for (AbstractObject iter: photoOverlayObjectExtension) {
+            copy.photoOverlayObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

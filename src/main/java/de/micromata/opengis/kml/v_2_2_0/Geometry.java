@@ -45,15 +45,16 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "geometryObjectExtension"
 })
 @XmlSeeAlso({
-    LinearRing.class,
-    Point.class,
     Model.class,
+    Point.class,
+    Polygon.class,
+    LinearRing.class,
     MultiGeometry.class,
-    LineString.class,
-    Polygon.class
+    LineString.class
 })
 public abstract class Geometry
     extends AbstractObject
+    implements Cloneable
 {
 
     @XmlElement(name = "AbstractGeometrySimpleExtensionGroup")
@@ -255,6 +256,21 @@ public abstract class Geometry
     public Geometry withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Geometry clone() {
+        Geometry copy;
+        copy = ((Geometry) super.clone());
+        copy.geometrySimpleExtension = new ArrayList<Object>((getGeometrySimpleExtension().size()));
+        for (Object iter: geometrySimpleExtension) {
+            copy.geometrySimpleExtension.add(iter);
+        }
+        copy.geometryObjectExtension = new ArrayList<AbstractObject>((getGeometryObjectExtension().size()));
+        for (AbstractObject iter: geometryObjectExtension) {
+            copy.geometryObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

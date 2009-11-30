@@ -39,7 +39,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "SubPremise", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-public class SubPremise {
+public class SubPremise implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -945,6 +946,50 @@ public class SubPremise {
         return this;
     }
 
+    @Override
+    public SubPremise clone() {
+        SubPremise copy;
+        try {
+            copy = ((SubPremise) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.subPremiseName = new ArrayList<SubPremise.SubPremiseName>((getSubPremiseName().size()));
+        for (SubPremise.SubPremiseName iter: subPremiseName) {
+            copy.subPremiseName.add(iter.clone());
+        }
+        copy.subPremiseLocation = ((subPremiseLocation == null)?null:((SubPremise.SubPremiseLocation) subPremiseLocation.clone()));
+        copy.subPremiseNumber = new ArrayList<SubPremise.SubPremiseNumber>((getSubPremiseNumber().size()));
+        for (SubPremise.SubPremiseNumber iter: subPremiseNumber) {
+            copy.subPremiseNumber.add(iter.clone());
+        }
+        copy.subPremiseNumberPrefix = new ArrayList<SubPremise.SubPremiseNumberPrefix>((getSubPremiseNumberPrefix().size()));
+        for (SubPremise.SubPremiseNumberPrefix iter: subPremiseNumberPrefix) {
+            copy.subPremiseNumberPrefix.add(iter.clone());
+        }
+        copy.subPremiseNumberSuffix = new ArrayList<SubPremise.SubPremiseNumberSuffix>((getSubPremiseNumberSuffix().size()));
+        for (SubPremise.SubPremiseNumberSuffix iter: subPremiseNumberSuffix) {
+            copy.subPremiseNumberSuffix.add(iter.clone());
+        }
+        copy.buildingName = new ArrayList<BuildingName>((getBuildingName().size()));
+        for (BuildingName iter: buildingName) {
+            copy.buildingName.add(iter.clone());
+        }
+        copy.firm = ((firm == null)?null:((Firm) firm.clone()));
+        copy.mailStop = ((mailStop == null)?null:((MailStop) mailStop.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.subPremise = ((subPremise == null)?null:((SubPremise) subPremise.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -954,7 +999,8 @@ public class SubPremise {
         "content"
     })
     @XmlRootElement(name = "SubPremiseLocation", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class SubPremiseLocation {
+    public static class SubPremiseLocation implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1076,6 +1122,17 @@ public class SubPremise {
             return this;
         }
 
+        @Override
+        public SubPremise.SubPremiseLocation clone() {
+            SubPremise.SubPremiseLocation copy;
+            try {
+                copy = ((SubPremise.SubPremiseLocation) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1087,7 +1144,8 @@ public class SubPremise {
         "content"
     })
     @XmlRootElement(name = "SubPremiseName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class SubPremiseName {
+    public static class SubPremiseName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1314,6 +1372,17 @@ public class SubPremise {
             return this;
         }
 
+        @Override
+        public SubPremise.SubPremiseName clone() {
+            SubPremise.SubPremiseName copy;
+            try {
+                copy = ((SubPremise.SubPremiseName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1325,7 +1394,8 @@ public class SubPremise {
         "content"
     })
     @XmlRootElement(name = "SubPremiseNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class SubPremiseNumber {
+    public static class SubPremiseNumber implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1693,6 +1763,17 @@ public class SubPremise {
             return this;
         }
 
+        @Override
+        public SubPremise.SubPremiseNumber clone() {
+            SubPremise.SubPremiseNumber copy;
+            try {
+                copy = ((SubPremise.SubPremiseNumber) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1704,7 +1785,8 @@ public class SubPremise {
         "content"
     })
     @XmlRootElement(name = "SubPremiseNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class SubPremiseNumberPrefix {
+    public static class SubPremiseNumberPrefix implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1931,6 +2013,17 @@ public class SubPremise {
             return this;
         }
 
+        @Override
+        public SubPremise.SubPremiseNumberPrefix clone() {
+            SubPremise.SubPremiseNumberPrefix copy;
+            try {
+                copy = ((SubPremise.SubPremiseNumberPrefix) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -1942,7 +2035,8 @@ public class SubPremise {
         "content"
     })
     @XmlRootElement(name = "SubPremiseNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class SubPremiseNumberSuffix {
+    public static class SubPremiseNumberSuffix implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -2167,6 +2261,17 @@ public class SubPremise {
         public SubPremise.SubPremiseNumberSuffix withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public SubPremise.SubPremiseNumberSuffix clone() {
+            SubPremise.SubPremiseNumberSuffix copy;
+            try {
+                copy = ((SubPremise.SubPremiseNumberSuffix) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

@@ -25,7 +25,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * The dateTime is defined according to XML Schema time (see XML Schema Part 2: Datatypes 
  * Second Edition). The value can be expressed as yyyy-mm-ddThh:mm:sszzzzzz, where 
  * T is the separator between the date and the time, and the time zone is either Z 
- * (for UTC) or zzzzzz, which represents ±hh:mm in relation to UTC. Additionally, the 
+ * (for UTC) or zzzzzz, which represents Â±hh:mm in relation to UTC. Additionally, the 
  * value can be expressed as a date only. See <TimeStamp> for examples. 
  * </p>
  * 
@@ -54,6 +54,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "TimeSpan", namespace = "http://www.opengis.net/kml/2.2")
 public class TimeSpan
     extends TimePrimitive
+    implements Cloneable
 {
 
     /**
@@ -417,6 +418,21 @@ public class TimeSpan
     public TimeSpan withTimePrimitiveObjectExtension(final List<AbstractObject> timePrimitiveObjectExtension) {
         super.withTimePrimitiveObjectExtension(timePrimitiveObjectExtension);
         return this;
+    }
+
+    @Override
+    public TimeSpan clone() {
+        TimeSpan copy;
+        copy = ((TimeSpan) super.clone());
+        copy.timeSpanSimpleExtension = new ArrayList<Object>((getTimeSpanSimpleExtension().size()));
+        for (Object iter: timeSpanSimpleExtension) {
+            copy.timeSpanSimpleExtension.add(iter);
+        }
+        copy.timeSpanObjectExtension = new ArrayList<AbstractObject>((getTimeSpanObjectExtension().size()));
+        for (AbstractObject iter: timeSpanObjectExtension) {
+            copy.timeSpanObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

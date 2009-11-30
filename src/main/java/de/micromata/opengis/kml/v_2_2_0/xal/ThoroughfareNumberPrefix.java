@@ -22,7 +22,8 @@ import javax.xml.namespace.QName;
     "content"
 })
 @XmlRootElement(name = "ThoroughfareNumberPrefix")
-public class ThoroughfareNumberPrefix {
+public class ThoroughfareNumberPrefix implements Cloneable
+{
 
     @XmlValue
     protected String content;
@@ -247,6 +248,17 @@ public class ThoroughfareNumberPrefix {
     public ThoroughfareNumberPrefix withCode(final String code) {
         this.setCode(code);
         return this;
+    }
+
+    @Override
+    public ThoroughfareNumberPrefix clone() {
+        ThoroughfareNumberPrefix copy;
+        try {
+            copy = ((ThoroughfareNumberPrefix) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        return copy;
     }
 
 }

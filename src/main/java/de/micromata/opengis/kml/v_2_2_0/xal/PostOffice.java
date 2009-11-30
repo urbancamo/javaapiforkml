@@ -34,7 +34,8 @@ import javax.xml.namespace.QName;
     "any"
 })
 @XmlRootElement(name = "PostOffice")
-public class PostOffice {
+public class PostOffice implements Cloneable
+{
 
     @XmlElement(name = "AddressLine")
     protected List<AddressLine> addressLine;
@@ -629,6 +630,33 @@ public class PostOffice {
         return this;
     }
 
+    @Override
+    public PostOffice clone() {
+        PostOffice copy;
+        try {
+            copy = ((PostOffice) super.clone());
+        } catch (CloneNotSupportedException _x) {
+            throw new InternalError((_x.toString()));
+        }
+        copy.addressLine = new ArrayList<AddressLine>((getAddressLine().size()));
+        for (AddressLine iter: addressLine) {
+            copy.addressLine.add(iter.clone());
+        }
+        copy.postOfficeName = new ArrayList<PostOffice.PostOfficeName>((getPostOfficeName().size()));
+        for (PostOffice.PostOfficeName iter: postOfficeName) {
+            copy.postOfficeName.add(iter.clone());
+        }
+        copy.postOfficeNumber = ((postOfficeNumber == null)?null:((PostOffice.PostOfficeNumber) postOfficeNumber.clone()));
+        copy.postalRoute = ((postalRoute == null)?null:((PostalRoute) postalRoute.clone()));
+        copy.postBox = ((postBox == null)?null:((PostBox) postBox.clone()));
+        copy.postalCode = ((postalCode == null)?null:((PostalCode) postalCode.clone()));
+        copy.any = new ArrayList<Object>((getAny().size()));
+        for (Object iter: any) {
+            copy.any.add(iter);
+        }
+        return copy;
+    }
+
 
     /**
      * 
@@ -638,7 +666,8 @@ public class PostOffice {
         "content"
     })
     @XmlRootElement(name = "PostOfficeName", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostOfficeName {
+    public static class PostOfficeName implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -818,6 +847,17 @@ public class PostOffice {
             return this;
         }
 
+        @Override
+        public PostOffice.PostOfficeName clone() {
+            PostOffice.PostOfficeName copy;
+            try {
+                copy = ((PostOffice.PostOfficeName) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
+        }
+
     }
 
 
@@ -829,7 +869,8 @@ public class PostOffice {
         "content"
     })
     @XmlRootElement(name = "PostOfficeNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
-    public static class PostOfficeNumber {
+    public static class PostOfficeNumber implements Cloneable
+    {
 
         @XmlValue
         protected String content;
@@ -1054,6 +1095,17 @@ public class PostOffice {
         public PostOffice.PostOfficeNumber withCode(final String code) {
             this.setCode(code);
             return this;
+        }
+
+        @Override
+        public PostOffice.PostOfficeNumber clone() {
+            PostOffice.PostOfficeNumber copy;
+            try {
+                copy = ((PostOffice.PostOfficeNumber) super.clone());
+            } catch (CloneNotSupportedException _x) {
+                throw new InternalError((_x.toString()));
+            }
+            return copy;
         }
 
     }

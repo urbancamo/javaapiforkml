@@ -62,6 +62,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "IconStyle", namespace = "http://www.opengis.net/kml/2.2")
 public class IconStyle
     extends ColorStyle
+    implements Cloneable
 {
 
     /**
@@ -162,7 +163,7 @@ public class IconStyle
      * in the Placemark. The x and y values can be specified in three different ways: as 
      * pixels ("pixels"), as fractions of the icon ("fraction"), or as inset pixels ("insetPixels"), 
      * which is an offset in pixels from the upper right corner of the icon. The x and 
-     * y positions can be specified in different waysÑfor example, x can be in pixels and 
+     * y positions can be specified in different waysâ€”for example, x can be in pixels and 
      * y can be a fraction. The origin of the coordinate system is in the lower left corner 
      * of the icon. x - Either the number of pixels, a fractional component of the icon, 
      * or a pixel inset indicating the x component of a point on the icon. y - Either the 
@@ -696,6 +697,23 @@ public class IconStyle
     public IconStyle withColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {
         super.withColorStyleObjectExtension(colorStyleObjectExtension);
         return this;
+    }
+
+    @Override
+    public IconStyle clone() {
+        IconStyle copy;
+        copy = ((IconStyle) super.clone());
+        copy.icon = ((icon == null)?null:((Icon) icon.clone()));
+        copy.hotSpot = ((hotSpot == null)?null:((Vec2) hotSpot.clone()));
+        copy.iconStyleSimpleExtension = new ArrayList<Object>((getIconStyleSimpleExtension().size()));
+        for (Object iter: iconStyleSimpleExtension) {
+            copy.iconStyleSimpleExtension.add(iter);
+        }
+        copy.iconStyleObjectExtension = new ArrayList<AbstractObject>((getIconStyleObjectExtension().size()));
+        for (AbstractObject iter: iconStyleObjectExtension) {
+            copy.iconStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

@@ -83,7 +83,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	 */
 	@Test
 	public void atc01RootElement() {
-		XmlRootElement annotation = Kml.class.getAnnotation(XmlRootElement.class);
+		final XmlRootElement annotation = Kml.class.getAnnotation(XmlRootElement.class);
 
 		Assert.assertEquals("kml", annotation.name());
 		Assert.assertEquals("http://www.opengis.net/kml/2.2", annotation.namespace());

@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
@@ -44,6 +45,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "PolyStyle", namespace = "http://www.opengis.net/kml/2.2")
 public class PolyStyle
     extends ColorStyle
+    implements Cloneable
 {
 
     /**
@@ -56,6 +58,7 @@ public class PolyStyle
      * 
      */
     @XmlElement(defaultValue = "1")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean fill;
     /**
      * <outline>
@@ -68,6 +71,7 @@ public class PolyStyle
      * 
      */
     @XmlElement(defaultValue = "1")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean outline;
     @XmlElement(name = "PolyStyleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -468,6 +472,21 @@ public class PolyStyle
     public PolyStyle withColorStyleObjectExtension(final List<AbstractObject> colorStyleObjectExtension) {
         super.withColorStyleObjectExtension(colorStyleObjectExtension);
         return this;
+    }
+
+    @Override
+    public PolyStyle clone() {
+        PolyStyle copy;
+        copy = ((PolyStyle) super.clone());
+        copy.polyStyleSimpleExtension = new ArrayList<Object>((getPolyStyleSimpleExtension().size()));
+        for (Object iter: polyStyleSimpleExtension) {
+            copy.polyStyleSimpleExtension.add(iter);
+        }
+        copy.polyStyleObjectExtension = new ArrayList<AbstractObject>((getPolyStyleObjectExtension().size()));
+        for (AbstractObject iter: polyStyleObjectExtension) {
+            copy.polyStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

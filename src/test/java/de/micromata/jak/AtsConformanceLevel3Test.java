@@ -68,7 +68,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 		Field color = Utils.findField(BalloonStyle.class, "color");
 		Assert.assertNotNull(color);
 		
-  	Deprecated annotation = color.getAnnotation(Deprecated.class);
+  	final Deprecated annotation = color.getAnnotation(Deprecated.class);
   	Assert.assertEquals(Deprecated.class, annotation.annotationType());
 	}
 
@@ -77,7 +77,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	 */
   @Test
 	public void atc72Metadata() {
-  	Deprecated annotation = Metadata.class.getAnnotation(Deprecated.class);
+  	final Deprecated annotation = Metadata.class.getAnnotation(Deprecated.class);
   	Assert.assertEquals(Deprecated.class, annotation.annotationType());
 	}
 

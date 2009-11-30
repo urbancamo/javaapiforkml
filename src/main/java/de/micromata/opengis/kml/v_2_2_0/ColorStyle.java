@@ -48,13 +48,14 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "colorStyleObjectExtension"
 })
 @XmlSeeAlso({
+    IconStyle.class,
     LabelStyle.class,
     LineStyle.class,
-    PolyStyle.class,
-    IconStyle.class
+    PolyStyle.class
 })
 public abstract class ColorStyle
     extends SubStyle
+    implements Cloneable
 {
 
     /**
@@ -438,6 +439,21 @@ public abstract class ColorStyle
     public ColorStyle withSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
         super.withSubStyleObjectExtension(subStyleObjectExtension);
         return this;
+    }
+
+    @Override
+    public ColorStyle clone() {
+        ColorStyle copy;
+        copy = ((ColorStyle) super.clone());
+        copy.colorStyleSimpleExtension = new ArrayList<Object>((getColorStyleSimpleExtension().size()));
+        for (Object iter: colorStyleSimpleExtension) {
+            copy.colorStyleSimpleExtension.add(iter);
+        }
+        copy.colorStyleObjectExtension = new ArrayList<AbstractObject>((getColorStyleObjectExtension().size()));
+        for (AbstractObject iter: colorStyleObjectExtension) {
+            copy.colorStyleObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

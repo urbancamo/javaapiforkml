@@ -66,18 +66,19 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "LookAt", namespace = "http://www.opengis.net/kml/2.2")
 public class LookAt
     extends AbstractView
+    implements Cloneable
 {
 
     /**
      * <longitude>
      * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
      * <p>
      * Longitude of the virtual camera (eye point). Angular distance in degrees, relative 
-     * to the Prime Meridian. Values west of the Meridian range from ?180 to 0 degrees. 
+     * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
      * Values east of the Meridian range from 0 to 180 degrees. 
      * </p>
      * 
@@ -90,11 +91,11 @@ public class LookAt
      * <latitude>
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
-     * (0 degrees). Values range from ?90 degrees to 90 degrees. 
+     * (0 degrees). Values range from −90 degrees to 90 degrees. 
      * </p>
      * <p>
      * Latitude of the virtual camera. Degrees north or south of the Equator (0 degrees). 
-     * Values range from ?90 degrees to 90 degrees. 
+     * Values range from −90 degrees to 90 degrees. 
      * </p>
      * 
      * 
@@ -376,8 +377,8 @@ public class LookAt
      * @return
      *     possible object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -390,8 +391,8 @@ public class LookAt
      * @param value
      *     allowed object is
      *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     {@code <}{@link Object}{@code>}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -742,6 +743,21 @@ public class LookAt
     public LookAt withAbstractViewObjectExtension(final List<AbstractObject> abstractViewObjectExtension) {
         super.withAbstractViewObjectExtension(abstractViewObjectExtension);
         return this;
+    }
+
+    @Override
+    public LookAt clone() {
+        LookAt copy;
+        copy = ((LookAt) super.clone());
+        copy.lookAtSimpleExtension = new ArrayList<Object>((getLookAtSimpleExtension().size()));
+        for (Object iter: lookAtSimpleExtension) {
+            copy.lookAtSimpleExtension.add(iter);
+        }
+        copy.lookAtObjectExtension = new ArrayList<AbstractObject>((getLookAtObjectExtension().size()));
+        for (AbstractObject iter: lookAtObjectExtension) {
+            copy.lookAtObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

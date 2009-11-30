@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
@@ -88,13 +89,14 @@ import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
 })
 @XmlSeeAlso({
     Tour.class,
-    Overlay.class,
     NetworkLink.class,
+    Overlay.class,
     Container.class,
     Placemark.class
 })
 public abstract class Feature
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -121,6 +123,7 @@ public abstract class Feature
      * 
      */
     @XmlElement(defaultValue = "1")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean visibility;
     /**
      * <open>
@@ -134,6 +137,7 @@ public abstract class Feature
      * 
      */
     @XmlElement(defaultValue = "0")
+    @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean open;
     /**
      * <atom:author>
@@ -422,8 +426,8 @@ public abstract class Feature
      * that contains it. A style defined as the child of a <Document> is called a "shared 
      * style." A shared style must have an id defined for it. This id is referenced by 
      * one or more Features within the <Document>. In cases where a style element is defined 
-     * both in a shared style and in an inline style for a FeatureÑthat is, a Folder, GroundOverlay, 
-     * NetworkLink, Placemark, or ScreenOverlayÑthe value for the Feature's inline style 
+     * both in a shared style and in an inline style for a Featureâ€”that is, a Folder, GroundOverlay, 
+     * NetworkLink, Placemark, or ScreenOverlayâ€”the value for the Feature's inline style 
      * takes precedence over the value for the shared style. 
      * </p>
      * 
@@ -564,7 +568,6 @@ public abstract class Feature
      * 
      */
     @XmlElement(name = "AbstractFeatureSimpleExtensionGroup")
-    @XmlSchemaType(name = "anySimpleType")
     protected List<Object> featureSimpleExtension;
     /**
      * <Object>
@@ -858,9 +861,9 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -872,9 +875,9 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -886,8 +889,8 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
      *     
      */
@@ -900,8 +903,8 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
      *     
      */
@@ -1306,17 +1309,17 @@ public abstract class Feature
      * this.setXalAddressDetails(addressDetails); </code>
      * 
      * 
-     * @param xalAddress
+     * @param administrativeArea
      *     required parameter
      * @param addressLines
      *     required parameter
-     * @param country
-     *     required parameter
      * @param locality
      *     required parameter
-     * @param administrativeArea
-     *     required parameter
      * @param thoroughfare
+     *     required parameter
+     * @param xalAddress
+     *     required parameter
+     * @param country
      *     required parameter
      */
     public AddressDetails createAndSetXalAddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {
@@ -1342,22 +1345,6 @@ public abstract class Feature
     }
 
     /**
-     * Creates a new instance of {@link LookAt} and set it to abstractView.
-     * 
-     * This method is a short version for:
-     * <code>
-     * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
-     * 
-     * 
-     */
-    public LookAt createAndSetLookAt() {
-        LookAt newValue = new LookAt();
-        this.setAbstractView(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
@@ -1369,6 +1356,22 @@ public abstract class Feature
      */
     public Camera createAndSetCamera() {
         Camera newValue = new Camera();
+        this.setAbstractView(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LookAt} and set it to abstractView.
+     * 
+     * This method is a short version for:
+     * <code>
+     * LookAt lookAt = new LookAt();
+     * this.setAbstractView(lookAt); </code>
+     * 
+     * 
+     */
+    public LookAt createAndSetLookAt() {
+        LookAt newValue = new LookAt();
         this.setAbstractView(newValue);
         return newValue;
     }
@@ -1496,7 +1499,7 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1518,7 +1521,7 @@ public abstract class Feature
      * add a value to the featureSimpleExtension property collection
      * 
      * @param featureSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Boolean}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1825,6 +1828,34 @@ public abstract class Feature
     public Feature withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Feature clone() {
+        Feature copy;
+        copy = ((Feature) super.clone());
+        copy.atomAuthor = ((atomAuthor == null)?null:((Author) atomAuthor.clone()));
+        copy.atomLink = ((atomLink == null)?null:((Link) atomLink.clone()));
+        copy.xalAddressDetails = ((xalAddressDetails == null)?null:((AddressDetails) xalAddressDetails.clone()));
+        copy.snippet = ((snippet == null)?null:((Snippet) snippet.clone()));
+        copy.abstractView = ((abstractView == null)?null:((AbstractView ) abstractView.clone()));
+        copy.timePrimitive = ((timePrimitive == null)?null:((TimePrimitive ) timePrimitive.clone()));
+        copy.styleSelector = new ArrayList<StyleSelector>((getStyleSelector().size()));
+        for (StyleSelector iter: styleSelector) {
+            copy.styleSelector.add(iter.clone());
+        }
+        copy.region = ((region == null)?null:((Region) region.clone()));
+        copy.metadata = ((metadata == null)?null:((Metadata) metadata.clone()));
+        copy.extendedData = ((extendedData == null)?null:((ExtendedData) extendedData.clone()));
+        copy.featureSimpleExtension = new ArrayList<Object>((getFeatureSimpleExtension().size()));
+        for (Object iter: featureSimpleExtension) {
+            copy.featureSimpleExtension.add(iter);
+        }
+        copy.featureObjectExtension = new ArrayList<AbstractObject>((getFeatureObjectExtension().size()));
+        for (AbstractObject iter: featureObjectExtension) {
+            copy.featureObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

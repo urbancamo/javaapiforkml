@@ -17,15 +17,15 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <p>
  * Specifies where the top, bottom, right, and left sides of a bounding box for the 
  * ground overlay are aligned. <north> Specifies the latitude of the north edge of 
- * the bounding box, in decimal degrees from 0 to ±90. <south> Specifies the latitude 
- * of the south edge of the bounding box, in decimal degrees from 0 to ±90. <east> 
+ * the bounding box, in decimal degrees from 0 to Â±90. <south> Specifies the latitude 
+ * of the south edge of the bounding box, in decimal degrees from 0 to Â±90. <east> 
  * Specifies the longitude of the east edge of the bounding box, in decimal degrees 
- * from 0 to ±180. (For overlays that overlap the meridian of 180¡ longitude, values 
+ * from 0 to Â±180. (For overlays that overlap the meridian of 180Â° longitude, values 
  * can extend beyond that range.) <west> Specifies the longitude of the west edge of 
- * the bounding box, in decimal degrees from 0 to ±180. (For overlays that overlap 
- * the meridian of 180¡ longitude, values can extend beyond that range.) <rotation> 
+ * the bounding box, in decimal degrees from 0 to Â±180. (For overlays that overlap 
+ * the meridian of 180Â° longitude, values can extend beyond that range.) <rotation> 
  * Specifies a rotation of the overlay about its center, in degrees. Values can be 
- * ±180. The default is 0 (north). Rotations are specified in a counterclockwise direction. 
+ * Â±180. The default is 0 (north). Rotations are specified in a counterclockwise direction. 
  * <LatLonBox> <north>48.25475939255556</north> <south>48.25207367852141</south> <east>-90.86591508839973</east> 
  * <west>-90.8714285289695</west> <rotation>39.37878630116985</rotation> </LatLonBox> 
  * </p>
@@ -43,18 +43,19 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "abstractLatLonBoxObjectExtension"
 })
 @XmlSeeAlso({
-    LatLonAltBox.class,
-    LatLonBox.class
+    LatLonBox.class,
+    LatLonAltBox.class
 })
 public abstract class AbstractLatLonBox
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
      * <north> (required)
      * <p>
      * Specifies the latitude of the north edge of the bounding box, in decimal degrees 
-     * from 0 to ±90. 
+     * from 0 to Â±90. 
      * </p>
      * 
      * 
@@ -66,7 +67,7 @@ public abstract class AbstractLatLonBox
      * <south> (required)
      * <p>
      * Specifies the latitude of the south edge of the bounding box, in decimal degrees 
-     * from 0 to ±90. 
+     * from 0 to Â±90. 
      * </p>
      * 
      * 
@@ -85,7 +86,7 @@ public abstract class AbstractLatLonBox
      * <west> (required)
      * <p>
      * Specifies the longitude of the west edge of the bounding box, in decimal degrees 
-     * from 0 to ±180. 
+     * from 0 to Â±180. 
      * </p>
      * 
      * 
@@ -457,6 +458,21 @@ public abstract class AbstractLatLonBox
     public AbstractLatLonBox withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public AbstractLatLonBox clone() {
+        AbstractLatLonBox copy;
+        copy = ((AbstractLatLonBox) super.clone());
+        copy.abstractLatLonBoxSimpleExtension = new ArrayList<Object>((getAbstractLatLonBoxSimpleExtension().size()));
+        for (Object iter: abstractLatLonBoxSimpleExtension) {
+            copy.abstractLatLonBoxSimpleExtension.add(iter);
+        }
+        copy.abstractLatLonBoxObjectExtension = new ArrayList<AbstractObject>((getAbstractLatLonBoxObjectExtension().size()));
+        for (AbstractObject iter: abstractLatLonBoxObjectExtension) {
+            copy.abstractLatLonBoxObjectExtension.add(iter.clone());
+        }
+        return copy;
     }
 
 }

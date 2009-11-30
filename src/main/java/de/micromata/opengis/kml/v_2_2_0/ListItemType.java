@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlType;
  * (default) - The Feature's visibility is tied to its item's checkbox. radioFolder 
  * - When specified for a Container, only one of the Container's items is visible at 
  * a time checkOffOnly - When specified for a Container or Network Link, prevents all 
- * items from being made visible at onceÑthat is, the user can turn everything in the 
+ * items from being made visible at onceâ€”that is, the user can turn everything in the 
  * Container or Network Link off but cannot turn everything on at the same time. This 
  * setting is useful for Containers or Network Links containing large amounts of data. 
  * checkHideChildren - Use a normal checkbox for visibility but do not display the 

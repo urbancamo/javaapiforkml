@@ -37,6 +37,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "Data", namespace = "http://www.opengis.net/kml/2.2")
 public class Data
     extends AbstractObject
+    implements Cloneable
 {
 
     /**
@@ -348,6 +349,17 @@ public class Data
     public Data withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public Data clone() {
+        Data copy;
+        copy = ((Data) super.clone());
+        copy.dataExtension = new ArrayList<Object>((getDataExtension().size()));
+        for (Object iter: dataExtension) {
+            copy.dataExtension.add(iter);
+        }
+        return copy;
     }
 
 }

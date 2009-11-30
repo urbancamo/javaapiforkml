@@ -20,6 +20,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 @XmlRootElement(name = "SoundCue", namespace = "http://www.google.com/kml/ext/2.2")
 public class SoundCue
     extends TourPrimitive
+    implements Cloneable
 {
 
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2")
@@ -114,6 +115,13 @@ public class SoundCue
     public SoundCue withTargetId(final String targetId) {
         super.withTargetId(targetId);
         return this;
+    }
+
+    @Override
+    public SoundCue clone() {
+        SoundCue copy;
+        copy = ((SoundCue) super.clone());
+        return copy;
     }
 
 }

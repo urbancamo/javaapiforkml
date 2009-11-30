@@ -617,7 +617,8 @@ public final class KmlReferencePojoTest implements IKMLReference {
 		latlonBox.setRotation(0.0d);
 
 		KmlReferenceCheck.groundoverlay(groundoverlay);
-		final GroundOverlay marshalledAndBackAgain = Utils.marshalAndUnmarshall(groundoverlay);
+		final GroundOverlay marshalledAndBackAgain = Utils.marshalAndUnmarshall(groundoverlay, true);
+		Utils.marshal(marshalledAndBackAgain);
 		KmlReferenceCheck.groundoverlay(marshalledAndBackAgain);
 	}
 
