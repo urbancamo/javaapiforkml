@@ -215,17 +215,17 @@ public class Kml implements Cloneable
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Container}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
-     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Folder}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -237,17 +237,17 @@ public class Kml implements Cloneable
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Container}{@code>}
+     *     {@code <}{@link Document}{@code>}
      *     {@code <}{@link NetworkLink}{@code>}
-     *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link Folder}{@code>}
+     *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Feature}{@code>}
+     *     {@code <}{@link Placemark}{@code>}
+     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
      *     
      */
     public void setFeature(Feature value) {

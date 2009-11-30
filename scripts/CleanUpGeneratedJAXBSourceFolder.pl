@@ -102,7 +102,7 @@ sub removeJAXBElementForOneJavaFile {
 			}
 			
 			if ($currentJavaFile[$i] =~ s/(.*?)(\@XmlElementRef\(name = .altitudeModeGroup.*?)(, type = .*?.class[, required = false]*.*?)(\))/$1\@XmlElement(defaultValue = \"clampToGround\")/g) {
-				$currentJavaFile[$i+1] =  "    protected AltitudeMode altitudeMode = AltitudeMode.CLAMP_TO_GROUND;\n";
+				$currentJavaFile[$i+1] =  "    protected AltitudeMode altitudeMode;\n";
 				$jaxbelementFileCount++;
 			}
 			

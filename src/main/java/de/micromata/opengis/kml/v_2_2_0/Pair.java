@@ -184,8 +184,8 @@ public class Pair
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
+     *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link Style}{@code>}
      *     
      */
@@ -198,8 +198,8 @@ public class Pair
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
+     *     {@code <}{@link StyleMap}{@code>}
      *     {@code <}{@link Style}{@code>}
      *     
      */

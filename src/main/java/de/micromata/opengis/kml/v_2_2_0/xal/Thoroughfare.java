@@ -2522,10 +2522,10 @@ public class Thoroughfare implements Cloneable
         {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
-                @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class)
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
+                @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class)
             })
             @XmlMixed
             protected List<Object> content;
@@ -2638,7 +2638,7 @@ public class Thoroughfare implements Cloneable
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link String}{@link AddressLine}{@link ThoroughfareNumberPrefix}
+             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link AddressLine}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2701,10 +2701,10 @@ public class Thoroughfare implements Cloneable
         {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
                 @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
-                @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class),
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class)
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
+                @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
+                @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class)
             })
             @XmlMixed
             protected List<Object> content;
@@ -2817,7 +2817,7 @@ public class Thoroughfare implements Cloneable
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link String}{@link AddressLine}{@link ThoroughfareNumberPrefix}
+             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link AddressLine}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */

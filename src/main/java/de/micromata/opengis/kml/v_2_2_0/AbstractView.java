@@ -147,7 +147,7 @@ public abstract class AbstractView
      * add a value to the abstractViewObjectExtension property collection
      * 
      * @param abstractViewObjectExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TimeStamp}{@code>}{@link JAXBElement}{@code <}{@link TimeSpan}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TimeSpan}{@code>}{@link JAXBElement}{@code <}{@link TimeStamp}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

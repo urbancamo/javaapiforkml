@@ -861,9 +861,9 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -875,9 +875,9 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -889,9 +889,9 @@ public abstract class Feature
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link TimeStamp}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
+     *     {@code <}{@link TimeStamp}{@code>}
      *     
      */
     public TimePrimitive getTimePrimitive() {
@@ -903,9 +903,9 @@ public abstract class Feature
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link TimeStamp}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeSpan}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
+     *     {@code <}{@link TimeStamp}{@code>}
      *     
      */
     public void setTimePrimitive(TimePrimitive value) {
@@ -1499,7 +1499,7 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1521,7 +1521,7 @@ public abstract class Feature
      * add a value to the featureSimpleExtension property collection
      * 
      * @param featureSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Boolean}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

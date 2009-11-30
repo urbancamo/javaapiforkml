@@ -88,7 +88,7 @@ public class Metadata implements Cloneable
      * add a value to the any property collection
      * 
      * @param any
-     *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
+     *     Objects of the following type are allowed in the list: {@link Element}{@link Object}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

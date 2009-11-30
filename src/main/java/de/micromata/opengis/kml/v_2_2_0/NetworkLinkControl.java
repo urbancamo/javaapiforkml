@@ -470,9 +470,9 @@ public class NetworkLinkControl implements Cloneable
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -484,9 +484,9 @@ public class NetworkLinkControl implements Cloneable
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link AbstractView}{@code>}
+     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link LookAt}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
