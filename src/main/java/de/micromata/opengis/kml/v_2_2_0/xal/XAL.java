@@ -170,17 +170,17 @@ public class XAL implements Cloneable
      * this.getXalAddressDetails().add(addressDetails); </code>
      * 
      * 
-     * @param administrativeArea
+     * @param xalAddress
      *     required parameter
      * @param addressLines
      *     required parameter
+     * @param country
+     *     required parameter
      * @param locality
      *     required parameter
+     * @param administrativeArea
+     *     required parameter
      * @param thoroughfare
-     *     required parameter
-     * @param xalAddress
-     *     required parameter
-     * @param country
      *     required parameter
      */
     public AddressDetails createAndAddXalAddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {

@@ -101,7 +101,7 @@ public class Pair
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected StyleSelector styleSelector;
     @XmlElement(name = "PairSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -184,9 +184,9 @@ public class Pair
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link Style}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
-     *     {@code <}{@link Style}{@code>}
      *     
      */
     public StyleSelector getStyleSelector() {
@@ -198,9 +198,9 @@ public class Pair
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link Style}{@code>}
      *     {@code <}{@link StyleSelector}{@code>}
      *     {@code <}{@link StyleMap}{@code>}
-     *     {@code <}{@link Style}{@code>}
      *     
      */
     public void setStyleSelector(StyleSelector value) {

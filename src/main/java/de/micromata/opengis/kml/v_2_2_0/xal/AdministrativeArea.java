@@ -66,9 +66,9 @@ public class AdministrativeArea implements Cloneable
      * 
      * @param postalCode
      *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param locality
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public AdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -443,9 +443,9 @@ public class AdministrativeArea implements Cloneable
      * 
      * @param postalCode
      *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param locality
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public AdministrativeArea.SubAdministrativeArea createAndSetSubAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -463,13 +463,13 @@ public class AdministrativeArea implements Cloneable
      * this.setLocality(locality); </code>
      * 
      * 
-     * @param postOffice
+     * @param postBox
      *     required parameter
-     * @param largeMailUser
+     * @param postOffice
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param postBox
+     * @param largeMailUser
      *     required parameter
      */
     public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -945,9 +945,9 @@ public class AdministrativeArea implements Cloneable
          * 
          * @param postalCode
          *     required parameter
-         * @param postOffice
-         *     required parameter
          * @param locality
+         *     required parameter
+         * @param postOffice
          *     required parameter
          */
         public SubAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -1288,13 +1288,13 @@ public class AdministrativeArea implements Cloneable
          * this.setLocality(locality); </code>
          * 
          * 
-         * @param postOffice
+         * @param postBox
          *     required parameter
-         * @param largeMailUser
+         * @param postOffice
          *     required parameter
          * @param postalRoute
          *     required parameter
-         * @param postBox
+         * @param largeMailUser
          *     required parameter
          */
         public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {

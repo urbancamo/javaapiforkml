@@ -1,13 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
@@ -34,7 +36,6 @@ public class BasicLink
 
     protected String href;
     @XmlElement(name = "BasicLinkSimpleExtensionGroup")
-    @XmlSchemaType(name = "anySimpleType")
     protected List<Object> basicLinkSimpleExtension;
     @XmlElement(name = "BasicLinkObjectExtensionGroup")
     protected List<AbstractObject> basicLinkObjectExtension;
@@ -156,7 +157,7 @@ public class BasicLink
      * add a value to the basicLinkSimpleExtension property collection
      * 
      * @param basicLinkSimpleExtension
-     *     Objects of the following type are allowed in the list: {@link Object}
+     *     Objects of the following type are allowed in the list: {@code <}{@link BigInteger}{@code>}{@link JAXBElement}{@code <}{@link BigInteger}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link BigInteger}{@code>}{@link JAXBElement}{@code <}{@link BigInteger}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

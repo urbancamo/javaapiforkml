@@ -166,7 +166,7 @@ public class Document
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractFeatureGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractFeatureGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected List<Feature> feature;
     @XmlElement(name = "DocumentSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -336,16 +336,16 @@ public class Document
     }
 
     /**
-     * Creates a new instance of {@link NetworkLink} and adds it to feature.
+     * Creates a new instance of {@link ScreenOverlay} and adds it to feature.
      * This method is a short version for:
      * <code>
-     * NetworkLink networkLink = new NetworkLink();
-     * this.getFeature().add(networkLink); </code>
+     * ScreenOverlay screenOverlay = new ScreenOverlay();
+     * this.getFeature().add(screenOverlay); </code>
      * 
      * 
      */
-    public NetworkLink createAndAddNetworkLink() {
-        NetworkLink newValue = new NetworkLink();
+    public ScreenOverlay createAndAddScreenOverlay() {
+        ScreenOverlay newValue = new ScreenOverlay();
         this.getFeature().add(newValue);
         return newValue;
     }
@@ -366,21 +366,6 @@ public class Document
     }
 
     /**
-     * Creates a new instance of {@link ScreenOverlay} and adds it to feature.
-     * This method is a short version for:
-     * <code>
-     * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.getFeature().add(screenOverlay); </code>
-     * 
-     * 
-     */
-    public ScreenOverlay createAndAddScreenOverlay() {
-        ScreenOverlay newValue = new ScreenOverlay();
-        this.getFeature().add(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link GroundOverlay} and adds it to feature.
      * This method is a short version for:
      * <code>
@@ -396,16 +381,16 @@ public class Document
     }
 
     /**
-     * Creates a new instance of {@link Document} and adds it to feature.
+     * Creates a new instance of {@link NetworkLink} and adds it to feature.
      * This method is a short version for:
      * <code>
-     * Document document = new Document();
-     * this.getFeature().add(document); </code>
+     * NetworkLink networkLink = new NetworkLink();
+     * this.getFeature().add(networkLink); </code>
      * 
      * 
      */
-    public Document createAndAddDocument() {
-        Document newValue = new Document();
+    public NetworkLink createAndAddNetworkLink() {
+        NetworkLink newValue = new NetworkLink();
         this.getFeature().add(newValue);
         return newValue;
     }
@@ -421,6 +406,21 @@ public class Document
      */
     public Folder createAndAddFolder() {
         Folder newValue = new Folder();
+        this.getFeature().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Document} and adds it to feature.
+     * This method is a short version for:
+     * <code>
+     * Document document = new Document();
+     * this.getFeature().add(document); </code>
+     * 
+     * 
+     */
+    public Document createAndAddDocument() {
+        Document newValue = new Document();
         this.getFeature().add(newValue);
         return newValue;
     }
@@ -475,7 +475,7 @@ public class Document
      * add a value to the feature property collection
      * 
      * @param feature
-     *     Objects of the following type are allowed in the list: {@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

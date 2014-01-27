@@ -89,8 +89,8 @@ import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
 })
 @XmlSeeAlso({
     Tour.class,
-    NetworkLink.class,
     Overlay.class,
+    NetworkLink.class,
     Container.class,
     Placemark.class
 })
@@ -372,7 +372,7 @@ public abstract class Feature
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected AbstractView abstractView;
     /**
      * <TimePrimitive>
@@ -400,7 +400,7 @@ public abstract class Feature
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractTimePrimitiveGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractTimePrimitiveGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected TimePrimitive timePrimitive;
     /**
      * <styleurl>
@@ -446,7 +446,7 @@ public abstract class Feature
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected List<StyleSelector> styleSelector;
     /**
      * <Region>
@@ -862,8 +862,8 @@ public abstract class Feature
      * @return
      *     possible object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public AbstractView getAbstractView() {
@@ -876,8 +876,8 @@ public abstract class Feature
      * @param value
      *     allowed object is
      *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link Camera}{@code>}
      *     {@code <}{@link LookAt}{@code>}
+     *     {@code <}{@link Camera}{@code>}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -890,8 +890,8 @@ public abstract class Feature
      * @return
      *     possible object is
      *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
      *     
      */
     public TimePrimitive getTimePrimitive() {
@@ -904,8 +904,8 @@ public abstract class Feature
      * @param value
      *     allowed object is
      *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
      *     {@code <}{@link TimeStamp}{@code>}
+     *     {@code <}{@link TimePrimitive}{@code>}
      *     
      */
     public void setTimePrimitive(TimePrimitive value) {
@@ -1309,17 +1309,17 @@ public abstract class Feature
      * this.setXalAddressDetails(addressDetails); </code>
      * 
      * 
-     * @param administrativeArea
+     * @param xalAddress
      *     required parameter
      * @param addressLines
      *     required parameter
+     * @param country
+     *     required parameter
      * @param locality
      *     required parameter
+     * @param administrativeArea
+     *     required parameter
      * @param thoroughfare
-     *     required parameter
-     * @param xalAddress
-     *     required parameter
-     * @param country
      *     required parameter
      */
     public AddressDetails createAndSetXalAddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {
@@ -1345,22 +1345,6 @@ public abstract class Feature
     }
 
     /**
-     * Creates a new instance of {@link Camera} and set it to abstractView.
-     * 
-     * This method is a short version for:
-     * <code>
-     * Camera camera = new Camera();
-     * this.setAbstractView(camera); </code>
-     * 
-     * 
-     */
-    public Camera createAndSetCamera() {
-        Camera newValue = new Camera();
-        this.setAbstractView(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link LookAt} and set it to abstractView.
      * 
      * This method is a short version for:
@@ -1372,6 +1356,22 @@ public abstract class Feature
      */
     public LookAt createAndSetLookAt() {
         LookAt newValue = new LookAt();
+        this.setAbstractView(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Camera} and set it to abstractView.
+     * 
+     * This method is a short version for:
+     * <code>
+     * Camera camera = new Camera();
+     * this.setAbstractView(camera); </code>
+     * 
+     * 
+     */
+    public Camera createAndSetCamera() {
+        Camera newValue = new Camera();
         this.setAbstractView(newValue);
         return newValue;
     }
@@ -1499,7 +1499,7 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */
@@ -1521,7 +1521,7 @@ public abstract class Feature
      * add a value to the featureSimpleExtension property collection
      * 
      * @param featureSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Double}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

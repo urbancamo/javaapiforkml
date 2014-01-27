@@ -350,11 +350,11 @@ public class Point
     /**
      * add a value to the coordinates property collection
      * 
-     * @param altitude
-     *     required parameter
      * @param longitude
      *     required parameter
      * @param latitude
+     *     required parameter
+     * @param altitude
      *     required parameter
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 

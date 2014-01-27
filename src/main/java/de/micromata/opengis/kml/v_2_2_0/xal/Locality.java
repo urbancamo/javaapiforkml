@@ -76,13 +76,13 @@ public class Locality implements Cloneable
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param postOffice
+     * @param postBox
      *     required parameter
-     * @param largeMailUser
+     * @param postOffice
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param postBox
+     * @param largeMailUser
      *     required parameter
      */
     public Locality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -656,11 +656,11 @@ public class Locality implements Cloneable
      * 
      * @param postalCode
      *     required parameter
-     * @param dependentLocality
-     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
+     *     required parameter
+     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -678,11 +678,11 @@ public class Locality implements Cloneable
      * this.setPremise(premise); </code>
      * 
      * 
+     * @param premiseNumber
+     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
-     *     required parameter
-     * @param premiseNumber
      *     required parameter
      */
     public Premise createAndSetPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -700,13 +700,13 @@ public class Locality implements Cloneable
      * this.setDependentLocality(dependentLocality); </code>
      * 
      * 
-     * @param postOffice
+     * @param postBox
      *     required parameter
-     * @param largeMailUser
+     * @param postOffice
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param postBox
+     * @param largeMailUser
      *     required parameter
      */
     public DependentLocality createAndSetDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
