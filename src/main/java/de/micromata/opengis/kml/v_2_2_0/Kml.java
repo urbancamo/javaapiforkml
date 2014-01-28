@@ -752,28 +752,28 @@ public class Kml implements Cloneable
      * @see marshalKmz(String, Kml...)
      * 
      */
-//    public boolean marshal(final File filename)
-//        throws FileNotFoundException
-//    {
-//        OutputStream out = new FileOutputStream(filename);
-//        return this.marshal(out);
-//    }
+    public boolean marshal(final File filename)
+        throws FileNotFoundException
+    {
+        OutputStream out = new FileOutputStream(filename);
+        return this.marshal(out);
+    }
 
-//    public boolean marshalAsKmz(
-//        @NotNull
-//        String name, Kml... additionalFiles)
-//        throws IOException
-//    {
-//        ZipOutputStream out = new ZipOutputStream(new FileOutputStream(name));
-//        out.setComment("KMZ-file created with Java API for KML. Visit us: http://code.google.com/p/javaapiforkml/");
-//        this.addKmzFile(this, out, true);
-//        for (Kml kml: additionalFiles) {
-//            this.addKmzFile(kml, out, false);
-//        }
-//        out.close();
-//        missingNameCounter = 1;
-//        return false;
-//    }
+    public boolean marshalAsKmz(
+        @NotNull
+        String name, Kml... additionalFiles)
+        throws IOException
+    {
+        ZipOutputStream out = new ZipOutputStream(new FileOutputStream(name));
+        out.setComment("KMZ-file created with Java API for KML. Visit us: http://code.google.com/p/javaapiforkml/");
+        this.addKmzFile(this, out, true);
+        for (Kml kml: additionalFiles) {
+            this.addKmzFile(kml, out, false);
+        }
+        out.close();
+        missingNameCounter = 1;
+        return false;
+    }
 
     private static boolean validate(final Unmarshaller unmarshaller) {
         try {
