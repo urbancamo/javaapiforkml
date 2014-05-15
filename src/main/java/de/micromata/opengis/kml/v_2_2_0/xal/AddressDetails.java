@@ -122,17 +122,17 @@ public class AddressDetails implements Cloneable
     /**
      * Value constructor with only mandatory fields
      * 
-     * @param administrativeArea
+     * @param xalAddress
      *     required parameter
      * @param addressLines
      *     required parameter
+     * @param country
+     *     required parameter
      * @param locality
      *     required parameter
+     * @param administrativeArea
+     *     required parameter
      * @param thoroughfare
-     *     required parameter
-     * @param xalAddress
-     *     required parameter
-     * @param country
      *     required parameter
      */
     public AddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {
@@ -742,9 +742,9 @@ public class AddressDetails implements Cloneable
      * this.setCountry(country); </code>
      * 
      * 
-     * @param administrativeArea
-     *     required parameter
      * @param locality
+     *     required parameter
+     * @param administrativeArea
      *     required parameter
      * @param thoroughfare
      *     required parameter
@@ -766,9 +766,9 @@ public class AddressDetails implements Cloneable
      * 
      * @param postalCode
      *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param locality
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public AdministrativeArea createAndSetAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -786,13 +786,13 @@ public class AddressDetails implements Cloneable
      * this.setLocality(locality); </code>
      * 
      * 
-     * @param postOffice
+     * @param postBox
      *     required parameter
-     * @param largeMailUser
+     * @param postOffice
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param postBox
+     * @param largeMailUser
      *     required parameter
      */
     public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -812,11 +812,11 @@ public class AddressDetails implements Cloneable
      * 
      * @param postalCode
      *     required parameter
-     * @param dependentLocality
-     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
+     *     required parameter
+     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -1235,9 +1235,9 @@ public class AddressDetails implements Cloneable
         /**
          * Value constructor with only mandatory fields
          * 
-         * @param administrativeArea
-         *     required parameter
          * @param locality
+         *     required parameter
+         * @param administrativeArea
          *     required parameter
          * @param thoroughfare
          *     required parameter
@@ -1521,9 +1521,9 @@ public class AddressDetails implements Cloneable
          * 
          * @param postalCode
          *     required parameter
-         * @param postOffice
-         *     required parameter
          * @param locality
+         *     required parameter
+         * @param postOffice
          *     required parameter
          */
         public AdministrativeArea createAndSetAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -1541,13 +1541,13 @@ public class AddressDetails implements Cloneable
          * this.setLocality(locality); </code>
          * 
          * 
-         * @param postOffice
+         * @param postBox
          *     required parameter
-         * @param largeMailUser
+         * @param postOffice
          *     required parameter
          * @param postalRoute
          *     required parameter
-         * @param postBox
+         * @param largeMailUser
          *     required parameter
          */
         public Locality createAndSetLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -1567,11 +1567,11 @@ public class AddressDetails implements Cloneable
          * 
          * @param postalCode
          *     required parameter
-         * @param dependentLocality
-         *     required parameter
          * @param premise
          *     required parameter
          * @param firm
+         *     required parameter
+         * @param dependentLocality
          *     required parameter
          */
         public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {

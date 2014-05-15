@@ -15,7 +15,9 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
 import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
+import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayData;
 import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
+import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
 
 
 /**
@@ -41,28 +43,30 @@ import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
     "objectSimpleExtension"
 })
 @XmlSeeAlso({
-    LatLonQuad.class,
     Playlist.class,
+    SimpleArrayData.class,
+    ViewerOptions.class,
     TourPrimitive.class,
-    Pair.class,
-    Orientation.class,
-    TimePrimitive.class,
-    Scale.class,
+    LatLonQuad.class,
     Region.class,
+    TimePrimitive.class,
     ItemIcon.class,
-    Alias.class,
-    Data.class,
-    SchemaData.class,
-    Geometry.class,
-    ImagePyramid.class,
-    ResourceMap.class,
-    SubStyle.class,
-    AbstractView.class,
-    StyleSelector.class,
+    Scale.class,
+    Pair.class,
     ViewVolume.class,
-    Lod.class,
+    Alias.class,
     Location.class,
+    Lod.class,
+    ResourceMap.class,
+    ImagePyramid.class,
+    SchemaData.class,
+    Orientation.class,
     Feature.class,
+    StyleSelector.class,
+    AbstractView.class,
+    SubStyle.class,
+    Data.class,
+    Geometry.class,
     AbstractLatLonBox.class,
     BasicLink.class
 })

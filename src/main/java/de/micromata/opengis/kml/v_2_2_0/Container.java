@@ -62,8 +62,8 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
     "containerObjectExtension"
 })
 @XmlSeeAlso({
-    Document.class,
-    Folder.class
+    Folder.class,
+    Document.class
 })
 public abstract class Container
     extends Feature

@@ -79,7 +79,7 @@ public class Create implements Cloneable
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractContainerGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractContainerGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected List<Container> container;
 
     public Create() {
@@ -130,21 +130,6 @@ public class Create implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link Document} and adds it to container.
-     * This method is a short version for:
-     * <code>
-     * Document document = new Document();
-     * this.getContainer().add(document); </code>
-     * 
-     * 
-     */
-    public Document createAndAddDocument() {
-        Document newValue = new Document();
-        this.getContainer().add(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link Folder} and adds it to container.
      * This method is a short version for:
      * <code>
@@ -155,6 +140,21 @@ public class Create implements Cloneable
      */
     public Folder createAndAddFolder() {
         Folder newValue = new Folder();
+        this.getContainer().add(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Document} and adds it to container.
+     * This method is a short version for:
+     * <code>
+     * Document document = new Document();
+     * this.getContainer().add(document); </code>
+     * 
+     * 
+     */
+    public Document createAndAddDocument() {
+        Document newValue = new Document();
         this.getContainer().add(newValue);
         return newValue;
     }
@@ -172,7 +172,7 @@ public class Create implements Cloneable
      * add a value to the container property collection
      * 
      * @param container
-     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

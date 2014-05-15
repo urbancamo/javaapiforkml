@@ -169,7 +169,7 @@ public class GroundOverlay
      * 
      * 
      */
-    @XmlElementRef(name = "GroundOverlayObjectExtensionGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "GroundOverlayObjectExtensionGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected List<AbstractObject> groundOverlayObjectExtension;
 
     public GroundOverlay() {
@@ -396,7 +396,7 @@ public class GroundOverlay
      * add a value to the groundOverlayObjectExtension property collection
      * 
      * @param groundOverlayObjectExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link LatLonQuad}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link LatLonQuad}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

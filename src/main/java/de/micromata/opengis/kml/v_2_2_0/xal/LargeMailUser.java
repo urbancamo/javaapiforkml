@@ -473,11 +473,11 @@ public class LargeMailUser implements Cloneable
      * 
      * @param postalCode
      *     required parameter
-     * @param dependentLocality
-     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
+     *     required parameter
+     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare createAndSetThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {

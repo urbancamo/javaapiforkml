@@ -6,10 +6,16 @@ import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.gx.AnimatedUpdate;
 import de.micromata.opengis.kml.v_2_2_0.gx.FlyTo;
 import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
+import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
+import de.micromata.opengis.kml.v_2_2_0.gx.Option;
 import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
+import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayData;
+import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayField;
 import de.micromata.opengis.kml.v_2_2_0.gx.SoundCue;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import de.micromata.opengis.kml.v_2_2_0.gx.TourControl;
+import de.micromata.opengis.kml.v_2_2_0.gx.Track;
+import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
 import de.micromata.opengis.kml.v_2_2_0.gx.Wait;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressLine;
@@ -114,11 +120,11 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Coordinate}
      * 
-     * @param altitude
-     *     required parameter
      * @param longitude
      *     required parameter
      * @param latitude
+     *     required parameter
+     * @param altitude
      *     required parameter
      */
     public static Coordinate createCoordinate(final double longitude, final double latitude, final double altitude) {
@@ -594,11 +600,43 @@ public final class KmlFactory {
     }
 
     /**
+     * Create an instance of {@link MultiTrack}
+     * 
+     */
+    public static MultiTrack createGxMultiTrack() {
+        return new MultiTrack();
+    }
+
+    /**
+     * Create an instance of {@link Option}
+     * 
+     */
+    public static Option createGxOption() {
+        return new Option();
+    }
+
+    /**
      * Create an instance of {@link Playlist}
      * 
      */
     public static Playlist createGxPlaylist() {
         return new Playlist();
+    }
+
+    /**
+     * Create an instance of {@link SimpleArrayData}
+     * 
+     */
+    public static SimpleArrayData createGxSimpleArrayData() {
+        return new SimpleArrayData();
+    }
+
+    /**
+     * Create an instance of {@link SimpleArrayField}
+     * 
+     */
+    public static SimpleArrayField createGxSimpleArrayField() {
+        return new SimpleArrayField();
     }
 
     /**
@@ -626,6 +664,24 @@ public final class KmlFactory {
     }
 
     /**
+     * Create an instance of {@link Track}
+     * 
+     */
+    public static Track createGxTrack() {
+        return new Track();
+    }
+
+    /**
+     * Create an instance of {@link ViewerOptions}
+     * 
+     * @param option
+     *     required parameter
+     */
+    public static ViewerOptions createGxViewerOptions(final List<Option> option) {
+        return new ViewerOptions(option);
+    }
+
+    /**
      * Create an instance of {@link Wait}
      * 
      */
@@ -636,17 +692,17 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link AddressDetails}
      * 
-     * @param administrativeArea
+     * @param xalAddress
      *     required parameter
      * @param addressLines
      *     required parameter
+     * @param country
+     *     required parameter
      * @param locality
      *     required parameter
+     * @param administrativeArea
+     *     required parameter
      * @param thoroughfare
-     *     required parameter
-     * @param xalAddress
-     *     required parameter
-     * @param country
      *     required parameter
      */
     public static AddressDetails createXalAddressDetails(final AddressDetails.Address xalAddress, final AddressLines addressLines, final AddressDetails.Country country, final AdministrativeArea administrativeArea, final Locality locality, final Thoroughfare thoroughfare) {
@@ -676,9 +732,9 @@ public final class KmlFactory {
      * 
      * @param postalCode
      *     required parameter
-     * @param postOffice
-     *     required parameter
      * @param locality
+     *     required parameter
+     * @param postOffice
      *     required parameter
      */
     public static AdministrativeArea createXalAdministrativeArea(final Locality locality, final PostOffice postOffice, final PostalCode postalCode) {
@@ -712,13 +768,13 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link DependentLocality}
      * 
-     * @param postOffice
+     * @param postBox
      *     required parameter
-     * @param largeMailUser
+     * @param postOffice
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param postBox
+     * @param largeMailUser
      *     required parameter
      */
     public static DependentLocality createXalDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -744,13 +800,13 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Locality}
      * 
-     * @param postOffice
+     * @param postBox
      *     required parameter
-     * @param largeMailUser
+     * @param postOffice
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param postBox
+     * @param largeMailUser
      *     required parameter
      */
     public static Locality createXalLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -806,11 +862,11 @@ public final class KmlFactory {
     /**
      * Create an instance of {@link Premise}
      * 
+     * @param premiseNumber
+     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
-     *     required parameter
-     * @param premiseNumber
      *     required parameter
      */
     public static Premise createXalPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -856,11 +912,11 @@ public final class KmlFactory {
      * 
      * @param postalCode
      *     required parameter
-     * @param dependentLocality
-     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
+     *     required parameter
+     * @param dependentLocality
      *     required parameter
      */
     public static Thoroughfare createXalThoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {

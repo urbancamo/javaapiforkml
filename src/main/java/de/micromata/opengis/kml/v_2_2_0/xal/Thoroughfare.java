@@ -104,11 +104,11 @@ public class Thoroughfare implements Cloneable
      * 
      * @param postalCode
      *     required parameter
-     * @param dependentLocality
-     *     required parameter
      * @param premise
      *     required parameter
      * @param firm
+     *     required parameter
+     * @param dependentLocality
      *     required parameter
      */
     public Thoroughfare(final DependentLocality dependentLocality, final Premise premise, final Firm firm, final PostalCode postalCode) {
@@ -876,13 +876,13 @@ public class Thoroughfare implements Cloneable
      * this.setDependentLocality(dependentLocality); </code>
      * 
      * 
-     * @param postOffice
+     * @param postBox
      *     required parameter
-     * @param largeMailUser
+     * @param postOffice
      *     required parameter
      * @param postalRoute
      *     required parameter
-     * @param postBox
+     * @param largeMailUser
      *     required parameter
      */
     public DependentLocality createAndSetDependentLocality(final PostBox postBox, final LargeMailUser largeMailUser, final PostOffice postOffice, final PostalRoute postalRoute) {
@@ -900,11 +900,11 @@ public class Thoroughfare implements Cloneable
      * this.setPremise(premise); </code>
      * 
      * 
+     * @param premiseNumber
+     *     required parameter
      * @param premiseNumberRange
      *     required parameter
      * @param premiseLocation
-     *     required parameter
-     * @param premiseNumber
      *     required parameter
      */
     public Premise createAndSetPremise(final Premise.PremiseLocation premiseLocation, final List<PremiseNumber> premiseNumber, final Premise.PremiseNumberRange premiseNumberRange) {
@@ -1965,9 +1965,9 @@ public class Thoroughfare implements Cloneable
         /**
          * Value constructor with only mandatory fields
          * 
-         * @param thoroughfareNumberFrom
-         *     required parameter
          * @param thoroughfareNumberTo
+         *     required parameter
+         * @param thoroughfareNumberFrom
          *     required parameter
          */
         public ThoroughfareNumberRange(final Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom thoroughfareNumberFrom, final Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo thoroughfareNumberTo) {
@@ -2522,9 +2522,9 @@ public class Thoroughfare implements Cloneable
         {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
+                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class)
             })
             @XmlMixed
@@ -2638,7 +2638,7 @@ public class Thoroughfare implements Cloneable
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link AddressLine}
+             *     Objects of the following type are allowed in the list: {@link String}{@link ThoroughfareNumberPrefix}{@link AddressLine}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */
@@ -2701,9 +2701,9 @@ public class Thoroughfare implements Cloneable
         {
 
             @XmlElementRefs({
-                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
-                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
                 @XmlElementRef(name = "ThoroughfareNumberPrefix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberPrefix.class),
+                @XmlElementRef(name = "AddressLine", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = AddressLine.class),
+                @XmlElementRef(name = "ThoroughfareNumberSuffix", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumberSuffix.class),
                 @XmlElementRef(name = "ThoroughfareNumber", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0", type = ThoroughfareNumber.class)
             })
             @XmlMixed
@@ -2817,7 +2817,7 @@ public class Thoroughfare implements Cloneable
              * add a value to the content property collection
              * 
              * @param content
-             *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberPrefix}{@link String}{@link ThoroughfareNumberSuffix}{@link ThoroughfareNumber}{@link AddressLine}
+             *     Objects of the following type are allowed in the list: {@link String}{@link ThoroughfareNumberPrefix}{@link AddressLine}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
              *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
              */

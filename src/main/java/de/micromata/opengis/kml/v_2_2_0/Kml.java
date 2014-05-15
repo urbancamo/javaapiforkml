@@ -150,7 +150,7 @@ public class Kml implements Cloneable
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractFeatureGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractFeatureGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected Feature feature;
     @XmlElement(name = "KmlSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -215,17 +215,17 @@ public class Kml implements Cloneable
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Tour}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
      *     
      */
     public Feature getFeature() {
@@ -237,17 +237,17 @@ public class Kml implements Cloneable
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Tour}{@code>}
      *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link GroundOverlay}{@code>}
+     *     {@code <}{@link NetworkLink}{@code>}
      *     {@code <}{@link Folder}{@code>}
      *     {@code <}{@link PhotoOverlay}{@code>}
+     *     {@code <}{@link Document}{@code>}
+     *     {@code <}{@link Tour}{@code>}
+     *     {@code <}{@link ScreenOverlay}{@code>}
      *     {@code <}{@link Feature}{@code>}
      *     {@code <}{@link Placemark}{@code>}
      *     {@code <}{@link Overlay}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
      *     
      */
     public void setFeature(Feature value) {
@@ -405,17 +405,17 @@ public class Kml implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link NetworkLink} and set it to feature.
+     * Creates a new instance of {@link ScreenOverlay} and set it to feature.
      * 
      * This method is a short version for:
      * <code>
-     * NetworkLink networkLink = new NetworkLink();
-     * this.setFeature(networkLink); </code>
+     * ScreenOverlay screenOverlay = new ScreenOverlay();
+     * this.setFeature(screenOverlay); </code>
      * 
      * 
      */
-    public NetworkLink createAndSetNetworkLink() {
-        NetworkLink newValue = new NetworkLink();
+    public ScreenOverlay createAndSetScreenOverlay() {
+        ScreenOverlay newValue = new ScreenOverlay();
         this.setFeature(newValue);
         return newValue;
     }
@@ -437,22 +437,6 @@ public class Kml implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link ScreenOverlay} and set it to feature.
-     * 
-     * This method is a short version for:
-     * <code>
-     * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.setFeature(screenOverlay); </code>
-     * 
-     * 
-     */
-    public ScreenOverlay createAndSetScreenOverlay() {
-        ScreenOverlay newValue = new ScreenOverlay();
-        this.setFeature(newValue);
-        return newValue;
-    }
-
-    /**
      * Creates a new instance of {@link GroundOverlay} and set it to feature.
      * 
      * This method is a short version for:
@@ -469,17 +453,17 @@ public class Kml implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link Document} and set it to feature.
+     * Creates a new instance of {@link NetworkLink} and set it to feature.
      * 
      * This method is a short version for:
      * <code>
-     * Document document = new Document();
-     * this.setFeature(document); </code>
+     * NetworkLink networkLink = new NetworkLink();
+     * this.setFeature(networkLink); </code>
      * 
      * 
      */
-    public Document createAndSetDocument() {
-        Document newValue = new Document();
+    public NetworkLink createAndSetNetworkLink() {
+        NetworkLink newValue = new NetworkLink();
         this.setFeature(newValue);
         return newValue;
     }
@@ -496,6 +480,22 @@ public class Kml implements Cloneable
      */
     public Folder createAndSetFolder() {
         Folder newValue = new Folder();
+        this.setFeature(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Document} and set it to feature.
+     * 
+     * This method is a short version for:
+     * <code>
+     * Document document = new Document();
+     * this.setFeature(document); </code>
+     * 
+     * 
+     */
+    public Document createAndSetDocument() {
+        Document newValue = new Document();
         this.setFeature(newValue);
         return newValue;
     }

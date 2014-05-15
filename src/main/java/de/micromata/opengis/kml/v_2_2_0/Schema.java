@@ -3,16 +3,19 @@ package de.micromata.opengis.kml.v_2_2_0;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayField;
 
 
 /**
@@ -53,6 +56,24 @@ public class Schema implements Cloneable
 
     @XmlElement(name = "SimpleField")
     protected List<SimpleField> simpleField;
+    /**
+     * <Object>
+     * <p>
+     * This is an abstract base class and cannot be used directly in a KML file. It provides 
+     * the id attribute, which allows unique identification of a KML element, and the targetId 
+     * attribute, which is used to reference objects that have already been loaded into 
+     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * be used. 
+     * </p>
+     * 
+     * Syntax: 
+     * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
+     * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
+     * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
+     * 
+     * 
+     * 
+     */
     @XmlElement(name = "SchemaExtension")
     protected List<Object> schemaExtension;
     /**
@@ -259,7 +280,7 @@ public class Schema implements Cloneable
      * add a value to the schemaExtension property collection
      * 
      * @param schemaExtension
-     *     Objects of the following type are allowed in the list: {@link Object}
+     *     Objects of the following type are allowed in the list: {@code <}{@link SimpleArrayField}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

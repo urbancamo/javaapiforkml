@@ -1,15 +1,19 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
+import de.micromata.opengis.kml.v_2_2_0.gx.Track;
 
 
 /**
@@ -45,20 +49,39 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "geometryObjectExtension"
 })
 @XmlSeeAlso({
-    Model.class,
-    Point.class,
-    Polygon.class,
+    MultiTrack.class,
+    Track.class,
     LinearRing.class,
+    Point.class,
+    Model.class,
     MultiGeometry.class,
-    LineString.class
+    LineString.class,
+    Polygon.class
 })
 public abstract class Geometry
     extends AbstractObject
     implements Cloneable
 {
 
+    /**
+     * <Object>
+     * <p>
+     * This is an abstract base class and cannot be used directly in a KML file. It provides 
+     * the id attribute, which allows unique identification of a KML element, and the targetId 
+     * attribute, which is used to reference objects that have already been loaded into 
+     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * be used. 
+     * </p>
+     * 
+     * Syntax: 
+     * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
+     * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
+     * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
+     * 
+     * 
+     * 
+     */
     @XmlElement(name = "AbstractGeometrySimpleExtensionGroup")
-    @XmlSchemaType(name = "anySimpleType")
     protected List<Object> geometrySimpleExtension;
     /**
      * <Object>
@@ -165,7 +188,7 @@ public abstract class Geometry
      * add a value to the geometrySimpleExtension property collection
      * 
      * @param geometrySimpleExtension
-     *     Objects of the following type are allowed in the list: {@link Object}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link BigInteger}{@code>}{@link JAXBElement}{@code <}{@link Double}{@code>}
      * @return
      *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
      */

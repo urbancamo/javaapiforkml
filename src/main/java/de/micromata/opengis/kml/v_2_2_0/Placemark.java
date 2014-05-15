@@ -14,6 +14,8 @@ import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
+import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
+import de.micromata.opengis.kml.v_2_2_0.gx.Track;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 
 
@@ -103,7 +105,7 @@ public class Placemark
      * 
      * 
      */
-    @XmlElementRef(name = "AbstractGeometryGroup", namespace = "http://www.opengis.net/kml/2.2")
+    @XmlElementRef(name = "AbstractGeometryGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected Geometry geometry;
     @XmlElement(name = "PlacemarkSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
@@ -138,12 +140,14 @@ public class Placemark
      * 
      * @return
      *     possible object is
+     *     {@code <}{@link Geometry}{@code>}
      *     {@code <}{@link Point}{@code>}
      *     {@code <}{@link LinearRing}{@code>}
-     *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link Polygon}{@code>}
+     *     {@code <}{@link Track}{@code>}
+     *     {@code <}{@link MultiTrack}{@code>}
      *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link LineString}{@code>}
-     *     {@code <}{@link Polygon}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
      *     
      */
@@ -156,12 +160,14 @@ public class Placemark
      * 
      * @param value
      *     allowed object is
+     *     {@code <}{@link Geometry}{@code>}
      *     {@code <}{@link Point}{@code>}
      *     {@code <}{@link LinearRing}{@code>}
-     *     {@code <}{@link Geometry}{@code>}
+     *     {@code <}{@link Polygon}{@code>}
+     *     {@code <}{@link Track}{@code>}
+     *     {@code <}{@link MultiTrack}{@code>}
      *     {@code <}{@link Model}{@code>}
      *     {@code <}{@link LineString}{@code>}
-     *     {@code <}{@link Polygon}{@code>}
      *     {@code <}{@link MultiGeometry}{@code>}
      *     
      */
@@ -247,17 +253,49 @@ public class Placemark
     }
 
     /**
-     * Creates a new instance of {@link Model} and set it to geometry.
+     * Creates a new instance of {@link MultiTrack} and set it to geometry.
      * 
      * This method is a short version for:
      * <code>
-     * Model model = new Model();
-     * this.setGeometry(model); </code>
+     * MultiTrack multiTrack = new MultiTrack();
+     * this.setGeometry(multiTrack); </code>
      * 
      * 
      */
-    public Model createAndSetModel() {
-        Model newValue = new Model();
+    public MultiTrack createAndSetMultiTrack() {
+        MultiTrack newValue = new MultiTrack();
+        this.setGeometry(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Track} and set it to geometry.
+     * 
+     * This method is a short version for:
+     * <code>
+     * Track track = new Track();
+     * this.setGeometry(track); </code>
+     * 
+     * 
+     */
+    public Track createAndSetTrack() {
+        Track newValue = new Track();
+        this.setGeometry(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link LinearRing} and set it to geometry.
+     * 
+     * This method is a short version for:
+     * <code>
+     * LinearRing linearRing = new LinearRing();
+     * this.setGeometry(linearRing); </code>
+     * 
+     * 
+     */
+    public LinearRing createAndSetLinearRing() {
+        LinearRing newValue = new LinearRing();
         this.setGeometry(newValue);
         return newValue;
     }
@@ -279,33 +317,17 @@ public class Placemark
     }
 
     /**
-     * Creates a new instance of {@link Polygon} and set it to geometry.
+     * Creates a new instance of {@link Model} and set it to geometry.
      * 
      * This method is a short version for:
      * <code>
-     * Polygon polygon = new Polygon();
-     * this.setGeometry(polygon); </code>
+     * Model model = new Model();
+     * this.setGeometry(model); </code>
      * 
      * 
      */
-    public Polygon createAndSetPolygon() {
-        Polygon newValue = new Polygon();
-        this.setGeometry(newValue);
-        return newValue;
-    }
-
-    /**
-     * Creates a new instance of {@link LinearRing} and set it to geometry.
-     * 
-     * This method is a short version for:
-     * <code>
-     * LinearRing linearRing = new LinearRing();
-     * this.setGeometry(linearRing); </code>
-     * 
-     * 
-     */
-    public LinearRing createAndSetLinearRing() {
-        LinearRing newValue = new LinearRing();
+    public Model createAndSetModel() {
+        Model newValue = new Model();
         this.setGeometry(newValue);
         return newValue;
     }
@@ -338,6 +360,22 @@ public class Placemark
      */
     public LineString createAndSetLineString() {
         LineString newValue = new LineString();
+        this.setGeometry(newValue);
+        return newValue;
+    }
+
+    /**
+     * Creates a new instance of {@link Polygon} and set it to geometry.
+     * 
+     * This method is a short version for:
+     * <code>
+     * Polygon polygon = new Polygon();
+     * this.setGeometry(polygon); </code>
+     * 
+     * 
+     */
+    public Polygon createAndSetPolygon() {
+        Polygon newValue = new Polygon();
         this.setGeometry(newValue);
         return newValue;
     }

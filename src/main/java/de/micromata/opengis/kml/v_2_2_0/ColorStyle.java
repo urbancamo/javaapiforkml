@@ -48,10 +48,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
     "colorStyleObjectExtension"
 })
 @XmlSeeAlso({
-    IconStyle.class,
     LabelStyle.class,
     LineStyle.class,
-    PolyStyle.class
+    PolyStyle.class,
+    IconStyle.class
 })
 public abstract class ColorStyle
     extends SubStyle

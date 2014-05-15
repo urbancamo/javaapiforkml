@@ -11,19 +11,19 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.maven.ide.eclipse.maven2Builder</name>
+			<name>ca.mcgill.sable.clone.markers.cloneProblemMarkingBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>ca.mcgill.sable.clone.markers.cloneProblemMarkingBuilder</name>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>org.maven.ide.eclipse.maven2Nature</nature>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>ca.mcgill.sable.clone.nature</nature>
 	</natures>
 </projectDescription>
