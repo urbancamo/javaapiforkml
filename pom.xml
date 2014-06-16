@@ -12,6 +12,11 @@
 		<name>Micromata GmbH</name>
 		<url>http://micromata.de</url>
 	</organization>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
 	<scm>
 		<url>https://github.com/micromata/javaapiforkml</url>
         <connection>scm:git:git://github.com/micromata/javaapiforkml.git</connection>
