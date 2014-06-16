@@ -13,8 +13,9 @@
 		<url>http://micromata.de</url>
 	</organization>
 	<scm>
-		<connection>scm:svn:http://javaapiforkml.googlecode.com/svn/trunk/</connection>
-		<developerConnection>scm:svn:https://javaapiforkml.googlecode.com/svn/trunk/</developerConnection>
+		<url>https://github.com/micromata/javaapiforkml</url>
+        <connection>scm:git:git://github.com/micromata/javaapiforkml.git</connection>
+        <developerConnection>scm:git:git@github.com:micromata/javaapiforkml.git</developerConnection>
 	</scm>
 	<developers>
 		<developer>
