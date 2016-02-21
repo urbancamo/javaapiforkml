@@ -1,6 +1,14 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 # Java API for KML
 
-The objective of the Java API for KML is to provide Java interfaces for easy access to KML (Keyhole Markup Language) data.
+> The objective of the Java API for KML is to provide Java interfaces for easy access to KML (Keyhole Markup Language) data.
+
+# Unmaintained for now
+
+See https://github.com/micromata/javaapiforkml/issues/18
+
+---
 
 The main goal of the Java API for KML (JAK) is to provide automatically generated full reference implementation of the KML object model defined by OGC’s KML standard and Google’s GX extensions. It is an object orientated API that enables the convenient and easy use of KML in existing Java environments.
 
