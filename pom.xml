@@ -12,15 +12,15 @@
 		<name>Micromata GmbH</name>
 		<url>http://micromata.de</url>
 	</organization>
-  	<parent>
-    	<groupId>org.sonatype.oss</groupId>
-    	<artifactId>oss-parent</artifactId>
-    	<version>7</version>
-  	</parent>
+	<!-- <parent> -->
+	<!-- <groupId>org.sonatype.oss</groupId> -->
+	<!-- <artifactId>oss-parent</artifactId> -->
+	<!-- <version>7</version> -->
+	<!-- </parent> -->
 	<scm>
 		<url>https://github.com/micromata/javaapiforkml</url>
-        <connection>scm:git:git://github.com/micromata/javaapiforkml.git</connection>
-        <developerConnection>scm:git:git@github.com:micromata/javaapiforkml.git</developerConnection>
+		<connection>scm:git:git://github.com/micromata/javaapiforkml.git</connection>
+		<developerConnection>scm:git:git@github.com:micromata/javaapiforkml.git</developerConnection>
 	</scm>
 	<developers>
 		<developer>
@@ -69,22 +69,46 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<!--
-				code generation part disabled, till all files are in public maven repositories <plugin>
-				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-antrun-plugin</artifactId> <executions> <execution>
-				<id>xjc-invocation</id> <phase>generate-sources</phase> <configuration> <tasks> <property name="src.dir"
-				location="src/main" /> <property name="src.dir.gen" location="${src.dir}/java" /> <property name="schema.dir"
-				value="${src.dir}/resources/schema" /> <property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd"
-				/> <property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" /> <taskdef name="xjc"
-				classname="com.sun.tools.xjc.XJCTask" classpathref="maven.compile.classpath" /> <description>generate JAK from OGC's
-				KML schema</description> <mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" /> <delete> <fileset
-				dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" /> </delete> <xjc extension="true"
-				binding="${schema.dir.kml.binding}" destdir="${src.dir.gen}" removeOldOutput="yes"
-				schema="${schema.dir}/ogckml/kml22gx.xsd"> <arg value="-XJavaForKmlApi" /> </xjc> <exec executable="perl"
-				dir="${basedir}"> <arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" /> <arg
-				file="${src.dir.gen}/de/micromata/opengis/kml" /> </exec> </tasks> </configuration> <goals> <goal>run</goal>
-				</goals> </execution> </executions> </plugin>
-			-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>xjc-invocation</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<tasks>
+								<property name="src.dir" location="src/main" />
+								<property name="src.dir.gen" location="${src.dir}/java" />
+								<property name="schema.dir" value="${src.dir}/resources/schema" />
+								<property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd" />
+								<property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" />
+								<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask"
+									classpathref="maven.compile.classpath" />
+								<description>generate JAK from OGC's
+									KML schema</description>
+								<mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" />
+								<delete>
+									<fileset dir="${src.dir.gen}/de/micromata/opengis/kml/"
+										includes="**" />
+								</delete>
+								<xjc extension="true" binding="${schema.dir.kml.binding}"
+									destdir="${src.dir.gen}" removeOldOutput="yes"
+									schema="${schema.dir}/ogckml/kml22gx.xsd">
+									<arg value="-XJavaForKmlApi" />
+								</xjc>
+								<exec executable="perl" dir="${basedir}">
+									<arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" />
+									<arg file="${src.dir.gen}/de/micromata/opengis/kml" />
+								</exec>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -93,8 +117,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
@@ -121,24 +145,24 @@
 				</executions>
 			</plugin>
 		</plugins>
-		<extensions>
-			<extension>
-				<groupId>org.jvnet.wagon-svn</groupId>
-				<artifactId>wagon-svn</artifactId>
-				<version>1.9</version>
-			</extension>
-		</extensions>
+		<!-- <extensions> -->
+		<!-- <extension> -->
+		<!-- <groupId>org.jvnet.wagon-svn</groupId> -->
+		<!-- <artifactId>wagon-svn</artifactId> -->
+		<!-- <version>1.9</version> -->
+		<!-- </extension> -->
+		<!-- </extensions> -->
 	</build>
 	<dependencies>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-impl</artifactId>
-			<version>2.2</version>
+			<version>2.2.11</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-xjc</artifactId>
-			<version>2.2</version>
+			<version>2.2.11</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
@@ -156,13 +180,15 @@
 			<groupId>xmlunit</groupId>
 			<artifactId>xmlunit</artifactId>
 			<version>1.2</version>
-      <scope>test</scope>
+			<scope>test</scope>
 		</dependency>
-		<!--
-			code generation part disabled, till all files are in public maven repositories <dependency>
-			<groupId>de.micromata.jak</groupId> <artifactId>XJCPluginJavaApiforKml</artifactId> <version>1.0-SNAPSHOT</version>
-			<type>jar</type> <scope>compile</scope> </dependency>
-		-->
+		<dependency>
+			<groupId>de.micromata.jak</groupId>
+			<artifactId>XJCPluginJavaApiforKml</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 
 	<repositories>
