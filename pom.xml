@@ -95,6 +95,16 @@
 							<url>file:///${project.basedir}/${schema.dir}/ogckml/JAK_binding.xjb</url>
 						</binding>
 					</bindings>
+					<args>
+						<arg>-XJavaForKmlApi</arg>
+					</args>
+					<plugins>
+						<plugin>
+							<groupId>de.micromata.jak</groupId>
+							<artifactId>XJCPluginJavaApiforKml</artifactId>
+							<version>1.0.1-SNAPSHOT</version>
+						</plugin>
+					</plugins>
 					<schemas>
 						<schema>
 							<url>file:///${project.basedir}/${schema.dir}/ogckml/kml22gx.xsd</url>
@@ -135,6 +145,28 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>xjc-invocation</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<target>
+								<exec executable="perl" dir="${basedir}">
+									<arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" />
+									<arg file="${project.basedir}/src/main/java/de/micromata/opengis/kml" />
+								</exec>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<version>1.8</version>
 			</plugin>
 		</plugins>
 		<!-- <plugin> -->
@@ -183,6 +215,28 @@
 		<!-- </plugin> -->
 	</build>
 	<dependencies>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1.13</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-xjc</artifactId>
+			<version>2.1.13</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
