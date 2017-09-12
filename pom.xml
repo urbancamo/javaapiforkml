@@ -24,36 +24,14 @@
 	</scm>
 	<developers>
 		<developer>
-			<id>bachmann.florian</id>
-			<name>Florian Bachmann</name>
-			<email>f.bachmann@micromata.de</email>
+			<id>daniel.ludwig</id>
+			<name>Daniel Ludwig</name>
+			<email>d.ludwig@micromata.de</email>
 			<organization>Micromata GmbH</organization>
 			<organizationUrl>http://www.micromata.com</organizationUrl>
 			<timezone>-1</timezone>
 			<roles>
 				<role>architect</role>
-				<role>developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<id>schnitzelhugo</id>
-			<name>Bernd Kratz</name>
-			<email>b.kratz@micromata.de</email>
-			<organization>Micromata GmbH</organization>
-			<organizationUrl>http://www.micromata.com</organizationUrl>
-			<timezone>-1</timezone>
-			<roles>
-				<role>developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<id>landgraf1967</id>
-			<name>Thomas Landgraf</name>
-			<email>tl@micromata.de</email>
-			<organization>Micromata GmbH</organization>
-			<organizationUrl>http://www.micromata.com</organizationUrl>
-			<timezone>-1</timezone>
-			<roles>
 				<role>developer</role>
 			</roles>
 		</developer>
