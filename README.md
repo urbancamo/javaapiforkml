@@ -18,7 +18,7 @@ In order to ensure convenient and easy use of KML in existing Java-systems, an o
 
 This API provides easy out-of-the-box access to KML for the user (resp. the developer). This project created, a Java API for KML (short: JAK) in order to enable this.
 
-A high level documentation can be found at: http://labs.micromata.de/projects/jak.html
+A high level documentation can be found at: https://web.archive.org/web/20170316194859/http://labs.micromata.de/projects/jak.html
 
 The current JARs can be obtained via Maven or at the Download page:
 
