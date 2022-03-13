@@ -1,5 +1,55 @@
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
+# urbancamo notes
+
+I've updated the library to be usable with Java 11 and external jakarta replacement.
+
+You need the following dependencies in a library that depends on javaapiforkml:
+
+```
+    <!-- JAXB API v3.0.1 -->
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <!-- JAXB v3.0.2 reference implementation (curiously with com.sun coordinates) -->
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>3.0.2</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <scope>runtime</scope>
+      <version>2.3.3</version>
+    </dependency>
+```
+
+
+You will need the following dependencies in an application using the library:
+
+```
+        <!-- JAXB API v3.0.1 -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
+        <dependency>
+            <groupId>jakarta.activation</groupId>
+            <artifactId>jakarta.activation-api</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+```
+
+
 # Java API for KML
 
 > The objective of the Java API for KML is to provide Java interfaces for easy access to KML (Keyhole Markup Language) data.
