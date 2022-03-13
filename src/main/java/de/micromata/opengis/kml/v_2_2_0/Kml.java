@@ -19,26 +19,25 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.sax.SAXSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import com.sun.istack.NotNull;
-import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
+import org.jetbrains.annotations.NotNull;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -639,7 +638,7 @@ public class Kml implements Cloneable
         if (m == null) {
             m = this.getJaxbContext().createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
+            //m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
         }
         return m;
     }
@@ -941,35 +940,35 @@ public class Kml implements Cloneable
         return copy;
     }
 
-    private final static class NameSpaceBeautyfier
-        extends NamespacePrefixMapper
-    {
-
-
-        /**
-         * Internal method!
-         * <p>Customizing Namespace Prefixes During Marshalling to a more readable format.</p>
-         * <p>The default output is like:</p>
-         * <pre>{@code&lt;kml ... xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:ns4="http://www.google.com/kml/ext/2.2"&gt;}</pre>
-         * <p>is changed to:</p>
-         * <pre>{@code &lt;kml ... xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:gx="http://www.google.com/kml/ext/2.2"&gt;}</pre><p>What it does:</p>
-         * <p>namespaceUri: http://www.w3.org/2005/Atom              prefix: atom</p><p>namespaceUri: urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 prefix: xal</p><p>namespaceUri: http://www.google.com/kml/ext/2.2        prefix: gx</p><p>namespaceUri: anything else prefix: null</p>
-         * 
-         */
-        @Override
-        public String getPreferredPrefix(String namespaceUri, String suggestion, boolean requirePrefix) {
-            if (namespaceUri.matches("http://www.w3.org/\\d{4}/Atom")) {
-                return "atom";
-            }
-            if (namespaceUri.matches("urn:oasis:names:tc:ciq:xsdschema:xAL:.*?")) {
-                return "xal";
-            }
-            if (namespaceUri.matches("http://www.google.com/kml/ext/.*?")) {
-                return "gx";
-            }
-            return null;
-        }
-
-    }
+//    private final static class NameSpaceBeautyfier
+//        extends NamespacePrefixMapper
+//    {
+//
+//
+//        /**
+//         * Internal method!
+//         * <p>Customizing Namespace Prefixes During Marshalling to a more readable format.</p>
+//         * <p>The default output is like:</p>
+//         * <pre>{@code&lt;kml ... xmlns:ns2="http://www.w3.org/2005/Atom" xmlns:ns3="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:ns4="http://www.google.com/kml/ext/2.2"&gt;}</pre>
+//         * <p>is changed to:</p>
+//         * <pre>{@code &lt;kml ... xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" xmlns:gx="http://www.google.com/kml/ext/2.2"&gt;}</pre><p>What it does:</p>
+//         * <p>namespaceUri: http://www.w3.org/2005/Atom              prefix: atom</p><p>namespaceUri: urn:oasis:names:tc:ciq:xsdschema:xAL:2.0 prefix: xal</p><p>namespaceUri: http://www.google.com/kml/ext/2.2        prefix: gx</p><p>namespaceUri: anything else prefix: null</p>
+//         *
+//         */
+//        @Override
+//        public String getPreferredPrefix(String namespaceUri, String suggestion, boolean requirePrefix) {
+//            if (namespaceUri.matches("http://www.w3.org/\\d{4}/Atom")) {
+//                return "atom";
+//            }
+//            if (namespaceUri.matches("urn:oasis:names:tc:ciq:xsdschema:xAL:.*?")) {
+//                return "xal";
+//            }
+//            if (namespaceUri.matches("http://www.google.com/kml/ext/.*?")) {
+//                return "gx";
+//            }
+//            return null;
+//        }
+//
+//    }
 
 }
