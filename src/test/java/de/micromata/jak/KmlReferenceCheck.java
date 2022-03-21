@@ -1,66 +1,9 @@
 package de.micromata.jak;
 
-import java.util.List;
-
+import de.micromata.opengis.kml.v_2_2_0.*;
 import org.junit.Assert;
 
-import de.micromata.opengis.kml.v_2_2_0.Alias;
-import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
-import de.micromata.opengis.kml.v_2_2_0.BalloonStyle;
-import de.micromata.opengis.kml.v_2_2_0.Camera;
-import de.micromata.opengis.kml.v_2_2_0.Change;
-import de.micromata.opengis.kml.v_2_2_0.ColorMode;
-import de.micromata.opengis.kml.v_2_2_0.Coordinate;
-import de.micromata.opengis.kml.v_2_2_0.Create;
-import de.micromata.opengis.kml.v_2_2_0.Delete;
-import de.micromata.opengis.kml.v_2_2_0.DisplayMode;
-import de.micromata.opengis.kml.v_2_2_0.Document;
-import de.micromata.opengis.kml.v_2_2_0.ExtendedData;
-import de.micromata.opengis.kml.v_2_2_0.Folder;
-import de.micromata.opengis.kml.v_2_2_0.Geometry;
-import de.micromata.opengis.kml.v_2_2_0.GridOrigin;
-import de.micromata.opengis.kml.v_2_2_0.GroundOverlay;
-import de.micromata.opengis.kml.v_2_2_0.Icon;
-import de.micromata.opengis.kml.v_2_2_0.IconStyle;
-import de.micromata.opengis.kml.v_2_2_0.ItemIconState;
-import de.micromata.opengis.kml.v_2_2_0.Kml;
-import de.micromata.opengis.kml.v_2_2_0.LabelStyle;
-import de.micromata.opengis.kml.v_2_2_0.LatLonAltBox;
-import de.micromata.opengis.kml.v_2_2_0.LatLonBox;
-import de.micromata.opengis.kml.v_2_2_0.LineString;
-import de.micromata.opengis.kml.v_2_2_0.LineStyle;
-import de.micromata.opengis.kml.v_2_2_0.LinearRing;
-import de.micromata.opengis.kml.v_2_2_0.Link;
-import de.micromata.opengis.kml.v_2_2_0.ListItemType;
-import de.micromata.opengis.kml.v_2_2_0.ListStyle;
-import de.micromata.opengis.kml.v_2_2_0.Location;
-import de.micromata.opengis.kml.v_2_2_0.Lod;
-import de.micromata.opengis.kml.v_2_2_0.LookAt;
-import de.micromata.opengis.kml.v_2_2_0.Model;
-import de.micromata.opengis.kml.v_2_2_0.MultiGeometry;
-import de.micromata.opengis.kml.v_2_2_0.NetworkLink;
-import de.micromata.opengis.kml.v_2_2_0.NetworkLinkControl;
-import de.micromata.opengis.kml.v_2_2_0.Orientation;
-import de.micromata.opengis.kml.v_2_2_0.Pair;
-import de.micromata.opengis.kml.v_2_2_0.PhotoOverlay;
-import de.micromata.opengis.kml.v_2_2_0.Placemark;
-import de.micromata.opengis.kml.v_2_2_0.Point;
-import de.micromata.opengis.kml.v_2_2_0.PolyStyle;
-import de.micromata.opengis.kml.v_2_2_0.Polygon;
-import de.micromata.opengis.kml.v_2_2_0.RefreshMode;
-import de.micromata.opengis.kml.v_2_2_0.Region;
-import de.micromata.opengis.kml.v_2_2_0.Scale;
-import de.micromata.opengis.kml.v_2_2_0.Schema;
-import de.micromata.opengis.kml.v_2_2_0.ScreenOverlay;
-import de.micromata.opengis.kml.v_2_2_0.Shape;
-import de.micromata.opengis.kml.v_2_2_0.Style;
-import de.micromata.opengis.kml.v_2_2_0.StyleMap;
-import de.micromata.opengis.kml.v_2_2_0.StyleState;
-import de.micromata.opengis.kml.v_2_2_0.TimeSpan;
-import de.micromata.opengis.kml.v_2_2_0.TimeStamp;
-import de.micromata.opengis.kml.v_2_2_0.Units;
-import de.micromata.opengis.kml.v_2_2_0.Update;
-import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
+import java.util.List;
 
 public final class KmlReferenceCheck {
 
@@ -602,7 +545,7 @@ public final class KmlReferenceCheck {
 		Assert.assertEquals(1.0, model.getScale().getZ(), 0.0001);
 
 		Assert.assertEquals("house.dae", model.getLink().getHref());
-		// FIXME: TODO <refreshMode>once</refreshMode>
+		// FIXME: TODO {@code <refreshMode>}once</refreshMode>
 		Assert.assertEquals(RefreshMode.ON_CHANGE, model.getLink().getRefreshMode());
 
 		Assert.assertEquals("../files/CU-Macky---Center-StairsnoCulling.jpg", model.getResourceMap().getAlias().get(0).getTargetHref());
@@ -750,7 +693,7 @@ public final class KmlReferenceCheck {
 		Assert.assertEquals("small-photo.jpg", photooverlay.getIcon().getHref());
 
 		// <!-- PhotoOverlay elements -->
-		// <!-- default: <rotation> default is 0 -->
+		// <!-- default: rotation default is 0 -->
 		Assert.assertEquals(0, photooverlay.getRotation(), 0.0001);
 		Assert.assertEquals(1000.0, photooverlay.getViewVolume().getNear(), 0.0001);
 		Assert.assertEquals(-60.0, photooverlay.getViewVolume().getLeftFov(), 0.0001);

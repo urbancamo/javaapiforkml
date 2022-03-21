@@ -100,7 +100,7 @@ public class Option implements Cloneable
 
     /**
      * fluent setter
-     * @see #setName(String)
+     *
      * 
      * @param name
      *     required parameter
@@ -112,7 +112,7 @@ public class Option implements Cloneable
 
     /**
      * fluent setter
-     * @see #setEnabled(boolean)
+     *
      * 
      * @param enabled
      *     required parameter

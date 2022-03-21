@@ -1,23 +1,16 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <Point>
+ * {@code <Point>}
  * <p>
  * A geographic location defined by longitude, latitude, and (optional) altitude. When 
  * a Point is contained by a Placemark, the point itself determines the position of 
@@ -25,9 +18,9 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * ground with a line. This "tether" uses the current LineStyle. 
  * </p>
  * <p>
- * The <Point> element acts as a <Point> inside a <Placemark> element. It draws an 
+ * ThePoint element acts as aPoint inside a {@code <Placemark>} element. It draws an
  * icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
- * <styleUrl> and <StyleSelector> fields, just as it is for <Placemark>. 
+ * {@code <styleUrl>} and {@code <StyleSelector>} fields, just as it is for {@code <Placemark>}.
  * </p>
  * 
  * Syntax: 
@@ -41,11 +34,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/Point&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Geometry>
+ *
  * 
  * Contained By: 
- * @see: <MultiGeometry>
- * @see: <Placemark>
+ *
+ *
  * 
  * 
  * 
@@ -65,7 +58,7 @@ public class Point
 {
 
     /**
-     * <extrude>
+     * {@code <extrude>}
      * <p>
      * Boolean value. Specifies whether to connect the LineString to the ground. To extrude 
      * a LineString, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
@@ -87,7 +80,7 @@ public class Point
      * </p>
      * <p>
      * Boolean value. Specifies whether to connect the point to the ground with a line. 
-     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
+     * To extrude a Point, the value for altitudeMode must be either relativeToGround, 
      * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
      * Earth's sphere. 
      * </p>
@@ -105,7 +98,7 @@ public class Point
      * </p>
      * 
      * See Also: 
-     * See <LookAt> and <Region>
+     * See LookAt and {@code <Region>}
      * 
      * 
      * 
@@ -113,7 +106,7 @@ public class Point
     @XmlElement(defaultValue = "clampToGround")
     protected AltitudeMode altitudeMode;
     /**
-     * <coordinates> (required)
+     * coordinates (required)
      * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
@@ -140,12 +133,12 @@ public class Point
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> pointSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -176,7 +169,7 @@ public class Point
     }
 
     /**
-     * @see extrude
+     *
      * 
      * @param value
      *     allowed object is
@@ -188,13 +181,13 @@ public class Point
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -202,13 +195,13 @@ public class Point
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -216,7 +209,7 @@ public class Point
     }
 
     /**
-     * @see pointSimpleExtension
+     *
      * 
      */
     public List<Object> getPointSimpleExtension() {
@@ -227,7 +220,7 @@ public class Point
     }
 
     /**
-     * @see pointObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getPointObjectExtension() {
@@ -238,7 +231,7 @@ public class Point
     }
 
     /**
-     * @see coordinates
+     *
      * 
      */
     public List<Coordinate> getCoordinates() {
@@ -323,11 +316,7 @@ public class Point
         return true;
     }
 
-    /**
-     * @see coordinates
-     * 
-     * @param coordinates
-     */
+
     public void setCoordinates(final List<Coordinate> coordinates) {
         this.coordinates = coordinates;
     }
@@ -340,7 +329,7 @@ public class Point
      * @param latitude
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Point addToCoordinates(final double longitude, final double latitude) {
         this.getCoordinates().add(new Coordinate(longitude, latitude));
@@ -357,7 +346,7 @@ public class Point
      * @param altitude
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Point addToCoordinates(final double longitude, final double latitude, final double altitude) {
         this.getCoordinates().add(new Coordinate(longitude, latitude, altitude));
@@ -370,7 +359,7 @@ public class Point
      * @param coordinates
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Point addToCoordinates(final String coordinates) {
         this.getCoordinates().add(new Coordinate(coordinates));
@@ -378,9 +367,10 @@ public class Point
     }
 
     /**
-     * @see pointSimpleExtension
+     *
      * 
      * @param pointSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setPointSimpleExtension(final List<Object> pointSimpleExtension) {
         this.pointSimpleExtension = pointSimpleExtension;
@@ -392,7 +382,7 @@ public class Point
      * @param pointSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Point addToPointSimpleExtension(final Object pointSimpleExtension) {
         this.getPointSimpleExtension().add(pointSimpleExtension);
@@ -400,9 +390,10 @@ public class Point
     }
 
     /**
-     * @see pointObjectExtension
+     *
      * 
      * @param pointObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setPointObjectExtension(final List<AbstractObject> pointObjectExtension) {
         this.pointObjectExtension = pointObjectExtension;
@@ -414,7 +405,7 @@ public class Point
      * @param pointObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Point addToPointObjectExtension(final AbstractObject pointObjectExtension) {
         this.getPointObjectExtension().add(pointObjectExtension);
@@ -422,7 +413,7 @@ public class Point
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -439,7 +430,7 @@ public class Point
     }
 
     /**
-     * @see geometrySimpleExtension
+     *
      * 
      */
     @Obvious
@@ -456,7 +447,7 @@ public class Point
     }
 
     /**
-     * @see geometryObjectExtension
+     *
      * 
      */
     @Obvious
@@ -474,7 +465,7 @@ public class Point
 
     /**
      * fluent setter
-     * @see #setExtrude(Boolean)
+     *
      * 
      * @param extrude
      *     required parameter
@@ -486,7 +477,7 @@ public class Point
 
     /**
      * fluent setter
-     * @see #setAltitudeMode(Object)
+     *
      * 
      * @param altitudeMode
      *     required parameter
@@ -498,7 +489,7 @@ public class Point
 
     /**
      * fluent setter
-     * @see #setCoordinates(List<Coordinate>)
+     *
      * 
      * @param coordinates
      *     required parameter
@@ -510,7 +501,7 @@ public class Point
 
     /**
      * fluent setter
-     * @see #setPointSimpleExtension(List<Object>)
+     *
      * 
      * @param pointSimpleExtension
      *     required parameter
@@ -522,7 +513,7 @@ public class Point
 
     /**
      * fluent setter
-     * @see #setPointObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param pointObjectExtension
      *     required parameter
@@ -568,14 +559,12 @@ public class Point
     }
 
     /**
-     * Creates a new instance of {@link List}{@code <}{@link Coordinate}{@code>} and set it to this.coordinates.
+     * Creates a new instance of {@link List}{@code <}{@link Coordinate}{@code >} and set it to this.coordinates.
      * 
      * This method is a short version for:
-     * <pre>
-     * <code>
+     * {@code
      * List<Coordinate> newValue = new List<Coordinate>();
-     * this.setCoordinates(newValue); </code>
-     * </pre>
+     * this.setCoordinates(newValue); }
      * 
      * 
      */

@@ -1,31 +1,26 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElements;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <Update>
+ * Update
  * <p>
  * Specifies an addition, change, or deletion to KML data that has already been loaded 
- * using the specified URL. The <targetHref> specifies the .kml or .kmz file whose 
- * data (within Google Earth) is to be modified. <Update> is always contained in a 
+ * using the specified URL. The targetHref specifies the .kml or .kmz file whose 
+ * data (within Google Earth) is to be modified. Update is always contained in a 
  * NetworkLinkControl. Furthermore, the file containing the NetworkLinkControl must 
  * have been loaded by a NetworkLink. See the "Topics in KML" page on Updates for a 
  * detailed example of how Update works. 
  * </p>
  * <p>
- * With <Update>, you can specify any number of Change, Create, and Delete tags for 
+ * With Update, you can specify any number of Change, Create, and Delete tags for 
  * a .kml file or .kmz archive that has previously been loaded with a network link. 
- * See <Update>. 
+ * See Update. 
  * </p>
  * 
  * Syntax: 
@@ -37,9 +32,9 @@ import jakarta.xml.bind.annotation.XmlType;
  * <strong>&lt;/Update&gt;</strong></pre>
  * 
  * Contained By: 
- * @see: <NetworkLinkControl>
- * @see: Note: This element was deprecated in KML Release 2.1 and is replaced by <Link>, which provides the additional functionality of Regions. The <Url> tag will still work in Google Earth, but use of the newer <Link> tag is encouraged.
- * @see: Use this element to set the location of the link to the KML file, to define the refresh options for the server and viewer changes, and to populate a variable to return useful client information to the server.
+ *
+ *
+ *
  * 
  * 
  * 
@@ -55,11 +50,11 @@ public class Update implements Cloneable
 {
 
     /**
-     * <targethref> (required)
+     * targetHref (required)
      * <p>
      * A URL that specifies the .kml or .kmz file whose data (within Google Earth) is to 
-     * be modified by an <Update> element. This KML file must already have been loaded 
-     * via a <NetworkLink>. In that file, the element to be modified must already have 
+     * be modified by an Update element. This KML file must already have been loaded 
+     * via a NetworkLink. In that file, the element to be modified must already have 
      * an explicit id attribute defined for it. 
      * </p>
      * <p>
@@ -108,7 +103,7 @@ public class Update implements Cloneable
     }
 
     /**
-     * @see targetHref
+     *
      * 
      * @return
      *     possible object is
@@ -120,7 +115,7 @@ public class Update implements Cloneable
     }
 
     /**
-     * @see targetHref
+     *
      * 
      * @param value
      *     allowed object is
@@ -132,7 +127,7 @@ public class Update implements Cloneable
     }
 
     /**
-     * @see createOrDeleteOrChange
+     *
      * 
      */
     public List<Object> getCreateOrDeleteOrChange() {
@@ -143,7 +138,7 @@ public class Update implements Cloneable
     }
 
     /**
-     * @see updateExtension
+     *
      * 
      */
     public List<Object> getUpdateExtension() {
@@ -206,9 +201,10 @@ public class Update implements Cloneable
     }
 
     /**
-     * @see createOrDeleteOrChange
+     *
      * 
      * @param createOrDeleteOrChange
+     *     Objects of the following type are allowed in the list: {@link Object}{@link Change}{@link Delete}{@link Create}
      */
     public void setCreateOrDeleteOrChange(final List<Object> createOrDeleteOrChange) {
         this.createOrDeleteOrChange = createOrDeleteOrChange;
@@ -220,7 +216,7 @@ public class Update implements Cloneable
      * @param createOrDeleteOrChange
      *     Objects of the following type are allowed in the list: {@link Object}{@link Change}{@link Delete}{@link Create}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Update addToCreateOrDeleteOrChange(final Object createOrDeleteOrChange) {
         this.getCreateOrDeleteOrChange().add(createOrDeleteOrChange);
@@ -228,9 +224,10 @@ public class Update implements Cloneable
     }
 
     /**
-     * @see updateExtension
+     *
      * 
      * @param updateExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setUpdateExtension(final List<Object> updateExtension) {
         this.updateExtension = updateExtension;
@@ -242,7 +239,7 @@ public class Update implements Cloneable
      * @param updateExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Update addToUpdateExtension(final Object updateExtension) {
         this.getUpdateExtension().add(updateExtension);
@@ -251,7 +248,7 @@ public class Update implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUpdateExtension(List<Object>)
+     *
      * 
      * @param updateExtension
      *     required parameter

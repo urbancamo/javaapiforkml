@@ -13,7 +13,7 @@ import jakarta.xml.bind.annotation.XmlType;
  * </p>
  * 
  * See Also: 
- * See <hotSpot> in <IconStyle>, <ScreenOverlay>
+ * See {@code <hotSpot>} in {@code <IconStyle>}, {@code <ScreenOverlay>}
  * 
  * 
  * 

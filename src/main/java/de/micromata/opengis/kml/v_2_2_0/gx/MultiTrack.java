@@ -1,21 +1,16 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
-import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
+import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
 import de.micromata.opengis.kml.v_2_2_0.BooleanConverter;
 import de.micromata.opengis.kml.v_2_2_0.Geometry;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -49,9 +44,9 @@ public class MultiTrack
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -62,9 +57,9 @@ public class MultiTrack
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -161,9 +156,9 @@ public class MultiTrack
     /**
      * Creates a new instance of {@link Track} and adds it to track.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Track track = new Track();
-     * this.getTrack().add(track); </code>
+     * this.getTrack().add(track); }
      * 
      * 
      */
@@ -174,12 +169,13 @@ public class MultiTrack
     }
 
     /**
-     * Sets the value of the track property Objects of the following type(s) are allowed in the list List<Track>.
+     * Sets the value of the track property Objects of the following type(s) are allowed in the list {@code List<Track>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withTrack} instead.
      * 
      * 
      * @param track
+     *     Objects of the following type are allowed in the list: {@link Track}
      */
     public void setTrack(final List<Track> track) {
         this.track = track;
@@ -191,7 +187,7 @@ public class MultiTrack
      * @param track
      *     Objects of the following type are allowed in the list: {@link Track}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public MultiTrack addToTrack(final Track track) {
         this.getTrack().add(track);
@@ -239,7 +235,7 @@ public class MultiTrack
 
     /**
      * fluent setter
-     * @see #setAltitudeMode(Object)
+     *
      * 
      * @param altitudeMode
      *     required parameter
@@ -251,7 +247,7 @@ public class MultiTrack
 
     /**
      * fluent setter
-     * @see #setInterpolate(Boolean)
+     *
      * 
      * @param interpolate
      *     required parameter
@@ -263,7 +259,7 @@ public class MultiTrack
 
     /**
      * fluent setter
-     * @see #setTrack(List<Track>)
+     *
      * 
      * @param track
      *     required parameter

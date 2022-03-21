@@ -1,23 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0.xal;
 
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAnyAttribute;
-import jakarta.xml.bind.annotation.XmlAnyElement;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.XmlValue;
-import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.namespace.QName;
 
 
 /**
@@ -284,24 +276,10 @@ public class DependentLocality implements Cloneable
         this.premise = value;
     }
 
-    /**
-     * 
-     * @return
-     *     possible object is
-     *     {@link DependentLocality}
-     *     
-     */
     public DependentLocality getDependentLocality() {
         return dependentLocality;
     }
 
-    /**
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DependentLocality}
-     *     
-     */
     public void setDependentLocality(DependentLocality value) {
         this.dependentLocality = value;
     }
@@ -620,9 +598,9 @@ public class DependentLocality implements Cloneable
     /**
      * Creates a new instance of {@link AddressLine} and adds it to addressLine.
      * This method is a short version for:
-     * <code>
+     * {@code
      * AddressLine addressLine = new AddressLine();
-     * this.getAddressLine().add(addressLine); </code>
+     * this.getAddressLine().add(addressLine); }
      * 
      * 
      */
@@ -635,9 +613,9 @@ public class DependentLocality implements Cloneable
     /**
      * Creates a new instance of {@link DependentLocality.DependentLocalityName} and adds it to dependentLocalityName.
      * This method is a short version for:
-     * <code>
+     * {@code
      * DependentLocalityName dependentLocalityName = new DependentLocalityName();
-     * this.getDependentLocalityName().add(dependentLocalityName); </code>
+     * this.getDependentLocalityName().add(dependentLocalityName); }
      * 
      * 
      */
@@ -651,9 +629,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link DependentLocality.DependentLocalityNumber} and set it to dependentLocalityNumber.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * DependentLocalityNumber dependentLocalityNumber = new DependentLocalityNumber();
-     * this.setDependentLocalityNumber(dependentLocalityNumber); </code>
+     * this.setDependentLocalityNumber(dependentLocalityNumber); }
      * 
      * 
      */
@@ -667,9 +645,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link PostBox} and set it to postBox.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PostBox postBox = new PostBox();
-     * this.setPostBox(postBox); </code>
+     * this.setPostBox(postBox); }
      * 
      * 
      * @param postBoxNumber
@@ -685,9 +663,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link LargeMailUser} and set it to largeMailUser.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * LargeMailUser largeMailUser = new LargeMailUser();
-     * this.setLargeMailUser(largeMailUser); </code>
+     * this.setLargeMailUser(largeMailUser); }
      * 
      * 
      */
@@ -701,9 +679,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link PostOffice} and set it to postOffice.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PostOffice postOffice = new PostOffice();
-     * this.setPostOffice(postOffice); </code>
+     * this.setPostOffice(postOffice); }
      * 
      * 
      */
@@ -717,9 +695,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link PostalRoute} and set it to postalRoute.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PostalRoute postalRoute = new PostalRoute();
-     * this.setPostalRoute(postalRoute); </code>
+     * this.setPostalRoute(postalRoute); }
      * 
      * 
      * @param postalRouteName
@@ -737,9 +715,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link Thoroughfare} and set it to thoroughfare.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Thoroughfare thoroughfare = new Thoroughfare();
-     * this.setThoroughfare(thoroughfare); </code>
+     * this.setThoroughfare(thoroughfare); }
      * 
      * 
      * @param postalCode
@@ -761,9 +739,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link Premise} and set it to premise.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Premise premise = new Premise();
-     * this.setPremise(premise); </code>
+     * this.setPremise(premise); }
      * 
      * 
      * @param premiseNumber
@@ -780,12 +758,12 @@ public class DependentLocality implements Cloneable
     }
 
     /**
-     * Creates a new instance of {@link DependentLocality} and set it to dependentLocality.
+     * Creates a new instance of DependentLocality and set it to dependentLocality.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * DependentLocality dependentLocality = new DependentLocality();
-     * this.setDependentLocality(dependentLocality); </code>
+     * this.setDependentLocality(dependentLocality); }
      * 
      * 
      * @param postBox
@@ -807,9 +785,9 @@ public class DependentLocality implements Cloneable
      * Creates a new instance of {@link PostalCode} and set it to postalCode.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PostalCode postalCode = new PostalCode();
-     * this.setPostalCode(postalCode); </code>
+     * this.setPostalCode(postalCode); }
      * 
      * 
      */
@@ -820,12 +798,13 @@ public class DependentLocality implements Cloneable
     }
 
     /**
-     * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list List<AddressLine>.
+     * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list {@code List<AddressLine>}.
      * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAddressLine} instead.
+     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withAddressLine instead.
      * 
      * 
      * @param addressLine
+     *     Objects of the following type are allowed in the list: {@link AddressLine}
      */
     public void setAddressLine(final List<AddressLine> addressLine) {
         this.addressLine = addressLine;
@@ -837,7 +816,7 @@ public class DependentLocality implements Cloneable
      * @param addressLine
      *     Objects of the following type are allowed in the list: {@link AddressLine}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public DependentLocality addToAddressLine(final AddressLine addressLine) {
         this.getAddressLine().add(addressLine);
@@ -851,6 +830,7 @@ public class DependentLocality implements Cloneable
      * 
      * 
      * @param dependentLocalityName
+     *     Objects of the following type are allowed in the list: {@link DependentLocality.DependentLocalityName}
      */
     public void setDependentLocalityName(final List<DependentLocality.DependentLocalityName> dependentLocalityName) {
         this.dependentLocalityName = dependentLocalityName;
@@ -862,7 +842,7 @@ public class DependentLocality implements Cloneable
      * @param dependentLocalityName
      *     Objects of the following type are allowed in the list: {@link DependentLocality.DependentLocalityName}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public DependentLocality addToDependentLocalityName(final DependentLocality.DependentLocalityName dependentLocalityName) {
         this.getDependentLocalityName().add(dependentLocalityName);
@@ -870,12 +850,13 @@ public class DependentLocality implements Cloneable
     }
 
     /**
-     * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the any property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
      * 
      * 
      * @param any
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setAny(final List<Object> any) {
         this.any = any;
@@ -887,7 +868,7 @@ public class DependentLocality implements Cloneable
      * @param any
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public DependentLocality addToAny(final Object any) {
         this.getAny().add(any);
@@ -896,7 +877,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAddressLine(List<AddressLine>)
+     *
      * 
      * @param addressLine
      *     required parameter
@@ -908,7 +889,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDependentLocalityName(List<DependentLocalityName>)
+     *
      * 
      * @param dependentLocalityName
      *     required parameter
@@ -920,7 +901,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDependentLocalityNumber(DependentLocalityNumber)
+     *
      * 
      * @param dependentLocalityNumber
      *     required parameter
@@ -932,7 +913,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfare(Thoroughfare)
+     *
      * 
      * @param thoroughfare
      *     required parameter
@@ -944,7 +925,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setPremise(Premise)
+     *
      * 
      * @param premise
      *     required parameter
@@ -956,7 +937,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDependentLocality(DependentLocality)
+     *
      * 
      * @param dependentLocality
      *     required parameter
@@ -968,7 +949,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setPostalCode(PostalCode)
+     *
      * 
      * @param postalCode
      *     required parameter
@@ -980,7 +961,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAny(List<Object>)
+     *
      * 
      * @param any
      *     required parameter
@@ -992,7 +973,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUnderscore(String)
+     *
      * 
      * @param underscore
      *     required parameter
@@ -1004,7 +985,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUsage(String)
+     *
      * 
      * @param usage
      *     required parameter
@@ -1016,7 +997,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setConnector(String)
+     *
      * 
      * @param connector
      *     required parameter
@@ -1028,7 +1009,7 @@ public class DependentLocality implements Cloneable
 
     /**
      * fluent setter
-     * @see #setIndicator(String)
+     *
      * 
      * @param indicator
      *     required parameter
@@ -1226,7 +1207,7 @@ public class DependentLocality implements Cloneable
 
         /**
          * fluent setter
-         * @see #setContent(String)
+         *
          * 
          * @param content
          *     required parameter
@@ -1238,7 +1219,7 @@ public class DependentLocality implements Cloneable
 
         /**
          * fluent setter
-         * @see #setUnderscore(String)
+         *
          * 
          * @param underscore
          *     required parameter
@@ -1250,7 +1231,7 @@ public class DependentLocality implements Cloneable
 
         /**
          * fluent setter
-         * @see #setCode(String)
+         *
          * 
          * @param code
          *     required parameter
@@ -1429,7 +1410,7 @@ public class DependentLocality implements Cloneable
 
         /**
          * fluent setter
-         * @see #setContent(String)
+         *
          * 
          * @param content
          *     required parameter
@@ -1441,7 +1422,7 @@ public class DependentLocality implements Cloneable
 
         /**
          * fluent setter
-         * @see #setNameNumberOccurrence(String)
+         *
          * 
          * @param nameNumberOccurrence
          *     required parameter
@@ -1453,7 +1434,7 @@ public class DependentLocality implements Cloneable
 
         /**
          * fluent setter
-         * @see #setCode(String)
+         *
          * 
          * @param code
          *     required parameter

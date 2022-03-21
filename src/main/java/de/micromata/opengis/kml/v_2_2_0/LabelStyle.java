@@ -1,24 +1,20 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <LabelStyle>
+ * {@code <LabelStyle>}
  * <p>
- * Note: The <labelColor> tag is deprecated. Use <LabelStyle> instead. 
+ * Note: The {@code <LabelColor>} tag is deprecated. Use {@code <LabelStyle>} instead.
  * </p>
  * <p>
- * Specifies how the <name> of a Feature is drawn in the 3D viewer. A custom color, 
+ * Specifies how the {@code <name>} of a Feature is drawn in the 3D viewer. A custom color,
  * color mode, and scale for the label (name) can be specified. 
  * </p>
  * 
@@ -33,10 +29,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/LabelStyle&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <ColorStyle>
+ *
  * 
  * Contained By: 
- * @see: <Style>
+ *
  * 
  * 
  * 
@@ -54,16 +50,16 @@ public class LabelStyle
 {
 
     /**
-     * <scale>
+     * {@code <scale>}
      * <p>
-     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
+     * Note: The {@code <geomScale>} tag has been deprecated. Use {@code <scale>} instead. 
      * </p>
      * <p>
      * Resizes the icon. 
      * </p>
      * <p>
-     * Scales a model along the x, y, and z axes in the model's coordinate space. <Scale> 
-     * <x>2.5</x> <y>2.5</y> <z>3.5</z> </Scale> 
+     * Scales a model along the x, y, and z axes in the model's coordinate space. {@code <Scale>
+     * <x>2.5</x> <y>2.5</y> <z>3.5</z> </Scale> }
      * </p>
      * 
      * 
@@ -75,12 +71,12 @@ public class LabelStyle
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> labelStyleSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -100,7 +96,7 @@ public class LabelStyle
     }
 
     /**
-     * @see scale
+     *
      * 
      * @return
      *     possible object is
@@ -112,7 +108,7 @@ public class LabelStyle
     }
 
     /**
-     * @see scale
+     *
      * 
      * @param value
      *     allowed object is
@@ -124,7 +120,7 @@ public class LabelStyle
     }
 
     /**
-     * @see labelStyleSimpleExtension
+     *
      * 
      */
     public List<Object> getLabelStyleSimpleExtension() {
@@ -135,7 +131,7 @@ public class LabelStyle
     }
 
     /**
-     * @see labelStyleObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLabelStyleObjectExtension() {
@@ -197,9 +193,10 @@ public class LabelStyle
     }
 
     /**
-     * @see labelStyleSimpleExtension
+     *
      * 
      * @param labelStyleSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLabelStyleSimpleExtension(final List<Object> labelStyleSimpleExtension) {
         this.labelStyleSimpleExtension = labelStyleSimpleExtension;
@@ -211,7 +208,7 @@ public class LabelStyle
      * @param labelStyleSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LabelStyle addToLabelStyleSimpleExtension(final Object labelStyleSimpleExtension) {
         this.getLabelStyleSimpleExtension().add(labelStyleSimpleExtension);
@@ -219,9 +216,10 @@ public class LabelStyle
     }
 
     /**
-     * @see labelStyleObjectExtension
+     *
      * 
      * @param labelStyleObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLabelStyleObjectExtension(final List<AbstractObject> labelStyleObjectExtension) {
         this.labelStyleObjectExtension = labelStyleObjectExtension;
@@ -233,7 +231,7 @@ public class LabelStyle
      * @param labelStyleObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LabelStyle addToLabelStyleObjectExtension(final AbstractObject labelStyleObjectExtension) {
         this.getLabelStyleObjectExtension().add(labelStyleObjectExtension);
@@ -241,7 +239,7 @@ public class LabelStyle
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -258,7 +256,7 @@ public class LabelStyle
     }
 
     /**
-     * @see subStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -275,7 +273,7 @@ public class LabelStyle
     }
 
     /**
-     * @see subStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -292,7 +290,7 @@ public class LabelStyle
     }
 
     /**
-     * @see colorStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -309,7 +307,7 @@ public class LabelStyle
     }
 
     /**
-     * @see colorStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -327,7 +325,7 @@ public class LabelStyle
 
     /**
      * fluent setter
-     * @see #setScale(double)
+     *
      * 
      * @param scale
      *     required parameter
@@ -339,7 +337,7 @@ public class LabelStyle
 
     /**
      * fluent setter
-     * @see #setLabelStyleSimpleExtension(List<Object>)
+     *
      * 
      * @param labelStyleSimpleExtension
      *     required parameter
@@ -351,7 +349,7 @@ public class LabelStyle
 
     /**
      * fluent setter
-     * @see #setLabelStyleObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param labelStyleObjectExtension
      *     required parameter

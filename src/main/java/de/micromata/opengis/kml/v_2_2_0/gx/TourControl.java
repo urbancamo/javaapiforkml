@@ -86,7 +86,7 @@ public class TourControl
 
     /**
      * fluent setter
-     * @see #setPlayMode(PlayMode)
+     *
      * 
      * @param playMode
      *     required parameter

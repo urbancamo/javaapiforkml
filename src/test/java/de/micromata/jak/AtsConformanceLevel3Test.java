@@ -38,7 +38,7 @@ import de.micromata.opengis.kml.v_2_2_0.Snippet;
 public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc69PolygonRings()
+	 * 
 	 */
 	@Test
 	public void atc69PolygonRings() {
@@ -51,7 +51,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc70LinearRingSimple()
+	 * 
 	 */
 	@Test
 	public void atc70LinearRingSimple() {
@@ -61,7 +61,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc71BaloonStyleColor()
+	 * 
 	 */
 	@Test
 	public void atc71BaloonStyleColor() {
@@ -73,7 +73,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc72Metadata()
+	 * 
 	 */
   @Test
 	public void atc72Metadata() {
@@ -82,7 +82,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc73ScaleFullContent()
+	 * 
 	 */
 	@Test
 	public void atc73ScaleFullContent() {
@@ -92,7 +92,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc74LodFadeExtents()
+	 * 
 	 */
 	@Test
 	public void atc74LodFadeExtents() {
@@ -101,7 +101,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc75OrientationFullContent()
+	 * 
 	 */
 	@Test
 	public void atc75OrientationFullContent() {
@@ -111,7 +111,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	} 
 	
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc76Snippet()
+	 * 
 	 */
   @Test
 	public void atc76Snippet() {
@@ -120,7 +120,7 @@ public class AtsConformanceLevel3Test implements IAtsConformanceLevel3 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel3#atc77NetworkLinkUrl()
+	 * 
 	 */
   @Test
 	public void atc77NetworkLinkUrl() {

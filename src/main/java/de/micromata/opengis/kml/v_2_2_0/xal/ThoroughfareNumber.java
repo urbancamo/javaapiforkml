@@ -311,7 +311,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setContent(String)
+     *
      * 
      * @param content
      *     required parameter
@@ -323,7 +323,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNumber(String)
+     *
      * 
      * @param number
      *     required parameter
@@ -335,7 +335,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUnderscore(String)
+     *
      * 
      * @param underscore
      *     required parameter
@@ -347,7 +347,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setIndicator(String)
+     *
      * 
      * @param indicator
      *     required parameter
@@ -359,7 +359,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setIndicatorOccurrence(String)
+     *
      * 
      * @param indicatorOccurrence
      *     required parameter
@@ -371,7 +371,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNumberOccurrence(String)
+     *
      * 
      * @param numberOccurrence
      *     required parameter
@@ -383,7 +383,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setCode(String)
+     *
      * 
      * @param code
      *     required parameter

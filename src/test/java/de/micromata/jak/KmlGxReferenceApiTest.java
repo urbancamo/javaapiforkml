@@ -1,30 +1,13 @@
 package de.micromata.jak;
 
-import java.util.ArrayList;
-
+import de.micromata.jak.internal.IKmlGxReference;
+import de.micromata.opengis.kml.v_2_2_0.*;
+import de.micromata.opengis.kml.v_2_2_0.gx.*;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.micromata.jak.internal.IKmlGxReference;
-import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
-import de.micromata.opengis.kml.v_2_2_0.Change;
-import de.micromata.opengis.kml.v_2_2_0.Create;
-import de.micromata.opengis.kml.v_2_2_0.Delete;
-import de.micromata.opengis.kml.v_2_2_0.Document;
-import de.micromata.opengis.kml.v_2_2_0.GroundOverlay;
-import de.micromata.opengis.kml.v_2_2_0.Icon;
-import de.micromata.opengis.kml.v_2_2_0.Kml;
-import de.micromata.opengis.kml.v_2_2_0.KmlFactory;
-import de.micromata.opengis.kml.v_2_2_0.LineString;
-import de.micromata.opengis.kml.v_2_2_0.Placemark;
-import de.micromata.opengis.kml.v_2_2_0.Style;
-import de.micromata.opengis.kml.v_2_2_0.Update;
-import de.micromata.opengis.kml.v_2_2_0.gx.AnimatedUpdate;
-import de.micromata.opengis.kml.v_2_2_0.gx.FlyTo;
-import de.micromata.opengis.kml.v_2_2_0.gx.FlyToMode;
-import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
-import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
+import java.util.ArrayList;
 
 public class KmlGxReferenceApiTest implements IKmlGxReference {
 	private static final String LOG4J_LOCATION = "src/main/java/log4j.properties";
@@ -35,7 +18,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 	/**
 	 * @throws  
-	 * @see de.micromata.jak.internal.IKmlGxReference#altitudeMode()
+	 * 
 	 */
 	@Test
 	public void altitudeMode()  {
@@ -51,7 +34,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#altitudeModeReference()
+	 * 
 	 */
 	@Test
 	public void altitudeModeReference() {
@@ -65,7 +48,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#animatedUpdate()
+	 * 
 	 */
 	@Test 
 	public void animatedUpdate() {
@@ -83,7 +66,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#animatedUpdateExample()
+	 * 
 	 */
 	@Test
 	public void animatedUpdateExample() {
@@ -113,7 +96,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#balloonVisibilityExample()
+	 * 
 	 */
 	@Test
 	public void balloonVisibilityExample() {
@@ -124,14 +107,14 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#balloonVisibilityTourExample()
+	 * 
 	 */
 	public void balloonVisibilityTourExample() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#duration()
+	 * 
 	 */
 	@Test
 	public void duration() {
@@ -141,7 +124,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#durationAnimatedUpdate()
+	 * 
 	 */
 	@Test
 	public void durationAnimatedUpdate() {
@@ -149,7 +132,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#flyto()
+	 * 
 	 */
 	@Test
 	public void flyto() {
@@ -158,7 +141,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#flytoExample()
+	 * 
 	 */
 	@Test
 	public void flytoExample() {
@@ -167,7 +150,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#latLonQuad()
+	 * 
 	 */
 	@Test
 	public void latLonQuad() {
@@ -181,63 +164,63 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#latLonQuadExample()
+	 * 
 	 */
 	public void latLonQuadExample() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#playlist()
+	 * 
 	 */
 	public void playlist() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#soundCue()
+	 * 
 	 */
 	public void soundCue() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#timeSpanAndGxTimeStampExample()
+	 * 
 	 */
 	public void timeSpanAndGxTimeStampExample() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#tour()
+	 * 
 	 */
 	public void tour() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#tourControl()
+	 * 
 	 */
 	public void tourControl() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#tourPrimitive()
+	 * 
 	 */
 	public void tourPrimitive() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#tourPrimitiveExample()
+	 * 
 	 */
 	public void tourPrimitiveExample() {
 
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IKmlGxReference#waitgx()
+	 * 
 	 */
 	public void waitgx() {
 

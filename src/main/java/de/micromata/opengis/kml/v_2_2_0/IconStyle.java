@@ -1,24 +1,20 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <IconStyle>
+ * {@code <IconStyle>}
  * <p>
  * Specifies how icons for point Placemarks are drawn, both in the Places panel and 
- * in the 3D viewer of Google Earth. The <Icon> element specifies the icon image. The 
- * <scale> element specifies the x, y scaling of the icon. The color specified in the 
- * <color> element of <IconStyle> is blended with the color of the <Icon>. 
+ * in the 3D viewer of Google Earth. The {@code <Icon>} element specifies the icon image. The
+ * {@code <scale>} element specifies the x, y scaling of the icon. The color specified in the 
+ * {@code <color>} element of {@code <IconStyle>} is blended with the color of the {@code <Icon>}.
  * </p>
  * 
  * Syntax: 
@@ -38,14 +34,14 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/IconStyle&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <ColorStyle>
+ *
  * 
  * Contains: 
- * @see: <Icon>
- * @see: <href>
+ *
+ *
  * 
  * Contained By: 
- * @see: <Style>
+ *
  * 
  * 
  * 
@@ -66,16 +62,16 @@ public class IconStyle
 {
 
     /**
-     * <scale>
+     * {@code <scale>}
      * <p>
-     * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
+     * Note: The {@code <geomScale>} tag has been deprecated. Use {@code <scale>} instead.
      * </p>
      * <p>
      * Resizes the icon. 
      * </p>
      * <p>
-     * Scales a model along the x, y, and z axes in the model's coordinate space. <Scale> 
-     * <x>2.5</x> <y>2.5</y> <z>3.5</z> </Scale> 
+     * Scales a model along the x, y, and z axes in the model's coordinate space. {@code <scale>
+     * <x>2.5</x> <y>2.5</y> <z>3.5</z> </Scale> }
      * </p>
      * 
      * 
@@ -84,7 +80,7 @@ public class IconStyle
     @XmlElement(defaultValue = "1.0")
     protected double scale;
     /**
-     * <heading>
+     * {@code <heading>}
      * <p>
      * Direction (azimuth) of the camera, in degrees. Default=0 (true North). (See diagram.) 
      * Values range from 0 to 360 degrees. 
@@ -109,26 +105,26 @@ public class IconStyle
     @XmlElement(defaultValue = "0.0")
     protected double heading;
     /**
-     * <icon> see also <icon>.
+     * {@code <Icon>}
      * <p>
-     * <Icon> <href>Sunset.jpg</href> </Icon> 
+     * {@code <Icon><href>Sunset.jpg</href> </Icon> }
      * </p>
      * <p>
-     * A custom Icon. In <IconStyle>, the only child element of <Icon> is <href>: <href>: 
+     * A custom Icon. In {@code <IconStyle>}, the only child element of {@code <Icon> is <href>: <href>: }
      * An HTTP address or a local file specification used to load an icon. 
      * </p>
      * <p>
-     * Defines an image associated with an Icon style or overlay. <Icon> has the same child 
-     * elements as <Link>. The required <href> child element defines the location of the 
+     * Defines an image associated with an Icon style or overlay. {@code <Icon>}has the same child 
+     * elements as {@code <Link>}. The required {@code <href>}child element defines the location of the 
      * image to be used as the overlay or as the icon for the placemark. This location 
      * can either be on a local file system or a remote web server. 
      * </p>
      * <p>
-     * Defines the image associated with the Overlay. The <href> element defines the location 
+     * Defines the image associated with the Overlay. The {@code <href>}element defines the location 
      * of the image to be used as the Overlay. This location can be either on a local file 
-     * system or on a web server. If this element is omitted or contains no <href>, a rectangle 
-     * is drawn using the color and size defined by the ground or screen overlay. <Icon> 
-     * <href>icon.jpg</href> </Icon> 
+     * system or on a web server. If this element is omitted or contains no {@code <href>}, a rectangle
+     * is drawn using the color and size defined by the ground or screen overlay. {@code <Icon>
+     * <href>icon.jpg</href> </Icon> }
      * </p>
      * 
      * Syntax: 
@@ -147,9 +143,9 @@ public class IconStyle
      *   <strong>&lt;/Icon&gt;</strong></pre>
      * 
      * Contained By: 
-     * @see: <GroundOverlay>
-     * @see: <IconStyle>
-     * @see: <ScreenOverlay>
+     *
+     *
+     *
      * 
      * 
      * 
@@ -157,9 +153,9 @@ public class IconStyle
     @XmlElement(name = "Icon")
     protected Icon icon;
     /**
-     * <hotspot x="0.5" y="0.5" xunits="fraction" yunits="fraction">
+     * {@code <hotspot x="0.5" y="0.5" xunits="fraction" yunits="fraction">}
      * <p>
-     * Specifies the position within the Icon that is "anchored" to the <Point> specified 
+     * Specifies the position within the Icon that is "anchored" to thePoint specified 
      * in the Placemark. The x and y values can be specified in three different ways: as 
      * pixels ("pixels"), as fractions of the icon ("fraction"), or as inset pixels ("insetPixels"), 
      * which is an offset in pixels from the upper right corner of the icon. The x and 
@@ -185,12 +181,12 @@ public class IconStyle
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> iconStyleSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -210,7 +206,7 @@ public class IconStyle
     }
 
     /**
-     * @see scale
+     *
      * 
      * @return
      *     possible object is
@@ -222,7 +218,7 @@ public class IconStyle
     }
 
     /**
-     * @see scale
+     *
      * 
      * @param value
      *     allowed object is
@@ -234,7 +230,7 @@ public class IconStyle
     }
 
     /**
-     * @see heading
+     *
      * 
      * @return
      *     possible object is
@@ -246,7 +242,7 @@ public class IconStyle
     }
 
     /**
-     * @see heading
+     *
      * 
      * @param value
      *     allowed object is
@@ -258,7 +254,7 @@ public class IconStyle
     }
 
     /**
-     * @see icon
+     *
      * 
      * @return
      *     possible object is
@@ -270,7 +266,7 @@ public class IconStyle
     }
 
     /**
-     * @see icon
+     *
      * 
      * @param value
      *     allowed object is
@@ -282,7 +278,7 @@ public class IconStyle
     }
 
     /**
-     * @see hotSpot
+     *
      * 
      * @return
      *     possible object is
@@ -294,7 +290,7 @@ public class IconStyle
     }
 
     /**
-     * @see hotSpot
+     *
      * 
      * @param value
      *     allowed object is
@@ -306,7 +302,7 @@ public class IconStyle
     }
 
     /**
-     * @see iconStyleSimpleExtension
+     *
      * 
      */
     public List<Object> getIconStyleSimpleExtension() {
@@ -317,7 +313,7 @@ public class IconStyle
     }
 
     /**
-     * @see iconStyleObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getIconStyleObjectExtension() {
@@ -407,9 +403,9 @@ public class IconStyle
      * Creates a new instance of {@link Icon} and set it to icon.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Icon icon = new Icon();
-     * this.setIcon(icon); </code>
+     * this.setIcon(icon); }
      * 
      * 
      */
@@ -423,9 +419,9 @@ public class IconStyle
      * Creates a new instance of {@link Vec2} and set it to hotSpot.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Vec2 vec2 = new Vec2();
-     * this.setHotSpot(vec2); </code>
+     * this.setHotSpot(vec2); }
      * 
      * 
      */
@@ -436,9 +432,10 @@ public class IconStyle
     }
 
     /**
-     * @see iconStyleSimpleExtension
+     *
      * 
      * @param iconStyleSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setIconStyleSimpleExtension(final List<Object> iconStyleSimpleExtension) {
         this.iconStyleSimpleExtension = iconStyleSimpleExtension;
@@ -450,7 +447,7 @@ public class IconStyle
      * @param iconStyleSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public IconStyle addToIconStyleSimpleExtension(final Object iconStyleSimpleExtension) {
         this.getIconStyleSimpleExtension().add(iconStyleSimpleExtension);
@@ -458,9 +455,10 @@ public class IconStyle
     }
 
     /**
-     * @see iconStyleObjectExtension
+     *
      * 
      * @param iconStyleObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setIconStyleObjectExtension(final List<AbstractObject> iconStyleObjectExtension) {
         this.iconStyleObjectExtension = iconStyleObjectExtension;
@@ -472,7 +470,7 @@ public class IconStyle
      * @param iconStyleObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public IconStyle addToIconStyleObjectExtension(final AbstractObject iconStyleObjectExtension) {
         this.getIconStyleObjectExtension().add(iconStyleObjectExtension);
@@ -480,7 +478,7 @@ public class IconStyle
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -497,7 +495,7 @@ public class IconStyle
     }
 
     /**
-     * @see subStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -514,7 +512,7 @@ public class IconStyle
     }
 
     /**
-     * @see subStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -531,7 +529,7 @@ public class IconStyle
     }
 
     /**
-     * @see colorStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -548,7 +546,7 @@ public class IconStyle
     }
 
     /**
-     * @see colorStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -566,7 +564,7 @@ public class IconStyle
 
     /**
      * fluent setter
-     * @see #setScale(double)
+     *
      * 
      * @param scale
      *     required parameter
@@ -578,7 +576,7 @@ public class IconStyle
 
     /**
      * fluent setter
-     * @see #setHeading(double)
+     *
      * 
      * @param heading
      *     required parameter
@@ -590,7 +588,7 @@ public class IconStyle
 
     /**
      * fluent setter
-     * @see #setIcon(Icon)
+     *
      * 
      * @param icon
      *     required parameter
@@ -602,7 +600,7 @@ public class IconStyle
 
     /**
      * fluent setter
-     * @see #setHotSpot(Vec2)
+     *
      * 
      * @param hotSpot
      *     required parameter
@@ -614,7 +612,7 @@ public class IconStyle
 
     /**
      * fluent setter
-     * @see #setIconStyleSimpleExtension(List<Object>)
+     *
      * 
      * @param iconStyleSimpleExtension
      *     required parameter
@@ -626,7 +624,7 @@ public class IconStyle
 
     /**
      * fluent setter
-     * @see #setIconStyleObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param iconStyleObjectExtension
      *     required parameter

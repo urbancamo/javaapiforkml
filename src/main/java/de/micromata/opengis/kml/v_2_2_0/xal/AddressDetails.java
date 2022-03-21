@@ -1,37 +1,29 @@
 
 package de.micromata.opengis.kml.v_2_2_0.xal;
 
+import jakarta.xml.bind.annotation.*;
+
+import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAnyAttribute;
-import jakarta.xml.bind.annotation.XmlAnyElement;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.XmlValue;
-import javax.xml.namespace.QName;
 
 
 /**
- * <xal:addressdetails>
+ * xal:addressdetails
  * <p>
  * A structured address, formatted as xAL, or eXtensible Address Language, an international 
- * standard for address formatting. <xal:AddressDetails> is used by KML for geocoding 
+ * standard for address formatting. xal:addressdetails is used by KML for geocoding 
  * in Google Maps only. For details, see the Google Maps API documentation. Currently, 
- * Google Earth does not use this element; use <address> instead. Be sure to include 
+ * Google Earth does not use this element; use address instead. Be sure to include
  * the namespace for this element in any KML file that uses it: xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" 
  * </p>
  * <p>
  * A structured address, formatted as xAL, or eXtensible Address Language, an international 
- * standard for address formatting. <xal:AddressDetails> is used by KML for geocoding 
+ * standard for address formatting. xal:addressdetails is used by KML for geocoding 
  * in Google Maps only. For details, see the Google Maps API documentation. Currently, 
- * Google Earth does not use this element; use <address> instead. Be sure to include 
+ * Google Earth does not use this element; use address instead. Be sure to include
  * the namespace for this element in any KML file that uses it: xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" 
  * </p>
  * 
@@ -56,12 +48,12 @@ public class AddressDetails implements Cloneable
     @XmlElement(name = "PostalServiceElements")
     protected AddressDetails.PostalServiceElements postalServiceElements;
     /**
-     * <address>
+     * address
      * <p>
      * A string value representing an unstructured address written as a standard street, 
-     * city, state address, and/or as a postal code. You can use the <address> tag to specify 
+     * city, state address, and/or as a postal code. You can use the address tag to specify
      * the location of a point instead of using latitude and longitude coordinates. (However, 
-     * if a <Point> is provided, it takes precedence over the <address>.) To find out which 
+     * if aPoint is provided, it takes precedence over the address.) To find out which
      * locales are supported for this tag in Google Earth, go to the Google Maps Help. 
      * </p>
      * 
@@ -83,12 +75,12 @@ public class AddressDetails implements Cloneable
     @XmlAnyElement(lax = true)
     protected List<Object> any;
     /**
-     * <address>
+     * address
      * <p>
      * A string value representing an unstructured address written as a standard street, 
-     * city, state address, and/or as a postal code. You can use the <address> tag to specify 
+     * city, state address, and/or as a postal code. You can use the address tag to specify
      * the location of a point instead of using latitude and longitude coordinates. (However, 
-     * if a <Point> is provided, it takes precedence over the <address>.) To find out which 
+     * if a Point is provided, it takes precedence over the address.) To find out which
      * locales are supported for this tag in Google Earth, go to the Google Maps Help. 
      * </p>
      * 
@@ -155,7 +147,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see postalServiceElements
+     *
      * 
      * @return
      *     possible object is
@@ -167,7 +159,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see postalServiceElements
+     *
      * 
      * @param value
      *     allowed object is
@@ -179,7 +171,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see xalAddress
+     *
      * 
      * @return
      *     possible object is
@@ -191,7 +183,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see xalAddress
+     *
      * 
      * @param value
      *     allowed object is
@@ -203,7 +195,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see addressLines
+     *
      * 
      * @return
      *     possible object is
@@ -215,7 +207,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see addressLines
+     *
      * 
      * @param value
      *     allowed object is
@@ -227,7 +219,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see country
+     *
      * 
      * @return
      *     possible object is
@@ -239,7 +231,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see country
+     *
      * 
      * @param value
      *     allowed object is
@@ -251,7 +243,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see administrativeArea
+     *
      * 
      * @return
      *     possible object is
@@ -263,7 +255,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see administrativeArea
+     *
      * 
      * @param value
      *     allowed object is
@@ -275,7 +267,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see locality
+     *
      * 
      * @return
      *     possible object is
@@ -287,7 +279,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see locality
+     *
      * 
      * @param value
      *     allowed object is
@@ -299,7 +291,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see thoroughfare
+     *
      * 
      * @return
      *     possible object is
@@ -311,7 +303,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see thoroughfare
+     *
      * 
      * @param value
      *     allowed object is
@@ -323,7 +315,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see any
+     *
      * 
      */
     public List<Object> getAny() {
@@ -334,7 +326,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see address
+     *
      * 
      * @return
      *     possible object is
@@ -346,7 +338,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see address
+     *
      * 
      * @param value
      *     allowed object is
@@ -358,7 +350,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see currentStatus
+     *
      * 
      * @return
      *     possible object is
@@ -370,7 +362,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see currentStatus
+     *
      * 
      * @param value
      *     allowed object is
@@ -382,7 +374,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see validFromDate
+     *
      * 
      * @return
      *     possible object is
@@ -394,7 +386,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see validFromDate
+     *
      * 
      * @param value
      *     allowed object is
@@ -406,7 +398,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see validToDate
+     *
      * 
      * @return
      *     possible object is
@@ -418,7 +410,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see validToDate
+     *
      * 
      * @param value
      *     allowed object is
@@ -430,7 +422,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see usage
+     *
      * 
      * @return
      *     possible object is
@@ -442,7 +434,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see usage
+     *
      * 
      * @param value
      *     allowed object is
@@ -454,7 +446,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see addressDetailsKey
+     *
      * 
      * @return
      *     possible object is
@@ -466,7 +458,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see addressDetailsKey
+     *
      * 
      * @param value
      *     allowed object is
@@ -478,7 +470,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see code
+     *
      * 
      * @return
      *     possible object is
@@ -490,7 +482,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see code
+     *
      * 
      * @param value
      *     allowed object is
@@ -502,7 +494,7 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see otherAttributes
+     *
      * 
      * @return
      *     always non-null
@@ -687,9 +679,9 @@ public class AddressDetails implements Cloneable
      * Creates a new instance of {@link AddressDetails.PostalServiceElements} and set it to postalServiceElements.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PostalServiceElements postalServiceElements = new PostalServiceElements();
-     * this.setPostalServiceElements(postalServiceElements); </code>
+     * this.setPostalServiceElements(postalServiceElements); }
      * 
      * 
      */
@@ -703,9 +695,9 @@ public class AddressDetails implements Cloneable
      * Creates a new instance of {@link AddressDetails.Address} and set it to xalAddress.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Address address = new Address();
-     * this.setXalAddress(address); </code>
+     * this.setXalAddress(address); }
      * 
      * 
      */
@@ -719,9 +711,9 @@ public class AddressDetails implements Cloneable
      * Creates a new instance of {@link AddressLines} and set it to addressLines.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * AddressLines addressLines = new AddressLines();
-     * this.setAddressLines(addressLines); </code>
+     * this.setAddressLines(addressLines); }
      * 
      * 
      * @param addressLine
@@ -737,9 +729,9 @@ public class AddressDetails implements Cloneable
      * Creates a new instance of {@link AddressDetails.Country} and set it to country.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Country country = new Country();
-     * this.setCountry(country); </code>
+     * this.setCountry(country); }
      * 
      * 
      * @param locality
@@ -759,9 +751,9 @@ public class AddressDetails implements Cloneable
      * Creates a new instance of {@link AdministrativeArea} and set it to administrativeArea.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * AdministrativeArea administrativeArea = new AdministrativeArea();
-     * this.setAdministrativeArea(administrativeArea); </code>
+     * this.setAdministrativeArea(administrativeArea); }
      * 
      * 
      * @param postalCode
@@ -781,9 +773,9 @@ public class AddressDetails implements Cloneable
      * Creates a new instance of {@link Locality} and set it to locality.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Locality locality = new Locality();
-     * this.setLocality(locality); </code>
+     * this.setLocality(locality); }
      * 
      * 
      * @param postBox
@@ -805,9 +797,9 @@ public class AddressDetails implements Cloneable
      * Creates a new instance of {@link Thoroughfare} and set it to thoroughfare.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Thoroughfare thoroughfare = new Thoroughfare();
-     * this.setThoroughfare(thoroughfare); </code>
+     * this.setThoroughfare(thoroughfare); }
      * 
      * 
      * @param postalCode
@@ -826,9 +818,10 @@ public class AddressDetails implements Cloneable
     }
 
     /**
-     * @see any
+     *
      * 
      * @param any
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setAny(final List<Object> any) {
         this.any = any;
@@ -840,7 +833,7 @@ public class AddressDetails implements Cloneable
      * @param any
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public AddressDetails addToAny(final Object any) {
         this.getAny().add(any);
@@ -849,7 +842,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setPostalServiceElements(PostalServiceElements)
+     *
      * 
      * @param postalServiceElements
      *     required parameter
@@ -861,7 +854,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAny(List<Object>)
+     *
      * 
      * @param any
      *     required parameter
@@ -873,7 +866,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAddress(String)
+     *
      * 
      * @param address
      *     required parameter
@@ -885,7 +878,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setCurrentStatus(String)
+     *
      * 
      * @param currentStatus
      *     required parameter
@@ -897,7 +890,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setValidFromDate(String)
+     *
      * 
      * @param validFromDate
      *     required parameter
@@ -909,7 +902,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setValidToDate(String)
+     *
      * 
      * @param validToDate
      *     required parameter
@@ -921,7 +914,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUsage(String)
+     *
      * 
      * @param usage
      *     required parameter
@@ -933,7 +926,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAddressDetailsKey(String)
+     *
      * 
      * @param addressDetailsKey
      *     required parameter
@@ -945,7 +938,7 @@ public class AddressDetails implements Cloneable
 
     /**
      * fluent setter
-     * @see #setCode(String)
+     *
      * 
      * @param code
      *     required parameter
@@ -979,12 +972,12 @@ public class AddressDetails implements Cloneable
 
 
     /**
-     * <address>
+     * address
      * <p>
      * A string value representing an unstructured address written as a standard street, 
-     * city, state address, and/or as a postal code. You can use the <address> tag to specify 
+     * city, state address, and/or as a postal code. You can use the address tag to specify
      * the location of a point instead of using latitude and longitude coordinates. (However, 
-     * if a <Point> is provided, it takes precedence over the <address>.) To find out which 
+     * if aPoint is provided, it takes precedence over the address.) To find out which
      * locales are supported for this tag in Google Earth, go to the Google Maps Help. 
      * </p>
      * 
@@ -1015,7 +1008,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * @see content
+         *
          * 
          * @return
          *     possible object is
@@ -1027,7 +1020,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * @see content
+         *
          * 
          * @param value
          *     allowed object is
@@ -1039,7 +1032,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * @see underscore
+         *
          * 
          * @return
          *     possible object is
@@ -1051,7 +1044,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * @see underscore
+         *
          * 
          * @param value
          *     allowed object is
@@ -1063,7 +1056,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * @see code
+         *
          * 
          * @return
          *     possible object is
@@ -1075,7 +1068,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * @see code
+         *
          * 
          * @param value
          *     allowed object is
@@ -1087,7 +1080,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * @see otherAttributes
+         *
          * 
          * @return
          *     always non-null
@@ -1150,7 +1143,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setContent(String)
+         *
          * 
          * @param content
          *     required parameter
@@ -1162,7 +1155,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setUnderscore(String)
+         *
          * 
          * @param underscore
          *     required parameter
@@ -1174,7 +1167,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setCode(String)
+         *
          * 
          * @param code
          *     required parameter
@@ -1468,9 +1461,9 @@ public class AddressDetails implements Cloneable
         /**
          * Creates a new instance of {@link AddressLine} and adds it to addressLine.
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressLine addressLine = new AddressLine();
-         * this.getAddressLine().add(addressLine); </code>
+         * this.getAddressLine().add(addressLine); }
          * 
          * 
          */
@@ -1483,9 +1476,9 @@ public class AddressDetails implements Cloneable
         /**
          * Creates a new instance of {@link AddressDetails.Country.CountryNameCode} and adds it to countryNameCode.
          * This method is a short version for:
-         * <code>
+         * {@code
          * CountryNameCode countryNameCode = new CountryNameCode();
-         * this.getCountryNameCode().add(countryNameCode); </code>
+         * this.getCountryNameCode().add(countryNameCode); }
          * 
          * 
          */
@@ -1498,9 +1491,9 @@ public class AddressDetails implements Cloneable
         /**
          * Creates a new instance of {@link CountryName} and adds it to countryName.
          * This method is a short version for:
-         * <code>
+         * {@code
          * CountryName countryName = new CountryName();
-         * this.getCountryName().add(countryName); </code>
+         * this.getCountryName().add(countryName); }
          * 
          * 
          */
@@ -1514,9 +1507,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AdministrativeArea} and set it to administrativeArea.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * AdministrativeArea administrativeArea = new AdministrativeArea();
-         * this.setAdministrativeArea(administrativeArea); </code>
+         * this.setAdministrativeArea(administrativeArea); }
          * 
          * 
          * @param postalCode
@@ -1536,9 +1529,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link Locality} and set it to locality.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * Locality locality = new Locality();
-         * this.setLocality(locality); </code>
+         * this.setLocality(locality); }
          * 
          * 
          * @param postBox
@@ -1560,9 +1553,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link Thoroughfare} and set it to thoroughfare.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * Thoroughfare thoroughfare = new Thoroughfare();
-         * this.setThoroughfare(thoroughfare); </code>
+         * this.setThoroughfare(thoroughfare); }
          * 
          * 
          * @param postalCode
@@ -1581,12 +1574,13 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list List<AddressLine>.
+         * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list {@code List<AddressLine>}.
          * <p>Note:
-         * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAddressLine} instead.
+         * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withAddressLine instead.
          * 
          * 
          * @param addressLine
+         *     Objects of the following type are allowed in the list: {@link AddressLine}
          */
         public void setAddressLine(final List<AddressLine> addressLine) {
             this.addressLine = addressLine;
@@ -1598,7 +1592,7 @@ public class AddressDetails implements Cloneable
          * @param addressLine
          *     Objects of the following type are allowed in the list: {@link AddressLine}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public AddressDetails.Country addToAddressLine(final AddressLine addressLine) {
             this.getAddressLine().add(addressLine);
@@ -1612,6 +1606,7 @@ public class AddressDetails implements Cloneable
          * 
          * 
          * @param countryNameCode
+         *     Objects of the following type are allowed in the list: {@link AddressDetails.Country.CountryNameCode}
          */
         public void setCountryNameCode(final List<AddressDetails.Country.CountryNameCode> countryNameCode) {
             this.countryNameCode = countryNameCode;
@@ -1623,7 +1618,7 @@ public class AddressDetails implements Cloneable
          * @param countryNameCode
          *     Objects of the following type are allowed in the list: {@link AddressDetails.Country.CountryNameCode}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public AddressDetails.Country addToCountryNameCode(final AddressDetails.Country.CountryNameCode countryNameCode) {
             this.getCountryNameCode().add(countryNameCode);
@@ -1637,6 +1632,7 @@ public class AddressDetails implements Cloneable
          * 
          * 
          * @param countryName
+         *     Objects of the following type are allowed in the list: {@link CountryName}
          */
         public void setCountryName(final List<CountryName> countryName) {
             this.countryName = countryName;
@@ -1648,7 +1644,7 @@ public class AddressDetails implements Cloneable
          * @param countryName
          *     Objects of the following type are allowed in the list: {@link CountryName}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public AddressDetails.Country addToCountryName(final CountryName countryName) {
             this.getCountryName().add(countryName);
@@ -1656,12 +1652,13 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
+         * Sets the value of the any property Objects of the following type(s) are allowed in the list {@code List<Object>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
          * 
          * 
          * @param any
+         *     Objects of the following type are allowed in the list: {@link Object}
          */
         public void setAny(final List<Object> any) {
             this.any = any;
@@ -1673,7 +1670,7 @@ public class AddressDetails implements Cloneable
          * @param any
          *     Objects of the following type are allowed in the list: {@link Object}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public AddressDetails.Country addToAny(final Object any) {
             this.getAny().add(any);
@@ -1682,7 +1679,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressLine(List<AddressLine>)
+         *
          * 
          * @param addressLine
          *     required parameter
@@ -1694,7 +1691,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setCountryNameCode(List<CountryNameCode>)
+         *
          * 
          * @param countryNameCode
          *     required parameter
@@ -1706,7 +1703,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setCountryName(List<CountryName>)
+         *
          * 
          * @param countryName
          *     required parameter
@@ -1718,7 +1715,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAny(List<Object>)
+         *
          * 
          * @param any
          *     required parameter
@@ -1914,7 +1911,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -1926,7 +1923,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setScheme(String)
+             *
              * 
              * @param scheme
              *     required parameter
@@ -1938,7 +1935,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -2399,9 +2396,9 @@ public class AddressDetails implements Cloneable
         /**
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.AddressIdentifier} and adds it to addressIdentifier.
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressIdentifier addressIdentifier = new AddressIdentifier();
-         * this.getAddressIdentifier().add(addressIdentifier); </code>
+         * this.getAddressIdentifier().add(addressIdentifier); }
          * 
          * 
          */
@@ -2415,9 +2412,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.EndorsementLineCode} and set it to endorsementLineCode.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * EndorsementLineCode endorsementLineCode = new EndorsementLineCode();
-         * this.setEndorsementLineCode(endorsementLineCode); </code>
+         * this.setEndorsementLineCode(endorsementLineCode); }
          * 
          * 
          */
@@ -2431,9 +2428,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.KeyLineCode} and set it to keyLineCode.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * KeyLineCode keyLineCode = new KeyLineCode();
-         * this.setKeyLineCode(keyLineCode); </code>
+         * this.setKeyLineCode(keyLineCode); }
          * 
          * 
          */
@@ -2447,9 +2444,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.Barcode} and set it to barcode.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * Barcode barcode = new Barcode();
-         * this.setBarcode(barcode); </code>
+         * this.setBarcode(barcode); }
          * 
          * 
          */
@@ -2463,9 +2460,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.SortingCode} and set it to sortingCode.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * SortingCode sortingCode = new SortingCode();
-         * this.setSortingCode(sortingCode); </code>
+         * this.setSortingCode(sortingCode); }
          * 
          * 
          */
@@ -2479,9 +2476,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.AddressLatitude} and set it to addressLatitude.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressLatitude addressLatitude = new AddressLatitude();
-         * this.setAddressLatitude(addressLatitude); </code>
+         * this.setAddressLatitude(addressLatitude); }
          * 
          * 
          */
@@ -2495,9 +2492,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.AddressLatitudeDirection} and set it to addressLatitudeDirection.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressLatitudeDirection addressLatitudeDirection = new AddressLatitudeDirection();
-         * this.setAddressLatitudeDirection(addressLatitudeDirection); </code>
+         * this.setAddressLatitudeDirection(addressLatitudeDirection); }
          * 
          * 
          */
@@ -2511,9 +2508,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.AddressLongitude} and set it to addressLongitude.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressLongitude addressLongitude = new AddressLongitude();
-         * this.setAddressLongitude(addressLongitude); </code>
+         * this.setAddressLongitude(addressLongitude); }
          * 
          * 
          */
@@ -2527,9 +2524,9 @@ public class AddressDetails implements Cloneable
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.AddressLongitudeDirection} and set it to addressLongitudeDirection.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressLongitudeDirection addressLongitudeDirection = new AddressLongitudeDirection();
-         * this.setAddressLongitudeDirection(addressLongitudeDirection); </code>
+         * this.setAddressLongitudeDirection(addressLongitudeDirection); }
          * 
          * 
          */
@@ -2542,9 +2539,9 @@ public class AddressDetails implements Cloneable
         /**
          * Creates a new instance of {@link AddressDetails.PostalServiceElements.SupplementaryPostalServiceData} and adds it to supplementaryPostalServiceData.
          * This method is a short version for:
-         * <code>
+         * {@code
          * SupplementaryPostalServiceData supplementaryPostalServiceData = new SupplementaryPostalServiceData();
-         * this.getSupplementaryPostalServiceData().add(supplementaryPostalServiceData); </code>
+         * this.getSupplementaryPostalServiceData().add(supplementaryPostalServiceData); }
          * 
          * 
          */
@@ -2561,6 +2558,7 @@ public class AddressDetails implements Cloneable
          * 
          * 
          * @param addressIdentifier
+         *     Objects of the following type are allowed in the list: {@link AddressDetails.PostalServiceElements.AddressIdentifier}
          */
         public void setAddressIdentifier(final List<AddressDetails.PostalServiceElements.AddressIdentifier> addressIdentifier) {
             this.addressIdentifier = addressIdentifier;
@@ -2572,7 +2570,7 @@ public class AddressDetails implements Cloneable
          * @param addressIdentifier
          *     Objects of the following type are allowed in the list: {@link AddressDetails.PostalServiceElements.AddressIdentifier}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public AddressDetails.PostalServiceElements addToAddressIdentifier(final AddressDetails.PostalServiceElements.AddressIdentifier addressIdentifier) {
             this.getAddressIdentifier().add(addressIdentifier);
@@ -2586,6 +2584,7 @@ public class AddressDetails implements Cloneable
          * 
          * 
          * @param supplementaryPostalServiceData
+         *     Objects of the following type are allowed in the list: {@link AddressDetails.PostalServiceElements.SupplementaryPostalServiceData}
          */
         public void setSupplementaryPostalServiceData(final List<AddressDetails.PostalServiceElements.SupplementaryPostalServiceData> supplementaryPostalServiceData) {
             this.supplementaryPostalServiceData = supplementaryPostalServiceData;
@@ -2597,7 +2596,7 @@ public class AddressDetails implements Cloneable
          * @param supplementaryPostalServiceData
          *     Objects of the following type are allowed in the list: {@link AddressDetails.PostalServiceElements.SupplementaryPostalServiceData}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public AddressDetails.PostalServiceElements addToSupplementaryPostalServiceData(final AddressDetails.PostalServiceElements.SupplementaryPostalServiceData supplementaryPostalServiceData) {
             this.getSupplementaryPostalServiceData().add(supplementaryPostalServiceData);
@@ -2605,12 +2604,13 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
+         * Sets the value of the any property Objects of the following type(s) are allowed in the list {@code List<Object>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
          * 
          * 
          * @param any
+         *     Objects of the following type are allowed in the list: {@link Object}
          */
         public void setAny(final List<Object> any) {
             this.any = any;
@@ -2622,7 +2622,7 @@ public class AddressDetails implements Cloneable
          * @param any
          *     Objects of the following type are allowed in the list: {@link Object}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public AddressDetails.PostalServiceElements addToAny(final Object any) {
             this.getAny().add(any);
@@ -2631,7 +2631,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressIdentifier(List<AddressIdentifier>)
+         *
          * 
          * @param addressIdentifier
          *     required parameter
@@ -2643,7 +2643,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setEndorsementLineCode(EndorsementLineCode)
+         *
          * 
          * @param endorsementLineCode
          *     required parameter
@@ -2655,7 +2655,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setKeyLineCode(KeyLineCode)
+         *
          * 
          * @param keyLineCode
          *     required parameter
@@ -2667,7 +2667,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setBarcode(Barcode)
+         *
          * 
          * @param barcode
          *     required parameter
@@ -2679,7 +2679,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setSortingCode(SortingCode)
+         *
          * 
          * @param sortingCode
          *     required parameter
@@ -2691,7 +2691,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressLatitude(AddressLatitude)
+         *
          * 
          * @param addressLatitude
          *     required parameter
@@ -2703,7 +2703,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressLatitudeDirection(AddressLatitudeDirection)
+         *
          * 
          * @param addressLatitudeDirection
          *     required parameter
@@ -2715,7 +2715,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressLongitude(AddressLongitude)
+         *
          * 
          * @param addressLongitude
          *     required parameter
@@ -2727,7 +2727,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressLongitudeDirection(AddressLongitudeDirection)
+         *
          * 
          * @param addressLongitudeDirection
          *     required parameter
@@ -2739,7 +2739,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setSupplementaryPostalServiceData(List<SupplementaryPostalServiceData>)
+         *
          * 
          * @param supplementaryPostalServiceData
          *     required parameter
@@ -2751,7 +2751,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAny(List<Object>)
+         *
          * 
          * @param any
          *     required parameter
@@ -2763,7 +2763,7 @@ public class AddressDetails implements Cloneable
 
         /**
          * fluent setter
-         * @see #setUnderscore(String)
+         *
          * 
          * @param underscore
          *     required parameter
@@ -2995,7 +2995,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -3007,7 +3007,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setIdentifier(String)
+             *
              * 
              * @param identifier
              *     required parameter
@@ -3019,7 +3019,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -3031,7 +3031,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -3210,7 +3210,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -3222,7 +3222,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -3234,7 +3234,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -3413,7 +3413,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -3425,7 +3425,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -3437,7 +3437,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -3616,7 +3616,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -3628,7 +3628,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -3640,7 +3640,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -3819,7 +3819,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -3831,7 +3831,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -3843,7 +3843,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -4022,7 +4022,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -4034,7 +4034,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -4046,7 +4046,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -4225,7 +4225,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -4237,7 +4237,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -4249,7 +4249,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -4428,7 +4428,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -4440,7 +4440,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -4452,7 +4452,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -4584,7 +4584,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -4596,7 +4596,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -4775,7 +4775,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(String)
+             *
              * 
              * @param content
              *     required parameter
@@ -4787,7 +4787,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setUnderscore(String)
+             *
              * 
              * @param underscore
              *     required parameter
@@ -4799,7 +4799,7 @@ public class AddressDetails implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter

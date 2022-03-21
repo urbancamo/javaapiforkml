@@ -1,39 +1,34 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <icon> see also <icon>.
+ * {@code <Icon>}see also {@code <icon>}.
  * <p>
- * <Icon> <href>Sunset.jpg</href> </Icon> 
+ * {@code <Icon><href>Sunset.jpg</href> </Icon> }
  * </p>
  * <p>
- * A custom Icon. In <IconStyle>, the only child element of <Icon> is <href>: <href>: 
+ * A custom Icon. In {@code <IconStyle>}, the only child element of {@code <Icon>} is {@code <href>: <href>:}
  * An HTTP address or a local file specification used to load an icon. 
  * </p>
  * <p>
- * Defines an image associated with an Icon style or overlay. <Icon> has the same child 
- * elements as <Link>. The required <href> child element defines the location of the 
+ * Defines an image associated with an Icon style or overlay. {@code <Icon>}has the same child 
+ * elements as {@code <Link>}. The required {@code <href>}child element defines the location of the 
  * image to be used as the overlay or as the icon for the placemark. This location 
  * can either be on a local file system or a remote web server. 
  * </p>
  * <p>
- * Defines the image associated with the Overlay. The <href> element defines the location 
+ * Defines the image associated with the Overlay. The {@code <href>}element defines the location 
  * of the image to be used as the Overlay. This location can be either on a local file 
- * system or on a web server. If this element is omitted or contains no <href>, a rectangle 
- * is drawn using the color and size defined by the ground or screen overlay. <Icon> 
- * <href>icon.jpg</href> </Icon> 
+ * system or on a web server. If this element is omitted or contains no {@code <href>}, a rectangle
+ * is drawn using the color and size defined by the ground or screen overlay. {@code <Icon>
+ * <href>icon.jpg</href> </Icon>}
  * </p>
  * 
  * Syntax: 
@@ -52,9 +47,9 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  *   <strong>&lt;/Icon&gt;</strong></pre>
  * 
  * Contained By: 
- * @see: <GroundOverlay>
- * @see: <IconStyle>
- * @see: <ScreenOverlay>
+ *
+ *
+ *
  * 
  * 
  * 
@@ -84,7 +79,7 @@ public class Icon
      * </p>
      * 
      * See Also: 
-     * See <Link>
+     * See {@code <Link>}
      * 
      * 
      * 
@@ -92,7 +87,7 @@ public class Icon
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2", defaultValue = "onChange")
     protected RefreshMode refreshMode;
     /**
-     * <refreshinterval>
+     * {@code {@code <refreshInterval>}}
      * <p>
      * Indicates to refresh the file every n seconds. 
      * </p>
@@ -109,7 +104,7 @@ public class Icon
      * </p>
      * 
      * See Also: 
-     * See <Link>
+     * See {@code <Link>}
      * 
      * 
      * 
@@ -117,10 +112,10 @@ public class Icon
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2", defaultValue = "never")
     protected ViewRefreshMode viewRefreshMode;
     /**
-     * <viewrefreshtime>
+     * {@code <viewrefreshtime>}
      * <p>
      * After camera movement stops, specifies the number of seconds to wait before refreshing 
-     * the view. (See <viewRefreshMode> and onStop above.) 
+     * the view. (See {@code {@code <viewRefreshMode>}} and onStop above.)
      * </p>
      * 
      * 
@@ -129,7 +124,7 @@ public class Icon
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2", defaultValue = "4.0")
     protected double viewRefreshTime;
     /**
-     * <viewboundscale>
+     * {@code <viewboundscale>}
      * <p>
      * Scales the BBOX parameters before sending them to the server. A value less than 
      *  1 specifies to use less than the full view (screen). A value greater than 1 specifies 
@@ -142,22 +137,22 @@ public class Icon
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2", defaultValue = "1.0")
     protected double viewBoundScale;
     /**
-     * <viewformat>
+     * {@code <viewFormat>}
      * <p>
      * BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth] 
      * </p>
      * <p>
-     * If you specify a <viewRefreshMode> of onStop and do not include the <viewFormat> 
+     * If you specify a {@code <viewRefreshMode>} of onStop and do not include the {@code <viewFormat>} 
      * tag in the file, the following information is automatically appended to the query 
      * string: 
      * </p>
      * <p>
-     * If you specify an empty <viewFormat> tag, no information is appended to the query 
+     * If you specify an empty {@code <viewFormat>} tag, no information is appended to the query 
      * string. 
      * </p>
      * <p>
-     * Specifies the format of the query string that is appended to the Link's <href> before 
-     * the file is fetched.(If the <href> specifies a local file, this element is ignored.) 
+     * Specifies the format of the query string that is appended to the Link's {@code <href>}before 
+     * the file is fetched.(If the {@code <href>}specifies a local file, this element is ignored.) 
      * </p>
      * <p>
      * This information matches the Web Map Service (WMS) bounding box specification. 
@@ -171,11 +166,11 @@ public class Icon
      * <p>
      * You can use any of the following parameters in your format string (and Google Earth 
      * will substitute the appropriate current value at the time it creates the query string): 
-     * [lookatLon], [lookatLat] - longitude and latitude of the point that <LookAt> is 
-     * viewing [lookatRange], [lookatTilt], [lookatHeading] - values used by the <LookAt> 
-     * element (see descriptions of <range>, <tilt>, and <heading> in <LookAt>) [lookatTerrainLon], 
+     * [lookatLon], [lookatLat] - longitude and latitude of the point that LookAt is 
+     * viewing [lookatRange], [lookatTilt], [lookatHeading] - values used by the LookAt 
+     * element (see descriptions of {@code <range>}, {@code <tilt>}, and {@code <heading>} in LookAt) [lookatTerrainLon],
      * [lookatTerrainLat], [lookatTerrainAlt] - point on the terrain in degrees/meters 
-     * that <LookAt> is viewing [cameraLon], [cameraLat], [cameraAlt] - degrees/meters 
+     * that LookAt is viewing [cameraLon], [cameraLat], [cameraAlt] - degrees/meters 
      * of the eyepoint for the camera [horizFov], [vertFov] - horizontal, vertical field 
      * of view for the camera [horizPixels], [vertPixels] - size in pixels of the 3D viewer 
      * [terrainEnabled] - indicates whether the 3D viewer is showing terrain 
@@ -187,7 +182,7 @@ public class Icon
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2")
     protected String viewFormat;
     /**
-     * <httpquery>
+     * {@code <httpQuery>}
      * <p>
      * Appends information to the query string, based on the parameters specified. (Google 
      * Earth substitutes the appropriate current value at the time it creates the query 
@@ -204,12 +199,12 @@ public class Icon
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> linkSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -229,7 +224,7 @@ public class Icon
     }
 
     /**
-     * @see refreshMode
+     *
      * 
      * @return
      *     possible object is
@@ -241,7 +236,7 @@ public class Icon
     }
 
     /**
-     * @see refreshMode
+     *
      * 
      * @param value
      *     allowed object is
@@ -253,7 +248,7 @@ public class Icon
     }
 
     /**
-     * @see refreshInterval
+     *
      * 
      * @return
      *     possible object is
@@ -265,7 +260,7 @@ public class Icon
     }
 
     /**
-     * @see refreshInterval
+     *
      * 
      * @param value
      *     allowed object is
@@ -277,7 +272,7 @@ public class Icon
     }
 
     /**
-     * @see viewRefreshMode
+     *
      * 
      * @return
      *     possible object is
@@ -289,7 +284,7 @@ public class Icon
     }
 
     /**
-     * @see viewRefreshMode
+     *
      * 
      * @param value
      *     allowed object is
@@ -301,7 +296,7 @@ public class Icon
     }
 
     /**
-     * @see viewRefreshTime
+     *
      * 
      * @return
      *     possible object is
@@ -313,7 +308,7 @@ public class Icon
     }
 
     /**
-     * @see viewRefreshTime
+     *
      * 
      * @param value
      *     allowed object is
@@ -325,7 +320,7 @@ public class Icon
     }
 
     /**
-     * @see viewBoundScale
+     *
      * 
      * @return
      *     possible object is
@@ -337,7 +332,7 @@ public class Icon
     }
 
     /**
-     * @see viewBoundScale
+     *
      * 
      * @param value
      *     allowed object is
@@ -349,7 +344,7 @@ public class Icon
     }
 
     /**
-     * @see viewFormat
+     *
      * 
      * @return
      *     possible object is
@@ -361,7 +356,7 @@ public class Icon
     }
 
     /**
-     * @see viewFormat
+     *
      * 
      * @param value
      *     allowed object is
@@ -373,7 +368,7 @@ public class Icon
     }
 
     /**
-     * @see httpQuery
+     *
      * 
      * @return
      *     possible object is
@@ -385,7 +380,7 @@ public class Icon
     }
 
     /**
-     * @see httpQuery
+     *
      * 
      * @param value
      *     allowed object is
@@ -397,7 +392,7 @@ public class Icon
     }
 
     /**
-     * @see linkSimpleExtension
+     *
      * 
      */
     public List<Object> getLinkSimpleExtension() {
@@ -408,7 +403,7 @@ public class Icon
     }
 
     /**
-     * @see linkObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLinkObjectExtension() {
@@ -520,9 +515,10 @@ public class Icon
     }
 
     /**
-     * @see linkSimpleExtension
+     *
      * 
      * @param linkSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLinkSimpleExtension(final List<Object> linkSimpleExtension) {
         this.linkSimpleExtension = linkSimpleExtension;
@@ -534,7 +530,7 @@ public class Icon
      * @param linkSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Icon addToLinkSimpleExtension(final Object linkSimpleExtension) {
         this.getLinkSimpleExtension().add(linkSimpleExtension);
@@ -542,9 +538,10 @@ public class Icon
     }
 
     /**
-     * @see linkObjectExtension
+     *
      * 
      * @param linkObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLinkObjectExtension(final List<AbstractObject> linkObjectExtension) {
         this.linkObjectExtension = linkObjectExtension;
@@ -556,7 +553,7 @@ public class Icon
      * @param linkObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Icon addToLinkObjectExtension(final AbstractObject linkObjectExtension) {
         this.getLinkObjectExtension().add(linkObjectExtension);
@@ -564,7 +561,7 @@ public class Icon
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -581,7 +578,7 @@ public class Icon
     }
 
     /**
-     * @see basicLinkSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -598,7 +595,7 @@ public class Icon
     }
 
     /**
-     * @see basicLinkObjectExtension
+     *
      * 
      */
     @Obvious
@@ -616,7 +613,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setRefreshMode(RefreshMode)
+     *
      * 
      * @param refreshMode
      *     required parameter
@@ -628,7 +625,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setRefreshInterval(double)
+     *
      * 
      * @param refreshInterval
      *     required parameter
@@ -640,7 +637,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setViewRefreshMode(ViewRefreshMode)
+     *
      * 
      * @param viewRefreshMode
      *     required parameter
@@ -652,7 +649,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setViewRefreshTime(double)
+     *
      * 
      * @param viewRefreshTime
      *     required parameter
@@ -664,7 +661,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setViewBoundScale(double)
+     *
      * 
      * @param viewBoundScale
      *     required parameter
@@ -676,7 +673,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setViewFormat(String)
+     *
      * 
      * @param viewFormat
      *     required parameter
@@ -688,7 +685,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setHttpQuery(String)
+     *
      * 
      * @param httpQuery
      *     required parameter
@@ -700,7 +697,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setLinkSimpleExtension(List<Object>)
+     *
      * 
      * @param linkSimpleExtension
      *     required parameter
@@ -712,7 +709,7 @@ public class Icon
 
     /**
      * fluent setter
-     * @see #setLinkObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param linkObjectExtension
      *     required parameter

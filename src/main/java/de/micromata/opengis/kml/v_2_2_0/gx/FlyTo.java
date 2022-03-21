@@ -1,25 +1,20 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
-import java.util.List;
-
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.AbstractView;
 import de.micromata.opengis.kml.v_2_2_0.Camera;
 import de.micromata.opengis.kml.v_2_2_0.LookAt;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
- * <gx:FlyTo>
+ * gx:FlyTo
  * <p>
- * <gx:FlyTo> specifies a point in space to which the browser will fly during a tour. 
- * It must contain one AbstractView, and should contain <gx:duration> and <gx:flyToMode> 
+ * gx:FlyTo specifies a point in space to which the browser will fly during a tour. 
+ * It must contain one AbstractView, and should contain gx:duration and <gx:flyToMode> 
  * elements, which specify the time it takes to fly to the defined point from the current 
  * point, and the method of flight, respectively. 
  * </p>
@@ -34,12 +29,12 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * &lt;/gx:FlyTo&gt;</pre>
  * 
  * Extends: 
- * @see: <gx:TourPrimitive>
+ *
  * 
  * Contains: 
- * @see: <AbstractView>
- * @see: <gx:duration>
- * @see: <gx:flyToMode>
+ *
+ *
+ *
  * 
  * 
  * 
@@ -57,23 +52,16 @@ public class FlyTo
 {
 
     /**
-     * <gx:duration>
+     * gx:duration
      * <p>
-     * <gx:AnimatedUpdate> <gx:duration>5.0</gx:duration> <Update> .... </Update> </gx:AnimatedUpdate> 
-     * </p>
-     * <p>
-     * <gx:FlyTo> <gx:flyToMode>bounce</gx:flyToMode> <gx:duration>10.2</gx:duration> <!-- 
-     * AbstractView --> ... <!-- /AbstractView --> </gx:FlyTo> 
-     * </p>
-     * <p>
-     * <gx:duration> extends gx:TourPrimitive by specifying a time-span for events. The 
+     * gx:duration extends gx:TourPrimitive by specifying a time-span for events. The 
      * time is written as seconds using XML's double datatype. 
      * </p>
      * <p>
-     * Duration and <gx:AnimatedUpdate> 
+     * Duration and gx:AnimatedUpdate 
      * </p>
      * <p>
-     * Duration and <gx:FlyTo> 
+     * Duration and gx:FlyTo 
      * </p>
      * <p>
      * Specifies the length of time over which the update takes place. Integer, float, 
@@ -82,7 +70,7 @@ public class FlyTo
      * the end of the duration. 
      * </p>
      * <p>
-     * When a duration is included within a <gx:FlyTo> element, it specifies the length 
+     * When a duration is included within a gx:FlyTo element, it specifies the length 
      * of time that the browser takes to fly from the previous point to the specified point. 
      * </p>
      * 
@@ -98,14 +86,14 @@ public class FlyTo
     @XmlElement(defaultValue = "bounce")
     protected FlyToMode flyToMode;
     /**
-     * <abstractview>
+     * abstractview
      * <p>
-     * Defines a viewpoint associated with any element derived from Feature. See <Camera> 
-     * and <LookAt>. 
+     * Defines a viewpoint associated with any element derived from Feature. See Camera
+     * and LookAt.
      * </p>
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. This element 
-     * is extended by the <Camera> and <LookAt> elements. 
+     * is extended by the Camera and LookAt elements.
      * </p>
      * 
      * Syntax: 
@@ -116,11 +104,11 @@ public class FlyTo
      * <strong>&lt;-- /<em>AbstractView</em> --&gt;</strong></pre>
      * 
      * Extends: 
-     * @see: <Object>
+     *
      * 
      * Extended By: 
-     * @see: <Camera>
-     * @see: <LookAt>
+     *
+     *
      * 
      * 
      * 
@@ -133,7 +121,7 @@ public class FlyTo
     }
 
     /**
-     * @see duration
+     *
      * 
      * @return
      *     possible object is
@@ -145,7 +133,7 @@ public class FlyTo
     }
 
     /**
-     * @see duration
+     *
      * 
      * @param value
      *     allowed object is
@@ -157,7 +145,7 @@ public class FlyTo
     }
 
     /**
-     * @see flyToMode
+     *
      * 
      * @return
      *     possible object is
@@ -169,7 +157,7 @@ public class FlyTo
     }
 
     /**
-     * @see flyToMode
+     *
      * 
      * @param value
      *     allowed object is
@@ -181,13 +169,13 @@ public class FlyTo
     }
 
     /**
-     * @see abstractView
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code >}
+     *     {@code <}{@link LookAt}{@code >}
+     *     {@code <}{@link Camera}{@code >}
      *     
      */
     public AbstractView getAbstractView() {
@@ -195,13 +183,13 @@ public class FlyTo
     }
 
     /**
-     * @see abstractView
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code >}
+     *     {@code <}{@link LookAt}{@code >}
+     *     {@code <}{@link Camera}{@code >}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -276,9 +264,9 @@ public class FlyTo
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Camera camera = new Camera();
-     * this.setAbstractView(camera); </code>
+     * this.setAbstractView(camera); }
      * 
      * 
      */
@@ -290,7 +278,7 @@ public class FlyTo
 
     /**
      * fluent setter
-     * @see #setDuration(double)
+     *
      * 
      * @param duration
      *     required parameter
@@ -302,7 +290,7 @@ public class FlyTo
 
     /**
      * fluent setter
-     * @see #setFlyToMode(FlyToMode)
+     *
      * 
      * @param flyToMode
      *     required parameter
@@ -314,7 +302,7 @@ public class FlyTo
 
     /**
      * fluent setter
-     * @see #setAbstractView(AbstractView)
+     *
      * 
      * @param abstractView
      *     required parameter
