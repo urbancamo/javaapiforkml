@@ -842,7 +842,7 @@ public class Premise implements Cloneable
     }
 
     /**
-     * Sets the value of the premiseName property Objects of the following type(s) are allowed in the list List<PremiseName>.
+     * Sets the value of the premiseName property Objects of the following type(s) are allowed in the list {@code List<PremiseName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPremiseName} instead.
      * 
@@ -868,7 +868,7 @@ public class Premise implements Cloneable
     }
 
     /**
-     * Sets the value of the premiseNumber property Objects of the following type(s) are allowed in the list List<PremiseNumber>.
+     * Sets the value of the premiseNumber property Objects of the following type(s) are allowed in the list {@code List<PremiseNumber>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withPremiseNumber instead.
      * 
@@ -894,7 +894,7 @@ public class Premise implements Cloneable
     }
 
     /**
-     * Sets the value of the premiseNumberPrefix property Objects of the following type(s) are allowed in the list List<PremiseNumberPrefix>.
+     * Sets the value of the premiseNumberPrefix property Objects of the following type(s) are allowed in the list {@code List<PremiseNumberPrefix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPremiseNumberPrefix} instead.
      * 
@@ -920,7 +920,7 @@ public class Premise implements Cloneable
     }
 
     /**
-     * Sets the value of the premiseNumberSuffix property Objects of the following type(s) are allowed in the list List<PremiseNumberSuffix>.
+     * Sets the value of the premiseNumberSuffix property Objects of the following type(s) are allowed in the list {@code List<PremiseNumberSuffix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPremiseNumberSuffix} instead.
      * 
@@ -946,7 +946,7 @@ public class Premise implements Cloneable
     }
 
     /**
-     * Sets the value of the buildingName property Objects of the following type(s) are allowed in the list List<BuildingName>.
+     * Sets the value of the buildingName property Objects of the following type(s) are allowed in the list {@code List<BuildingName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withBuildingName} instead.
      * 
@@ -972,7 +972,7 @@ public class Premise implements Cloneable
     }
 
     /**
-     * Sets the value of the subPremise property Objects of the following type(s) are allowed in the list List<SubPremise>.
+     * Sets the value of the subPremise property Objects of the following type(s) are allowed in the list {@code List<SubPremise>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubPremise} instead.
      * 
@@ -2349,7 +2349,7 @@ public class Premise implements Cloneable
             }
 
             /**
-             * Sets the value of the premiseNumberPrefix property Objects of the following type(s) are allowed in the list List<PremiseNumberPrefix>.
+             * Sets the value of the premiseNumberPrefix property Objects of the following type(s) are allowed in the list {@code List<PremiseNumberPrefix>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPremiseNumberPrefix} instead.
              * 
@@ -2375,7 +2375,7 @@ public class Premise implements Cloneable
             }
 
             /**
-             * Sets the value of the premiseNumber property Objects of the following type(s) are allowed in the list List<PremiseNumber>.
+             * Sets the value of the premiseNumber property Objects of the following type(s) are allowed in the list {@code List<PremiseNumber>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withPremiseNumber instead.
              * 
@@ -2401,7 +2401,7 @@ public class Premise implements Cloneable
             }
 
             /**
-             * Sets the value of the premiseNumberSuffix property Objects of the following type(s) are allowed in the list List<PremiseNumberSuffix>.
+             * Sets the value of the premiseNumberSuffix property Objects of the following type(s) are allowed in the list {@code List<PremiseNumberSuffix>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPremiseNumberSuffix} instead.
              * 
@@ -2724,7 +2724,7 @@ public class Premise implements Cloneable
             }
 
             /**
-             * Sets the value of the premiseNumberPrefix property Objects of the following type(s) are allowed in the list List<PremiseNumberPrefix>.
+             * Sets the value of the premiseNumberPrefix property Objects of the following type(s) are allowed in the list {@code List<PremiseNumberPrefix>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPremiseNumberPrefix} instead.
              * 
@@ -2750,7 +2750,7 @@ public class Premise implements Cloneable
             }
 
             /**
-             * Sets the value of the premiseNumber property Objects of the following type(s) are allowed in the list List<PremiseNumber>.
+             * Sets the value of the premiseNumber property Objects of the following type(s) are allowed in the list {@code List<PremiseNumber>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withPremiseNumber instead.
              * 
@@ -2776,7 +2776,7 @@ public class Premise implements Cloneable
             }
 
             /**
-             * Sets the value of the premiseNumberSuffix property Objects of the following type(s) are allowed in the list List<PremiseNumberSuffix>.
+             * Sets the value of the premiseNumberSuffix property Objects of the following type(s) are allowed in the list {@code List<PremiseNumberSuffix>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withPremiseNumberSuffix} instead.
              * 

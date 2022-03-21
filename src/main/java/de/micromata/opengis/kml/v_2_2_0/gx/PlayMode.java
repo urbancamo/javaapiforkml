@@ -11,13 +11,13 @@ import jakarta.xml.bind.annotation.XmlType;
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * </p>
- * <pre>
- * &lt;simpleType name="playModeEnumType">
- *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *     &lt;enumeration value="pause"/>
- *   &lt;/restriction>
- * &lt;/simpleType>
- * </pre>
+ * {@code
+ * <simpleType name="playModeEnumType">
+ *   <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     <enumeration value="pause"/>
+ *   </restriction>
+ * </simpleType>
+ * }
  * 
  */
 @XmlType(name = "playModeEnumType")

@@ -696,8 +696,8 @@ public class Kml implements Cloneable
      * Java to KML
      * The object graph is marshalled to a Contenthandler object.
      * Useful if  marshaller cis needed to generate CDATA blocks.
-     * {@link <a href="https://jaxb.dev.java.net/faq/">...</a>}
-     * {@link <a href="http://code.google.com/p/javaapiforkml/issues/detail?id=7">...</a>}
+     * @see <a href="https://jaxb.dev.java.net/faq/">...</a>
+     * @see <a href="http://code.google.com/p/javaapiforkml/issues/detail?id=7">...</a>
      * The object is not saved as a zipped .kmz file.
      *
      * 

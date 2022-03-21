@@ -1600,7 +1600,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * Sets the value of the countryNameCode property Objects of the following type(s) are allowed in the list List<CountryNameCode>.
+         * Sets the value of the countryNameCode property Objects of the following type(s) are allowed in the list {@code List<CountryNameCode>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withCountryNameCode} instead.
          * 
@@ -1626,7 +1626,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * Sets the value of the countryName property Objects of the following type(s) are allowed in the list List<CountryName>.
+         * Sets the value of the countryName property Objects of the following type(s) are allowed in the list {@code List<CountryName>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withCountryName} instead.
          * 
@@ -2552,7 +2552,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * Sets the value of the addressIdentifier property Objects of the following type(s) are allowed in the list List<AddressIdentifier>.
+         * Sets the value of the addressIdentifier property Objects of the following type(s) are allowed in the list {@code List<AddressIdentifier>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAddressIdentifier} instead.
          * 
@@ -2578,7 +2578,7 @@ public class AddressDetails implements Cloneable
         }
 
         /**
-         * Sets the value of the supplementaryPostalServiceData property Objects of the following type(s) are allowed in the list List<SupplementaryPostalServiceData>.
+         * Sets the value of the supplementaryPostalServiceData property Objects of the following type(s) are allowed in the list {@code List<SupplementaryPostalServiceData>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSupplementaryPostalServiceData} instead.
          * 

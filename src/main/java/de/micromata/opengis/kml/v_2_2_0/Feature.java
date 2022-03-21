@@ -16,43 +16,9 @@ import java.util.List;
 /**
  * {@code <Feature>}
  * <p>
- * This is an abstract element and cannot be used directly in a KML file. The following 
- * diagram shows how some of a Feature's elements appear in Google Earth. 
+ * This is an abstract element and cannot be used directly in a KML file.
  * </p>
- * 
- * Syntax: 
- * <pre>&lt;!-- abstract element; do not create --&gt;
- * <strong>&lt;!--<em> Feature</em> id="ID" --&gt;</strong>                &lt;!-- Document,Folder,
- *                                              NetworkLink,Placemark,
- *                                              GroundOverlay,PhotoOverlay,ScreenOverlay --&gt;
- *   &lt;name&gt;<em>...</em>&lt;/name&gt;                      &lt;!-- string --&gt;
- *   &lt;visibility&gt;1&lt;/visibility&gt;            &lt;!-- boolean --&gt;
- *   &lt;open&gt;0&lt;/open&gt;                        &lt;!-- boolean --&gt;
- *   <span>&lt;atom:author&gt;...&lt;atom:author&gt;         &lt;!-- xmlns:atom --&gt;
- *   &lt;atom:link&gt;...&lt;/atom:link&gt;</span><span>            &lt;!-- xmlns:atom --&gt;</span>
- *   &lt;address&gt;<em>...</em>&lt;/address&gt;                &lt;!-- string --&gt;
- *   &lt;xal:AddressDetails&gt;...&lt;/xal:AddressDetails&gt;  &lt;!-- xmlns:xal --&gt;<br>  &lt;phoneNumber&gt;...&lt;/phoneNumber&gt;        &lt;!-- string --&gt;<br>  &lt;Snippet maxLines="2"&gt;<em>...</em>&lt;/Snippet&gt;   &lt;!-- string --&gt;
- *   &lt;description&gt;<em>...</em>&lt;/description&gt;        &lt;!-- string --&gt;
- *   <span><em>&lt;AbstractView&gt;...&lt;/AbstractView&gt;</em>      &lt;!-- Camera <em>or</em> LookAt --&gt;</span>
- *   &lt;<em>TimePrimitive</em>&gt;...&lt;/<em>TimePrimitive</em>&gt;    &lt;!-- TimeStamp or TimeSpan --&gt;
- *   &lt;styleUrl&gt;<em>...</em>&lt;/styleUrl&gt;              &lt;!-- anyURI --&gt;
- *   &lt;<em>StyleSelector&gt;...&lt;/StyleSelector&gt;</em>
- *   &lt;Region&gt;...&lt;/Region&gt;
- *   <span>&lt;Metadata&gt;...&lt;/Metadata&gt;              &lt;!-- deprecated in KML 2.2 --&gt;
- *   &lt;ExtendedData&gt;...&lt;/ExtendedData&gt;      &lt;!-- new in KML 2.2 --&gt;<br></span>&lt;-- /<em>Feature</em> --&gt;</pre>
- * 
- * Extends: 
  *
- * 
- * Extended By: 
- *
- *
- *
- *
- *
- * 
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbstractFeatureType", propOrder = {
@@ -90,7 +56,7 @@ public abstract class Feature
 {
 
     /**
-     * <name>
+     * {@code <name>}
      * <p>
      * User-defined text displayed in the 3D viewer as the label for the object (for example, 
      * for a Placemark, Folder, or NetworkLink). 
@@ -101,10 +67,10 @@ public abstract class Feature
      */
     protected String name;
     /**
-     * <visibility>
+     * {@code <visibility>}
      * <p>
      * Boolean value. Specifies whether the feature is drawn in the 3D viewer when it is 
-     * initially loaded. In order for a feature to be visible, the <visibility> tag of 
+     * initially loaded. In order for a feature to be visible, the {@code <visibility>} tag of
      * all its ancestors must also be set to 1. In the Google Earth List View, each Feature 
      * has a checkbox that allows the user to control visibility of the Feature. 
      * </p>
@@ -116,7 +82,7 @@ public abstract class Feature
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean visibility;
     /**
-     * <open>
+     * {@code <open>}
      * <p>
      * Boolean value. Specifies whether a Document or Folder appears closed or open when 
      * first loaded into the Places panel. 0=collapsed (the default), 1=expanded. See also 
@@ -130,7 +96,7 @@ public abstract class Feature
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean open;
     /**
-     * <atom:author>
+     * {@code <atom:author>}
      * <p>
      * KML 2.2 supports new elements for including data about the author and related website 
      * in your KML file. This information is displayed in geo search results, both in Earth 
@@ -138,7 +104,7 @@ public abstract class Feature
      * ascription elements used in KML are as follows: 
      * </p>
      * <p>
-     * The <atom:author> element is the parent element for <atom:name>, which specifies 
+     * The {@code <atom:author>} element is the parent element for {@code <atom:name>}, which specifies
      * the author of the KML feature. 
      * </p>
      * <p>
@@ -185,11 +151,11 @@ public abstract class Feature
      * <p>
      * The file is conditionally loaded and refreshed, depending on the refresh parameters 
      * supplied here. Two different sets of refresh parameters can be specified: one set 
-     * is based on time (<refreshMode> and {@code <refreshInterval>}) and one is based on the current 
-     * "camera" view (<viewRefreshMode> and <viewRefreshTime>). In addition, Link specifies 
-     * whether to scale the bounding box parameters that are sent to the server (<viewBoundScale> 
+     * is based on time ({@code <refreshMode>} and {@code <refreshInterval>}) and one is based on the current
+     * "camera" view ({@code <viewRefreshMode>} and {@code <viewRefreshTime>}). In addition, Link specifies
+     * whether to scale the bounding box parameters that are sent to the server ({@code <viewBoundScale>}
      * and provides a set of optional viewing parameters that can be sent to the server 
-     * (<viewFormat>) as well as a set of optional parameters containing version and language 
+     * ({@code <viewFormat>}) as well as a set of optional parameters containing version and language
      * information. 
      * </p>
      * <p>
@@ -209,31 +175,9 @@ public abstract class Feature
      * {@code <httpQuery>} element. 
      * </p>
      * 
-     * Syntax: 
-     * <pre><strong>&lt;Link id="ID"&gt;</strong>
-     *   &lt;!-- specific to Link --&gt;
-     *   &lt;href&gt;<em>...</em>&lt;/href&gt;                      &lt;!-- <span>string</span> --&gt;
-     *   &lt;refreshMode&gt;onChange&lt;/refreshMode&gt;   
-     *     &lt;!-- refreshModeEnum: onChange, onInterval, <em>or</em> onExpire --&gt;   
-     *   &lt;refreshInterval&gt;4&lt;/refreshInterval&gt;  &lt;!-- float --&gt;
-     *   &lt;viewRefreshMode&gt;never&lt;/viewRefreshMode&gt; 
-     *     &lt;!-- viewRefreshModeEnum: never, onStop, onRequest, onRegion --&gt;
-     *   &lt;viewRefreshTime&gt;4&lt;/viewRefreshTime&gt;  &lt;!-- float --&gt;
-     *   &lt;viewBoundScale&gt;1&lt;/viewBoundScale&gt;    &lt;!-- float --&gt;
-     *   &lt;viewFormat&gt;BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]&lt;<strong>/</strong>viewFormat&gt;
-     *                                         &lt;!-- string --&gt;
-     *   &lt;httpQuery&gt;...&lt;/httpQuery&gt;            &lt;!-- string --&gt;
-     * <strong>&lt;/Link&gt;</strong></pre>
-     * 
-     * Extends: 
-     *
-     * 
-     * Contained By: 
-     *
-     *
-     * 
+
      * See Also: 
-     * <NetworkLinkControl>
+     * {@code <NetworkLinkControl>}
      * {@code <Region>}
      * 
      * 
@@ -242,7 +186,7 @@ public abstract class Feature
     @XmlElement(name = "link", namespace = "http://www.w3.org/2005/Atom")
     protected Link atomLink;
     /**
-     * address
+     * {@code <address>}
      * <p>
      * A string value representing an unstructured address written as a standard street, 
      * city, state address, and/or as a postal code. You can use the address tag to specify
@@ -256,7 +200,7 @@ public abstract class Feature
      */
     protected String address;
     /**
-     * xal:addressdetails
+     * {@code <xal:addressdetails>}
      * <p>
      * A structured address, formatted as xAL, or eXtensible Address Language, an international 
      * standard for address formatting. xal:addressdetails is used by KML for geocoding 
@@ -278,20 +222,20 @@ public abstract class Feature
     @XmlElement(name = "AddressDetails", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     protected AddressDetails xalAddressDetails;
     /**
-     * <phonenumber>
+     * {@code <phonenumber>}
      * 
      * 
      */
     protected String phoneNumber;
     /**
-     * <snippet maxlines="2" >
+     * {@code <snippet maxlines="2" >}
      * <p>
      * A short description of the feature. In Google Earth, this description is displayed 
      * in the Places panel under the name of the feature. If a Snippet is not supplied, 
-     * the first two lines of the <description> are used. In Google Earth, if a Placemark 
-     * contains both a description and a Snippet, the <Snippet> appears beneath the Placemark 
-     * in the Places panel, and the <description> appears in the Placemark's description 
-     * balloon. This tag does not support HTML markup. <Snippet> has a maxLines attribute, 
+     * the first two lines of the {@code <description>} are used. In Google Earth, if a Placemark
+     * contains both a description and a Snippet, the {@code <Snippet>} appears beneath the Placemark
+     * in the Places panel, and the {@code <description>} appears in the Placemark's description
+     * balloon. This tag does not support HTML markup. {@code <Snippet>} has a maxLines attribute,
      * an integer that specifies the maximum number of lines to display. 
      * </p>
      * 
@@ -303,9 +247,9 @@ public abstract class Feature
     @XmlElement(name = "snippet")
     protected String snippetd;
     /**
-     * <description>
+     * {@code <description>}
      * <p>
-     * The supported content for the <description> element changed from Google Earth 4.3 
+     * The supported content for the {@code <description>} element changed from Google Earth 4.3
      * to 5.0. Specific information for each version is listed out below, followed by information 
      * common to both. 
      * </p>
@@ -314,7 +258,7 @@ public abstract class Feature
      * </p>
      * <p>
      * User-supplied content that appears in the description balloon. The supported content 
-     * for the <description> element changed from Google Earth 4.3 to 5.0. Specific information 
+     * for the {@code <description>} element changed from Google Earth 4.3 to 5.0. Specific information
      * for each version is listed out below, followed by information common to both. Google 
      * Earth 5.0 Google Earth 5.0 supports plain text content, as well as full HTML and 
      * JavaScript, within description balloons. Contents of the description tag are rendered 
@@ -322,8 +266,8 @@ public abstract class Feature
      * in any WebKit-based browser. General restrictions Links to local files are generally 
      * not allowed. This prevents malicious code from damaging your system or accessing 
      * your data. Should you wish to allow access to your local filesystem, select Preferences 
-     * > Allow placemark balloons to access local files and personal data. Links to image 
-     * files on the local filesystem are always allowed, if contained within an <img> tag. 
+     * Allow placemark balloons to access local files and personal data. Links to image
+     * files on the local filesystem are always allowed, if contained within an {@code <img>} tag.
      * Content that has been compressed into a KMZ file can be accessed, even if on the 
      * local filesystem. Cookies are completely disabled, including cookies set or read 
      * by content contained within a iFrame. There are no exceptions to this rule. Doctype 
@@ -335,7 +279,7 @@ public abstract class Feature
      */
     protected String description;
     /**
-     * <abstractview>
+     * {@code <abstractview>}
      * <p>
      * Defines a viewpoint associated with any element derived from Feature. See Camera 
      * and LookAt. 
@@ -344,61 +288,28 @@ public abstract class Feature
      * This is an abstract element and cannot be used directly in a KML file. This element 
      * is extended by the Camera and LookAt elements. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;
-     * <strong>&lt;!--<em> AbstractView</em> --&gt;</strong>                   &lt;!-- Camera, LookAt --&gt;                
-     *   &lt;!-- extends <span class="style1">Object</span> --&gt;
-     *   <em>&lt;TimePrimitive&gt;...&lt;/TimePrimitive&gt;</em>                        &lt;!-- gx:TimeSpan or gx:TimeStamp --&gt;
-     * <strong>&lt;-- /<em>AbstractView</em> --&gt;</strong></pre>
-     * 
-     * Extends: 
-     *
-     * 
-     * Extended By: 
-     *
-     *
-     * 
-     * 
-     * 
      */
     @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected AbstractView abstractView;
     /**
-     * <TimePrimitive>
+     * {@code <TimePrimitive>}
      * <p>
-     * Associates this Feature with a period of time (<TimeSpan>) or a point in time (<TimeStamp>). 
+     * Associates this Feature with a period of time ({@code <TimeSpan>}) or a point in time ({@code <TimeStamp>}).
      * </p>
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. This element 
      * is extended by the {@code <TimeSpan>} and {@code <TimeStamp>} elements. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;
-     * <strong>&lt;!-- TimePrimitive id="ID" --&gt;            &lt;!-- TimeSpan,TimeStamp --&gt;               
-     *  </strong> &lt;!-- extends Object --&gt;<strong>
-     * &lt;!-- /TimePrimitive --&gt;</strong></pre>
-     * 
-     * Extends: 
-     *
-     * 
-     * Extended By: 
-     *
-     *
-     * 
-     * 
-     * 
      */
     @XmlElementRef(name = "AbstractTimePrimitiveGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected TimePrimitive timePrimitive;
     /**
-     * <styleurl>
+     * {@code <styleurl>}
      * <p>
-     * URL of a <Style> or <StyleMap> defined in a Document. If the style is in the same 
+     * URL of a {@code <Style>} or {@code <StyleMap>} defined in a Document. If the style is in the same
      * file, use a # reference. If the style is defined in an external file, use a full 
-     * URL along with # referencing. Examples are <styleUrl>#myIconStyleID</styleUrl> <styleUrl>http://someserver.com/somestylefile.xml#restaurant</styleUrl> 
-     * <styleUrl>eateries.kml#my-lunch-spot</styleUrl> 
+     * URL along with # referencing. Examples are {@code <styleUrl>#myIconStyleID</styleUrl> <styleUrl>http://someserver.com/somestylefile.xml#restaurant</styleUrl>
+     * <styleUrl>eateries.kml#my-lunch-spot</styleUrl>}
      * </p>
      * 
      * 
@@ -410,7 +321,7 @@ public abstract class Feature
      * {@code <StyleSelector>}
      * <p>
      * One or more Styles and StyleMaps can be defined to customize the appearance of any 
-     * element derived from Feature or of the Geometry in a Placemark. (See <BalloonStyle>, 
+     * element derived from Feature or of the Geometry in a Placemark. (See {@code <BalloonStyle>},
      * {@code <ListStyle>}, {@code <StyleSelector>}, and the styles derived from {@code <ColorStyle>}.) A style 
      * defined within a Feature is called an "inline style" and applies only to the Feature 
      * that contains it. A style defined as the child of a {@code <Document>} is called a "shared 
@@ -420,30 +331,15 @@ public abstract class Feature
      * NetworkLink, Placemark, or ScreenOverlay—the value for the Feature's inline style 
      * takes precedence over the value for the shared style. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;
-     * <strong>&lt;!-- <em>StyleSelector</em> id="ID" --&gt;               </strong>  &lt;!-- Style,StyleMap --&gt;<strong>
-     * &lt;!-- /<em>StyleSelector</em> --&gt;</strong></pre>
-     * 
-     * Extends: 
-     *
-     * 
-     * Extended By: 
-     *
-     *
-     * 
-     * 
-     * 
      */
     @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected List<StyleSelector> styleSelector;
     /**
      * {@code <Region>}
      * <p>
-     * A region contains a bounding box (<LatLonAltBox>) that describes an area of interest 
+     * A region contains a bounding box ({@code <LatLonAltBox>}) that describes an area of interest
      * defined by geographic coordinates and altitudes. In addition, a Region contains 
-     * an LOD (level of detail) extent (<Lod>) that defines a validity range of the associated 
+     * an LOD (level of detail) extent ({@code <Lod>}) that defines a validity range of the associated
      * Region in terms of projected screen size. A Region is said to be "active" when the 
      * bounding box is within the user's view and the LOD requirements are met. Objects 
      * associated with a Region are drawn only when the Region is active. When the {@code <viewRefreshMode>} 
@@ -457,49 +353,20 @@ public abstract class Feature
      * active. See {@code <Region>}. 
      * </p>
      * 
-     * Syntax: 
-     * <pre><strong>&lt;Region id="ID"&gt; </strong>
-     *   &lt;LatLonAltBox&gt; 
-     *     &lt;north&gt;&lt;/north&gt;                            &lt;!-- required; kml:angle90 --&gt;
-     *     &lt;south&gt;&lt;/south&gt;                            &lt;!-- required; kml:angle90 --&gt; 
-     *     &lt;east&gt;&lt;/east&gt;                              &lt;!-- required; kml:angle180 --&gt;
-     *     &lt;west&gt;&lt;/west&gt;                              &lt;!-- required; kml:angle180 --&gt;
-     *     &lt;minAltitude&gt;0&lt;/minAltitude&gt;               &lt;!-- float --&gt;
-     *     &lt;maxAltitude&gt;0&lt;/maxAltitude&gt;               &lt;!-- float --&gt;
-     *     &lt;altitudeMode&gt;clampToGround&lt;/altitudeMode&gt; 
-     *         &lt;!-- kml:altitudeModeEnum: clampToGround, relativeToGround, or absolute --&gt;
-     *         &lt;!-- or, substitute gx:altitudeMode: clampToSeaFloor, relativeToSeaFloor --&gt; 
-     *   &lt;/LatLonAltBox&gt; 
-     *   &lt;Lod&gt;
-     *     &lt;minLodPixels&gt;0&lt;/minLodPixels&gt;             &lt;!-- float --&gt;
-     *     &lt;maxLodPixels&gt;-1&lt;/maxLodPixels&gt;            &lt;!-- float --&gt;
-     *     &lt;minFadeExtent&gt;0&lt;/minFadeExtent&gt;           &lt;!-- float --&gt; 
-     *     &lt;maxFadeExtent&gt;0&lt;/maxFadeExtent&gt;           &lt;!-- float --&gt;
-     *   &lt;/Lod&gt;
-     * <strong>&lt;/Region&gt; </strong></pre>
-     * 
-     * Extends: 
-     *
-     * 
-     * Contained By: 
-     *
-     * 
-     * 
-     * 
      */
     @XmlElement(name = "Region")
     protected Region region;
     /**
-     * <metadata> (deprecated in kml 2.2; use <extendeddata> instead)
+     * {@code <metadata>} (deprecated in kml 2.2; use {@code <extendeddata>} instead)
      * 
      * 
      */
     @XmlElement(name = "Metadata")
     protected Metadata metadata;
     /**
-     * <extendeddata>
+     * {@code <extendeddata>}
      * <p>
-     * Adding untyped data/value pairs using the <Data> element (basic) Declaring new typed 
+     * Adding untyped data/value pairs using the {@code <Data>} element (basic) Declaring new typed
      * fields using the {@code <Schema>} element and then instancing them using the {@code <SchemaData>} 
      * element (advanced) Referring to XML elements defined in other namespaces by referencing 
      * the external namespace within the KML file (basic) 
@@ -521,21 +388,6 @@ public abstract class Feature
      * These techniques can be combined within a single KML file or Feature for different 
      * pieces of data. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;ExtendedData&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>  &lt;Data name="string"&gt;<br>&nbsp;   &lt;displayName&gt;...&lt;/displayName&gt;&nbsp;&nbsp;&nbsp; &lt;!-- string --&gt;<br> &nbsp;&nbsp; &lt;value&gt;...&lt;/value&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- string --&gt;<br>  &lt;/Data&gt;
-     *   &lt;SchemaData schemaUrl="<em>anyURI</em>"&gt;<br>    &lt;SimpleData name=""&gt; ... &lt;/SimpleData&gt;&nbsp;&nbsp; &lt;!-- string --&gt;<br>  &lt;/SchemaData&gt;
-     *   &lt;namespace_prefix:other&gt;...&lt;/namespace_prefix:other&gt;
-     * &lt;/ExtendedData&gt;</pre>
-     * 
-     * Contained By: 
-     *
-     * 
-     * See Also: 
-     * Schema
-     * 
-     * 
-     * 
      */
     @XmlElement(name = "ExtendedData")
     protected ExtendedData extendedData;
@@ -548,14 +400,6 @@ public abstract class Feature
      * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
-     * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
-     * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
-     * 
-     * 
-     * 
      */
     @XmlElement(name = "AbstractFeatureSimpleExtensionGroup")
     protected List<Object> featureSimpleExtension;
@@ -568,14 +412,6 @@ public abstract class Feature
      * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
-     * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
-     * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
-     * 
-     * 
-     * 
      */
     @XmlElement(name = "AbstractFeatureObjectExtensionGroup")
     protected List<AbstractObject> featureObjectExtension;

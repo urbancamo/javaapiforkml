@@ -844,9 +844,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link Thoroughfare.DependentThoroughfare} and set it to dependentThoroughfare.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * DependentThoroughfare dependentThoroughfare = new DependentThoroughfare();
-     * this.setDependentThoroughfare(dependentThoroughfare); </code>
+     * this.setDependentThoroughfare(dependentThoroughfare); }
      * 
      * 
      */
@@ -987,7 +987,7 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the thoroughfareNumberPrefix property Objects of the following type(s) are allowed in the list List<ThoroughfareNumberPrefix>.
+     * Sets the value of the thoroughfareNumberPrefix property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareNumberPrefix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareNumberPrefix} instead.
      * 
@@ -1013,7 +1013,7 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the thoroughfareNumberSuffix property Objects of the following type(s) are allowed in the list List<ThoroughfareNumberSuffix>.
+     * Sets the value of the thoroughfareNumberSuffix property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareNumberSuffix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareNumberSuffix} instead.
      * 
@@ -1039,7 +1039,7 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list List<ThoroughfareName>.
+     * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareName} instead.
      * 
@@ -1740,7 +1740,7 @@ public class Thoroughfare implements Cloneable
         }
 
         /**
-         * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list List<ThoroughfareName>.
+         * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareName>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareName} instead.
          * 

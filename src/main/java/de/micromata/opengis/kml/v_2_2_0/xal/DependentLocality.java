@@ -824,7 +824,7 @@ public class DependentLocality implements Cloneable
     }
 
     /**
-     * Sets the value of the dependentLocalityName property Objects of the following type(s) are allowed in the list List<DependentLocalityName>.
+     * Sets the value of the dependentLocalityName property Objects of the following type(s) are allowed in the list {@code List<DependentLocalityName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withDependentLocalityName} instead.
      * 

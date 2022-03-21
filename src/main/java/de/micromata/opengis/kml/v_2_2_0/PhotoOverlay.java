@@ -15,12 +15,12 @@ import java.util.List;
  * {@code <PhotoOverlay>}
  * <p>
  * Because {@code <PhotoOverlay>} is derived from {@code <Feature>}, it can contain one of the two 
- * elements derived from <AbstractView>—either Camera or LookAt. The Camera (or 
+ * elements derived from {@code <AbstractView>}—either Camera or LookAt. The Camera (or
  * LookAt) specifies a viewpoint and a viewing direction (also referred to as a view 
  * vector). The PhotoOverlay is positioned in relation to the viewpoint. Specifically, 
  * the plane of a 2D rectangular image is orthogonal (at right angles to) the view 
  * vector. The normal of this plane—that is, its front, which is the part with the 
- * photo—is oriented toward the viewpoint. 
+ * photo—is oriented toward the viewpoint.
  * </p>
  * <p>
  * For more information, see the "Topics in KML" page on PhotoOverlay. 
@@ -86,7 +86,7 @@ public class PhotoOverlay
     @XmlElement(defaultValue = "0.0")
     protected double rotation;
     /**
-     * <viewvolume>
+     * {@code <viewvolume>}
      * <p>
      * Defines how much of the current scene is visible. Specifying the field of view is 
      * analogous to specifying the lens opening in a physical camera. A small field of 
@@ -100,7 +100,7 @@ public class PhotoOverlay
     @XmlElement(name = "ViewVolume")
     protected ViewVolume viewVolume;
     /**
-     * {@code <imagepyramid>},
+     * {@code <imagepyramid>}
      * <p>
      * For very large images, you'll need to construct an image pyramid, which is a hierarchical 
      * set of images, each of which is an increasingly lower resolution version of the 
@@ -132,9 +132,9 @@ public class PhotoOverlay
      * ground with a line. This "tether" uses the current LineStyle. 
      * </p>
      * <p>
-     * ThePoint element acts as aPoint inside a <Placemark> element. It draws an 
+     * ThePoint element acts as aPoint inside a {@code <Placemark>} element. It draws an
      * icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
-     * {@code <styleUrl>} and {@code <StyleSelector>} fields, just as it is for <Placemark>. 
+     * {@code <styleUrl>} and {@code <StyleSelector>} fields, just as it is for {@code <Placemark>}.
      * </p>
      * 
      * Syntax: 

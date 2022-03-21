@@ -141,7 +141,7 @@ public class LinearRing
      * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
-     * ≥ −180 and <= 180 latitude ≥ −90 and ≤ 90 altitude values (optional) are in meters 
+     * gt −180 and lteq 180 latitude gteq −90 and lteq 90 altitude values (optional) are in meters
      * above sea level 
      * </p>
      * <p>

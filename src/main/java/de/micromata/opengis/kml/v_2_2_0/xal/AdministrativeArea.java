@@ -529,7 +529,7 @@ public class AdministrativeArea implements Cloneable
     }
 
     /**
-     * Sets the value of the administrativeAreaName property Objects of the following type(s) are allowed in the list List<AdministrativeAreaName>.
+     * Sets the value of the administrativeAreaName property Objects of the following type(s) are allowed in the list {@code List<AdministrativeAreaName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAdministrativeAreaName} instead.
      * 
@@ -1357,7 +1357,7 @@ public class AdministrativeArea implements Cloneable
         }
 
         /**
-         * Sets the value of the subAdministrativeAreaName property Objects of the following type(s) are allowed in the list List<SubAdministrativeAreaName>.
+         * Sets the value of the subAdministrativeAreaName property Objects of the following type(s) are allowed in the list {@code List<SubAdministrativeAreaName>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubAdministrativeAreaName} instead.
          * 

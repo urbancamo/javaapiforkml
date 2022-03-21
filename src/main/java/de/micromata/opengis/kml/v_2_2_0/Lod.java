@@ -101,10 +101,10 @@ public class Lod
      * </p>
      * <p>
      * In the following diagram, if P=the calculated projected pixel size, the circled 
-     * numbers indicate the following: if (P < minLodPixels) opacity=0 //#1 in diagram 
-     * else if(P < minLodPixels + minFadeExtent) opacity=(P - minLodPixels)/minFadeExtent 
-     * //#2 in diagram else if (P < maxLodPixels - maxFadeExtent) opacity=1 //#3 in diagram 
-     * else if (P < maxLodPixels) opacity=(maxLodPixels-P)/maxFadeExtent //#4 in diagram 
+     * numbers indicate the following: if (P lt minLodPixels) opacity=0 //#1 in diagram
+     * else if(P lt minLodPixels + minFadeExtent) opacity=(P - minLodPixels)/minFadeExtent
+     * //#2 in diagram else if (P lt maxLodPixels - maxFadeExtent) opacity=1 //#3 in diagram
+     * else if (P lt maxLodPixels) opacity=(maxLodPixels-P)/maxFadeExtent //#4 in diagram
      * else opacity=0 //#5 in diagram 
      * </p>
      * 

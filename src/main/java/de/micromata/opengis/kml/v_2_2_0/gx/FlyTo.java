@@ -11,22 +11,22 @@ import java.util.List;
 
 
 /**
- * gx:FlyTo
+ * {@code <gx:FlyTo>}
  * <p>
  * gx:FlyTo specifies a point in space to which the browser will fly during a tour. 
- * It must contain one AbstractView, and should contain gx:duration and <gx:flyToMode> 
+ * It must contain one AbstractView, and should contain {@code <gx:duration>} and {@code <gx:flyToMode>}
  * elements, which specify the time it takes to fly to the defined point from the current 
  * point, and the method of flight, respectively. 
  * </p>
  * 
  * Syntax: 
- * <pre>&lt;gx:FlyTo&gt;
- *   &lt;gx:duration&gt;0.0&lt;/gx:duration&gt;         &lt;!-- double --&gt;
- *   &lt;gx:flyToMode&gt;bounce&lt;/gx:duration&gt;      &lt;!-- <em>smooth</em> or <em>bounce</em> --&gt;
- *   &lt;!-- AbstractView --&gt;                   &lt;!-- <em>Camera</em> or <em>LookAt</em> --&gt; 
+ * {@code <gx:FlyTo>
+ *   <gx:duration>0.0</gx:duration>         <!-- double -->
+ *   <gx:flyToMode>bounce</gx:duration>      <!-- <em>smooth</em> or <em>bounce</em> -->
+ *   <!-- AbstractView -->                   <!-- <em>Camera</em> or <em>LookAt</em> --> 
  *     ...
- *   &lt;!-- /AbstractView --&gt;
- * &lt;/gx:FlyTo&gt;</pre>
+ *   <!-- /AbstractView -->
+ * </gx:FlyTo>}
  * 
  * Extends: 
  *
@@ -52,7 +52,7 @@ public class FlyTo
 {
 
     /**
-     * gx:duration
+     * {@code gx:duration}
      * <p>
      * gx:duration extends gx:TourPrimitive by specifying a time-span for events. The 
      * time is written as seconds using XML's double datatype. 
@@ -75,18 +75,15 @@ public class FlyTo
      * </p>
      * 
      * Syntax: 
-     * <pre>&lt;gx:duration&gt;0.0&lt;/gx:duration&gt;            &lt;!-- double --&gt;
-     * </pre>
-     * 
-     * 
-     * 
+     * {@code <gx:duration>0.0</gx:duration>            <!-- double -->}
+     *
      */
     @XmlElement(defaultValue = "0.0")
     protected double duration;
     @XmlElement(defaultValue = "bounce")
     protected FlyToMode flyToMode;
     /**
-     * abstractview
+     * {@code abstractview}
      * <p>
      * Defines a viewpoint associated with any element derived from Feature. See Camera
      * and LookAt.
@@ -97,11 +94,11 @@ public class FlyTo
      * </p>
      * 
      * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;
-     * <strong>&lt;!--<em> AbstractView</em> --&gt;</strong>                   &lt;!-- Camera, LookAt --&gt;                
-     *   &lt;!-- extends <span class="style1">Object</span> --&gt;
-     *   <em>&lt;TimePrimitive&gt;...&lt;/TimePrimitive&gt;</em>                        &lt;!-- gx:TimeSpan or gx:TimeStamp --&gt;
-     * <strong>&lt;-- /<em>AbstractView</em> --&gt;</strong></pre>
+     * {@code <!-- abstract element; do not create -->
+     * <strong><!--<em> AbstractView</em> --></strong>                   <!-- Camera, LookAt -->                
+     *   <!-- extends <span class="style1">Object</span> -->
+     *   <em><TimePrimitive>...</TimePrimitive></em>                        <!-- gx:TimeSpan or gx:TimeStamp -->
+     * <strong><-- /<em>AbstractView</em> --></strong> }
      * 
      * Extends: 
      *
@@ -248,9 +245,9 @@ public class FlyTo
      * Creates a new instance of {@link LookAt} and set it to abstractView.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
+     * this.setAbstractView(lookAt); }
      * 
      * 
      */

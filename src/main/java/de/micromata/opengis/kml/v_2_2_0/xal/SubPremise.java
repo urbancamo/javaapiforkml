@@ -632,7 +632,7 @@ public class SubPremise implements Cloneable
     }
 
     /**
-     * Sets the value of the subPremiseName property Objects of the following type(s) are allowed in the list List<SubPremiseName>.
+     * Sets the value of the subPremiseName property Objects of the following type(s) are allowed in the list {@code List<SubPremiseName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubPremiseName} instead.
      * 
@@ -658,7 +658,7 @@ public class SubPremise implements Cloneable
     }
 
     /**
-     * Sets the value of the subPremiseNumber property Objects of the following type(s) are allowed in the list List<SubPremiseNumber>.
+     * Sets the value of the subPremiseNumber property Objects of the following type(s) are allowed in the list {@code List<SubPremiseNumber>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubPremiseNumber} instead.
      * 
@@ -684,7 +684,7 @@ public class SubPremise implements Cloneable
     }
 
     /**
-     * Sets the value of the subPremiseNumberPrefix property Objects of the following type(s) are allowed in the list List<SubPremiseNumberPrefix>.
+     * Sets the value of the subPremiseNumberPrefix property Objects of the following type(s) are allowed in the list {@code List<SubPremiseNumberPrefix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubPremiseNumberPrefix} instead.
      * 
@@ -710,7 +710,7 @@ public class SubPremise implements Cloneable
     }
 
     /**
-     * Sets the value of the subPremiseNumberSuffix property Objects of the following type(s) are allowed in the list List<SubPremiseNumberSuffix>.
+     * Sets the value of the subPremiseNumberSuffix property Objects of the following type(s) are allowed in the list {@code List<SubPremiseNumberSuffix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubPremiseNumberSuffix} instead.
      * 
@@ -736,7 +736,7 @@ public class SubPremise implements Cloneable
     }
 
     /**
-     * Sets the value of the buildingName property Objects of the following type(s) are allowed in the list List<BuildingName>.
+     * Sets the value of the buildingName property Objects of the following type(s) are allowed in the list {@code List<BuildingName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withBuildingName} instead.
      * 
