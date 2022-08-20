@@ -4,7 +4,7 @@
 
 # Now under Maintenance
 
-Thank you to Michael at Microdata for adding me @urbancamo as a maintainer.
+Thank you to Michael at Microdata for adding me [urbancamo](mailto:mark@wickensonline.co.uk) as a maintainer.
 The project is now open to pull requests for bugs and enhancements.
 Thank you to those who previously submitted pull requests - the majority of these
 have now been squashed and merged.
