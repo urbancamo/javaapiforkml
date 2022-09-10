@@ -765,7 +765,7 @@ public class Kml implements Cloneable
         throws IOException
     {
         ZipOutputStream out = new ZipOutputStream(new FileOutputStream(name));
-        out.setComment("KMZ-file created with Java API for KML. Visit us: http://code.google.com/p/javaapiforkml/");
+        out.setComment("KMZ-file created with Java API for KML. Visit us: https://github.com/micromata/javaapiforkml");
         this.addKmzFile(this, out, true);
         for (Kml kml: additionalFiles) {
             this.addKmzFile(kml, out, false);
