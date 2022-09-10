@@ -452,7 +452,7 @@ public interface IKmlGxReference {
 	 * &lt;GroundOverlay&gt;
 	 *   &lt;name&gt;gx:LatLonQuad Example&lt;/name&gt;
 	 *   &lt;Icon&gt;
-	 *     &lt;href&gt;http://code.google.com/apis/kml/documentation/Images/rectangle.gif&lt;/href&gt;
+	 *     &lt;href&gt;http://developers.google.com/kml/documentation/images/rectangle.gif&lt;/href&gt;
 	 *     &lt;viewBoundScale&gt;0.75&lt;/viewBoundScale&gt;
 	 *   &lt;/Icon&gt;
 	 *   &lt;gx:LatLonQuad&gt;
@@ -619,7 +619,7 @@ public interface IKmlGxReference {
 	 *              don't hold Tours open, but FlyTos and Waits do.
 	 * 
 	 *              For more information, refer to:
-	 *              http://code.google.com/apis/kml/documentation/touring.html#tourtimelines
+	 *              https://developers.google.com/kml/documentation/touring#tourtimelines
 	 *         --&gt;
 	 * 
 	 *         &lt;gx:AnimatedUpdate&gt;
