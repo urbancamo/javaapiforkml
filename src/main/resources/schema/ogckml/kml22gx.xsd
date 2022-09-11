@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!-- Copyright 2009.  Google, Inc.  All rights reserved. -->
 	<!--
-
-		XSD of Google extensions to OGC KML 2.2. NOTE: This BETA specification is subject to change without notice. The URL to
-		this schema is: http://code.google.com/apis/kml/schema/kml22gx.xsd Full documentation for these extensions is
-		available at: http://code.google.com/apis/kml/
+		XSD of Google extensions to OGC KML 2.2.
+		NOTE: This BETA specification is subject to change without notice.
+		The URL to this schema is: http://code.google.com/apis/kml/schema/kml22gx.xsd
+		Full documentation for these extensions is available at: https://developers.google.com/kml
 	-->
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"
 	xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" targetNamespace="http://www.google.com/kml/ext/2.2"
