@@ -23,9 +23,9 @@ import java.util.List;
  * used in the {@code <Model>} element 
  * </p>
  * <p>
- * Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
- * the namespace for this element in any KML file that uses it: xmlns:atom="http://www.w3.org/2005/Atom" 
- * (see the sample that follows). 
+ * Specifies the URL of the website containing this KML or KMZ file. Be sure to include
+ * the namespace for this element in any KML file that uses it: xmlns:atom="http://www.w3.org/2005/Atom"
+ * (see the sample that follows).
  * </p>
  * <p>
  * Specifies the file to load and optional refresh parameters. See {@code <Link>}. 
@@ -46,13 +46,13 @@ import java.util.List;
  * information. 
  * </p>
  * <p>
- * Tip: To display the top-level Folder or Document within a Network Link in the List 
- * View, assign an ID to the Folder or Document. Without this ID, only the child object 
- * names are displayed in the List View. 
+ * Tip: To display the top-level Folder or Document within a Network Link in the List
+ * View, assign an ID to the Folder or Document. Without this ID, only the child object
+ * names are displayed in the List View.
  * </p>
  * <p>
- * When a file is fetched, the URL that is sent to the server is composed of three 
- * pieces of information: 
+ * When a file is fetched, the URL that is sent to the server is composed of three
+ * pieces of information:
  * </p>
  * <p>
  * the href (Hypertext Reference) that specifies the file to load. an arbitrary format 
@@ -61,15 +61,15 @@ import java.util.List;
  * element is included in the file). a second format string that is specified in the 
  * {@code <httpQuery>} element. 
  * </p>
- * 
- * Syntax: 
+ *
+ * Syntax:
  * <pre><strong>&lt;Link id="ID"&gt;</strong>
  *   &lt;!-- specific to Link --&gt;
  *   &lt;href&gt;<em>...</em>&lt;/href&gt;                      &lt;!-- <span>string</span> --&gt;
- *   &lt;refreshMode&gt;onChange&lt;/refreshMode&gt;   
- *     &lt;!-- refreshModeEnum: onChange, onInterval, <em>or</em> onExpire --&gt;   
+ *   &lt;refreshMode&gt;onChange&lt;/refreshMode&gt;
+ *     &lt;!-- refreshModeEnum: onChange, onInterval, <em>or</em> onExpire --&gt;
  *   &lt;refreshInterval&gt;4&lt;/refreshInterval&gt;  &lt;!-- float --&gt;
- *   &lt;viewRefreshMode&gt;never&lt;/viewRefreshMode&gt; 
+ *   &lt;viewRefreshMode&gt;never&lt;/viewRefreshMode&gt;
  *     &lt;!-- viewRefreshModeEnum: never, onStop, onRequest, onRegion --&gt;
  *   &lt;viewRefreshTime&gt;4&lt;/viewRefreshTime&gt;  &lt;!-- float --&gt;
  *   &lt;viewBoundScale&gt;1&lt;/viewBoundScale&gt;    &lt;!-- float --&gt;
@@ -113,7 +113,7 @@ public class Link
     /**
      * RefreshMode
      * <p>
-     * onChange, onInterval, onExpire 
+     * onChange, onInterval, onExpire
      * </p>
      * 
      * See Also: 
@@ -127,18 +127,18 @@ public class Link
     /**
      * {@code <refreshInterval>}
      * <p>
-     * Indicates to refresh the file every n seconds. 
+     * Indicates to refresh the file every n seconds.
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(defaultValue = "4.0")
-    protected double refreshInterval;
+    protected Double refreshInterval;
     /**
      * ViewRefreshMode
      * <p>
-     * never, onRequest, onStop, onRegion 
+     * never, onRequest, onStop, onRegion
      * </p>
      * 
      * See Also: 
@@ -155,29 +155,29 @@ public class Link
      * After camera movement stops, specifies the number of seconds to wait before refreshing 
      * the view. (See {@code <viewRefreshMode>} and onStop above.) 
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(defaultValue = "4.0")
-    protected double viewRefreshTime;
+    protected Double viewRefreshTime;
     /**
      * {@code <viewboundscale>}
      * <p>
-     * Scales the BBOX parameters before sending them to the server. A value less than 
-     *  1 specifies to use less than the full view (screen). A value greater than 1 specifies 
-     * to fetch an area that extends beyond the edges of the current view. 
+     * Scales the BBOX parameters before sending them to the server. A value less than
+     *  1 specifies to use less than the full view (screen). A value greater than 1 specifies
+     * to fetch an area that extends beyond the edges of the current view.
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(defaultValue = "1.0")
-    protected double viewBoundScale;
+    protected Double viewBoundScale;
     /**
      * {@code <viewFormat>}
      * <p>
-     * BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth] 
+     * BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]
      * </p>
      * <p>
      * If you specify a {@code <viewRefreshMode>} of onStop and do not include the {@code <viewFormat>} 
@@ -193,13 +193,13 @@ public class Link
      * the file is fetched.(If the {@code <href>}specifies a local file, this element is ignored.) 
      * </p>
      * <p>
-     * This information matches the Web Map Service (WMS) bounding box specification. 
+     * This information matches the Web Map Service (WMS) bounding box specification.
      * </p>
      * <p>
-     * You can also specify a custom set of viewing parameters to add to the query string. 
-     * If you supply a format string, it is used instead of the BBOX information. If you 
-     * also want the BBOX information, you need to add those parameters along with the 
-     * custom parameters. 
+     * You can also specify a custom set of viewing parameters to add to the query string.
+     * If you supply a format string, it is used instead of the BBOX information. If you
+     * also want the BBOX information, you need to add those parameters along with the
+     * custom parameters.
      * </p>
      * <p>
      * You can use any of the following parameters in your format string (and Google Earth 
@@ -213,22 +213,22 @@ public class Link
      * of view for the camera [horizPixels], [vertPixels] - size in pixels of the 3D viewer 
      * [terrainEnabled] - indicates whether the 3D viewer is showing terrain 
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     protected String viewFormat;
     /**
      * {@code <httpQuery>}
      * <p>
-     * Appends information to the query string, based on the parameters specified. (Google 
-     * Earth substitutes the appropriate current value at the time it creates the query 
-     * string.) The following parameters are supported: [clientVersion] [kmlVersion] [clientName] 
-     * [language] 
+     * Appends information to the query string, based on the parameters specified. (Google
+     * Earth substitutes the appropriate current value at the time it creates the query
+     * string.) The following parameters are supported: [clientVersion] [kmlVersion] [clientName]
+     * [language]
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     protected String httpQuery;
     @XmlElement(name = "LinkSimpleExtensionGroup")
@@ -243,14 +243,14 @@ public class Link
      * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
-     * 
-     * Syntax: 
+     *
+     * Syntax:
      * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
      * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
      * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(name = "LinkObjectExtensionGroup")
     protected List<AbstractObject> linkObjectExtension;
@@ -265,7 +265,7 @@ public class Link
      * @return
      *     possible object is
      *     {@link RefreshMode}
-     *     
+     *
      */
     public RefreshMode getRefreshMode() {
         return refreshMode;
@@ -277,7 +277,7 @@ public class Link
      * @param value
      *     allowed object is
      *     {@link RefreshMode}
-     *     
+     *
      */
     public void setRefreshMode(RefreshMode value) {
         this.refreshMode = value;
@@ -289,9 +289,9 @@ public class Link
      * @return
      *     possible object is
      *     {@link Double}
-     *     
+     *
      */
-    public double getRefreshInterval() {
+    public Double getRefreshInterval() {
         return refreshInterval;
     }
 
@@ -301,9 +301,9 @@ public class Link
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setRefreshInterval(double value) {
+    public void setRefreshInterval(Double value) {
         this.refreshInterval = value;
     }
 
@@ -313,7 +313,7 @@ public class Link
      * @return
      *     possible object is
      *     {@link ViewRefreshMode}
-     *     
+     *
      */
     public ViewRefreshMode getViewRefreshMode() {
         return viewRefreshMode;
@@ -325,7 +325,7 @@ public class Link
      * @param value
      *     allowed object is
      *     {@link ViewRefreshMode}
-     *     
+     *
      */
     public void setViewRefreshMode(ViewRefreshMode value) {
         this.viewRefreshMode = value;
@@ -337,9 +337,9 @@ public class Link
      * @return
      *     possible object is
      *     {@link Double}
-     *     
+     *
      */
-    public double getViewRefreshTime() {
+    public Double getViewRefreshTime() {
         return viewRefreshTime;
     }
 
@@ -349,9 +349,9 @@ public class Link
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setViewRefreshTime(double value) {
+    public void setViewRefreshTime(Double value) {
         this.viewRefreshTime = value;
     }
 
@@ -361,9 +361,9 @@ public class Link
      * @return
      *     possible object is
      *     {@link Double}
-     *     
+     *
      */
-    public double getViewBoundScale() {
+    public Double getViewBoundScale() {
         return viewBoundScale;
     }
 
@@ -373,9 +373,9 @@ public class Link
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setViewBoundScale(double value) {
+    public void setViewBoundScale(Double value) {
         this.viewBoundScale = value;
     }
 
@@ -385,7 +385,7 @@ public class Link
      * @return
      *     possible object is
      *     {@link String}
-     *     
+     *
      */
     public String getViewFormat() {
         return viewFormat;
@@ -397,7 +397,7 @@ public class Link
      * @param value
      *     allowed object is
      *     {@link String}
-     *     
+     *
      */
     public void setViewFormat(String value) {
         this.viewFormat = value;
@@ -409,7 +409,7 @@ public class Link
      * @return
      *     possible object is
      *     {@link String}
-     *     
+     *
      */
     public String getHttpQuery() {
         return httpQuery;
@@ -421,7 +421,7 @@ public class Link
      * @param value
      *     allowed object is
      *     {@link String}
-     *     
+     *
      */
     public void setHttpQuery(String value) {
         this.httpQuery = value;
@@ -562,7 +562,7 @@ public class Link
 
     /**
      * add a value to the linkSimpleExtension property collection
-     * 
+     *
      * @param linkSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
@@ -585,7 +585,7 @@ public class Link
 
     /**
      * add a value to the linkObjectExtension property collection
-     * 
+     *
      * @param linkObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
@@ -631,8 +631,8 @@ public class Link
     }
 
     /**
+     * @see basicLinkObjectExtension
      *
-     * 
      */
     @Obvious
     @Override
@@ -666,7 +666,7 @@ public class Link
      * @param refreshInterval
      *     required parameter
      */
-    public Link withRefreshInterval(final double refreshInterval) {
+    public Link withRefreshInterval(final Double refreshInterval) {
         this.setRefreshInterval(refreshInterval);
         return this;
     }
@@ -690,7 +690,7 @@ public class Link
      * @param viewRefreshTime
      *     required parameter
      */
-    public Link withViewRefreshTime(final double viewRefreshTime) {
+    public Link withViewRefreshTime(final Double viewRefreshTime) {
         this.setViewRefreshTime(viewRefreshTime);
         return this;
     }
@@ -702,7 +702,7 @@ public class Link
      * @param viewBoundScale
      *     required parameter
      */
-    public Link withViewBoundScale(final double viewBoundScale) {
+    public Link withViewBoundScale(final Double viewBoundScale) {
         this.setViewBoundScale(viewBoundScale);
         return this;
     }

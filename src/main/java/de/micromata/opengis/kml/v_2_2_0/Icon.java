@@ -30,15 +30,15 @@ import java.util.List;
  * is drawn using the color and size defined by the ground or screen overlay. {@code <Icon>
  * <href>icon.jpg</href> </Icon>}
  * </p>
- * 
- * Syntax: 
+ *
+ * Syntax:
  * <pre><strong>&lt;Icon id="ID"&gt;</strong>
  *   &lt;!-- specific to Icon --&gt;
  *   &lt;href&gt;<em>...</em>&lt;/href&gt;                      &lt;!-- anyURI --&gt;
- *   &lt;refreshMode&gt;onChange&lt;/refreshMode&gt;   
- *     &lt;!-- kml:refreshModeEnum: onChange, onInterval, <em>or</em> onExpire --&gt;   
+ *   &lt;refreshMode&gt;onChange&lt;/refreshMode&gt;
+ *     &lt;!-- kml:refreshModeEnum: onChange, onInterval, <em>or</em> onExpire --&gt;
  *   &lt;refreshInterval&gt;4&lt;/refreshInterval&gt;  &lt;!-- float --&gt;
- *   &lt;viewRefreshMode&gt;never&lt;/viewRefreshMode&gt; 
+ *   &lt;viewRefreshMode&gt;never&lt;/viewRefreshMode&gt;
  *     &lt;!-- kml:viewRefreshModeEnum: never, onStop, onRequest, onRegion --&gt;
  *   &lt;viewRefreshTime&gt;4&lt;/viewRefreshTime&gt;  &lt;!-- float --&gt;
  *   &lt;viewBoundScale&gt;1&lt;/viewBoundScale&gt;    &lt;!-- float --&gt;
@@ -75,7 +75,7 @@ public class Icon
     /**
      * RefreshMode
      * <p>
-     * onChange, onInterval, onExpire 
+     * onChange, onInterval, onExpire
      * </p>
      * 
      * See Also: 
@@ -89,18 +89,18 @@ public class Icon
     /**
      * {@code {@code <refreshInterval>}}
      * <p>
-     * Indicates to refresh the file every n seconds. 
+     * Indicates to refresh the file every n seconds.
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2", defaultValue = "4.0")
-    protected double refreshInterval;
+    protected Double refreshInterval;
     /**
      * ViewRefreshMode
      * <p>
-     * never, onRequest, onStop, onRegion 
+     * never, onRequest, onStop, onRegion
      * </p>
      * 
      * See Also: 
@@ -117,29 +117,29 @@ public class Icon
      * After camera movement stops, specifies the number of seconds to wait before refreshing 
      * the view. (See {@code {@code <viewRefreshMode>}} and onStop above.)
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2", defaultValue = "4.0")
-    protected double viewRefreshTime;
+    protected Double viewRefreshTime;
     /**
      * {@code <viewboundscale>}
      * <p>
-     * Scales the BBOX parameters before sending them to the server. A value less than 
-     *  1 specifies to use less than the full view (screen). A value greater than 1 specifies 
-     * to fetch an area that extends beyond the edges of the current view. 
+     * Scales the BBOX parameters before sending them to the server. A value less than
+     *  1 specifies to use less than the full view (screen). A value greater than 1 specifies
+     * to fetch an area that extends beyond the edges of the current view.
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2", defaultValue = "1.0")
-    protected double viewBoundScale;
+    protected Double viewBoundScale;
     /**
      * {@code <viewFormat>}
      * <p>
-     * BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth] 
+     * BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]
      * </p>
      * <p>
      * If you specify a {@code <viewRefreshMode>} of onStop and do not include the {@code <viewFormat>} 
@@ -155,13 +155,13 @@ public class Icon
      * the file is fetched.(If the {@code <href>}specifies a local file, this element is ignored.) 
      * </p>
      * <p>
-     * This information matches the Web Map Service (WMS) bounding box specification. 
+     * This information matches the Web Map Service (WMS) bounding box specification.
      * </p>
      * <p>
-     * You can also specify a custom set of viewing parameters to add to the query string. 
-     * If you supply a format string, it is used instead of the BBOX information. If you 
-     * also want the BBOX information, you need to add those parameters along with the 
-     * custom parameters. 
+     * You can also specify a custom set of viewing parameters to add to the query string.
+     * If you supply a format string, it is used instead of the BBOX information. If you
+     * also want the BBOX information, you need to add those parameters along with the
+     * custom parameters.
      * </p>
      * <p>
      * You can use any of the following parameters in your format string (and Google Earth 
@@ -175,23 +175,23 @@ public class Icon
      * of view for the camera [horizPixels], [vertPixels] - size in pixels of the 3D viewer 
      * [terrainEnabled] - indicates whether the 3D viewer is showing terrain 
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2")
     protected String viewFormat;
     /**
      * {@code <httpQuery>}
      * <p>
-     * Appends information to the query string, based on the parameters specified. (Google 
-     * Earth substitutes the appropriate current value at the time it creates the query 
-     * string.) The following parameters are supported: [clientVersion] [kmlVersion] [clientName] 
-     * [language] 
+     * Appends information to the query string, based on the parameters specified. (Google
+     * Earth substitutes the appropriate current value at the time it creates the query
+     * string.) The following parameters are supported: [clientVersion] [kmlVersion] [clientName]
+     * [language]
      * </p>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2")
     protected String httpQuery;
@@ -207,14 +207,14 @@ public class Icon
      * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
-     * 
-     * Syntax: 
+     *
+     * Syntax:
      * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
      * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
      * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
-     * 
-     * 
-     * 
+     *
+     *
+     *
      */
     @XmlElement(name = "LinkObjectExtensionGroup", namespace = "http://www.opengis.net/kml/2.2")
     protected List<AbstractObject> linkObjectExtension;
@@ -229,7 +229,7 @@ public class Icon
      * @return
      *     possible object is
      *     {@link RefreshMode}
-     *     
+     *
      */
     public RefreshMode getRefreshMode() {
         return refreshMode;
@@ -241,7 +241,7 @@ public class Icon
      * @param value
      *     allowed object is
      *     {@link RefreshMode}
-     *     
+     *
      */
     public void setRefreshMode(RefreshMode value) {
         this.refreshMode = value;
@@ -253,9 +253,9 @@ public class Icon
      * @return
      *     possible object is
      *     {@link Double}
-     *     
+     *
      */
-    public double getRefreshInterval() {
+    public Double getRefreshInterval() {
         return refreshInterval;
     }
 
@@ -265,9 +265,9 @@ public class Icon
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setRefreshInterval(double value) {
+    public void setRefreshInterval(Double value) {
         this.refreshInterval = value;
     }
 
@@ -277,7 +277,7 @@ public class Icon
      * @return
      *     possible object is
      *     {@link ViewRefreshMode}
-     *     
+     *
      */
     public ViewRefreshMode getViewRefreshMode() {
         return viewRefreshMode;
@@ -289,7 +289,7 @@ public class Icon
      * @param value
      *     allowed object is
      *     {@link ViewRefreshMode}
-     *     
+     *
      */
     public void setViewRefreshMode(ViewRefreshMode value) {
         this.viewRefreshMode = value;
@@ -301,9 +301,9 @@ public class Icon
      * @return
      *     possible object is
      *     {@link Double}
-     *     
+     *
      */
-    public double getViewRefreshTime() {
+    public Double getViewRefreshTime() {
         return viewRefreshTime;
     }
 
@@ -313,9 +313,9 @@ public class Icon
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setViewRefreshTime(double value) {
+    public void setViewRefreshTime(Double value) {
         this.viewRefreshTime = value;
     }
 
@@ -325,9 +325,9 @@ public class Icon
      * @return
      *     possible object is
      *     {@link Double}
-     *     
+     *
      */
-    public double getViewBoundScale() {
+    public Double getViewBoundScale() {
         return viewBoundScale;
     }
 
@@ -337,9 +337,9 @@ public class Icon
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setViewBoundScale(double value) {
+    public void setViewBoundScale(Double value) {
         this.viewBoundScale = value;
     }
 
@@ -349,7 +349,7 @@ public class Icon
      * @return
      *     possible object is
      *     {@link String}
-     *     
+     *
      */
     public String getViewFormat() {
         return viewFormat;
@@ -361,7 +361,7 @@ public class Icon
      * @param value
      *     allowed object is
      *     {@link String}
-     *     
+     *
      */
     public void setViewFormat(String value) {
         this.viewFormat = value;
@@ -373,7 +373,7 @@ public class Icon
      * @return
      *     possible object is
      *     {@link String}
-     *     
+     *
      */
     public String getHttpQuery() {
         return httpQuery;
@@ -385,7 +385,7 @@ public class Icon
      * @param value
      *     allowed object is
      *     {@link String}
-     *     
+     *
      */
     public void setHttpQuery(String value) {
         this.httpQuery = value;
@@ -526,7 +526,7 @@ public class Icon
 
     /**
      * add a value to the linkSimpleExtension property collection
-     * 
+     *
      * @param linkSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
@@ -549,7 +549,7 @@ public class Icon
 
     /**
      * add a value to the linkObjectExtension property collection
-     * 
+     *
      * @param linkObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
@@ -630,7 +630,7 @@ public class Icon
      * @param refreshInterval
      *     required parameter
      */
-    public Icon withRefreshInterval(final double refreshInterval) {
+    public Icon withRefreshInterval(final Double refreshInterval) {
         this.setRefreshInterval(refreshInterval);
         return this;
     }
@@ -654,7 +654,7 @@ public class Icon
      * @param viewRefreshTime
      *     required parameter
      */
-    public Icon withViewRefreshTime(final double viewRefreshTime) {
+    public Icon withViewRefreshTime(final Double viewRefreshTime) {
         this.setViewRefreshTime(viewRefreshTime);
         return this;
     }
@@ -666,7 +666,7 @@ public class Icon
      * @param viewBoundScale
      *     required parameter
      */
-    public Icon withViewBoundScale(final double viewBoundScale) {
+    public Icon withViewBoundScale(final Double viewBoundScale) {
         this.setViewBoundScale(viewBoundScale);
         return this;
     }
