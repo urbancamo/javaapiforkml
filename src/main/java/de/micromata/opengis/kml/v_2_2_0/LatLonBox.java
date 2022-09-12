@@ -1,33 +1,29 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <latlonbox>
+ * latlongbox
  * <p>
  * Specifies where the top, bottom, right, and left sides of a bounding box for the 
- * ground overlay are aligned. <north> Specifies the latitude of the north edge of 
- * the bounding box, in decimal degrees from 0 to ±90. <south> Specifies the latitude 
- * of the south edge of the bounding box, in decimal degrees from 0 to ±90. <east> 
+ * ground overlay are aligned. north Specifies the latitude of the north edge of 
+ * the bounding box, in decimal degrees from 0 to ±90. south Specifies the latitude 
+ * of the south edge of the bounding box, in decimal degrees from 0 to ±90. east 
  * Specifies the longitude of the east edge of the bounding box, in decimal degrees 
  * from 0 to ±180. (For overlays that overlap the meridian of 180° longitude, values 
- * can extend beyond that range.) <west> Specifies the longitude of the west edge of 
+ * can extend beyond that range.) west Specifies the longitude of the west edge of 
  * the bounding box, in decimal degrees from 0 to ±180. (For overlays that overlap 
- * the meridian of 180° longitude, values can extend beyond that range.) <rotation> 
+ * the meridian of 180° longitude, values can extend beyond that range.) rotation 
  * Specifies a rotation of the overlay about its center, in degrees. Values can be 
  * ±180. The default is 0 (north). Rotations are specified in a counterclockwise direction. 
- * <LatLonBox> <north>48.25475939255556</north> <south>48.25207367852141</south> <east>-90.86591508839973</east> 
- * <west>-90.8714285289695</west> <rotation>39.37878630116985</rotation> </LatLonBox> 
+ * {@code <latlongbox> <north>48.25475939255556</north> <south>48.25207367852141</south> <east>-90.86591508839973</east>
+ * <west>-90.8714285289695</west> <rotation>39.37878630116985</rotation> </LatLonBox> }
  * </p>
  * 
  * 
@@ -46,7 +42,7 @@ public class LatLonBox
 {
 
     /**
-     * <rotation>
+     * rotation
      * <p>
      * Adjusts how the photo is placed inside the field of view. This element is useful 
      * if your photo has been rotated and deviates slightly from a desired horizontal view. 
@@ -54,8 +50,8 @@ public class LatLonBox
      * <p>
      * Indicates the angle of rotation of the parent object. A value of 0 means no rotation. 
      * The value is an angle in degrees counterclockwise starting from north. Use ±180 
-     * to indicate the rotation of the parent object from 0. The center of the <rotation>, 
-     * if not (.5,.5), is specified in <rotationXY>. 
+     * to indicate the rotation of the parent object from 0. The center of the rotation, 
+     * if not (.5,.5), is specified in {@code <rotationXY>}.
      * </p>
      * 
      * 
@@ -67,12 +63,12 @@ public class LatLonBox
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> latLonBoxSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -92,7 +88,7 @@ public class LatLonBox
     }
 
     /**
-     * @see rotation
+     *
      * 
      * @return
      *     possible object is
@@ -104,7 +100,7 @@ public class LatLonBox
     }
 
     /**
-     * @see rotation
+     *
      * 
      * @param value
      *     allowed object is
@@ -116,7 +112,7 @@ public class LatLonBox
     }
 
     /**
-     * @see latLonBoxSimpleExtension
+     *
      * 
      */
     public List<Object> getLatLonBoxSimpleExtension() {
@@ -127,7 +123,7 @@ public class LatLonBox
     }
 
     /**
-     * @see latLonBoxObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLatLonBoxObjectExtension() {
@@ -189,9 +185,10 @@ public class LatLonBox
     }
 
     /**
-     * @see latLonBoxSimpleExtension
+     *
      * 
      * @param latLonBoxSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLatLonBoxSimpleExtension(final List<Object> latLonBoxSimpleExtension) {
         this.latLonBoxSimpleExtension = latLonBoxSimpleExtension;
@@ -203,7 +200,7 @@ public class LatLonBox
      * @param latLonBoxSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LatLonBox addToLatLonBoxSimpleExtension(final Object latLonBoxSimpleExtension) {
         this.getLatLonBoxSimpleExtension().add(latLonBoxSimpleExtension);
@@ -211,9 +208,10 @@ public class LatLonBox
     }
 
     /**
-     * @see latLonBoxObjectExtension
+     *
      * 
      * @param latLonBoxObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLatLonBoxObjectExtension(final List<AbstractObject> latLonBoxObjectExtension) {
         this.latLonBoxObjectExtension = latLonBoxObjectExtension;
@@ -225,7 +223,7 @@ public class LatLonBox
      * @param latLonBoxObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LatLonBox addToLatLonBoxObjectExtension(final AbstractObject latLonBoxObjectExtension) {
         this.getLatLonBoxObjectExtension().add(latLonBoxObjectExtension);
@@ -233,7 +231,7 @@ public class LatLonBox
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -250,7 +248,7 @@ public class LatLonBox
     }
 
     /**
-     * @see abstractLatLonBoxSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -267,7 +265,7 @@ public class LatLonBox
     }
 
     /**
-     * @see abstractLatLonBoxObjectExtension
+     *
      * 
      */
     @Obvious
@@ -285,7 +283,7 @@ public class LatLonBox
 
     /**
      * fluent setter
-     * @see #setRotation(double)
+     *
      * 
      * @param rotation
      *     required parameter
@@ -297,7 +295,7 @@ public class LatLonBox
 
     /**
      * fluent setter
-     * @see #setLatLonBoxSimpleExtension(List<Object>)
+     *
      * 
      * @param latLonBoxSimpleExtension
      *     required parameter
@@ -309,7 +307,7 @@ public class LatLonBox
 
     /**
      * fluent setter
-     * @see #setLatLonBoxObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param latLonBoxObjectExtension
      *     required parameter

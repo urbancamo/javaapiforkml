@@ -1,25 +1,19 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <Folder>
+ * {@code <Folder>}
  * <p>
  * A Folder is used to arrange other Features hierarchically (Folders, Placemarks, 
  * NetworkLinks, or Overlays). A Feature is visible only if it and all its ancestors 
@@ -56,10 +50,10 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * </pre>
  * 
  * Extends: 
- * @see: <Container>
+ *
  * 
  * Contains: 
- * @see: <Feature>
+ *
  * 
  * 
  * 
@@ -77,7 +71,7 @@ public class Folder
 {
 
     /**
-     * <Feature>
+     * {@code <Feature>}
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. The following 
      * diagram shows how some of a Feature's elements appear in Google Earth. 
@@ -105,14 +99,14 @@ public class Folder
      *   &lt;ExtendedData&gt;...&lt;/ExtendedData&gt;      &lt;!-- new in KML 2.2 --&gt;<br></span>&lt;-- /<em>Feature</em> --&gt;</pre>
      * 
      * Extends: 
-     * @see: <Object>
+     *
      * 
      * Extended By: 
-     * @see: <Container>
-     * @see: <NetworkLink>
-     * @see: <Overlay>
-     * @see: <Placemark>
-     * @see: <gx:Tour>
+     *
+     *
+     *
+     *
+     *
      * 
      * 
      * 
@@ -123,12 +117,12 @@ public class Folder
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> folderSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -148,7 +142,7 @@ public class Folder
     }
 
     /**
-     * @see feature
+     *
      * 
      */
     public List<Feature> getFeature() {
@@ -159,7 +153,7 @@ public class Folder
     }
 
     /**
-     * @see folderSimpleExtension
+     *
      * 
      */
     public List<Object> getFolderSimpleExtension() {
@@ -170,7 +164,7 @@ public class Folder
     }
 
     /**
-     * @see folderObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getFolderObjectExtension() {
@@ -238,9 +232,9 @@ public class Folder
     /**
      * Creates a new instance of {@link Tour} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Tour tour = new Tour();
-     * this.getFeature().add(tour); </code>
+     * this.getFeature().add(tour); }
      * 
      * 
      */
@@ -253,9 +247,9 @@ public class Folder
     /**
      * Creates a new instance of {@link ScreenOverlay} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.getFeature().add(screenOverlay); </code>
+     * this.getFeature().add(screenOverlay); }
      * 
      * 
      */
@@ -268,9 +262,9 @@ public class Folder
     /**
      * Creates a new instance of {@link PhotoOverlay} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * PhotoOverlay photoOverlay = new PhotoOverlay();
-     * this.getFeature().add(photoOverlay); </code>
+     * this.getFeature().add(photoOverlay); }
      * 
      * 
      */
@@ -283,9 +277,9 @@ public class Folder
     /**
      * Creates a new instance of {@link GroundOverlay} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * GroundOverlay groundOverlay = new GroundOverlay();
-     * this.getFeature().add(groundOverlay); </code>
+     * this.getFeature().add(groundOverlay); }
      * 
      * 
      */
@@ -298,9 +292,9 @@ public class Folder
     /**
      * Creates a new instance of {@link NetworkLink} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * NetworkLink networkLink = new NetworkLink();
-     * this.getFeature().add(networkLink); </code>
+     * this.getFeature().add(networkLink); }
      * 
      * 
      */
@@ -311,11 +305,11 @@ public class Folder
     }
 
     /**
-     * Creates a new instance of {@link Folder} and adds it to feature.
+     * Creates a new instance of Folder and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Folder folder = new Folder();
-     * this.getFeature().add(folder); </code>
+     * this.getFeature().add(folder); }
      * 
      * 
      */
@@ -328,9 +322,9 @@ public class Folder
     /**
      * Creates a new instance of {@link Document} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Document document = new Document();
-     * this.getFeature().add(document); </code>
+     * this.getFeature().add(document); }
      * 
      * 
      */
@@ -343,9 +337,9 @@ public class Folder
     /**
      * Creates a new instance of {@link Placemark} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Placemark placemark = new Placemark();
-     * this.getFeature().add(placemark); </code>
+     * this.getFeature().add(placemark); }
      * 
      * 
      */
@@ -356,9 +350,10 @@ public class Folder
     }
 
     /**
-     * @see feature
+     *
      * 
      * @param feature
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code >}{@code <}{@link GroundOverlay}{@code >}{@code <}{@link NetworkLink}{@code >}{@code <}Folder{@code >}{@code <}{@link PhotoOverlay}{@code >}{@code <}{@link Document}{@code >}{@code <}{@link Tour}{@code >}{@code <}{@link ScreenOverlay}{@code >}{@code <}{@link Feature}{@code >}{@code <}{@link Placemark}{@code >}{@code <}{@link Overlay}{@code >}
      */
     public void setFeature(final List<Feature> feature) {
         this.feature = feature;
@@ -368,9 +363,9 @@ public class Folder
      * add a value to the feature property collection
      * 
      * @param feature
-     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code >}{@code <}{@link GroundOverlay}{@code >}{@code <}{@link NetworkLink}{@code >}{@code <}Folder{@code >}{@code <}{@link PhotoOverlay}{@code >}{@code <}{@link Document}{@code >}{@code <}{@link Tour}{@code >}{@code <}{@link ScreenOverlay}{@code >}{@code <}{@link Feature}{@code >}{@code <}{@link Placemark}{@code >}{@code <}{@link Overlay}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Folder addToFeature(final Feature feature) {
         this.getFeature().add(feature);
@@ -378,9 +373,10 @@ public class Folder
     }
 
     /**
-     * @see folderSimpleExtension
+     *
      * 
      * @param folderSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setFolderSimpleExtension(final List<Object> folderSimpleExtension) {
         this.folderSimpleExtension = folderSimpleExtension;
@@ -392,7 +388,7 @@ public class Folder
      * @param folderSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Folder addToFolderSimpleExtension(final Object folderSimpleExtension) {
         this.getFolderSimpleExtension().add(folderSimpleExtension);
@@ -400,9 +396,10 @@ public class Folder
     }
 
     /**
-     * @see folderObjectExtension
+     *
      * 
      * @param folderObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setFolderObjectExtension(final List<AbstractObject> folderObjectExtension) {
         this.folderObjectExtension = folderObjectExtension;
@@ -414,7 +411,7 @@ public class Folder
      * @param folderObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Folder addToFolderObjectExtension(final AbstractObject folderObjectExtension) {
         this.getFolderObjectExtension().add(folderObjectExtension);
@@ -422,7 +419,7 @@ public class Folder
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -439,7 +436,7 @@ public class Folder
     }
 
     /**
-     * @see styleSelector
+     *
      * 
      */
     @Obvious
@@ -456,7 +453,7 @@ public class Folder
     }
 
     /**
-     * @see featureSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -473,7 +470,7 @@ public class Folder
     }
 
     /**
-     * @see featureObjectExtension
+     *
      * 
      */
     @Obvious
@@ -490,7 +487,7 @@ public class Folder
     }
 
     /**
-     * @see containerSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -507,7 +504,7 @@ public class Folder
     }
 
     /**
-     * @see containerObjectExtension
+     *
      * 
      */
     @Obvious
@@ -525,7 +522,7 @@ public class Folder
 
     /**
      * fluent setter
-     * @see #setFeature(List<Feature>)
+     *
      * 
      * @param feature
      *     required parameter
@@ -537,7 +534,7 @@ public class Folder
 
     /**
      * fluent setter
-     * @see #setFolderSimpleExtension(List<Object>)
+     *
      * 
      * @param folderSimpleExtension
      *     required parameter
@@ -549,7 +546,7 @@ public class Folder
 
     /**
      * fluent setter
-     * @see #setFolderObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param folderObjectExtension
      *     required parameter

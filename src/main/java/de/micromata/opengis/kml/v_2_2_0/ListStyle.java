@@ -1,21 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <ListStyle>
+ * {@code <ListStyle>}
  * <p>
  * Specifies how a Feature is displayed in the list view. The list view is a hierarchy 
  * of containers and children; in Google Earth, this is the Places panel. 
@@ -36,10 +30,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/ListStyle&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Object>
+ *
  * 
  * Contained By: 
- * @see: <Style>
+ *
  * 
  * 
  * 
@@ -60,7 +54,7 @@ public class ListStyle
 {
 
     /**
-     * <listitemtype>
+     * {@code <listitemtype>}
      * <p>
      * Specifies how a Feature is displayed in the list view. Possible values are: check 
      * (default) - The Feature's visibility is tied to its item's checkbox. radioFolder 
@@ -80,14 +74,14 @@ public class ListStyle
     @XmlElement(defaultValue = "check")
     protected ListItemType listItemType;
     /**
-     * <bgcolor>
+     * {@code <bgcolor>}
      * <p>
      * Background color for the Snippet. Color and opacity values are expressed in hexadecimal 
      * notation. The range of values for any one color is 0 to 255 (00 to ff). For alpha, 
      *  00 is fully transparent and ff is fully opaque. The order of expression is aabbggrr, 
      * where aa=alpha (00 to ff); bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to 
      * ff). For example, if you want to apply a blue color with 50 percent opacity to an 
-     * overlay, you would specify the following: <color>7fff0000</color>, where alpha=0x7f, 
+     * overlay, you would specify the following: {@code <color>7fff0000</color>}, where alpha=0x7f, 
      * blue=0xff, green=0x00, and red=0x00. 
      * </p>
      * <p>
@@ -96,13 +90,13 @@ public class ListStyle
      *  255 (00 to ff). The order of expression is aabbggrr, where aa=alpha (00 to ff); 
      * bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to ff). For alpha, 00 is fully 
      * transparent and ff is fully opaque. For example, if you want to apply a blue color 
-     * with 50 percent opacity to an overlay, you would specify the following: <bgColor>7fff0000</bgColor>, 
+     * with 50 percent opacity to an overlay, you would specify the following: {@code <bgColor>7fff0000</bgColor>}, 
      * where alpha=0x7f, blue=0xff, green=0x00, and red=0x00. The default is opaque white 
      * (ffffffff). 
      * </p>
      * <p>
-     * Note: The use of the <color> element within <BalloonStyle> has been deprecated. 
-     * Use <bgColor> instead. 
+     * Note: The use of the {@code <color>} element within {@code <BalloonStyle>} has been deprecated.
+     * Use {@code <bgColor>} instead.
      * </p>
      * 
      * 
@@ -112,11 +106,11 @@ public class ListStyle
     
     protected String bgColor;
     /**
-     * <itemicon>
+     * {@code <itemicon>}
      * <p>
-     * <state> Specifies the current state of the NetworkLink or Folder. Possible values 
+     * {@code <state>} Specifies the current state of the NetworkLink or Folder. Possible values 
      * are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
-     * combined by inserting a space between two values (no comma). <href> Specifies the 
+     * combined by inserting a space between two values (no comma). {@code <href>}Specifies the 
      * URI of the image used in the List View for the Feature. 
      * </p>
      * <p>
@@ -138,12 +132,12 @@ public class ListStyle
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> listStyleSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -163,7 +157,7 @@ public class ListStyle
     }
 
     /**
-     * @see listItemType
+     *
      * 
      * @return
      *     possible object is
@@ -175,7 +169,7 @@ public class ListStyle
     }
 
     /**
-     * @see listItemType
+     *
      * 
      * @param value
      *     allowed object is
@@ -187,7 +181,7 @@ public class ListStyle
     }
 
     /**
-     * @see bgColor
+     *
      * 
      * @return
      *     possible object is
@@ -199,7 +193,7 @@ public class ListStyle
     }
 
     /**
-     * @see bgColor
+     *
      * 
      * @param value
      *     allowed object is
@@ -211,7 +205,7 @@ public class ListStyle
     }
 
     /**
-     * @see itemIcon
+     *
      * 
      */
     public List<ItemIcon> getItemIcon() {
@@ -222,7 +216,7 @@ public class ListStyle
     }
 
     /**
-     * @see maxSnippetLines
+     *
      * 
      * @return
      *     possible object is
@@ -234,7 +228,7 @@ public class ListStyle
     }
 
     /**
-     * @see maxSnippetLines
+     *
      * 
      * @param value
      *     allowed object is
@@ -246,7 +240,7 @@ public class ListStyle
     }
 
     /**
-     * @see listStyleSimpleExtension
+     *
      * 
      */
     public List<Object> getListStyleSimpleExtension() {
@@ -257,7 +251,7 @@ public class ListStyle
     }
 
     /**
-     * @see listStyleObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getListStyleObjectExtension() {
@@ -349,9 +343,9 @@ public class ListStyle
     /**
      * Creates a new instance of {@link ItemIcon} and adds it to itemIcon.
      * This method is a short version for:
-     * <code>
+     * {@code
      * ItemIcon itemIcon = new ItemIcon();
-     * this.getItemIcon().add(itemIcon); </code>
+     * this.getItemIcon().add(itemIcon); }
      * 
      * 
      */
@@ -362,9 +356,10 @@ public class ListStyle
     }
 
     /**
-     * @see itemIcon
+     *
      * 
      * @param itemIcon
+     *     Objects of the following type are allowed in the list: {@link ItemIcon}
      */
     public void setItemIcon(final List<ItemIcon> itemIcon) {
         this.itemIcon = itemIcon;
@@ -376,7 +371,7 @@ public class ListStyle
      * @param itemIcon
      *     Objects of the following type are allowed in the list: {@link ItemIcon}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ListStyle addToItemIcon(final ItemIcon itemIcon) {
         this.getItemIcon().add(itemIcon);
@@ -384,9 +379,10 @@ public class ListStyle
     }
 
     /**
-     * @see listStyleSimpleExtension
+     *
      * 
      * @param listStyleSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setListStyleSimpleExtension(final List<Object> listStyleSimpleExtension) {
         this.listStyleSimpleExtension = listStyleSimpleExtension;
@@ -398,7 +394,7 @@ public class ListStyle
      * @param listStyleSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ListStyle addToListStyleSimpleExtension(final Object listStyleSimpleExtension) {
         this.getListStyleSimpleExtension().add(listStyleSimpleExtension);
@@ -406,9 +402,10 @@ public class ListStyle
     }
 
     /**
-     * @see listStyleObjectExtension
+     *
      * 
      * @param listStyleObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setListStyleObjectExtension(final List<AbstractObject> listStyleObjectExtension) {
         this.listStyleObjectExtension = listStyleObjectExtension;
@@ -420,7 +417,7 @@ public class ListStyle
      * @param listStyleObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ListStyle addToListStyleObjectExtension(final AbstractObject listStyleObjectExtension) {
         this.getListStyleObjectExtension().add(listStyleObjectExtension);
@@ -428,7 +425,7 @@ public class ListStyle
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -445,7 +442,7 @@ public class ListStyle
     }
 
     /**
-     * @see subStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -462,7 +459,7 @@ public class ListStyle
     }
 
     /**
-     * @see subStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -480,7 +477,7 @@ public class ListStyle
 
     /**
      * fluent setter
-     * @see #setListItemType(ListItemType)
+     *
      * 
      * @param listItemType
      *     required parameter
@@ -492,7 +489,7 @@ public class ListStyle
 
     /**
      * fluent setter
-     * @see #setBgColor(String)
+     *
      * 
      * @param bgColor
      *     required parameter
@@ -504,7 +501,7 @@ public class ListStyle
 
     /**
      * fluent setter
-     * @see #setItemIcon(List<ItemIcon>)
+     *
      * 
      * @param itemIcon
      *     required parameter
@@ -516,7 +513,7 @@ public class ListStyle
 
     /**
      * fluent setter
-     * @see #setMaxSnippetLines(int)
+     *
      * 
      * @param maxSnippetLines
      *     required parameter
@@ -528,7 +525,7 @@ public class ListStyle
 
     /**
      * fluent setter
-     * @see #setListStyleSimpleExtension(List<Object>)
+     *
      * 
      * @param listStyleSimpleExtension
      *     required parameter
@@ -540,7 +537,7 @@ public class ListStyle
 
     /**
      * fluent setter
-     * @see #setListStyleObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param listStyleObjectExtension
      *     required parameter

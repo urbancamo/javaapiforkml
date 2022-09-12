@@ -1,31 +1,26 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <link> (required). see <link>.
+ * {@code <Link>} (required). see {@code <Link>}.
  * <p>
- * <Link> specifies the location of any of the following:
+ * {@code <Link>} specifies the location of any of the following: 
  * </p>
  * <p>
- * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery>
- * elements are not used.
+ * If the file specified in {@code <href>}is a local file, the {@code <viewFormat>} and {@code <httpQuery>} 
+ * elements are not used. 
  * </p>
  * <p>
- * KML files fetched by network links Image files used in any Overlay (the <Icon> element
- * specifies the image in an Overlay; <Icon> has the same fields as <Link>) Model files
- * used in the <Model> element
+ * KML files fetched by network links Image files used in any Overlay (the {@code <Icon>}element 
+ * specifies the image in an Overlay; {@code <Icon>}has the same fields as {@code <Link>}) Model files 
+ * used in the {@code <Model>} element 
  * </p>
  * <p>
  * Specifies the URL of the website containing this KML or KMZ file. Be sure to include
@@ -33,22 +28,22 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * (see the sample that follows).
  * </p>
  * <p>
- * Specifies the file to load and optional refresh parameters. See <Link>.
+ * Specifies the file to load and optional refresh parameters. See {@code <Link>}. 
  * </p>
  * <p>
- * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier
- * KML releases and adds functionality for the <Region> element (introduced in KML
- *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored.
+ * The {@code <Link>} element replaces the {@code <Url>} element of NetworkLink contained in earlier 
+ * KML releases and adds functionality for the {@code <Region>} element (introduced in KML 
+ *  2.1). In Google Earth releases 3.0 and earlier, the {@code <Link>} element is ignored. 
  * </p>
  * <p>
- * The file is conditionally loaded and refreshed, depending on the refresh parameters
- * supplied here. Two different sets of refresh parameters can be specified: one set
- * is based on time (<refreshMode> and <refreshInterval>) and one is based on the current
- * "camera" view (<viewRefreshMode> and <viewRefreshTime>). In addition, Link specifies
- * whether to scale the bounding box parameters that are sent to the server (<viewBoundScale>
- * and provides a set of optional viewing parameters that can be sent to the server
- * (<viewFormat>) as well as a set of optional parameters containing version and language
- * information.
+ * The file is conditionally loaded and refreshed, depending on the refresh parameters 
+ * supplied here. Two different sets of refresh parameters can be specified: one set 
+ * is based on time ({@code <refreshMode>} and {@code <refreshInterval>}) and one is based on the current
+ * "camera" view ({@code <viewRefreshMode>} and {@code <viewRefreshTime>}). In addition, Link specifies
+ * whether to scale the bounding box parameters that are sent to the server ({@code <viewBoundScale> }
+ * and provides a set of optional viewing parameters that can be sent to the server 
+ * ({@code <viewFormat>}) as well as a set of optional parameters containing version and language
+ * information. 
  * </p>
  * <p>
  * Tip: To display the top-level Folder or Document within a Network Link in the List
@@ -60,11 +55,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * pieces of information:
  * </p>
  * <p>
- * the href (Hypertext Reference) that specifies the file to load. an arbitrary format
- * string that is created from (a) parameters that you specify in the <viewFormat>
- * element or (b) bounding box parameters (this is the default and is used if no <viewFormat>
- * element is included in the file). a second format string that is specified in the
- * <httpQuery> element.
+ * the href (Hypertext Reference) that specifies the file to load. an arbitrary format 
+ * string that is created from (a) parameters that you specify in the {@code <viewFormat>} 
+ * element or (b) bounding box parameters (this is the default and is used if no {@code <viewFormat>} 
+ * element is included in the file). a second format string that is specified in the 
+ * {@code <httpQuery>} element. 
  * </p>
  *
  * Syntax:
@@ -82,20 +77,20 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  *                                         &lt;!-- string --&gt;
  *   &lt;httpQuery&gt;...&lt;/httpQuery&gt;            &lt;!-- string --&gt;
  * <strong>&lt;/Link&gt;</strong></pre>
+ * 
+ * Extends: 
  *
- * Extends:
- * @see: <Object>
- *
- * Contained By:
- * @see: <Model>
- * @see: <NetworkLink>
- *
- * See Also:
- * <NetworkLinkControl>
- * <Region>
+ * 
+ * Contained By: 
  *
  *
- *
+ * 
+ * See Also: 
+ * {@code <NetworkLinkControl>}
+ * {@code <Region>}
+ * 
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LinkType", propOrder = {
@@ -120,17 +115,17 @@ public class Link
      * <p>
      * onChange, onInterval, onExpire
      * </p>
-     *
-     * See Also:
-     * See <Link>
-     *
-     *
-     *
+     * 
+     * See Also: 
+     * See {@code <Link>}
+     * 
+     * 
+     * 
      */
     @XmlElement(defaultValue = "onChange")
     protected RefreshMode refreshMode;
     /**
-     * <refreshinterval>
+     * {@code <refreshInterval>}
      * <p>
      * Indicates to refresh the file every n seconds.
      * </p>
@@ -145,20 +140,20 @@ public class Link
      * <p>
      * never, onRequest, onStop, onRegion
      * </p>
-     *
-     * See Also:
-     * See <Link>
-     *
-     *
-     *
+     * 
+     * See Also: 
+     * See {@code <Link>}
+     * 
+     * 
+     * 
      */
     @XmlElement(defaultValue = "never")
     protected ViewRefreshMode viewRefreshMode;
     /**
-     * <viewrefreshtime>
+     * {@code <viewrefreshtime>}
      * <p>
-     * After camera movement stops, specifies the number of seconds to wait before refreshing
-     * the view. (See <viewRefreshMode> and onStop above.)
+     * After camera movement stops, specifies the number of seconds to wait before refreshing 
+     * the view. (See {@code <viewRefreshMode>} and onStop above.) 
      * </p>
      *
      *
@@ -167,7 +162,7 @@ public class Link
     @XmlElement(defaultValue = "4.0")
     protected Double viewRefreshTime;
     /**
-     * <viewboundscale>
+     * {@code <viewboundscale>}
      * <p>
      * Scales the BBOX parameters before sending them to the server. A value less than
      *  1 specifies to use less than the full view (screen). A value greater than 1 specifies
@@ -180,22 +175,22 @@ public class Link
     @XmlElement(defaultValue = "1.0")
     protected Double viewBoundScale;
     /**
-     * <viewformat>
+     * {@code <viewFormat>}
      * <p>
      * BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]
      * </p>
      * <p>
-     * If you specify a <viewRefreshMode> of onStop and do not include the <viewFormat>
-     * tag in the file, the following information is automatically appended to the query
-     * string:
+     * If you specify a {@code <viewRefreshMode>} of onStop and do not include the {@code <viewFormat>} 
+     * tag in the file, the following information is automatically appended to the query 
+     * string: 
      * </p>
      * <p>
-     * If you specify an empty <viewFormat> tag, no information is appended to the query
-     * string.
+     * If you specify an empty {@code <viewFormat>} tag, no information is appended to the query 
+     * string. 
      * </p>
      * <p>
-     * Specifies the format of the query string that is appended to the Link's <href> before
-     * the file is fetched.(If the <href> specifies a local file, this element is ignored.)
+     * Specifies the format of the query string that is appended to the Link's {@code <href>}before 
+     * the file is fetched.(If the {@code <href>}specifies a local file, this element is ignored.) 
      * </p>
      * <p>
      * This information matches the Web Map Service (WMS) bounding box specification.
@@ -207,16 +202,16 @@ public class Link
      * custom parameters.
      * </p>
      * <p>
-     * You can use any of the following parameters in your format string (and Google Earth
-     * will substitute the appropriate current value at the time it creates the query string):
-     * [lookatLon], [lookatLat] - longitude and latitude of the point that <LookAt> is
-     * viewing [lookatRange], [lookatTilt], [lookatHeading] - values used by the <LookAt>
-     * element (see descriptions of <range>, <tilt>, and <heading> in <LookAt>) [lookatTerrainLon],
-     * [lookatTerrainLat], [lookatTerrainAlt] - point on the terrain in degrees/meters
-     * that <LookAt> is viewing [cameraLon], [cameraLat], [cameraAlt] - degrees/meters
-     * of the eyepoint for the camera [horizFov], [vertFov] - horizontal, vertical field
-     * of view for the camera [horizPixels], [vertPixels] - size in pixels of the 3D viewer
-     * [terrainEnabled] - indicates whether the 3D viewer is showing terrain
+     * You can use any of the following parameters in your format string (and Google Earth 
+     * will substitute the appropriate current value at the time it creates the query string): 
+     * [lookatLon], [lookatLat] - longitude and latitude of the point that LookAt is 
+     * viewing [lookatRange], [lookatTilt], [lookatHeading] - values used by the LookAt 
+     * element (see descriptions of {@code <range>}, {@code <tilt>}, and {@code <heading>} in LookAt) [lookatTerrainLon],
+     * [lookatTerrainLat], [lookatTerrainAlt] - point on the terrain in degrees/meters 
+     * that LookAt is viewing [cameraLon], [cameraLat], [cameraAlt] - degrees/meters 
+     * of the eyepoint for the camera [horizFov], [vertFov] - horizontal, vertical field 
+     * of view for the camera [horizPixels], [vertPixels] - size in pixels of the 3D viewer 
+     * [terrainEnabled] - indicates whether the 3D viewer is showing terrain 
      * </p>
      *
      *
@@ -224,7 +219,7 @@ public class Link
      */
     protected String viewFormat;
     /**
-     * <httpquery>
+     * {@code <httpQuery>}
      * <p>
      * Appends information to the query string, based on the parameters specified. (Google
      * Earth substitutes the appropriate current value at the time it creates the query
@@ -240,13 +235,13 @@ public class Link
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> linkSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
-     * This is an abstract base class and cannot be used directly in a KML file. It provides
-     * the id attribute, which allows unique identification of a KML element, and the targetId
-     * attribute, which is used to reference objects that have already been loaded into
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to
-     * be used.
+     * This is an abstract base class and cannot be used directly in a KML file. It provides 
+     * the id attribute, which allows unique identification of a KML element, and the targetId 
+     * attribute, which is used to reference objects that have already been loaded into 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
+     * be used. 
      * </p>
      *
      * Syntax:
@@ -265,8 +260,8 @@ public class Link
     }
 
     /**
-     * @see refreshMode
      *
+     * 
      * @return
      *     possible object is
      *     {@link RefreshMode}
@@ -277,8 +272,8 @@ public class Link
     }
 
     /**
-     * @see refreshMode
      *
+     * 
      * @param value
      *     allowed object is
      *     {@link RefreshMode}
@@ -289,8 +284,8 @@ public class Link
     }
 
     /**
-     * @see refreshInterval
      *
+     * 
      * @return
      *     possible object is
      *     {@link Double}
@@ -301,8 +296,8 @@ public class Link
     }
 
     /**
-     * @see refreshInterval
      *
+     * 
      * @param value
      *     allowed object is
      *     {@link Double}
@@ -313,8 +308,8 @@ public class Link
     }
 
     /**
-     * @see viewRefreshMode
      *
+     * 
      * @return
      *     possible object is
      *     {@link ViewRefreshMode}
@@ -325,8 +320,8 @@ public class Link
     }
 
     /**
-     * @see viewRefreshMode
      *
+     * 
      * @param value
      *     allowed object is
      *     {@link ViewRefreshMode}
@@ -337,8 +332,8 @@ public class Link
     }
 
     /**
-     * @see viewRefreshTime
      *
+     * 
      * @return
      *     possible object is
      *     {@link Double}
@@ -349,8 +344,8 @@ public class Link
     }
 
     /**
-     * @see viewRefreshTime
      *
+     * 
      * @param value
      *     allowed object is
      *     {@link Double}
@@ -361,8 +356,8 @@ public class Link
     }
 
     /**
-     * @see viewBoundScale
      *
+     * 
      * @return
      *     possible object is
      *     {@link Double}
@@ -373,8 +368,8 @@ public class Link
     }
 
     /**
-     * @see viewBoundScale
      *
+     * 
      * @param value
      *     allowed object is
      *     {@link Double}
@@ -385,8 +380,8 @@ public class Link
     }
 
     /**
-     * @see viewFormat
      *
+     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -397,8 +392,8 @@ public class Link
     }
 
     /**
-     * @see viewFormat
      *
+     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -409,8 +404,8 @@ public class Link
     }
 
     /**
-     * @see httpQuery
      *
+     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -421,8 +416,8 @@ public class Link
     }
 
     /**
-     * @see httpQuery
      *
+     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -433,8 +428,8 @@ public class Link
     }
 
     /**
-     * @see linkSimpleExtension
      *
+     * 
      */
     public List<Object> getLinkSimpleExtension() {
         if (linkSimpleExtension == null) {
@@ -444,8 +439,8 @@ public class Link
     }
 
     /**
-     * @see linkObjectExtension
      *
+     * 
      */
     public List<AbstractObject> getLinkObjectExtension() {
         if (linkObjectExtension == null) {
@@ -556,9 +551,10 @@ public class Link
     }
 
     /**
-     * @see linkSimpleExtension
      *
+     * 
      * @param linkSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLinkSimpleExtension(final List<Object> linkSimpleExtension) {
         this.linkSimpleExtension = linkSimpleExtension;
@@ -570,7 +566,7 @@ public class Link
      * @param linkSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>).
+     *     true (as general contract of Collection.add). 
      */
     public Link addToLinkSimpleExtension(final Object linkSimpleExtension) {
         this.getLinkSimpleExtension().add(linkSimpleExtension);
@@ -578,9 +574,10 @@ public class Link
     }
 
     /**
-     * @see linkObjectExtension
      *
+     * 
      * @param linkObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLinkObjectExtension(final List<AbstractObject> linkObjectExtension) {
         this.linkObjectExtension = linkObjectExtension;
@@ -592,7 +589,7 @@ public class Link
      * @param linkObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>).
+     *     true (as general contract of Collection.add). 
      */
     public Link addToLinkObjectExtension(final AbstractObject linkObjectExtension) {
         this.getLinkObjectExtension().add(linkObjectExtension);
@@ -600,8 +597,8 @@ public class Link
     }
 
     /**
-     * @see objectSimpleExtension
      *
+     * 
      */
     @Obvious
     @Override
@@ -617,8 +614,8 @@ public class Link
     }
 
     /**
-     * @see basicLinkSimpleExtension
      *
+     * 
      */
     @Obvious
     @Override
@@ -652,8 +649,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setRefreshMode(RefreshMode)
      *
+     * 
      * @param refreshMode
      *     required parameter
      */
@@ -664,8 +661,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setRefreshInterval(Double)
      *
+     * 
      * @param refreshInterval
      *     required parameter
      */
@@ -676,8 +673,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setViewRefreshMode(ViewRefreshMode)
      *
+     * 
      * @param viewRefreshMode
      *     required parameter
      */
@@ -688,8 +685,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setViewRefreshTime(Double)
      *
+     * 
      * @param viewRefreshTime
      *     required parameter
      */
@@ -700,8 +697,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setViewBoundScale(Double)
      *
+     * 
      * @param viewBoundScale
      *     required parameter
      */
@@ -712,8 +709,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setViewFormat(String)
      *
+     * 
      * @param viewFormat
      *     required parameter
      */
@@ -724,8 +721,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setHttpQuery(String)
      *
+     * 
      * @param httpQuery
      *     required parameter
      */
@@ -736,8 +733,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setLinkSimpleExtension(List<Object>)
      *
+     * 
      * @param linkSimpleExtension
      *     required parameter
      */
@@ -748,8 +745,8 @@ public class Link
 
     /**
      * fluent setter
-     * @see #setLinkObjectExtension(List<AbstractObject>)
      *
+     * 
      * @param linkObjectExtension
      *     required parameter
      */

@@ -1,11 +1,11 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -156,7 +156,7 @@ public class Coordinate implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLongitude(double)
+     *
      * 
      * @param longitude
      *     required parameter
@@ -168,7 +168,7 @@ public class Coordinate implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLatitude(double)
+     *
      * 
      * @param latitude
      *     required parameter
@@ -180,7 +180,7 @@ public class Coordinate implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAltitude(double)
+     *
      * 
      * @param altitude
      *     required parameter

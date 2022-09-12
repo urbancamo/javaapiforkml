@@ -1,21 +1,17 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <StyleMap>
+ * {@code <StyleMap>}
  * <p>
- * A <StyleMap> maps between two different Styles. Typically a <StyleMap> element is 
+ * A {@code <StyleMap>} maps between two different Styles. Typically a {@code <StyleMap>} element is
  * used to provide separate normal and highlighted styles for a placemark, so that 
  * the highlighted version appears when the user mouses over the icon in Google Earth. 
  * </p>
@@ -31,10 +27,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/StyleMap&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <StyleSelector>
+ *
  * 
  * Contained By: 
- * @see: <Feature>
+ *
  * 
  * 
  * 
@@ -52,15 +48,15 @@ public class StyleMap
 {
 
     /**
-     * <pair> (required)
+     * {@code <Pair>} (required)
      * <p>
      * Defines a key/value pair that maps a mode (normal or highlight) to the predefined 
-     * <styleUrl>. <Pair> contains two elements (both are required): <key>, which identifies 
-     * the key <styleUrl> or <Style>, which references the style. In <styleUrl>, for referenced 
+     * {@code <styleUrl>}. {@code <Pair>} contains two elements (both are required): {@code <key>}, which identifies
+     * the key {@code <styleUrl>} or {@code <Style>}, which references the style. In {@code <styleUrl>}, for referenced
      * style elements that are local to the KML document, a simple # referencing is used. 
      * For styles that are contained in external files, use a full URL along with # referencing. 
-     * For example: <Pair> <key>normal</key> <styleUrl>http://myserver.com/populationProject.xml#example_style_off</styleUrl> 
-     * </Pair> 
+     * For example: {@code <Pair> <key>normal</key> <styleUrl>http://myserver.com/populationProject.xml#example_style_off</styleUrl>
+     * </Pair> }
      * </p>
      * 
      * 
@@ -72,12 +68,12 @@ public class StyleMap
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> styleMapSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -97,7 +93,7 @@ public class StyleMap
     }
 
     /**
-     * @see pair
+     *
      * 
      */
     public List<Pair> getPair() {
@@ -108,7 +104,7 @@ public class StyleMap
     }
 
     /**
-     * @see styleMapSimpleExtension
+     *
      * 
      */
     public List<Object> getStyleMapSimpleExtension() {
@@ -119,7 +115,7 @@ public class StyleMap
     }
 
     /**
-     * @see styleMapObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getStyleMapObjectExtension() {
@@ -187,9 +183,9 @@ public class StyleMap
     /**
      * Creates a new instance of {@link Pair} and adds it to pair.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Pair pair = new Pair();
-     * this.getPair().add(pair); </code>
+     * this.getPair().add(pair); }
      * 
      * 
      */
@@ -200,9 +196,10 @@ public class StyleMap
     }
 
     /**
-     * @see pair
+     *
      * 
      * @param pair
+     *     Objects of the following type are allowed in the list: {@link Pair}
      */
     public void setPair(final List<Pair> pair) {
         this.pair = pair;
@@ -214,7 +211,7 @@ public class StyleMap
      * @param pair
      *     Objects of the following type are allowed in the list: {@link Pair}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public StyleMap addToPair(final Pair pair) {
         this.getPair().add(pair);
@@ -222,9 +219,10 @@ public class StyleMap
     }
 
     /**
-     * @see styleMapSimpleExtension
+     *
      * 
      * @param styleMapSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setStyleMapSimpleExtension(final List<Object> styleMapSimpleExtension) {
         this.styleMapSimpleExtension = styleMapSimpleExtension;
@@ -236,7 +234,7 @@ public class StyleMap
      * @param styleMapSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public StyleMap addToStyleMapSimpleExtension(final Object styleMapSimpleExtension) {
         this.getStyleMapSimpleExtension().add(styleMapSimpleExtension);
@@ -244,9 +242,10 @@ public class StyleMap
     }
 
     /**
-     * @see styleMapObjectExtension
+     *
      * 
      * @param styleMapObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setStyleMapObjectExtension(final List<AbstractObject> styleMapObjectExtension) {
         this.styleMapObjectExtension = styleMapObjectExtension;
@@ -258,7 +257,7 @@ public class StyleMap
      * @param styleMapObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public StyleMap addToStyleMapObjectExtension(final AbstractObject styleMapObjectExtension) {
         this.getStyleMapObjectExtension().add(styleMapObjectExtension);
@@ -266,7 +265,7 @@ public class StyleMap
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -283,7 +282,7 @@ public class StyleMap
     }
 
     /**
-     * @see styleSelectorSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -300,7 +299,7 @@ public class StyleMap
     }
 
     /**
-     * @see styleSelectorObjectExtension
+     *
      * 
      */
     @Obvious
@@ -318,7 +317,7 @@ public class StyleMap
 
     /**
      * fluent setter
-     * @see #setPair(List<Pair>)
+     *
      * 
      * @param pair
      *     required parameter
@@ -330,7 +329,7 @@ public class StyleMap
 
     /**
      * fluent setter
-     * @see #setStyleMapSimpleExtension(List<Object>)
+     *
      * 
      * @param styleMapSimpleExtension
      *     required parameter
@@ -342,7 +341,7 @@ public class StyleMap
 
     /**
      * fluent setter
-     * @see #setStyleMapObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param styleMapObjectExtension
      *     required parameter

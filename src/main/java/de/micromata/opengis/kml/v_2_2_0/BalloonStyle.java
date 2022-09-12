@@ -1,24 +1,18 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.HexBinaryAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <BalloonStyle>
+ * BalloonStyle
  * <p>
- * Specifies how the description balloon for placemarks is drawn. The <bgColor>, if 
- * specified, is used as the background color of the balloon. See <Feature> for a diagram 
+ * Specifies how the description balloon for placemarks is drawn. The bgColor, if
+ * specified, is used as the background color of the balloon. See Feature for a diagram
  * illustrating how the default description balloon appears in Google Earth. 
  * </p>
  * 
@@ -32,10 +26,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * &lt;/BalloonStyle&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <ColorStyle>
+ *
  * 
  * Contained By: 
- * @see: <Style>
+ *
  * 
  * 
  * 
@@ -57,14 +51,14 @@ public class BalloonStyle
 {
 
     /**
-     * <color>
+     * {@code <color>}
      * <p>
      * Color and opacity (alpha) values are expressed in hexadecimal notation. The range 
      * of values for any one color is 0 to 255 (00 to ff). For alpha, 00 is fully transparent 
      * and ff is fully opaque. The order of expression is aabbggrr, where aa=alpha (00 
      * to ff); bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to ff). For example, 
      * if you want to apply a blue color with 50 percent opacity to an overlay, you would 
-     * specify the following: <color>7fff0000</color>, where alpha=0x7f, blue=0xff, green=0x00, 
+     * specify the following: {@code <color>7fff0000</color>}, where alpha=0x7f, blue=0xff, green=0x00, 
      * and red=0x00. 
      * </p>
      * <p>
@@ -72,10 +66,10 @@ public class BalloonStyle
      * The order of expression is alpha, blue, green, red (aabbggrr). The range of values 
      * for any one color is 0 to 255 (00 to ff). For opacity, 00 is fully transparent and 
      * ff is fully opaque. For example, if you want to apply a blue color with 50 percent 
-     * opacity to an overlay, you would specify the following: <color>7fff0000</color> 
+     * opacity to an overlay, you would specify the following: {@code <color>7fff0000</color>} 
      * </p>
      * <p>
-     * Note: The <geomColor> element has been deprecated. Use <color> instead. 
+     * Note: The {@code <geomColor>} element has been deprecated. Use {@code <color>} instead.
      * </p>
      * 
      * 
@@ -86,14 +80,14 @@ public class BalloonStyle
     @Deprecated
     protected String color;
     /**
-     * <bgcolor>
+     * {@code <bgcolor>}
      * <p>
      * Background color for the Snippet. Color and opacity values are expressed in hexadecimal 
      * notation. The range of values for any one color is 0 to 255 (00 to ff). For alpha, 
      *  00 is fully transparent and ff is fully opaque. The order of expression is aabbggrr, 
      * where aa=alpha (00 to ff); bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to 
      * ff). For example, if you want to apply a blue color with 50 percent opacity to an 
-     * overlay, you would specify the following: <color>7fff0000</color>, where alpha=0x7f, 
+     * overlay, you would specify the following: {@code <color>7fff0000</color>}, where alpha=0x7f, 
      * blue=0xff, green=0x00, and red=0x00. 
      * </p>
      * <p>
@@ -102,13 +96,13 @@ public class BalloonStyle
      *  255 (00 to ff). The order of expression is aabbggrr, where aa=alpha (00 to ff); 
      * bb=blue (00 to ff); gg=green (00 to ff); rr=red (00 to ff). For alpha, 00 is fully 
      * transparent and ff is fully opaque. For example, if you want to apply a blue color 
-     * with 50 percent opacity to an overlay, you would specify the following: <bgColor>7fff0000</bgColor>, 
+     * with 50 percent opacity to an overlay, you would specify the following: {@code <bgColor>7fff0000</bgColor>}, 
      * where alpha=0x7f, blue=0xff, green=0x00, and red=0x00. The default is opaque white 
      * (ffffffff). 
      * </p>
      * <p>
-     * Note: The use of the <color> element within <BalloonStyle> has been deprecated. 
-     * Use <bgColor> instead. 
+     * Note: The use of the {@code <color>} element within {@code <BalloonStyle>} has been deprecated.
+     * Use {@code <bgColor>} instead.
      * </p>
      * 
      * 
@@ -118,7 +112,7 @@ public class BalloonStyle
     
     protected String bgColor;
     /**
-     * <textcolor>
+     * {@code <textcolor>}
      * <p>
      * Foreground color for text. The default is black (ff000000). 
      * </p>
@@ -130,26 +124,26 @@ public class BalloonStyle
     
     protected String textColor;
     /**
-     * <text>
+     * {@code <text>}
      * <p>
      * For example, in the following KML excerpt, $[name] and $[description] fields will 
-     * be replaced by the <name> and <description> fields found in the Feature elements 
-     * that use this BalloonStyle: <text>This is $[name], whose description is:<br/>$[description]</text> 
+     * be replaced by the {@code <name>} and {@code <description>} fields found in the Feature elements
+     * that use this BalloonStyle: {@code <text>}This is $[name], whose description is:$[description]
      * </p>
      * <p>
      * Text displayed in the balloon. If no text is specified, Google Earth draws the default 
-     * balloon (with the Feature <name> in boldface, the Feature <description>, links for 
+     * balloon (with the Feature {@code <name>} in boldface, the Feature {@code <description>}, links for
      * driving directions, a white background, and a tail that is attached to the point 
      * coordinates of the Feature, if specified). 
      * </p>
      * <p>
-     * You can add entities to the <text> tag using the following format to refer to a 
+     * You can add entities to the {@code <text>} tag using the following format to refer to a
      * child element of Feature: $[name], $[description], $[address], $[id], $[Snippet]. 
      * Google Earth looks in the current Feature for the corresponding string entity and 
      * substitutes that information in the balloon. To include To here - From here driving 
      * directions in the balloon, use the $[geDirections] tag. To prevent the driving directions 
-     * links from appearing in a balloon, include the <text> element with some content, 
-     * or with $[description] to substitute the basic Feature <description>. 
+     * links from appearing in a balloon, include the {@code <text>} element with some content,
+     * or with $[description] to substitute the basic Feature {@code <description>}.
      * </p>
      * 
      * 
@@ -163,7 +157,7 @@ public class BalloonStyle
      * </p>
      * 
      * See Also: 
-     * See <BalloonStyle>
+     * See BalloonStyle
      * 
      * 
      * 
@@ -174,12 +168,12 @@ public class BalloonStyle
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> balloonStyleSimpleExtension;
     /**
-     * <Object>
+     * Object
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -199,7 +193,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see color
+     *
      * 
      * @return
      *     possible object is
@@ -211,7 +205,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see color
+     *
      * 
      * @param value
      *     allowed object is
@@ -223,7 +217,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see bgColor
+     *
      * 
      * @return
      *     possible object is
@@ -235,7 +229,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see bgColor
+     *
      * 
      * @param value
      *     allowed object is
@@ -247,7 +241,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see textColor
+     *
      * 
      * @return
      *     possible object is
@@ -259,7 +253,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see textColor
+     *
      * 
      * @param value
      *     allowed object is
@@ -271,7 +265,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see text
+     *
      * 
      * @return
      *     possible object is
@@ -283,7 +277,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see text
+     *
      * 
      * @param value
      *     allowed object is
@@ -295,7 +289,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see displayMode
+     *
      * 
      * @return
      *     possible object is
@@ -307,7 +301,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see displayMode
+     *
      * 
      * @param value
      *     allowed object is
@@ -319,7 +313,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see balloonStyleSimpleExtension
+     *
      * 
      */
     public List<Object> getBalloonStyleSimpleExtension() {
@@ -330,7 +324,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see balloonStyleObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getBalloonStyleObjectExtension() {
@@ -436,9 +430,10 @@ public class BalloonStyle
     }
 
     /**
-     * @see balloonStyleSimpleExtension
+     *
      * 
      * @param balloonStyleSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setBalloonStyleSimpleExtension(final List<Object> balloonStyleSimpleExtension) {
         this.balloonStyleSimpleExtension = balloonStyleSimpleExtension;
@@ -450,7 +445,7 @@ public class BalloonStyle
      * @param balloonStyleSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public BalloonStyle addToBalloonStyleSimpleExtension(final Object balloonStyleSimpleExtension) {
         this.getBalloonStyleSimpleExtension().add(balloonStyleSimpleExtension);
@@ -458,9 +453,10 @@ public class BalloonStyle
     }
 
     /**
-     * @see balloonStyleObjectExtension
+     *
      * 
      * @param balloonStyleObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setBalloonStyleObjectExtension(final List<AbstractObject> balloonStyleObjectExtension) {
         this.balloonStyleObjectExtension = balloonStyleObjectExtension;
@@ -472,7 +468,7 @@ public class BalloonStyle
      * @param balloonStyleObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public BalloonStyle addToBalloonStyleObjectExtension(final AbstractObject balloonStyleObjectExtension) {
         this.getBalloonStyleObjectExtension().add(balloonStyleObjectExtension);
@@ -480,7 +476,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -497,7 +493,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see subStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -514,7 +510,7 @@ public class BalloonStyle
     }
 
     /**
-     * @see subStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -532,10 +528,12 @@ public class BalloonStyle
 
     /**
      * fluent setter
-     * @see #setColor(String)
+     *
      * 
      * @param color
      *     required parameter
+     * @return
+     *     BalloonStyle
      */
     public BalloonStyle withColor(final String color) {
         this.setColor(color);
@@ -544,10 +542,12 @@ public class BalloonStyle
 
     /**
      * fluent setter
-     * @see #setBgColor(String)
+     *
      * 
      * @param bgColor
      *     required parameter
+     * @return
+     *     BalloonStyle
      */
     public BalloonStyle withBgColor(final String bgColor) {
         this.setBgColor(bgColor);
@@ -556,10 +556,12 @@ public class BalloonStyle
 
     /**
      * fluent setter
-     * @see #setTextColor(String)
+     *
      * 
      * @param textColor
      *     required parameter
+     * @return
+     *     BalloonStyle
      */
     public BalloonStyle withTextColor(final String textColor) {
         this.setTextColor(textColor);
@@ -568,10 +570,12 @@ public class BalloonStyle
 
     /**
      * fluent setter
-     * @see #setText(String)
+     *
      * 
      * @param text
      *     required parameter
+     * @return
+     *     BalloonStyle
      */
     public BalloonStyle withText(final String text) {
         this.setText(text);
@@ -580,10 +584,12 @@ public class BalloonStyle
 
     /**
      * fluent setter
-     * @see #setDisplayMode(DisplayMode)
+     *
      * 
      * @param displayMode
      *     required parameter
+     * @return
+     *     BalloonStyle
      */
     public BalloonStyle withDisplayMode(final DisplayMode displayMode) {
         this.setDisplayMode(displayMode);
@@ -592,10 +598,12 @@ public class BalloonStyle
 
     /**
      * fluent setter
-     * @see #setBalloonStyleSimpleExtension(List<Object>)
+     *
      * 
      * @param balloonStyleSimpleExtension
      *     required parameter
+     * @return
+     *     BalloonStyle
      */
     public BalloonStyle withBalloonStyleSimpleExtension(final List<Object> balloonStyleSimpleExtension) {
         this.setBalloonStyleSimpleExtension(balloonStyleSimpleExtension);
@@ -604,10 +612,12 @@ public class BalloonStyle
 
     /**
      * fluent setter
-     * @see #setBalloonStyleObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param balloonStyleObjectExtension
      *     required parameter
+     * @return
+     *     BalloonStyle
      */
     public BalloonStyle withBalloonStyleObjectExtension(final List<AbstractObject> balloonStyleObjectExtension) {
         this.setBalloonStyleObjectExtension(balloonStyleObjectExtension);

@@ -1,25 +1,22 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.Update;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
- * <gx:AnimatedUpdate>
+ * gx:AnimatedUpdate
  * <p>
- * <gx:AnimatedUpdate> controls changes during a tour to KML features, using <Update>. 
+ * gx:AnimatedUpdate controls changes during a tour to KML features, using Update. 
  * Changes to KML features will not modify the DOM - that is, any changes will be reverted 
  * when the tour is over, and will not be saved in the KML at any time. 
  * </p>
  * <p>
- * <gx:AnimatedUpdate> should also contain a <gx:duration> value to specify the length 
+ * gx:AnimatedUpdate should also contain a gx:duration value to specify the length
  * of time in seconds over which the update takes place. Integer, float, and color 
  * fields are smoothly animated from original to new value across the duration; boolean, 
  * string, and other values that don't lend to interpolation are updated at the end 
@@ -27,7 +24,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * </p>
  * <p>
  * Refer to Tour timelines in the Touring chapter of the KML Developer's Guide for 
- * information about <gx:AnimatedUpdate> and the tour timeline. 
+ * information about gx:AnimatedUpdate and the tour timeline. 
  * </p>
  * 
  * Syntax: 
@@ -43,11 +40,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * &lt;/gx:AnimatedUpdate&gt;</pre>
  * 
  * Extends: 
- * @see: <gx:TourPrimitive>
+ *
  * 
  * Contains: 
- * @see: <Update>
- * @see: <gx:duration>
+ *
+ *
  * 
  * 
  * 
@@ -65,23 +62,16 @@ public class AnimatedUpdate
 {
 
     /**
-     * <gx:duration>
+     * gx:duration
      * <p>
-     * <gx:AnimatedUpdate> <gx:duration>5.0</gx:duration> <Update> .... </Update> </gx:AnimatedUpdate> 
-     * </p>
-     * <p>
-     * <gx:FlyTo> <gx:flyToMode>bounce</gx:flyToMode> <gx:duration>10.2</gx:duration> <!-- 
-     * AbstractView --> ... <!-- /AbstractView --> </gx:FlyTo> 
-     * </p>
-     * <p>
-     * <gx:duration> extends gx:TourPrimitive by specifying a time-span for events. The 
+     * gx:duration extends gx:TourPrimitive by specifying a time-span for events. The 
      * time is written as seconds using XML's double datatype. 
      * </p>
      * <p>
-     * Duration and <gx:AnimatedUpdate> 
+     * Duration and gx:AnimatedUpdate 
      * </p>
      * <p>
-     * Duration and <gx:FlyTo> 
+     * Duration and gx:FlyTo 
      * </p>
      * <p>
      * Specifies the length of time over which the update takes place. Integer, float, 
@@ -90,7 +80,7 @@ public class AnimatedUpdate
      * the end of the duration. 
      * </p>
      * <p>
-     * When a duration is included within a <gx:FlyTo> element, it specifies the length 
+     * When a duration is included within a gx:FlyTo element, it specifies the length 
      * of time that the browser takes to fly from the previous point to the specified point. 
      * </p>
      * 
@@ -104,19 +94,19 @@ public class AnimatedUpdate
     @XmlElement(defaultValue = "0.0")
     protected double duration;
     /**
-     * <Update>
+     * Update
      * <p>
      * Specifies an addition, change, or deletion to KML data that has already been loaded 
-     * using the specified URL. The <targetHref> specifies the .kml or .kmz file whose 
-     * data (within Google Earth) is to be modified. <Update> is always contained in a 
+     * using the specified URL. The targetHref specifies the .kml or .kmz file whose 
+     * data (within Google Earth) is to be modified. Update is always contained in a 
      * NetworkLinkControl. Furthermore, the file containing the NetworkLinkControl must 
      * have been loaded by a NetworkLink. See the "Topics in KML" page on Updates for a 
      * detailed example of how Update works. 
      * </p>
      * <p>
-     * With <Update>, you can specify any number of Change, Create, and Delete tags for 
+     * With Update, you can specify any number of Change, Create, and Delete tags for 
      * a .kml file or .kmz archive that has previously been loaded with a network link. 
-     * See <Update>. 
+     * See Update. 
      * </p>
      * 
      * Syntax: 
@@ -128,9 +118,9 @@ public class AnimatedUpdate
      * <strong>&lt;/Update&gt;</strong></pre>
      * 
      * Contained By: 
-     * @see: <NetworkLinkControl>
-     * @see: Note: This element was deprecated in KML Release 2.1 and is replaced by <Link>, which provides the additional functionality of Regions. The <Url> tag will still work in Google Earth, but use of the newer <Link> tag is encouraged.
-     * @see: Use this element to set the location of the link to the KML file, to define the refresh options for the server and viewer changes, and to populate a variable to return useful client information to the server.
+     *
+     *
+     *
      * 
      * 
      * 
@@ -145,7 +135,7 @@ public class AnimatedUpdate
     }
 
     /**
-     * @see duration
+     *
      * 
      * @return
      *     possible object is
@@ -157,7 +147,7 @@ public class AnimatedUpdate
     }
 
     /**
-     * @see duration
+     *
      * 
      * @param value
      *     allowed object is
@@ -169,7 +159,7 @@ public class AnimatedUpdate
     }
 
     /**
-     * @see update
+     *
      * 
      * @return
      *     possible object is
@@ -181,7 +171,7 @@ public class AnimatedUpdate
     }
 
     /**
-     * @see update
+     *
      * 
      * @param value
      *     allowed object is
@@ -193,7 +183,7 @@ public class AnimatedUpdate
     }
 
     /**
-     * @see delayedStart
+     *
      * 
      * @return
      *     possible object is
@@ -205,7 +195,7 @@ public class AnimatedUpdate
     }
 
     /**
-     * @see delayedStart
+     *
      * 
      * @param value
      *     allowed object is
@@ -263,9 +253,9 @@ public class AnimatedUpdate
      * Creates a new instance of {@link Update} and set it to update.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Update update = new Update();
-     * this.setUpdate(update); </code>
+     * this.setUpdate(update); }
      * 
      * 
      * @param createOrDeleteOrChange
@@ -281,7 +271,7 @@ public class AnimatedUpdate
 
     /**
      * fluent setter
-     * @see #setDuration(double)
+     *
      * 
      * @param duration
      *     required parameter
@@ -293,7 +283,7 @@ public class AnimatedUpdate
 
     /**
      * fluent setter
-     * @see #setUpdate(Update)
+     *
      * 
      * @param update
      *     required parameter
@@ -305,7 +295,7 @@ public class AnimatedUpdate
 
     /**
      * fluent setter
-     * @see #setDelayedStart(double)
+     *
      * 
      * @param delayedStart
      *     required parameter

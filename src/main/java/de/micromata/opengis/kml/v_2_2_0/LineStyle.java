@@ -1,20 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <LineStyle>
+ * {@code <LineStyle>}
  * <p>
  * Specifies the drawing style (color, color mode, and line width) for all line geometry. 
  * Line geometry includes the outlines of outlined polygons and the extruded "tether" 
@@ -32,10 +27,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/LineStyle&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <ColorStyle>
+ *
  * 
  * Contained By: 
- * @see: <Style>
+ *
  * 
  * 
  * 
@@ -53,7 +48,7 @@ public class LineStyle
 {
 
     /**
-     * <width>
+     * {@code <width>}
      * <p>
      * Width of the line, in pixels. 
      * </p>
@@ -64,12 +59,12 @@ public class LineStyle
     @XmlElement(defaultValue = "1.0")
     protected double width;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -84,12 +79,12 @@ public class LineStyle
     @XmlElement(name = "LineStyleSimpleExtensionGroup")
     protected List<Object> lineStyleSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -109,7 +104,7 @@ public class LineStyle
     }
 
     /**
-     * @see width
+     *
      * 
      * @return
      *     possible object is
@@ -121,7 +116,7 @@ public class LineStyle
     }
 
     /**
-     * @see width
+     *
      * 
      * @param value
      *     allowed object is
@@ -133,7 +128,7 @@ public class LineStyle
     }
 
     /**
-     * @see lineStyleSimpleExtension
+     *
      * 
      */
     public List<Object> getLineStyleSimpleExtension() {
@@ -144,7 +139,7 @@ public class LineStyle
     }
 
     /**
-     * @see lineStyleObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLineStyleObjectExtension() {
@@ -206,9 +201,10 @@ public class LineStyle
     }
 
     /**
-     * @see lineStyleSimpleExtension
+     *
      * 
      * @param lineStyleSimpleExtension
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code >}{@code <}{@link byte[]}{@code >}{@code <}{@link Float}{@code >}{@code <}{@link Float}{@code >}
      */
     public void setLineStyleSimpleExtension(final List<Object> lineStyleSimpleExtension) {
         this.lineStyleSimpleExtension = lineStyleSimpleExtension;
@@ -218,9 +214,9 @@ public class LineStyle
      * add a value to the lineStyleSimpleExtension property collection
      * 
      * @param lineStyleSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link byte[]}{@code >}{@link JAXBElement}{@code <}{@link Float}{@code>}{@link JAXBElement}{@code <}{@link Float}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code >}{@code <}{@link byte[]}{@code >}{@code <}{@link Float}{@code >}{@code <}{@link Float}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LineStyle addToLineStyleSimpleExtension(final Object lineStyleSimpleExtension) {
         this.getLineStyleSimpleExtension().add(lineStyleSimpleExtension);
@@ -228,9 +224,10 @@ public class LineStyle
     }
 
     /**
-     * @see lineStyleObjectExtension
+     *
      * 
      * @param lineStyleObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLineStyleObjectExtension(final List<AbstractObject> lineStyleObjectExtension) {
         this.lineStyleObjectExtension = lineStyleObjectExtension;
@@ -242,7 +239,7 @@ public class LineStyle
      * @param lineStyleObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LineStyle addToLineStyleObjectExtension(final AbstractObject lineStyleObjectExtension) {
         this.getLineStyleObjectExtension().add(lineStyleObjectExtension);
@@ -250,7 +247,7 @@ public class LineStyle
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -267,7 +264,7 @@ public class LineStyle
     }
 
     /**
-     * @see subStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -284,7 +281,7 @@ public class LineStyle
     }
 
     /**
-     * @see subStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -301,7 +298,7 @@ public class LineStyle
     }
 
     /**
-     * @see colorStyleSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -318,7 +315,7 @@ public class LineStyle
     }
 
     /**
-     * @see colorStyleObjectExtension
+     *
      * 
      */
     @Obvious
@@ -336,7 +333,7 @@ public class LineStyle
 
     /**
      * fluent setter
-     * @see #setWidth(double)
+     *
      * 
      * @param width
      *     required parameter
@@ -348,7 +345,7 @@ public class LineStyle
 
     /**
      * fluent setter
-     * @see #setLineStyleSimpleExtension(List<Object>)
+     *
      * 
      * @param lineStyleSimpleExtension
      *     required parameter
@@ -360,7 +357,7 @@ public class LineStyle
 
     /**
      * fluent setter
-     * @see #setLineStyleObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param lineStyleObjectExtension
      *     required parameter

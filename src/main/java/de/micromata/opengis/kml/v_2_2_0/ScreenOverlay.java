@@ -1,46 +1,33 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <ScreenOverlay>
+ * {@code <ScreenOverlay>}
  * <p>
- * The <href> child of <Icon> specifies the image to be used as the overlay. This file 
+ * The {@code <href>}child of {@code <Icon>}specifies the image to be used as the overlay. This file 
  * can be either on a local file system or on a web server. If this element is omitted 
- * or contains no <href>, a rectangle is drawn using the color and size defined by 
+ * or contains no {@code <href>}, a rectangle is drawn using the color and size defined by 
  * the screen overlay. 
  * </p>
  * <p>
  * This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
  * are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
- * by the <size> element. Positioning of the overlay is handled by mapping a point 
- * in the image specified by <overlayXY> to a point on the screen specified by <screenXY>. 
- * Then the image is rotated by <rotation> degrees about a point relative to the screen 
- * specified by <rotationXY>. 
+ * by the {@code <size>} element. Positioning of the overlay is handled by mapping a point
+ * in the image specified by {@code <overlayXY>}to a point on the screen specified by {@code <screenXY>}.
+ * Then the image is rotated by rotation degrees about a point relative to the screen 
+ * specified by {@code <rotationXY>}. 
  * </p>
- * <p>
- * This element draws an image overlay fixed to the screen. Sample uses for ScreenOverlays 
- * are compasses, logos, and heads-up displays. ScreenOverlay sizing is determined 
- * by the <size> element. Positioning of the overlay is handled by mapping a point 
- * in the image specified by <overlayXY> to a point on the screen specified by <screenXY>. 
- * Then the image is rotated by <rotation> degrees about a point relative to the screen 
- * specified by <rotationXY>. 
- * </p>
- * 
+ *
  * Syntax: 
  * <pre><strong>&lt;ScreenOverlay id="ID"&gt;</strong>
  *   &lt;!-- inherited from <em>Feature</em> element --&gt;
@@ -77,17 +64,6 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  *     &lt;!-- vec2 --&gt; 
  *   &lt;rotation&gt;0&lt;/rotation&gt;                   &lt;!-- float --&gt;
  *  <strong>&lt;/ScreenOverlay&gt;</strong></pre>
- * 
- * Extends: 
- * @see: <Feature>
- * @see: <Overlay>
- * 
- * Contained By: 
- * @see: <Document>
- * @see: <Folder>
- * 
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ScreenOverlayType", propOrder = {
@@ -106,10 +82,10 @@ public class ScreenOverlay
 {
 
     /**
-     * <overlayxy>
+     * {@code <overlayxy>}
      * <p>
      * Specifies a point on (or outside of) the overlay image that is mapped to the screen 
-     * coordinate (<screenXY>). It requires x and y values, and the units for those values. 
+     * coordinate ({@code <screenXY>}). It requires x and y values, and the units for those values.
      * </p>
      * <p>
      * The x and y values can be specified in three different ways: as pixels ("pixels"), 
@@ -134,21 +110,21 @@ public class ScreenOverlay
      */
     protected Vec2 overlayXY;
     /**
-     * <screenxy>
+     * {@code <screenxy>}
      * <p>
      * Center the image: 
      * </p>
      * <p>
-     * Center the image: <ScreenOverlay> <overlayXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> 
+     * Center the image: {@code <ScreenOverlay> <overlayXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
      * <screenXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/> </ScreenOverlay> 
-     * Place the image on the top left: <ScreenOverlay> <overlayXY x="0" y="1" xunits="fraction" 
+     * Place the image on the top left: {@code <ScreenOverlay>} <overlayXY x="0" y="1" xunits="fraction" 
      * yunits="fraction"/> <screenXY x="0" y="1" xunits="fraction" yunits="fraction"/> 
-     * </ScreenOverlay> Place the image at the right of the screen: <ScreenOverlay> <overlayXY 
+     * </ScreenOverlay> Place the image at the right of the screen: {@code <ScreenOverlay>} <overlayXY 
      * x="1" y="1" xunits="fraction" yunits="fraction"/> <screenXY x="1" y="1" xunits="fraction" 
-     * yunits="fraction"/> </ScreenOverlay> 
+     * yunits="fraction"/> </ScreenOverlay> }
      * </p>
      * <p>
-     * For example, <screenXY x=".5" y=".5" xunits="fraction" yunits="fraction"/> indicates 
+     * For example, {@code <screenXY x=".5" y=".5" xunits="fraction" yunits="fraction"/>} indicates
      * a point in the middle of the screen. 
      * </p>
      * <p>
@@ -184,7 +160,7 @@ public class ScreenOverlay
      */
     protected Vec2 screenXY;
     /**
-     * <rotationxy>
+     * {@code <rotationXY>}
      * <p>
      * Point relative to the screen about which the screen overlay is rotated. 
      * </p>
@@ -194,7 +170,7 @@ public class ScreenOverlay
      */
     protected Vec2 rotationXY;
     /**
-     * <size>
+     * {@code <size>}
      * <p>
      * For example: 
      * </p>
@@ -216,10 +192,10 @@ public class ScreenOverlay
      * </p>
      * <p>
      * To force the image to retain its original x and y dimensions, set the values to 
-     * −1: <size x="-1" y="-1" xunits="fraction" yunits="fraction"/> To force the image 
+     * −1: {@code <size x="-1" y="-1" xunits="fraction" yunits="fraction"/>} To force the image
      * to retain its horizontal dimension, but to take up 20 percent of the vertical screen 
-     * space: <size x="-1" y="0.2" xunits="fraction" yunits="fraction"/> To force the image 
-     * to resize to 100px by 500px: <size x="100" y="500" xunits="pixels" yunits="pixels"/> 
+     * space: {@code <size x="-1" y="0.2" xunits="fraction" yunits="fraction"/>} To force the image
+     * to resize to 100px by 500px: {@code <size x="100" y="500" xunits="pixels" yunits="pixels"/> }
      * </p>
      * 
      * 
@@ -227,7 +203,7 @@ public class ScreenOverlay
      */
     protected Vec2 size;
     /**
-     * <rotation>
+     * rotation
      * <p>
      * Adjusts how the photo is placed inside the field of view. This element is useful 
      * if your photo has been rotated and deviates slightly from a desired horizontal view. 
@@ -235,8 +211,8 @@ public class ScreenOverlay
      * <p>
      * Indicates the angle of rotation of the parent object. A value of 0 means no rotation. 
      * The value is an angle in degrees counterclockwise starting from north. Use ±180 
-     * to indicate the rotation of the parent object from 0. The center of the <rotation>, 
-     * if not (.5,.5), is specified in <rotationXY>. 
+     * to indicate the rotation of the parent object from 0. The center of the rotation, 
+     * if not (.5,.5), is specified in {@code <rotationXY>}. 
      * </p>
      * 
      * 
@@ -248,12 +224,12 @@ public class ScreenOverlay
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> screenOverlaySimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -273,7 +249,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see overlayXY
+     *
      * 
      * @return
      *     possible object is
@@ -285,7 +261,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see overlayXY
+     *
      * 
      * @param value
      *     allowed object is
@@ -297,7 +273,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see screenXY
+     *
      * 
      * @return
      *     possible object is
@@ -309,7 +285,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see screenXY
+     *
      * 
      * @param value
      *     allowed object is
@@ -321,7 +297,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see rotationXY
+     *
      * 
      * @return
      *     possible object is
@@ -333,7 +309,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see rotationXY
+     *
      * 
      * @param value
      *     allowed object is
@@ -345,7 +321,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see size
+     *
      * 
      * @return
      *     possible object is
@@ -357,7 +333,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see size
+     *
      * 
      * @param value
      *     allowed object is
@@ -369,7 +345,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see rotation
+     *
      * 
      * @return
      *     possible object is
@@ -381,7 +357,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see rotation
+     *
      * 
      * @param value
      *     allowed object is
@@ -393,7 +369,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see screenOverlaySimpleExtension
+     *
      * 
      */
     public List<Object> getScreenOverlaySimpleExtension() {
@@ -404,7 +380,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see screenOverlayObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getScreenOverlayObjectExtension() {
@@ -509,9 +485,9 @@ public class ScreenOverlay
      * Creates a new instance of {@link Vec2} and set it to overlayXY.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Vec2 vec2 = new Vec2();
-     * this.setOverlayXY(vec2); </code>
+     * this.setOverlayXY(vec2); }
      * 
      * 
      */
@@ -525,9 +501,9 @@ public class ScreenOverlay
      * Creates a new instance of {@link Vec2} and set it to screenXY.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Vec2 vec2 = new Vec2();
-     * this.setScreenXY(vec2); </code>
+     * this.setScreenXY(vec2); }
      * 
      * 
      */
@@ -541,9 +517,9 @@ public class ScreenOverlay
      * Creates a new instance of {@link Vec2} and set it to rotationXY.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Vec2 vec2 = new Vec2();
-     * this.setRotationXY(vec2); </code>
+     * this.setRotationXY(vec2); }
      * 
      * 
      */
@@ -557,9 +533,9 @@ public class ScreenOverlay
      * Creates a new instance of {@link Vec2} and set it to size.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Vec2 vec2 = new Vec2();
-     * this.setSize(vec2); </code>
+     * this.setSize(vec2); }
      * 
      * 
      */
@@ -570,9 +546,10 @@ public class ScreenOverlay
     }
 
     /**
-     * @see screenOverlaySimpleExtension
+     *
      * 
      * @param screenOverlaySimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setScreenOverlaySimpleExtension(final List<Object> screenOverlaySimpleExtension) {
         this.screenOverlaySimpleExtension = screenOverlaySimpleExtension;
@@ -584,7 +561,7 @@ public class ScreenOverlay
      * @param screenOverlaySimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ScreenOverlay addToScreenOverlaySimpleExtension(final Object screenOverlaySimpleExtension) {
         this.getScreenOverlaySimpleExtension().add(screenOverlaySimpleExtension);
@@ -592,9 +569,10 @@ public class ScreenOverlay
     }
 
     /**
-     * @see screenOverlayObjectExtension
+     *
      * 
      * @param screenOverlayObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setScreenOverlayObjectExtension(final List<AbstractObject> screenOverlayObjectExtension) {
         this.screenOverlayObjectExtension = screenOverlayObjectExtension;
@@ -606,7 +584,7 @@ public class ScreenOverlay
      * @param screenOverlayObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ScreenOverlay addToScreenOverlayObjectExtension(final AbstractObject screenOverlayObjectExtension) {
         this.getScreenOverlayObjectExtension().add(screenOverlayObjectExtension);
@@ -614,7 +592,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -631,7 +609,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see styleSelector
+     *
      * 
      */
     @Obvious
@@ -648,7 +626,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see featureSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -665,7 +643,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see featureObjectExtension
+     *
      * 
      */
     @Obvious
@@ -682,7 +660,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see overlaySimpleExtension
+     *
      * 
      */
     @Obvious
@@ -699,7 +677,7 @@ public class ScreenOverlay
     }
 
     /**
-     * @see overlayObjectExtension
+     *
      * 
      */
     @Obvious
@@ -717,7 +695,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
-     * @see #setOverlayXY(Vec2)
+     *
      * 
      * @param overlayXY
      *     required parameter
@@ -729,7 +707,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
-     * @see #setScreenXY(Vec2)
+     *
      * 
      * @param screenXY
      *     required parameter
@@ -741,7 +719,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
-     * @see #setRotationXY(Vec2)
+     *
      * 
      * @param rotationXY
      *     required parameter
@@ -753,7 +731,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
-     * @see #setSize(Vec2)
+     *
      * 
      * @param size
      *     required parameter
@@ -765,7 +743,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
-     * @see #setRotation(double)
+     *
      * 
      * @param rotation
      *     required parameter
@@ -777,7 +755,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
-     * @see #setScreenOverlaySimpleExtension(List<Object>)
+     *
      * 
      * @param screenOverlaySimpleExtension
      *     required parameter
@@ -789,7 +767,7 @@ public class ScreenOverlay
 
     /**
      * fluent setter
-     * @see #setScreenOverlayObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param screenOverlayObjectExtension
      *     required parameter

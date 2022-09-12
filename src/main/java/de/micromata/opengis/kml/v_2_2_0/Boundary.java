@@ -1,14 +1,10 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -134,9 +130,9 @@ public class Boundary implements Cloneable
      * Creates a new instance of {@link LinearRing} and set it to linearRing.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * LinearRing linearRing = new LinearRing();
-     * this.setLinearRing(linearRing); </code>
+     * this.setLinearRing(linearRing); }
      * 
      * 
      */
@@ -147,12 +143,13 @@ public class Boundary implements Cloneable
     }
 
     /**
-     * Sets the value of the boundarySimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the boundarySimpleExtension property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withBoundarySimpleExtension} instead.
      * 
      * 
      * @param boundarySimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setBoundarySimpleExtension(final List<Object> boundarySimpleExtension) {
         this.boundarySimpleExtension = boundarySimpleExtension;
@@ -164,7 +161,7 @@ public class Boundary implements Cloneable
      * @param boundarySimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Boundary addToBoundarySimpleExtension(final Object boundarySimpleExtension) {
         this.getBoundarySimpleExtension().add(boundarySimpleExtension);
@@ -172,12 +169,13 @@ public class Boundary implements Cloneable
     }
 
     /**
-     * Sets the value of the boundaryObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
+     * Sets the value of the boundaryObjectExtension property Objects of the following type(s) are allowed in the list {@code List<AbstractObject>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withBoundaryObjectExtension} instead.
      * 
      * 
      * @param boundaryObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setBoundaryObjectExtension(final List<AbstractObject> boundaryObjectExtension) {
         this.boundaryObjectExtension = boundaryObjectExtension;
@@ -189,7 +187,7 @@ public class Boundary implements Cloneable
      * @param boundaryObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Boundary addToBoundaryObjectExtension(final AbstractObject boundaryObjectExtension) {
         this.getBoundaryObjectExtension().add(boundaryObjectExtension);
@@ -198,10 +196,12 @@ public class Boundary implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLinearRing(LinearRing)
+     *
      * 
      * @param linearRing
      *     required parameter
+     * @return
+     *     Boundary
      */
     public Boundary withLinearRing(final LinearRing linearRing) {
         this.setLinearRing(linearRing);
@@ -210,10 +210,12 @@ public class Boundary implements Cloneable
 
     /**
      * fluent setter
-     * @see #setBoundarySimpleExtension(List<Object>)
+     *
      * 
      * @param boundarySimpleExtension
      *     required parameter
+     * @return
+     *     Boundary
      */
     public Boundary withBoundarySimpleExtension(final List<Object> boundarySimpleExtension) {
         this.setBoundarySimpleExtension(boundarySimpleExtension);
@@ -222,10 +224,12 @@ public class Boundary implements Cloneable
 
     /**
      * fluent setter
-     * @see #setBoundaryObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param boundaryObjectExtension
      *     required parameter
+     * @return
+     *     Boundary
      */
     public Boundary withBoundaryObjectExtension(final List<AbstractObject> boundaryObjectExtension) {
         this.setBoundaryObjectExtension(boundaryObjectExtension);

@@ -2,11 +2,11 @@
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
@@ -117,7 +117,7 @@ public class SoundCue
 
     /**
      * fluent setter
-     * @see #setHref(String)
+     *
      * 
      * @param href
      *     required parameter
@@ -129,7 +129,7 @@ public class SoundCue
 
     /**
      * fluent setter
-     * @see #setDelayedStart(double)
+     *
      * 
      * @param delayedStart
      *     required parameter

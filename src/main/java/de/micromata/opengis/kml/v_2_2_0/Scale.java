@@ -1,28 +1,24 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <scale>
+ * {@code <scale>}
  * <p>
- * Note: The <geomScale> tag has been deprecated. Use <scale> instead. 
+ * Note: The {@code <geomScale>} tag has been deprecated. Use {@code <scale>} instead. 
  * </p>
  * <p>
  * Resizes the icon. 
  * </p>
  * <p>
- * Scales a model along the x, y, and z axes in the model's coordinate space. <Scale> 
- * <x>2.5</x> <y>2.5</y> <z>3.5</z> </Scale> 
+ * Scales a model along the x, y, and z axes in the model's coordinate space. {@code <scale>
+ * <x>2.5</x> <y>2.5</y> <z>3.5</z> </Scale> }
  * </p>
  * 
  * 
@@ -43,9 +39,9 @@ public class Scale
 {
 
     /**
-     * <x>, <y>, <w>, <h>
+     * {@code <x>, <y>, <w>, <h>}
      * <p>
-     * Use of these elements within <Icon> has been deprecated. 
+     * Use of these elements within {@code <Icon>}has been deprecated. 
      * </p>
      * 
      * 
@@ -61,12 +57,12 @@ public class Scale
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> scaleSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -86,7 +82,7 @@ public class Scale
     }
 
     /**
-     * @see x
+     *
      * 
      * @return
      *     possible object is
@@ -98,7 +94,7 @@ public class Scale
     }
 
     /**
-     * @see x
+     *
      * 
      * @param value
      *     allowed object is
@@ -110,7 +106,7 @@ public class Scale
     }
 
     /**
-     * @see y
+     *
      * 
      * @return
      *     possible object is
@@ -122,7 +118,7 @@ public class Scale
     }
 
     /**
-     * @see y
+     *
      * 
      * @param value
      *     allowed object is
@@ -134,7 +130,7 @@ public class Scale
     }
 
     /**
-     * @see z
+     *
      * 
      * @return
      *     possible object is
@@ -146,7 +142,7 @@ public class Scale
     }
 
     /**
-     * @see z
+     *
      * 
      * @param value
      *     allowed object is
@@ -158,7 +154,7 @@ public class Scale
     }
 
     /**
-     * @see scaleSimpleExtension
+     *
      * 
      */
     public List<Object> getScaleSimpleExtension() {
@@ -169,7 +165,7 @@ public class Scale
     }
 
     /**
-     * @see scaleObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getScaleObjectExtension() {
@@ -241,9 +237,10 @@ public class Scale
     }
 
     /**
-     * @see scaleSimpleExtension
+     *
      * 
      * @param scaleSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setScaleSimpleExtension(final List<Object> scaleSimpleExtension) {
         this.scaleSimpleExtension = scaleSimpleExtension;
@@ -255,7 +252,7 @@ public class Scale
      * @param scaleSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Scale addToScaleSimpleExtension(final Object scaleSimpleExtension) {
         this.getScaleSimpleExtension().add(scaleSimpleExtension);
@@ -263,9 +260,10 @@ public class Scale
     }
 
     /**
-     * @see scaleObjectExtension
+     *
      * 
      * @param scaleObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setScaleObjectExtension(final List<AbstractObject> scaleObjectExtension) {
         this.scaleObjectExtension = scaleObjectExtension;
@@ -277,7 +275,7 @@ public class Scale
      * @param scaleObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Scale addToScaleObjectExtension(final AbstractObject scaleObjectExtension) {
         this.getScaleObjectExtension().add(scaleObjectExtension);
@@ -285,7 +283,7 @@ public class Scale
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -303,7 +301,7 @@ public class Scale
 
     /**
      * fluent setter
-     * @see #setX(double)
+     *
      * 
      * @param x
      *     required parameter
@@ -315,7 +313,7 @@ public class Scale
 
     /**
      * fluent setter
-     * @see #setY(double)
+     *
      * 
      * @param y
      *     required parameter
@@ -327,7 +325,7 @@ public class Scale
 
     /**
      * fluent setter
-     * @see #setZ(double)
+     *
      * 
      * @param z
      *     required parameter
@@ -339,7 +337,7 @@ public class Scale
 
     /**
      * fluent setter
-     * @see #setScaleSimpleExtension(List<Object>)
+     *
      * 
      * @param scaleSimpleExtension
      *     required parameter
@@ -351,7 +349,7 @@ public class Scale
 
     /**
      * fluent setter
-     * @see #setScaleObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param scaleObjectExtension
      *     required parameter

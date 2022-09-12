@@ -1,25 +1,18 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <LineString>
+ * {@code <LineString>}
  * <p>
- * Defines a connected set of line segments. Use <LineStyle> to specify the color, 
+ * Defines a connected set of line segments. Use {@code {@code <LineStyle>}} to specify the color,
  * color mode, and width of the line. When a LineString is extruded, the line is extended 
  * to the ground, forming a polygon that looks somewhat like a wall or fence. For extruded 
  * LineStrings, the line itself uses the current LineStyle, and the extrusion uses 
@@ -39,11 +32,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/LineString&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Geometry>
+ *
  * 
  * Contained By: 
- * @see: <MultiGeometry>
- * @see: <Placemark>
+ *
+ *
  * 
  * 
  * 
@@ -64,7 +57,7 @@ public class LineString
 {
 
     /**
-     * <extrude>
+     * {@code <extrude>}
      * <p>
      * Boolean value. Specifies whether to connect the LineString to the ground. To extrude 
      * a LineString, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
@@ -86,7 +79,7 @@ public class LineString
      * </p>
      * <p>
      * Boolean value. Specifies whether to connect the point to the ground with a line. 
-     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
+     * To extrude a Point, the value for altitudeMode must be either relativeToGround, 
      * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
      * Earth's sphere. 
      * </p>
@@ -98,7 +91,7 @@ public class LineString
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean extrude;
     /**
-     * <tessellate>
+     * {@code <extrude>}
      * <p>
      * Boolean value. Specifies whether to allow the LineString to follow the terrain. 
      * To enable tessellation, the altitude mode must be clampToGround or clampToSeaFloor. 
@@ -107,7 +100,7 @@ public class LineString
      * </p>
      * <p>
      * Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
-     * To enable tessellation, the value for <altitudeMode> must be clampToGround or clampToSeaFloor. 
+     * To enable tessellation, the value for altitudeMode must be clampToGround or clampToSeaFloor. 
      * Very large LinearRings should enable tessellation so that they follow the curvature 
      * of the earth (otherwise, they may go underground and be hidden). 
      * </p>
@@ -131,7 +124,7 @@ public class LineString
      * </p>
      * 
      * See Also: 
-     * See <LookAt> and <Region>
+     * See LookAt and {@code <Region>}
      * 
      * 
      * 
@@ -139,11 +132,11 @@ public class LineString
     @XmlElement(defaultValue = "clampToGround")
     protected AltitudeMode altitudeMode;
     /**
-     * <coordinates> (required)
+     * coordinates (required)
      * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
-     * ≥ −180 and <= 180 latitude ≥ −90 and ≤ 90 altitude values (optional) are in meters 
+     * gteq −180 and lteq 180 latitude gteq −90 and lteq 90 altitude values (optional) are in meters
      * above sea level 
      * </p>
      * <p>
@@ -166,12 +159,12 @@ public class LineString
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> lineStringSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -202,7 +195,7 @@ public class LineString
     }
 
     /**
-     * @see extrude
+     *
      * 
      * @param value
      *     allowed object is
@@ -225,7 +218,7 @@ public class LineString
     }
 
     /**
-     * @see tessellate
+     *
      * 
      * @param value
      *     allowed object is
@@ -237,13 +230,13 @@ public class LineString
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -251,13 +244,13 @@ public class LineString
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -265,7 +258,7 @@ public class LineString
     }
 
     /**
-     * @see lineStringSimpleExtension
+     *
      * 
      */
     public List<Object> getLineStringSimpleExtension() {
@@ -276,7 +269,7 @@ public class LineString
     }
 
     /**
-     * @see lineStringObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLineStringObjectExtension() {
@@ -287,7 +280,7 @@ public class LineString
     }
 
     /**
-     * @see coordinates
+     *
      * 
      */
     public List<Coordinate> getCoordinates() {
@@ -382,11 +375,6 @@ public class LineString
         return true;
     }
 
-    /**
-     * @see coordinates
-     * 
-     * @param coordinates
-     */
     public void setCoordinates(final List<Coordinate> coordinates) {
         this.coordinates = coordinates;
     }
@@ -399,7 +387,7 @@ public class LineString
      * @param latitude
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LineString addToCoordinates(final double longitude, final double latitude) {
         this.getCoordinates().add(new Coordinate(longitude, latitude));
@@ -416,7 +404,7 @@ public class LineString
      * @param altitude
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LineString addToCoordinates(final double longitude, final double latitude, final double altitude) {
         this.getCoordinates().add(new Coordinate(longitude, latitude, altitude));
@@ -429,7 +417,7 @@ public class LineString
      * @param coordinates
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LineString addToCoordinates(final String coordinates) {
         this.getCoordinates().add(new Coordinate(coordinates));
@@ -437,9 +425,10 @@ public class LineString
     }
 
     /**
-     * @see lineStringSimpleExtension
+     *
      * 
      * @param lineStringSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLineStringSimpleExtension(final List<Object> lineStringSimpleExtension) {
         this.lineStringSimpleExtension = lineStringSimpleExtension;
@@ -451,7 +440,7 @@ public class LineString
      * @param lineStringSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LineString addToLineStringSimpleExtension(final Object lineStringSimpleExtension) {
         this.getLineStringSimpleExtension().add(lineStringSimpleExtension);
@@ -459,9 +448,10 @@ public class LineString
     }
 
     /**
-     * @see lineStringObjectExtension
+     *
      * 
      * @param lineStringObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLineStringObjectExtension(final List<AbstractObject> lineStringObjectExtension) {
         this.lineStringObjectExtension = lineStringObjectExtension;
@@ -473,7 +463,7 @@ public class LineString
      * @param lineStringObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LineString addToLineStringObjectExtension(final AbstractObject lineStringObjectExtension) {
         this.getLineStringObjectExtension().add(lineStringObjectExtension);
@@ -481,7 +471,7 @@ public class LineString
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -498,7 +488,7 @@ public class LineString
     }
 
     /**
-     * @see geometrySimpleExtension
+     *
      * 
      */
     @Obvious
@@ -515,7 +505,7 @@ public class LineString
     }
 
     /**
-     * @see geometryObjectExtension
+     *
      * 
      */
     @Obvious
@@ -533,7 +523,7 @@ public class LineString
 
     /**
      * fluent setter
-     * @see #setExtrude(Boolean)
+     *
      * 
      * @param extrude
      *     required parameter
@@ -545,7 +535,7 @@ public class LineString
 
     /**
      * fluent setter
-     * @see #setTessellate(Boolean)
+     *
      * 
      * @param tessellate
      *     required parameter
@@ -557,7 +547,7 @@ public class LineString
 
     /**
      * fluent setter
-     * @see #setAltitudeMode(Object)
+     *
      * 
      * @param altitudeMode
      *     required parameter
@@ -569,7 +559,7 @@ public class LineString
 
     /**
      * fluent setter
-     * @see #setCoordinates(List<Coordinate>)
+     *
      * 
      * @param coordinates
      *     required parameter
@@ -581,7 +571,7 @@ public class LineString
 
     /**
      * fluent setter
-     * @see #setLineStringSimpleExtension(List<Object>)
+     *
      * 
      * @param lineStringSimpleExtension
      *     required parameter
@@ -593,7 +583,7 @@ public class LineString
 
     /**
      * fluent setter
-     * @see #setLineStringObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param lineStringObjectExtension
      *     required parameter
@@ -639,14 +629,12 @@ public class LineString
     }
 
     /**
-     * Creates a new instance of {@link List}{@code <}{@link Coordinate}{@code>} and set it to this.coordinates.
+     * Creates a new instance of {@link List}{@code <}{@link Coordinate}{@code >} and set it to this.coordinates.
      * 
      * This method is a short version for:
-     * <pre>
-     * <code>
+     * {@code
      * List<Coordinate> newValue = new List<Coordinate>();
-     * this.setCoordinates(newValue); </code>
-     * </pre>
+     * this.setCoordinates(newValue); }
      * 
      * 
      */

@@ -1,34 +1,30 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <lod>
+ * {@code <lod>}
  * <p>
- * <minLodPixels> (required) Measurement in screen pixels that represents the minimum 
+ * {@code <minLodPixels>} (required) Measurement in screen pixels that represents the minimum 
  * limit of the visibility range for a given Region. Google Earth calculates the size 
  * of the Region when projected onto screen space. Then it computes the square root 
  * of the Region's area (if, for example, the Region is square and the viewpoint is 
  * directly above the Region, and the Region is not tilted, this measurement is equal 
  * to the width of the projected Region). If this measurement falls within the limits 
- * defined by <minLodPixels> and <maxLodPixels> (and if the <LatLonAltBox> is in view), 
+ * defined by {@code <minLodPixels>} and {@code <maxLodPixels>} (and if the {@code <LatLonAltBox>} is in view),
  * the Region is active. If this limit is not reached, the associated geometry is considered 
- * to be too far from the user's viewpoint to be drawn. <maxLodPixels> Measurement 
+ * to be too far from the user's viewpoint to be drawn. {@code <maxLodPixels>} Measurement 
  * in screen pixels that represents the maximum limit of the visibility range for a 
- * given Region. A value of −1, the default, indicates "active to infinite size." <minFadeExtent> 
+ * given Region. A value of −1, the default, indicates "active to infinite size." {@code <minFadeExtent>} 
  * Distance over which the geometry fades, from fully opaque to fully transparent. 
  * This ramp value, expressed in screen pixels, is applied at the minimum end of the 
- * LOD (visibility) limits. <maxFadeExtent> Distance over which the geometry fades, 
+ * LOD (visibility) limits. {@code <maxFadeExtent>} Distance over which the geometry fades, 
  * from fully transparent to fully opaque. This ramp value, expressed in screen pixels, 
  * is applied at the maximum end of the LOD (visibility) limits. 
  * </p>
@@ -52,15 +48,15 @@ public class Lod
 {
 
     /**
-     * <minlodpixels> (required)
+     * {@code <minLodPixels>} (required)
      * <p>
      * Measurement in screen pixels that represents the minimum limit of the visibility 
      * range for a given Region. Google Earth calculates the size of the Region when projected 
      * onto screen space. Then it computes the square root of the Region's area (if, for 
      * example, the Region is square and the viewpoint is directly above the Region, and 
      * the Region is not tilted, this measurement is equal to the width of the projected 
-     * Region). If this measurement falls within the limits defined by <minLodPixels> and 
-     * <maxLodPixels> (and if the <LatLonAltBox> is in view), the Region is active. If 
+     * Region). If this measurement falls within the limits defined by {@code <minLodPixels>} and 
+     * {@code <maxLodPixels>} (and if the {@code <LatLonAltBox>} is in view), the Region is active. If
      * this limit is not reached, the associated geometry is considered to be too far from 
      * the user's viewpoint to be drawn. 
      * </p>
@@ -71,7 +67,7 @@ public class Lod
     @XmlElement(defaultValue = "0.0")
     protected double minLodPixels;
     /**
-     * <maxlodpixels>
+     * {@code <maxLodPixels>}
      * <p>
      * Measurement in screen pixels that represents the maximum limit of the visibility 
      * range for a given Region. A value of −1, the default, indicates "active to infinite 
@@ -84,7 +80,7 @@ public class Lod
     @XmlElement(defaultValue = "-1.0")
     protected double maxLodPixels;
     /**
-     * <minfadeextent>
+     * {@code <minFadeExtent>}
      * <p>
      * Distance over which the geometry fades, from fully opaque to fully transparent. 
      * This ramp value, expressed in screen pixels, is applied at the minimum end of the 
@@ -97,7 +93,7 @@ public class Lod
     @XmlElement(defaultValue = "0.0")
     protected double minFadeExtent;
     /**
-     * <maxfadeextent>
+     * {@code <maxFadeExtent>}
      * <p>
      * Distance over which the geometry fades, from fully transparent to fully opaque. 
      * This ramp value, expressed in screen pixels, is applied at the maximum end of the 
@@ -105,10 +101,10 @@ public class Lod
      * </p>
      * <p>
      * In the following diagram, if P=the calculated projected pixel size, the circled 
-     * numbers indicate the following: if (P < minLodPixels) opacity=0 //#1 in diagram 
-     * else if(P < minLodPixels + minFadeExtent) opacity=(P - minLodPixels)/minFadeExtent 
-     * //#2 in diagram else if (P < maxLodPixels - maxFadeExtent) opacity=1 //#3 in diagram 
-     * else if (P < maxLodPixels) opacity=(maxLodPixels-P)/maxFadeExtent //#4 in diagram 
+     * numbers indicate the following: if (P lt minLodPixels) opacity=0 //#1 in diagram
+     * else if(P lt minLodPixels + minFadeExtent) opacity=(P - minLodPixels)/minFadeExtent
+     * //#2 in diagram else if (P lt maxLodPixels - maxFadeExtent) opacity=1 //#3 in diagram
+     * else if (P lt maxLodPixels) opacity=(maxLodPixels-P)/maxFadeExtent //#4 in diagram
      * else opacity=0 //#5 in diagram 
      * </p>
      * 
@@ -121,12 +117,12 @@ public class Lod
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> lodSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -146,7 +142,7 @@ public class Lod
     }
 
     /**
-     * @see minLodPixels
+     *
      * 
      * @return
      *     possible object is
@@ -158,7 +154,7 @@ public class Lod
     }
 
     /**
-     * @see minLodPixels
+     *
      * 
      * @param value
      *     allowed object is
@@ -170,7 +166,7 @@ public class Lod
     }
 
     /**
-     * @see maxLodPixels
+     *
      * 
      * @return
      *     possible object is
@@ -182,7 +178,7 @@ public class Lod
     }
 
     /**
-     * @see maxLodPixels
+     *
      * 
      * @param value
      *     allowed object is
@@ -194,7 +190,7 @@ public class Lod
     }
 
     /**
-     * @see minFadeExtent
+     *
      * 
      * @return
      *     possible object is
@@ -206,7 +202,7 @@ public class Lod
     }
 
     /**
-     * @see minFadeExtent
+     *
      * 
      * @param value
      *     allowed object is
@@ -218,7 +214,7 @@ public class Lod
     }
 
     /**
-     * @see maxFadeExtent
+     *
      * 
      * @return
      *     possible object is
@@ -230,7 +226,7 @@ public class Lod
     }
 
     /**
-     * @see maxFadeExtent
+     *
      * 
      * @param value
      *     allowed object is
@@ -242,7 +238,7 @@ public class Lod
     }
 
     /**
-     * @see lodSimpleExtension
+     *
      * 
      */
     public List<Object> getLodSimpleExtension() {
@@ -253,7 +249,7 @@ public class Lod
     }
 
     /**
-     * @see lodObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLodObjectExtension() {
@@ -330,9 +326,10 @@ public class Lod
     }
 
     /**
-     * @see lodSimpleExtension
+     *
      * 
      * @param lodSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLodSimpleExtension(final List<Object> lodSimpleExtension) {
         this.lodSimpleExtension = lodSimpleExtension;
@@ -344,7 +341,7 @@ public class Lod
      * @param lodSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Lod addToLodSimpleExtension(final Object lodSimpleExtension) {
         this.getLodSimpleExtension().add(lodSimpleExtension);
@@ -352,9 +349,10 @@ public class Lod
     }
 
     /**
-     * @see lodObjectExtension
+     *
      * 
      * @param lodObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLodObjectExtension(final List<AbstractObject> lodObjectExtension) {
         this.lodObjectExtension = lodObjectExtension;
@@ -366,7 +364,7 @@ public class Lod
      * @param lodObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Lod addToLodObjectExtension(final AbstractObject lodObjectExtension) {
         this.getLodObjectExtension().add(lodObjectExtension);
@@ -374,7 +372,7 @@ public class Lod
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -392,7 +390,7 @@ public class Lod
 
     /**
      * fluent setter
-     * @see #setMinLodPixels(double)
+     *
      * 
      * @param minLodPixels
      *     required parameter
@@ -404,7 +402,7 @@ public class Lod
 
     /**
      * fluent setter
-     * @see #setMaxLodPixels(double)
+     *
      * 
      * @param maxLodPixels
      *     required parameter
@@ -416,7 +414,7 @@ public class Lod
 
     /**
      * fluent setter
-     * @see #setMinFadeExtent(double)
+     *
      * 
      * @param minFadeExtent
      *     required parameter
@@ -428,7 +426,7 @@ public class Lod
 
     /**
      * fluent setter
-     * @see #setMaxFadeExtent(double)
+     *
      * 
      * @param maxFadeExtent
      *     required parameter
@@ -440,7 +438,7 @@ public class Lod
 
     /**
      * fluent setter
-     * @see #setLodSimpleExtension(List<Object>)
+     *
      * 
      * @param lodSimpleExtension
      *     required parameter
@@ -452,7 +450,7 @@ public class Lod
 
     /**
      * fluent setter
-     * @see #setLodObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param lodObjectExtension
      *     required parameter

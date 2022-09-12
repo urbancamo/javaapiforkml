@@ -3,16 +3,16 @@ package de.micromata.opengis.kml.v_2_2_0.xal;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAnyAttribute;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlSchemaType;
+import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlValue;
+import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.namespace.QName;
 
 
@@ -311,7 +311,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setContent(String)
+     *
      * 
      * @param content
      *     required parameter
@@ -323,7 +323,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNumber(String)
+     *
      * 
      * @param number
      *     required parameter
@@ -335,7 +335,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUnderscore(String)
+     *
      * 
      * @param underscore
      *     required parameter
@@ -347,7 +347,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setIndicator(String)
+     *
      * 
      * @param indicator
      *     required parameter
@@ -359,7 +359,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setIndicatorOccurrence(String)
+     *
      * 
      * @param indicatorOccurrence
      *     required parameter
@@ -371,7 +371,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNumberOccurrence(String)
+     *
      * 
      * @param numberOccurrence
      *     required parameter
@@ -383,7 +383,7 @@ public class ThoroughfareNumber implements Cloneable
 
     /**
      * fluent setter
-     * @see #setCode(String)
+     *
      * 
      * @param code
      *     required parameter

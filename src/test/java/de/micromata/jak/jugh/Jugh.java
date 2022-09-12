@@ -15,20 +15,11 @@
 // ///////////////////////////////////////////////////////////////////////////
 package de.micromata.jak.jugh;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.logging.Logger;
-
+import de.micromata.opengis.kml.v_2_2_0.*;
 import org.junit.Test;
 
-import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;
-import de.micromata.opengis.kml.v_2_2_0.Coordinate;
-import de.micromata.opengis.kml.v_2_2_0.Kml;
-import de.micromata.opengis.kml.v_2_2_0.KmlFactory;
-import de.micromata.opengis.kml.v_2_2_0.NetworkLink;
-import de.micromata.opengis.kml.v_2_2_0.Placemark;
-import de.micromata.opengis.kml.v_2_2_0.Point;
-import de.micromata.opengis.kml.v_2_2_0.Style;
+import java.io.FileNotFoundException;
+import java.util.logging.Logger;
 
 public class Jugh {
 	private static final Logger LOG = Logger.getLogger(Jugh.class.getName());
@@ -91,17 +82,17 @@ public class Jugh {
 	
 	@Test
 	public void createJughKmzFileWithBallonDescriptionWithOutFluent2() throws FileNotFoundException {
-	  // Create <coordinates>
+	  // Create coordinates
 		Coordinate coordinates = new Coordinate("9.444652669565212,51.30473589438118,0");
 		
-		//  Create <Point> set Extrude, AltitudeMode, and give it <coordinates>.
+		//  CreatePoint set Extrude, AltitudeMode, and give it coordinates.
 		Point point = KmlFactory.createPoint();
 		point.setExtrude(false);
 		point.setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
 		point.getCoordinates().add(coordinates); // <-- point takes ownership
 
 		
-		// Create <Placemark> configure its values and set the <Point>.
+		// Create <Placemark> configure its values and set thePoint.
 		Placemark placemark = KmlFactory.createPlacemark();
 		placemark.setName("Java User Group Hessen - JUGH!");
 		placemark.setVisibility(true);
@@ -110,7 +101,7 @@ public class Jugh {
 		placemark.setStyleUrl("#jugh_style");
 		placemark.setGeometry(point);            // <-- placemark takes ownership
 
-		// Create <kml> and give it <Placemark>.
+		// Create {@code <kml>} and give it <Placemark>.
 		Kml kml = KmlFactory.createKml();
 		kml.setFeature(placemark);               // <-- kml takes ownership.
 		kml.marshal(System.out);
@@ -128,14 +119,14 @@ public class Jugh {
 		placemark.setDescription("die Java User Group Hessen");
 		placemark.setStyleUrl("#jugh_style");
 		
-		// Create <Point> and set values.
+		// CreatePoint and set values.
 		Point point = KmlFactory.createPoint();
 		point.setExtrude(false);
 		point.setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
-		// Add <coordinates>9.444652669565212,51.30473589438118,0<coordinates>.
+		// Add coordinates9.444652669565212,51.30473589438118,0coordinates.
 		point.getCoordinates().add(new Coordinate("9.444652669565212,51.30473589438118,0"));
 
-		// Add <Point> 
+		// AddPoint 
 		placemark.setGeometry(point);            // <-- placemark takes ownership
 		kml.setFeature(placemark);               // <-- kml takes ownership.
 		kml.marshal(System.out);
@@ -256,7 +247,7 @@ public class Jugh {
 		// Create and add <Placemark> with a <name>.
 		final Placemark placemark = kml.createAndSetPlacemark().withName("Java User Group Hessen - JUGH!");
 
-		// Create and add <Style> with an <id>. <IconStyle> and <LabelStyle> are configured.
+		// Create and add <Style> with an <id>. {@code <IconStyle>} and {@code <LabelStyle>} are configured.
 		final Style style = placemark.createAndAddStyle().withId("jugh_style");
 		style.createAndSetIconStyle().withScale(1.4).createAndSetIcon().setHref("jugh_icon.png");
 		style.createAndSetLabelStyle().withScale(1.4);
@@ -265,7 +256,7 @@ public class Jugh {
 		placemark.setDescription("die Java User Group Hessen [...]");
 		placemark.setStyleUrl(style.getId());
 
-		// Create <Point> and set it to <coordinates>9.444652669565212,51.30473589438118,0<coordinates>.
+		// CreatePoint and set it to coordinates9.444652669565212,51.30473589438118,0coordinates.
 		placemark.createAndSetPoint().addToCoordinates("9.444652669565212,51.30473589438118,0");
 
 		// Print KML document to the console.

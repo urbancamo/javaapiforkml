@@ -1,27 +1,23 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <data name ="string">
+ * {@code <data name ="string">}
  * <p>
  * Creates an untyped name/value pair. The name can have two versions: name and displayName. 
  * The name attribute is used to identify the data pair within the KML file. The displayName 
  * element is used when a properly formatted name, with spaces and HTML formatting, 
- * is displayed in Google Earth. In the <text> element of <BalloonStyle>, the notation 
- * $[name:displayName] is replaced with <displayName>. If you substitute the value 
- * of the name attribute of the <Data> element in this format (for example, $[holeYardage], 
- * the attribute value is replaced with <value>. By default, the Placemark's balloon 
+ * is displayed in Google Earth. In the {@code <text>} element of {@code <BalloonStyle>}, the notation
+ * $[name:displayName] is replaced with {@code <displayName>}. If you substitute the value
+ * of the name attribute of the {@code <Data>} element in this format (for example, $[holeYardage],
+ * the attribute value is replaced with {@code <value>}. By default, the Placemark's balloon
  * displays the name/value pairs associated with it. 
  * </p>
  * 
@@ -41,7 +37,7 @@ public class Data
 {
 
     /**
-     * <displayname>
+     * {@code <displayname>}
      * <p>
      * An optional formatted version of name, to be used for display purposes. 
      * </p>
@@ -51,17 +47,17 @@ public class Data
      */
     protected String displayName;
     /**
-     * <value>
+     * {@code <value>}
      * <p>
-     * <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value> 
+     * {@code <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value>
      * </Data> <Data name="holeYardage"> <value>234</value> </Data> <Data name="holePar"> 
-     * <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * <value>4</value> </Data> </ExtendedData> </Placemark> }
      * </p>
      * <p>
-     * <displayName> An optional formatted version of name, to be used for display purposes. 
+     * {@code <displayName> An optional formatted version of name, to be used for display purposes.
      * <value> Value of the data pair. <Placemark> <name>Club house</name> <ExtendedData> 
      * <Data name="holeNumber"> <value>1</value> </Data> <Data name="holeYardage"> <value>234</value> 
-     * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> }
      * </p>
      * <p>
      * Value of the data pair. 
@@ -75,7 +71,7 @@ public class Data
     @XmlElement(name = "DataExtension")
     protected List<Object> dataExtension;
     /**
-     * <name>
+     * {@code <name>}
      * <p>
      * User-defined text displayed in the 3D viewer as the label for the object (for example, 
      * for a Placemark, Folder, or NetworkLink). 
@@ -108,7 +104,7 @@ public class Data
     }
 
     /**
-     * @see displayName
+     *
      * 
      * @return
      *     possible object is
@@ -120,7 +116,7 @@ public class Data
     }
 
     /**
-     * @see displayName
+     *
      * 
      * @param value
      *     allowed object is
@@ -132,7 +128,7 @@ public class Data
     }
 
     /**
-     * @see value
+     *
      * 
      * @return
      *     possible object is
@@ -144,7 +140,7 @@ public class Data
     }
 
     /**
-     * @see value
+     *
      * 
      * @param value
      *     allowed object is
@@ -156,7 +152,7 @@ public class Data
     }
 
     /**
-     * @see dataExtension
+     *
      * 
      */
     public List<Object> getDataExtension() {
@@ -167,7 +163,7 @@ public class Data
     }
 
     /**
-     * @see name
+     *
      * 
      * @return
      *     possible object is
@@ -179,7 +175,7 @@ public class Data
     }
 
     /**
-     * @see name
+     *
      * 
      * @param value
      *     allowed object is
@@ -256,9 +252,10 @@ public class Data
     }
 
     /**
-     * @see dataExtension
+     *
      * 
      * @param dataExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setDataExtension(final List<Object> dataExtension) {
         this.dataExtension = dataExtension;
@@ -270,7 +267,7 @@ public class Data
      * @param dataExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Data addToDataExtension(final Object dataExtension) {
         this.getDataExtension().add(dataExtension);
@@ -278,7 +275,7 @@ public class Data
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -296,7 +293,7 @@ public class Data
 
     /**
      * fluent setter
-     * @see #setDisplayName(String)
+     *
      * 
      * @param displayName
      *     required parameter
@@ -308,7 +305,7 @@ public class Data
 
     /**
      * fluent setter
-     * @see #setDataExtension(List<Object>)
+     *
      * 
      * @param dataExtension
      *     required parameter
@@ -320,7 +317,7 @@ public class Data
 
     /**
      * fluent setter
-     * @see #setName(String)
+     *
      * 
      * @param name
      *     required parameter

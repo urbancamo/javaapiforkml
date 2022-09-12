@@ -1,30 +1,26 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
 import de.micromata.opengis.kml.v_2_2_0.CoordinatesConverter;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <gx:LatLonQuad>
+ * gx:LatLonQuad
  * <p>
  * Allows non-rectangular quadrilateral ground overlays. 
  * </p>
  * <p>
  * If a third value is inserted into any tuple (representing altitude) it will be ignored. 
- * Altitude is set using <altitude> and <altitudeMode> (or <gx:altitudeMode>) extending 
- * <GroundOverlay>. Allowed altitude modes are absolute, clampToGround, and clampToSeaFloor. 
+ * Altitude is set using altitude and altitudeMode (or gx:altitudeMode) extending 
+ * GroundOverlay. Allowed altitude modes are absolute, clampToGround, and clampToSeaFloor. 
  * </p>
  * <p>
  * Specifies the coordinates of the four corner points of a quadrilateral defining 
@@ -49,10 +45,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * &lt;/GroundOverlay&gt;</pre>
  * 
  * Extends: 
- * @see: <Object>
+ *
  * 
  * Contained By: 
- * @see: <GroundOverlay>
+ *
  * 
  * 
  * 
@@ -68,11 +64,11 @@ public class LatLonQuad
 {
 
     /**
-     * <coordinates> (required)
+     * coordinates (required)
      * <p>
      * A single tuple consisting of floating point values for longitude, latitude, and 
      * altitude (in that order). Longitude and latitude values are in degrees, where longitude 
-     * ≥ −180 and <= 180 latitude ≥ −90 and ≤ 90 altitude values (optional) are in meters 
+     * gteq −180 and lteq 180 latitude gteq −90 and lteq 90 altitude values (optional) are in meters
      * above sea level 
      * </p>
      * <p>
@@ -98,7 +94,7 @@ public class LatLonQuad
     }
 
     /**
-     * @see coordinates
+     *
      * 
      */
     public List<Coordinate> getCoordinates() {
@@ -144,9 +140,8 @@ public class LatLonQuad
     }
 
     /**
-     * @see coordinates
-     * 
-     * @param coordinates
+     *
+     *
      */
     public void setCoordinates(final List<Coordinate> coordinates) {
         this.coordinates = coordinates;
@@ -160,7 +155,7 @@ public class LatLonQuad
      * @param latitude
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LatLonQuad addToCoordinates(final double longitude, final double latitude) {
         this.getCoordinates().add(new Coordinate(longitude, latitude));
@@ -177,7 +172,7 @@ public class LatLonQuad
      * @param altitude
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LatLonQuad addToCoordinates(final double longitude, final double latitude, final double altitude) {
         this.getCoordinates().add(new Coordinate(longitude, latitude, altitude));
@@ -190,7 +185,7 @@ public class LatLonQuad
      * @param coordinates
      *     required parameter
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LatLonQuad addToCoordinates(final String coordinates) {
         this.getCoordinates().add(new Coordinate(coordinates));
@@ -198,7 +193,7 @@ public class LatLonQuad
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -216,7 +211,7 @@ public class LatLonQuad
 
     /**
      * fluent setter
-     * @see #setCoordinates(List<Coordinate>)
+     *
      * 
      * @param coordinates
      *     required parameter
@@ -248,15 +243,13 @@ public class LatLonQuad
     }
 
     /**
-     * Creates a new instance of {@link List}{@code <}{@link Coordinate}{@code>} and set it to this.coordinates.
+     * Creates a new instance of {@link List}{{@link Coordinate} and set it to this.coordinates.
      * 
      * This method is a short version for:
-     * <pre>
-     * <code>
+     * {@code
      * List<Coordinate> newValue = new List<Coordinate>();
-     * this.setCoordinates(newValue); </code>
-     * </pre>
-     * 
+     * this.setCoordinates(newValue); }
+     *
      * 
      */
     public List<Coordinate> createAndSetCoordinates() {

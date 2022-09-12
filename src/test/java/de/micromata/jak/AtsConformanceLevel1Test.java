@@ -18,7 +18,7 @@ package de.micromata.jak;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import junit.framework.Assert;
 
@@ -79,7 +79,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	private static final Logger LOG = Logger.getLogger(KmlReferencePojoTest.class.getName());
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc01RootElement()
+	 *
 	 */
 	@Test
 	public void atc01RootElement() {
@@ -90,7 +90,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc02XMLSchemaconstraints()
+	 *
 	 */
 	@Test
 	public void atc02XMLSchemaconstraints() {
@@ -99,7 +99,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc03GeometryCoordinates()
+	 *
 	 */
 	@Test
 	public void atc03GeometryCoordinates() {
@@ -107,7 +107,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc04TimeSpan()
+	 *
 	 */
 	@Test
 	public void atc04TimeSpan() {
@@ -116,7 +116,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc05TimeStamp()
+	 *
 	 */
 	@Test
 	public void atc05TimeStamp() {
@@ -124,14 +124,14 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc06StyleReference()
+	 *
 	 */
 	@Test
 	public void atc06StyleReference() {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc07SharedStyleDefintion()
+	 *
 	 */
 	@Test
 	public void atc07SharedStyleDefintion() {
@@ -143,7 +143,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc08RegionLatLonAltBox()
+	 *
 	 */
 	@Test
 	public void atc08RegionLatLonAltBox() {
@@ -155,7 +155,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc09LinkElements()
+	 *
 	 */
 	@Test
 	public void atc09LinkElements() {
@@ -171,7 +171,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc10LinkReferent()
+	 *
 	 */
 	@Test
 	public void atc10LinkReferent() {
@@ -183,7 +183,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc11LatLonBox()
+	 *
 	 */
 	@Test
 	public void atc11LatLonBox() {
@@ -191,7 +191,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc12GeometryExtrude()
+	 *
 	 */
 	@Test
 	public void atc12GeometryExtrude() {
@@ -199,7 +199,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc13GeometryTessellate()
+	 *
 	 */
 	@Test
 	public void atc13GeometryTessellate() {
@@ -207,7 +207,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc14Point()
+	 *
 	 */
 	@Test
 	public void atc14Point() {
@@ -215,7 +215,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc15LineString()
+	 *
 	 */
 	@Test
 	public void atc15LineString() {
@@ -223,7 +223,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc16LinearRingControlPoints()
+	 *
 	 */
 	@Test
 	public void atc16LinearRingControlPoints() {
@@ -242,7 +242,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc17PolygonBoundary()
+	 *
 	 */
 	@Test
 	public void atc17PolygonBoundary() {
@@ -252,7 +252,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc18IconHref()
+	 *
 	 */
 	@Test
 	public void atc18IconHref() {
@@ -260,7 +260,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc19ViewVolumeMinimalContent()
+	 *
 	 */
 	@Test
 	public void atc19ViewVolumeMinimalContent() {
@@ -272,7 +272,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc20NetworkLinkControlMinRefreshPeriod()
+	 *
 	 */
 	@Test
 	public void atc20NetworkLinkControlMinRefreshPeriod() {
@@ -280,7 +280,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc21EmptyObject()
+	 *
 	 */
 	@Test
 	public void atc21EmptyObject() {
@@ -311,7 +311,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc22UpdateTargetHref()
+	 *
 	 */
 	@Test
 	public void atc22UpdateTargetHref() {
@@ -320,7 +320,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc23IdentificationOfUpdateTarget()
+	 *
 	 */
 	@Test
 	public void atc23IdentificationOfUpdateTarget() {
@@ -328,7 +328,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc24Phonenumber()
+	 *
 	 */
 	@Test
 	public void atc24Phonenumber() {
@@ -336,7 +336,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc25Schema()
+	 *
 	 */
 	@Test
 	public void atc25Schema() {
@@ -344,7 +344,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc26SchemaSimpleField()
+	 *
 	 */
 	@Test
 	public void atc26SchemaSimpleField() {
@@ -355,7 +355,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc27ExtendedDataSchemaData()
+	 *
 	 */
 	@Test
 	public void atc27ExtendedDataSchemaData() {
@@ -363,7 +363,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc28ExtendedDataData()
+	 *
 	 */
 	@Test
 	public void atc28ExtendedDataData() {
@@ -371,7 +371,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc29Alias()
+	 *
 	 */
 	@Test
 	public void atc29Alias() {
@@ -379,7 +379,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc30AtomAuthor()
+	 *
 	 */
 	@Test
 	public void atc30AtomAuthor() {
@@ -387,7 +387,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc31AtomLink()
+	 *
 	 */
 	@Test
 	public void atc31AtomLink() {
@@ -395,7 +395,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc32OrientationMinimalContent()
+	 *
 	 */
 	@Test
 	public void atc32OrientationMinimalContent() {
@@ -410,7 +410,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc33GroundOverlay()
+	 *
 	 */
 	@Test
 	public void atc33GroundOverlay() {
@@ -418,7 +418,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc34Model()
+	 *
 	 */
 	@Test
 	public void atc34Model() {
@@ -434,7 +434,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc35PhotoOverlayMinimalContent()
+	 *
 	 */
 	@Test
 	public void atc35PhotoOverlayMinimalContent() {
@@ -459,7 +459,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc36Pair()
+	 *
 	 */
 	@Test
 	public void atc36Pair() {
@@ -471,7 +471,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc37ItemIcon()
+	 *
 	 */
 	@Test
 	public void atc37ItemIcon() {
@@ -480,7 +480,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc38LookAt()
+	 *
 	 */
 	@Test
 	public void atc38LookAt() {
@@ -488,7 +488,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc39Lod()
+	 *
 	 */
 	@Test
 	public void atc39Lod() {
@@ -496,7 +496,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc40Link()
+	 *
 	 */
 	@Test
 	public void atc40Link() {
@@ -508,7 +508,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	}
 
 	/**
-	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc41Region()
+	 *
 	 */
 	@Test
 	public void atc41Region() {

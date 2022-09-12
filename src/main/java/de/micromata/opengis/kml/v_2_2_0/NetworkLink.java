@@ -1,25 +1,20 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <NetworkLink>
+ * {@code <NetworkLink>}
  * <p>
- * References a KML file or KMZ archive on a local or remote network. Use the <Link> 
+ * References a KML file or KMZ archive on a local or remote network. Use the {@code <Link>} 
  * element to specify the location of the KML file. Within that element, you can define 
  * the refresh options for updating the file, based on time and camera change. NetworkLinks 
  * can be used in combination with Regions to handle very large datasets efficiently. 
@@ -50,10 +45,10 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * <strong>&lt;/NetworkLink&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Feature>
+ *
  * 
  * Contained By: 
- * @see: <Container>
+ *
  * 
  * 
  * 
@@ -74,12 +69,12 @@ public class NetworkLink
 {
 
     /**
-     * <refreshvisibility>
+     * {@code <refreshVisibility>}
      * <p>
      * Boolean value. A value of 0 leaves the visibility of features within the control 
      * of the Google Earth user. Set the value to 1 to reset the visibility of features 
-     * each time the NetworkLink is refreshed. For example, suppose a Placemark within 
-     * the linked KML file has <visibility> set to 1 and the NetworkLink has <refreshVisibility> 
+     * each time the NetworkLink is refreshed. For example, suppose a Placemark within
+     * the linked KML file has {@code <visibility>} set to 1 and the NetworkLink has {@code <refreshVisibility>}
      * set to 1. When the file is first loaded into Google Earth, the user can clear the 
      * check box next to the item to turn off display in the 3D viewer. However, when the 
      * NetworkLink is refreshed, the Placemark will be made visible again, since its original 
@@ -93,15 +88,15 @@ public class NetworkLink
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean refreshVisibility;
     /**
-     * <flytoview>
+     * {@code <flytoview>}
      * <p>
      * Boolean value. A value of 1 causes Google Earth to fly to the view of the LookAt 
      * or Camera in the NetworkLinkControl (if it exists). If the NetworkLinkControl does 
      * not contain an AbstractView element, Google Earth flies to the LookAt or Camera 
-     * element in the Feature child within the <kml> element in the refreshed file. If 
-     * the <kml> element does not have a LookAt or Camera specified, the view is unchanged. 
-     * For example, Google Earth would fly to the <LookAt> view of the parent Document, 
-     * not the <LookAt> of the Placemarks contained within the Document. 
+     * element in the Feature child within the {@code <kml>} element in the refreshed file. If 
+     * the {@code <kml>} element does not have a LookAt or Camera specified, the view is unchanged. 
+     * For example, Google Earth would fly to the LookAt view of the parent Document, 
+     * not the LookAt of the Placemarks contained within the Document. 
      * </p>
      * 
      * 
@@ -111,7 +106,7 @@ public class NetworkLink
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean flyToView;
     /**
-     * <Url>
+     * {@code <Url>}
      * 
      * 
      */
@@ -119,18 +114,18 @@ public class NetworkLink
     @Deprecated
     protected de.micromata.opengis.kml.v_2_2_0.Link url;
     /**
-     * <link> (required). see <link>.
+     * {@code <Link>} (required). see {@code <Link>}.
      * <p>
-     * <Link> specifies the location of any of the following: 
+     * {@code <Link>} specifies the location of any of the following: 
      * </p>
      * <p>
-     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
+     * If the file specified in {@code <href>}is a local file, the {@code <viewFormat>} and {@code <httpQuery>} 
      * elements are not used. 
      * </p>
      * <p>
-     * KML files fetched by network links Image files used in any Overlay (the <Icon> element 
-     * specifies the image in an Overlay; <Icon> has the same fields as <Link>) Model files 
-     * used in the <Model> element 
+     * KML files fetched by network links Image files used in any Overlay (the {@code <Icon>}element 
+     * specifies the image in an Overlay; {@code <Icon>}has the same fields as {@code <Link>}) Model files 
+     * used in the {@code <Model>} element 
      * </p>
      * <p>
      * Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
@@ -138,21 +133,21 @@ public class NetworkLink
      * (see the sample that follows). 
      * </p>
      * <p>
-     * Specifies the file to load and optional refresh parameters. See <Link>. 
+     * Specifies the file to load and optional refresh parameters. See {@code <Link>}. 
      * </p>
      * <p>
-     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
-     * KML releases and adds functionality for the <Region> element (introduced in KML 
-     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
+     * The {@code <Link>} element replaces the {@code <Url>} element of NetworkLink contained in earlier 
+     * KML releases and adds functionality for the {@code <Region>} element (introduced in KML 
+     *  2.1). In Google Earth releases 3.0 and earlier, the {@code <Link>} element is ignored. 
      * </p>
      * <p>
      * The file is conditionally loaded and refreshed, depending on the refresh parameters 
      * supplied here. Two different sets of refresh parameters can be specified: one set 
-     * is based on time (<refreshMode> and <refreshInterval>) and one is based on the current 
-     * "camera" view (<viewRefreshMode> and <viewRefreshTime>). In addition, Link specifies 
-     * whether to scale the bounding box parameters that are sent to the server (<viewBoundScale> 
+     * is based on time ({@code <refreshMode>} and {@code <refreshInterval>}) and one is based on the current
+     * "camera" view ({@code <viewRefreshMode>} and {@code <viewRefreshTime>}). In addition, Link specifies
+     * whether to scale the bounding box parameters that are sent to the server ({@code <viewBoundScale> }
      * and provides a set of optional viewing parameters that can be sent to the server 
-     * (<viewFormat>) as well as a set of optional parameters containing version and language 
+     * ({@code <viewFormat>}) as well as a set of optional parameters containing version and language
      * information. 
      * </p>
      * <p>
@@ -166,10 +161,10 @@ public class NetworkLink
      * </p>
      * <p>
      * the href (Hypertext Reference) that specifies the file to load. an arbitrary format 
-     * string that is created from (a) parameters that you specify in the <viewFormat> 
-     * element or (b) bounding box parameters (this is the default and is used if no <viewFormat> 
+     * string that is created from (a) parameters that you specify in the {@code <viewFormat>} 
+     * element or (b) bounding box parameters (this is the default and is used if no {@code <viewFormat>} 
      * element is included in the file). a second format string that is specified in the 
-     * <httpQuery> element. 
+     * {@code <httpQuery>} element. 
      * </p>
      * 
      * Syntax: 
@@ -189,15 +184,15 @@ public class NetworkLink
      * <strong>&lt;/Link&gt;</strong></pre>
      * 
      * Extends: 
-     * @see: <Object>
+     *
      * 
      * Contained By: 
-     * @see: <Model>
-     * @see: <NetworkLink>
+     *
+     *
      * 
      * See Also: 
-     * <NetworkLinkControl>
-     * <Region>
+     * {@code <NetworkLinkControl>}
+     * {@code <Region>}
      * 
      * 
      * 
@@ -208,12 +203,12 @@ public class NetworkLink
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> networkLinkSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -244,7 +239,7 @@ public class NetworkLink
     }
 
     /**
-     * @see refreshVisibility
+     *
      * 
      * @param value
      *     allowed object is
@@ -267,7 +262,7 @@ public class NetworkLink
     }
 
     /**
-     * @see flyToView
+     *
      * 
      * @param value
      *     allowed object is
@@ -279,7 +274,7 @@ public class NetworkLink
     }
 
     /**
-     * @see url
+     *
      * 
      * @return
      *     possible object is
@@ -291,7 +286,7 @@ public class NetworkLink
     }
 
     /**
-     * @see url
+     *
      * 
      * @param value
      *     allowed object is
@@ -303,7 +298,7 @@ public class NetworkLink
     }
 
     /**
-     * @see link
+     *
      * 
      * @return
      *     possible object is
@@ -315,7 +310,7 @@ public class NetworkLink
     }
 
     /**
-     * @see link
+     *
      * 
      * @param value
      *     allowed object is
@@ -327,7 +322,7 @@ public class NetworkLink
     }
 
     /**
-     * @see networkLinkSimpleExtension
+     *
      * 
      */
     public List<Object> getNetworkLinkSimpleExtension() {
@@ -338,7 +333,7 @@ public class NetworkLink
     }
 
     /**
-     * @see networkLinkObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getNetworkLinkObjectExtension() {
@@ -437,9 +432,9 @@ public class NetworkLink
      * Creates a new instance of {@link de.micromata.opengis.kml.v_2_2_0.Link} and set it to url.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Link link = new Link();
-     * this.setUrl(link); </code>
+     * this.setUrl(link); }
      * 
      * 
      */
@@ -453,9 +448,9 @@ public class NetworkLink
      * Creates a new instance of {@link de.micromata.opengis.kml.v_2_2_0.Link} and set it to link.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Link link = new Link();
-     * this.setLink(link); </code>
+     * this.setLink(link); }
      * 
      * 
      */
@@ -466,9 +461,10 @@ public class NetworkLink
     }
 
     /**
-     * @see networkLinkSimpleExtension
+     *
      * 
      * @param networkLinkSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setNetworkLinkSimpleExtension(final List<Object> networkLinkSimpleExtension) {
         this.networkLinkSimpleExtension = networkLinkSimpleExtension;
@@ -480,7 +476,7 @@ public class NetworkLink
      * @param networkLinkSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public NetworkLink addToNetworkLinkSimpleExtension(final Object networkLinkSimpleExtension) {
         this.getNetworkLinkSimpleExtension().add(networkLinkSimpleExtension);
@@ -488,9 +484,10 @@ public class NetworkLink
     }
 
     /**
-     * @see networkLinkObjectExtension
+     *
      * 
      * @param networkLinkObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setNetworkLinkObjectExtension(final List<AbstractObject> networkLinkObjectExtension) {
         this.networkLinkObjectExtension = networkLinkObjectExtension;
@@ -502,7 +499,7 @@ public class NetworkLink
      * @param networkLinkObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public NetworkLink addToNetworkLinkObjectExtension(final AbstractObject networkLinkObjectExtension) {
         this.getNetworkLinkObjectExtension().add(networkLinkObjectExtension);
@@ -510,7 +507,7 @@ public class NetworkLink
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -527,7 +524,7 @@ public class NetworkLink
     }
 
     /**
-     * @see styleSelector
+     *
      * 
      */
     @Obvious
@@ -544,7 +541,7 @@ public class NetworkLink
     }
 
     /**
-     * @see featureSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -561,7 +558,7 @@ public class NetworkLink
     }
 
     /**
-     * @see featureObjectExtension
+     *
      * 
      */
     @Obvious
@@ -579,7 +576,7 @@ public class NetworkLink
 
     /**
      * fluent setter
-     * @see #setRefreshVisibility(Boolean)
+     *
      * 
      * @param refreshVisibility
      *     required parameter
@@ -591,7 +588,7 @@ public class NetworkLink
 
     /**
      * fluent setter
-     * @see #setFlyToView(Boolean)
+     *
      * 
      * @param flyToView
      *     required parameter
@@ -603,7 +600,7 @@ public class NetworkLink
 
     /**
      * fluent setter
-     * @see #setUrl(Link)
+     *
      * 
      * @param url
      *     required parameter
@@ -615,7 +612,7 @@ public class NetworkLink
 
     /**
      * fluent setter
-     * @see #setLink(Link)
+     *
      * 
      * @param link
      *     required parameter
@@ -627,7 +624,7 @@ public class NetworkLink
 
     /**
      * fluent setter
-     * @see #setNetworkLinkSimpleExtension(List<Object>)
+     *
      * 
      * @param networkLinkSimpleExtension
      *     required parameter
@@ -639,7 +636,7 @@ public class NetworkLink
 
     /**
      * fluent setter
-     * @see #setNetworkLinkObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param networkLinkObjectExtension
      *     required parameter

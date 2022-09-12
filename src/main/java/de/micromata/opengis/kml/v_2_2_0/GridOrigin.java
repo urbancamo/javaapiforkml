@@ -1,9 +1,9 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlType;
  * </p>
  * 
  * See Also: 
- * See <PhotoOverlay>
+ * See {@code <PhotoOverlay>}
  * 
  * 
  * 

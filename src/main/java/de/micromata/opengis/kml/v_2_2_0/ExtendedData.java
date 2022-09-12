@@ -1,22 +1,18 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import jakarta.xml.bind.annotation.*;
+import org.w3c.dom.Element;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import org.w3c.dom.Element;
 
 
 /**
- * <extendeddata>
+ * {@code <extendeddata>}
  * <p>
- * Adding untyped data/value pairs using the <Data> element (basic) Declaring new typed 
- * fields using the <Schema> element and then instancing them using the <SchemaData> 
+ * Adding untyped data/value pairs using the {@code <Data>} element (basic) Declaring new typed
+ * fields using the {@code <Schema>} element and then instancing them using the {@code <SchemaData>} 
  * element (advanced) Referring to XML elements defined in other namespaces by referencing 
  * the external namespace within the KML file (basic) 
  * </p>
@@ -45,7 +41,7 @@ import org.w3c.dom.Element;
  * &lt;/ExtendedData&gt;</pre>
  * 
  * Contained By: 
- * @see: <Feature>
+ *
  * 
  * See Also: 
  * Schema
@@ -64,15 +60,15 @@ public class ExtendedData implements Cloneable
 {
 
     /**
-     * <data name ="string">
+     * {@code <data name ="string">}
      * <p>
      * Creates an untyped name/value pair. The name can have two versions: name and displayName. 
      * The name attribute is used to identify the data pair within the KML file. The displayName 
      * element is used when a properly formatted name, with spaces and HTML formatting, 
-     * is displayed in Google Earth. In the <text> element of <BalloonStyle>, the notation 
-     * $[name:displayName] is replaced with <displayName>. If you substitute the value 
-     * of the name attribute of the <Data> element in this format (for example, $[holeYardage], 
-     * the attribute value is replaced with <value>. By default, the Placemark's balloon 
+     * is displayed in Google Earth. In the {@code <text>} element of {@code <BalloonStyle>}, the notation
+     * $[name:displayName] is replaced with {@code <displayName>}. If you substitute the value
+     * of the name attribute of the {@code <Data>} element in this format (for example, $[holeYardage],
+     * the attribute value is replaced with {@code <value>}. By default, the Placemark's balloon
      * displays the name/value pairs associated with it. 
      * </p>
      * 
@@ -82,9 +78,9 @@ public class ExtendedData implements Cloneable
     @XmlElement(name = "Data")
     protected List<Data> data;
     /**
-     * <schemadata schemaurl="anyuri">
+     * {@code <schemadata schemaurl="anyuri">}
      * <p>
-     * The <schemaURL> can be a full URL, a reference to a Schema ID defined in an external 
+     * The {@code <schemaURL>} can be a full URL, a reference to a Schema ID defined in an external
      * KML file, or a reference to a Schema ID defined in the same KML file. All of the 
      * following specifications are acceptable: 
      * </p>
@@ -93,7 +89,7 @@ public class ExtendedData implements Cloneable
      * child of the Feature that contains the custom data. 
      * </p>
      * <p>
-     * This element is used in conjunction with <Schema> to add typed custom data to a 
+     * This element is used in conjunction with {@code <Schema>} to add typed custom data to a 
      * KML Feature. The Schema element (identified by the schemaUrl attribute) declares 
      * the custom data type. The actual data objects ("instances" of the custom data) are 
      * defined using the SchemaData element. 
@@ -112,7 +108,7 @@ public class ExtendedData implements Cloneable
     }
 
     /**
-     * @see data
+     *
      * 
      */
     public List<Data> getData() {
@@ -123,7 +119,7 @@ public class ExtendedData implements Cloneable
     }
 
     /**
-     * @see schemaData
+     *
      * 
      */
     public List<SchemaData> getSchemaData() {
@@ -134,7 +130,7 @@ public class ExtendedData implements Cloneable
     }
 
     /**
-     * @see any
+     *
      * 
      */
     public List<Object> getAny() {
@@ -199,9 +195,9 @@ public class ExtendedData implements Cloneable
     /**
      * Creates a new instance of {@link Data} and adds it to data.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Data data = new Data();
-     * this.getData().add(data); </code>
+     * this.getData().add(data); }
      * 
      * 
      * @param value
@@ -216,9 +212,9 @@ public class ExtendedData implements Cloneable
     /**
      * Creates a new instance of {@link SchemaData} and adds it to schemaData.
      * This method is a short version for:
-     * <code>
+     * {@code
      * SchemaData schemaData = new SchemaData();
-     * this.getSchemaData().add(schemaData); </code>
+     * this.getSchemaData().add(schemaData); }
      * 
      * 
      */
@@ -229,9 +225,10 @@ public class ExtendedData implements Cloneable
     }
 
     /**
-     * @see data
+     *
      * 
      * @param data
+     *     Objects of the following type are allowed in the list: {@link Data}
      */
     public void setData(final List<Data> data) {
         this.data = data;
@@ -243,7 +240,7 @@ public class ExtendedData implements Cloneable
      * @param data
      *     Objects of the following type are allowed in the list: {@link Data}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ExtendedData addToData(final Data data) {
         this.getData().add(data);
@@ -251,9 +248,10 @@ public class ExtendedData implements Cloneable
     }
 
     /**
-     * @see schemaData
+     *
      * 
      * @param schemaData
+     *     Objects of the following type are allowed in the list: {@link SchemaData}
      */
     public void setSchemaData(final List<SchemaData> schemaData) {
         this.schemaData = schemaData;
@@ -265,7 +263,7 @@ public class ExtendedData implements Cloneable
      * @param schemaData
      *     Objects of the following type are allowed in the list: {@link SchemaData}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ExtendedData addToSchemaData(final SchemaData schemaData) {
         this.getSchemaData().add(schemaData);
@@ -273,9 +271,10 @@ public class ExtendedData implements Cloneable
     }
 
     /**
-     * @see any
+     *
      * 
      * @param any
+     *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
      */
     public void setAny(final List<Object> any) {
         this.any = any;
@@ -287,7 +286,7 @@ public class ExtendedData implements Cloneable
      * @param any
      *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ExtendedData addToAny(final Object any) {
         this.getAny().add(any);
@@ -296,7 +295,7 @@ public class ExtendedData implements Cloneable
 
     /**
      * fluent setter
-     * @see #setData(List<Data>)
+     *
      * 
      * @param data
      *     required parameter
@@ -308,7 +307,7 @@ public class ExtendedData implements Cloneable
 
     /**
      * fluent setter
-     * @see #setSchemaData(List<SchemaData>)
+     *
      * 
      * @param schemaData
      *     required parameter
@@ -320,7 +319,7 @@ public class ExtendedData implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAny(List<Object>)
+     *
      * 
      * @param any
      *     required parameter

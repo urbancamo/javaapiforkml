@@ -1,21 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <LookAt>
+ * {@code <LookAt>}
  * <p>
  * Defines a virtual camera that is associated with any element derived from Feature. 
  * The LookAt element positions the "camera" in relation to the object that is being 
@@ -42,11 +36,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/LookAt&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <AbstractView>
+ *
  * 
  * Contained By: 
- * @see: <Feature>
- * @see: <NetworkLinkControl>
+ *
+ *
  * 
  * 
  * 
@@ -70,7 +64,7 @@ public class LookAt
 {
 
     /**
-     * <longitude>
+     * {@code <longitude>}
      * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
      * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
@@ -88,7 +82,7 @@ public class LookAt
     @XmlElement(defaultValue = "0.0")
     protected double longitude;
     /**
-     * <latitude>
+     * {@code <latitude>}
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
      * (0 degrees). Values range from −90 degrees to 90 degrees. 
@@ -104,14 +98,14 @@ public class LookAt
     @XmlElement(defaultValue = "0.0")
     protected double latitude;
     /**
-     * <altitude>
+     * altitude
      * <p>
      * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
      * altitude mode. 
      * </p>
      * <p>
      * Distance of the camera from the earth's surface, in meters. Interpreted according 
-     * to the Camera's <altitudeMode> or <gx:altitudeMode>. 
+     * to the Camera's altitudeMode or gx:altitudeMode. 
      * </p>
      * <p>
      * Specifies the distance above the earth's surface, in meters, and is interpreted 
@@ -124,7 +118,7 @@ public class LookAt
     @XmlElement(defaultValue = "0.0")
     protected double altitude;
     /**
-     * <heading>
+     * {@code <heading>}
      * <p>
      * Direction (azimuth) of the camera, in degrees. Default=0 (true North). (See diagram.) 
      * Values range from 0 to 360 degrees. 
@@ -149,12 +143,12 @@ public class LookAt
     @XmlElement(defaultValue = "0.0")
     protected double heading;
     /**
-     * <tilt>
+     * {@code <tilt>}
      * <p>
      * Angle between the direction of the LookAt position and the normal to the surface 
      * of the earth. (See diagram below.) Values range from 0 to 90 degrees. Values for 
-     * <tilt> cannot be negative. A <tilt> value of 0 degrees indicates viewing from directly 
-     * above. A <tilt> value of 90 degrees indicates viewing along the horizon. 
+     * {@code <tilt>} cannot be negative. A {@code <tilt>} value of 0 degrees indicates viewing from directly 
+     * above. A {@code <tilt>} value of 90 degrees indicates viewing along the horizon. 
      * </p>
      * <p>
      * Rotation about the x axis. A positive rotation is clockwise around the x axis and 
@@ -163,8 +157,8 @@ public class LookAt
      * <p>
      * Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
      * the view is aimed straight down toward the earth (the most common case). A value 
-     * for 90 for <tilt> indicates that the view is aimed toward the horizon. Values greater 
-     * than 90 indicate that the view is pointed up into the sky. Values for <tilt> are 
+     * for 90 for {@code <tilt>} indicates that the view is aimed toward the horizon. Values greater 
+     * than 90 indicate that the view is pointed up into the sky. Values for {@code <tilt>} are 
      * clamped at +180 degrees. 
      * </p>
      * 
@@ -174,9 +168,9 @@ public class LookAt
     @XmlElement(defaultValue = "0.0")
     protected double tilt;
     /**
-     * <range> (required)
+     * {@code <range>} (required)
      * <p>
-     * Distance in meters from the point specified by <longitude>, <latitude>, and <altitude> 
+     * Distance in meters from the point specified by {@code <longitude>}, {@code <latitude>}, and altitude 
      * to the LookAt position. (See diagram below.) 
      * </p>
      * 
@@ -192,7 +186,7 @@ public class LookAt
      * </p>
      * 
      * See Also: 
-     * See <LookAt> and <Region>
+     * See LookAt and {@code <Region>}
      * 
      * 
      * 
@@ -203,12 +197,12 @@ public class LookAt
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> lookAtSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -228,7 +222,7 @@ public class LookAt
     }
 
     /**
-     * @see longitude
+     *
      * 
      * @return
      *     possible object is
@@ -240,7 +234,7 @@ public class LookAt
     }
 
     /**
-     * @see longitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -252,7 +246,7 @@ public class LookAt
     }
 
     /**
-     * @see latitude
+     *
      * 
      * @return
      *     possible object is
@@ -264,7 +258,7 @@ public class LookAt
     }
 
     /**
-     * @see latitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -276,7 +270,7 @@ public class LookAt
     }
 
     /**
-     * @see altitude
+     *
      * 
      * @return
      *     possible object is
@@ -288,7 +282,7 @@ public class LookAt
     }
 
     /**
-     * @see altitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -300,7 +294,7 @@ public class LookAt
     }
 
     /**
-     * @see heading
+     *
      * 
      * @return
      *     possible object is
@@ -312,7 +306,7 @@ public class LookAt
     }
 
     /**
-     * @see heading
+     *
      * 
      * @param value
      *     allowed object is
@@ -324,7 +318,7 @@ public class LookAt
     }
 
     /**
-     * @see tilt
+     *
      * 
      * @return
      *     possible object is
@@ -336,7 +330,7 @@ public class LookAt
     }
 
     /**
-     * @see tilt
+     *
      * 
      * @param value
      *     allowed object is
@@ -348,7 +342,7 @@ public class LookAt
     }
 
     /**
-     * @see range
+     *
      * 
      * @return
      *     possible object is
@@ -360,7 +354,7 @@ public class LookAt
     }
 
     /**
-     * @see range
+     *
      * 
      * @param value
      *     allowed object is
@@ -372,13 +366,13 @@ public class LookAt
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -386,13 +380,13 @@ public class LookAt
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -400,7 +394,7 @@ public class LookAt
     }
 
     /**
-     * @see lookAtSimpleExtension
+     *
      * 
      */
     public List<Object> getLookAtSimpleExtension() {
@@ -411,7 +405,7 @@ public class LookAt
     }
 
     /**
-     * @see lookAtObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLookAtObjectExtension() {
@@ -508,9 +502,10 @@ public class LookAt
     }
 
     /**
-     * @see lookAtSimpleExtension
+     *
      * 
      * @param lookAtSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLookAtSimpleExtension(final List<Object> lookAtSimpleExtension) {
         this.lookAtSimpleExtension = lookAtSimpleExtension;
@@ -522,7 +517,7 @@ public class LookAt
      * @param lookAtSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LookAt addToLookAtSimpleExtension(final Object lookAtSimpleExtension) {
         this.getLookAtSimpleExtension().add(lookAtSimpleExtension);
@@ -530,9 +525,10 @@ public class LookAt
     }
 
     /**
-     * @see lookAtObjectExtension
+     *
      * 
      * @param lookAtObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLookAtObjectExtension(final List<AbstractObject> lookAtObjectExtension) {
         this.lookAtObjectExtension = lookAtObjectExtension;
@@ -544,7 +540,7 @@ public class LookAt
      * @param lookAtObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LookAt addToLookAtObjectExtension(final AbstractObject lookAtObjectExtension) {
         this.getLookAtObjectExtension().add(lookAtObjectExtension);
@@ -552,7 +548,7 @@ public class LookAt
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -569,7 +565,7 @@ public class LookAt
     }
 
     /**
-     * @see abstractViewSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -586,7 +582,7 @@ public class LookAt
     }
 
     /**
-     * @see abstractViewObjectExtension
+     *
      * 
      */
     @Obvious
@@ -604,7 +600,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setLongitude(double)
+     *
      * 
      * @param longitude
      *     required parameter
@@ -616,7 +612,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setLatitude(double)
+     *
      * 
      * @param latitude
      *     required parameter
@@ -628,7 +624,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setAltitude(double)
+     *
      * 
      * @param altitude
      *     required parameter
@@ -640,7 +636,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setHeading(double)
+     *
      * 
      * @param heading
      *     required parameter
@@ -652,7 +648,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setTilt(double)
+     *
      * 
      * @param tilt
      *     required parameter
@@ -664,7 +660,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setRange(double)
+     *
      * 
      * @param range
      *     required parameter
@@ -676,7 +672,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setAltitudeMode(Object)
+     *
      * 
      * @param altitudeMode
      *     required parameter
@@ -688,7 +684,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setLookAtSimpleExtension(List<Object>)
+     *
      * 
      * @param lookAtSimpleExtension
      *     required parameter
@@ -700,7 +696,7 @@ public class LookAt
 
     /**
      * fluent setter
-     * @see #setLookAtObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param lookAtObjectExtension
      *     required parameter

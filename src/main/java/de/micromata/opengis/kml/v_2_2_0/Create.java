@@ -1,30 +1,26 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
 
 /**
- * <create>
+ * {@code <Create>}
  * <p>
- * Adds new elements to a Folder or Document that has already been loaded via a <NetworkLink>. 
- * The <targetHref> element in <Update> specifies the URL of the .kml or .kmz file 
+ * Adds new elements to a Folder or Document that has already been loaded via a NetworkLink. 
+ * The targetHref element in Update specifies the URL of the .kml or .kmz file 
  * that contained the original Folder or Document. Within that file, the Folder or 
  * Document that is to contain the new data must already have an explicit id defined 
  * for it. This id is referenced as the targetId attribute of the Folder or Document 
- * within <Create> that contains the element to be added. 
+ * within {@code <Create>} that contains the element to be added. 
  * </p>
  * <p>
  * Once an object has been created and loaded into Google Earth, it takes on the URL 
  * of the original parent Document of Folder. To perform subsequent updates to objects 
- * added with this Update/Create mechanism, set <targetHref> to the URL of the original 
+ * added with this Update/Create mechanism, set targetHref to the URL of the original 
  * Document or Folder (not the URL of the file that loaded the intervening updates). 
  * </p>
  * 
@@ -40,7 +36,7 @@ public class Create implements Cloneable
 {
 
     /**
-     * <Container>
+     * {@code <Container>}
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. A Container 
      * element holds one or more Features and allows the creation of nested hierarchies. 
@@ -70,11 +66,11 @@ public class Create implements Cloneable
      * <strong>&lt;!-- /<em>Container --</em>&gt;</strong></pre>
      * 
      * Extends: 
-     * @see: <Feature>
+     *
      * 
      * Extended By: 
-     * @see: <Document>
-     * @see: <Folder>
+     *
+     *
      * 
      * 
      * 
@@ -87,7 +83,7 @@ public class Create implements Cloneable
     }
 
     /**
-     * @see container
+     *
      * 
      */
     public List<Container> getContainer() {
@@ -132,9 +128,9 @@ public class Create implements Cloneable
     /**
      * Creates a new instance of {@link Folder} and adds it to container.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Folder folder = new Folder();
-     * this.getContainer().add(folder); </code>
+     * this.getContainer().add(folder); }
      * 
      * 
      */
@@ -147,9 +143,9 @@ public class Create implements Cloneable
     /**
      * Creates a new instance of {@link Document} and adds it to container.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Document document = new Document();
-     * this.getContainer().add(document); </code>
+     * this.getContainer().add(document); }
      * 
      * 
      */
@@ -160,9 +156,10 @@ public class Create implements Cloneable
     }
 
     /**
-     * @see container
+     *
      * 
      * @param container
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code >}{@code <}{@link Folder}{@code >}{@code <}{@link Document}{@code >}
      */
     public void setContainer(final List<Container> container) {
         this.container = container;
@@ -172,9 +169,9 @@ public class Create implements Cloneable
      * add a value to the container property collection
      * 
      * @param container
-     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code >}{@code <}{@link Folder}{@code >}{@code <}{@link Document}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Create addToContainer(final Container container) {
         this.getContainer().add(container);
@@ -183,7 +180,7 @@ public class Create implements Cloneable
 
     /**
      * fluent setter
-     * @see #setContainer(List<Container>)
+     *
      * 
      * @param container
      *     required parameter

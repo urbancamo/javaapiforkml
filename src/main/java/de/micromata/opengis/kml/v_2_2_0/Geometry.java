@@ -1,23 +1,18 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
+import de.micromata.opengis.kml.v_2_2_0.gx.Track;
+import jakarta.xml.bind.annotation.*;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
-import de.micromata.opengis.kml.v_2_2_0.gx.Track;
-
 
 /**
- * <Geometry>
+ * {@code <Geometry>}
  * <p>
  * This is an abstract element and cannot be used directly in a KML file. It provides 
  * a placeholder object for all derived Geometry objects. 
@@ -30,15 +25,15 @@ import de.micromata.opengis.kml.v_2_2_0.gx.Track;
  * <strong>&lt;!-- /<em>Geometry --</em>&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Object>
+ *
  * 
  * Extended By: 
- * @see: <LineString>
- * @see: <LinearRing>
- * @see: <Model>
- * @see: <Point>
- * @see: MultiGeometry
- * @see: Polygon
+ *
+ *
+ *
+ *
+ *
+ *
  * 
  * 
  * 
@@ -64,12 +59,12 @@ public abstract class Geometry
 {
 
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -84,12 +79,12 @@ public abstract class Geometry
     @XmlElement(name = "AbstractGeometrySimpleExtensionGroup")
     protected List<Object> geometrySimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -109,7 +104,7 @@ public abstract class Geometry
     }
 
     /**
-     * @see geometrySimpleExtension
+     *
      * 
      */
     public List<Object> getGeometrySimpleExtension() {
@@ -120,7 +115,7 @@ public abstract class Geometry
     }
 
     /**
-     * @see geometryObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getGeometryObjectExtension() {
@@ -176,9 +171,10 @@ public abstract class Geometry
     }
 
     /**
-     * @see geometrySimpleExtension
+     *
      * 
      * @param geometrySimpleExtension
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code >}{@code <}{@link BigInteger}{@code >}{@code <}{@link Double}{@code >}
      */
     public void setGeometrySimpleExtension(final List<Object> geometrySimpleExtension) {
         this.geometrySimpleExtension = geometrySimpleExtension;
@@ -188,9 +184,9 @@ public abstract class Geometry
      * add a value to the geometrySimpleExtension property collection
      * 
      * @param geometrySimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link BigInteger}{@code>}{@link JAXBElement}{@code <}{@link Double}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Object}{@code >}{@code <}{@link BigInteger}{@code >}{@code <}{@link Double}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Geometry addToGeometrySimpleExtension(final Object geometrySimpleExtension) {
         this.getGeometrySimpleExtension().add(geometrySimpleExtension);
@@ -198,9 +194,10 @@ public abstract class Geometry
     }
 
     /**
-     * @see geometryObjectExtension
+     *
      * 
      * @param geometryObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setGeometryObjectExtension(final List<AbstractObject> geometryObjectExtension) {
         this.geometryObjectExtension = geometryObjectExtension;
@@ -212,7 +209,7 @@ public abstract class Geometry
      * @param geometryObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Geometry addToGeometryObjectExtension(final AbstractObject geometryObjectExtension) {
         this.getGeometryObjectExtension().add(geometryObjectExtension);
@@ -220,7 +217,7 @@ public abstract class Geometry
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -238,7 +235,7 @@ public abstract class Geometry
 
     /**
      * fluent setter
-     * @see #setGeometrySimpleExtension(List<Object>)
+     *
      * 
      * @param geometrySimpleExtension
      *     required parameter
@@ -250,7 +247,7 @@ public abstract class Geometry
 
     /**
      * fluent setter
-     * @see #setGeometryObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param geometryObjectExtension
      *     required parameter

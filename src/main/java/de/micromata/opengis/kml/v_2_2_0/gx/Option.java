@@ -1,11 +1,11 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -100,7 +100,7 @@ public class Option implements Cloneable
 
     /**
      * fluent setter
-     * @see #setName(String)
+     *
      * 
      * @param name
      *     required parameter
@@ -112,7 +112,7 @@ public class Option implements Cloneable
 
     /**
      * fluent setter
-     * @see #setEnabled(boolean)
+     *
      * 
      * @param enabled
      *     required parameter

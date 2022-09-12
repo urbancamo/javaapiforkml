@@ -1,33 +1,29 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <latlonbox>
+ * latlongbox
  * <p>
  * Specifies where the top, bottom, right, and left sides of a bounding box for the 
- * ground overlay are aligned. <north> Specifies the latitude of the north edge of 
- * the bounding box, in decimal degrees from 0 to ±90. <south> Specifies the latitude 
- * of the south edge of the bounding box, in decimal degrees from 0 to ±90. <east> 
+ * ground overlay are aligned. north Specifies the latitude of the north edge of 
+ * the bounding box, in decimal degrees from 0 to ±90. south Specifies the latitude 
+ * of the south edge of the bounding box, in decimal degrees from 0 to ±90. east 
  * Specifies the longitude of the east edge of the bounding box, in decimal degrees 
  * from 0 to ±180. (For overlays that overlap the meridian of 180° longitude, values 
- * can extend beyond that range.) <west> Specifies the longitude of the west edge of 
+ * can extend beyond that range.) west Specifies the longitude of the west edge of 
  * the bounding box, in decimal degrees from 0 to ±180. (For overlays that overlap 
- * the meridian of 180° longitude, values can extend beyond that range.) <rotation> 
+ * the meridian of 180° longitude, values can extend beyond that range.) rotation
  * Specifies a rotation of the overlay about its center, in degrees. Values can be 
  * ±180. The default is 0 (north). Rotations are specified in a counterclockwise direction. 
- * <LatLonBox> <north>48.25475939255556</north> <south>48.25207367852141</south> <east>-90.86591508839973</east> 
- * <west>-90.8714285289695</west> <rotation>39.37878630116985</rotation> </LatLonBox> 
+ * latlongbox north 48.25475939255556  south 48.25207367852141 east-90.86591508839973
+ * west -90.8714285289695 rotation 39.37878630116985
  * </p>
  * 
  * 
@@ -52,7 +48,7 @@ public abstract class AbstractLatLonBox
 {
 
     /**
-     * <north> (required)
+     * north (required)
      * <p>
      * Specifies the latitude of the north edge of the bounding box, in decimal degrees 
      * from 0 to ±90. 
@@ -64,7 +60,7 @@ public abstract class AbstractLatLonBox
     @XmlElement(defaultValue = "180.0")
     protected double north;
     /**
-     * <south> (required)
+     * south (required)
      * <p>
      * Specifies the latitude of the south edge of the bounding box, in decimal degrees 
      * from 0 to ±90. 
@@ -76,14 +72,14 @@ public abstract class AbstractLatLonBox
     @XmlElement(defaultValue = "-180.0")
     protected double south;
     /**
-     * <east> (required)
+     * east (required)
      * 
      * 
      */
     @XmlElement(defaultValue = "180.0")
     protected double east;
     /**
-     * <west> (required)
+     * west (required)
      * <p>
      * Specifies the longitude of the west edge of the bounding box, in decimal degrees 
      * from 0 to ±180. 
@@ -98,12 +94,12 @@ public abstract class AbstractLatLonBox
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> abstractLatLonBoxSimpleExtension;
     /**
-     * <Object>
+     * Object
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -123,7 +119,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see north
+     *
      * 
      * @return
      *     possible object is
@@ -135,7 +131,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see north
+     *
      * 
      * @param value
      *     allowed object is
@@ -147,7 +143,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see south
+     *
      * 
      * @return
      *     possible object is
@@ -159,7 +155,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see south
+     *
      * 
      * @param value
      *     allowed object is
@@ -171,7 +167,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see east
+     *
      * 
      * @return
      *     possible object is
@@ -183,7 +179,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see east
+     *
      * 
      * @param value
      *     allowed object is
@@ -195,7 +191,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see west
+     *
      * 
      * @return
      *     possible object is
@@ -207,7 +203,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see west
+     *
      * 
      * @param value
      *     allowed object is
@@ -219,7 +215,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see abstractLatLonBoxSimpleExtension
+     *
      * 
      */
     public List<Object> getAbstractLatLonBoxSimpleExtension() {
@@ -230,7 +226,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see abstractLatLonBoxObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getAbstractLatLonBoxObjectExtension() {
@@ -307,9 +303,10 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see abstractLatLonBoxSimpleExtension
+     *
      * 
      * @param abstractLatLonBoxSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setAbstractLatLonBoxSimpleExtension(final List<Object> abstractLatLonBoxSimpleExtension) {
         this.abstractLatLonBoxSimpleExtension = abstractLatLonBoxSimpleExtension;
@@ -321,7 +318,7 @@ public abstract class AbstractLatLonBox
      * @param abstractLatLonBoxSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add).
      */
     public AbstractLatLonBox addToAbstractLatLonBoxSimpleExtension(final Object abstractLatLonBoxSimpleExtension) {
         this.getAbstractLatLonBoxSimpleExtension().add(abstractLatLonBoxSimpleExtension);
@@ -329,9 +326,10 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see abstractLatLonBoxObjectExtension
+     *
      * 
      * @param abstractLatLonBoxObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setAbstractLatLonBoxObjectExtension(final List<AbstractObject> abstractLatLonBoxObjectExtension) {
         this.abstractLatLonBoxObjectExtension = abstractLatLonBoxObjectExtension;
@@ -343,7 +341,7 @@ public abstract class AbstractLatLonBox
      * @param abstractLatLonBoxObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add).
      */
     public AbstractLatLonBox addToAbstractLatLonBoxObjectExtension(final AbstractObject abstractLatLonBoxObjectExtension) {
         this.getAbstractLatLonBoxObjectExtension().add(abstractLatLonBoxObjectExtension);
@@ -351,7 +349,7 @@ public abstract class AbstractLatLonBox
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -369,10 +367,12 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
-     * @see #setNorth(double)
+     *
      * 
      * @param north
      *     required parameter
+     * @return
+     *     AbstractLatLonBox
      */
     public AbstractLatLonBox withNorth(final double north) {
         this.setNorth(north);
@@ -381,10 +381,12 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
-     * @see #setSouth(double)
+     *
      * 
      * @param south
      *     required parameter
+     * @return
+     *     AbstractLatLonBox
      */
     public AbstractLatLonBox withSouth(final double south) {
         this.setSouth(south);
@@ -393,10 +395,12 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
-     * @see #setEast(double)
+     *
      * 
      * @param east
      *     required parameter
+     * @return
+     *     AbstractLatLonBox
      */
     public AbstractLatLonBox withEast(final double east) {
         this.setEast(east);
@@ -405,10 +409,12 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
-     * @see #setWest(double)
+     *
      * 
      * @param west
      *     required parameter
+     * @return
+     *     AbstractLatLonBox
      */
     public AbstractLatLonBox withWest(final double west) {
         this.setWest(west);
@@ -417,10 +423,12 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
-     * @see #setAbstractLatLonBoxSimpleExtension(List<Object>)
+     *
      * 
      * @param abstractLatLonBoxSimpleExtension
      *     required parameter
+     * @return
+     *     AbstractLatLonBox
      */
     public AbstractLatLonBox withAbstractLatLonBoxSimpleExtension(final List<Object> abstractLatLonBoxSimpleExtension) {
         this.setAbstractLatLonBoxSimpleExtension(abstractLatLonBoxSimpleExtension);
@@ -429,10 +437,12 @@ public abstract class AbstractLatLonBox
 
     /**
      * fluent setter
-     * @see #setAbstractLatLonBoxObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param abstractLatLonBoxObjectExtension
      *     required parameter
+     * @return
+     *     AbstractLatLonBox
      */
     public AbstractLatLonBox withAbstractLatLonBoxObjectExtension(final List<AbstractObject> abstractLatLonBoxObjectExtension) {
         this.setAbstractLatLonBoxObjectExtension(abstractLatLonBoxObjectExtension);

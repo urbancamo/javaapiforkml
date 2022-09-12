@@ -1,29 +1,29 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <Style>
+ * {@code <Style>}
  * <p>
  * A Style defines an addressable style group that can be referenced by StyleMaps and 
  * Features. Styles affect how Geometry is presented in the 3D viewer and how Features 
- * appear in the Places panel of the List view. Shared styles are collected in a <Document> 
+ * appear in the Places panel of the List view. Shared styles are collected in a {@code <Document>} 
  * and must have an id defined for them so that they can be referenced by the individual 
  * Features that use them. 
  * </p>
  * <p>
  * A Style defines an addressable style group that can be referenced by StyleMaps and 
  * Features. Styles affect how Geometry is presented in the 3D viewer and how Features 
- * appear in the Places panel of the List view. Shared styles are collected in a <Document> 
+ * appear in the Places panel of the List view. Shared styles are collected in a {@code <Document>} 
  * and must have an id defined for them so that they can be referenced by the individual 
  * Features that use them. 
  * </p>
  * <p>
- * Use an id to refer to the style from a <styleUrl>. 
+ * Use an id to refer to the style from a {@code <styleUrl>}.
  * </p>
  * 
  * Syntax: 
@@ -40,10 +40,10 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;/Style&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <StyleSelector>
+ *
  * 
  * Contained By: 
- * @see: <Feature>
+ *
  * 
  * 
  * 

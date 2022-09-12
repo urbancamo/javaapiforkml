@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.micromata.jak</groupId>
+	<groupId>uk.m0nom</groupId>
 	<artifactId>JavaAPIforKml</artifactId>
-	<version>2.3.0-SNAPSHOT</version>
+	<version>3.0.2-SNAPSHOT</version>
 	<name>a Java API for Kml</name>
 	<description>This is JavaAPIforKMml, Micromata's library for use with applications that want to parse, generate and operate on KML. It is an implementation of the OGC KML 2.2 standard. It is written entirely in Java and makes heavy use of JAXB.</description>
 	<packaging>jar</packaging>
@@ -12,52 +12,33 @@
 		<name>Micromata GmbH</name>
 		<url>http://micromata.de</url>
 	</organization>
-  	<parent>
-    	<groupId>org.sonatype.oss</groupId>
-    	<artifactId>oss-parent</artifactId>
-    	<version>7</version>
-  	</parent>
-	<scm>
-		<url>https://github.com/micromata/javaapiforkml</url>
-        <connection>scm:git:git://github.com/micromata/javaapiforkml.git</connection>
-        <developerConnection>scm:git:git@github.com:micromata/javaapiforkml.git</developerConnection>
-	</scm>
+
+  <parent>
+  	<groupId>org.sonatype.oss</groupId>
+   	<artifactId>oss-parent</artifactId>
+   	<version>7</version>
+  </parent>
+
 	<developers>
 		<developer>
-			<id>bachmann.florian</id>
-			<name>Florian Bachmann</name>
-			<email>f.bachmann@micromata.de</email>
-			<organization>Micromata GmbH</organization>
-			<organizationUrl>http://www.micromata.com</organizationUrl>
-			<timezone>-1</timezone>
-			<roles>
-				<role>architect</role>
-				<role>developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<id>schnitzelhugo</id>
-			<name>Bernd Kratz</name>
-			<email>b.kratz@micromata.de</email>
-			<organization>Micromata GmbH</organization>
-			<organizationUrl>http://www.micromata.com</organizationUrl>
-			<timezone>-1</timezone>
-			<roles>
-				<role>developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<id>landgraf1967</id>
-			<name>Thomas Landgraf</name>
-			<email>tl@micromata.de</email>
-			<organization>Micromata GmbH</organization>
-			<organizationUrl>http://www.micromata.com</organizationUrl>
-			<timezone>-1</timezone>
-			<roles>
-				<role>developer</role>
-			</roles>
+			<name>Mark Wickens</name>
+			<email>mark@wickensonline.co.uk</email>
+			<organization>uk.m0nom</organization>
+			<organizationUrl>https://github.com/urbancamo</organizationUrl>
 		</developer>
 	</developers>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
+
 	<licenses>
 		<license>
 			<name>BSD license</name>
@@ -66,25 +47,59 @@
 			<distribution>manual</distribution>
 		</license>
 	</licenses>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- JAXB API v3.0.1 -->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+
+		<!-- JAXB v3.0.2 reference implementation (curiously with com.sun coordinates) -->
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>3.0.2</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>xmlunit</groupId>
+			<artifactId>xmlunit</artifactId>
+			<version>1.6</version>
+      <scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>23.0.0</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<!--
-				code generation part disabled, till all files are in public maven repositories <plugin>
-				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-antrun-plugin</artifactId> <executions> <execution>
-				<id>xjc-invocation</id> <phase>generate-sources</phase> <configuration> <tasks> <property name="src.dir"
-				location="src/main" /> <property name="src.dir.gen" location="${src.dir}/java" /> <property name="schema.dir"
-				value="${src.dir}/resources/schema" /> <property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd"
-				/> <property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" /> <taskdef name="xjc"
-				classname="com.sun.tools.xjc.XJCTask" classpathref="maven.compile.classpath" /> <description>generate JAK from OGC's
-				KML schema</description> <mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" /> <delete> <fileset
-				dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" /> </delete> <xjc extension="true"
-				binding="${schema.dir.kml.binding}" destdir="${src.dir.gen}" removeOldOutput="yes"
-				schema="${schema.dir}/ogckml/kml22gx.xsd"> <arg value="-XJavaForKmlApi" /> </xjc> <exec executable="perl"
-				dir="${basedir}"> <arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" /> <arg
-				file="${src.dir.gen}/de/micromata/opengis/kml" /> </exec> </tasks> </configuration> <goals> <goal>run</goal>
-				</goals> </execution> </executions> </plugin>
-			-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
@@ -92,15 +107,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>11</source>
+					<target>11</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
@@ -111,6 +128,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>3.2.1</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -129,7 +147,9 @@
 			</extension>
 		</extensions>
 	</build>
-	<properties>
+
+<!--
+<properties>
 		<jaxb.version>2.3.3</jaxb.version>
 		<log4j.version>1.2.17</log4j.version>
 		<junit.version>4.13.1</junit.version>
@@ -248,50 +268,64 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<profiles>
+  -->
+
+
+<profiles>
 		<profile>
-			<id>clover.all</id>
+			<id>release</id>
 			<build>
 				<plugins>
 					<plugin>
-						<groupId>com.atlassian.maven.plugins</groupId>
-						<artifactId>maven-clover2-plugin</artifactId>
-						<version>2.5.1</version>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.7</version>
+						<extensions>true</extensions>
 						<configuration>
-							<snapshot>${user.home}/.clover/${groupId}-${artifactId}/clover.snapshot</snapshot>
-							<license><![CDATA[QPORQwLRnqofKiVJNSQIKsdKNrrATjdKLVUWxSxJsxdmrDo
-									  mj2KlpGKhDbmto<pV8EfyyGI2L0GfmTXJbnDjh3vD0PmE2E
-									  qNNNtTmqpmmnOnooqRRsuoRMPqnOoPopOrxxtWtVSsWXSMu
-									  TWXVUqqonmqmUUnoqvnprommmmmUUnoqvnprommmmmUUDfZ
-									  oljXqXW7jY8UUnmm]]>
-							</license>
-							<excludes>
-								<exclude>**/de/micromata/opengis/kml/v_2_2_0/annotations/**</exclude>
-								<exclude>**/de/micromata/opengis/kml/v_2_2_0/atom/**</exclude>
-								<exclude>**/de/micromata/opengis/kml/v_2_2_0/xal/**</exclude>
-								<exclude>**/de/micromata/jak/**</exclude>
-								<exclude>**/de/micromata/jak/jugh/**</exclude>
-								<exclude>**/de/micromata/jak/incubator/**</exclude>
-								<exclude>**/de/micromata/jak/internal/**</exclude>
-							</excludes>
-							<generatePdf>true</generatePdf>
-							<generateXml>true</generateXml>
-							<generateHtml>true</generateHtml>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.2.1</version>
 						<executions>
 							<execution>
-								<id>clover</id>
+								<id>attach-sources</id>
 								<goals>
-									<goal>setup</goal>
-									<goal>optimize</goal>
-									<goal>snapshot</goal>
+									<goal>jar-no-fork</goal>
 								</goals>
 							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.2.0</version>
+						<executions>
 							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<failOnWarnings>false</failOnWarnings>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
 								<phase>verify</phase>
 								<goals>
-									<goal>clover</goal>
-									<goal>log</goal>
+									<goal>sign</goal>
 								</goals>
 							</execution>
 						</executions>
@@ -300,4 +334,5 @@
 			</build>
 		</profile>
 	</profiles>
+
 </project>

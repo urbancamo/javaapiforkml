@@ -1,43 +1,28 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.gx.*;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.gx.AnimatedUpdate;
-import de.micromata.opengis.kml.v_2_2_0.gx.FlyTo;
-import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
-import de.micromata.opengis.kml.v_2_2_0.gx.MultiTrack;
-import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
-import de.micromata.opengis.kml.v_2_2_0.gx.SoundCue;
-import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
-import de.micromata.opengis.kml.v_2_2_0.gx.TourControl;
-import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
-import de.micromata.opengis.kml.v_2_2_0.gx.Track;
-import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
-import de.micromata.opengis.kml.v_2_2_0.gx.Wait;
-
 
 /**
- * <change>
+ * {@code <Change>}
  * <p>
  * Children of this element are the element(s) to be modified, which are identified 
  * by the targetId attribute. 
  * </p>
  * <p>
- * Modifies the values in an element that has already been loaded with a <NetworkLink>. 
+ * Modifies the values in an element that has already been loaded with a NetworkLink. 
  * Within the Change element, the child to be modified must include a targetId attribute 
  * that references the original element's id. 
  * </p>
  * <p>
  * This update can be considered a "sparse update": in the modified element, only the 
- * values listed in <Change> are replaced; all other values remained untouched. When 
- * <Change> is applied to a set of coordinates, the new coordinates replace the current 
+ * values listed in {@code <Change>} are replaced; all other values remained untouched. When 
+ * {@code <Change>} is applied to a set of coordinates, the new coordinates replace the current 
  * coordinates. 
  * </p>
  * 
@@ -53,12 +38,12 @@ public class Change implements Cloneable
 {
 
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -78,7 +63,7 @@ public class Change implements Cloneable
     }
 
     /**
-     * @see abstractObject
+     *
      * 
      */
     public List<AbstractObject> getAbstractObject() {
@@ -121,9 +106,10 @@ public class Change implements Cloneable
     }
 
     /**
-     * @see abstractObject
+     *
      * 
      * @param abstractObject
+     *     Objects of the following type are allowed in the list: {@code <}{@link LatLonAltBox}{@code >}{@code <}{@link Alias}{@code >}{@code <}{@link Camera}{@code >}{@code <}{@link Placemark}{@code >}{@code <}{@link Orientation}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Folder}{@code >}{@code <}{@link PhotoOverlay}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimeSpan}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimeStamp}{@code >}{@code <}{@link ResourceMap}{@code >}{@code <}{@link ScreenOverlay}{@code >}{@code <}{@link Scale}{@code >}{@code <}{@link FlyTo}{@code >}{@code <}{@link LabelStyle}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link ViewVolume}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TourPrimitive}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Data}{@code >}{@code <}{@link PolyStyle}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link ItemIcon}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Wait}{@code >}{@code <}{@link MultiTrack}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TourControl}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Link}{@code >}{@code <}{@link Geometry}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link NetworkLink}{@code >}{@code <}{@link Model}{@code >}{@code <}{@link ColorStyle}{@code >}{@code <}{@link ViewerOptions}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link SubStyle}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link MultiGeometry}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link LinearRing}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Document}{@code >}{@code <}{@link TimeStamp}{@code >}{@code <}{@link ListStyle}{@code >}{@code <}{@link Location}{@code >}{@code <}{@link Feature}{@code >}{@code <}{@link StyleSelector}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Link}{@code >}{@code <}{@link Style}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimeSpan}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link IconStyle}{@code >}{@code <}{@link StyleMap}{@code >}{@code <}{@link Overlay}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link GroundOverlay}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link SoundCue}{@code >}{@code <}{@link Polygon}{@code >}{@code <}{@link Track}{@code >}{@code <}{@link AnimatedUpdate}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Playlist}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Link}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link ImagePyramid}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Point}{@code >}{@code <}{@link LatLonBox}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link LineString}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimePrimitive}{@code >}{@code <}{@link LineStyle}{@code >}{@code <}{@link Container}{@code >}{@code <}{@link Lod}{@code >}{@code <}{@link Tour}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link LatLonQuad}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Pair}{@code >}{@code <}{@link AbstractView}{@code >}{@code <}{@link LookAt}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link BalloonStyle}{@code >}{@code <}{@link Region}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link SchemaData}{@code >}
      */
     public void setAbstractObject(final List<AbstractObject> abstractObject) {
         this.abstractObject = abstractObject;
@@ -133,9 +119,9 @@ public class Change implements Cloneable
      * add a value to the abstractObject property collection
      * 
      * @param abstractObject
-     *     Objects of the following type are allowed in the list: {@code <}{@link LatLonAltBox}{@code>}{@link JAXBElement}{@code <}{@link Alias}{@code>}{@link JAXBElement}{@code <}{@link Camera}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Orientation}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TimeSpan}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TimeStamp}{@code>}{@link JAXBElement}{@code <}{@link ResourceMap}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Scale}{@code>}{@link JAXBElement}{@code <}{@link FlyTo}{@code>}{@link JAXBElement}{@code <}{@link LabelStyle}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link ViewVolume}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TourPrimitive}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Data}{@code>}{@link JAXBElement}{@code <}{@link PolyStyle}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link ItemIcon}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Wait}{@code>}{@link JAXBElement}{@code <}{@link MultiTrack}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TourControl}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Link}{@code>}{@link JAXBElement}{@code <}{@link Geometry}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}{@link JAXBElement}{@code <}{@link Model}{@code>}{@link JAXBElement}{@code <}{@link ColorStyle}{@code>}{@link JAXBElement}{@code <}{@link ViewerOptions}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link SubStyle}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link MultiGeometry}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link LinearRing}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link TimeStamp}{@code>}{@link JAXBElement}{@code <}{@link ListStyle}{@code>}{@link JAXBElement}{@code <}{@link Location}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Link}{@code>}{@link JAXBElement}{@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TimeSpan}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link IconStyle}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link SoundCue}{@code>}{@link JAXBElement}{@code <}{@link Polygon}{@code>}{@link JAXBElement}{@code <}{@link Track}{@code>}{@link JAXBElement}{@code <}{@link AnimatedUpdate}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Playlist}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Link}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link ImagePyramid}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Point}{@code>}{@link JAXBElement}{@code <}{@link LatLonBox}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link LineString}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link TimePrimitive}{@code>}{@link JAXBElement}{@code <}{@link LineStyle}{@code>}{@link JAXBElement}{@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link Lod}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link LatLonQuad}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link Pair}{@code>}{@link JAXBElement}{@code <}{@link AbstractView}{@code>}{@link JAXBElement}{@code <}{@link LookAt}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link BalloonStyle}{@code>}{@link JAXBElement}{@code <}{@link Region}{@code>}{@link JAXBElement}{@code <}{@link AbstractObject}{@code>}{@link JAXBElement}{@code <}{@link SchemaData}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link LatLonAltBox}{@code >}{@code <}{@link Alias}{@code >}{@code <}{@link Camera}{@code >}{@code <}{@link Placemark}{@code >}{@code <}{@link Orientation}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Folder}{@code >}{@code <}{@link PhotoOverlay}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimeSpan}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimeStamp}{@code >}{@code <}{@link ResourceMap}{@code >}{@code <}{@link ScreenOverlay}{@code >}{@code <}{@link Scale}{@code >}{@code <}{@link FlyTo}{@code >}{@code <}{@link LabelStyle}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link ViewVolume}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TourPrimitive}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Data}{@code >}{@code <}{@link PolyStyle}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link ItemIcon}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Wait}{@code >}{@code <}{@link MultiTrack}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TourControl}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Link}{@code >}{@code <}{@link Geometry}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link NetworkLink}{@code >}{@code <}{@link Model}{@code >}{@code <}{@link ColorStyle}{@code >}{@code <}{@link ViewerOptions}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link SubStyle}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link MultiGeometry}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link LinearRing}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Document}{@code >}{@code <}{@link TimeStamp}{@code >}{@code <}{@link ListStyle}{@code >}{@code <}{@link Location}{@code >}{@code <}{@link Feature}{@code >}{@code <}{@link StyleSelector}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Link}{@code >}{@code <}{@link Style}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimeSpan}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link IconStyle}{@code >}{@code <}{@link StyleMap}{@code >}{@code <}{@link Overlay}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link GroundOverlay}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link SoundCue}{@code >}{@code <}{@link Polygon}{@code >}{@code <}{@link Track}{@code >}{@code <}{@link AnimatedUpdate}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Playlist}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Link}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link ImagePyramid}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Point}{@code >}{@code <}{@link LatLonBox}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link LineString}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link TimePrimitive}{@code >}{@code <}{@link LineStyle}{@code >}{@code <}{@link Container}{@code >}{@code <}{@link Lod}{@code >}{@code <}{@link Tour}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link LatLonQuad}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link Pair}{@code >}{@code <}{@link AbstractView}{@code >}{@code <}{@link LookAt}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link BalloonStyle}{@code >}{@code <}{@link Region}{@code >}{@code <}{@link AbstractObject}{@code >}{@code <}{@link SchemaData}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Change addToAbstractObject(final AbstractObject abstractObject) {
         this.getAbstractObject().add(abstractObject);
@@ -144,10 +130,12 @@ public class Change implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAbstractObject(List<AbstractObject>)
+     *
      * 
      * @param abstractObject
      *     required parameter
+     * @return
+     *     Change
      */
     public Change withAbstractObject(final List<AbstractObject> abstractObject) {
         this.setAbstractObject(abstractObject);

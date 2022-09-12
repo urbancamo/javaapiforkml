@@ -1,13 +1,13 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <listitemtype>
+ * {@code <listitemtype>}
  * <p>
  * Specifies how a Feature is displayed in the list view. Possible values are: check 
  * (default) - The Feature's visibility is tied to its item's checkbox. radioFolder 

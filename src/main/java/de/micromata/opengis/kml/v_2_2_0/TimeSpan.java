@@ -1,21 +1,17 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <gx:TimeSpan> and <gx:TimeStamp>
+ * {@code <gx:TimeSpan>} and {@code <gx:TimeStamp>}
  * <p>
- * If <begin> or <end> is missing, then that end of the period is unbounded (see Example 
+ * If {@code <begin>} or {@code <end>} is missing, then that end of the period is unbounded (see Example
  * below). 
  * </p>
  * <p>
@@ -26,7 +22,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * Second Edition). The value can be expressed as yyyy-mm-ddThh:mm:sszzzzzz, where 
  * T is the separator between the date and the time, and the time zone is either Z 
  * (for UTC) or zzzzzz, which represents ±hh:mm in relation to UTC. Additionally, the 
- * value can be expressed as a date only. See <TimeStamp> for examples. 
+ * value can be expressed as a date only. See {@code <TimeStamp>} for examples. 
  * </p>
  * 
  * Syntax: 
@@ -36,10 +32,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/TimeSpan&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <TimePrimitive>
+ *
  * 
  * Contained By: 
- * @see: <Feature>
+ *
  * 
  * 
  * 
@@ -58,7 +54,7 @@ public class TimeSpan
 {
 
     /**
-     * <begin>
+     * {@code <begin>}
      * <p>
      * Describes the beginning instant of a time period. If absent, the beginning of the 
      * period is unbounded. 
@@ -69,7 +65,7 @@ public class TimeSpan
      */
     protected String begin;
     /**
-     * <end>
+     * {@code <end>}
      * <p>
      * Describes the ending instant of a time period. If absent, the end of the period 
      * is unbounded. 
@@ -83,12 +79,12 @@ public class TimeSpan
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> timeSpanSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -108,7 +104,7 @@ public class TimeSpan
     }
 
     /**
-     * @see begin
+     *
      * 
      * @return
      *     possible object is
@@ -120,7 +116,7 @@ public class TimeSpan
     }
 
     /**
-     * @see begin
+     *
      * 
      * @param value
      *     allowed object is
@@ -132,7 +128,7 @@ public class TimeSpan
     }
 
     /**
-     * @see end
+     *
      * 
      * @return
      *     possible object is
@@ -144,7 +140,7 @@ public class TimeSpan
     }
 
     /**
-     * @see end
+     *
      * 
      * @param value
      *     allowed object is
@@ -156,7 +152,7 @@ public class TimeSpan
     }
 
     /**
-     * @see timeSpanSimpleExtension
+     *
      * 
      */
     public List<Object> getTimeSpanSimpleExtension() {
@@ -167,7 +163,7 @@ public class TimeSpan
     }
 
     /**
-     * @see timeSpanObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getTimeSpanObjectExtension() {
@@ -243,9 +239,10 @@ public class TimeSpan
     }
 
     /**
-     * @see timeSpanSimpleExtension
+     *
      * 
      * @param timeSpanSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setTimeSpanSimpleExtension(final List<Object> timeSpanSimpleExtension) {
         this.timeSpanSimpleExtension = timeSpanSimpleExtension;
@@ -257,7 +254,7 @@ public class TimeSpan
      * @param timeSpanSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public TimeSpan addToTimeSpanSimpleExtension(final Object timeSpanSimpleExtension) {
         this.getTimeSpanSimpleExtension().add(timeSpanSimpleExtension);
@@ -265,9 +262,10 @@ public class TimeSpan
     }
 
     /**
-     * @see timeSpanObjectExtension
+     *
      * 
      * @param timeSpanObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setTimeSpanObjectExtension(final List<AbstractObject> timeSpanObjectExtension) {
         this.timeSpanObjectExtension = timeSpanObjectExtension;
@@ -279,7 +277,7 @@ public class TimeSpan
      * @param timeSpanObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public TimeSpan addToTimeSpanObjectExtension(final AbstractObject timeSpanObjectExtension) {
         this.getTimeSpanObjectExtension().add(timeSpanObjectExtension);
@@ -287,7 +285,7 @@ public class TimeSpan
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -304,7 +302,7 @@ public class TimeSpan
     }
 
     /**
-     * @see timePrimitiveSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -321,7 +319,7 @@ public class TimeSpan
     }
 
     /**
-     * @see timePrimitiveObjectExtension
+     *
      * 
      */
     @Obvious
@@ -339,7 +337,7 @@ public class TimeSpan
 
     /**
      * fluent setter
-     * @see #setBegin(String)
+     *
      * 
      * @param begin
      *     required parameter
@@ -351,7 +349,7 @@ public class TimeSpan
 
     /**
      * fluent setter
-     * @see #setEnd(String)
+     *
      * 
      * @param end
      *     required parameter
@@ -363,7 +361,7 @@ public class TimeSpan
 
     /**
      * fluent setter
-     * @see #setTimeSpanSimpleExtension(List<Object>)
+     *
      * 
      * @param timeSpanSimpleExtension
      *     required parameter
@@ -375,7 +373,7 @@ public class TimeSpan
 
     /**
      * fluent setter
-     * @see #setTimeSpanObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param timeSpanObjectExtension
      *     required parameter

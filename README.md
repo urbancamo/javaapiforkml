@@ -9,8 +9,6 @@ The project is now open to pull requests for bugs and enhancements.
 Thank you to those who previously submitted pull requests - the majority of these
 have now been squashed and merged.
 
-I intend to release a new version in the near future with support for Java 11+.
-
 ---
 
 The main goal of the Java API for KML (JAK) is to provide automatically generated full reference implementation of the KML object model defined by OGC’s KML standard and Google’s GX extensions. It is an object orientated API that enables the convenient and easy use of KML in existing Java environments.
@@ -25,26 +23,53 @@ A high level documentation can be found at: https://web.archive.org/web/20170316
 
 The current JARs can be obtained via Maven or at the Download page:
 
+---
+
+# Java 11 Support
+
+I've updated the library to be usable with Java 11 and external jakarta replacement.
+
+You need the following dependencies in a library that depends on javaapiforkml:
+
 ```
-<dependencies>
-    ...
-   <dependency>
-      <groupId>de.micromata.jak</groupId>
-      <artifactId>JavaAPIforKml</artifactId>
-      <version>2.2.0-SNAPSHOT</version>
-   </dependency>
-    ...
-</dependencies>
-<repositories>
-    ...
-   <repository>
-      <id>maven2-repository.dev.java.net</id>
-      <name>Java.net Maven 2 Repository</name>
-      <url>http://download.java.net/maven/2</url>
-      <layout>default</layout>
-      <snapshots>
-         <enabled>true</enabled>
-      </snapshots>
-      </repository>
-</repositories>
+    <!-- JAXB API v3.0.1 -->
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <!-- JAXB v3.0.2 reference implementation (curiously with com.sun coordinates) -->
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>3.0.2</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <scope>runtime</scope>
+      <version>2.3.3</version>
+    </dependency>
+```
+
+
+You will need the following dependencies in an application using the library:
+
+```
+        <!-- JAXB API v3.0.1 -->
+        <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
+        <dependency>
+            <groupId>jakarta.activation</groupId>
+            <artifactId>jakarta.activation-api</artifactId>
+            <version>2.1.0</version>
+        </dependency>
 ```

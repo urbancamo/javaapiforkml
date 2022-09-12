@@ -1,21 +1,13 @@
 
 package de.micromata.opengis.kml.v_2_2_0.xal;
 
+import jakarta.xml.bind.annotation.*;
+
+import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyAttribute;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
-import javax.xml.namespace.QName;
 
 
 /**
@@ -266,9 +258,9 @@ public class Firm implements Cloneable
     /**
      * Creates a new instance of {@link AddressLine} and adds it to addressLine.
      * This method is a short version for:
-     * <code>
+     * {@code
      * AddressLine addressLine = new AddressLine();
-     * this.getAddressLine().add(addressLine); </code>
+     * this.getAddressLine().add(addressLine); }
      * 
      * 
      */
@@ -281,9 +273,9 @@ public class Firm implements Cloneable
     /**
      * Creates a new instance of {@link Firm.FirmName} and adds it to firmName.
      * This method is a short version for:
-     * <code>
+     * {@code
      * FirmName firmName = new FirmName();
-     * this.getFirmName().add(firmName); </code>
+     * this.getFirmName().add(firmName); }
      * 
      * 
      */
@@ -296,9 +288,9 @@ public class Firm implements Cloneable
     /**
      * Creates a new instance of {@link Department} and adds it to department.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Department department = new Department();
-     * this.getDepartment().add(department); </code>
+     * this.getDepartment().add(department); }
      * 
      * 
      */
@@ -312,9 +304,9 @@ public class Firm implements Cloneable
      * Creates a new instance of {@link MailStop} and set it to mailStop.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * MailStop mailStop = new MailStop();
-     * this.setMailStop(mailStop); </code>
+     * this.setMailStop(mailStop); }
      * 
      * 
      */
@@ -328,9 +320,9 @@ public class Firm implements Cloneable
      * Creates a new instance of {@link PostalCode} and set it to postalCode.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PostalCode postalCode = new PostalCode();
-     * this.setPostalCode(postalCode); </code>
+     * this.setPostalCode(postalCode); }
      * 
      * 
      */
@@ -341,12 +333,13 @@ public class Firm implements Cloneable
     }
 
     /**
-     * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list List<AddressLine>.
+     * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list {@code List<AddressLine>}.
      * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAddressLine} instead.
+     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withAddressLine instead.
      * 
      * 
      * @param addressLine
+     *     Objects of the following type are allowed in the list: {@link AddressLine}
      */
     public void setAddressLine(final List<AddressLine> addressLine) {
         this.addressLine = addressLine;
@@ -358,7 +351,7 @@ public class Firm implements Cloneable
      * @param addressLine
      *     Objects of the following type are allowed in the list: {@link AddressLine}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Firm addToAddressLine(final AddressLine addressLine) {
         this.getAddressLine().add(addressLine);
@@ -366,12 +359,13 @@ public class Firm implements Cloneable
     }
 
     /**
-     * Sets the value of the firmName property Objects of the following type(s) are allowed in the list List<FirmName>.
+     * Sets the value of the firmName property Objects of the following type(s) are allowed in the list {@code List<FirmName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withFirmName} instead.
      * 
      * 
      * @param firmName
+     *     Objects of the following type are allowed in the list: {@link Firm.FirmName}
      */
     public void setFirmName(final List<Firm.FirmName> firmName) {
         this.firmName = firmName;
@@ -383,7 +377,7 @@ public class Firm implements Cloneable
      * @param firmName
      *     Objects of the following type are allowed in the list: {@link Firm.FirmName}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Firm addToFirmName(final Firm.FirmName firmName) {
         this.getFirmName().add(firmName);
@@ -391,12 +385,13 @@ public class Firm implements Cloneable
     }
 
     /**
-     * Sets the value of the department property Objects of the following type(s) are allowed in the list List<Department>.
+     * Sets the value of the department property Objects of the following type(s) are allowed in the list {@code List<Department>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withDepartment} instead.
      * 
      * 
      * @param department
+     *     Objects of the following type are allowed in the list: {@link Department}
      */
     public void setDepartment(final List<Department> department) {
         this.department = department;
@@ -408,7 +403,7 @@ public class Firm implements Cloneable
      * @param department
      *     Objects of the following type are allowed in the list: {@link Department}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Firm addToDepartment(final Department department) {
         this.getDepartment().add(department);
@@ -416,12 +411,13 @@ public class Firm implements Cloneable
     }
 
     /**
-     * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the any property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
      * 
      * 
      * @param any
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setAny(final List<Object> any) {
         this.any = any;
@@ -433,7 +429,7 @@ public class Firm implements Cloneable
      * @param any
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Firm addToAny(final Object any) {
         this.getAny().add(any);
@@ -442,7 +438,7 @@ public class Firm implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAddressLine(List<AddressLine>)
+     *
      * 
      * @param addressLine
      *     required parameter
@@ -454,7 +450,7 @@ public class Firm implements Cloneable
 
     /**
      * fluent setter
-     * @see #setFirmName(List<FirmName>)
+     *
      * 
      * @param firmName
      *     required parameter
@@ -466,7 +462,7 @@ public class Firm implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDepartment(List<Department>)
+     *
      * 
      * @param department
      *     required parameter
@@ -478,7 +474,7 @@ public class Firm implements Cloneable
 
     /**
      * fluent setter
-     * @see #setMailStop(MailStop)
+     *
      * 
      * @param mailStop
      *     required parameter
@@ -490,7 +486,7 @@ public class Firm implements Cloneable
 
     /**
      * fluent setter
-     * @see #setPostalCode(PostalCode)
+     *
      * 
      * @param postalCode
      *     required parameter
@@ -502,7 +498,7 @@ public class Firm implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAny(List<Object>)
+     *
      * 
      * @param any
      *     required parameter
@@ -514,7 +510,7 @@ public class Firm implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUnderscore(String)
+     *
      * 
      * @param underscore
      *     required parameter
@@ -709,7 +705,7 @@ public class Firm implements Cloneable
 
         /**
          * fluent setter
-         * @see #setContent(String)
+         *
          * 
          * @param content
          *     required parameter
@@ -721,7 +717,7 @@ public class Firm implements Cloneable
 
         /**
          * fluent setter
-         * @see #setUnderscore(String)
+         *
          * 
          * @param underscore
          *     required parameter
@@ -733,7 +729,7 @@ public class Firm implements Cloneable
 
         /**
          * fluent setter
-         * @see #setCode(String)
+         *
          * 
          * @param code
          *     required parameter

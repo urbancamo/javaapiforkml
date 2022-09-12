@@ -1,27 +1,22 @@
 
 package de.micromata.opengis.kml.v_2_2_0.atom;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
- * <link> (required). see <link>.
+ * {@code <Link>} (required). see {@code <Link>}.
  * <p>
- * <Link> specifies the location of any of the following: 
+ * {@code <Link>} specifies the location of any of the following: 
  * </p>
  * <p>
- * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
+ * If the file specified in {@code <href>}is a local file, the {@code <viewFormat>} and {@code <httpQuery>} 
  * elements are not used. 
  * </p>
  * <p>
- * KML files fetched by network links Image files used in any Overlay (the <Icon> element 
- * specifies the image in an Overlay; <Icon> has the same fields as <Link>) Model files 
- * used in the <Model> element 
+ * KML files fetched by network links Image files used in any Overlay (the {@code <Icon>}element 
+ * specifies the image in an Overlay; {@code <Icon>}has the same fields as {@code <Link>}) Model files 
+ * used in the {@code <Model>} element 
  * </p>
  * <p>
  * Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
@@ -29,21 +24,21 @@ import javax.xml.bind.annotation.XmlType;
  * (see the sample that follows). 
  * </p>
  * <p>
- * Specifies the file to load and optional refresh parameters. See <Link>. 
+ * Specifies the file to load and optional refresh parameters. See {@code <Link>}. 
  * </p>
  * <p>
- * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
- * KML releases and adds functionality for the <Region> element (introduced in KML 
- *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
+ * The {@code <Link>} element replaces the {@code <Url>} element of NetworkLink contained in earlier 
+ * KML releases and adds functionality for the {@code <Region>} element (introduced in KML 
+ *  2.1). In Google Earth releases 3.0 and earlier, the {@code <Link>} element is ignored. 
  * </p>
  * <p>
  * The file is conditionally loaded and refreshed, depending on the refresh parameters 
  * supplied here. Two different sets of refresh parameters can be specified: one set 
- * is based on time (<refreshMode> and <refreshInterval>) and one is based on the current 
- * "camera" view (<viewRefreshMode> and <viewRefreshTime>). In addition, Link specifies 
- * whether to scale the bounding box parameters that are sent to the server (<viewBoundScale> 
+ * is based on time ({@code <refreshMode>} and {@code <refreshInterval>}) and one is based on the current
+ * "camera" view ({@code <viewRefreshMode>} and {@code <viewRefreshTime>}). In addition, Link specifies
+ * whether to scale the bounding box parameters that are sent to the server ({@code <viewBoundScale>}
  * and provides a set of optional viewing parameters that can be sent to the server 
- * (<viewFormat>) as well as a set of optional parameters containing version and language 
+ * ({@code <viewFormat>}) as well as a set of optional parameters containing version and language
  * information. 
  * </p>
  * <p>
@@ -57,10 +52,10 @@ import javax.xml.bind.annotation.XmlType;
  * </p>
  * <p>
  * the href (Hypertext Reference) that specifies the file to load. an arbitrary format 
- * string that is created from (a) parameters that you specify in the <viewFormat> 
- * element or (b) bounding box parameters (this is the default and is used if no <viewFormat> 
+ * string that is created from (a) parameters that you specify in the {@code <viewFormat>} 
+ * element or (b) bounding box parameters (this is the default and is used if no {@code <viewFormat>} 
  * element is included in the file). a second format string that is specified in the 
- * <httpQuery> element. 
+ * {@code <httpQuery>} element. 
  * </p>
  * 
  * Syntax: 
@@ -79,19 +74,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;httpQuery&gt;...&lt;/httpQuery&gt;            &lt;!-- string --&gt;
  * <strong>&lt;/Link&gt;</strong></pre>
  * 
- * Extends: 
- * @see: <Object>
- * 
- * Contained By: 
- * @see: <Model>
- * @see: <NetworkLink>
- * 
- * See Also: 
- * <NetworkLinkControl>
- * <Region>
- * 
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -100,12 +82,11 @@ public class Link implements Cloneable
 {
 
     /**
-     * <href>
      * <p>
      * A URL (either an HTTP address or a local file specification). When the parent of 
-     * <Link> is a NetworkLink, <href> is a KML file. When the parent of <Link> is a Model, 
-     * <href> is a COLLADA file. When the parent of <Icon> (same fields as <Link>) is an 
-     * Overlay, <href> is an image. Relative URLs can be used in this tag and are evaluated 
+     * {@code <Link>} is a NetworkLink, {@code <href>}is a KML file. When the parent of {@code <Link>} is a Model, 
+     * {@code <href>}is a COLLADA file. When the parent of {@code <Icon>}(same fields as {@code <Link>}) is an 
+     * Overlay, {@code <href>}is an image. Relative URLs can be used in this tag and are evaluated 
      * relative to the enclosing KML file. 
      * </p>
      * <p>
@@ -114,9 +95,6 @@ public class Link implements Cloneable
      * <p>
      * Specifies the URI of the image used in the List View for the Feature. 
      * </p>
-     * 
-     * 
-     * 
      */
     @XmlAttribute(name = "href", required = true)
     @XmlSchemaType(name = "anySimpleType")
@@ -156,8 +134,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see href
-     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -168,8 +144,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see href
-     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -180,8 +154,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see rel
-     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -192,8 +164,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see rel
-     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -204,8 +174,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see type
-     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -216,8 +184,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see type
-     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -228,8 +194,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see hreflang
-     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -240,8 +204,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see hreflang
-     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -252,8 +214,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see title
-     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -264,8 +224,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see title
-     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -276,8 +234,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see length
-     * 
      * @return
      *     possible object is
      *     {@link String}
@@ -288,8 +244,6 @@ public class Link implements Cloneable
     }
 
     /**
-     * @see length
-     * 
      * @param value
      *     allowed object is
      *     {@link String}
@@ -383,7 +337,7 @@ public class Link implements Cloneable
 
     /**
      * fluent setter
-     * @see #setRel(String)
+     *
      * 
      * @param rel
      *     required parameter
@@ -395,7 +349,7 @@ public class Link implements Cloneable
 
     /**
      * fluent setter
-     * @see #setType(String)
+     *
      * 
      * @param type
      *     required parameter
@@ -407,7 +361,7 @@ public class Link implements Cloneable
 
     /**
      * fluent setter
-     * @see #setHreflang(String)
+     *
      * 
      * @param hreflang
      *     required parameter
@@ -419,7 +373,7 @@ public class Link implements Cloneable
 
     /**
      * fluent setter
-     * @see #setTitle(String)
+     *
      * 
      * @param title
      *     required parameter
@@ -431,7 +385,7 @@ public class Link implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLength(String)
+     *
      * 
      * @param length
      *     required parameter

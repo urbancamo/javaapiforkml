@@ -3,7 +3,7 @@ package de.micromata.opengis.kml.v_2_2_0;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 public final class CoordinatesConverter
     extends XmlAdapter<String, List<Coordinate>>
