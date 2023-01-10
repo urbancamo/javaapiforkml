@@ -22,12 +22,12 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.lang.reflect.Field;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.PropertyException;
-import javax.xml.bind.Unmarshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.PropertyException;
+import jakarta.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
 import javax.xml.transform.stream.StreamSource;
 
@@ -105,7 +105,7 @@ public final class Utils {
 	private static Marshaller createMarshaller(JAXBContext jc) throws JAXBException, PropertyException {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-		m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new NameSpaceBeautyfier());
+		m.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new NameSpaceBeautyfier());
 		return m;
 	}
 

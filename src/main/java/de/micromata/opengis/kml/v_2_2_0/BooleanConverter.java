@@ -1,7 +1,7 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 public final class BooleanConverter
     extends XmlAdapter<Integer, Boolean>

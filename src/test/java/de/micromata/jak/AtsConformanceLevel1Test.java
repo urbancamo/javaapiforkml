@@ -18,7 +18,7 @@ package de.micromata.jak;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import junit.framework.Assert;
 
