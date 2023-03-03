@@ -15,7 +15,7 @@
 /////////////////////////////////////////////////////////////////////////////
 package de.micromata.jak;
 
-import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
+import org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper;
 
 public final class NameSpaceBeautyfier
    extends NamespacePrefixMapper

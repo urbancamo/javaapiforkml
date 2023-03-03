@@ -87,7 +87,7 @@ sub removeJAXBElementForOneJavaFile {
 			
 			
 			
-			if ($filehandle !~ /Kml.java/  && $currentJavaFile[$i] =~ s/(import javax.xml.bind.JAXBElement;)//g) {
+			if ($filehandle !~ /Kml.java/  && $currentJavaFile[$i] =~ s/(import jakarta.xml.bind.JAXBElement;)//g) {
 				# print "5: $currentJavaFile[$i]";
 				$jaxbelementFileCount++;
 			}
@@ -146,7 +146,7 @@ sub removeJAXBElementForOneJavaFile {
 		if ($filehandle =~ /LatLonQuad.java/ || $filehandle =~ /LinearRing.java/
 			|| $filehandle =~ /LineString.java/ || $filehandle =~ /Point.java/) {
 	
-			if ($currentJavaFile[$i] =~ s/(import javax.xml.bind.annotation.XmlList;)//g) {
+			if ($currentJavaFile[$i] =~ s/(import jakarta.xml.bind.annotation.XmlList;)//g) {
 				# print "5: $currentJavaFile[$i]";
 				$jaxbelementFileCount++;
 			}			

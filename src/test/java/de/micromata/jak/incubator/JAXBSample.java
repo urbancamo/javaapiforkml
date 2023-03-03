@@ -15,18 +15,18 @@
 /////////////////////////////////////////////////////////////////////////////
 package de.micromata.jak.incubator;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.Marshaller;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.Marshaller;
 import javax.xml.namespace.QName;
 
-import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
+import org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper;
 
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 
 public class JAXBSample {
 
-    public static void main(String args[]) throws javax.xml.bind.JAXBException{
+    public static void main(String args[]) throws jakarta.xml.bind.JAXBException{
         try {
             JAXBContext jc = JAXBContext.newInstance("a");            
             JustAType t = new JustAType();
@@ -43,7 +43,7 @@ public class JAXBSample {
             m = new PreDeclaredMapper();
             marshal(jc, e, m);
             
-        } catch(javax.xml.bind.JAXBException e) {
+        } catch(jakarta.xml.bind.JAXBException e) {
             e.printStackTrace();
         }
     }
@@ -54,7 +54,7 @@ public class JAXBSample {
             Marshaller m = jc.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             if (mapper != null) {
-                m.setProperty("com.sun.xml.bind.namespacePrefixMapper", mapper);
+                m.setProperty("org.glassfish.jaxb.namespacePrefixMapper", mapper);
             }
             m.marshal(toMarshall, System.out);
             System.out.println("-----------------------");

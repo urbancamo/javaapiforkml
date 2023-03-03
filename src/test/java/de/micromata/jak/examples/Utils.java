@@ -100,9 +100,9 @@ public class Utils {
 			code = row[codeColumn].replaceAll(regex, replacement).trim();
 			data = row[dataColumn].replaceAll(regex, replacement).trim();
 			// save minimum and maximum
-			max = Math.max(new Double(data), max);
-			min = Math.min(new Double(data), min);
-			dataMap.put(code, new Double(data));
+			max = Math.max(Double.valueOf(data), max);
+			min = Math.min(Double.valueOf(data), min);
+			dataMap.put(code, Double.valueOf(data));
 		}
 		// save min and max to HashMap
 		dataMap.put("minimum", min);
@@ -148,8 +148,8 @@ public class Utils {
 				dataMap.put(code, tmp);
 			}
 			HashMap<String, Double> nested = dataMap.get(code);
-			double value = new Double(data);
-			nested.put(multiData, new Double(value));
+			double value = Double.valueOf(data);
+			nested.put(multiData, Double.valueOf(value));
 
 			// save minimum and maximum
 			max = Math.max(value, max);
