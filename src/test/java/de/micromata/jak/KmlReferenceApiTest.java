@@ -2,7 +2,8 @@ package de.micromata.jak;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.junit.Test;
 
@@ -97,10 +98,10 @@ import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
 public final class KmlReferenceApiTest implements IKMLReference
 {
 	@SuppressWarnings("unused")
-  private static final Logger LOG = Logger.getLogger(KmlReferenceApiTest.class.getName());
+  private static final Logger LOG = LoggerFactory.getLogger(KmlReferenceApiTest.class.getName());
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#ballonStyle()
 	 */
 	@Test
@@ -119,7 +120,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#ballonStyleExample()
 	 */
 	@Test
@@ -141,7 +142,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withName("BalloonStyle")
 		.withDescription("An example of BalloonStyle")
 		.withStyleUrl("#exampleBalloonStyle");
-		
+
 		final Point point = placemark.createAndSetPoint();
 		List<Coordinate> coord = point.createAndSetCoordinates();
 		coord.add(new Coordinate(-122.370533,37.823842,0));
@@ -152,7 +153,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#camera()
 	 */
 	@Test
@@ -173,7 +174,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#document()
 	 */
 	@Test
@@ -190,7 +191,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withPhoneNumber("...")
 		.withSnippet(new Snippet().withMaxLines(2).withMaxLines(2).withValue("..."))
 		.withDescription("...")
-		
+
 		.withAbstractView(KmlFactory.createCamera())
 		.withTimePrimitive(KmlFactory.createTimeSpan())
 		.withStyleUrl("...")
@@ -213,7 +214,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 		AddressDetails.Address xalAddress = new AddressDetails.Address();
 		AddressLines addressLines = new AddressLines(new ArrayList<AddressLine>());
-		
+
 		Locality locality = new Locality(postBox, new LargeMailUser(), new PostOffice(), postalRoute);
 		AdministrativeArea administrativeArea = new AdministrativeArea(locality, new PostOffice(), new PostalCode());
 		Thoroughfare thoroughfare = new Thoroughfare(new DependentLocality(postBox, new LargeMailUser(), new PostOffice(), postalRoute),
@@ -225,7 +226,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#documentExample()
 	 */
 	@Test
@@ -247,7 +248,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#extendedData()
 	 */
 	@Test
@@ -264,7 +265,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#extendedDataValue()
 	 */
 	@Test
@@ -280,7 +281,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#extendedDataSimpleData()
 	 */
 	@Test
@@ -294,7 +295,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 				.addToSimpleData(KmlFactory.createSimpleData("ElevationGain").withValue("10"))
 		);
 		placemark1.createAndSetPoint().createAndSetCoordinates().add(new Coordinate(-122.000,37.002));
-	
+
 		final Placemark placemark2 = document.createAndAddPlacemark().withName("Difficult trail");
 		placemark2.createAndSetExtendedData()
 		.addToSchemaData(new SchemaData().withSchemaUrl("#TrailHeadTypeId")
@@ -310,7 +311,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#extendedDataNameSapcePrefix()
 	 */
 	// FIXME: <ExtendedData xmlns:prefix="camp">
@@ -329,7 +330,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#featureAscriptionElement()
 	 */
 	@Test
@@ -342,7 +343,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 		document.createAndAddPlacemark().withName("Hogwarts")
 		.createAndSetPoint().createAndSetCoordinates().add(new Coordinate(1,1));
-		
+
 		document.createAndAddPlacemark().withName("Little Hangleton")
 		.createAndSetPoint().createAndSetCoordinates().add(new Coordinate(1,2));
 
@@ -352,7 +353,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#folder()
 	 */
 	@Test
@@ -383,7 +384,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#folderExample()
 	 */
 	@Test
@@ -404,19 +405,19 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.addToCoordinates("-122.377576,37.830631,0")
 		.addToCoordinates("-122.377840,37.830642,0")
 		.addToCoordinates("-122.377830,37.830445,0");
-		
+
 		folder.createAndAddPlacemark().withName("Folder object 3 (Path)")
 		.createAndSetLineString().withTessellate(true)
 		.addToCoordinates("-122.378009,37.830128,0")
 		.addToCoordinates("-122.377885,37.830379,0");
-		
+
 		KmlReferenceCheck.folderExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.folderExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#groundOverlay()
 	 */
 	@Test
@@ -450,7 +451,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		// specific to GroundOverlay
 		.withAltitude(0.0d)
 		.withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
-		
+
 		groundoverlay.createAndSetLatLonBox()
 		.withNorth(0.0d)
 		.withSouth(0.0d)
@@ -464,7 +465,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#groundOverlayLatLonBox()
 	 */
 	@Test
@@ -482,7 +483,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#groundOverlayExample()
 	 */
 	@Test
@@ -513,7 +514,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#icon()
 	 */
 	@Test
@@ -533,7 +534,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#iconStyle()
 	 */
 	@Test
@@ -546,9 +547,9 @@ public final class KmlReferenceApiTest implements IKMLReference
 		// <!-- specific to IconStyle -->
 		.withScale(1.0d)
 		.withHeading(0d);
-		
+
 		iconstyle.createAndSetIcon().withHref("...");
-		
+
 		iconstyle.createAndSetHotSpot()
 		.withX(0.5d)
 		.withY(0.5d)
@@ -561,7 +562,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#iconStyleExample()
 	 */
 	@Test
@@ -577,17 +578,17 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 		iconstyle.createAndSetIcon().withHref("http://maps.google.com/mapfiles/kml/pal3/icon21.png");
 
-		
+
 		document.createAndAddPlacemark().withName("IconStyle.kml").withStyleUrl("#randomColorIcon")
 		.createAndSetPoint().addToCoordinates("-122.36868,37.831145,0");
-		
+
 		KmlReferenceCheck.iconStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.iconStyleExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#kml()
 	 */
 	@Test
@@ -600,7 +601,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#labelStyle()
 	 */
 	@Test
@@ -619,7 +620,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#labelStyleExample()
 	 */
 	@Test
@@ -635,14 +636,14 @@ public final class KmlReferenceApiTest implements IKMLReference
 
 		document.createAndAddPlacemark().withName("LabelStyle.kml").withStyleUrl("#randomLabelColor")
 		.createAndSetPoint().addToCoordinates("-122.367375,37.829192,0");
-		
+
 		KmlReferenceCheck.labelStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.labelStyleExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#linearRing()
 	 */
 	@Test
@@ -661,14 +662,14 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#linearRingExample()
 	 */
 	@Test
 	public void linearRingExample() {
 		final Kml kml = KmlFactory.createKml();
 		final Document document = kml.createAndSetDocument();
-		
+
 		document.createAndAddPlacemark().withName("LinearRing.kml")
 		.createAndSetPolygon().createAndSetOuterBoundaryIs().createAndSetLinearRing()
 		.addToCoordinates(-122.365662,37.826988,0)
@@ -676,14 +677,14 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.addToCoordinates(-122.364581,37.82655,0)
 		.addToCoordinates(-122.365038,37.827237,0)
 		.addToCoordinates(-122.365662,37.826988,0);
-		
+
 		KmlReferenceCheck.linearRingExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.linearRingExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#lineString()
 	 */
 	@Test
@@ -694,14 +695,14 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withTessellate(false)
 		.withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND)
 		.addToCoordinates("0.0,0.0,0.0");
-		
+
 		KmlReferenceCheck.lineString(linestring);
 		final LineString marshalledAndBackAgain = Utils.marshalAndUnmarshall(linestring);
 		KmlReferenceCheck.lineString(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#lineStringExample()
 	 */
 	@Test
@@ -720,19 +721,19 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.createAndSetLineString().withExtrude(false).withTessellate(true)
 		.addToCoordinates("-122.364383,37.824664,0")
 		.addToCoordinates("-122.364152,37.824322,0");
-		
+
 		document.createAndAddPlacemark().withName("extruded")
 		.createAndSetLineString().withExtrude(true).withTessellate(true)
 		.addToCoordinates("-122.364167,37.824787,50")
 		.addToCoordinates("-122.363917,37.824423,50");
-		
+
 		KmlReferenceCheck.lineStringExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.lineStringExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#lineStyle()
 	 */
 	@Test
@@ -751,7 +752,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#lineStyleExample()
 	 */
 	@Test
@@ -768,14 +769,14 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.createAndSetLineString().withExtrude(true).withTessellate(true)
 		.addToCoordinates("-122.364383,37.824664,0")
 		.addToCoordinates("-122.364152,37.824322,0");
-		
+
 		KmlReferenceCheck.lineStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.lineStyleExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#link()
 	 */
 	@Test
@@ -797,7 +798,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#linkExample()
 	 */
 	@Test
@@ -805,7 +806,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final NetworkLink networklink = KmlFactory.createNetworkLink()
 		.withName("NE US Radar")
 		.withFlyToView(true);
-		
+
 		networklink.createAndSetLink()
 		.withHref("http://www.example.com/geotiff/NE/MergedReflectivityQComposite.kml")
 		.withRefreshMode(RefreshMode.ON_INTERVAL)
@@ -822,7 +823,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#listStyle()
 	 */
 	@Test
@@ -832,7 +833,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		// <!-- specific to ListStyle -->
 		.withListItemType(ListItemType.CHECK)
 		.withBgColor("ffffffff");
-		
+
 		liststyle.createAndAddItemIcon().addToState(ItemIconState.OPEN).withHref("...");
 
 		KmlReferenceCheck.listStyle(liststyle);
@@ -841,7 +842,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#lookAt()
 	 */
 	@Test
@@ -864,7 +865,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#lookAtExample()
 	 */
 	@Test
@@ -887,9 +888,9 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.lookAtExample(marshalledAndBackAgain);
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#model()
 	 */
 	@Test
@@ -907,7 +908,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#modelLocation()
 	 */
 	@Test
@@ -923,7 +924,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#modelOrientation()
 	 */
 	@Test
@@ -939,7 +940,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#modelScale()
 	 */
 	@Test
@@ -956,7 +957,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#modelResourceMap()
 	 */
 	@Test
@@ -971,7 +972,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#modelExample()
 	 */
 	@Test
@@ -979,7 +980,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Model model = KmlFactory.createModel()
 		.withId("khModel543")
 		.withAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
-		
+
 		model.createAndSetLocation().withLongitude(39.55375305703105).withLatitude(-118.9813220168456).withAltitude(1223.0);
 		model.createAndSetOrientation().withHeading(45.0).withTilt(10.0).withRoll(0.0);
 
@@ -995,18 +996,18 @@ public final class KmlReferenceApiTest implements IKMLReference
 		resourcemap.createAndAddAlias()
 		.withTargetHref("../files/CU-Macky-4sideturretnoCulling.jpg")
 		.withSourceHref("CU-Macky-4sideturretnoCulling.jpg");
-		
+
 		resourcemap.createAndAddAlias()
 		.withTargetHref("../files/CU-Macky-Back-NorthnoCulling.jpg")
 		.withSourceHref("CU-Macky-Back-NorthnoCulling.jpg");
-		
+
 		KmlReferenceCheck.modelExample(model);
 		final Model marshalledAndBackAgain = Utils.marshalAndUnmarshall(model);
 		KmlReferenceCheck.modelExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#multiGeometry()
 	 */
 	@Test
@@ -1019,7 +1020,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#multiGeometryExample()
 	 */
 	@Test
@@ -1028,22 +1029,22 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withName("SF Marina Harbor Master")
 		.withVisibility(false);
 		final MultiGeometry multigeometry = placemark.createAndSetMultiGeometry();
-		
+
 		multigeometry.createAndAddLineString()
 		.addToCoordinates("-122.4425587930444,37.80666418607323,0")
 		.addToCoordinates("-122.4428379594768,37.80663578323093,0");
-		
+
 		multigeometry.createAndAddLineString()
 		.addToCoordinates("-122.4425509770566,37.80662588061205,0")
 		.addToCoordinates("-122.4428340530617,37.8065999493009,0");
-		
+
 		KmlReferenceCheck.multiGeometryExample(placemark);
 		final Placemark marshalledAndBackAgain = Utils.marshalAndUnmarshall(placemark);
 		KmlReferenceCheck.multiGeometryExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#networkLink()
 	 */
 	@Test
@@ -1072,7 +1073,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 				// <!-- specific to NetworkLink -->
 		.withRefreshVisibility(false)
 		.withFlyToView(false);
-		
+
 		networklink.createAndSetLink().withHref("...");
 
 		KmlReferenceCheck.networkLink(networklink);
@@ -1081,7 +1082,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#networkLinkExample()
 	 */
 	@Test
@@ -1097,7 +1098,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#networkLinkControl()
 	 */
 	@Test
@@ -1113,7 +1114,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withExpires("...")
 		.withUpdate(KmlFactory.createUpdate("", new ArrayList<Object>()))
 		.withAbstractView(KmlFactory.createLookAt());
-		
+
 		networklinkcontrol.createAndSetLinkSnippet().withMaxLines(2).withValue("...");
 
 		KmlReferenceCheck.networkLinkControl(networklinkcontrol);
@@ -1122,7 +1123,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#networkLinkControlExample()
 	 */
 	@Test
@@ -1140,7 +1141,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#overlayIcon()
 	 */
 	@Test
@@ -1153,7 +1154,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#photoOverlay()
 	 */
 	@Test
@@ -1187,7 +1188,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		// <!-- specific to PhotoOverlay -->
 		.withShape(Shape.RECTANGLE)
 		.withRotation(0.0);
-		
+
 		photooverlay.createAndSetViewVolume()
 		.withLeftFov(0.0)
 		.withRightFov(0.0)
@@ -1209,7 +1210,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#photoOverlayExample()
 	 */
 	@Test
@@ -1219,7 +1220,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withDescription("High above the ocean")
 		// <!-- Overlay elements -->
 		.withIcon(new Icon().withHref("small-photo.jpg"))
-	
+
 		// <!-- PhotoOverlay elements -->
 		.withShape(Shape.RECTANGLE)
 		.withRotation(0.0);
@@ -1245,7 +1246,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#placemark()
 	 */
 	@Test
@@ -1279,7 +1280,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#placemarkExample()
 	 */
 	@Test
@@ -1287,7 +1288,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		Placemark placemark = new Placemark()
 		    .withName("Google Earth - New Placemark")
 		    .withDescription("Some Descriptive text.");
-		
+
 		placemark.createAndSetLookAt()
  		    .withLongitude(-90.86879847669974)
 		    .withLatitude(48.25330383601299)
@@ -1304,7 +1305,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#point()
 	 */
 	@Test
@@ -1321,7 +1322,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#pointExample()
 	 */
 	@Test
@@ -1335,7 +1336,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#polygon()
 	 */
 	@Test
@@ -1345,11 +1346,11 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.withExtrude(false)
 		.withTessellate(false)
 		.withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
-		
+
 		polygon.createAndSetOuterBoundaryIs()
 		.createAndSetLinearRing()
 		.addToCoordinates("0.0,0.0,0.0");
-				
+
 		polygon.createAndAddInnerBoundaryIs()
 		.createAndSetLinearRing()
 		.addToCoordinates("0.0,0.0,0.0");
@@ -1360,7 +1361,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#polygonExample()
 	 */
 	@Test
@@ -1368,7 +1369,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Kml kml = KmlFactory.createKml();
 		final Document document = kml.createAndSetDocument().withName("Polygon.kml").withOpen(false);
 		Polygon polygon = document.createAndAddPlacemark().withName("hollow box").createAndSetPolygon().withExtrude(true).withAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
-		
+
 		polygon.createAndSetOuterBoundaryIs().createAndSetLinearRing()
 		.addToCoordinates("-122.366278,37.818844,30")
 		.addToCoordinates("-122.365248,37.819267,30")
@@ -1382,14 +1383,14 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.addToCoordinates("-122.365704,37.819731,30")
 		.addToCoordinates("-122.366488,37.819402,30")
 		.addToCoordinates("-122.366212,37.818977,30");
-	
+
 		KmlReferenceCheck.polygonExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.polygonExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#polyStyle()
 	 */
 	@Test
@@ -1410,7 +1411,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#polyStyleExample()
 	 */
 	@Test
@@ -1419,10 +1420,10 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Document document = kml.createAndSetDocument().withName("PolygonStyle.kml").withOpen(true);
 		document.createAndAddStyle().withId("examplePolyStyle")
 		.createAndSetPolyStyle().withColor("ff0000cc").withColorMode(ColorMode.RANDOM);
-		
+
 		final Placemark placemark = document.createAndAddPlacemark().withName("hollow box").withStyleUrl("#examplePolyStyle");
 		final Polygon polygon = placemark.createAndSetPolygon().withExtrude(true).withAltitudeMode(AltitudeMode.RELATIVE_TO_GROUND);
-		
+
 		polygon.createAndSetOuterBoundaryIs().createAndSetLinearRing()
 		.addToCoordinates(-122.3662784465226,37.81884427772081,30)
 		.addToCoordinates(-122.3652480684771,37.81926777010555,30)
@@ -1436,14 +1437,14 @@ public final class KmlReferenceApiTest implements IKMLReference
 		.addToCoordinates("-122.3657048517827,37.81973175302663,30")
 		.addToCoordinates("-122.3664882465854,37.81940249291773,30")
 		.addToCoordinates("-122.366212593918,37.81897719083808,30");
-	
+
 		KmlReferenceCheck.polyStyleExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.polyStyleExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#region()
 	 */
 	@Test
@@ -1471,7 +1472,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#regionLatLonAltBox()
 	 */
 	@Test
@@ -1491,7 +1492,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#regionLod()
 	 */
 	@Test
@@ -1508,7 +1509,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#regionExample()
 	 */
 	@Test
@@ -1536,7 +1537,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#schema()
 	 */
 	@Test
@@ -1556,7 +1557,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#schemaExample()
 	 */
 	@Test
@@ -1589,7 +1590,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#screenOverlay()
 	 */
 	@Test
@@ -1639,7 +1640,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#screenOverlayExample()
 	 */
 	@Test
@@ -1677,7 +1678,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#style()
 	 */
 	@Test
@@ -1699,7 +1700,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#styleExample()
 	 */
 	@Test
@@ -1732,7 +1733,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#styleMap()
 	 */
 	@Test
@@ -1748,7 +1749,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#styleMapPair()
 	 */
 	@Test
@@ -1763,7 +1764,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#styleMapExample()
 	 */
 	@Test
@@ -1784,17 +1785,17 @@ public final class KmlReferenceApiTest implements IKMLReference
 		stylemap.createAndAddPair().withKey(StyleState.NORMAL).withStyleUrl("#normalState");
 		stylemap.createAndAddPair().withKey(StyleState.HIGHLIGHT).withStyleUrl("#highlightState");
 
-		
+
 		document.createAndAddPlacemark().withName("StyleMap example").withStyleUrl("#styleMapExample")
 		.createAndSetPoint().addToCoordinates("-122.368987,37.817634,0");
-		
+
 		KmlReferenceCheck.styleMapExample(kml);
 		final Kml marshalledAndBackAgain = Utils.marshalAndUnmarshall(kml);
 		KmlReferenceCheck.styleMapExample(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#timeSpan()
 	 */
 	@Test
@@ -1809,7 +1810,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#timeStamp()
 	 */
 	@Test
@@ -1823,7 +1824,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#updateChange()
 	 */
 	@Test
@@ -1832,25 +1833,25 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final NetworkLinkControl networklink = KmlFactory.createNetworkLinkControl();
 		networklink.createAndSetUpdate("http://www/~sam/January14Data/Point.kml",  new ArrayList<Object>())
 		.addToCreateOrDeleteOrChange(change);
-		
+
 		final Point point = new Point().withTargetId("point123").addToCoordinates("-95.48,40.43,0");
 		change.addToAbstractObject(point);
-		
+
 		KmlReferenceCheck.updateChange(networklink);
 		final NetworkLinkControl marshalledAndBackAgain = Utils.marshalAndUnmarshall(networklink);
 		KmlReferenceCheck.updateChange(marshalledAndBackAgain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#updateCreate()
 	 */
 	@Test
 	public void updateCreate() {
-		
+
 		final Create create = KmlFactory.createCreate();
 		final Update update = KmlFactory.createUpdate("http://myserver.com/Point.kml",  new ArrayList<Object>()).addToCreateOrDeleteOrChange(create);
-		
+
 		create.createAndAddDocument().withTargetId("region24").createAndAddPlacemark().withId("placemark891")
 		.createAndSetPoint().addToCoordinates("-95.48,40.43,0");
 
@@ -1860,7 +1861,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see de.micromata.jak.internal.IKmlReference#updateDelete()
 	 */
 	@Test
@@ -1868,7 +1869,7 @@ public final class KmlReferenceApiTest implements IKMLReference
 		final Delete delete = new Delete();
 		final Update update = KmlFactory.createUpdate("http://www.foo.com/Point.kml",  new ArrayList<Object>()).addToCreateOrDeleteOrChange(delete);
 		final Placemark placemark = new Placemark().withTargetId("pa3556");
-		
+
 		delete.addToFeature(placemark);
 
 		KmlReferenceCheck.updateDelete(update);

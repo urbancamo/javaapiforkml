@@ -22,7 +22,8 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 
 import junit.framework.Assert;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.junit.Test;
 
 import de.micromata.jak.internal.IAtsConformanceLevel1;
@@ -72,11 +73,11 @@ import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
 
 /**
  * @author Flori (f.bachmann@micromata.de)
- * 
+ *
  */
 public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	@SuppressWarnings("unused")
-	private static final Logger LOG = Logger.getLogger(KmlReferencePojoTest.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(KmlReferencePojoTest.class.getName());
 
 	/**
 	 * @see de.micromata.jak.internal.IAtsConformanceLevel1#atc01RootElement()
@@ -316,7 +317,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	@Test
 	public void atc22UpdateTargetHref() {
 		Assert.assertNull(Utils.findClass(Update.class, "targetHref"));
-		
+
 	}
 
 	/**
@@ -399,9 +400,9 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	 */
 	@Test
 	public void atc32OrientationMinimalContent() {
-	 	// Verify that if a kml:Orientation element is not a descendant of kml:Update, 
+	 	// Verify that if a kml:Orientation element is not a descendant of kml:Update,
 		// then it contains at least one of the following elements: kml:heading, kml:tilt, or kml:roll.
-		
+
 		Assert.assertNull(Utils.findClass(Orientation.class, "Update"));
 
 		Assert.assertNotNull(Utils.findField(Orientation.class, "heading"));
@@ -423,7 +424,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	@Test
 	public void atc34Model() {
 		Assert.assertNull(Utils.findClass(Model.class, "Update"));
-		
+
 		Field linkModel = Utils.findField(Model.class, "link");
 		Assert.assertNotNull(linkModel);
 		Assert.assertEquals(Link.class, linkModel.getType());
@@ -439,7 +440,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	@Test
 	public void atc35PhotoOverlayMinimalContent() {
 		Assert.assertNull(Utils.findClass(PhotoOverlay.class, "Update"));
-		
+
 		Field icon = Utils.findField(PhotoOverlay.class, "icon");
 		Assert.assertNotNull(icon);
 		Assert.assertEquals(Icon.class, icon.getType());
@@ -451,7 +452,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 		Field point = Utils.findField(PhotoOverlay.class, "point");
 		Assert.assertNotNull(point);
 		Assert.assertEquals(Point.class, point.getType());
-		
+
 		//abstractView con contain Camera
 		Field camera = Utils.findField(PhotoOverlay.class, "abstractView");
 		Assert.assertNotNull(camera);
@@ -464,7 +465,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	@Test
 	public void atc36Pair() {
 		Assert.assertNull(Utils.findClass(Pair.class, "Update"));
-		
+
 		Assert.assertNotNull(Utils.findField(Pair.class, "key"));
 		Assert.assertNotNull(Utils.findField(Pair.class, "styleUrl"));
 		Assert.assertNotNull(Utils.findField(Pair.class, "styleSelector"));
@@ -502,7 +503,7 @@ public class AtsConformanceLevel1Test implements IAtsConformanceLevel1 {
 	public void atc40Link() {
 		Assert.assertNull(Utils.findClass(Link.class, "Update"));
 		Assert.assertNull(Utils.findClass(Icon.class, "Update"));
-		
+
 		Assert.assertNotNull(Utils.findField(Link.class, "href"));
 		Assert.assertNotNull(Utils.findField(Icon.class, "href"));
 	}

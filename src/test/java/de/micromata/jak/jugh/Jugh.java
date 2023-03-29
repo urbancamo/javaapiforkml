@@ -17,7 +17,8 @@ package de.micromata.jak.jugh;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.junit.Test;
 
@@ -31,7 +32,7 @@ import de.micromata.opengis.kml.v_2_2_0.Point;
 import de.micromata.opengis.kml.v_2_2_0.Style;
 
 public class Jugh {
-	private static final Logger LOG = Logger.getLogger(Jugh.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(Jugh.class.getName());
 
 	private static final String JUGH_KML_URL = "http://www.jugh.de/kml/";
 
@@ -52,23 +53,23 @@ public class Jugh {
 	 * 		  	&lt;scale&gt;1.4&lt;/scale&gt;
 	 * 		  &lt;/LabelStyle&gt;
 	 * 	  &lt;/Style&gt;
-	 *    &lt;description&gt;&lt;![CDATA[ 
-	 * 
+	 *    &lt;description&gt;&lt;![CDATA[
+	 *
 	 * 	&lt;img src=&quot;http://www.jugh.de/kml/jugh_logo.png&quot; alt=&quot;Java User Group Hessen - JUGH!&quot;/&gt;
 	 * 	&lt;p&gt;Ist Java für dich weit mehr als eine IT-Technologie? Dann hast du jetzt Gelegenheit, deine Begeisterung mit uns zu teilen:
 	 * 	Als überzeugte Java-Freunde haben wir endlich die Java User Group Hessen ins Leben gerufen.&lt;/p&gt;
-	 * 	
+	 *
 	 * 	&lt;p&gt;&lt;b&gt;&lt;em&gt;Unsere Passion:&lt;/em&gt;&lt;/b&gt;
 	 * 	Java und alles, was dazugehört.&lt;/p&gt;
-	 * 	
+	 *
 	 * 	&lt;p&gt;&lt;b&gt;&lt;em&gt;Unsere Mission:&lt;/em&gt;&lt;/b&gt;
 	 * 	Kreatives Potential bündeln und Hessens Softwareentwickler mit dem Java-Fieber infizieren.&lt;/p&gt;
-	 * 	
+	 *
 	 * 	&lt;p&gt;&lt;b&gt;&lt;em&gt;Unsere Vision:&lt;/em&gt;&lt;/b&gt;
 	 * 	Eine große und lebendige Java-Community.&lt;/p&gt;
-	 * 
+	 *
 	 * 	&lt;p&gt;Wenn deine Leidenschaft für Java ebenfalls weit über reine Profession hinausgeht, bist du herzlich eingeladen dabei zu sein!&lt;/p&gt;
-	 * 
+	 *
 	 * 	&lt;p&gt;&lt;b&gt;Java User Group Hessen&lt;/b&gt;&lt;br/&gt;
 	 * 	&lt;em&gt;Initiator:&lt;/em&gt;&lt;br/&gt;
 	 * 	&lt;img src=&quot;http://www.jugh.de/kml/jugh_micromata.png&quot; alt=&quot;Micromata GmbH&quot;/&gt;&lt;a href=&quot;http://www.micromata.de/&quot;&gt;Micromata GmbH&lt;/a&gt;&lt;br/&gt;
@@ -79,28 +80,28 @@ public class Jugh {
 	 * 	&lt;/p&gt;
 	 *     ]]&gt;
 	 *     &lt;/description&gt;
-	 * 	&lt;styleUrl&gt;#jugh_style&lt;/styleUrl&gt;	
+	 * 	&lt;styleUrl&gt;#jugh_style&lt;/styleUrl&gt;
 	 *     &lt;Point&gt;
 	 *         &lt;coordinates&gt;9.444652669565212,51.30473589438118,0&lt;/coordinates&gt;
 	 *     &lt;/Point&gt;
 	 * &lt;/Placemark&gt;
 	 * &lt;/kml&gt;
 	 * </pre>
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 */
-	
+
 	@Test
 	public void createJughKmzFileWithBallonDescriptionWithOutFluent2() throws FileNotFoundException {
 	  // Create <coordinates>
 		Coordinate coordinates = new Coordinate("9.444652669565212,51.30473589438118,0");
-		
+
 		//  Create <Point> set Extrude, AltitudeMode, and give it <coordinates>.
 		Point point = KmlFactory.createPoint();
 		point.setExtrude(false);
 		point.setAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
 		point.getCoordinates().add(coordinates); // <-- point takes ownership
 
-		
+
 		// Create <Placemark> configure its values and set the <Point>.
 		Placemark placemark = KmlFactory.createPlacemark();
 		placemark.setName("Java User Group Hessen - JUGH!");
@@ -127,7 +128,7 @@ public class Jugh {
 		placemark.setOpen(false);
 		placemark.setDescription("die Java User Group Hessen");
 		placemark.setStyleUrl("#jugh_style");
-		
+
 		// Create <Point> and set values.
 		Point point = KmlFactory.createPoint();
 		point.setExtrude(false);
@@ -135,7 +136,7 @@ public class Jugh {
 		// Add <coordinates>9.444652669565212,51.30473589438118,0<coordinates>.
 		point.getCoordinates().add(new Coordinate("9.444652669565212,51.30473589438118,0"));
 
-		// Add <Point> 
+		// Add <Point>
 		placemark.setGeometry(point);            // <-- placemark takes ownership
 		kml.setFeature(placemark);               // <-- kml takes ownership.
 		kml.marshal(System.out);
@@ -154,7 +155,7 @@ public class Jugh {
 						.withExtrude(false)
 						.withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND)
 						.addToCoordinates("9.444652669565212,51.30473589438118,0");
-		 
+
 		 kml.marshal(System.out);
 	}
 
@@ -229,7 +230,7 @@ public class Jugh {
 	 *      &lt;/Link&gt;
 	 *   &lt;/NetworkLink&gt;
 	 * </kml>
-	 * 
+	 *
 	 * <pre>
 	 */
 	@Test

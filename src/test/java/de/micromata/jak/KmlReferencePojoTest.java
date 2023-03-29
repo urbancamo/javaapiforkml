@@ -2,7 +2,8 @@ package de.micromata.jak;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.junit.Test;
 
@@ -95,7 +96,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
 @SuppressWarnings("deprecation")
 public final class KmlReferencePojoTest implements IKMLReference {
 	@SuppressWarnings("unused")
-	private static final Logger LOG = Logger.getLogger(KmlReferencePojoTest.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(KmlReferencePojoTest.class.getName());
 
 	/**
 	 * @see de.micromata.jak.internal.IKmlReference#ballonStyle()

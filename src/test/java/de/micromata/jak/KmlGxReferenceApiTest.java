@@ -2,8 +2,8 @@ package de.micromata.jak;
 
 import java.util.ArrayList;
 
-import org.apache.log4j.PropertyConfigurator;
-import org.junit.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.junit.Test;
 
 import de.micromata.jak.internal.IKmlGxReference;
@@ -27,14 +27,10 @@ import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
 import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
 
 public class KmlGxReferenceApiTest implements IKmlGxReference {
-	private static final String LOG4J_LOCATION = "src/main/java/log4j.properties";
+  private static final Logger LOG = LoggerFactory.getLogger(KmlGxReferenceApiTest.class);
 
-	@Before
-	public void setUp() {
-		PropertyConfigurator.configure(LOG4J_LOCATION);
-	}
 	/**
-	 * @throws  
+	 * @throws
 	 * @see de.micromata.jak.internal.IKmlGxReference#altitudeMode()
 	 */
 	@Test
@@ -60,25 +56,25 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 		gxAnimatedUpdate.createAndSetUpdate("...", new ArrayList<Object>()).addToCreateOrDeleteOrChange(new Change())
 		    .addToCreateOrDeleteOrChange(new Create()).addToCreateOrDeleteOrChange(new Delete());
 
-		
+
 		Utils.marshal(gxAnimatedUpdate);
 	}
 
 	/**
 	 * @see de.micromata.jak.internal.IKmlGxReference#animatedUpdate()
 	 */
-	@Test 
+	@Test
 	public void animatedUpdate() {
 		Change change = new Change();
 		Delete delete = new Delete();
 		Create create = new Create();
-		
+
 			AnimatedUpdate animatedUpdate = KmlFactory.createGxAnimatedUpdate().withDuration(0.0);
 			animatedUpdate.createAndSetUpdate("...", new ArrayList<Object>())
 			.addToCreateOrDeleteOrChange(change)
 			.addToCreateOrDeleteOrChange(delete)
 			.addToCreateOrDeleteOrChange(create);
-			
+
 			Utils.marshal(animatedUpdate);
 	}
 
@@ -176,7 +172,7 @@ public class KmlGxReferenceApiTest implements IKmlGxReference {
 		groundOverlay.withAltitude(0).withAltitudeMode(AltitudeMode.CLAMP_TO_GROUND);
 		LatLonQuad latLonQuad = KmlFactory.createGxLatLonQuad().addToCoordinates(0,0,0);
 		groundOverlay.addToFeatureObjectExtension(latLonQuad);
-		
+
 		Utils.marshal(groundOverlay);
 	}
 

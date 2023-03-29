@@ -31,16 +31,17 @@ import jakarta.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
 import javax.xml.transform.stream.StreamSource;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 
 public final class Utils {
-	private static final Logger LOG = Logger.getLogger(Utils.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(Utils.class.getName());
 
 	/**
 	 * java.util.List<de.micromata.opengis.kml.v_2_2_0.Coordinate> --> de.micromata.opengis.kml.v_2_2_0.Coordinate
-	 * 
+	 *
 	 * @param value
 	 * @return
 	 */
