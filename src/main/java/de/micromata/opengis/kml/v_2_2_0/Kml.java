@@ -20,7 +20,6 @@ import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
 import javax.xml.XMLConstants;
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
@@ -177,9 +176,11 @@ public class Kml implements Cloneable
     protected List<AbstractObject> kmlObjectExtension;
     @XmlAttribute(name = "hint")
     protected String hint;
-    private transient JAXBContext jc = null;
-    private transient Marshaller m = null;
+
+    private transient Marshaller marshaller = null;
     private transient int missingNameCounter = (1);
+
+    private static JAXBContext jaxbContext = null;
     private final static String SCHEMA_LOCATION = "src/main/resources/schema/ogckml/ogckml22.xsd";
 
     public Kml() {
@@ -624,24 +625,24 @@ public class Kml implements Cloneable
      * @see jaxbContext
      * 
      */
-    private JAXBContext getJaxbContext()
+    private static JAXBContext getJaxbContext()
         throws JAXBException
     {
-        if (jc == null) {
-            jc = JAXBContext.newInstance((Kml.class));
+        if (jaxbContext == null) {
+            jaxbContext = JAXBContext.newInstance((Kml.class));
         }
-        return jc;
+        return jaxbContext;
     }
 
     private Marshaller createMarshaller()
         throws JAXBException
     {
-        if (m == null) {
-            m = this.getJaxbContext().createMarshaller();
-            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            m.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
+        if (marshaller == null) {
+            marshaller = getJaxbContext().createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshaller.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
         }
-        return m;
+        return marshaller;
     }
 
     /**
@@ -679,8 +680,8 @@ public class Kml implements Cloneable
         throws FileNotFoundException
     {
         try {
-            m = this.createMarshaller();
-            m.marshal(this, outputstream);
+            marshaller = this.createMarshaller();
+            marshaller.marshal(this, outputstream);
             return true;
         } catch (JAXBException _x) {
             _x.printStackTrace();
@@ -697,8 +698,8 @@ public class Kml implements Cloneable
      */
     public boolean marshal(final Writer writer) {
         try {
-            m = this.createMarshaller();
-            m.marshal(this, writer);
+            marshaller = this.createMarshaller();
+            marshaller.marshal(this, writer);
             return true;
         } catch (JAXBException _x) {
             _x.printStackTrace();
@@ -718,8 +719,8 @@ public class Kml implements Cloneable
      */
     public boolean marshal(final ContentHandler contenthandler) {
         try {
-            m = this.createMarshaller();
-            m.marshal(this, contenthandler);
+            marshaller = this.createMarshaller();
+            marshaller.marshal(this, contenthandler);
             return true;
         } catch (JAXBException _x) {
             _x.printStackTrace();
@@ -736,8 +737,8 @@ public class Kml implements Cloneable
      */
     public boolean marshal() {
         try {
-            m = this.createMarshaller();
-            m.marshal(this, System.out);
+            marshaller = this.createMarshaller();
+            marshaller.marshal(this, System.out);
             return true;
         } catch (JAXBException _x) {
             _x.printStackTrace();
@@ -958,6 +959,9 @@ public class Kml implements Cloneable
          */
         @Override
         public String getPreferredPrefix(String namespaceUri, String suggestion, boolean requirePrefix) {
+            if (namespaceUri.matches("http://www.opengis.net/kml/.*?")) {
+                return "";
+            }
             if (namespaceUri.matches("http://www.w3.org/\\d{4}/Atom")) {
                 return "atom";
             }
