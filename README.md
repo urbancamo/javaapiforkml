@@ -1,17 +1,17 @@
 # Java API for KML
 
-> The objective of the Java API for KML is to provide Java interfaces for easy access to KML (Keyhole Markup Language) data.
-
-# Moved to [https://github.com/urbancamo/javaapiforkml](https://github.com/urbancamo/javaapiforkml)
+_The objective of the Java API for KML is to provide Java interfaces for easy access to KML (Keyhole Markup Language) data._
 
 Thank you to the Micromata for this project open sourcing this project.
 The repository has been transferred to [urbancamo](mailto:mark@wickensonline.co.uk) for onward maintenance.
 He will endeavour to keep dependencies security patched moving forward.
-Thank you to those who previously submitted pull requests.
+Thank you to those who previously submitted pull requests or bug reports.
 
-If you are currently running version 2 then you will need to change the `groupId` from 
-`de.micromata.jak` to `uk.m0nom` to be able to use versions from `3.0.0` onwards.
 
+> If you are currently running version `2.x.x` then you will need to change the `groupId` from 
+`de.micromata.jak` to `uk.m0nom` to be able to use versions `3.x.x` onwards.
+
+Version `3.x.x` of the library support Java 11+ and are built with Java 11.
 ```xml
 <!-- https://mvnrepository.com/artifact/uk.m0nom/javaapiforkml -->
 <dependency>
@@ -43,37 +43,9 @@ a well-shaped API.
 This API provides easy out-of-the-box access to KML for the user (resp. the developer). This project created, a Java
 API for KML (short: JAK) in order to enable this.
 
-A high level documentation can be found at:
+An archive of high level documentation can be found at:
 https://web.archive.org/web/20170316194859/http://labs.micromata.de/projects/jak.html
 
-The current JARs can be obtained via Maven or at the Download page:
-
-```
-<dependencies>
-    ...
-   <dependency>
-      <groupId>de.micromata.jak</groupId>
-      <artifactId>JavaAPIforKml</artifactId>
-      <version>2.2.0-SNAPSHOT</version>
-   </dependency>
-    ...
-</dependencies>
-<repositories>
-    ...
-   <repository>
-      <id>maven2-repository.dev.java.net</id>
-      <name>Java.net Maven 2 Repository</name>
-      <url>http://download.java.net/maven/2</url>
-      <layout>default</layout>
-      <snapshots>
-         <enabled>true</enabled>
-      </snapshots>
-      </repository>
-</repositories>
-```
-### jitpack.io
-
-Alternative you can use [jitpack.IO](https://jitpack.io/#micromata/javaapiforkml) for this purposes
 
 
 
