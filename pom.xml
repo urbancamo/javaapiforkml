@@ -8,14 +8,14 @@
 	<description>
 		This is JavaApiForKml, Micromata's library for use with applications that want to parse, generate and
 		operate on KML. It is an implementation of the OGC KML 2.2 standard. It is written entirely in Java and makes
-		heavy use of JAXB.
+		heavy use of JAXB. Now being looked after by @urbancamo.
 	</description>
 	<packaging>jar</packaging>
 	<url>https://github.com/urbancamo/javaapiforkml/wiki</url>
 
 	<organization>
-		<name>Micromata GmbH</name>
-		<url>http://micromata.de</url>
+		<name>Mark Wickens (urbancamo)</name>
+		<url>https://urbancamo.github.io/</url>
 	</organization>
 
   	<parent>
