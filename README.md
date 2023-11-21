@@ -2,14 +2,14 @@
 
 > The objective of the Java API for KML is to provide Java interfaces for easy access to KML (Keyhole Markup Language) data.
 
-# Now under Maintenance
+# Moved to [https://github.com/urbancamo/javaapiforkml](https://github.com/urbancamo/javaapiforkml)
 
-Thank you to Michael at Micromata for adding me [urbancamo](mailto:mark@wickensonline.co.uk) as a maintainer.
-The project is now open to pull requests for bugs and enhancements.
-Thank you to those who previously submitted pull requests - the majority of these
-have now been squashed and merged.
+Thank you to the Micromata for this project open sourcing this project.
+Due to issues with publishing new versions, [urbancamo](mailto:mark@wickensonline.co.uk) has decided to keep his own fork up-to-date with bug fixes and pull requests.
+He will endevour to keep dependencies security patched moving forward.
+Thank you to those who previously submitted pull requests.
 
-I intend to release a new version in the near future with support for Java 11+.
+The [forked version](https://github.com/urbancamo/javaapiforkml) supports Java 11+.
 
 ---
 
