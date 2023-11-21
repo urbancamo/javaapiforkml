@@ -55,23 +55,26 @@
     <ossindex-maven-enforcer-rules.version>3.2.0</ossindex-maven-enforcer-rules.version>
     <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
     <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
-    <jaxb.version>4.0.1</jaxb.version>
     <log4j2.version>2.20.0</log4j2.version>
     <slf4j.version>2.0.7</slf4j.version>
     <junit.version>4.13.1</junit.version>
     <xmlunit.version>1.6</xmlunit.version>
+    <jakarta-xml-bind-api.version>4.0.1</jakarta-xml-bind-api.version>
+    <jaxb-runtime.version>4.0.4</jaxb-runtime.version>
   </properties>
 
   <dependencies>
+    <!-- https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>${jakarta-xml-bind-api.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
       <artifactId>jaxb-runtime</artifactId>
-      <version>${jaxb.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jaxb</groupId>
-      <artifactId>jaxb-xjc</artifactId>
-      <version>${jaxb.version}</version>
+      <version>${jaxb-runtime.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jetbrains</groupId>
