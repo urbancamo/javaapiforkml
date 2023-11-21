@@ -1,25 +1,21 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <location>
+ * {@code <location>}
  * <p>
  * Specifies the exact coordinates of the Model's origin in latitude, longitude, and 
  * altitude. Latitude and longitude measurements are standard lat-lon projection with 
  * WGS84 datum. Altitude is distance above the earth's surface, in meters, and is interpreted 
- * according to <altitudeMode> or <gx:altitudeMode>. <Location> <longitude>39.55375305703105</longitude> 
- * <latitude>-118.9813220168456</latitude> <altitude>1223</altitude> </Location> 
+ * according to altitudeMode or gx:altitudeMode. {@code <Location> <longitude>39.55375305703105</longitude>
+ * <latitude>-118.9813220168456</latitude> altitude1223</altitude> </Location> }
  * </p>
  * 
  * 
@@ -40,7 +36,7 @@ public class Location
 {
 
     /**
-     * <longitude>
+     * {@code <longitude>}
      * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
      * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
@@ -58,7 +54,7 @@ public class Location
     @XmlElement(defaultValue = "0.0")
     protected double longitude;
     /**
-     * <latitude>
+     * {@code <latitude>}
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
      * (0 degrees). Values range from −90 degrees to 90 degrees. 
@@ -74,14 +70,14 @@ public class Location
     @XmlElement(defaultValue = "0.0")
     protected double latitude;
     /**
-     * <altitude>
+     * altitude
      * <p>
      * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
      * altitude mode. 
      * </p>
      * <p>
      * Distance of the camera from the earth's surface, in meters. Interpreted according 
-     * to the Camera's <altitudeMode> or <gx:altitudeMode>. 
+     * to the Camera's altitudeMode or gx:altitudeMode. 
      * </p>
      * <p>
      * Specifies the distance above the earth's surface, in meters, and is interpreted 
@@ -97,12 +93,12 @@ public class Location
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> locationSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -122,7 +118,7 @@ public class Location
     }
 
     /**
-     * @see longitude
+     *
      * 
      * @return
      *     possible object is
@@ -134,7 +130,7 @@ public class Location
     }
 
     /**
-     * @see longitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -146,7 +142,7 @@ public class Location
     }
 
     /**
-     * @see latitude
+     *
      * 
      * @return
      *     possible object is
@@ -158,7 +154,7 @@ public class Location
     }
 
     /**
-     * @see latitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -170,7 +166,7 @@ public class Location
     }
 
     /**
-     * @see altitude
+     *
      * 
      * @return
      *     possible object is
@@ -182,7 +178,7 @@ public class Location
     }
 
     /**
-     * @see altitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -194,7 +190,7 @@ public class Location
     }
 
     /**
-     * @see locationSimpleExtension
+     *
      * 
      */
     public List<Object> getLocationSimpleExtension() {
@@ -205,7 +201,7 @@ public class Location
     }
 
     /**
-     * @see locationObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLocationObjectExtension() {
@@ -277,9 +273,10 @@ public class Location
     }
 
     /**
-     * @see locationSimpleExtension
+     *
      * 
      * @param locationSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLocationSimpleExtension(final List<Object> locationSimpleExtension) {
         this.locationSimpleExtension = locationSimpleExtension;
@@ -291,7 +288,7 @@ public class Location
      * @param locationSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Location addToLocationSimpleExtension(final Object locationSimpleExtension) {
         this.getLocationSimpleExtension().add(locationSimpleExtension);
@@ -299,9 +296,10 @@ public class Location
     }
 
     /**
-     * @see locationObjectExtension
+     *
      * 
      * @param locationObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLocationObjectExtension(final List<AbstractObject> locationObjectExtension) {
         this.locationObjectExtension = locationObjectExtension;
@@ -313,7 +311,7 @@ public class Location
      * @param locationObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Location addToLocationObjectExtension(final AbstractObject locationObjectExtension) {
         this.getLocationObjectExtension().add(locationObjectExtension);
@@ -321,7 +319,7 @@ public class Location
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -339,7 +337,7 @@ public class Location
 
     /**
      * fluent setter
-     * @see #setLongitude(double)
+     *
      * 
      * @param longitude
      *     required parameter
@@ -351,7 +349,7 @@ public class Location
 
     /**
      * fluent setter
-     * @see #setLatitude(double)
+     *
      * 
      * @param latitude
      *     required parameter
@@ -363,7 +361,7 @@ public class Location
 
     /**
      * fluent setter
-     * @see #setAltitude(double)
+     *
      * 
      * @param altitude
      *     required parameter
@@ -375,7 +373,7 @@ public class Location
 
     /**
      * fluent setter
-     * @see #setLocationSimpleExtension(List<Object>)
+     *
      * 
      * @param locationSimpleExtension
      *     required parameter
@@ -387,7 +385,7 @@ public class Location
 
     /**
      * fluent setter
-     * @see #setLocationObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param locationObjectExtension
      *     required parameter

@@ -1,29 +1,23 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <Camera>
+ * Camera
  * <p>
- * <Camera> can also contain a TimePrimitive (<gx:TimeSpan> or <gx:TimeStamp>). Time 
+ * Camera can also contain a TimePrimitive ({@code <gx:TimeSpan>} or {@code <gx:TimeStamp>}). Time
  * values in Camera affect historical imagery, sunlight, and the display of time-stamped 
  * features. For more information, read Time with AbstractViews in the Time and Animation 
  * chapter of the Developer's Guide. 
  * </p>
  * <p>
- * <Camera> provides full six-degrees-of-freedom control over the view, so you can 
+ * Camera provides full six-degrees-of-freedom control over the view, so you can 
  * position the Camera in space and then rotate it around the X, Y, and Z axes. Most 
  * importantly, you can tilt the camera view so that you're looking above the horizon 
  * into the sky. 
@@ -31,11 +25,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <p>
  * Defines the virtual camera that views the scene. This element defines the position 
  * of the camera relative to the Earth's surface as well as the viewing direction of 
- * the camera. The camera position is defined by <longitude>, <latitude>, <altitude>, 
- * and either <altitudeMode> or <gx:altitudeMode>. The viewing direction of the camera 
- * is defined by <heading>, <tilt>, and <roll>. <Camera> can be a child element of 
- * any Feature or of <NetworkLinkControl>. A parent element cannot contain both a <Camera> 
- * and a <LookAt> at the same time. 
+ * the camera. The camera position is defined by {@code <longitude>}, {@code <latitude>}, {@code <altitude>},
+ * and either {@code <altitudeMode>} or {@code <gx:altitudeMode>}. The viewing direction of the camera
+ * is defined by {@code <heading>}, {@code <tilt>}, and {@code <roll>}. Camera can be a child element of
+ * any Feature or of {@code <NetworkLinkControl>}. A parent element cannot contain both a Camera
+ * and a LookAt at the same time. 
  * </p>
  * <p>
  * Defining a View 
@@ -51,12 +45,12 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * camera. 
  * </p>
  * <p>
- * Within a Feature or <NetworkLinkControl>, use either a <Camera> or a <LookAt> object 
- * (but not both in the same object). The <Camera> object defines the viewpoint in 
- * terms of the viewer's position and orientation. The <Camera> object allows you to 
- * specify a view that is not on the Earth's surface. The <LookAt> object defines the 
- * viewpoint in terms of what is being viewed. The <LookAt> object is more limited 
- * in scope than <Camera> and generally requires that the view direction intersect 
+ * Within a Feature or {@code <NetworkLinkControl>}, use either a Camera or a LookAt object
+ * (but not both in the same object). The Camera object defines the viewpoint in 
+ * terms of the viewer's position and orientation. The Camera object allows you to 
+ * specify a view that is not on the Earth's surface. The LookAt object defines the 
+ * viewpoint in terms of what is being viewed. The LookAt object is more limited 
+ * in scope than Camera and generally requires that the view direction intersect 
  * the Earth's surface. 
  * </p>
  * 
@@ -78,11 +72,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/Camera&gt;</strong> </pre>
  * 
  * Extends: 
- * @see: <AbstractView>
+ *
  * 
  * Contained By: 
- * @see: <Feature>
- * @see: <NetworkLinkControl>
+ *
+ *
  * 
  * 
  * 
@@ -106,7 +100,7 @@ public class Camera
 {
 
     /**
-     * <longitude>
+     * {@code <longitude>}
      * <p>
      * Longitude of the point the camera is looking at. Angular distance in degrees, relative 
      * to the Prime Meridian. Values west of the Meridian range from −180 to 0 degrees. 
@@ -124,7 +118,7 @@ public class Camera
     @XmlElement(defaultValue = "0.0")
     protected double longitude;
     /**
-     * <latitude>
+     * {@code <latitude>}
      * <p>
      * Latitude of the point the camera is looking at. Degrees north or south of the Equator 
      * (0 degrees). Values range from −90 degrees to 90 degrees. 
@@ -140,14 +134,14 @@ public class Camera
     @XmlElement(defaultValue = "0.0")
     protected double latitude;
     /**
-     * <altitude>
+     * altitude
      * <p>
      * Distance from the earth's surface, in meters. Interpreted according to the LookAt's 
      * altitude mode. 
      * </p>
      * <p>
      * Distance of the camera from the earth's surface, in meters. Interpreted according 
-     * to the Camera's <altitudeMode> or <gx:altitudeMode>. 
+     * to the Camera's altitudeMode or gx:altitudeMode. 
      * </p>
      * <p>
      * Specifies the distance above the earth's surface, in meters, and is interpreted 
@@ -160,7 +154,7 @@ public class Camera
     @XmlElement(defaultValue = "0.0")
     protected double altitude;
     /**
-     * <heading>
+     * {@code {@code <heading>}}
      * <p>
      * Direction (azimuth) of the camera, in degrees. Default=0 (true North). (See diagram.) 
      * Values range from 0 to 360 degrees. 
@@ -185,12 +179,12 @@ public class Camera
     @XmlElement(defaultValue = "0.0")
     protected double heading;
     /**
-     * <tilt>
+     * {@code <tilt>}
      * <p>
      * Angle between the direction of the LookAt position and the normal to the surface 
      * of the earth. (See diagram below.) Values range from 0 to 90 degrees. Values for 
-     * <tilt> cannot be negative. A <tilt> value of 0 degrees indicates viewing from directly 
-     * above. A <tilt> value of 90 degrees indicates viewing along the horizon. 
+     * {@code <tilt>} cannot be negative. A {@code <tilt>} value of 0 degrees indicates viewing from directly 
+     * above. A {@code <tilt>} value of 90 degrees indicates viewing along the horizon. 
      * </p>
      * <p>
      * Rotation about the x axis. A positive rotation is clockwise around the x axis and 
@@ -199,8 +193,8 @@ public class Camera
      * <p>
      * Rotation, in degrees, of the camera around the X axis. A value of 0 indicates that 
      * the view is aimed straight down toward the earth (the most common case). A value 
-     * for 90 for <tilt> indicates that the view is aimed toward the horizon. Values greater 
-     * than 90 indicate that the view is pointed up into the sky. Values for <tilt> are 
+     * for 90 for {@code <tilt>} indicates that the view is aimed toward the horizon. Values greater 
+     * than 90 indicate that the view is pointed up into the sky. Values for {@code <tilt>} are 
      * clamped at +180 degrees. 
      * </p>
      * 
@@ -210,13 +204,13 @@ public class Camera
     @XmlElement(defaultValue = "0.0")
     protected double tilt;
     /**
-     * <roll>
+     * {@code <roll>}
      * <p>
-     * <heading> Rotation about the z axis (normal to the Earth's surface). A value of 
+     * {@code <heading>} Rotation about the z axis (normal to the Earth's surface). A value of 
      *  0 (the default) equals North. A positive rotation is clockwise around the z axis 
-     * and specified in degrees from 0 to 360. <tilt> Rotation about the x axis. A positive 
+     * and specified in degrees from 0 to 360. {@code <tilt>} Rotation about the x axis. A positive 
      * rotation is clockwise around the x axis and specified in degrees from 0 to 360. 
-     * <roll> Rotation about the y axis. A positive rotation is clockwise around the y 
+     * {@code <roll>} Rotation about the y axis. A positive rotation is clockwise around the y 
      * axis and specified in degrees from 0 to 360. This diagram illustrates the typical 
      * orientation of a model's axes: 
      * </p>
@@ -244,7 +238,7 @@ public class Camera
      * </p>
      * 
      * See Also: 
-     * See <LookAt> and <Region>
+     * See LookAt and {@code <Region>}
      * 
      * 
      * 
@@ -255,12 +249,12 @@ public class Camera
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> cameraSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -280,7 +274,7 @@ public class Camera
     }
 
     /**
-     * @see longitude
+     *
      * 
      * @return
      *     possible object is
@@ -292,7 +286,7 @@ public class Camera
     }
 
     /**
-     * @see longitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -304,7 +298,7 @@ public class Camera
     }
 
     /**
-     * @see latitude
+     *
      * 
      * @return
      *     possible object is
@@ -316,7 +310,7 @@ public class Camera
     }
 
     /**
-     * @see latitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -328,7 +322,7 @@ public class Camera
     }
 
     /**
-     * @see altitude
+     *
      * 
      * @return
      *     possible object is
@@ -340,7 +334,7 @@ public class Camera
     }
 
     /**
-     * @see altitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -352,7 +346,7 @@ public class Camera
     }
 
     /**
-     * @see heading
+     *
      * 
      * @return
      *     possible object is
@@ -364,7 +358,7 @@ public class Camera
     }
 
     /**
-     * @see heading
+     *
      * 
      * @param value
      *     allowed object is
@@ -376,7 +370,7 @@ public class Camera
     }
 
     /**
-     * @see tilt
+     *
      * 
      * @return
      *     possible object is
@@ -388,7 +382,7 @@ public class Camera
     }
 
     /**
-     * @see tilt
+     *
      * 
      * @param value
      *     allowed object is
@@ -400,7 +394,7 @@ public class Camera
     }
 
     /**
-     * @see roll
+     *
      * 
      * @return
      *     possible object is
@@ -412,7 +406,7 @@ public class Camera
     }
 
     /**
-     * @see roll
+     *
      * 
      * @param value
      *     allowed object is
@@ -424,13 +418,13 @@ public class Camera
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -438,13 +432,13 @@ public class Camera
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -452,7 +446,7 @@ public class Camera
     }
 
     /**
-     * @see cameraSimpleExtension
+     *
      * 
      */
     public List<Object> getCameraSimpleExtension() {
@@ -463,7 +457,7 @@ public class Camera
     }
 
     /**
-     * @see cameraObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getCameraObjectExtension() {
@@ -560,9 +554,10 @@ public class Camera
     }
 
     /**
-     * @see cameraSimpleExtension
+     *
      * 
      * @param cameraSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setCameraSimpleExtension(final List<Object> cameraSimpleExtension) {
         this.cameraSimpleExtension = cameraSimpleExtension;
@@ -574,7 +569,7 @@ public class Camera
      * @param cameraSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Camera addToCameraSimpleExtension(final Object cameraSimpleExtension) {
         this.getCameraSimpleExtension().add(cameraSimpleExtension);
@@ -582,9 +577,10 @@ public class Camera
     }
 
     /**
-     * @see cameraObjectExtension
+     *
      * 
      * @param cameraObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setCameraObjectExtension(final List<AbstractObject> cameraObjectExtension) {
         this.cameraObjectExtension = cameraObjectExtension;
@@ -596,7 +592,7 @@ public class Camera
      * @param cameraObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Camera addToCameraObjectExtension(final AbstractObject cameraObjectExtension) {
         this.getCameraObjectExtension().add(cameraObjectExtension);
@@ -604,7 +600,7 @@ public class Camera
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -621,7 +617,7 @@ public class Camera
     }
 
     /**
-     * @see abstractViewSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -638,7 +634,7 @@ public class Camera
     }
 
     /**
-     * @see abstractViewObjectExtension
+     *
      * 
      */
     @Obvious
@@ -656,10 +652,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setLongitude(double)
+     *
      * 
      * @param longitude
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withLongitude(final double longitude) {
         this.setLongitude(longitude);
@@ -668,10 +666,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setLatitude(double)
+     *
      * 
      * @param latitude
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withLatitude(final double latitude) {
         this.setLatitude(latitude);
@@ -680,10 +680,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setAltitude(double)
+     *
      * 
      * @param altitude
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withAltitude(final double altitude) {
         this.setAltitude(altitude);
@@ -692,10 +694,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setHeading(double)
+     *
      * 
      * @param heading
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withHeading(final double heading) {
         this.setHeading(heading);
@@ -704,10 +708,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setTilt(double)
+     *
      * 
      * @param tilt
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withTilt(final double tilt) {
         this.setTilt(tilt);
@@ -716,10 +722,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setRoll(double)
+     *
      * 
      * @param roll
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withRoll(final double roll) {
         this.setRoll(roll);
@@ -728,10 +736,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setAltitudeMode(Object)
+     *
      * 
      * @param altitudeMode
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withAltitudeMode(final  AltitudeMode altitudeMode) {
         this.setAltitudeMode(altitudeMode);
@@ -740,10 +750,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setCameraSimpleExtension(List<Object>)
+     *
      * 
      * @param cameraSimpleExtension
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withCameraSimpleExtension(final List<Object> cameraSimpleExtension) {
         this.setCameraSimpleExtension(cameraSimpleExtension);
@@ -752,10 +764,12 @@ public class Camera
 
     /**
      * fluent setter
-     * @see #setCameraObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param cameraObjectExtension
      *     required parameter
+     * @return
+     *     Camera
      */
     public Camera withCameraObjectExtension(final List<AbstractObject> cameraObjectExtension) {
         this.setCameraObjectExtension(cameraObjectExtension);

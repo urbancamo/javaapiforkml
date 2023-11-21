@@ -13,7 +13,7 @@ import jakarta.xml.bind.annotation.XmlType;
  * </p>
  * 
  * See Also: 
- * See <LookAt> and <Region>
+ * See LookAt and Region
  * 
  * 
  * 

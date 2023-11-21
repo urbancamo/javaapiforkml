@@ -206,7 +206,7 @@ public class BuildingName implements Cloneable
 
     /**
      * fluent setter
-     * @see #setContent(String)
+     *
      * 
      * @param content
      *     required parameter
@@ -218,7 +218,7 @@ public class BuildingName implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUnderscore(String)
+     *
      * 
      * @param underscore
      *     required parameter
@@ -230,7 +230,7 @@ public class BuildingName implements Cloneable
 
     /**
      * fluent setter
-     * @see #setTypeOccurrence(String)
+     *
      * 
      * @param typeOccurrence
      *     required parameter
@@ -242,7 +242,7 @@ public class BuildingName implements Cloneable
 
     /**
      * fluent setter
-     * @see #setCode(String)
+     *
      * 
      * @param code
      *     required parameter

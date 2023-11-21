@@ -1,16 +1,12 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
-import java.util.ArrayList;
-import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -135,12 +131,13 @@ public class SimpleArrayData
     }
 
     /**
-     * Sets the value of the value property Objects of the following type(s) are allowed in the list List<String>.
+     * Sets the value of the value property Objects of the following type(s) are allowed in the list {@code List<String>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withValue} instead.
      * 
      * 
      * @param value
+     *     Objects of the following type are allowed in the list: {@link String}
      */
     public void setValue(final List<String> value) {
         this.value = value;
@@ -152,7 +149,7 @@ public class SimpleArrayData
      * @param value
      *     Objects of the following type are allowed in the list: {@link String}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public SimpleArrayData addToValue(final String value) {
         this.getValue().add(value);
@@ -160,12 +157,13 @@ public class SimpleArrayData
     }
 
     /**
-     * Sets the value of the simpleArrayDataExtension property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the simpleArrayDataExtension property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSimpleArrayDataExtension} instead.
      * 
      * 
      * @param simpleArrayDataExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setSimpleArrayDataExtension(final List<Object> simpleArrayDataExtension) {
         this.simpleArrayDataExtension = simpleArrayDataExtension;
@@ -177,7 +175,7 @@ public class SimpleArrayData
      * @param simpleArrayDataExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public SimpleArrayData addToSimpleArrayDataExtension(final Object simpleArrayDataExtension) {
         this.getSimpleArrayDataExtension().add(simpleArrayDataExtension);
@@ -199,7 +197,7 @@ public class SimpleArrayData
 
     /**
      * fluent setter
-     * @see #setValue(List<String>)
+     *
      * 
      * @param value
      *     required parameter
@@ -211,7 +209,7 @@ public class SimpleArrayData
 
     /**
      * fluent setter
-     * @see #setSimpleArrayDataExtension(List<Object>)
+     *
      * 
      * @param simpleArrayDataExtension
      *     required parameter
@@ -223,7 +221,7 @@ public class SimpleArrayData
 
     /**
      * fluent setter
-     * @see #setName(String)
+     *
      * 
      * @param name
      *     required parameter

@@ -1,19 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <viewvolume>
+ * {@code <viewvolume>}
  * <p>
  * Defines how much of the current scene is visible. Specifying the field of view is 
  * analogous to specifying the lens opening in a physical camera. A small field of 
@@ -41,7 +37,7 @@ public class ViewVolume
 {
 
     /**
-     * <leftfov>
+     * {@code <leftfov>}
      * <p>
      * Angle, in degrees, between the camera's viewing direction and the left side of the 
      * view volume. 
@@ -53,7 +49,7 @@ public class ViewVolume
     @XmlElement(defaultValue = "0.0")
     protected double leftFov;
     /**
-     * <rightfov>
+     * {@code <rightfov>}
      * <p>
      * Angle, in degrees, between the camera's viewing direction and the right side of 
      * the view volume. 
@@ -65,7 +61,7 @@ public class ViewVolume
     @XmlElement(defaultValue = "0.0")
     protected double rightFov;
     /**
-     * <bottomfov>
+     * {@code <bottomfov>}
      * <p>
      * Angle, in degrees, between the camera's viewing direction and the bottom side of 
      * the view volume. 
@@ -77,7 +73,7 @@ public class ViewVolume
     @XmlElement(defaultValue = "0.0")
     protected double bottomFov;
     /**
-     * <topfov>
+     * {@code <topfov>}
      * <p>
      * Angle, in degrees, between the camera's viewing direction and the top side of the 
      * view volume. 
@@ -89,14 +85,14 @@ public class ViewVolume
     @XmlElement(defaultValue = "0.0")
     protected double topFov;
     /**
-     * <near>
+     * {@code <near>}
      * <p>
-     * <leftFov> Angle, in degrees, between the camera's viewing direction and the left 
-     * side of the view volume. <rightFov> Angle, in degrees, between the camera's viewing 
-     * direction and the right side of the view volume. <bottomFov> Angle, in degrees, 
-     * between the camera's viewing direction and the bottom side of the view volume. <topFov> 
+     * {@code <leftFov>} Angle, in degrees, between the camera's viewing direction and the left
+     * side of the view volume. {@code <rightFov>} Angle, in degrees, between the camera's viewing
+     * direction and the right side of the view volume. {@code <bottomFov>} Angle, in degrees,
+     * between the camera's viewing direction and the bottom side of the view volume. {@code <topFov>}
      * Angle, in degrees, between the camera's viewing direction and the top side of the 
-     * view volume. <near> Measurement in meters along the viewing direction from the camera 
+     * view volume. {@code <near>} Measurement in meters along the viewing direction from the camera
      * viewpoint to the PhotoOverlay shape. 
      * </p>
      * <p>
@@ -125,12 +121,12 @@ public class ViewVolume
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> viewVolumeSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -150,7 +146,7 @@ public class ViewVolume
     }
 
     /**
-     * @see leftFov
+     *
      * 
      * @return
      *     possible object is
@@ -162,7 +158,7 @@ public class ViewVolume
     }
 
     /**
-     * @see leftFov
+     *
      * 
      * @param value
      *     allowed object is
@@ -174,7 +170,7 @@ public class ViewVolume
     }
 
     /**
-     * @see rightFov
+     *
      * 
      * @return
      *     possible object is
@@ -186,7 +182,7 @@ public class ViewVolume
     }
 
     /**
-     * @see rightFov
+     *
      * 
      * @param value
      *     allowed object is
@@ -198,7 +194,7 @@ public class ViewVolume
     }
 
     /**
-     * @see bottomFov
+     *
      * 
      * @return
      *     possible object is
@@ -210,7 +206,7 @@ public class ViewVolume
     }
 
     /**
-     * @see bottomFov
+     *
      * 
      * @param value
      *     allowed object is
@@ -222,7 +218,7 @@ public class ViewVolume
     }
 
     /**
-     * @see topFov
+     *
      * 
      * @return
      *     possible object is
@@ -234,7 +230,7 @@ public class ViewVolume
     }
 
     /**
-     * @see topFov
+     *
      * 
      * @param value
      *     allowed object is
@@ -246,7 +242,7 @@ public class ViewVolume
     }
 
     /**
-     * @see near
+     *
      * 
      * @return
      *     possible object is
@@ -258,7 +254,7 @@ public class ViewVolume
     }
 
     /**
-     * @see near
+     *
      * 
      * @param value
      *     allowed object is
@@ -270,7 +266,7 @@ public class ViewVolume
     }
 
     /**
-     * @see viewVolumeSimpleExtension
+     *
      * 
      */
     public List<Object> getViewVolumeSimpleExtension() {
@@ -281,7 +277,7 @@ public class ViewVolume
     }
 
     /**
-     * @see viewVolumeObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getViewVolumeObjectExtension() {
@@ -363,9 +359,10 @@ public class ViewVolume
     }
 
     /**
-     * @see viewVolumeSimpleExtension
+     *
      * 
      * @param viewVolumeSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setViewVolumeSimpleExtension(final List<Object> viewVolumeSimpleExtension) {
         this.viewVolumeSimpleExtension = viewVolumeSimpleExtension;
@@ -377,7 +374,7 @@ public class ViewVolume
      * @param viewVolumeSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ViewVolume addToViewVolumeSimpleExtension(final Object viewVolumeSimpleExtension) {
         this.getViewVolumeSimpleExtension().add(viewVolumeSimpleExtension);
@@ -385,9 +382,10 @@ public class ViewVolume
     }
 
     /**
-     * @see viewVolumeObjectExtension
+     *
      * 
      * @param viewVolumeObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setViewVolumeObjectExtension(final List<AbstractObject> viewVolumeObjectExtension) {
         this.viewVolumeObjectExtension = viewVolumeObjectExtension;
@@ -399,7 +397,7 @@ public class ViewVolume
      * @param viewVolumeObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ViewVolume addToViewVolumeObjectExtension(final AbstractObject viewVolumeObjectExtension) {
         this.getViewVolumeObjectExtension().add(viewVolumeObjectExtension);
@@ -407,7 +405,7 @@ public class ViewVolume
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -425,7 +423,7 @@ public class ViewVolume
 
     /**
      * fluent setter
-     * @see #setLeftFov(double)
+     *
      * 
      * @param leftFov
      *     required parameter
@@ -437,7 +435,7 @@ public class ViewVolume
 
     /**
      * fluent setter
-     * @see #setRightFov(double)
+     *
      * 
      * @param rightFov
      *     required parameter
@@ -449,7 +447,7 @@ public class ViewVolume
 
     /**
      * fluent setter
-     * @see #setBottomFov(double)
+     *
      * 
      * @param bottomFov
      *     required parameter
@@ -461,7 +459,7 @@ public class ViewVolume
 
     /**
      * fluent setter
-     * @see #setTopFov(double)
+     *
      * 
      * @param topFov
      *     required parameter
@@ -473,7 +471,7 @@ public class ViewVolume
 
     /**
      * fluent setter
-     * @see #setNear(double)
+     *
      * 
      * @param near
      *     required parameter
@@ -485,7 +483,7 @@ public class ViewVolume
 
     /**
      * fluent setter
-     * @see #setViewVolumeSimpleExtension(List<Object>)
+     *
      * 
      * @param viewVolumeSimpleExtension
      *     required parameter
@@ -497,7 +495,7 @@ public class ViewVolume
 
     /**
      * fluent setter
-     * @see #setViewVolumeObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param viewVolumeObjectExtension
      *     required parameter

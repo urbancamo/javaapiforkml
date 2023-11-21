@@ -1,18 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import jakarta.xml.bind.annotation.*;
+import org.w3c.dom.Element;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAnyElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-import org.w3c.dom.Element;
 
 
 /**
- * <metadata> (deprecated in kml 2.2; use <extendeddata> instead)
+ * {@code <metadata>} (deprecated in kml 2.2; use {@code <extendeddata>} instead)
  * 
  * 
  */
@@ -33,7 +30,7 @@ public class Metadata implements Cloneable
     }
 
     /**
-     * @see any
+     *
      * 
      */
     public List<Object> getAny() {
@@ -76,9 +73,10 @@ public class Metadata implements Cloneable
     }
 
     /**
-     * @see any
+     *
      * 
      * @param any
+     *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
      */
     public void setAny(final List<Object> any) {
         this.any = any;
@@ -90,7 +88,7 @@ public class Metadata implements Cloneable
      * @param any
      *     Objects of the following type are allowed in the list: {@link Object}{@link Element}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Metadata addToAny(final Object any) {
         this.getAny().add(any);
@@ -99,7 +97,7 @@ public class Metadata implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAny(List<Object>)
+     *
      * 
      * @param any
      *     required parameter

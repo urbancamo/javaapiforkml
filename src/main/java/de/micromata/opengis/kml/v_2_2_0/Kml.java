@@ -1,15 +1,23 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.StringReader;
-import java.io.Writer;
+import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.annotation.*;
+import org.jetbrains.annotations.NotNull;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.sax.SAXSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import java.io.*;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -18,42 +26,19 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipOutputStream;
-import javax.xml.XMLConstants;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.sax.SAXSource;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
-import com.sun.istack.NotNull;
-import org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper;
-import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 
 
 /**
- * <kml>
+ * {@code <kml>}
  * <p>
- * <kml xmlns="http://www.opengis.net/kml/2.2"> <NetworkLinkControl> ... </NetworkLinkControl> 
- * <!-- 0 or 1 Feature elements --> </kml> 
+ * {@code <kml xmlns="http://www.opengis.net/kml/2.2"> <NetworkLinkControl> ... </NetworkLinkControl>
+ * <!-- 0 or 1 Feature elements --> </kml> }
  * </p>
  * <p>
- * A basic <kml> element contains 0 or 1 Feature and 0 or 1 NetworkLinkControl: 
+ * A basic {@code <kml>} element contains 0 or 1 Feature and 0 or 1 NetworkLinkControl: 
  * </p>
  * <p>
- * The <kml> element may also include the namespace for any external XML schemas that 
+ * The {@code <kml>} element may also include the namespace for any external XML schemas that 
  * are referenced within the file. 
  * </p>
  * <p>
@@ -80,9 +65,9 @@ public class Kml implements Cloneable
 {
 
     /**
-     * <NetworkLinkControl>
+     * {@code <NetworkLinkControl>}
      * <p>
-     * Controls the behavior of files fetched by a <NetworkLink>. 
+     * Controls the behavior of files fetched by a NetworkLink. 
      * </p>
      * 
      * Syntax: 
@@ -100,8 +85,8 @@ public class Kml implements Cloneable
      * <strong>&lt;/NetworkLinkControl&gt;</strong></pre>
      * 
      * See Also: 
-     * <NetworkLink>
-     * <Update>
+     * NetworkLink
+     * Update
      * 
      * 
      * 
@@ -109,7 +94,7 @@ public class Kml implements Cloneable
     @XmlElement(name = "NetworkLinkControl")
     protected NetworkLinkControl networkLinkControl;
     /**
-     * <Feature>
+     * {@code <Feature>}
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. The following 
      * diagram shows how some of a Feature's elements appear in Google Earth. 
@@ -137,14 +122,14 @@ public class Kml implements Cloneable
      *   &lt;ExtendedData&gt;...&lt;/ExtendedData&gt;      &lt;!-- new in KML 2.2 --&gt;<br></span>&lt;-- /<em>Feature</em> --&gt;</pre>
      * 
      * Extends: 
-     * @see: <Object>
+     *
      * 
      * Extended By: 
-     * @see: <Container>
-     * @see: <NetworkLink>
-     * @see: <Overlay>
-     * @see: <Placemark>
-     * @see: <gx:Tour>
+     *
+     *
+     *
+     *
+     *
      * 
      * 
      * 
@@ -155,12 +140,12 @@ public class Kml implements Cloneable
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> kmlSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -188,7 +173,7 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see networkLinkControl
+     *
      * 
      * @return
      *     possible object is
@@ -200,7 +185,7 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see networkLinkControl
+     *
      * 
      * @param value
      *     allowed object is
@@ -212,21 +197,21 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see feature
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Container}{@code >}
+     *     {@code <}{@link GroundOverlay}{@code >}
+     *     {@code <}{@link NetworkLink}{@code >}
+     *     {@code <}{@link Folder}{@code >}
+     *     {@code <}{@link PhotoOverlay}{@code >}
+     *     {@code <}{@link Document}{@code >}
+     *     {@code <}{@link Tour}{@code >}
+     *     {@code <}{@link ScreenOverlay}{@code >}
+     *     {@code <}{@link Feature}{@code >}
+     *     {@code <}{@link Placemark}{@code >}
+     *     {@code <}{@link Overlay}{@code >}
      *     
      */
     public Feature getFeature() {
@@ -234,21 +219,21 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see feature
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Container}{@code>}
-     *     {@code <}{@link GroundOverlay}{@code>}
-     *     {@code <}{@link NetworkLink}{@code>}
-     *     {@code <}{@link Folder}{@code>}
-     *     {@code <}{@link PhotoOverlay}{@code>}
-     *     {@code <}{@link Document}{@code>}
-     *     {@code <}{@link Tour}{@code>}
-     *     {@code <}{@link ScreenOverlay}{@code>}
-     *     {@code <}{@link Feature}{@code>}
-     *     {@code <}{@link Placemark}{@code>}
-     *     {@code <}{@link Overlay}{@code>}
+     *     {@code <}{@link Container}{@code >}
+     *     {@code <}{@link GroundOverlay}{@code >}
+     *     {@code <}{@link NetworkLink}{@code >}
+     *     {@code <}{@link Folder}{@code >}
+     *     {@code <}{@link PhotoOverlay}{@code >}
+     *     {@code <}{@link Document}{@code >}
+     *     {@code <}{@link Tour}{@code >}
+     *     {@code <}{@link ScreenOverlay}{@code >}
+     *     {@code <}{@link Feature}{@code >}
+     *     {@code <}{@link Placemark}{@code >}
+     *     {@code <}{@link Overlay}{@code >}
      *     
      */
     public void setFeature(Feature value) {
@@ -256,7 +241,7 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see kmlSimpleExtension
+     *
      * 
      */
     public List<Object> getKmlSimpleExtension() {
@@ -267,7 +252,7 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see kmlObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getKmlObjectExtension() {
@@ -278,7 +263,7 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see hint
+     *
      * 
      * @return
      *     possible object is
@@ -290,7 +275,7 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see hint
+     *
      * 
      * @param value
      *     allowed object is
@@ -377,9 +362,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link NetworkLinkControl} and set it to networkLinkControl.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * NetworkLinkControl networkLinkControl = new NetworkLinkControl();
-     * this.setNetworkLinkControl(networkLinkControl); </code>
+     * this.setNetworkLinkControl(networkLinkControl); }
      * 
      * 
      */
@@ -393,9 +378,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link Tour} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Tour tour = new Tour();
-     * this.setFeature(tour); </code>
+     * this.setFeature(tour); }
      * 
      * 
      */
@@ -409,9 +394,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link ScreenOverlay} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.setFeature(screenOverlay); </code>
+     * this.setFeature(screenOverlay); }
      * 
      * 
      */
@@ -425,9 +410,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link PhotoOverlay} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PhotoOverlay photoOverlay = new PhotoOverlay();
-     * this.setFeature(photoOverlay); </code>
+     * this.setFeature(photoOverlay); }
      * 
      * 
      */
@@ -441,9 +426,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link GroundOverlay} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * GroundOverlay groundOverlay = new GroundOverlay();
-     * this.setFeature(groundOverlay); </code>
+     * this.setFeature(groundOverlay); }
      * 
      * 
      */
@@ -457,9 +442,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link NetworkLink} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * NetworkLink networkLink = new NetworkLink();
-     * this.setFeature(networkLink); </code>
+     * this.setFeature(networkLink); }
      * 
      * 
      */
@@ -473,9 +458,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link Folder} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Folder folder = new Folder();
-     * this.setFeature(folder); </code>
+     * this.setFeature(folder); }
      * 
      * 
      */
@@ -489,9 +474,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link Document} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Document document = new Document();
-     * this.setFeature(document); </code>
+     * this.setFeature(document); }
      * 
      * 
      */
@@ -505,9 +490,9 @@ public class Kml implements Cloneable
      * Creates a new instance of {@link Placemark} and set it to feature.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Placemark placemark = new Placemark();
-     * this.setFeature(placemark); </code>
+     * this.setFeature(placemark); }
      * 
      * 
      */
@@ -518,9 +503,10 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see kmlSimpleExtension
+     *
      * 
      * @param kmlSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setKmlSimpleExtension(final List<Object> kmlSimpleExtension) {
         this.kmlSimpleExtension = kmlSimpleExtension;
@@ -532,7 +518,7 @@ public class Kml implements Cloneable
      * @param kmlSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Kml addToKmlSimpleExtension(final Object kmlSimpleExtension) {
         this.getKmlSimpleExtension().add(kmlSimpleExtension);
@@ -540,9 +526,10 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see kmlObjectExtension
+     *
      * 
      * @param kmlObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setKmlObjectExtension(final List<AbstractObject> kmlObjectExtension) {
         this.kmlObjectExtension = kmlObjectExtension;
@@ -554,7 +541,7 @@ public class Kml implements Cloneable
      * @param kmlObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Kml addToKmlObjectExtension(final AbstractObject kmlObjectExtension) {
         this.getKmlObjectExtension().add(kmlObjectExtension);
@@ -563,7 +550,7 @@ public class Kml implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNetworkLinkControl(NetworkLinkControl)
+     *
      * 
      * @param networkLinkControl
      *     required parameter
@@ -575,7 +562,7 @@ public class Kml implements Cloneable
 
     /**
      * fluent setter
-     * @see #setFeature(Feature)
+     *
      * 
      * @param feature
      *     required parameter
@@ -587,7 +574,7 @@ public class Kml implements Cloneable
 
     /**
      * fluent setter
-     * @see #setKmlSimpleExtension(List<Object>)
+     *
      * 
      * @param kmlSimpleExtension
      *     required parameter
@@ -599,7 +586,7 @@ public class Kml implements Cloneable
 
     /**
      * fluent setter
-     * @see #setKmlObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param kmlObjectExtension
      *     required parameter
@@ -611,7 +598,7 @@ public class Kml implements Cloneable
 
     /**
      * fluent setter
-     * @see #setHint(String)
+     *
      * 
      * @param hint
      *     required parameter
@@ -622,7 +609,7 @@ public class Kml implements Cloneable
     }
 
     /**
-     * @see jaxbContext
+     *
      * 
      */
     private static JAXBContext getJaxbContext()
@@ -673,7 +660,7 @@ public class Kml implements Cloneable
      * Java to KML
      * The object graph is marshalled to an OutputStream object.
      * The object is not saved as a zipped .kmz file.
-     * @see marshalKmz(String, Kml...)
+     *
      * 
      */
     public boolean marshal(final OutputStream outputstream)
@@ -693,7 +680,7 @@ public class Kml implements Cloneable
      * Java to KML
      * The object graph is marshalled to a Writer object.
      * The object is not saved as a zipped .kmz file.
-     * @see marshalKmz(String, Kml...)
+     *
      * 
      */
     public boolean marshal(final Writer writer) {
@@ -711,10 +698,10 @@ public class Kml implements Cloneable
      * Java to KML
      * The object graph is marshalled to a Contenthandler object.
      * Useful if  marshaller cis needed to generate CDATA blocks.
-     * {@link https://jaxb.dev.java.net/faq/}
-     * {@link http://code.google.com/p/javaapiforkml/issues/detail?id=7}
+     * @see <a href="https://jaxb.dev.java.net/faq/">...</a>
+     * @see <a href="http://code.google.com/p/javaapiforkml/issues/detail?id=7">...</a>
      * The object is not saved as a zipped .kmz file.
-     * @see marshalKmz(String, Kml...)
+     *
      * 
      */
     public boolean marshal(final ContentHandler contenthandler) {
@@ -750,7 +737,7 @@ public class Kml implements Cloneable
      * Java to KML
      * The object graph is marshalled to a File object.
      * The object is not saved as a zipped .kmz file.
-     * @see marshalKmz(String, Kml...)
+     *
      * 
      */
     public boolean marshal(final File filename)
@@ -975,5 +962,4 @@ public class Kml implements Cloneable
         }
 
     }
-
 }
