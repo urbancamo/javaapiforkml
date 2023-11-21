@@ -2,7 +2,8 @@ package de.micromata.jak;
 
 import java.lang.reflect.Field;
 import java.util.List;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.Assert;
 
@@ -47,11 +48,11 @@ import de.micromata.opengis.kml.v_2_2_0.ViewRefreshMode;
 
 /**
  * @author Flori (f.bachmann@micromata.de)
- * 
+ *
  */
 public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	@SuppressWarnings("unused")
-	private static final Logger LOG = Logger.getLogger(KmlReferencePojoTest.class.getName());
+	private static final Logger LOG = LoggerFactory.getLogger(KmlReferencePojoTest.class.getName());
 
 	/**
 	 * @see de.micromata.jak.internal.IAtsConformanceLevel2#atc42PolyStyle()
@@ -60,7 +61,7 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	public void atc42PolyStyle() {
 		// a kml:Scale element is not a descendant of kml:Update
 		Assert.assertNull(Utils.findClass(PolyStyle.class, "update"));
-		
+
 		Assert.assertNotNull(Utils.findField(PolyStyle.class, "color"));
 		Assert.assertNotNull(Utils.findField(PolyStyle.class, "colorMode"));
 		Assert.assertNotNull(Utils.findField(PolyStyle.class, "fill"));
@@ -72,33 +73,33 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	 */
 	@Test
 	public void atc43CoordinatesAltitudeMode() {
-		// Applies to the control points 
-		// in kml:AbstractGeometryType/kml:coordinates 
+		// Applies to the control points
+		// in kml:AbstractGeometryType/kml:coordinates
 		// and kml:Model/kml:Location.
 		Field location = Utils.findField(Model.class, "location");
 		Assert.assertNotNull(location);
 		Assert.assertEquals(Location.class, location.getType());
-		
+
 		// check if LinearRing contains coordinats
 		Field coordinatesLinerarRing = Utils.findField(LinearRing.class, "coordinates");
 		Assert.assertNotNull(coordinatesLinerarRing);
 		Assert.assertEquals(Coordinate.class, Utils.getClassForGenericList(coordinatesLinerarRing.getGenericType().toString()));
-		
+
 		// check if Point contains coordinats
 		Field coordinatesPoint = Utils.findField(Point.class, "coordinates");
 		Assert.assertNotNull(coordinatesPoint);
 		Assert.assertEquals(Coordinate.class, Utils.getClassForGenericList(coordinatesPoint.getGenericType().toString()));
-		
+
 		// check if Model contains coordinats
 		Field locationModel = Utils.findField(Model.class, "location");
 		Assert.assertNotNull(locationModel);
 		Assert.assertEquals(Location.class, locationModel.getType());
-		
+
 		// check if LineString contains coordinats
 		Field coordinatesLineString = Utils.findField(LineString.class, "coordinates");
 		Assert.assertNotNull(coordinatesLineString);
 		Assert.assertEquals(Coordinate.class, Utils.getClassForGenericList(coordinatesLineString.getGenericType().toString()));
-		
+
 		// check if Location contains altitude as double type
 		Field locationAltitude = Utils.findField(Location.class, "altitude");
 		Assert.assertNotNull(locationAltitude);
@@ -117,7 +118,7 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	public void atc44ScaleMinimalContent() {
 		// a kml:Scale element is not a descendant of kml:Update
 		Assert.assertNull(Utils.findClass(Scale.class, "Update"));
-		
+
 		Assert.assertNotNull(Utils.findField(Scale.class, "x"));
 		Assert.assertNotNull(Utils.findField(Scale.class, "y"));
 		Assert.assertNotNull(Utils.findField(Scale.class, "z"));
@@ -197,11 +198,11 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	public void atc52PhotoOverlay() {
 		//TODO: take a second look
 		Assert.assertNotNull(Utils.findField(PhotoOverlay.class, "icon"));
-		// The parameters are embedded within the URL; 
-		// i.e, http://server.company.com/bigphoto/$[level]/row_$[x]_column_$[y].jpg. 
-		// Check for the kml:ImagePyramid when the x, y, level parameters are present, 
+		// The parameters are embedded within the URL;
+		// i.e, http://server.company.com/bigphoto/$[level]/row_$[x]_column_$[y].jpg.
+		// Check for the kml:ImagePyramid when the x, y, level parameters are present,
 		// or if the kml:ImagePyramid is present check for the x, y, level parameters.
-		
+
 		Icon icon = new Icon();
 		icon.setHref("http://server.company.com/bigphoto/$[level]/row_$[x]_column_$[y].jpg");
 		Assert.assertEquals(icon.getHref(), "http://server.company.com/bigphoto/$[level]/row_$[x]_column_$[y].jpg");
@@ -214,7 +215,7 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	public void atc53GroundOverlayMinimalContent() {
 		// a kml:GroundOverlay element is not a descendant of kml:Update
 		Assert.assertNull(Utils.findClass(GroundOverlay.class, "Update"));
-		
+
 		Field latlonBoxGroundOverlay = Utils.findField(GroundOverlay.class, "latLonBox");
 		Assert.assertNotNull(latlonBoxGroundOverlay);
 		Assert.assertEquals(LatLonBox.class, latlonBoxGroundOverlay.getType());
@@ -227,7 +228,7 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	public void atc54Camera() {
 		//TODO: take a second look
 		//TODO: if set to altitude is present the altitudeMode is not clmapToGround"
-		
+
 		Assert.assertNull(Utils.findClass(Camera.class, "Update"));
 		Assert.assertNotNull(Utils.findField(Camera.class, "longitude"));
 		Assert.assertNotNull(Utils.findField(Camera.class, "latitude"));
@@ -303,7 +304,7 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	@Test
 	public void atc62ImagePyramid() {
 		Assert.assertNull(Utils.findClass(ImagePyramid.class, "Update"));
-		
+
 		Assert.assertNotNull(Utils.findField(ImagePyramid.class, "tileSize"));
 		Assert.assertNotNull(Utils.findField(ImagePyramid.class, "maxWidth"));
 		Assert.assertNotNull(Utils.findField(ImagePyramid.class, "maxHeight"));
@@ -315,7 +316,7 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	@Test
 	public void atc63LabelStyle() {
 		Assert.assertNull(Utils.findClass(LabelStyle.class, "Update"));
-		
+
 		Assert.assertNotNull(Utils.findField(LabelStyle.class, "color"));
 		Assert.assertNotNull(Utils.findField(LabelStyle.class, "colorMode"));
 		Assert.assertNotNull(Utils.findField(LabelStyle.class, "scale"));
@@ -347,7 +348,7 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	@Test
 	public void atc66MultiGeometry() {
 		Assert.assertNull(Utils.findClass(MultiGeometry.class, "Update"));
-		
+
 		Field geometryList = Utils.findField(MultiGeometry.class, "geometry");
 		Assert.assertNotNull(geometryList);
 		Assert.assertEquals(List.class, geometryList.getType());
@@ -359,11 +360,11 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	@Test
 	public void atc67Placemark() {
 		Assert.assertNull(Utils.findClass(Placemark.class, "Update"));
-		
+
 		Field geometry = Utils.findField(Placemark.class, "geometry");
 		Assert.assertNotNull(geometry);
 		Assert.assertEquals(Geometry.class, geometry.getType());
-		
+
 	}
 
 	/**
@@ -372,13 +373,13 @@ public class AtsConformanceLevel2Test implements IAtsConformanceLevel2 {
 	@Test
 	public void atc68StyleMap() {
 		Assert.assertNull(Utils.findClass(StyleMap.class, "Update"));
-		
+
 		// check if StyleMap contains pair
 		Field pair = Utils.findField(StyleMap.class, "pair");
 		Assert.assertNotNull(pair);
 		Assert.assertEquals(List.class, pair.getType());
 		Assert.assertEquals(Pair.class, Utils.getClassForGenericList(pair.getGenericType().toString()));
-		
+
 		Assert.assertNotNull(Utils.findField(StyleState.class, "NORMAL"));
 		Assert.assertNotNull(Utils.findField(StyleState.class, "HIGHLIGHT"));
 	}

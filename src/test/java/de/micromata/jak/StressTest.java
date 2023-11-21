@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.junit.Before;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.junit.Test;
 
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
@@ -19,16 +18,9 @@ import de.micromata.opengis.kml.v_2_2_0.Placemark;
 
 // needs vm-argument: -Xms2g -Xmx2g
 public final class StressTest {
-	private static final String LOG4J_LOCATION = "src/main/java/log4j.properties";
-
-	private final Logger LOG = Logger.getLogger(getClass().getName());
+  private static final Logger LOG = LoggerFactory.getLogger(StressTest.class);
 
 	private final Random randomElement = new Random();;
-
-	@Before
-	public void setUp() {
-		PropertyConfigurator.configure(LOG4J_LOCATION);
-	}
 
 	@Test
 	public void stess() throws FileNotFoundException {
