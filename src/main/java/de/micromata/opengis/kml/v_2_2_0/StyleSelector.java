@@ -1,27 +1,23 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlSeeAlso;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <StyleSelector>
+ * {@code <StyleSelector>}
  * <p>
  * One or more Styles and StyleMaps can be defined to customize the appearance of any 
- * element derived from Feature or of the Geometry in a Placemark. (See <BalloonStyle>, 
- * <ListStyle>, <StyleSelector>, and the styles derived from <ColorStyle>.) A style 
+ * element derived from Feature or of the Geometry in a Placemark. (See {@code <BalloonStyle>},
+ * {@code <ListStyle>}, {@code <StyleSelector>}, and the styles derived from {@code <ColorStyle>}.) A style 
  * defined within a Feature is called an "inline style" and applies only to the Feature 
- * that contains it. A style defined as the child of a <Document> is called a "shared 
+ * that contains it. A style defined as the child of a {@code <Document>} is called a "shared 
  * style." A shared style must have an id defined for it. This id is referenced by 
- * one or more Features within the <Document>. In cases where a style element is defined 
+ * one or more Features within the {@code <Document>}. In cases where a style element is defined 
  * both in a shared style and in an inline style for a Feature—that is, a Folder, GroundOverlay, 
  * NetworkLink, Placemark, or ScreenOverlay—the value for the Feature's inline style 
  * takes precedence over the value for the shared style. 
@@ -33,11 +29,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * &lt;!-- /<em>StyleSelector</em> --&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Object>
+ *
  * 
  * Extended By: 
- * @see: <Style>
- * @see: <StyleMap>
+ *
+ *
  * 
  * 
  * 
@@ -60,12 +56,12 @@ public abstract class StyleSelector
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> styleSelectorSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -85,7 +81,7 @@ public abstract class StyleSelector
     }
 
     /**
-     * @see styleSelectorSimpleExtension
+     *
      * 
      */
     public List<Object> getStyleSelectorSimpleExtension() {
@@ -96,7 +92,7 @@ public abstract class StyleSelector
     }
 
     /**
-     * @see styleSelectorObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getStyleSelectorObjectExtension() {
@@ -152,9 +148,10 @@ public abstract class StyleSelector
     }
 
     /**
-     * @see styleSelectorSimpleExtension
+     *
      * 
      * @param styleSelectorSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setStyleSelectorSimpleExtension(final List<Object> styleSelectorSimpleExtension) {
         this.styleSelectorSimpleExtension = styleSelectorSimpleExtension;
@@ -166,7 +163,7 @@ public abstract class StyleSelector
      * @param styleSelectorSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public StyleSelector addToStyleSelectorSimpleExtension(final Object styleSelectorSimpleExtension) {
         this.getStyleSelectorSimpleExtension().add(styleSelectorSimpleExtension);
@@ -174,9 +171,10 @@ public abstract class StyleSelector
     }
 
     /**
-     * @see styleSelectorObjectExtension
+     *
      * 
      * @param styleSelectorObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setStyleSelectorObjectExtension(final List<AbstractObject> styleSelectorObjectExtension) {
         this.styleSelectorObjectExtension = styleSelectorObjectExtension;
@@ -188,7 +186,7 @@ public abstract class StyleSelector
      * @param styleSelectorObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public StyleSelector addToStyleSelectorObjectExtension(final AbstractObject styleSelectorObjectExtension) {
         this.getStyleSelectorObjectExtension().add(styleSelectorObjectExtension);
@@ -196,7 +194,7 @@ public abstract class StyleSelector
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -214,7 +212,7 @@ public abstract class StyleSelector
 
     /**
      * fluent setter
-     * @see #setStyleSelectorSimpleExtension(List<Object>)
+     *
      * 
      * @param styleSelectorSimpleExtension
      *     required parameter
@@ -226,7 +224,7 @@ public abstract class StyleSelector
 
     /**
      * fluent setter
-     * @see #setStyleSelectorObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param styleSelectorObjectExtension
      *     required parameter

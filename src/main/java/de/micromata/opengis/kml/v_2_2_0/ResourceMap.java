@@ -1,19 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <resourcemap>
+ * {@code <resourcemap>}
  * 
  * 
  */
@@ -30,11 +26,11 @@ public class ResourceMap
 {
 
     /**
-     * <alias> contains a mapping from a <sourcehref> to a <targethref>:
+     * alias contains a mapping from a sourceHref to a targetHref:
      * <p>
-     * <targetHref> Specifies the texture file to be fetched by Google Earth. This reference 
+     * targetHref Specifies the texture file to be fetched by Google Earth. This reference 
      * can be a relative reference to an image file within the .kmz archive, or it can 
-     * be an absolute reference to the file (for example, a URL). <sourceHref> Is the path 
+     * be an absolute reference to the file (for example, a URL). sourceHref Is the path 
      * specified for the texture file in the Collada .dae file. 
      * </p>
      * 
@@ -47,12 +43,12 @@ public class ResourceMap
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> resourceMapSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -72,7 +68,7 @@ public class ResourceMap
     }
 
     /**
-     * @see alias
+     *
      * 
      */
     public List<Alias> getAlias() {
@@ -83,7 +79,7 @@ public class ResourceMap
     }
 
     /**
-     * @see resourceMapSimpleExtension
+     *
      * 
      */
     public List<Object> getResourceMapSimpleExtension() {
@@ -94,7 +90,7 @@ public class ResourceMap
     }
 
     /**
-     * @see resourceMapObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getResourceMapObjectExtension() {
@@ -162,9 +158,9 @@ public class ResourceMap
     /**
      * Creates a new instance of {@link Alias} and adds it to alias.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Alias alias = new Alias();
-     * this.getAlias().add(alias); </code>
+     * this.getAlias().add(alias); }
      * 
      * 
      */
@@ -175,9 +171,10 @@ public class ResourceMap
     }
 
     /**
-     * @see alias
+     *
      * 
      * @param alias
+     *     Objects of the following type are allowed in the list: {@link Alias}
      */
     public void setAlias(final List<Alias> alias) {
         this.alias = alias;
@@ -189,7 +186,7 @@ public class ResourceMap
      * @param alias
      *     Objects of the following type are allowed in the list: {@link Alias}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ResourceMap addToAlias(final Alias alias) {
         this.getAlias().add(alias);
@@ -197,9 +194,10 @@ public class ResourceMap
     }
 
     /**
-     * @see resourceMapSimpleExtension
+     *
      * 
      * @param resourceMapSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setResourceMapSimpleExtension(final List<Object> resourceMapSimpleExtension) {
         this.resourceMapSimpleExtension = resourceMapSimpleExtension;
@@ -211,7 +209,7 @@ public class ResourceMap
      * @param resourceMapSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ResourceMap addToResourceMapSimpleExtension(final Object resourceMapSimpleExtension) {
         this.getResourceMapSimpleExtension().add(resourceMapSimpleExtension);
@@ -219,9 +217,10 @@ public class ResourceMap
     }
 
     /**
-     * @see resourceMapObjectExtension
+     *
      * 
      * @param resourceMapObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setResourceMapObjectExtension(final List<AbstractObject> resourceMapObjectExtension) {
         this.resourceMapObjectExtension = resourceMapObjectExtension;
@@ -233,7 +232,7 @@ public class ResourceMap
      * @param resourceMapObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ResourceMap addToResourceMapObjectExtension(final AbstractObject resourceMapObjectExtension) {
         this.getResourceMapObjectExtension().add(resourceMapObjectExtension);
@@ -241,7 +240,7 @@ public class ResourceMap
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -259,7 +258,7 @@ public class ResourceMap
 
     /**
      * fluent setter
-     * @see #setAlias(List<Alias>)
+     *
      * 
      * @param alias
      *     required parameter
@@ -271,7 +270,7 @@ public class ResourceMap
 
     /**
      * fluent setter
-     * @see #setResourceMapSimpleExtension(List<Object>)
+     *
      * 
      * @param resourceMapSimpleExtension
      *     required parameter
@@ -283,7 +282,7 @@ public class ResourceMap
 
     /**
      * fluent setter
-     * @see #setResourceMapObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param resourceMapObjectExtension
      *     required parameter

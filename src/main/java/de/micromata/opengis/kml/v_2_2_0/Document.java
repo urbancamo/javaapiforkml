@@ -1,28 +1,22 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <Document>
+ * {@code <Document>}
  * <p>
- * <Document> <Style id="myPrettyDocument"> <ListStyle> ... </ListStyle> </Style> <styleUrl#myPrettyDocument"> 
- * ... </Document> 
+ * {@code <Document> <Style id="myPrettyDocument"> <ListStyle> ... </ListStyle> </Style> <styleUrl#myPrettyDocument">
+ * ... </Document> }
  * </p>
  * <p>
  * A Document is a container for features and styles. This element is required if your 
@@ -31,15 +25,15 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * </p>
  * <p>
  * Define all Styles in a Document. Assign a unique ID to each Style. Within a given 
- * Feature or StyleMap, reference the Style's ID using a <styleUrl> element. 
+ * Feature or StyleMap, reference the Style's ID using a {@code <styleUrl>} element.
  * </p>
  * <p>
  * Do not put shared styles within a Folder. 
  * </p>
  * <p>
- * Each Feature must explicitly reference the styles it uses in a <styleUrl> element. 
+ * Each Feature must explicitly reference the styles it uses in a {@code <styleUrl>} element. 
  * For a Style that applies to a Document (such as ListStyle), the Document itself 
- * must explicitly reference the <styleUrl>. For example: 
+ * must explicitly reference the {@code <styleUrl>}. For example:
  * </p>
  * <p>
  * Note that shared styles are not inherited by the Features in the Document. 
@@ -73,12 +67,12 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * <strong>&lt;/Document&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Container>
+ *
  * 
  * Contains: 
- * @see: <Feature>
- * @see: <Schema>
- * @see: <StyleSelector>
+ *
+ *
+ *
  * 
  * 
  * 
@@ -97,11 +91,11 @@ public class Document
 {
 
     /**
-     * <Schema>
+     * {@code <Schema>}
      * <p>
      * Specifies a custom KML schema that is used to add custom data to KML Features. The 
-     * "id" attribute is required and must be unique within the KML file. <Schema> is always 
-     * a child of <Document>. 
+     * "id" attribute is required and must be unique within the KML file. {@code <Schema>} is always 
+     * a child of {@code <Document>}. 
      * </p>
      * 
      * Syntax: 
@@ -112,13 +106,13 @@ public class Document
      * &lt;/Schema&gt;</pre>
      * 
      * Extends: 
-     * @see: This is a root element.
+     *
      * 
      * Contained By: 
-     * @see: <Document>
+     *
      * 
      * See Also: 
-     * <SchemaData>
+     * {@code <SchemaData>}
      * 
      * 
      * 
@@ -126,7 +120,7 @@ public class Document
     @XmlElement(name = "Schema")
     protected List<Schema> schema;
     /**
-     * <Feature>
+     * {@code <Feature>}
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. The following 
      * diagram shows how some of a Feature's elements appear in Google Earth. 
@@ -154,14 +148,14 @@ public class Document
      *   &lt;ExtendedData&gt;...&lt;/ExtendedData&gt;      &lt;!-- new in KML 2.2 --&gt;<br></span>&lt;-- /<em>Feature</em> --&gt;</pre>
      * 
      * Extends: 
-     * @see: <Object>
+     *
      * 
      * Extended By: 
-     * @see: <Container>
-     * @see: <NetworkLink>
-     * @see: <Overlay>
-     * @see: <Placemark>
-     * @see: <gx:Tour>
+     *
+     *
+     *
+     *
+     *
      * 
      * 
      * 
@@ -172,12 +166,12 @@ public class Document
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> documentSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -197,7 +191,7 @@ public class Document
     }
 
     /**
-     * @see schema
+     *
      * 
      */
     public List<Schema> getSchema() {
@@ -208,7 +202,7 @@ public class Document
     }
 
     /**
-     * @see feature
+     *
      * 
      */
     public List<Feature> getFeature() {
@@ -219,7 +213,7 @@ public class Document
     }
 
     /**
-     * @see documentSimpleExtension
+     *
      * 
      */
     public List<Object> getDocumentSimpleExtension() {
@@ -230,7 +224,7 @@ public class Document
     }
 
     /**
-     * @see documentObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getDocumentObjectExtension() {
@@ -308,9 +302,9 @@ public class Document
     /**
      * Creates a new instance of {@link Schema} and adds it to schema.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Schema schema = new Schema();
-     * this.getSchema().add(schema); </code>
+     * this.getSchema().add(schema); }
      * 
      * 
      */
@@ -323,9 +317,9 @@ public class Document
     /**
      * Creates a new instance of {@link Tour} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Tour tour = new Tour();
-     * this.getFeature().add(tour); </code>
+     * this.getFeature().add(tour); }
      * 
      * 
      */
@@ -338,9 +332,9 @@ public class Document
     /**
      * Creates a new instance of {@link ScreenOverlay} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * ScreenOverlay screenOverlay = new ScreenOverlay();
-     * this.getFeature().add(screenOverlay); </code>
+     * this.getFeature().add(screenOverlay); }
      * 
      * 
      */
@@ -353,9 +347,9 @@ public class Document
     /**
      * Creates a new instance of {@link PhotoOverlay} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * PhotoOverlay photoOverlay = new PhotoOverlay();
-     * this.getFeature().add(photoOverlay); </code>
+     * this.getFeature().add(photoOverlay); }
      * 
      * 
      */
@@ -368,9 +362,9 @@ public class Document
     /**
      * Creates a new instance of {@link GroundOverlay} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * GroundOverlay groundOverlay = new GroundOverlay();
-     * this.getFeature().add(groundOverlay); </code>
+     * this.getFeature().add(groundOverlay); }
      * 
      * 
      */
@@ -383,9 +377,9 @@ public class Document
     /**
      * Creates a new instance of {@link NetworkLink} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * NetworkLink networkLink = new NetworkLink();
-     * this.getFeature().add(networkLink); </code>
+     * this.getFeature().add(networkLink); }
      * 
      * 
      */
@@ -398,9 +392,9 @@ public class Document
     /**
      * Creates a new instance of {@link Folder} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Folder folder = new Folder();
-     * this.getFeature().add(folder); </code>
+     * this.getFeature().add(folder); }
      * 
      * 
      */
@@ -411,11 +405,11 @@ public class Document
     }
 
     /**
-     * Creates a new instance of {@link Document} and adds it to feature.
+     * Creates a new instance of Document and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Document document = new Document();
-     * this.getFeature().add(document); </code>
+     * this.getFeature().add(document); }
      * 
      * 
      */
@@ -428,9 +422,9 @@ public class Document
     /**
      * Creates a new instance of {@link Placemark} and adds it to feature.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Placemark placemark = new Placemark();
-     * this.getFeature().add(placemark); </code>
+     * this.getFeature().add(placemark); }
      * 
      * 
      */
@@ -441,9 +435,10 @@ public class Document
     }
 
     /**
-     * @see schema
+     *
      * 
      * @param schema
+     *     Objects of the following type are allowed in the list: {@link Schema}
      */
     public void setSchema(final List<Schema> schema) {
         this.schema = schema;
@@ -455,7 +450,7 @@ public class Document
      * @param schema
      *     Objects of the following type are allowed in the list: {@link Schema}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Document addToSchema(final Schema schema) {
         this.getSchema().add(schema);
@@ -463,9 +458,10 @@ public class Document
     }
 
     /**
-     * @see feature
+     *
      * 
      * @param feature
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code >}{@code <}{@link GroundOverlay}{@code >}{@code <}{@link NetworkLink}{@code >}{@code <}{@link Folder}{@code >}{@code <}{@link PhotoOverlay}{@code >}{@code <}Document{@code >}{@code <}{@link Tour}{@code >}{@code <}{@link ScreenOverlay}{@code >}{@code <}{@link Feature}{@code >}{@code <}{@link Placemark}{@code >}{@code <}{@link Overlay}{@code >}
      */
     public void setFeature(final List<Feature> feature) {
         this.feature = feature;
@@ -475,9 +471,9 @@ public class Document
      * add a value to the feature property collection
      * 
      * @param feature
-     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code>}{@link JAXBElement}{@code <}{@link GroundOverlay}{@code>}{@link JAXBElement}{@code <}{@link NetworkLink}{@code>}{@link JAXBElement}{@code <}{@link Folder}{@code>}{@link JAXBElement}{@code <}{@link PhotoOverlay}{@code>}{@link JAXBElement}{@code <}{@link Document}{@code>}{@link JAXBElement}{@code <}{@link Tour}{@code>}{@link JAXBElement}{@code <}{@link ScreenOverlay}{@code>}{@link JAXBElement}{@code <}{@link Feature}{@code>}{@link JAXBElement}{@code <}{@link Placemark}{@code>}{@link JAXBElement}{@code <}{@link Overlay}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Container}{@code >}{@code <}{@link GroundOverlay}{@code >}{@code <}{@link NetworkLink}{@code >}{@code <}{@link Folder}{@code >}{@code <}{@link PhotoOverlay}{@code >}{@code <}Document{@code >}{@code <}{@link Tour}{@code >}{@code <}{@link ScreenOverlay}{@code >}{@code <}{@link Feature}{@code >}{@code <}{@link Placemark}{@code >}{@code <}{@link Overlay}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Document addToFeature(final Feature feature) {
         this.getFeature().add(feature);
@@ -485,9 +481,10 @@ public class Document
     }
 
     /**
-     * @see documentSimpleExtension
+     *
      * 
      * @param documentSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setDocumentSimpleExtension(final List<Object> documentSimpleExtension) {
         this.documentSimpleExtension = documentSimpleExtension;
@@ -499,7 +496,7 @@ public class Document
      * @param documentSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Document addToDocumentSimpleExtension(final Object documentSimpleExtension) {
         this.getDocumentSimpleExtension().add(documentSimpleExtension);
@@ -507,9 +504,10 @@ public class Document
     }
 
     /**
-     * @see documentObjectExtension
+     *
      * 
      * @param documentObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setDocumentObjectExtension(final List<AbstractObject> documentObjectExtension) {
         this.documentObjectExtension = documentObjectExtension;
@@ -521,7 +519,7 @@ public class Document
      * @param documentObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Document addToDocumentObjectExtension(final AbstractObject documentObjectExtension) {
         this.getDocumentObjectExtension().add(documentObjectExtension);
@@ -529,7 +527,7 @@ public class Document
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -546,7 +544,7 @@ public class Document
     }
 
     /**
-     * @see styleSelector
+     *
      * 
      */
     @Obvious
@@ -563,7 +561,7 @@ public class Document
     }
 
     /**
-     * @see featureSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -580,7 +578,7 @@ public class Document
     }
 
     /**
-     * @see featureObjectExtension
+     *
      * 
      */
     @Obvious
@@ -597,7 +595,7 @@ public class Document
     }
 
     /**
-     * @see containerSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -614,7 +612,7 @@ public class Document
     }
 
     /**
-     * @see containerObjectExtension
+     *
      * 
      */
     @Obvious
@@ -632,7 +630,7 @@ public class Document
 
     /**
      * fluent setter
-     * @see #setSchema(List<Schema>)
+     *
      * 
      * @param schema
      *     required parameter
@@ -644,7 +642,7 @@ public class Document
 
     /**
      * fluent setter
-     * @see #setFeature(List<Feature>)
+     *
      * 
      * @param feature
      *     required parameter
@@ -656,7 +654,7 @@ public class Document
 
     /**
      * fluent setter
-     * @see #setDocumentSimpleExtension(List<Object>)
+     *
      * 
      * @param documentSimpleExtension
      *     required parameter
@@ -668,7 +666,7 @@ public class Document
 
     /**
      * fluent setter
-     * @see #setDocumentObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param documentObjectExtension
      *     required parameter

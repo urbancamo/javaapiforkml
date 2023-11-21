@@ -1,19 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <imagepyramid>
+ * {@code <imagepyramid>}
  * <p>
  * For very large images, you'll need to construct an image pyramid, which is a hierarchical 
  * set of images, each of which is an increasingly lower resolution version of the 
@@ -27,7 +23,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * that can be discerned by the user at the current viewpoint. 
  * </p>
  * <p>
- * When you specify an image pyramid, you also modify the <href> in the <Icon> element 
+ * When you specify an image pyramid, you also modify the {@code <href>}in the {@code <Icon>}element 
  * to include specifications for which tiles to load. 
  * </p>
  * 
@@ -50,9 +46,9 @@ public class ImagePyramid
 {
 
     /**
-     * <tilesize>
+     * {@code <tileSize>}
      * <p>
-     * Size of the tiles, in pixels. Tiles must be square, and <tileSize> must be a power 
+     * Size of the tiles, in pixels. Tiles must be square, and {@code <tileSize>} must be a power
      * of 2. A tile size of 256 (the default) or 512 is recommended. The original image 
      * is divided into tiles of this size, at varying resolutions. 
      * </p>
@@ -63,7 +59,7 @@ public class ImagePyramid
     @XmlElement(defaultValue = "256")
     protected int tileSize;
     /**
-     * <maxwidth>
+     * {@code <maxwidth>}
      * <p>
      * Width in pixels of the original image. 
      * </p>
@@ -74,7 +70,7 @@ public class ImagePyramid
     @XmlElement(defaultValue = "0")
     protected int maxWidth;
     /**
-     * <maxheight>
+     * {@code <maxheight>}
      * <p>
      * Height in pixels of the original image. 
      * </p>
@@ -91,7 +87,7 @@ public class ImagePyramid
      * </p>
      * 
      * See Also: 
-     * See <PhotoOverlay>
+     * See {@code <PhotoOverlay>}
      * 
      * 
      * 
@@ -102,12 +98,12 @@ public class ImagePyramid
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> imagePyramidSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -127,7 +123,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see tileSize
+     *
      * 
      * @return
      *     possible object is
@@ -139,7 +135,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see tileSize
+     *
      * 
      * @param value
      *     allowed object is
@@ -151,7 +147,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see maxWidth
+     *
      * 
      * @return
      *     possible object is
@@ -163,7 +159,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see maxWidth
+     *
      * 
      * @param value
      *     allowed object is
@@ -175,7 +171,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see maxHeight
+     *
      * 
      * @return
      *     possible object is
@@ -187,7 +183,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see maxHeight
+     *
      * 
      * @param value
      *     allowed object is
@@ -199,7 +195,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see gridOrigin
+     *
      * 
      * @return
      *     possible object is
@@ -211,7 +207,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see gridOrigin
+     *
      * 
      * @param value
      *     allowed object is
@@ -223,7 +219,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see imagePyramidSimpleExtension
+     *
      * 
      */
     public List<Object> getImagePyramidSimpleExtension() {
@@ -234,7 +230,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see imagePyramidObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getImagePyramidObjectExtension() {
@@ -312,9 +308,10 @@ public class ImagePyramid
     }
 
     /**
-     * @see imagePyramidSimpleExtension
+     *
      * 
      * @param imagePyramidSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setImagePyramidSimpleExtension(final List<Object> imagePyramidSimpleExtension) {
         this.imagePyramidSimpleExtension = imagePyramidSimpleExtension;
@@ -326,7 +323,7 @@ public class ImagePyramid
      * @param imagePyramidSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ImagePyramid addToImagePyramidSimpleExtension(final Object imagePyramidSimpleExtension) {
         this.getImagePyramidSimpleExtension().add(imagePyramidSimpleExtension);
@@ -334,9 +331,10 @@ public class ImagePyramid
     }
 
     /**
-     * @see imagePyramidObjectExtension
+     *
      * 
      * @param imagePyramidObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setImagePyramidObjectExtension(final List<AbstractObject> imagePyramidObjectExtension) {
         this.imagePyramidObjectExtension = imagePyramidObjectExtension;
@@ -348,7 +346,7 @@ public class ImagePyramid
      * @param imagePyramidObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ImagePyramid addToImagePyramidObjectExtension(final AbstractObject imagePyramidObjectExtension) {
         this.getImagePyramidObjectExtension().add(imagePyramidObjectExtension);
@@ -356,7 +354,7 @@ public class ImagePyramid
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -374,7 +372,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
-     * @see #setTileSize(int)
+     *
      * 
      * @param tileSize
      *     required parameter
@@ -386,7 +384,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
-     * @see #setMaxWidth(int)
+     *
      * 
      * @param maxWidth
      *     required parameter
@@ -398,7 +396,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
-     * @see #setMaxHeight(int)
+     *
      * 
      * @param maxHeight
      *     required parameter
@@ -410,7 +408,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
-     * @see #setGridOrigin(GridOrigin)
+     *
      * 
      * @param gridOrigin
      *     required parameter
@@ -422,7 +420,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
-     * @see #setImagePyramidSimpleExtension(List<Object>)
+     *
      * 
      * @param imagePyramidSimpleExtension
      *     required parameter
@@ -434,7 +432,7 @@ public class ImagePyramid
 
     /**
      * fluent setter
-     * @see #setImagePyramidObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param imagePyramidObjectExtension
      *     required parameter

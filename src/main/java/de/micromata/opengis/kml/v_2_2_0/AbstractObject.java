@@ -1,32 +1,21 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.util.ArrayList;
-import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlID;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlSeeAlso;
-import jakarta.xml.bind.annotation.XmlType;
+import de.micromata.opengis.kml.v_2_2_0.gx.*;
+import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import de.micromata.opengis.kml.v_2_2_0.gx.LatLonQuad;
-import de.micromata.opengis.kml.v_2_2_0.gx.Playlist;
-import de.micromata.opengis.kml.v_2_2_0.gx.SimpleArrayData;
-import de.micromata.opengis.kml.v_2_2_0.gx.TourPrimitive;
-import de.micromata.opengis.kml.v_2_2_0.gx.ViewerOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <Object>
  * <p>
  * This is an abstract base class and cannot be used directly in a KML file. It provides 
  * the id attribute, which allows unique identification of a KML element, and the targetId 
  * attribute, which is used to reference objects that have already been loaded into 
- * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+ * Google Earth. The id attribute must be assigned if the Update mechanism is to 
  * be used. 
  * </p>
  * 
@@ -91,8 +80,7 @@ public abstract class AbstractObject implements Cloneable
     }
 
     /**
-     * @see objectSimpleExtension
-     * 
+     *
      */
     public List<Object> getObjectSimpleExtension() {
         if (objectSimpleExtension == null) {
@@ -102,8 +90,7 @@ public abstract class AbstractObject implements Cloneable
     }
 
     /**
-     * @see id
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String}
@@ -114,8 +101,7 @@ public abstract class AbstractObject implements Cloneable
     }
 
     /**
-     * @see id
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String}
@@ -126,8 +112,7 @@ public abstract class AbstractObject implements Cloneable
     }
 
     /**
-     * @see targetId
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String}
@@ -138,8 +123,7 @@ public abstract class AbstractObject implements Cloneable
     }
 
     /**
-     * @see targetId
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String}
@@ -202,9 +186,6 @@ public abstract class AbstractObject implements Cloneable
     }
 
     /**
-     * @see objectSimpleExtension
-     * 
-     * @param objectSimpleExtension
      */
     public void setObjectSimpleExtension(final List<Object> objectSimpleExtension) {
         this.objectSimpleExtension = objectSimpleExtension;
@@ -216,7 +197,7 @@ public abstract class AbstractObject implements Cloneable
      * @param objectSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public AbstractObject addToObjectSimpleExtension(final Object objectSimpleExtension) {
         this.getObjectSimpleExtension().add(objectSimpleExtension);
@@ -225,10 +206,12 @@ public abstract class AbstractObject implements Cloneable
 
     /**
      * fluent setter
-     * @see #setObjectSimpleExtension(List<Object>)
+     *
      * 
      * @param objectSimpleExtension
      *     required parameter
+     * @return
+     *     AbstractObject
      */
     public AbstractObject withObjectSimpleExtension(final List<Object> objectSimpleExtension) {
         this.setObjectSimpleExtension(objectSimpleExtension);
@@ -237,10 +220,12 @@ public abstract class AbstractObject implements Cloneable
 
     /**
      * fluent setter
-     * @see #setId(String)
+     *
      * 
      * @param id
      *     required parameter
+     * @return
+     *     AbstractObject
      */
     public AbstractObject withId(final String id) {
         this.setId(id);
@@ -249,10 +234,12 @@ public abstract class AbstractObject implements Cloneable
 
     /**
      * fluent setter
-     * @see #setTargetId(String)
+     *
      * 
      * @param targetId
      *     required parameter
+     * @return
+     *     AbstractObject
      */
     public AbstractObject withTargetId(final String targetId) {
         this.setTargetId(targetId);

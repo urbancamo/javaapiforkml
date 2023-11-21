@@ -204,7 +204,7 @@ public class PremiseNumberPrefix implements Cloneable
 
     /**
      * fluent setter
-     * @see #setValue(String)
+     *
      * 
      * @param value
      *     required parameter
@@ -216,7 +216,7 @@ public class PremiseNumberPrefix implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNumberPrefixSeparator(String)
+     *
      * 
      * @param numberPrefixSeparator
      *     required parameter
@@ -228,7 +228,7 @@ public class PremiseNumberPrefix implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUnderscore(String)
+     *
      * 
      * @param underscore
      *     required parameter
@@ -240,7 +240,7 @@ public class PremiseNumberPrefix implements Cloneable
 
     /**
      * fluent setter
-     * @see #setCode(String)
+     *
      * 
      * @param code
      *     required parameter

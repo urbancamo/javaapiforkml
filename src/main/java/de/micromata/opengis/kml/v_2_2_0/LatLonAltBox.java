@@ -1,21 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <latlonaltbox>(required)
+ * {@code <latlonaltbox>}(required)
  * <p>
  * A bounding box that describes an area of interest defined by geographic coordinates 
  * and altitudes. Default values and required fields are as follows: 
@@ -39,7 +33,7 @@ public class LatLonAltBox
 {
 
     /**
-     * <minaltitude>
+     * {@code <minaltitude>}
      * <p>
      * Specified in meters (and is affected by the altitude mode specification). 
      * </p>
@@ -50,7 +44,7 @@ public class LatLonAltBox
     @XmlElement(defaultValue = "0.0")
     protected double minAltitude;
     /**
-     * <maxaltitude>
+     * {@code <maxaltitude>}
      * <p>
      * Specified in meters (and is affected by the altitude mode specification). 
      * </p>
@@ -67,7 +61,7 @@ public class LatLonAltBox
      * </p>
      * 
      * See Also: 
-     * See <LookAt> and <Region>
+     * See LookAt and {@code <Region>}
      * 
      * 
      * 
@@ -78,12 +72,12 @@ public class LatLonAltBox
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> latLonAltBoxSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -103,7 +97,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see minAltitude
+     *
      * 
      * @return
      *     possible object is
@@ -115,7 +109,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see minAltitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -127,7 +121,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see maxAltitude
+     *
      * 
      * @return
      *     possible object is
@@ -139,7 +133,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see maxAltitude
+     *
      * 
      * @param value
      *     allowed object is
@@ -151,13 +145,13 @@ public class LatLonAltBox
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -165,13 +159,13 @@ public class LatLonAltBox
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -179,7 +173,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see latLonAltBoxSimpleExtension
+     *
      * 
      */
     public List<Object> getLatLonAltBoxSimpleExtension() {
@@ -190,7 +184,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see latLonAltBoxObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getLatLonAltBoxObjectExtension() {
@@ -267,9 +261,10 @@ public class LatLonAltBox
     }
 
     /**
-     * @see latLonAltBoxSimpleExtension
+     *
      * 
      * @param latLonAltBoxSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setLatLonAltBoxSimpleExtension(final List<Object> latLonAltBoxSimpleExtension) {
         this.latLonAltBoxSimpleExtension = latLonAltBoxSimpleExtension;
@@ -281,7 +276,7 @@ public class LatLonAltBox
      * @param latLonAltBoxSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LatLonAltBox addToLatLonAltBoxSimpleExtension(final Object latLonAltBoxSimpleExtension) {
         this.getLatLonAltBoxSimpleExtension().add(latLonAltBoxSimpleExtension);
@@ -289,9 +284,10 @@ public class LatLonAltBox
     }
 
     /**
-     * @see latLonAltBoxObjectExtension
+     *
      * 
      * @param latLonAltBoxObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setLatLonAltBoxObjectExtension(final List<AbstractObject> latLonAltBoxObjectExtension) {
         this.latLonAltBoxObjectExtension = latLonAltBoxObjectExtension;
@@ -303,7 +299,7 @@ public class LatLonAltBox
      * @param latLonAltBoxObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public LatLonAltBox addToLatLonAltBoxObjectExtension(final AbstractObject latLonAltBoxObjectExtension) {
         this.getLatLonAltBoxObjectExtension().add(latLonAltBoxObjectExtension);
@@ -311,7 +307,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -328,7 +324,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see abstractLatLonBoxSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -345,7 +341,7 @@ public class LatLonAltBox
     }
 
     /**
-     * @see abstractLatLonBoxObjectExtension
+     *
      * 
      */
     @Obvious
@@ -363,7 +359,7 @@ public class LatLonAltBox
 
     /**
      * fluent setter
-     * @see #setMinAltitude(double)
+     *
      * 
      * @param minAltitude
      *     required parameter
@@ -375,7 +371,7 @@ public class LatLonAltBox
 
     /**
      * fluent setter
-     * @see #setMaxAltitude(double)
+     *
      * 
      * @param maxAltitude
      *     required parameter
@@ -387,7 +383,7 @@ public class LatLonAltBox
 
     /**
      * fluent setter
-     * @see #setAltitudeMode(Object)
+     *
      * 
      * @param altitudeMode
      *     required parameter
@@ -399,7 +395,7 @@ public class LatLonAltBox
 
     /**
      * fluent setter
-     * @see #setLatLonAltBoxSimpleExtension(List<Object>)
+     *
      * 
      * @param latLonAltBoxSimpleExtension
      *     required parameter
@@ -411,7 +407,7 @@ public class LatLonAltBox
 
     /**
      * fluent setter
-     * @see #setLatLonAltBoxObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param latLonAltBoxObjectExtension
      *     required parameter

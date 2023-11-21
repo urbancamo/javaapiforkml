@@ -7,11 +7,11 @@ import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
- * <itemicon>
+ * {@code <itemicon>}
  * <p>
- * <state> Specifies the current state of the NetworkLink or Folder. Possible values 
+ * {@code <state>} Specifies the current state of the NetworkLink or Folder. Possible values 
  * are open, closed, error, fetching0, fetching1, and fetching2. These values can be 
- * combined by inserting a space between two values (no comma). <href> Specifies the 
+ * combined by inserting a space between two values (no comma). {@code <href>}Specifies the 
  * URI of the image used in the List View for the Feature. 
  * </p>
  * <p>
