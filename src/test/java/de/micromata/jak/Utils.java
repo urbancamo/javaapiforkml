@@ -106,7 +106,6 @@ public final class Utils {
 	private static Marshaller createMarshaller(JAXBContext jc) throws JAXBException, PropertyException {
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-		m.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new NameSpaceBeautyfier());
 		return m;
 	}
 
