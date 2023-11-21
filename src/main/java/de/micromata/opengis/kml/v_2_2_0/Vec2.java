@@ -1,11 +1,7 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
@@ -15,7 +11,7 @@ import jakarta.xml.bind.annotation.XmlType;
  * </p>
  * 
  * See Also: 
- * See <hotSpot> in <IconStyle>, <ScreenOverlay>
+ * See {@code <hotSpot>} in {@code <IconStyle>}, {@code <ScreenOverlay>}
  * 
  * 
  * 
@@ -27,9 +23,9 @@ public class Vec2 implements Cloneable
 {
 
     /**
-     * <x>, <y>, <w>, <h>
+     * {@code <x>, <y>, <w>, <h>}
      * <p>
-     * Use of these elements within <Icon> has been deprecated. 
+     * Use of these elements within {@code <Icon>}has been deprecated. 
      * </p>
      * 
      * 
@@ -46,7 +42,7 @@ public class Vec2 implements Cloneable
      * </p>
      * 
      * See Also: 
-     * See <hotSpot> in <IconStyle>, <ScreenOverlay>
+     * See {@code <hotSpot>} in {@code <IconStyle>}, {@code <ScreenOverlay>}
      * 
      * 
      * 
@@ -60,7 +56,7 @@ public class Vec2 implements Cloneable
      * </p>
      * 
      * See Also: 
-     * See <hotSpot> in <IconStyle>, <ScreenOverlay>
+     * See {@code <hotSpot>} in {@code <IconStyle>}, {@code <ScreenOverlay>}
      * 
      * 
      * 
@@ -73,7 +69,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see x
+     *
      * 
      */
     public double getX() {
@@ -81,7 +77,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see x
+     *
      * 
      */
     public void setX(double value) {
@@ -89,7 +85,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see y
+     *
      * 
      */
     public double getY() {
@@ -97,7 +93,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see y
+     *
      * 
      */
     public void setY(double value) {
@@ -105,7 +101,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see xunits
+     *
      * 
      * @return
      *     possible object is
@@ -121,7 +117,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see xunits
+     *
      * 
      * @param value
      *     allowed object is
@@ -133,7 +129,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see yunits
+     *
      * 
      * @return
      *     possible object is
@@ -149,7 +145,7 @@ public class Vec2 implements Cloneable
     }
 
     /**
-     * @see yunits
+     *
      * 
      * @param value
      *     allowed object is
@@ -215,7 +211,7 @@ public class Vec2 implements Cloneable
 
     /**
      * fluent setter
-     * @see #setX(double)
+     *
      * 
      * @param x
      *     required parameter
@@ -227,7 +223,7 @@ public class Vec2 implements Cloneable
 
     /**
      * fluent setter
-     * @see #setY(double)
+     *
      * 
      * @param y
      *     required parameter
@@ -239,7 +235,7 @@ public class Vec2 implements Cloneable
 
     /**
      * fluent setter
-     * @see #setXunits(Units)
+     *
      * 
      * @param xunits
      *     required parameter
@@ -251,7 +247,7 @@ public class Vec2 implements Cloneable
 
     /**
      * fluent setter
-     * @see #setYunits(Units)
+     *
      * 
      * @param yunits
      *     required parameter

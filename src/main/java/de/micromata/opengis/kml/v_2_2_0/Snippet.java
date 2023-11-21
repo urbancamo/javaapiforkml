@@ -1,23 +1,18 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.XmlValue;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
- * <snippet maxlines="2" >
+ * {@code <snippet maxlines="2" >}
  * <p>
  * A short description of the feature. In Google Earth, this description is displayed 
  * in the Places panel under the name of the feature. If a Snippet is not supplied, 
- * the first two lines of the <description> are used. In Google Earth, if a Placemark 
- * contains both a description and a Snippet, the <Snippet> appears beneath the Placemark 
- * in the Places panel, and the <description> appears in the Placemark's description 
- * balloon. This tag does not support HTML markup. <Snippet> has a maxLines attribute, 
+ * the first two lines of the {@code <description>} are used. In Google Earth, if a Placemark
+ * contains both a description and a Snippet, the {@code <Snippet>} appears beneath the Placemark
+ * in the Places panel, and the {@code <description>} appears in the Placemark's description
+ * balloon. This tag does not support HTML markup. {@code <Snippet>} has a maxLines attribute,
  * an integer that specifies the maximum number of lines to display. 
  * </p>
  * 
@@ -34,17 +29,17 @@ public class Snippet implements Cloneable
 {
 
     /**
-     * <value>
+     * {@code <value>}
      * <p>
-     * <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value> 
+     * {@code <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value>
      * </Data> <Data name="holeYardage"> <value>234</value> </Data> <Data name="holePar"> 
-     * <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * <value>4</value> </Data> </ExtendedData> </Placemark> }
      * </p>
      * <p>
-     * <displayName> An optional formatted version of name, to be used for display purposes. 
-     * <value> Value of the data pair. <Placemark> <name>Club house</name> <ExtendedData> 
+     * {@code <displayName>} An optional formatted version of name, to be used for display purposes.
+     * {@code <value>} Value of the data pair. {@code <Placemark> <name>Club house</name> <ExtendedData>
      * <Data name="holeNumber"> <value>1</value> </Data> <Data name="holeYardage"> <value>234</value> 
-     * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> }
      * </p>
      * <p>
      * Value of the data pair. 
@@ -63,7 +58,7 @@ public class Snippet implements Cloneable
     }
 
     /**
-     * @see value
+     *
      * 
      * @return
      *     possible object is
@@ -75,7 +70,7 @@ public class Snippet implements Cloneable
     }
 
     /**
-     * @see value
+     *
      * 
      * @param value
      *     allowed object is
@@ -87,7 +82,7 @@ public class Snippet implements Cloneable
     }
 
     /**
-     * @see maxLines
+     *
      * 
      */
     public int getMaxLines() {
@@ -95,7 +90,7 @@ public class Snippet implements Cloneable
     }
 
     /**
-     * @see maxLines
+     *
      * 
      */
     public void setMaxLines(int value) {
@@ -140,7 +135,7 @@ public class Snippet implements Cloneable
 
     /**
      * fluent setter
-     * @see #setValue(String)
+     *
      * 
      * @param value
      *     required parameter
@@ -152,7 +147,7 @@ public class Snippet implements Cloneable
 
     /**
      * fluent setter
-     * @see #setMaxLines(int)
+     *
      * 
      * @param maxLines
      *     required parameter

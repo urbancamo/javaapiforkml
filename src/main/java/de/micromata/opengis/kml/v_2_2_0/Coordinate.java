@@ -156,7 +156,7 @@ public class Coordinate implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLongitude(double)
+     *
      * 
      * @param longitude
      *     required parameter
@@ -168,7 +168,7 @@ public class Coordinate implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLatitude(double)
+     *
      * 
      * @param latitude
      *     required parameter
@@ -180,7 +180,7 @@ public class Coordinate implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAltitude(double)
+     *
      * 
      * @param altitude
      *     required parameter

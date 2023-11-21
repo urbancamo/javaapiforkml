@@ -1,57 +1,52 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <PhotoOverlay>
+ * {@code <PhotoOverlay>}
  * <p>
- * Because <PhotoOverlay> is derived from <Feature>, it can contain one of the two 
- * elements derived from <AbstractView>—either <Camera> or <LookAt>. The Camera (or 
+ * Because {@code <PhotoOverlay>} is derived from {@code <Feature>}, it can contain one of the two 
+ * elements derived from {@code <AbstractView>}—either Camera or LookAt. The Camera (or
  * LookAt) specifies a viewpoint and a viewing direction (also referred to as a view 
  * vector). The PhotoOverlay is positioned in relation to the viewpoint. Specifically, 
  * the plane of a 2D rectangular image is orthogonal (at right angles to) the view 
  * vector. The normal of this plane—that is, its front, which is the part with the 
- * photo—is oriented toward the viewpoint. 
+ * photo—is oriented toward the viewpoint.
  * </p>
  * <p>
  * For more information, see the "Topics in KML" page on PhotoOverlay. 
  * </p>
  * <p>
- * The <PhotoOverlay> element allows you to geographically locate a photograph on the 
+ * The {@code <PhotoOverlay>} element allows you to geographically locate a photograph on the 
  * Earth and to specify viewing parameters for this PhotoOverlay. The PhotoOverlay 
  * can be a simple 2D rectangle, a partial or full cylinder, or a sphere (for spherical 
  * panoramas). The overlay is placed at the specified location and oriented toward 
  * the viewpoint. 
  * </p>
  * <p>
- * The URL for the PhotoOverlay image is specified in the <Icon> tag, which is inherited 
- * from <Overlay>. The <Icon> tag must contain an <href> element that specifies the 
- * image file to use for the PhotoOverlay. In the case of a very large image, the <href> 
+ * The URL for the PhotoOverlay image is specified in the {@code <Icon>}tag, which is inherited 
+ * from {@code <Overlay>}. The {@code <Icon>}tag must contain an {@code <href>}element that specifies the 
+ * image file to use for the PhotoOverlay. In the case of a very large image, the {@code <href>}
  * is a special URL that indexes into a pyramid of images of varying resolutions (see 
  * ImagePyramid). 
  * </p>
  * 
  * Extends: 
- * @see: <Overlay>
+ *
  * 
  * Contained By: 
- * @see: <Document>
- * @see: <Folder>
- * @see: <kml>
+ *
+ *
+ *
  * 
  * 
  * 
@@ -73,7 +68,7 @@ public class PhotoOverlay
 {
 
     /**
-     * <rotation>
+     * rotation
      * <p>
      * Adjusts how the photo is placed inside the field of view. This element is useful 
      * if your photo has been rotated and deviates slightly from a desired horizontal view. 
@@ -81,8 +76,8 @@ public class PhotoOverlay
      * <p>
      * Indicates the angle of rotation of the parent object. A value of 0 means no rotation. 
      * The value is an angle in degrees counterclockwise starting from north. Use ±180 
-     * to indicate the rotation of the parent object from 0. The center of the <rotation>, 
-     * if not (.5,.5), is specified in <rotationXY>. 
+     * to indicate the rotation of the parent object from 0. The center of the rotation, 
+     * if not (.5,.5), is specified in {@code <rotationXY>}. 
      * </p>
      * 
      * 
@@ -91,7 +86,7 @@ public class PhotoOverlay
     @XmlElement(defaultValue = "0.0")
     protected double rotation;
     /**
-     * <viewvolume>
+     * {@code <viewvolume>}
      * <p>
      * Defines how much of the current scene is visible. Specifying the field of view is 
      * analogous to specifying the lens opening in a physical camera. A small field of 
@@ -105,7 +100,7 @@ public class PhotoOverlay
     @XmlElement(name = "ViewVolume")
     protected ViewVolume viewVolume;
     /**
-     * <imagepyramid>
+     * {@code <imagepyramid>}
      * <p>
      * For very large images, you'll need to construct an image pyramid, which is a hierarchical 
      * set of images, each of which is an increasingly lower resolution version of the 
@@ -119,7 +114,7 @@ public class PhotoOverlay
      * that can be discerned by the user at the current viewpoint. 
      * </p>
      * <p>
-     * When you specify an image pyramid, you also modify the <href> in the <Icon> element 
+     * When you specify an image pyramid, you also modify the {@code <href>}in the {@code <Icon>}element 
      * to include specifications for which tiles to load. 
      * </p>
      * 
@@ -129,7 +124,7 @@ public class PhotoOverlay
     @XmlElement(name = "ImagePyramid")
     protected ImagePyramid imagePyramid;
     /**
-     * <Point>
+     *Point
      * <p>
      * A geographic location defined by longitude, latitude, and (optional) altitude. When 
      * a Point is contained by a Placemark, the point itself determines the position of 
@@ -137,9 +132,9 @@ public class PhotoOverlay
      * ground with a line. This "tether" uses the current LineStyle. 
      * </p>
      * <p>
-     * The <Point> element acts as a <Point> inside a <Placemark> element. It draws an 
+     * ThePoint element acts as aPoint inside a {@code <Placemark>} element. It draws an
      * icon to mark the position of the PhotoOverlay. The icon drawn is specified by the 
-     * <styleUrl> and <StyleSelector> fields, just as it is for <Placemark>. 
+     * {@code <styleUrl>} and {@code <StyleSelector>} fields, just as it is for {@code <Placemark>}.
      * </p>
      * 
      * Syntax: 
@@ -153,11 +148,11 @@ public class PhotoOverlay
      * <strong>&lt;/Point&gt;</strong></pre>
      * 
      * Extends: 
-     * @see: <Geometry>
+     *
      * 
      * Contained By: 
-     * @see: <MultiGeometry>
-     * @see: <Placemark>
+     *
+     *
      * 
      * 
      * 
@@ -171,7 +166,7 @@ public class PhotoOverlay
      * </p>
      * 
      * See Also: 
-     * See <PhotoOverlay>
+     * See {@code <PhotoOverlay>}
      * 
      * 
      * 
@@ -182,12 +177,12 @@ public class PhotoOverlay
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> photoOverlaySimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -207,7 +202,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see rotation
+     *
      * 
      * @return
      *     possible object is
@@ -219,7 +214,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see rotation
+     *
      * 
      * @param value
      *     allowed object is
@@ -231,7 +226,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see viewVolume
+     *
      * 
      * @return
      *     possible object is
@@ -243,7 +238,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see viewVolume
+     *
      * 
      * @param value
      *     allowed object is
@@ -255,7 +250,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see imagePyramid
+     *
      * 
      * @return
      *     possible object is
@@ -267,7 +262,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see imagePyramid
+     *
      * 
      * @param value
      *     allowed object is
@@ -279,7 +274,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see point
+     *
      * 
      * @return
      *     possible object is
@@ -291,7 +286,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see point
+     *
      * 
      * @param value
      *     allowed object is
@@ -303,7 +298,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see shape
+     *
      * 
      * @return
      *     possible object is
@@ -315,7 +310,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see shape
+     *
      * 
      * @param value
      *     allowed object is
@@ -327,7 +322,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see photoOverlaySimpleExtension
+     *
      * 
      */
     public List<Object> getPhotoOverlaySimpleExtension() {
@@ -338,7 +333,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see photoOverlayObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getPhotoOverlayObjectExtension() {
@@ -443,9 +438,9 @@ public class PhotoOverlay
      * Creates a new instance of {@link ViewVolume} and set it to viewVolume.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ViewVolume viewVolume = new ViewVolume();
-     * this.setViewVolume(viewVolume); </code>
+     * this.setViewVolume(viewVolume); }
      * 
      * 
      */
@@ -459,9 +454,9 @@ public class PhotoOverlay
      * Creates a new instance of {@link ImagePyramid} and set it to imagePyramid.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ImagePyramid imagePyramid = new ImagePyramid();
-     * this.setImagePyramid(imagePyramid); </code>
+     * this.setImagePyramid(imagePyramid); }
      * 
      * 
      */
@@ -475,9 +470,9 @@ public class PhotoOverlay
      * Creates a new instance of {@link Point} and set it to point.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Point point = new Point();
-     * this.setPoint(point); </code>
+     * this.setPoint(point); }
      * 
      * 
      */
@@ -488,9 +483,10 @@ public class PhotoOverlay
     }
 
     /**
-     * @see photoOverlaySimpleExtension
+     *
      * 
      * @param photoOverlaySimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setPhotoOverlaySimpleExtension(final List<Object> photoOverlaySimpleExtension) {
         this.photoOverlaySimpleExtension = photoOverlaySimpleExtension;
@@ -502,7 +498,7 @@ public class PhotoOverlay
      * @param photoOverlaySimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public PhotoOverlay addToPhotoOverlaySimpleExtension(final Object photoOverlaySimpleExtension) {
         this.getPhotoOverlaySimpleExtension().add(photoOverlaySimpleExtension);
@@ -510,9 +506,10 @@ public class PhotoOverlay
     }
 
     /**
-     * @see photoOverlayObjectExtension
+     *
      * 
      * @param photoOverlayObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setPhotoOverlayObjectExtension(final List<AbstractObject> photoOverlayObjectExtension) {
         this.photoOverlayObjectExtension = photoOverlayObjectExtension;
@@ -524,7 +521,7 @@ public class PhotoOverlay
      * @param photoOverlayObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public PhotoOverlay addToPhotoOverlayObjectExtension(final AbstractObject photoOverlayObjectExtension) {
         this.getPhotoOverlayObjectExtension().add(photoOverlayObjectExtension);
@@ -532,7 +529,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -549,7 +546,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see styleSelector
+     *
      * 
      */
     @Obvious
@@ -566,7 +563,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see featureSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -583,7 +580,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see featureObjectExtension
+     *
      * 
      */
     @Obvious
@@ -600,7 +597,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see overlaySimpleExtension
+     *
      * 
      */
     @Obvious
@@ -617,7 +614,7 @@ public class PhotoOverlay
     }
 
     /**
-     * @see overlayObjectExtension
+     *
      * 
      */
     @Obvious
@@ -635,7 +632,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
-     * @see #setRotation(double)
+     *
      * 
      * @param rotation
      *     required parameter
@@ -647,7 +644,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
-     * @see #setViewVolume(ViewVolume)
+     *
      * 
      * @param viewVolume
      *     required parameter
@@ -659,7 +656,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
-     * @see #setImagePyramid(ImagePyramid)
+     *
      * 
      * @param imagePyramid
      *     required parameter
@@ -671,7 +668,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
-     * @see #setPoint(Point)
+     *
      * 
      * @param point
      *     required parameter
@@ -683,7 +680,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
-     * @see #setShape(Shape)
+     *
      * 
      * @param shape
      *     required parameter
@@ -695,7 +692,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
-     * @see #setPhotoOverlaySimpleExtension(List<Object>)
+     *
      * 
      * @param photoOverlaySimpleExtension
      *     required parameter
@@ -707,7 +704,7 @@ public class PhotoOverlay
 
     /**
      * fluent setter
-     * @see #setPhotoOverlayObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param photoOverlayObjectExtension
      *     required parameter

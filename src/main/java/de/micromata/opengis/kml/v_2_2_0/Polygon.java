@@ -1,36 +1,30 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-
 
 /**
- * <Polygon>
+ * {@code <Polygon>}
  * <p>
  * A Polygon is defined by an outer boundary and 0 or more inner boundaries. The boundaries, 
  * in turn, are defined by LinearRings. When a Polygon is extruded, its boundaries 
  * are connected to the ground to form additional polygons, which gives the appearance 
- * of a building or a box. Extruded Polygons use <PolyStyle> for their color, color 
+ * of a building or a box. Extruded Polygons use {@code <PolyStyle>} for their color, color 
  * mode, and fill. 
  * </p>
  * <p>
- * Note: In Google Earth, a Polygon with an <altitudeMode> of clampToGround follows 
- * the great circle; however, a LinearRing (by itself) with an <altitudeMode> of clampToGround 
+ * Note: In Google Earth, a Polygon with an altitudeMode of clampToGround follows 
+ * the great circle; however, a LinearRing (by itself) with an altitudeMode of clampToGround 
  * follows lines of constant latitude. 
  * </p>
  * <p>
- * The <coordinates> for polygons must be specified in counterclockwise order. Polygons 
+ * The coordinates for polygons must be specified in counterclockwise order. Polygons 
  * follow the "right-hand rule," which states that if you place the fingers of your 
  * right hand in the direction in which the coordinates are specified, your thumb points 
  * in the general direction of the geometric normal for the polygon. (In 3D graphics, 
@@ -61,11 +55,11 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/Polygon&gt;</strong></pre>
  * 
  * Extends: 
- * @see: <Geometry>
+ *
  * 
  * Contained By: 
- * @see: <MultiGeometry>
- * @see: <Placemark>
+ *
+ *
  * 
  * 
  * 
@@ -87,7 +81,7 @@ public class Polygon
 {
 
     /**
-     * <extrude>
+     * {@code <extrude>}
      * <p>
      * Boolean value. Specifies whether to connect the LineString to the ground. To extrude 
      * a LineString, the altitude mode must be either relativeToGround, relativeToSeaFloor, 
@@ -109,7 +103,7 @@ public class Polygon
      * </p>
      * <p>
      * Boolean value. Specifies whether to connect the point to the ground with a line. 
-     * To extrude a Point, the value for <altitudeMode> must be either relativeToGround, 
+     * To extrude a Point, the value for altitudeMode must be either relativeToGround, 
      * relativeToSeaFloor, or absolute. The point is extruded toward the center of the 
      * Earth's sphere. 
      * </p>
@@ -121,7 +115,7 @@ public class Polygon
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean extrude;
     /**
-     * <tessellate>
+     * {@code <extrude>}
      * <p>
      * Boolean value. Specifies whether to allow the LineString to follow the terrain. 
      * To enable tessellation, the altitude mode must be clampToGround or clampToSeaFloor. 
@@ -130,7 +124,7 @@ public class Polygon
      * </p>
      * <p>
      * Boolean value. Specifies whether to allow the LinearRing to follow the terrain. 
-     * To enable tessellation, the value for <altitudeMode> must be clampToGround or clampToSeaFloor. 
+     * To enable tessellation, the value for altitudeMode must be clampToGround or clampToSeaFloor. 
      * Very large LinearRings should enable tessellation so that they follow the curvature 
      * of the earth (otherwise, they may go underground and be hidden). 
      * </p>
@@ -154,7 +148,7 @@ public class Polygon
      * </p>
      * 
      * See Also: 
-     * See <LookAt> and <Region>
+     * See LookAt and {@code <Region>}
      * 
      * 
      * 
@@ -162,9 +156,9 @@ public class Polygon
     @XmlElement(defaultValue = "clampToGround")
     protected AltitudeMode altitudeMode;
     /**
-     * <outerboundaryis> (required)
+     * {@code <outerboundaryis>} (required)
      * <p>
-     * Contains a <LinearRing> element. 
+     * Contains a {@code <LinearRing>} element. 
      * </p>
      * 
      * 
@@ -172,9 +166,9 @@ public class Polygon
      */
     protected Boundary outerBoundaryIs;
     /**
-     * <innerboundaryis>
+     * {@code <innerboundaryis>}
      * <p>
-     * Contains a <LinearRing> element. A Polygon can contain multiple <innerBoundaryIs> 
+     * Contains a {@code <LinearRing>} element. A Polygon can contain multiple {@code <innerBoundaryIs> }
      * elements, which create multiple cut-outs inside the Polygon. 
      * </p>
      * 
@@ -186,12 +180,12 @@ public class Polygon
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> polygonSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -222,7 +216,7 @@ public class Polygon
     }
 
     /**
-     * @see extrude
+     *
      * 
      * @param value
      *     allowed object is
@@ -245,7 +239,7 @@ public class Polygon
     }
 
     /**
-     * @see tessellate
+     *
      * 
      * @param value
      *     allowed object is
@@ -257,13 +251,13 @@ public class Polygon
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public AltitudeMode getAltitudeMode() {
@@ -271,13 +265,13 @@ public class Polygon
     }
 
     /**
-     * @see altitudeMode
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link Object}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code>}
-     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.gx.AltitudeMode}{@code>}
+     *     {@code <}{@link Object}{@code >}
+     *     {@code <}{@link de.micromata.opengis.kml.v_2_2_0.AltitudeMode}{@code >}
+     *     
      *     
      */
     public void setAltitudeMode(AltitudeMode value) {
@@ -285,7 +279,7 @@ public class Polygon
     }
 
     /**
-     * @see outerBoundaryIs
+     *
      * 
      * @return
      *     possible object is
@@ -297,7 +291,7 @@ public class Polygon
     }
 
     /**
-     * @see outerBoundaryIs
+     *
      * 
      * @param value
      *     allowed object is
@@ -309,7 +303,7 @@ public class Polygon
     }
 
     /**
-     * @see innerBoundaryIs
+     *
      * 
      */
     public List<Boundary> getInnerBoundaryIs() {
@@ -320,7 +314,7 @@ public class Polygon
     }
 
     /**
-     * @see polygonSimpleExtension
+     *
      * 
      */
     public List<Object> getPolygonSimpleExtension() {
@@ -331,7 +325,7 @@ public class Polygon
     }
 
     /**
-     * @see polygonObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getPolygonObjectExtension() {
@@ -440,9 +434,9 @@ public class Polygon
      * Creates a new instance of {@link Boundary} and set it to outerBoundaryIs.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Boundary boundary = new Boundary();
-     * this.setOuterBoundaryIs(boundary); </code>
+     * this.setOuterBoundaryIs(boundary); }
      * 
      * 
      */
@@ -455,9 +449,9 @@ public class Polygon
     /**
      * Creates a new instance of {@link Boundary} and adds it to innerBoundaryIs.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Boundary boundary = new Boundary();
-     * this.getInnerBoundaryIs().add(boundary); </code>
+     * this.getInnerBoundaryIs().add(boundary); }
      * 
      * 
      */
@@ -468,9 +462,10 @@ public class Polygon
     }
 
     /**
-     * @see innerBoundaryIs
+     *
      * 
      * @param innerBoundaryIs
+     *     Objects of the following type are allowed in the list: {@link Boundary}
      */
     public void setInnerBoundaryIs(final List<Boundary> innerBoundaryIs) {
         this.innerBoundaryIs = innerBoundaryIs;
@@ -482,7 +477,7 @@ public class Polygon
      * @param innerBoundaryIs
      *     Objects of the following type are allowed in the list: {@link Boundary}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Polygon addToInnerBoundaryIs(final Boundary innerBoundaryIs) {
         this.getInnerBoundaryIs().add(innerBoundaryIs);
@@ -490,9 +485,10 @@ public class Polygon
     }
 
     /**
-     * @see polygonSimpleExtension
+     *
      * 
      * @param polygonSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setPolygonSimpleExtension(final List<Object> polygonSimpleExtension) {
         this.polygonSimpleExtension = polygonSimpleExtension;
@@ -504,7 +500,7 @@ public class Polygon
      * @param polygonSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Polygon addToPolygonSimpleExtension(final Object polygonSimpleExtension) {
         this.getPolygonSimpleExtension().add(polygonSimpleExtension);
@@ -512,9 +508,10 @@ public class Polygon
     }
 
     /**
-     * @see polygonObjectExtension
+     *
      * 
      * @param polygonObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setPolygonObjectExtension(final List<AbstractObject> polygonObjectExtension) {
         this.polygonObjectExtension = polygonObjectExtension;
@@ -526,7 +523,7 @@ public class Polygon
      * @param polygonObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Polygon addToPolygonObjectExtension(final AbstractObject polygonObjectExtension) {
         this.getPolygonObjectExtension().add(polygonObjectExtension);
@@ -534,7 +531,7 @@ public class Polygon
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -551,7 +548,7 @@ public class Polygon
     }
 
     /**
-     * @see geometrySimpleExtension
+     *
      * 
      */
     @Obvious
@@ -568,7 +565,7 @@ public class Polygon
     }
 
     /**
-     * @see geometryObjectExtension
+     *
      * 
      */
     @Obvious
@@ -586,7 +583,7 @@ public class Polygon
 
     /**
      * fluent setter
-     * @see #setExtrude(Boolean)
+     *
      * 
      * @param extrude
      *     required parameter
@@ -598,7 +595,7 @@ public class Polygon
 
     /**
      * fluent setter
-     * @see #setTessellate(Boolean)
+     *
      * 
      * @param tessellate
      *     required parameter
@@ -610,7 +607,7 @@ public class Polygon
 
     /**
      * fluent setter
-     * @see #setAltitudeMode(Object)
+     *
      * 
      * @param altitudeMode
      *     required parameter
@@ -622,7 +619,7 @@ public class Polygon
 
     /**
      * fluent setter
-     * @see #setOuterBoundaryIs(Boundary)
+     *
      * 
      * @param outerBoundaryIs
      *     required parameter
@@ -634,7 +631,7 @@ public class Polygon
 
     /**
      * fluent setter
-     * @see #setInnerBoundaryIs(List<Boundary>)
+     *
      * 
      * @param innerBoundaryIs
      *     required parameter
@@ -646,7 +643,7 @@ public class Polygon
 
     /**
      * fluent setter
-     * @see #setPolygonSimpleExtension(List<Object>)
+     *
      * 
      * @param polygonSimpleExtension
      *     required parameter
@@ -658,7 +655,7 @@ public class Polygon
 
     /**
      * fluent setter
-     * @see #setPolygonObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param polygonObjectExtension
      *     required parameter

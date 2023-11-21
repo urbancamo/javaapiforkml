@@ -1,26 +1,22 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
- * <Region>
+ * {@code <Region>}
  * <p>
- * A region contains a bounding box (<LatLonAltBox>) that describes an area of interest 
+ * A region contains a bounding box ({@code <LatLonAltBox>}) that describes an area of interest
  * defined by geographic coordinates and altitudes. In addition, a Region contains 
- * an LOD (level of detail) extent (<Lod>) that defines a validity range of the associated 
+ * an LOD (level of detail) extent ({@code <Lod>}) that defines a validity range of the associated
  * Region in terms of projected screen size. A Region is said to be "active" when the 
  * bounding box is within the user's view and the LOD requirements are met. Objects 
- * associated with a Region are drawn only when the Region is active. When the <viewRefreshMode> 
+ * associated with a Region are drawn only when the Region is active. When the {@code <viewRefreshMode>} 
  * is onRegion, the Link or Icon is loaded only when the Region is active. See the 
  * "Topics in KML" page on Regions for more details. In a Container or NetworkLink 
  * hierarchy, this calculation uses the Region that is the closest ancestor in the 
@@ -28,7 +24,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * </p>
  * <p>
  * Features and geometry associated with a Region are drawn only when the Region is 
- * active. See <Region>. 
+ * active. See {@code <Region>}. 
  * </p>
  * 
  * Syntax: 
@@ -53,10 +49,10 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
  * <strong>&lt;/Region&gt; </strong></pre>
  * 
  * Extends: 
- * @see: <Object>
+ *
  * 
  * Contained By: 
- * @see: <Feature>
+ *
  * 
  * 
  * 
@@ -75,7 +71,7 @@ public class Region
 {
 
     /**
-     * <latlonaltbox>(required)
+     * {@code <latlonaltbox>}(required)
      * <p>
      * A bounding box that describes an area of interest defined by geographic coordinates 
      * and altitudes. Default values and required fields are as follows: 
@@ -87,22 +83,22 @@ public class Region
     @XmlElement(name = "LatLonAltBox")
     protected LatLonAltBox latLonAltBox;
     /**
-     * <lod>
+     * {@code <lod>}
      * <p>
-     * <minLodPixels> (required) Measurement in screen pixels that represents the minimum 
+     * {@code <minLodPixels>} (required) Measurement in screen pixels that represents the minimum 
      * limit of the visibility range for a given Region. Google Earth calculates the size 
      * of the Region when projected onto screen space. Then it computes the square root 
      * of the Region's area (if, for example, the Region is square and the viewpoint is 
      * directly above the Region, and the Region is not tilted, this measurement is equal 
      * to the width of the projected Region). If this measurement falls within the limits 
-     * defined by <minLodPixels> and <maxLodPixels> (and if the <LatLonAltBox> is in view), 
+     * defined by {@code <minLodPixels>} and {@code <maxLodPixels>} (and if the {@code <LatLonAltBox>} is in view),
      * the Region is active. If this limit is not reached, the associated geometry is considered 
-     * to be too far from the user's viewpoint to be drawn. <maxLodPixels> Measurement 
+     * to be too far from the user's viewpoint to be drawn. {@code <maxLodPixels>} Measurement 
      * in screen pixels that represents the maximum limit of the visibility range for a 
-     * given Region. A value of −1, the default, indicates "active to infinite size." <minFadeExtent> 
+     * given Region. A value of −1, the default, indicates "active to infinite size." {@code <minFadeExtent>} 
      * Distance over which the geometry fades, from fully opaque to fully transparent. 
      * This ramp value, expressed in screen pixels, is applied at the minimum end of the 
-     * LOD (visibility) limits. <maxFadeExtent> Distance over which the geometry fades, 
+     * LOD (visibility) limits. {@code <maxFadeExtent>} Distance over which the geometry fades, 
      * from fully transparent to fully opaque. This ramp value, expressed in screen pixels, 
      * is applied at the maximum end of the LOD (visibility) limits. 
      * </p>
@@ -116,12 +112,12 @@ public class Region
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> regionSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -141,7 +137,7 @@ public class Region
     }
 
     /**
-     * @see latLonAltBox
+     *
      * 
      * @return
      *     possible object is
@@ -153,7 +149,7 @@ public class Region
     }
 
     /**
-     * @see latLonAltBox
+     *
      * 
      * @param value
      *     allowed object is
@@ -165,7 +161,7 @@ public class Region
     }
 
     /**
-     * @see lod
+     *
      * 
      * @return
      *     possible object is
@@ -177,7 +173,7 @@ public class Region
     }
 
     /**
-     * @see lod
+     *
      * 
      * @param value
      *     allowed object is
@@ -189,7 +185,7 @@ public class Region
     }
 
     /**
-     * @see regionSimpleExtension
+     *
      * 
      */
     public List<Object> getRegionSimpleExtension() {
@@ -200,7 +196,7 @@ public class Region
     }
 
     /**
-     * @see regionObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getRegionObjectExtension() {
@@ -279,9 +275,9 @@ public class Region
      * Creates a new instance of {@link LatLonAltBox} and set it to latLonAltBox.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * LatLonAltBox latLonAltBox = new LatLonAltBox();
-     * this.setLatLonAltBox(latLonAltBox); </code>
+     * this.setLatLonAltBox(latLonAltBox); }
      * 
      * 
      */
@@ -295,9 +291,9 @@ public class Region
      * Creates a new instance of {@link Lod} and set it to lod.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Lod lod = new Lod();
-     * this.setLod(lod); </code>
+     * this.setLod(lod); }
      * 
      * 
      */
@@ -308,9 +304,10 @@ public class Region
     }
 
     /**
-     * @see regionSimpleExtension
+     *
      * 
      * @param regionSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setRegionSimpleExtension(final List<Object> regionSimpleExtension) {
         this.regionSimpleExtension = regionSimpleExtension;
@@ -322,7 +319,7 @@ public class Region
      * @param regionSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Region addToRegionSimpleExtension(final Object regionSimpleExtension) {
         this.getRegionSimpleExtension().add(regionSimpleExtension);
@@ -330,9 +327,10 @@ public class Region
     }
 
     /**
-     * @see regionObjectExtension
+     *
      * 
      * @param regionObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setRegionObjectExtension(final List<AbstractObject> regionObjectExtension) {
         this.regionObjectExtension = regionObjectExtension;
@@ -344,7 +342,7 @@ public class Region
      * @param regionObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Region addToRegionObjectExtension(final AbstractObject regionObjectExtension) {
         this.getRegionObjectExtension().add(regionObjectExtension);
@@ -352,7 +350,7 @@ public class Region
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -370,7 +368,7 @@ public class Region
 
     /**
      * fluent setter
-     * @see #setLatLonAltBox(LatLonAltBox)
+     *
      * 
      * @param latLonAltBox
      *     required parameter
@@ -382,7 +380,7 @@ public class Region
 
     /**
      * fluent setter
-     * @see #setLod(Lod)
+     *
      * 
      * @param lod
      *     required parameter
@@ -394,7 +392,7 @@ public class Region
 
     /**
      * fluent setter
-     * @see #setRegionSimpleExtension(List<Object>)
+     *
      * 
      * @param regionSimpleExtension
      *     required parameter
@@ -406,7 +404,7 @@ public class Region
 
     /**
      * fluent setter
-     * @see #setRegionObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param regionObjectExtension
      *     required parameter

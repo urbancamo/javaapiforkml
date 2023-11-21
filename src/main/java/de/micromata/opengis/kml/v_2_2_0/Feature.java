@@ -1,68 +1,24 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlSeeAlso;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
-import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
-import de.micromata.opengis.kml.v_2_2_0.xal.AddressLines;
-import de.micromata.opengis.kml.v_2_2_0.xal.AdministrativeArea;
-import de.micromata.opengis.kml.v_2_2_0.xal.Locality;
-import de.micromata.opengis.kml.v_2_2_0.xal.Thoroughfare;
+import de.micromata.opengis.kml.v_2_2_0.xal.*;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * <Feature>
+ * {@code <Feature>}
  * <p>
- * This is an abstract element and cannot be used directly in a KML file. The following 
- * diagram shows how some of a Feature's elements appear in Google Earth. 
+ * This is an abstract element and cannot be used directly in a KML file.
  * </p>
- * 
- * Syntax: 
- * <pre>&lt;!-- abstract element; do not create --&gt;
- * <strong>&lt;!--<em> Feature</em> id="ID" --&gt;</strong>                &lt;!-- Document,Folder,
- *                                              NetworkLink,Placemark,
- *                                              GroundOverlay,PhotoOverlay,ScreenOverlay --&gt;
- *   &lt;name&gt;<em>...</em>&lt;/name&gt;                      &lt;!-- string --&gt;
- *   &lt;visibility&gt;1&lt;/visibility&gt;            &lt;!-- boolean --&gt;
- *   &lt;open&gt;0&lt;/open&gt;                        &lt;!-- boolean --&gt;
- *   <span>&lt;atom:author&gt;...&lt;atom:author&gt;         &lt;!-- xmlns:atom --&gt;
- *   &lt;atom:link&gt;...&lt;/atom:link&gt;</span><span>            &lt;!-- xmlns:atom --&gt;</span>
- *   &lt;address&gt;<em>...</em>&lt;/address&gt;                &lt;!-- string --&gt;
- *   &lt;xal:AddressDetails&gt;...&lt;/xal:AddressDetails&gt;  &lt;!-- xmlns:xal --&gt;<br>  &lt;phoneNumber&gt;...&lt;/phoneNumber&gt;        &lt;!-- string --&gt;<br>  &lt;Snippet maxLines="2"&gt;<em>...</em>&lt;/Snippet&gt;   &lt;!-- string --&gt;
- *   &lt;description&gt;<em>...</em>&lt;/description&gt;        &lt;!-- string --&gt;
- *   <span><em>&lt;AbstractView&gt;...&lt;/AbstractView&gt;</em>      &lt;!-- Camera <em>or</em> LookAt --&gt;</span>
- *   &lt;<em>TimePrimitive</em>&gt;...&lt;/<em>TimePrimitive</em>&gt;    &lt;!-- TimeStamp or TimeSpan --&gt;
- *   &lt;styleUrl&gt;<em>...</em>&lt;/styleUrl&gt;              &lt;!-- anyURI --&gt;
- *   &lt;<em>StyleSelector&gt;...&lt;/StyleSelector&gt;</em>
- *   &lt;Region&gt;...&lt;/Region&gt;
- *   <span>&lt;Metadata&gt;...&lt;/Metadata&gt;              &lt;!-- deprecated in KML 2.2 --&gt;
- *   &lt;ExtendedData&gt;...&lt;/ExtendedData&gt;      &lt;!-- new in KML 2.2 --&gt;<br></span>&lt;-- /<em>Feature</em> --&gt;</pre>
- * 
- * Extends: 
- * @see: <Object>
- * 
- * Extended By: 
- * @see: <Container>
- * @see: <NetworkLink>
- * @see: <Overlay>
- * @see: <Placemark>
- * @see: <gx:Tour>
- * 
- * 
- * 
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbstractFeatureType", propOrder = {
@@ -100,7 +56,7 @@ public abstract class Feature
 {
 
     /**
-     * <name>
+     * {@code <name>}
      * <p>
      * User-defined text displayed in the 3D viewer as the label for the object (for example, 
      * for a Placemark, Folder, or NetworkLink). 
@@ -111,10 +67,10 @@ public abstract class Feature
      */
     protected String name;
     /**
-     * <visibility>
+     * {@code <visibility>}
      * <p>
      * Boolean value. Specifies whether the feature is drawn in the 3D viewer when it is 
-     * initially loaded. In order for a feature to be visible, the <visibility> tag of 
+     * initially loaded. In order for a feature to be visible, the {@code <visibility>} tag of
      * all its ancestors must also be set to 1. In the Google Earth List View, each Feature 
      * has a checkbox that allows the user to control visibility of the Feature. 
      * </p>
@@ -126,11 +82,11 @@ public abstract class Feature
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean visibility;
     /**
-     * <open>
+     * {@code <open>}
      * <p>
      * Boolean value. Specifies whether a Document or Folder appears closed or open when 
      * first loaded into the Places panel. 0=collapsed (the default), 1=expanded. See also 
-     * <ListStyle>. This element applies only to Document, Folder, and NetworkLink. 
+     * {@code <ListStyle>}. This element applies only to Document, Folder, and NetworkLink. 
      * </p>
      * 
      * 
@@ -140,7 +96,7 @@ public abstract class Feature
     @XmlJavaTypeAdapter(BooleanConverter.class)
     protected Boolean open;
     /**
-     * <atom:author>
+     * {@code <atom:author>}
      * <p>
      * KML 2.2 supports new elements for including data about the author and related website 
      * in your KML file. This information is displayed in geo search results, both in Earth 
@@ -148,7 +104,7 @@ public abstract class Feature
      * ascription elements used in KML are as follows: 
      * </p>
      * <p>
-     * The <atom:author> element is the parent element for <atom:name>, which specifies 
+     * The {@code <atom:author>} element is the parent element for {@code <atom:name>}, which specifies
      * the author of the KML feature. 
      * </p>
      * <p>
@@ -166,18 +122,18 @@ public abstract class Feature
     @XmlElement(name = "author", namespace = "http://www.w3.org/2005/Atom")
     protected Author atomAuthor;
     /**
-     * <link> (required). see <link>.
+     * {@code <Link>} (required). see {@code <Link>}.
      * <p>
-     * <Link> specifies the location of any of the following: 
+     * {@code <Link>} specifies the location of any of the following: 
      * </p>
      * <p>
-     * If the file specified in <href> is a local file, the <viewFormat> and <httpQuery> 
+     * If the file specified in {@code <href>}is a local file, the {@code <viewFormat>} and {@code <httpQuery>} 
      * elements are not used. 
      * </p>
      * <p>
-     * KML files fetched by network links Image files used in any Overlay (the <Icon> element 
-     * specifies the image in an Overlay; <Icon> has the same fields as <Link>) Model files 
-     * used in the <Model> element 
+     * KML files fetched by network links Image files used in any Overlay (the {@code <Icon>}element 
+     * specifies the image in an Overlay; {@code <Icon>}has the same fields as {@code <Link>}) Model files 
+     * used in the {@code <Model>} element 
      * </p>
      * <p>
      * Specifies the URL of the website containing this KML or KMZ file. Be sure to include 
@@ -185,21 +141,21 @@ public abstract class Feature
      * (see the sample that follows). 
      * </p>
      * <p>
-     * Specifies the file to load and optional refresh parameters. See <Link>. 
+     * Specifies the file to load and optional refresh parameters. See {@code <Link>}. 
      * </p>
      * <p>
-     * The <Link> element replaces the <Url> element of <NetworkLink> contained in earlier 
-     * KML releases and adds functionality for the <Region> element (introduced in KML 
-     *  2.1). In Google Earth releases 3.0 and earlier, the <Link> element is ignored. 
+     * The {@code <Link>} element replaces the {@code <Url>} element of NetworkLink contained in earlier 
+     * KML releases and adds functionality for the {@code <Region>} element (introduced in KML 
+     *  2.1). In Google Earth releases 3.0 and earlier, the {@code <Link>} element is ignored. 
      * </p>
      * <p>
      * The file is conditionally loaded and refreshed, depending on the refresh parameters 
      * supplied here. Two different sets of refresh parameters can be specified: one set 
-     * is based on time (<refreshMode> and <refreshInterval>) and one is based on the current 
-     * "camera" view (<viewRefreshMode> and <viewRefreshTime>). In addition, Link specifies 
-     * whether to scale the bounding box parameters that are sent to the server (<viewBoundScale> 
+     * is based on time ({@code <refreshMode>} and {@code <refreshInterval>}) and one is based on the current
+     * "camera" view ({@code <viewRefreshMode>} and {@code <viewRefreshTime>}). In addition, Link specifies
+     * whether to scale the bounding box parameters that are sent to the server ({@code <viewBoundScale>}
      * and provides a set of optional viewing parameters that can be sent to the server 
-     * (<viewFormat>) as well as a set of optional parameters containing version and language 
+     * ({@code <viewFormat>}) as well as a set of optional parameters containing version and language
      * information. 
      * </p>
      * <p>
@@ -213,38 +169,16 @@ public abstract class Feature
      * </p>
      * <p>
      * the href (Hypertext Reference) that specifies the file to load. an arbitrary format 
-     * string that is created from (a) parameters that you specify in the <viewFormat> 
-     * element or (b) bounding box parameters (this is the default and is used if no <viewFormat> 
+     * string that is created from (a) parameters that you specify in the {@code <viewFormat>} 
+     * element or (b) bounding box parameters (this is the default and is used if no {@code <viewFormat>} 
      * element is included in the file). a second format string that is specified in the 
-     * <httpQuery> element. 
+     * {@code <httpQuery>} element. 
      * </p>
      * 
-     * Syntax: 
-     * <pre><strong>&lt;Link id="ID"&gt;</strong>
-     *   &lt;!-- specific to Link --&gt;
-     *   &lt;href&gt;<em>...</em>&lt;/href&gt;                      &lt;!-- <span>string</span> --&gt;
-     *   &lt;refreshMode&gt;onChange&lt;/refreshMode&gt;   
-     *     &lt;!-- refreshModeEnum: onChange, onInterval, <em>or</em> onExpire --&gt;   
-     *   &lt;refreshInterval&gt;4&lt;/refreshInterval&gt;  &lt;!-- float --&gt;
-     *   &lt;viewRefreshMode&gt;never&lt;/viewRefreshMode&gt; 
-     *     &lt;!-- viewRefreshModeEnum: never, onStop, onRequest, onRegion --&gt;
-     *   &lt;viewRefreshTime&gt;4&lt;/viewRefreshTime&gt;  &lt;!-- float --&gt;
-     *   &lt;viewBoundScale&gt;1&lt;/viewBoundScale&gt;    &lt;!-- float --&gt;
-     *   &lt;viewFormat&gt;BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]&lt;<strong>/</strong>viewFormat&gt;
-     *                                         &lt;!-- string --&gt;
-     *   &lt;httpQuery&gt;...&lt;/httpQuery&gt;            &lt;!-- string --&gt;
-     * <strong>&lt;/Link&gt;</strong></pre>
-     * 
-     * Extends: 
-     * @see: <Object>
-     * 
-     * Contained By: 
-     * @see: <Model>
-     * @see: <NetworkLink>
-     * 
+
      * See Also: 
-     * <NetworkLinkControl>
-     * <Region>
+     * {@code <NetworkLinkControl>}
+     * {@code <Region>}
      * 
      * 
      * 
@@ -252,12 +186,12 @@ public abstract class Feature
     @XmlElement(name = "link", namespace = "http://www.w3.org/2005/Atom")
     protected Link atomLink;
     /**
-     * <address>
+     * {@code <address>}
      * <p>
      * A string value representing an unstructured address written as a standard street, 
-     * city, state address, and/or as a postal code. You can use the <address> tag to specify 
+     * city, state address, and/or as a postal code. You can use the address tag to specify
      * the location of a point instead of using latitude and longitude coordinates. (However, 
-     * if a <Point> is provided, it takes precedence over the <address>.) To find out which 
+     * if aPoint is provided, it takes precedence over the address.) To find out which
      * locales are supported for this tag in Google Earth, go to the Google Maps Help. 
      * </p>
      * 
@@ -266,19 +200,19 @@ public abstract class Feature
      */
     protected String address;
     /**
-     * <xal:addressdetails>
+     * {@code <xal:addressdetails>}
      * <p>
      * A structured address, formatted as xAL, or eXtensible Address Language, an international 
-     * standard for address formatting. <xal:AddressDetails> is used by KML for geocoding 
+     * standard for address formatting. xal:addressdetails is used by KML for geocoding 
      * in Google Maps only. For details, see the Google Maps API documentation. Currently, 
-     * Google Earth does not use this element; use <address> instead. Be sure to include 
+     * Google Earth does not use this element; use address instead. Be sure to include
      * the namespace for this element in any KML file that uses it: xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" 
      * </p>
      * <p>
      * A structured address, formatted as xAL, or eXtensible Address Language, an international 
-     * standard for address formatting. <xal:AddressDetails> is used by KML for geocoding 
+     * standard for address formatting. xal:addressdetails is used by KML for geocoding 
      * in Google Maps only. For details, see the Google Maps API documentation. Currently, 
-     * Google Earth does not use this element; use <address> instead. Be sure to include 
+     * Google Earth does not use this element; use address instead. Be sure to include
      * the namespace for this element in any KML file that uses it: xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" 
      * </p>
      * 
@@ -288,20 +222,20 @@ public abstract class Feature
     @XmlElement(name = "AddressDetails", namespace = "urn:oasis:names:tc:ciq:xsdschema:xAL:2.0")
     protected AddressDetails xalAddressDetails;
     /**
-     * <phonenumber>
+     * {@code <phonenumber>}
      * 
      * 
      */
     protected String phoneNumber;
     /**
-     * <snippet maxlines="2" >
+     * {@code <snippet maxlines="2" >}
      * <p>
      * A short description of the feature. In Google Earth, this description is displayed 
      * in the Places panel under the name of the feature. If a Snippet is not supplied, 
-     * the first two lines of the <description> are used. In Google Earth, if a Placemark 
-     * contains both a description and a Snippet, the <Snippet> appears beneath the Placemark 
-     * in the Places panel, and the <description> appears in the Placemark's description 
-     * balloon. This tag does not support HTML markup. <Snippet> has a maxLines attribute, 
+     * the first two lines of the {@code <description>} are used. In Google Earth, if a Placemark
+     * contains both a description and a Snippet, the {@code <Snippet>} appears beneath the Placemark
+     * in the Places panel, and the {@code <description>} appears in the Placemark's description
+     * balloon. This tag does not support HTML markup. {@code <Snippet>} has a maxLines attribute,
      * an integer that specifies the maximum number of lines to display. 
      * </p>
      * 
@@ -313,9 +247,9 @@ public abstract class Feature
     @XmlElement(name = "snippet")
     protected String snippetd;
     /**
-     * <description>
+     * {@code <description>}
      * <p>
-     * The supported content for the <description> element changed from Google Earth 4.3 
+     * The supported content for the {@code <description>} element changed from Google Earth 4.3
      * to 5.0. Specific information for each version is listed out below, followed by information 
      * common to both. 
      * </p>
@@ -324,7 +258,7 @@ public abstract class Feature
      * </p>
      * <p>
      * User-supplied content that appears in the description balloon. The supported content 
-     * for the <description> element changed from Google Earth 4.3 to 5.0. Specific information 
+     * for the {@code <description>} element changed from Google Earth 4.3 to 5.0. Specific information
      * for each version is listed out below, followed by information common to both. Google 
      * Earth 5.0 Google Earth 5.0 supports plain text content, as well as full HTML and 
      * JavaScript, within description balloons. Contents of the description tag are rendered 
@@ -332,8 +266,8 @@ public abstract class Feature
      * in any WebKit-based browser. General restrictions Links to local files are generally 
      * not allowed. This prevents malicious code from damaging your system or accessing 
      * your data. Should you wish to allow access to your local filesystem, select Preferences 
-     * > Allow placemark balloons to access local files and personal data. Links to image 
-     * files on the local filesystem are always allowed, if contained within an <img> tag. 
+     * Allow placemark balloons to access local files and personal data. Links to image
+     * files on the local filesystem are always allowed, if contained within an {@code <img>} tag.
      * Content that has been compressed into a KMZ file can be accessed, even if on the 
      * local filesystem. Cookies are completely disabled, including cookies set or read 
      * by content contained within a iFrame. There are no exceptions to this rule. Doctype 
@@ -345,70 +279,37 @@ public abstract class Feature
      */
     protected String description;
     /**
-     * <abstractview>
+     * {@code <abstractview>}
      * <p>
-     * Defines a viewpoint associated with any element derived from Feature. See <Camera> 
-     * and <LookAt>. 
+     * Defines a viewpoint associated with any element derived from Feature. See Camera 
+     * and LookAt. 
      * </p>
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. This element 
-     * is extended by the <Camera> and <LookAt> elements. 
+     * is extended by the Camera and LookAt elements. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;
-     * <strong>&lt;!--<em> AbstractView</em> --&gt;</strong>                   &lt;!-- Camera, LookAt --&gt;                
-     *   &lt;!-- extends <span class="style1">Object</span> --&gt;
-     *   <em>&lt;TimePrimitive&gt;...&lt;/TimePrimitive&gt;</em>                        &lt;!-- gx:TimeSpan or gx:TimeStamp --&gt;
-     * <strong>&lt;-- /<em>AbstractView</em> --&gt;</strong></pre>
-     * 
-     * Extends: 
-     * @see: <Object>
-     * 
-     * Extended By: 
-     * @see: <Camera>
-     * @see: <LookAt>
-     * 
-     * 
-     * 
      */
     @XmlElementRef(name = "AbstractViewGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected AbstractView abstractView;
     /**
-     * <TimePrimitive>
+     * {@code <TimePrimitive>}
      * <p>
-     * Associates this Feature with a period of time (<TimeSpan>) or a point in time (<TimeStamp>). 
+     * Associates this Feature with a period of time ({@code <TimeSpan>}) or a point in time ({@code <TimeStamp>}).
      * </p>
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. This element 
-     * is extended by the <TimeSpan> and <TimeStamp> elements. 
+     * is extended by the {@code <TimeSpan>} and {@code <TimeStamp>} elements. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;
-     * <strong>&lt;!-- TimePrimitive id="ID" --&gt;            &lt;!-- TimeSpan,TimeStamp --&gt;               
-     *  </strong> &lt;!-- extends Object --&gt;<strong>
-     * &lt;!-- /TimePrimitive --&gt;</strong></pre>
-     * 
-     * Extends: 
-     * @see: <Object>
-     * 
-     * Extended By: 
-     * @see: <TimeSpan>
-     * @see: <TimeStamp>
-     * 
-     * 
-     * 
      */
     @XmlElementRef(name = "AbstractTimePrimitiveGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected TimePrimitive timePrimitive;
     /**
-     * <styleurl>
+     * {@code <styleurl>}
      * <p>
-     * URL of a <Style> or <StyleMap> defined in a Document. If the style is in the same 
+     * URL of a {@code <Style>} or {@code <StyleMap>} defined in a Document. If the style is in the same
      * file, use a # reference. If the style is defined in an external file, use a full 
-     * URL along with # referencing. Examples are <styleUrl>#myIconStyleID</styleUrl> <styleUrl>http://someserver.com/somestylefile.xml#restaurant</styleUrl> 
-     * <styleUrl>eateries.kml#my-lunch-spot</styleUrl> 
+     * URL along with # referencing. Examples are {@code <styleUrl>#myIconStyleID</styleUrl> <styleUrl>http://someserver.com/somestylefile.xml#restaurant</styleUrl>
+     * <styleUrl>eateries.kml#my-lunch-spot</styleUrl>}
      * </p>
      * 
      * 
@@ -417,46 +318,31 @@ public abstract class Feature
     @XmlSchemaType(name = "anyURI")
     protected String styleUrl;
     /**
-     * <StyleSelector>
+     * {@code <StyleSelector>}
      * <p>
      * One or more Styles and StyleMaps can be defined to customize the appearance of any 
-     * element derived from Feature or of the Geometry in a Placemark. (See <BalloonStyle>, 
-     * <ListStyle>, <StyleSelector>, and the styles derived from <ColorStyle>.) A style 
+     * element derived from Feature or of the Geometry in a Placemark. (See {@code <BalloonStyle>},
+     * {@code <ListStyle>}, {@code <StyleSelector>}, and the styles derived from {@code <ColorStyle>}.) A style 
      * defined within a Feature is called an "inline style" and applies only to the Feature 
-     * that contains it. A style defined as the child of a <Document> is called a "shared 
+     * that contains it. A style defined as the child of a {@code <Document>} is called a "shared 
      * style." A shared style must have an id defined for it. This id is referenced by 
-     * one or more Features within the <Document>. In cases where a style element is defined 
+     * one or more Features within the {@code <Document>}. In cases where a style element is defined 
      * both in a shared style and in an inline style for a Feature—that is, a Folder, GroundOverlay, 
      * NetworkLink, Placemark, or ScreenOverlay—the value for the Feature's inline style 
      * takes precedence over the value for the shared style. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;
-     * <strong>&lt;!-- <em>StyleSelector</em> id="ID" --&gt;               </strong>  &lt;!-- Style,StyleMap --&gt;<strong>
-     * &lt;!-- /<em>StyleSelector</em> --&gt;</strong></pre>
-     * 
-     * Extends: 
-     * @see: <Object>
-     * 
-     * Extended By: 
-     * @see: <Style>
-     * @see: <StyleMap>
-     * 
-     * 
-     * 
      */
     @XmlElementRef(name = "AbstractStyleSelectorGroup", namespace = "http://www.opengis.net/kml/2.2", required = false)
     protected List<StyleSelector> styleSelector;
     /**
-     * <Region>
+     * {@code <Region>}
      * <p>
-     * A region contains a bounding box (<LatLonAltBox>) that describes an area of interest 
+     * A region contains a bounding box ({@code <LatLonAltBox>}) that describes an area of interest
      * defined by geographic coordinates and altitudes. In addition, a Region contains 
-     * an LOD (level of detail) extent (<Lod>) that defines a validity range of the associated 
+     * an LOD (level of detail) extent ({@code <Lod>}) that defines a validity range of the associated
      * Region in terms of projected screen size. A Region is said to be "active" when the 
      * bounding box is within the user's view and the LOD requirements are met. Objects 
-     * associated with a Region are drawn only when the Region is active. When the <viewRefreshMode> 
+     * associated with a Region are drawn only when the Region is active. When the {@code <viewRefreshMode>} 
      * is onRegion, the Link or Icon is loaded only when the Region is active. See the 
      * "Topics in KML" page on Regions for more details. In a Container or NetworkLink 
      * hierarchy, this calculation uses the Region that is the closest ancestor in the 
@@ -464,53 +350,24 @@ public abstract class Feature
      * </p>
      * <p>
      * Features and geometry associated with a Region are drawn only when the Region is 
-     * active. See <Region>. 
+     * active. See {@code <Region>}. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre><strong>&lt;Region id="ID"&gt; </strong>
-     *   &lt;LatLonAltBox&gt; 
-     *     &lt;north&gt;&lt;/north&gt;                            &lt;!-- required; kml:angle90 --&gt;
-     *     &lt;south&gt;&lt;/south&gt;                            &lt;!-- required; kml:angle90 --&gt; 
-     *     &lt;east&gt;&lt;/east&gt;                              &lt;!-- required; kml:angle180 --&gt;
-     *     &lt;west&gt;&lt;/west&gt;                              &lt;!-- required; kml:angle180 --&gt;
-     *     &lt;minAltitude&gt;0&lt;/minAltitude&gt;               &lt;!-- float --&gt;
-     *     &lt;maxAltitude&gt;0&lt;/maxAltitude&gt;               &lt;!-- float --&gt;
-     *     &lt;altitudeMode&gt;clampToGround&lt;/altitudeMode&gt; 
-     *         &lt;!-- kml:altitudeModeEnum: clampToGround, relativeToGround, or absolute --&gt;
-     *         &lt;!-- or, substitute gx:altitudeMode: clampToSeaFloor, relativeToSeaFloor --&gt; 
-     *   &lt;/LatLonAltBox&gt; 
-     *   &lt;Lod&gt;
-     *     &lt;minLodPixels&gt;0&lt;/minLodPixels&gt;             &lt;!-- float --&gt;
-     *     &lt;maxLodPixels&gt;-1&lt;/maxLodPixels&gt;            &lt;!-- float --&gt;
-     *     &lt;minFadeExtent&gt;0&lt;/minFadeExtent&gt;           &lt;!-- float --&gt; 
-     *     &lt;maxFadeExtent&gt;0&lt;/maxFadeExtent&gt;           &lt;!-- float --&gt;
-     *   &lt;/Lod&gt;
-     * <strong>&lt;/Region&gt; </strong></pre>
-     * 
-     * Extends: 
-     * @see: <Object>
-     * 
-     * Contained By: 
-     * @see: <Feature>
-     * 
-     * 
      * 
      */
     @XmlElement(name = "Region")
     protected Region region;
     /**
-     * <metadata> (deprecated in kml 2.2; use <extendeddata> instead)
+     * {@code <metadata>} (deprecated in kml 2.2; use {@code <extendeddata>} instead)
      * 
      * 
      */
     @XmlElement(name = "Metadata")
     protected Metadata metadata;
     /**
-     * <extendeddata>
+     * {@code <extendeddata>}
      * <p>
-     * Adding untyped data/value pairs using the <Data> element (basic) Declaring new typed 
-     * fields using the <Schema> element and then instancing them using the <SchemaData> 
+     * Adding untyped data/value pairs using the {@code <Data>} element (basic) Declaring new typed
+     * fields using the {@code <Schema>} element and then instancing them using the {@code <SchemaData>} 
      * element (advanced) Referring to XML elements defined in other namespaces by referencing 
      * the external namespace within the KML file (basic) 
      * </p>
@@ -531,61 +388,30 @@ public abstract class Feature
      * These techniques can be combined within a single KML file or Feature for different 
      * pieces of data. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;ExtendedData&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>  &lt;Data name="string"&gt;<br>&nbsp;   &lt;displayName&gt;...&lt;/displayName&gt;&nbsp;&nbsp;&nbsp; &lt;!-- string --&gt;<br> &nbsp;&nbsp; &lt;value&gt;...&lt;/value&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- string --&gt;<br>  &lt;/Data&gt;
-     *   &lt;SchemaData schemaUrl="<em>anyURI</em>"&gt;<br>    &lt;SimpleData name=""&gt; ... &lt;/SimpleData&gt;&nbsp;&nbsp; &lt;!-- string --&gt;<br>  &lt;/SchemaData&gt;
-     *   &lt;namespace_prefix:other&gt;...&lt;/namespace_prefix:other&gt;
-     * &lt;/ExtendedData&gt;</pre>
-     * 
-     * Contained By: 
-     * @see: <Feature>
-     * 
-     * See Also: 
-     * Schema
-     * 
-     * 
-     * 
      */
     @XmlElement(name = "ExtendedData")
     protected ExtendedData extendedData;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
-     * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
-     * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
-     * 
-     * 
-     * 
      */
     @XmlElement(name = "AbstractFeatureSimpleExtensionGroup")
     protected List<Object> featureSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
-     * 
-     * Syntax: 
-     * <pre>&lt;!-- abstract element; do not create --&gt;<strong>
-     * &lt;!-- <em>Object</em> id="ID" targetId="NCName" --&gt;
-     * &lt;!-- /<em>Object</em>&gt; --&gt;</strong></pre>
-     * 
-     * 
-     * 
      */
     @XmlElement(name = "AbstractFeatureObjectExtensionGroup")
     protected List<AbstractObject> featureObjectExtension;
@@ -595,7 +421,7 @@ public abstract class Feature
     }
 
     /**
-     * @see name
+     *
      * 
      * @return
      *     possible object is
@@ -607,7 +433,7 @@ public abstract class Feature
     }
 
     /**
-     * @see name
+     *
      * 
      * @param value
      *     allowed object is
@@ -630,7 +456,7 @@ public abstract class Feature
     }
 
     /**
-     * @see visibility
+     *
      * 
      * @param value
      *     allowed object is
@@ -653,7 +479,7 @@ public abstract class Feature
     }
 
     /**
-     * @see open
+     *
      * 
      * @param value
      *     allowed object is
@@ -665,7 +491,7 @@ public abstract class Feature
     }
 
     /**
-     * @see atomAuthor
+     *
      * 
      * @return
      *     possible object is
@@ -677,7 +503,7 @@ public abstract class Feature
     }
 
     /**
-     * @see atomAuthor
+     *
      * 
      * @param value
      *     allowed object is
@@ -689,7 +515,7 @@ public abstract class Feature
     }
 
     /**
-     * @see atomLink
+     *
      * 
      * @return
      *     possible object is
@@ -701,7 +527,7 @@ public abstract class Feature
     }
 
     /**
-     * @see atomLink
+     *
      * 
      * @param value
      *     allowed object is
@@ -713,7 +539,7 @@ public abstract class Feature
     }
 
     /**
-     * @see address
+     *
      * 
      * @return
      *     possible object is
@@ -725,7 +551,7 @@ public abstract class Feature
     }
 
     /**
-     * @see address
+     *
      * 
      * @param value
      *     allowed object is
@@ -737,7 +563,7 @@ public abstract class Feature
     }
 
     /**
-     * @see xalAddressDetails
+     *
      * 
      * @return
      *     possible object is
@@ -749,7 +575,7 @@ public abstract class Feature
     }
 
     /**
-     * @see xalAddressDetails
+     *
      * 
      * @param value
      *     allowed object is
@@ -761,7 +587,7 @@ public abstract class Feature
     }
 
     /**
-     * @see phoneNumber
+     *
      * 
      * @return
      *     possible object is
@@ -773,7 +599,7 @@ public abstract class Feature
     }
 
     /**
-     * @see phoneNumber
+     *
      * 
      * @param value
      *     allowed object is
@@ -785,7 +611,7 @@ public abstract class Feature
     }
 
     /**
-     * @see snippet
+     *
      * 
      * @return
      *     possible object is
@@ -797,7 +623,7 @@ public abstract class Feature
     }
 
     /**
-     * @see snippet
+     *
      * 
      * @param value
      *     allowed object is
@@ -809,7 +635,7 @@ public abstract class Feature
     }
 
     /**
-     * @see snippetd
+     *
      * 
      * @return
      *     possible object is
@@ -821,7 +647,7 @@ public abstract class Feature
     }
 
     /**
-     * @see snippetd
+     *
      * 
      * @param value
      *     allowed object is
@@ -833,7 +659,7 @@ public abstract class Feature
     }
 
     /**
-     * @see description
+     *
      * 
      * @return
      *     possible object is
@@ -845,7 +671,7 @@ public abstract class Feature
     }
 
     /**
-     * @see description
+     *
      * 
      * @param value
      *     allowed object is
@@ -857,13 +683,13 @@ public abstract class Feature
     }
 
     /**
-     * @see abstractView
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code >}
+     *     {@code <}{@link LookAt}{@code >}
+     *     {@code <}{@link Camera}{@code >}
      *     
      */
     public AbstractView getAbstractView() {
@@ -871,13 +697,13 @@ public abstract class Feature
     }
 
     /**
-     * @see abstractView
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code >}
+     *     {@code <}{@link LookAt}{@code >}
+     *     {@code <}{@link Camera}{@code >}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -885,13 +711,13 @@ public abstract class Feature
     }
 
     /**
-     * @see timePrimitive
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimeStamp}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
+     *     {@code <}{@link TimeSpan}{@code >}
+     *     {@code <}{@link TimeStamp}{@code >}
+     *     {@code <}{@link TimePrimitive}{@code >}
      *     
      */
     public TimePrimitive getTimePrimitive() {
@@ -899,13 +725,13 @@ public abstract class Feature
     }
 
     /**
-     * @see timePrimitive
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link TimeSpan}{@code>}
-     *     {@code <}{@link TimeStamp}{@code>}
-     *     {@code <}{@link TimePrimitive}{@code>}
+     *     {@code <}{@link TimeSpan}{@code >}
+     *     {@code <}{@link TimeStamp}{@code >}
+     *     {@code <}{@link TimePrimitive}{@code >}
      *     
      */
     public void setTimePrimitive(TimePrimitive value) {
@@ -913,7 +739,7 @@ public abstract class Feature
     }
 
     /**
-     * @see styleUrl
+     *
      * 
      * @return
      *     possible object is
@@ -925,7 +751,7 @@ public abstract class Feature
     }
 
     /**
-     * @see styleUrl
+     *
      * 
      * @param value
      *     allowed object is
@@ -937,7 +763,7 @@ public abstract class Feature
     }
 
     /**
-     * @see styleSelector
+     *
      * 
      */
     public List<StyleSelector> getStyleSelector() {
@@ -948,7 +774,7 @@ public abstract class Feature
     }
 
     /**
-     * @see region
+     *
      * 
      * @return
      *     possible object is
@@ -960,7 +786,7 @@ public abstract class Feature
     }
 
     /**
-     * @see region
+     *
      * 
      * @param value
      *     allowed object is
@@ -972,7 +798,7 @@ public abstract class Feature
     }
 
     /**
-     * @see metadata
+     *
      * 
      * @return
      *     possible object is
@@ -984,7 +810,7 @@ public abstract class Feature
     }
 
     /**
-     * @see metadata
+     *
      * 
      * @param value
      *     allowed object is
@@ -996,7 +822,7 @@ public abstract class Feature
     }
 
     /**
-     * @see extendedData
+     *
      * 
      * @return
      *     possible object is
@@ -1008,7 +834,7 @@ public abstract class Feature
     }
 
     /**
-     * @see extendedData
+     *
      * 
      * @param value
      *     allowed object is
@@ -1020,7 +846,7 @@ public abstract class Feature
     }
 
     /**
-     * @see featureSimpleExtension
+     *
      * 
      */
     public List<Object> getFeatureSimpleExtension() {
@@ -1031,7 +857,7 @@ public abstract class Feature
     }
 
     /**
-     * @see featureObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getFeatureObjectExtension() {
@@ -1270,9 +1096,9 @@ public abstract class Feature
      * Creates a new instance of {@link Author} and set it to atomAuthor.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Author author = new Author();
-     * this.setAtomAuthor(author); </code>
+     * this.setAtomAuthor(author); }
      * 
      * 
      */
@@ -1286,9 +1112,9 @@ public abstract class Feature
      * Creates a new instance of {@link Link} and set it to atomLink.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Link link = new Link();
-     * this.setAtomLink(link); </code>
+     * this.setAtomLink(link); }
      * 
      * 
      * @param href
@@ -1304,9 +1130,9 @@ public abstract class Feature
      * Creates a new instance of {@link AddressDetails} and set it to xalAddressDetails.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * AddressDetails addressDetails = new AddressDetails();
-     * this.setXalAddressDetails(addressDetails); </code>
+     * this.setXalAddressDetails(addressDetails); }
      * 
      * 
      * @param xalAddress
@@ -1332,9 +1158,9 @@ public abstract class Feature
      * Creates a new instance of {@link Snippet} and set it to snippet.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Snippet snippet = new Snippet();
-     * this.setSnippet(snippet); </code>
+     * this.setSnippet(snippet); }
      * 
      * 
      */
@@ -1348,9 +1174,9 @@ public abstract class Feature
      * Creates a new instance of {@link LookAt} and set it to abstractView.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
+     * this.setAbstractView(lookAt); }
      * 
      * 
      */
@@ -1364,9 +1190,9 @@ public abstract class Feature
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Camera camera = new Camera();
-     * this.setAbstractView(camera); </code>
+     * this.setAbstractView(camera); }
      * 
      * 
      */
@@ -1380,9 +1206,9 @@ public abstract class Feature
      * Creates a new instance of {@link TimeSpan} and set it to timePrimitive.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * TimeSpan timeSpan = new TimeSpan();
-     * this.setTimePrimitive(timeSpan); </code>
+     * this.setTimePrimitive(timeSpan); }
      * 
      * 
      */
@@ -1396,9 +1222,9 @@ public abstract class Feature
      * Creates a new instance of {@link TimeStamp} and set it to timePrimitive.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * TimeStamp timeStamp = new TimeStamp();
-     * this.setTimePrimitive(timeStamp); </code>
+     * this.setTimePrimitive(timeStamp); }
      * 
      * 
      */
@@ -1411,9 +1237,9 @@ public abstract class Feature
     /**
      * Creates a new instance of {@link Style} and adds it to styleSelector.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Style style = new Style();
-     * this.getStyleSelector().add(style); </code>
+     * this.getStyleSelector().add(style); }
      * 
      * 
      */
@@ -1426,9 +1252,9 @@ public abstract class Feature
     /**
      * Creates a new instance of {@link StyleMap} and adds it to styleSelector.
      * This method is a short version for:
-     * <code>
+     * {@code
      * StyleMap styleMap = new StyleMap();
-     * this.getStyleSelector().add(styleMap); </code>
+     * this.getStyleSelector().add(styleMap); }
      * 
      * 
      */
@@ -1442,9 +1268,9 @@ public abstract class Feature
      * Creates a new instance of {@link Region} and set it to region.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Region region = new Region();
-     * this.setRegion(region); </code>
+     * this.setRegion(region); }
      * 
      * 
      */
@@ -1458,9 +1284,9 @@ public abstract class Feature
      * Creates a new instance of {@link Metadata} and set it to metadata.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Metadata metadata = new Metadata();
-     * this.setMetadata(metadata); </code>
+     * this.setMetadata(metadata); }
      * 
      * 
      */
@@ -1474,9 +1300,9 @@ public abstract class Feature
      * Creates a new instance of {@link ExtendedData} and set it to extendedData.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ExtendedData extendedData = new ExtendedData();
-     * this.setExtendedData(extendedData); </code>
+     * this.setExtendedData(extendedData); }
      * 
      * 
      */
@@ -1487,9 +1313,10 @@ public abstract class Feature
     }
 
     /**
-     * @see styleSelector
+     *
      * 
      * @param styleSelector
+     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code >}{@code <}{@link StyleSelector}{@code >}{@code <}{@link StyleMap}{@code >}
      */
     public void setStyleSelector(final List<StyleSelector> styleSelector) {
         this.styleSelector = styleSelector;
@@ -1499,9 +1326,9 @@ public abstract class Feature
      * add a value to the styleSelector property collection
      * 
      * @param styleSelector
-     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code>}{@link JAXBElement}{@code <}{@link StyleSelector}{@code>}{@link JAXBElement}{@code <}{@link StyleMap}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Style}{@code >}{@code <}{@link StyleSelector}{@code >}{@code <}{@link StyleMap}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Feature addToStyleSelector(final StyleSelector styleSelector) {
         this.getStyleSelector().add(styleSelector);
@@ -1509,9 +1336,10 @@ public abstract class Feature
     }
 
     /**
-     * @see featureSimpleExtension
+     *
      * 
      * @param featureSimpleExtension
+     *     Objects of the following type are allowed in the list: {@code <}{@link Double}{@code >}{@code <}{@link Object}{@code >}{@code <}{@link Boolean}{@code >}
      */
     public void setFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
         this.featureSimpleExtension = featureSimpleExtension;
@@ -1521,9 +1349,9 @@ public abstract class Feature
      * add a value to the featureSimpleExtension property collection
      * 
      * @param featureSimpleExtension
-     *     Objects of the following type are allowed in the list: {@code <}{@link Double}{@code>}{@link JAXBElement}{@code <}{@link Object}{@code>}{@link JAXBElement}{@code <}{@link Boolean}{@code>}
+     *     Objects of the following type are allowed in the list: {@code <}{@link Double}{@code >}{@code <}{@link Object}{@code >}{@code <}{@link Boolean}{@code >}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Feature addToFeatureSimpleExtension(final Object featureSimpleExtension) {
         this.getFeatureSimpleExtension().add(featureSimpleExtension);
@@ -1531,9 +1359,10 @@ public abstract class Feature
     }
 
     /**
-     * @see featureObjectExtension
+     *
      * 
      * @param featureObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
         this.featureObjectExtension = featureObjectExtension;
@@ -1545,7 +1374,7 @@ public abstract class Feature
      * @param featureObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Feature addToFeatureObjectExtension(final AbstractObject featureObjectExtension) {
         this.getFeatureObjectExtension().add(featureObjectExtension);
@@ -1553,7 +1382,7 @@ public abstract class Feature
     }
 
     /**
-     * @see objectSimpleExtension
+     *
      * 
      */
     @Obvious
@@ -1571,10 +1400,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setName(String)
+     *
      * 
      * @param name
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withName(final String name) {
         this.setName(name);
@@ -1583,10 +1414,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setVisibility(Boolean)
+     *
      * 
      * @param visibility
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withVisibility(final Boolean visibility) {
         this.setVisibility(visibility);
@@ -1595,10 +1428,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setOpen(Boolean)
+     *
      * 
      * @param open
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withOpen(final Boolean open) {
         this.setOpen(open);
@@ -1607,10 +1442,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setAtomAuthor(Author)
+     *
      * 
      * @param atomAuthor
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withAtomAuthor(final Author atomAuthor) {
         this.setAtomAuthor(atomAuthor);
@@ -1619,10 +1456,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setAtomLink(Link)
+     *
      * 
      * @param atomLink
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withAtomLink(final Link atomLink) {
         this.setAtomLink(atomLink);
@@ -1631,10 +1470,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setAddress(String)
+     *
      * 
      * @param address
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withAddress(final String address) {
         this.setAddress(address);
@@ -1643,10 +1484,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setXalAddressDetails(AddressDetails)
+     *
      * 
      * @param xalAddressDetails
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withXalAddressDetails(final AddressDetails xalAddressDetails) {
         this.setXalAddressDetails(xalAddressDetails);
@@ -1655,10 +1498,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setPhoneNumber(String)
+     *
      * 
      * @param phoneNumber
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withPhoneNumber(final String phoneNumber) {
         this.setPhoneNumber(phoneNumber);
@@ -1667,10 +1512,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setSnippet(Snippet)
+     *
      * 
      * @param snippet
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withSnippet(final Snippet snippet) {
         this.setSnippet(snippet);
@@ -1679,10 +1526,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setSnippetd(String)
+     *
      * 
      * @param snippetd
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withSnippetd(final String snippetd) {
         this.setSnippetd(snippetd);
@@ -1691,10 +1540,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setDescription(String)
+     *
      * 
      * @param description
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withDescription(final String description) {
         this.setDescription(description);
@@ -1703,10 +1554,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setAbstractView(AbstractView)
+     *
      * 
      * @param abstractView
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withAbstractView(final AbstractView abstractView) {
         this.setAbstractView(abstractView);
@@ -1715,10 +1568,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setTimePrimitive(TimePrimitive)
+     *
      * 
      * @param timePrimitive
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withTimePrimitive(final TimePrimitive timePrimitive) {
         this.setTimePrimitive(timePrimitive);
@@ -1727,10 +1582,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setStyleUrl(String)
+     *
      * 
      * @param styleUrl
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withStyleUrl(final String styleUrl) {
         this.setStyleUrl(styleUrl);
@@ -1739,10 +1596,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setStyleSelector(List<StyleSelector>)
+     *
      * 
      * @param styleSelector
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withStyleSelector(final List<StyleSelector> styleSelector) {
         this.setStyleSelector(styleSelector);
@@ -1751,10 +1610,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setRegion(Region)
+     *
      * 
      * @param region
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withRegion(final Region region) {
         this.setRegion(region);
@@ -1763,10 +1624,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setMetadata(Metadata)
+     *
      * 
      * @param metadata
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withMetadata(final Metadata metadata) {
         this.setMetadata(metadata);
@@ -1775,10 +1638,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setExtendedData(ExtendedData)
+     *
      * 
      * @param extendedData
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withExtendedData(final ExtendedData extendedData) {
         this.setExtendedData(extendedData);
@@ -1787,10 +1652,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setFeatureSimpleExtension(List<Object>)
+     *
      * 
      * @param featureSimpleExtension
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withFeatureSimpleExtension(final List<Object> featureSimpleExtension) {
         this.setFeatureSimpleExtension(featureSimpleExtension);
@@ -1799,10 +1666,12 @@ public abstract class Feature
 
     /**
      * fluent setter
-     * @see #setFeatureObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param featureObjectExtension
      *     required parameter
+     * @return
+     *     Feature
      */
     public Feature withFeatureObjectExtension(final List<AbstractObject> featureObjectExtension) {
         this.setFeatureObjectExtension(featureObjectExtension);

@@ -1,15 +1,12 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
-import java.util.ArrayList;
-import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -96,9 +93,9 @@ public class ViewerOptions
     /**
      * Creates a new instance of {@link Option} and adds it to option.
      * This method is a short version for:
-     * <code>
+     * {@code
      * Option option = new Option();
-     * this.getOption().add(option); </code>
+     * this.getOption().add(option); }
      * 
      * 
      */
@@ -109,12 +106,13 @@ public class ViewerOptions
     }
 
     /**
-     * Sets the value of the option property Objects of the following type(s) are allowed in the list List<Option>.
+     * Sets the value of the option property Objects of the following type(s) are allowed in the list {@code List<Option>}.
      * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withOption} instead.
+     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withOption instead.
      * 
      * 
      * @param option
+     *     Objects of the following type are allowed in the list: {@link Option}
      */
     public void setOption(final List<Option> option) {
         this.option = option;
@@ -126,7 +124,7 @@ public class ViewerOptions
      * @param option
      *     Objects of the following type are allowed in the list: {@link Option}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public ViewerOptions addToOption(final Option option) {
         this.getOption().add(option);

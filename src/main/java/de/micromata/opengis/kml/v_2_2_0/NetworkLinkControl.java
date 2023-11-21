@@ -1,22 +1,16 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-
 
 /**
- * <NetworkLinkControl>
+ * {@code <NetworkLinkControl>}
  * <p>
- * Controls the behavior of files fetched by a <NetworkLink>. 
+ * Controls the behavior of files fetched by a NetworkLink. 
  * </p>
  * 
  * Syntax: 
@@ -34,8 +28,8 @@ import jakarta.xml.bind.annotation.XmlType;
  * <strong>&lt;/NetworkLinkControl&gt;</strong></pre>
  * 
  * See Also: 
- * <NetworkLink>
- * <Update>
+ * NetworkLink
+ * Update
  * 
  * 
  * 
@@ -60,9 +54,9 @@ public class NetworkLinkControl implements Cloneable
 {
 
     /**
-     * <minrefreshperiod>
+     * {@code <minrefreshperiod>}
      * <p>
-     * Specified in seconds, <minRefreshPeriod> is the minimum allowed time between fetches 
+     * Specified in seconds, {@code <minRefreshPeriod>} is the minimum allowed time between fetches
      * of the file. This parameter allows servers to throttle fetches of a particular file 
      * and to tailor refresh rates to the expected rate of change to the data. For example, 
      * a user might set a link refresh to 5 seconds, but you could set your minimum refresh 
@@ -75,9 +69,9 @@ public class NetworkLinkControl implements Cloneable
     @XmlElement(defaultValue = "0.0")
     protected double minRefreshPeriod;
     /**
-     * <maxsessionlength>
+     * {@code <maxsessionlength>}
      * <p>
-     * Specified in seconds, <maxSessionLength> is the maximum amount of time for which 
+     * Specified in seconds, {@code <maxSessionLength>} is the maximum amount of time for which
      * the client NetworkLink can remain connected. The default value of -1 indicates not 
      * to terminate the session explicitly. 
      * </p>
@@ -88,7 +82,7 @@ public class NetworkLinkControl implements Cloneable
     @XmlElement(defaultValue = "-1.0")
     protected double maxSessionLength;
     /**
-     * <cookie>
+     * {@code <cookie>}
      * <p>
      * Use this element to append a string to the URL query on the next refresh of the 
      * network link. You can use this data in your script to provide more intelligent handling 
@@ -100,7 +94,7 @@ public class NetworkLinkControl implements Cloneable
      */
     protected String cookie;
     /**
-     * <message>
+     * {@code <message>}
      * <p>
      * You can deliver a pop-up message, such as usage guidelines for your network link. 
      * The message appears when the network link is first loaded into Google Earth, or 
@@ -112,7 +106,7 @@ public class NetworkLinkControl implements Cloneable
      */
     protected String message;
     /**
-     * <linkname>
+     * {@code <linkname>}
      * <p>
      * You can control the name of the network link from the server, so that changes made 
      * to the name on the client side are overridden by the server. 
@@ -123,7 +117,7 @@ public class NetworkLinkControl implements Cloneable
      */
     protected String linkName;
     /**
-     * <linkdescription>
+     * {@code <linkdescription>}
      * <p>
      * You can control the description of the network link from the server, so that changes 
      * made to the description on the client side are overridden by the server. 
@@ -134,10 +128,10 @@ public class NetworkLinkControl implements Cloneable
      */
     protected String linkDescription;
     /**
-     * <linksnippet maxlines="2" >
+     * {@code <linksnippet maxlines="2" >}
      * <p>
      * You can control the snippet for the network link from the server, so that changes 
-     * made to the snippet on the client side are overridden by the server. <linkSnippet> 
+     * made to the snippet on the client side are overridden by the server. {@code <linkSnippet> }
      * has a maxLines attribute, an integer that specifies the maximum number of lines 
      * to display. 
      * </p>
@@ -147,10 +141,10 @@ public class NetworkLinkControl implements Cloneable
      */
     protected Snippet linkSnippet;
     /**
-     * <expires>
+     * {@code <expires>}
      * <p>
      * You can specify a date/time at which the link should be refreshed. This specification 
-     * takes effect only if the <refreshMode> in <Link> has a value of onExpire. See <refreshMode> 
+     * takes effect only if the {@code <refreshMode>} in {@code <Link>} has a value of onExpire. See {@code <refreshMode>} 
      * </p>
      * 
      * 
@@ -158,19 +152,19 @@ public class NetworkLinkControl implements Cloneable
      */
     protected String expires;
     /**
-     * <Update>
+     * {@code <Update>}
      * <p>
      * Specifies an addition, change, or deletion to KML data that has already been loaded 
-     * using the specified URL. The <targetHref> specifies the .kml or .kmz file whose 
-     * data (within Google Earth) is to be modified. <Update> is always contained in a 
+     * using the specified URL. The targetHref specifies the .kml or .kmz file whose 
+     * data (within Google Earth) is to be modified. Update is always contained in a 
      * NetworkLinkControl. Furthermore, the file containing the NetworkLinkControl must 
      * have been loaded by a NetworkLink. See the "Topics in KML" page on Updates for a 
      * detailed example of how Update works. 
      * </p>
      * <p>
-     * With <Update>, you can specify any number of Change, Create, and Delete tags for 
+     * With Update, you can specify any number of Change, Create, and Delete tags for 
      * a .kml file or .kmz archive that has previously been loaded with a network link. 
-     * See <Update>. 
+     * See Update. 
      * </p>
      * 
      * Syntax: 
@@ -182,9 +176,9 @@ public class NetworkLinkControl implements Cloneable
      * <strong>&lt;/Update&gt;</strong></pre>
      * 
      * Contained By: 
-     * @see: <NetworkLinkControl>
-     * @see: Note: This element was deprecated in KML Release 2.1 and is replaced by <Link>, which provides the additional functionality of Regions. The <Url> tag will still work in Google Earth, but use of the newer <Link> tag is encouraged.
-     * @see: Use this element to set the location of the link to the KML file, to define the refresh options for the server and viewer changes, and to populate a variable to return useful client information to the server.
+     *
+     *
+     *
      * 
      * 
      * 
@@ -192,14 +186,14 @@ public class NetworkLinkControl implements Cloneable
     @XmlElement(name = "Update")
     protected Update update;
     /**
-     * <abstractview>
+     * {@code <abstractview>}
      * <p>
-     * Defines a viewpoint associated with any element derived from Feature. See <Camera> 
-     * and <LookAt>. 
+     * Defines a viewpoint associated with any element derived from Feature. See Camera 
+     * and LookAt. 
      * </p>
      * <p>
      * This is an abstract element and cannot be used directly in a KML file. This element 
-     * is extended by the <Camera> and <LookAt> elements. 
+     * is extended by the Camera and LookAt elements. 
      * </p>
      * 
      * Syntax: 
@@ -210,11 +204,11 @@ public class NetworkLinkControl implements Cloneable
      * <strong>&lt;-- /<em>AbstractView</em> --&gt;</strong></pre>
      * 
      * Extends: 
-     * @see: <Object>
+     *
      * 
      * Extended By: 
-     * @see: <Camera>
-     * @see: <LookAt>
+     *
+     *
      * 
      * 
      * 
@@ -225,12 +219,12 @@ public class NetworkLinkControl implements Cloneable
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> networkLinkControlSimpleExtension;
     /**
-     * <Object>
+     * {@code <Object>}
      * <p>
      * This is an abstract base class and cannot be used directly in a KML file. It provides 
      * the id attribute, which allows unique identification of a KML element, and the targetId 
      * attribute, which is used to reference objects that have already been loaded into 
-     * Google Earth. The id attribute must be assigned if the <Update> mechanism is to 
+     * Google Earth. The id attribute must be assigned if the Update mechanism is to 
      * be used. 
      * </p>
      * 
@@ -250,7 +244,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see minRefreshPeriod
+     *
      * 
      * @return
      *     possible object is
@@ -262,7 +256,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see minRefreshPeriod
+     *
      * 
      * @param value
      *     allowed object is
@@ -274,7 +268,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see maxSessionLength
+     *
      * 
      * @return
      *     possible object is
@@ -286,7 +280,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see maxSessionLength
+     *
      * 
      * @param value
      *     allowed object is
@@ -298,7 +292,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see cookie
+     *
      * 
      * @return
      *     possible object is
@@ -310,7 +304,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see cookie
+     *
      * 
      * @param value
      *     allowed object is
@@ -322,7 +316,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see message
+     *
      * 
      * @return
      *     possible object is
@@ -334,7 +328,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see message
+     *
      * 
      * @param value
      *     allowed object is
@@ -346,7 +340,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see linkName
+     *
      * 
      * @return
      *     possible object is
@@ -358,7 +352,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see linkName
+     *
      * 
      * @param value
      *     allowed object is
@@ -370,7 +364,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see linkDescription
+     *
      * 
      * @return
      *     possible object is
@@ -382,7 +376,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see linkDescription
+     *
      * 
      * @param value
      *     allowed object is
@@ -394,7 +388,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see linkSnippet
+     *
      * 
      * @return
      *     possible object is
@@ -406,7 +400,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see linkSnippet
+     *
      * 
      * @param value
      *     allowed object is
@@ -418,7 +412,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see expires
+     *
      * 
      * @return
      *     possible object is
@@ -430,7 +424,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see expires
+     *
      * 
      * @param value
      *     allowed object is
@@ -442,7 +436,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see update
+     *
      * 
      * @return
      *     possible object is
@@ -454,7 +448,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see update
+     *
      * 
      * @param value
      *     allowed object is
@@ -466,13 +460,13 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see abstractView
+     *
      * 
      * @return
      *     possible object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code >}
+     *     {@code <}{@link LookAt}{@code >}
+     *     {@code <}{@link Camera}{@code >}
      *     
      */
     public AbstractView getAbstractView() {
@@ -480,13 +474,13 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see abstractView
+     *
      * 
      * @param value
      *     allowed object is
-     *     {@code <}{@link AbstractView}{@code>}
-     *     {@code <}{@link LookAt}{@code>}
-     *     {@code <}{@link Camera}{@code>}
+     *     {@code <}{@link AbstractView}{@code >}
+     *     {@code <}{@link LookAt}{@code >}
+     *     {@code <}{@link Camera}{@code >}
      *     
      */
     public void setAbstractView(AbstractView value) {
@@ -494,7 +488,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see networkLinkControlSimpleExtension
+     *
      * 
      */
     public List<Object> getNetworkLinkControlSimpleExtension() {
@@ -505,7 +499,7 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see networkLinkControlObjectExtension
+     *
      * 
      */
     public List<AbstractObject> getNetworkLinkControlObjectExtension() {
@@ -652,9 +646,9 @@ public class NetworkLinkControl implements Cloneable
      * Creates a new instance of {@link Snippet} and set it to linkSnippet.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Snippet snippet = new Snippet();
-     * this.setLinkSnippet(snippet); </code>
+     * this.setLinkSnippet(snippet); }
      * 
      * 
      */
@@ -668,9 +662,9 @@ public class NetworkLinkControl implements Cloneable
      * Creates a new instance of {@link Update} and set it to update.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Update update = new Update();
-     * this.setUpdate(update); </code>
+     * this.setUpdate(update); }
      * 
      * 
      * @param createOrDeleteOrChange
@@ -688,9 +682,9 @@ public class NetworkLinkControl implements Cloneable
      * Creates a new instance of {@link LookAt} and set it to abstractView.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * LookAt lookAt = new LookAt();
-     * this.setAbstractView(lookAt); </code>
+     * this.setAbstractView(lookAt); }
      * 
      * 
      */
@@ -704,9 +698,9 @@ public class NetworkLinkControl implements Cloneable
      * Creates a new instance of {@link Camera} and set it to abstractView.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Camera camera = new Camera();
-     * this.setAbstractView(camera); </code>
+     * this.setAbstractView(camera); }
      * 
      * 
      */
@@ -717,9 +711,10 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see networkLinkControlSimpleExtension
+     *
      * 
      * @param networkLinkControlSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setNetworkLinkControlSimpleExtension(final List<Object> networkLinkControlSimpleExtension) {
         this.networkLinkControlSimpleExtension = networkLinkControlSimpleExtension;
@@ -731,7 +726,7 @@ public class NetworkLinkControl implements Cloneable
      * @param networkLinkControlSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public NetworkLinkControl addToNetworkLinkControlSimpleExtension(final Object networkLinkControlSimpleExtension) {
         this.getNetworkLinkControlSimpleExtension().add(networkLinkControlSimpleExtension);
@@ -739,9 +734,10 @@ public class NetworkLinkControl implements Cloneable
     }
 
     /**
-     * @see networkLinkControlObjectExtension
+     *
      * 
      * @param networkLinkControlObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setNetworkLinkControlObjectExtension(final List<AbstractObject> networkLinkControlObjectExtension) {
         this.networkLinkControlObjectExtension = networkLinkControlObjectExtension;
@@ -753,7 +749,7 @@ public class NetworkLinkControl implements Cloneable
      * @param networkLinkControlObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public NetworkLinkControl addToNetworkLinkControlObjectExtension(final AbstractObject networkLinkControlObjectExtension) {
         this.getNetworkLinkControlObjectExtension().add(networkLinkControlObjectExtension);
@@ -762,7 +758,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setMinRefreshPeriod(double)
+     *
      * 
      * @param minRefreshPeriod
      *     required parameter
@@ -774,7 +770,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setMaxSessionLength(double)
+     *
      * 
      * @param maxSessionLength
      *     required parameter
@@ -786,7 +782,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setCookie(String)
+     *
      * 
      * @param cookie
      *     required parameter
@@ -798,7 +794,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setMessage(String)
+     *
      * 
      * @param message
      *     required parameter
@@ -810,7 +806,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLinkName(String)
+     *
      * 
      * @param linkName
      *     required parameter
@@ -822,7 +818,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLinkDescription(String)
+     *
      * 
      * @param linkDescription
      *     required parameter
@@ -834,7 +830,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setLinkSnippet(Snippet)
+     *
      * 
      * @param linkSnippet
      *     required parameter
@@ -846,7 +842,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setExpires(String)
+     *
      * 
      * @param expires
      *     required parameter
@@ -858,7 +854,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUpdate(Update)
+     *
      * 
      * @param update
      *     required parameter
@@ -870,7 +866,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAbstractView(AbstractView)
+     *
      * 
      * @param abstractView
      *     required parameter
@@ -882,7 +878,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNetworkLinkControlSimpleExtension(List<Object>)
+     *
      * 
      * @param networkLinkControlSimpleExtension
      *     required parameter
@@ -894,7 +890,7 @@ public class NetworkLinkControl implements Cloneable
 
     /**
      * fluent setter
-     * @see #setNetworkLinkControlObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param networkLinkControlObjectExtension
      *     required parameter

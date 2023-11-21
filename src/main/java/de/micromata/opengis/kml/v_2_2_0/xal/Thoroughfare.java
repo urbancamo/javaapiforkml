@@ -1,26 +1,15 @@
 
 package de.micromata.opengis.kml.v_2_2_0.xal;
 
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAnyAttribute;
-import jakarta.xml.bind.annotation.XmlAnyElement;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlElementRef;
-import jakarta.xml.bind.annotation.XmlElementRefs;
-import jakarta.xml.bind.annotation.XmlElements;
-import jakarta.xml.bind.annotation.XmlMixed;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.namespace.QName;
 
 
 /**
@@ -730,9 +719,9 @@ public class Thoroughfare implements Cloneable
     /**
      * Creates a new instance of {@link AddressLine} and adds it to addressLine.
      * This method is a short version for:
-     * <code>
+     * {@code
      * AddressLine addressLine = new AddressLine();
-     * this.getAddressLine().add(addressLine); </code>
+     * this.getAddressLine().add(addressLine); }
      * 
      * 
      */
@@ -745,9 +734,9 @@ public class Thoroughfare implements Cloneable
     /**
      * Creates a new instance of {@link ThoroughfareNumberPrefix} and adds it to thoroughfareNumberPrefix.
      * This method is a short version for:
-     * <code>
+     * {@code
      * ThoroughfareNumberPrefix thoroughfareNumberPrefix = new ThoroughfareNumberPrefix();
-     * this.getThoroughfareNumberPrefix().add(thoroughfareNumberPrefix); </code>
+     * this.getThoroughfareNumberPrefix().add(thoroughfareNumberPrefix); }
      * 
      * 
      */
@@ -760,9 +749,9 @@ public class Thoroughfare implements Cloneable
     /**
      * Creates a new instance of {@link ThoroughfareNumberSuffix} and adds it to thoroughfareNumberSuffix.
      * This method is a short version for:
-     * <code>
+     * {@code
      * ThoroughfareNumberSuffix thoroughfareNumberSuffix = new ThoroughfareNumberSuffix();
-     * this.getThoroughfareNumberSuffix().add(thoroughfareNumberSuffix); </code>
+     * this.getThoroughfareNumberSuffix().add(thoroughfareNumberSuffix); }
      * 
      * 
      */
@@ -776,9 +765,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link ThoroughfarePreDirection} and set it to thoroughfarePreDirection.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ThoroughfarePreDirection thoroughfarePreDirection = new ThoroughfarePreDirection();
-     * this.setThoroughfarePreDirection(thoroughfarePreDirection); </code>
+     * this.setThoroughfarePreDirection(thoroughfarePreDirection); }
      * 
      * 
      */
@@ -792,9 +781,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link ThoroughfareLeadingType} and set it to thoroughfareLeading.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ThoroughfareLeadingType thoroughfareLeadingType = new ThoroughfareLeadingType();
-     * this.setThoroughfareLeading(thoroughfareLeadingType); </code>
+     * this.setThoroughfareLeading(thoroughfareLeadingType); }
      * 
      * 
      */
@@ -807,9 +796,9 @@ public class Thoroughfare implements Cloneable
     /**
      * Creates a new instance of {@link ThoroughfareName} and adds it to thoroughfareName.
      * This method is a short version for:
-     * <code>
+     * {@code
      * ThoroughfareName thoroughfareName = new ThoroughfareName();
-     * this.getThoroughfareName().add(thoroughfareName); </code>
+     * this.getThoroughfareName().add(thoroughfareName); }
      * 
      * 
      */
@@ -823,9 +812,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link ThoroughfareTrailingType} and set it to thoroughfareTrailing.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ThoroughfareTrailingType thoroughfareTrailingType = new ThoroughfareTrailingType();
-     * this.setThoroughfareTrailing(thoroughfareTrailingType); </code>
+     * this.setThoroughfareTrailing(thoroughfareTrailingType); }
      * 
      * 
      */
@@ -839,9 +828,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link ThoroughfarePostDirection} and set it to thoroughfarePostDirection.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * ThoroughfarePostDirection thoroughfarePostDirection = new ThoroughfarePostDirection();
-     * this.setThoroughfarePostDirection(thoroughfarePostDirection); </code>
+     * this.setThoroughfarePostDirection(thoroughfarePostDirection); }
      * 
      * 
      */
@@ -855,9 +844,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link Thoroughfare.DependentThoroughfare} and set it to dependentThoroughfare.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * DependentThoroughfare dependentThoroughfare = new DependentThoroughfare();
-     * this.setDependentThoroughfare(dependentThoroughfare); </code>
+     * this.setDependentThoroughfare(dependentThoroughfare); }
      * 
      * 
      */
@@ -871,9 +860,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link DependentLocality} and set it to dependentLocality.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * DependentLocality dependentLocality = new DependentLocality();
-     * this.setDependentLocality(dependentLocality); </code>
+     * this.setDependentLocality(dependentLocality); }
      * 
      * 
      * @param postBox
@@ -895,9 +884,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link Premise} and set it to premise.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Premise premise = new Premise();
-     * this.setPremise(premise); </code>
+     * this.setPremise(premise); }
      * 
      * 
      * @param premiseNumber
@@ -917,9 +906,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link Firm} and set it to firm.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Firm firm = new Firm();
-     * this.setFirm(firm); </code>
+     * this.setFirm(firm); }
      * 
      * 
      */
@@ -933,9 +922,9 @@ public class Thoroughfare implements Cloneable
      * Creates a new instance of {@link PostalCode} and set it to postalCode.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * PostalCode postalCode = new PostalCode();
-     * this.setPostalCode(postalCode); </code>
+     * this.setPostalCode(postalCode); }
      * 
      * 
      */
@@ -946,12 +935,13 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list List<AddressLine>.
+     * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list {@code List<AddressLine>}.
      * <p>Note:
-     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAddressLine} instead.
+     * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withAddressLine instead.
      * 
      * 
      * @param addressLine
+     *     Objects of the following type are allowed in the list: {@link AddressLine}
      */
     public void setAddressLine(final List<AddressLine> addressLine) {
         this.addressLine = addressLine;
@@ -963,7 +953,7 @@ public class Thoroughfare implements Cloneable
      * @param addressLine
      *     Objects of the following type are allowed in the list: {@link AddressLine}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Thoroughfare addToAddressLine(final AddressLine addressLine) {
         this.getAddressLine().add(addressLine);
@@ -971,12 +961,13 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the thoroughfareNumberOrThoroughfareNumberRange property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the thoroughfareNumberOrThoroughfareNumberRange property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareNumberOrThoroughfareNumberRange} instead.
      * 
      * 
      * @param thoroughfareNumberOrThoroughfareNumberRange
+     *     Objects of the following type are allowed in the list: {@link Thoroughfare.ThoroughfareNumberRange}{@link ThoroughfareNumber}
      */
     public void setThoroughfareNumberOrThoroughfareNumberRange(final List<Object> thoroughfareNumberOrThoroughfareNumberRange) {
         this.thoroughfareNumberOrThoroughfareNumberRange = thoroughfareNumberOrThoroughfareNumberRange;
@@ -988,7 +979,7 @@ public class Thoroughfare implements Cloneable
      * @param thoroughfareNumberOrThoroughfareNumberRange
      *     Objects of the following type are allowed in the list: {@link Thoroughfare.ThoroughfareNumberRange}{@link ThoroughfareNumber}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Thoroughfare addToThoroughfareNumberOrThoroughfareNumberRange(final Object thoroughfareNumberOrThoroughfareNumberRange) {
         this.getThoroughfareNumberOrThoroughfareNumberRange().add(thoroughfareNumberOrThoroughfareNumberRange);
@@ -996,12 +987,13 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the thoroughfareNumberPrefix property Objects of the following type(s) are allowed in the list List<ThoroughfareNumberPrefix>.
+     * Sets the value of the thoroughfareNumberPrefix property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareNumberPrefix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareNumberPrefix} instead.
      * 
      * 
      * @param thoroughfareNumberPrefix
+     *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberPrefix}
      */
     public void setThoroughfareNumberPrefix(final List<ThoroughfareNumberPrefix> thoroughfareNumberPrefix) {
         this.thoroughfareNumberPrefix = thoroughfareNumberPrefix;
@@ -1013,7 +1005,7 @@ public class Thoroughfare implements Cloneable
      * @param thoroughfareNumberPrefix
      *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberPrefix}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Thoroughfare addToThoroughfareNumberPrefix(final ThoroughfareNumberPrefix thoroughfareNumberPrefix) {
         this.getThoroughfareNumberPrefix().add(thoroughfareNumberPrefix);
@@ -1021,12 +1013,13 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the thoroughfareNumberSuffix property Objects of the following type(s) are allowed in the list List<ThoroughfareNumberSuffix>.
+     * Sets the value of the thoroughfareNumberSuffix property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareNumberSuffix>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareNumberSuffix} instead.
      * 
      * 
      * @param thoroughfareNumberSuffix
+     *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberSuffix}
      */
     public void setThoroughfareNumberSuffix(final List<ThoroughfareNumberSuffix> thoroughfareNumberSuffix) {
         this.thoroughfareNumberSuffix = thoroughfareNumberSuffix;
@@ -1038,7 +1031,7 @@ public class Thoroughfare implements Cloneable
      * @param thoroughfareNumberSuffix
      *     Objects of the following type are allowed in the list: {@link ThoroughfareNumberSuffix}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Thoroughfare addToThoroughfareNumberSuffix(final ThoroughfareNumberSuffix thoroughfareNumberSuffix) {
         this.getThoroughfareNumberSuffix().add(thoroughfareNumberSuffix);
@@ -1046,12 +1039,13 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list List<ThoroughfareName>.
+     * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareName>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareName} instead.
      * 
      * 
      * @param thoroughfareName
+     *     Objects of the following type are allowed in the list: {@link ThoroughfareName}
      */
     public void setThoroughfareName(final List<ThoroughfareName> thoroughfareName) {
         this.thoroughfareName = thoroughfareName;
@@ -1063,7 +1057,7 @@ public class Thoroughfare implements Cloneable
      * @param thoroughfareName
      *     Objects of the following type are allowed in the list: {@link ThoroughfareName}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Thoroughfare addToThoroughfareName(final ThoroughfareName thoroughfareName) {
         this.getThoroughfareName().add(thoroughfareName);
@@ -1071,12 +1065,13 @@ public class Thoroughfare implements Cloneable
     }
 
     /**
-     * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the any property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
      * 
      * 
      * @param any
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setAny(final List<Object> any) {
         this.any = any;
@@ -1088,7 +1083,7 @@ public class Thoroughfare implements Cloneable
      * @param any
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public Thoroughfare addToAny(final Object any) {
         this.getAny().add(any);
@@ -1097,7 +1092,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAddressLine(List<AddressLine>)
+     *
      * 
      * @param addressLine
      *     required parameter
@@ -1109,7 +1104,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfareNumberOrThoroughfareNumberRange(List<Object>)
+     *
      * 
      * @param thoroughfareNumberOrThoroughfareNumberRange
      *     required parameter
@@ -1121,7 +1116,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfareNumberPrefix(List<ThoroughfareNumberPrefix>)
+     *
      * 
      * @param thoroughfareNumberPrefix
      *     required parameter
@@ -1133,7 +1128,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfareNumberSuffix(List<ThoroughfareNumberSuffix>)
+     *
      * 
      * @param thoroughfareNumberSuffix
      *     required parameter
@@ -1145,7 +1140,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfarePreDirection(ThoroughfarePreDirection)
+     *
      * 
      * @param thoroughfarePreDirection
      *     required parameter
@@ -1157,7 +1152,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfareLeading(ThoroughfareLeadingType)
+     *
      * 
      * @param thoroughfareLeading
      *     required parameter
@@ -1169,7 +1164,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfareName(List<ThoroughfareName>)
+     *
      * 
      * @param thoroughfareName
      *     required parameter
@@ -1181,7 +1176,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfareTrailing(ThoroughfareTrailingType)
+     *
      * 
      * @param thoroughfareTrailing
      *     required parameter
@@ -1193,7 +1188,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setThoroughfarePostDirection(ThoroughfarePostDirection)
+     *
      * 
      * @param thoroughfarePostDirection
      *     required parameter
@@ -1205,7 +1200,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDependentThoroughfare(DependentThoroughfare)
+     *
      * 
      * @param dependentThoroughfare
      *     required parameter
@@ -1217,7 +1212,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setAny(List<Object>)
+     *
      * 
      * @param any
      *     required parameter
@@ -1229,7 +1224,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setUnderscore(String)
+     *
      * 
      * @param underscore
      *     required parameter
@@ -1241,7 +1236,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setXalDependentThoroughfares(String)
+     *
      * 
      * @param xalDependentThoroughfares
      *     required parameter
@@ -1253,7 +1248,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDependentThoroughfaresIndicator(String)
+     *
      * 
      * @param dependentThoroughfaresIndicator
      *     required parameter
@@ -1265,7 +1260,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDependentThoroughfaresConnector(String)
+     *
      * 
      * @param dependentThoroughfaresConnector
      *     required parameter
@@ -1277,7 +1272,7 @@ public class Thoroughfare implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDependentThoroughfares(String)
+     *
      * 
      * @param dependentThoroughfares
      *     required parameter
@@ -1627,9 +1622,9 @@ public class Thoroughfare implements Cloneable
         /**
          * Creates a new instance of {@link AddressLine} and adds it to addressLine.
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressLine addressLine = new AddressLine();
-         * this.getAddressLine().add(addressLine); </code>
+         * this.getAddressLine().add(addressLine); }
          * 
          * 
          */
@@ -1643,9 +1638,9 @@ public class Thoroughfare implements Cloneable
          * Creates a new instance of {@link ThoroughfarePreDirection} and set it to thoroughfarePreDirection.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * ThoroughfarePreDirection thoroughfarePreDirection = new ThoroughfarePreDirection();
-         * this.setThoroughfarePreDirection(thoroughfarePreDirection); </code>
+         * this.setThoroughfarePreDirection(thoroughfarePreDirection); }
          * 
          * 
          */
@@ -1659,9 +1654,9 @@ public class Thoroughfare implements Cloneable
          * Creates a new instance of {@link ThoroughfareLeadingType} and set it to thoroughfareLeading.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * ThoroughfareLeadingType thoroughfareLeadingType = new ThoroughfareLeadingType();
-         * this.setThoroughfareLeading(thoroughfareLeadingType); </code>
+         * this.setThoroughfareLeading(thoroughfareLeadingType); }
          * 
          * 
          */
@@ -1674,9 +1669,9 @@ public class Thoroughfare implements Cloneable
         /**
          * Creates a new instance of {@link ThoroughfareName} and adds it to thoroughfareName.
          * This method is a short version for:
-         * <code>
+         * {@code
          * ThoroughfareName thoroughfareName = new ThoroughfareName();
-         * this.getThoroughfareName().add(thoroughfareName); </code>
+         * this.getThoroughfareName().add(thoroughfareName); }
          * 
          * 
          */
@@ -1690,9 +1685,9 @@ public class Thoroughfare implements Cloneable
          * Creates a new instance of {@link ThoroughfareTrailingType} and set it to thoroughfareTrailing.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * ThoroughfareTrailingType thoroughfareTrailingType = new ThoroughfareTrailingType();
-         * this.setThoroughfareTrailing(thoroughfareTrailingType); </code>
+         * this.setThoroughfareTrailing(thoroughfareTrailingType); }
          * 
          * 
          */
@@ -1706,9 +1701,9 @@ public class Thoroughfare implements Cloneable
          * Creates a new instance of {@link ThoroughfarePostDirection} and set it to thoroughfarePostDirection.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * ThoroughfarePostDirection thoroughfarePostDirection = new ThoroughfarePostDirection();
-         * this.setThoroughfarePostDirection(thoroughfarePostDirection); </code>
+         * this.setThoroughfarePostDirection(thoroughfarePostDirection); }
          * 
          * 
          */
@@ -1719,12 +1714,13 @@ public class Thoroughfare implements Cloneable
         }
 
         /**
-         * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list List<AddressLine>.
+         * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list {@code List<AddressLine>}.
          * <p>Note:
-         * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAddressLine} instead.
+         * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withAddressLine instead.
          * 
          * 
          * @param addressLine
+         *     Objects of the following type are allowed in the list: {@link AddressLine}
          */
         public void setAddressLine(final List<AddressLine> addressLine) {
             this.addressLine = addressLine;
@@ -1736,7 +1732,7 @@ public class Thoroughfare implements Cloneable
          * @param addressLine
          *     Objects of the following type are allowed in the list: {@link AddressLine}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public Thoroughfare.DependentThoroughfare addToAddressLine(final AddressLine addressLine) {
             this.getAddressLine().add(addressLine);
@@ -1744,12 +1740,13 @@ public class Thoroughfare implements Cloneable
         }
 
         /**
-         * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list List<ThoroughfareName>.
+         * Sets the value of the thoroughfareName property Objects of the following type(s) are allowed in the list {@code List<ThoroughfareName>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withThoroughfareName} instead.
          * 
          * 
          * @param thoroughfareName
+         *     Objects of the following type are allowed in the list: {@link ThoroughfareName}
          */
         public void setThoroughfareName(final List<ThoroughfareName> thoroughfareName) {
             this.thoroughfareName = thoroughfareName;
@@ -1761,7 +1758,7 @@ public class Thoroughfare implements Cloneable
          * @param thoroughfareName
          *     Objects of the following type are allowed in the list: {@link ThoroughfareName}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public Thoroughfare.DependentThoroughfare addToThoroughfareName(final ThoroughfareName thoroughfareName) {
             this.getThoroughfareName().add(thoroughfareName);
@@ -1769,12 +1766,13 @@ public class Thoroughfare implements Cloneable
         }
 
         /**
-         * Sets the value of the any property Objects of the following type(s) are allowed in the list List<Object>.
+         * Sets the value of the any property Objects of the following type(s) are allowed in the list {@code List<Object>}.
          * <p>Note:
          * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAny} instead.
          * 
          * 
          * @param any
+         *     Objects of the following type are allowed in the list: {@link Object}
          */
         public void setAny(final List<Object> any) {
             this.any = any;
@@ -1786,7 +1784,7 @@ public class Thoroughfare implements Cloneable
          * @param any
          *     Objects of the following type are allowed in the list: {@link Object}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public Thoroughfare.DependentThoroughfare addToAny(final Object any) {
             this.getAny().add(any);
@@ -1795,7 +1793,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressLine(List<AddressLine>)
+         *
          * 
          * @param addressLine
          *     required parameter
@@ -1807,7 +1805,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setThoroughfarePreDirection(ThoroughfarePreDirection)
+         *
          * 
          * @param thoroughfarePreDirection
          *     required parameter
@@ -1819,7 +1817,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setThoroughfareLeading(ThoroughfareLeadingType)
+         *
          * 
          * @param thoroughfareLeading
          *     required parameter
@@ -1831,7 +1829,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setThoroughfareName(List<ThoroughfareName>)
+         *
          * 
          * @param thoroughfareName
          *     required parameter
@@ -1843,7 +1841,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setThoroughfareTrailing(ThoroughfareTrailingType)
+         *
          * 
          * @param thoroughfareTrailing
          *     required parameter
@@ -1855,7 +1853,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setThoroughfarePostDirection(ThoroughfarePostDirection)
+         *
          * 
          * @param thoroughfarePostDirection
          *     required parameter
@@ -1867,7 +1865,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAny(List<Object>)
+         *
          * 
          * @param any
          *     required parameter
@@ -1879,7 +1877,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setUnderscore(String)
+         *
          * 
          * @param underscore
          *     required parameter
@@ -2327,9 +2325,9 @@ public class Thoroughfare implements Cloneable
         /**
          * Creates a new instance of {@link AddressLine} and adds it to addressLine.
          * This method is a short version for:
-         * <code>
+         * {@code
          * AddressLine addressLine = new AddressLine();
-         * this.getAddressLine().add(addressLine); </code>
+         * this.getAddressLine().add(addressLine); }
          * 
          * 
          */
@@ -2343,9 +2341,9 @@ public class Thoroughfare implements Cloneable
          * Creates a new instance of {@link Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom} and set it to thoroughfareNumberFrom.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * ThoroughfareNumberFrom thoroughfareNumberFrom = new ThoroughfareNumberFrom();
-         * this.setThoroughfareNumberFrom(thoroughfareNumberFrom); </code>
+         * this.setThoroughfareNumberFrom(thoroughfareNumberFrom); }
          * 
          * 
          */
@@ -2359,9 +2357,9 @@ public class Thoroughfare implements Cloneable
          * Creates a new instance of {@link Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo} and set it to thoroughfareNumberTo.
          * 
          * This method is a short version for:
-         * <code>
+         * {@code
          * ThoroughfareNumberTo thoroughfareNumberTo = new ThoroughfareNumberTo();
-         * this.setThoroughfareNumberTo(thoroughfareNumberTo); </code>
+         * this.setThoroughfareNumberTo(thoroughfareNumberTo); }
          * 
          * 
          */
@@ -2372,12 +2370,13 @@ public class Thoroughfare implements Cloneable
         }
 
         /**
-         * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list List<AddressLine>.
+         * Sets the value of the addressLine property Objects of the following type(s) are allowed in the list {@code List<AddressLine>}.
          * <p>Note:
-         * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withAddressLine} instead.
+         * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use withAddressLine instead.
          * 
          * 
          * @param addressLine
+         *     Objects of the following type are allowed in the list: {@link AddressLine}
          */
         public void setAddressLine(final List<AddressLine> addressLine) {
             this.addressLine = addressLine;
@@ -2389,7 +2388,7 @@ public class Thoroughfare implements Cloneable
          * @param addressLine
          *     Objects of the following type are allowed in the list: {@link AddressLine}
          * @return
-         *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+         *     true (as general contract of Collection.add). 
          */
         public Thoroughfare.ThoroughfareNumberRange addToAddressLine(final AddressLine addressLine) {
             this.getAddressLine().add(addressLine);
@@ -2398,7 +2397,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setAddressLine(List<AddressLine>)
+         *
          * 
          * @param addressLine
          *     required parameter
@@ -2410,7 +2409,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setRange(String)
+         *
          * 
          * @param range
          *     required parameter
@@ -2422,7 +2421,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setIndicator(String)
+         *
          * 
          * @param indicator
          *     required parameter
@@ -2434,7 +2433,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setSeparator(String)
+         *
          * 
          * @param separator
          *     required parameter
@@ -2446,7 +2445,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setIndicatorOccurrence(String)
+         *
          * 
          * @param indicatorOccurrence
          *     required parameter
@@ -2458,7 +2457,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setNumberRangeOccurrence(String)
+         *
          * 
          * @param numberRangeOccurrence
          *     required parameter
@@ -2470,7 +2469,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setUnderscore(String)
+         *
          * 
          * @param underscore
          *     required parameter
@@ -2482,7 +2481,7 @@ public class Thoroughfare implements Cloneable
 
         /**
          * fluent setter
-         * @see #setCode(String)
+         *
          * 
          * @param code
          *     required parameter
@@ -2623,12 +2622,13 @@ public class Thoroughfare implements Cloneable
             }
 
             /**
-             * Sets the value of the content property Objects of the following type(s) are allowed in the list List<Object>.
+             * Sets the value of the content property Objects of the following type(s) are allowed in the list {@code List<Object>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withContent} instead.
              * 
              * 
              * @param content
+             *     Objects of the following type are allowed in the list: {@link String}{@link ThoroughfareNumberPrefix}{@link AddressLine}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              */
             public void setContent(final List<Object> content) {
                 this.content = content;
@@ -2640,7 +2640,7 @@ public class Thoroughfare implements Cloneable
              * @param content
              *     Objects of the following type are allowed in the list: {@link String}{@link ThoroughfareNumberPrefix}{@link AddressLine}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
-             *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+             *     true (as general contract of Collection.add). 
              */
             public Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberFrom addToContent(final Object content) {
                 this.getContent().add(content);
@@ -2649,7 +2649,7 @@ public class Thoroughfare implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(List<Object>)
+             *
              * 
              * @param content
              *     required parameter
@@ -2661,7 +2661,7 @@ public class Thoroughfare implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter
@@ -2802,12 +2802,13 @@ public class Thoroughfare implements Cloneable
             }
 
             /**
-             * Sets the value of the content property Objects of the following type(s) are allowed in the list List<Object>.
+             * Sets the value of the content property Objects of the following type(s) are allowed in the list {@code List<Object>}.
              * <p>Note:
              * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withContent} instead.
              * 
              * 
              * @param content
+             *     Objects of the following type are allowed in the list: {@link String}{@link ThoroughfareNumberPrefix}{@link AddressLine}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              */
             public void setContent(final List<Object> content) {
                 this.content = content;
@@ -2819,7 +2820,7 @@ public class Thoroughfare implements Cloneable
              * @param content
              *     Objects of the following type are allowed in the list: {@link String}{@link ThoroughfareNumberPrefix}{@link AddressLine}{@link ThoroughfareNumber}{@link ThoroughfareNumberSuffix}
              * @return
-             *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+             *     true (as general contract of Collection.add). 
              */
             public Thoroughfare.ThoroughfareNumberRange.ThoroughfareNumberTo addToContent(final Object content) {
                 this.getContent().add(content);
@@ -2828,7 +2829,7 @@ public class Thoroughfare implements Cloneable
 
             /**
              * fluent setter
-             * @see #setContent(List<Object>)
+             *
              * 
              * @param content
              *     required parameter
@@ -2840,7 +2841,7 @@ public class Thoroughfare implements Cloneable
 
             /**
              * fluent setter
-             * @see #setCode(String)
+             *
              * 
              * @param code
              *     required parameter

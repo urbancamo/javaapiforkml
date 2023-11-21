@@ -1,92 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>de.micromata.jak</groupId>
-  <artifactId>JavaAPIforKml</artifactId>
-  <version>${revision}</version>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+  <groupId>uk.m0nom</groupId>
+  <artifactId>javaapiforkml</artifactId>
+  <version>3.0.6</version>
   <packaging>jar</packaging>
-  <name>a Java API for Kml</name>
-  <description>This is JavaAPIforKMml, Micromata's library for use with applications that want to parse, generate and operate on KML. It is an implementation of the OGC KML 2.2 standard. It is written entirely in Java and makes heavy use of JAXB.</description>
-  <url>https://github.com/micromata/javaapiforkml</url>
+  <name>Java Api for Kml</name>
+  <description>This is JavaApiForKml, Micromata's library for use with applications that want to parse, generate and
+	operate on KML. It is an implementation of the OGC KML 2.2 standard. It is written entirely in Java and makes
+	heavy use of JAXB. Now being maintained by @urbancamo.</description>
+  <url>https://github.com/urbancamo/javaapiforkml/wiki</url>
+
   <organization>
-    <name>Micromata GmbH</name>
-    <url>http://micromata.de</url>
+    <name>Mark Wickens (urbancamo)</name>
+    <url>https://urbancamo.github.io/</url>
   </organization>
-  <licenses>
-    <license>
-      <name>BSD license</name>
-      <url>/LICENSE.txt</url>
-      <distribution>manual</distribution>
-      <comments>All rights reserved.</comments>
-    </license>
-  </licenses>
+
   <developers>
     <developer>
-      <id>bachmann.florian</id>
-      <name>Florian Bachmann</name>
-      <email>f.bachmann@micromata.de</email>
-      <organization>Micromata GmbH</organization>
-      <organizationUrl>http://www.micromata.com</organizationUrl>
-      <roles>
-        <role>architect</role>
-        <role>developer</role>
-      </roles>
-      <timezone>-1</timezone>
-    </developer>
-    <developer>
-      <id>schnitzelhugo</id>
-      <name>Bernd Kratz</name>
-      <email>b.kratz@micromata.de</email>
-      <organization>Micromata GmbH</organization>
-      <organizationUrl>http://www.micromata.com</organizationUrl>
-      <roles>
-        <role>developer</role>
-      </roles>
-      <timezone>-1</timezone>
-    </developer>
-    <developer>
-      <id>landgraf1967</id>
-      <name>Thomas Landgraf</name>
-      <email>tl@micromata.de</email>
-      <organization>Micromata GmbH</organization>
-      <organizationUrl>http://www.micromata.com</organizationUrl>
-      <roles>
-        <role>developer</role>
-      </roles>
-      <timezone>-1</timezone>
+      <name>Mark Wickens</name>
+      <email>mark@wickensonline.co.uk</email>
+      <organization>uk.m0nom</organization>
+      <organizationUrl>https://github.com/urbancamo</organizationUrl>
     </developer>
   </developers>
-  <scm>
-    <connection>scm:git:git://github.com/micromata/javaapiforkml.git</connection>
-    <developerConnection>scm:git:git@github.com:micromata/javaapiforkml.git</developerConnection>
-    <tag>${revision}</tag>
-    <url>https://github.com/micromata/javaapiforkml</url>
-  </scm>
-
-  <distributionManagement>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
-
-  <properties>
-    <revision>3.0.0-SNAPSHOT</revision>
-    <java.version>11</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!--plugin versions -->
-    <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
-    <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
-    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-    <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
-    <maven-wrapper-plugin.version>3.1.1</maven-wrapper-plugin.version>
-    <maven-project-info-reports-plugin.version>3.4.2</maven-project-info-reports-plugin.version>
-    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
     <maven-enforcer-plugin.version>3.2.1</maven-enforcer-plugin.version>
     <!--third-party plugin versions -->
     <sortpom-maven-plugin.version>3.2.1</sortpom-maven-plugin.version>
@@ -95,24 +39,15 @@
     <extra-enforcer-rules.version>1.6.1</extra-enforcer-rules.version>
     <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
 
-    <!--dependency versions -->
-    <jaxb.version>4.0.1</jaxb.version>
-    <log4j2.version>2.20.0</log4j2.version>
-    <slf4j.version>2.0.7</slf4j.version>
-    <junit.version>4.13.1</junit.version>
-    <xmlunit.version>1.6</xmlunit.version>
+    <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
+    <!--third-party plugin versions -->
+    <sortpom-maven-plugin.version>3.2.1</sortpom-maven-plugin.version>
+    <ossindex-maven-enforcer-rules.version>3.2.0</ossindex-maven-enforcer-rules.version>
+    <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
   </properties>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-bom</artifactId>
-        <version>${log4j2.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+    <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
@@ -123,6 +58,11 @@
       <groupId>org.glassfish.jaxb</groupId>
       <artifactId>jaxb-xjc</artifactId>
       <version>${jaxb.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>${jetbrains-annotations.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -148,11 +88,6 @@
       <version>${xmlunit.version}</version>
       <scope>test</scope>
     </dependency>
-    <!--
-			code generation part disabled, till all files are in public maven repositories <dependency>
-			<groupId>de.micromata.jak</groupId> <artifactId>XJCPluginJavaApiforKml</artifactId> <version>1.0-SNAPSHOT</version>
-			<type>jar</type> <scope>compile</scope> </dependency>
-		-->
   </dependencies>
 
   <repositories>
@@ -173,6 +108,7 @@
       <url>https://download.java.net/maven/2</url>
     </pluginRepository>
   </pluginRepositories>
+
   <build>
     <finalName>${project.artifactId}</finalName>
     <pluginManagement>
@@ -264,6 +200,7 @@
           </execution>
         </executions>
       </plugin>
+      <!--
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -277,11 +214,6 @@
             <groupId>org.sonatype.ossindex.maven</groupId>
             <artifactId>ossindex-maven-enforcer-rules</artifactId>
             <version>${ossindex-maven-enforcer-rules.version}</version>
-          </dependency>
-          <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>extra-enforcer-rules</artifactId>
-            <version>${extra-enforcer-rules.version}</version>
           </dependency>
         </dependencies>
         <executions>
@@ -374,7 +306,6 @@
                     <exclude>javax.xml.ws</exclude>
                   </excludes>
                   <includes>
-                    <!--only 2.71.1 or greater of log4j2 is allowed-->
                     <include>org.apache.logging.log4j:*:[2.17.2,]</include>
                   </includes>
                   <searchTransitive>true</searchTransitive>
@@ -401,23 +332,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <!--
-				code generation part disabled, till all files are in public maven repositories <plugin>
-				<groupId>org.apache.maven.plugins</groupId> <artifactId>maven-antrun-plugin</artifactId> <executions> <execution>
-				<id>xjc-invocation</id> <phase>generate-sources</phase> <configuration> <tasks> <property name="src.dir"
-				location="src/main" /> <property name="src.dir.gen" location="${src.dir}/java" /> <property name="schema.dir"
-				value="${src.dir}/resources/schema" /> <property name="schema.dir.kml" location="${schema.dir}/ogckml/ogckml22.xsd"
-				/> <property name="schema.dir.kml.binding" value="${schema.dir}/ogckml/JAK_binding.xjb" /> <taskdef name="xjc"
-				classname="com.sun.tools.xjc.XJCTask" classpathref="maven.compile.classpath" /> <description>generate JAK from OGC's
-				KML schema</description> <mkdir dir="${src.dir.gen}/de/micromata/opengis/kml/" /> <delete> <fileset
-				dir="${src.dir.gen}/de/micromata/opengis/kml/" includes="**" /> </delete> <xjc extension="true"
-				binding="${schema.dir.kml.binding}" destdir="${src.dir.gen}" removeOldOutput="yes"
-				schema="${schema.dir}/ogckml/kml22gx.xsd"> <arg value="-XJavaForKmlApi" /> </xjc> <exec executable="perl"
-				dir="${basedir}"> <arg file="scripts/CleanUpGeneratedJAXBSourceFolder.pl" /> <arg
-				file="${src.dir.gen}/de/micromata/opengis/kml" /> </exec> </tasks> </configuration> <goals> <goal>run</goal>
-				</goals> </execution> </executions> </plugin>
-			-->
+      </plugin>-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
@@ -466,6 +381,7 @@
       </extension>
     </extensions>
   </build>
+
   <reporting>
     <plugins>
       <plugin>
@@ -490,7 +406,7 @@
             <configuration>
               <testDoctitle>My Test API for ${project.name} ${project.version}</testDoctitle>
               <testWindowtitle>My Test API for ${project.name}
-								${project.version}</testWindowtitle>
+                                ${project.version}</testWindowtitle>
             </configuration>
           </reportSet>
         </reportSets>
@@ -505,85 +421,27 @@
       </plugin>
     </plugins>
   </reporting>
+
   <profiles>
-    <profile>
-      <id>clover.all</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>com.atlassian.maven.plugins</groupId>
-            <artifactId>maven-clover2-plugin</artifactId>
-            <version>2.5.1</version>
-            <configuration>
-              <snapshot>${user.home}/.clover/${project.groupId}-${project.artifactId}/clover.snapshot</snapshot>
-              <license><![CDATA[QPORQwLRnqofKiVJNSQIKsdKNrrATjdKLVUWxSxJsxdmrDo
-									  mj2KlpGKhDbmto<pV8EfyyGI2L0GfmTXJbnDjh3vD0PmE2E
-									  qNNNtTmqpmmnOnooqRRsuoRMPqnOoPopOrxxtWtVSsWXSMu
-									  TWXVUqqonmqmUUnoqvnprommmmmUUnoqvnprommmmmUUDfZ
-									  oljXqXW7jY8UUnmm]]></license>
-              <excludes>
-                <exclude>**/de/micromata/opengis/kml/v_2_2_0/annotations/**</exclude>
-                <exclude>**/de/micromata/opengis/kml/v_2_2_0/atom/**</exclude>
-                <exclude>**/de/micromata/opengis/kml/v_2_2_0/xal/**</exclude>
-                <exclude>**/de/micromata/jak/**</exclude>
-                <exclude>**/de/micromata/jak/jugh/**</exclude>
-                <exclude>**/de/micromata/jak/incubator/**</exclude>
-                <exclude>**/de/micromata/jak/internal/**</exclude>
-              </excludes>
-              <generatePdf>true</generatePdf>
-              <generateXml>true</generateXml>
-              <generateHtml>true</generateHtml>
-            </configuration>
-            <executions>
-              <execution>
-                <id>clover</id>
-                <goals>
-                  <goal>setup</goal>
-                  <goal>optimize</goal>
-                  <goal>snapshot</goal>
-                </goals>
-              </execution>
-              <execution>
-                <goals>
-                  <goal>clover</goal>
-                  <goal>log</goal>
-                </goals>
-                <phase>verify</phase>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
     <profile>
       <id>release</id>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.owasp</groupId>
-            <artifactId>dependency-check-maven</artifactId>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.13</version>
+            <extensions>true</extensions>
             <configuration>
-              <skipRuntimeScope>true</skipRuntimeScope>
-              <skipProvidedScope>true</skipProvidedScope>
-              <failBuildOnCVSS>7</failBuildOnCVSS>
-              <nodeAuditSkipDevDependencies>true</nodeAuditSkipDevDependencies>
-              <nodePackageSkipDevDependencies>true</nodePackageSkipDevDependencies>
-              <suppressionFiles>
-                <!--suppress UnresolvedMavenProperty -->
-                <suppressionFile>project-suppression.xml</suppressionFile>
-              </suppressionFiles>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>check</goal>
-                </goals>
-              </execution>
-            </executions>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
+            <version>3.2.1</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
@@ -596,6 +454,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.2.0</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -608,6 +467,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
