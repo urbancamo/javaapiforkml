@@ -13,7 +13,7 @@ import jakarta.xml.bind.annotation.XmlType;
  * </p>
  * 
  * See Also: 
- * See any element that extends <ColorStyle>
+ * See any element that extends {@code <ColorStyle>}
  * 
  * 
  * 

@@ -1,15 +1,11 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
+import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlSchemaType;
-import jakarta.xml.bind.annotation.XmlSeeAlso;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 
 
 /**
@@ -106,12 +102,13 @@ public abstract class SubStyle
     }
 
     /**
-     * Sets the value of the subStyleSimpleExtension property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the subStyleSimpleExtension property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubStyleSimpleExtension} instead.
      * 
      * 
      * @param subStyleSimpleExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
         this.subStyleSimpleExtension = subStyleSimpleExtension;
@@ -123,7 +120,7 @@ public abstract class SubStyle
      * @param subStyleSimpleExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public SubStyle addToSubStyleSimpleExtension(final Object subStyleSimpleExtension) {
         this.getSubStyleSimpleExtension().add(subStyleSimpleExtension);
@@ -131,12 +128,13 @@ public abstract class SubStyle
     }
 
     /**
-     * Sets the value of the subStyleObjectExtension property Objects of the following type(s) are allowed in the list List<AbstractObject>.
+     * Sets the value of the subStyleObjectExtension property Objects of the following type(s) are allowed in the list {@code List<AbstractObject>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSubStyleObjectExtension} instead.
      * 
      * 
      * @param subStyleObjectExtension
+     *     Objects of the following type are allowed in the list: {@link AbstractObject}
      */
     public void setSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
         this.subStyleObjectExtension = subStyleObjectExtension;
@@ -148,7 +146,7 @@ public abstract class SubStyle
      * @param subStyleObjectExtension
      *     Objects of the following type are allowed in the list: {@link AbstractObject}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public SubStyle addToSubStyleObjectExtension(final AbstractObject subStyleObjectExtension) {
         this.getSubStyleObjectExtension().add(subStyleObjectExtension);
@@ -170,10 +168,12 @@ public abstract class SubStyle
 
     /**
      * fluent setter
-     * @see #setSubStyleSimpleExtension(List<Object>)
+     *
      * 
      * @param subStyleSimpleExtension
      *     required parameter
+     * @return
+     *     SubStyle
      */
     public SubStyle withSubStyleSimpleExtension(final List<Object> subStyleSimpleExtension) {
         this.setSubStyleSimpleExtension(subStyleSimpleExtension);
@@ -182,10 +182,12 @@ public abstract class SubStyle
 
     /**
      * fluent setter
-     * @see #setSubStyleObjectExtension(List<AbstractObject>)
+     *
      * 
      * @param subStyleObjectExtension
      *     required parameter
+     * @return
+     *     SubStyle
      */
     public SubStyle withSubStyleObjectExtension(final List<AbstractObject> subStyleObjectExtension) {
         this.setSubStyleObjectExtension(subStyleObjectExtension);

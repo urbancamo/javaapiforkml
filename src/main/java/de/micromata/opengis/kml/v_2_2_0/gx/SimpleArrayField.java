@@ -1,14 +1,10 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
+import jakarta.xml.bind.annotation.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
 
 
 /**
@@ -175,12 +171,13 @@ public class SimpleArrayField implements Cloneable
     }
 
     /**
-     * Sets the value of the simpleArrayFieldExtension property Objects of the following type(s) are allowed in the list List<Object>.
+     * Sets the value of the simpleArrayFieldExtension property Objects of the following type(s) are allowed in the list {@code List<Object>}.
      * <p>Note:
      * <p>This method does not make use of the fluent pattern.If you would like to make it fluent, use {@link #withSimpleArrayFieldExtension} instead.
      * 
      * 
      * @param simpleArrayFieldExtension
+     *     Objects of the following type are allowed in the list: {@link Object}
      */
     public void setSimpleArrayFieldExtension(final List<Object> simpleArrayFieldExtension) {
         this.simpleArrayFieldExtension = simpleArrayFieldExtension;
@@ -192,7 +189,7 @@ public class SimpleArrayField implements Cloneable
      * @param simpleArrayFieldExtension
      *     Objects of the following type are allowed in the list: {@link Object}
      * @return
-     *     <tt>true</tt> (as general contract of <tt>Collection.add</tt>). 
+     *     true (as general contract of Collection.add). 
      */
     public SimpleArrayField addToSimpleArrayFieldExtension(final Object simpleArrayFieldExtension) {
         this.getSimpleArrayFieldExtension().add(simpleArrayFieldExtension);
@@ -201,7 +198,7 @@ public class SimpleArrayField implements Cloneable
 
     /**
      * fluent setter
-     * @see #setDisplayName(String)
+     *
      * 
      * @param displayName
      *     required parameter
@@ -213,7 +210,7 @@ public class SimpleArrayField implements Cloneable
 
     /**
      * fluent setter
-     * @see #setSimpleArrayFieldExtension(List<Object>)
+     *
      * 
      * @param simpleArrayFieldExtension
      *     required parameter
@@ -225,7 +222,7 @@ public class SimpleArrayField implements Cloneable
 
     /**
      * fluent setter
-     * @see #setType(String)
+     *
      * 
      * @param type
      *     required parameter
@@ -237,7 +234,7 @@ public class SimpleArrayField implements Cloneable
 
     /**
      * fluent setter
-     * @see #setName(String)
+     *
      * 
      * @param name
      *     required parameter

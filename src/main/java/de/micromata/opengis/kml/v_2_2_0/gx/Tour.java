@@ -1,32 +1,20 @@
 
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
-import java.util.List;
-
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-import de.micromata.opengis.kml.v_2_2_0.AbstractObject;
-import de.micromata.opengis.kml.v_2_2_0.AbstractView;
-import de.micromata.opengis.kml.v_2_2_0.ExtendedData;
-import de.micromata.opengis.kml.v_2_2_0.Feature;
-import de.micromata.opengis.kml.v_2_2_0.Metadata;
-import de.micromata.opengis.kml.v_2_2_0.Region;
-import de.micromata.opengis.kml.v_2_2_0.Snippet;
-import de.micromata.opengis.kml.v_2_2_0.StyleSelector;
-import de.micromata.opengis.kml.v_2_2_0.TimePrimitive;
+import de.micromata.opengis.kml.v_2_2_0.*;
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import de.micromata.opengis.kml.v_2_2_0.atom.Author;
 import de.micromata.opengis.kml.v_2_2_0.atom.Link;
 import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
+import jakarta.xml.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
- * <gx:Tour>
+ * {@code <gx:Tour>}
  * <p>
- * <gx:Tour> can contain a single <gx:Playlist> element, which in turn contains an 
+ * {@code <gx:Tour>} can contain a single {@code <gx:Playlist>} element, which in turn contains an
  * ordered list of gx:TourPrimitive elements that define a tour in any KML browser. 
  * Learn more about tours. 
  * </p>
@@ -43,11 +31,11 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
  * &lt;/gx:Tour&gt;</pre>
  * 
  * Contains: 
- * @see: <gx:Playlist>
- * @see: <gx:Tour>
- * @see: <gx:Tour> <gx:Playlist> <!-- gx:TourPrimitive --> ... <!-- /gx:TourPrimitive --> <!--- Any number of gx:TourPrimitive elements can be included ---> </gx:Playlist> </gx:Tour>
- * @see: gx:Playlist
- * @see: gx:TourPrimitive
+ *
+ *
+ *
+ *
+ *
  * 
  * 
  * 
@@ -70,7 +58,7 @@ public class Tour
     }
 
     /**
-     * @see playlist
+     *
      * 
      * @return
      *     possible object is
@@ -82,7 +70,7 @@ public class Tour
     }
 
     /**
-     * @see playlist
+     *
      * 
      * @param value
      *     allowed object is
@@ -132,9 +120,9 @@ public class Tour
      * Creates a new instance of {@link Playlist} and set it to playlist.
      * 
      * This method is a short version for:
-     * <code>
+     * {@code
      * Playlist playlist = new Playlist();
-     * this.setPlaylist(playlist); </code>
+     * this.setPlaylist(playlist); }
      * 
      * 
      */
@@ -146,7 +134,7 @@ public class Tour
 
     /**
      * fluent setter
-     * @see #setPlaylist(Playlist)
+     *
      * 
      * @param playlist
      *     required parameter

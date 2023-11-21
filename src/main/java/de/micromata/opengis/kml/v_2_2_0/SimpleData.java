@@ -1,35 +1,30 @@
 
 package de.micromata.opengis.kml.v_2_2_0;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlAttribute;
-import jakarta.xml.bind.annotation.XmlRootElement;
-import jakarta.xml.bind.annotation.XmlType;
-import jakarta.xml.bind.annotation.XmlValue;
+import jakarta.xml.bind.annotation.*;
 
 
 /**
- * <simpledata name="string">
+ * {@code <simpledata name="string">}
  * <p>
- * <SimpleData name="string"> This element assigns a value to the custom data field 
+ * {@code <SimpleData name="string">} This element assigns a value to the custom data field
  * identified by the name attribute. The type and name of this custom data field are 
- * declared in the <Schema> element. Here is an example of defining two custom data 
- * elements: <Placemark> <name>Easy trail</name> <ExtendedData> <SchemaData schemaUrl="#TrailHeadTypeId"> 
+ * declared in the {@code <Schema>} element. Here is an example of defining two custom data 
+ * elements: {@code <Placemark> <name>Easy trail</name> <ExtendedData> <SchemaData schemaUrl="#TrailHeadTypeId">
  * <SimpleData name="TrailHeadName">Pi in the sky</SimpleData> <SimpleData name="TrailLength">3.14159</SimpleData> 
- * <SimpleData name="ElevationGain">10</SimpleData> </SchemaData> </ExtendedData> <Point> 
- * <coordinates>-122.000,37.002</coordinates> </Point> </Placemark> <Placemark> <name>Difficult 
+ * <SimpleData name="ElevationGain">10</SimpleData> </SchemaData> </ExtendedData>Point 
+ * coordinates-122.000,37.002</coordinates> </Point> </Placemark> <Placemark> <name>Difficult 
  * trail</name> <ExtendedData> <SchemaData schemaUrl="#TrailHeadTypeId"> <SimpleData 
  * name="TrailHeadName">Mount Everest</SimpleData> <SimpleData name="TrailLength">347.45</SimpleData> 
  * <SimpleData name="ElevationGain">10000</SimpleData> </SchemaData> </ExtendedData> 
- * <Point> <coordinates>-122.000,37.002</coordinates> </Point> </Placemark> 
+ * Point coordinates-122.000,37.002</coordinates> </Point> </Placemark> }
  * </p>
  * <p>
  * Here is an example of defining two custom data elements: 
  * </p>
  * <p>
  * This element assigns a value to the custom data field identified by the name attribute. 
- * The type and name of this custom data field are declared in the <Schema> element. 
+ * The type and name of this custom data field are declared in the {@code <Schema>} element. 
  * </p>
  * 
  * 
@@ -44,17 +39,17 @@ public class SimpleData implements Cloneable
 {
 
     /**
-     * <value>
+     * {@code <value>}
      * <p>
-     * <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value> 
+     * {@code <Placemark> <name>Club house</name> <ExtendedData> <Data name="holeNumber"> <value>1</value>
      * </Data> <Data name="holeYardage"> <value>234</value> </Data> <Data name="holePar"> 
-     * <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * <value>4</value> </Data> </ExtendedData> </Placemark> }
      * </p>
      * <p>
-     * <displayName> An optional formatted version of name, to be used for display purposes. 
-     * <value> Value of the data pair. <Placemark> <name>Club house</name> <ExtendedData> 
+     * {@code <displayName>} An optional formatted version of name, to be used for display purposes.
+     * {@code <value>} Value of the data pair. {@code <Placemark> <name>Club house</name> <ExtendedData>
      * <Data name="holeNumber"> <value>1</value> </Data> <Data name="holeYardage"> <value>234</value> 
-     * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> 
+     * </Data> <Data name="holePar"> <value>4</value> </Data> </ExtendedData> </Placemark> }
      * </p>
      * <p>
      * Value of the data pair. 
@@ -66,7 +61,7 @@ public class SimpleData implements Cloneable
     @XmlValue
     protected String value;
     /**
-     * <name>
+     * {@code <name>}
      * <p>
      * User-defined text displayed in the 3D viewer as the label for the object (for example, 
      * for a Placemark, Folder, or NetworkLink). 
@@ -99,7 +94,7 @@ public class SimpleData implements Cloneable
     }
 
     /**
-     * @see value
+     *
      * 
      * @return
      *     possible object is
@@ -111,7 +106,7 @@ public class SimpleData implements Cloneable
     }
 
     /**
-     * @see value
+     *
      * 
      * @param value
      *     allowed object is
@@ -123,7 +118,7 @@ public class SimpleData implements Cloneable
     }
 
     /**
-     * @see name
+     *
      * 
      * @return
      *     possible object is
@@ -135,7 +130,7 @@ public class SimpleData implements Cloneable
     }
 
     /**
-     * @see name
+     *
      * 
      * @param value
      *     allowed object is
@@ -190,7 +185,7 @@ public class SimpleData implements Cloneable
 
     /**
      * fluent setter
-     * @see #setValue(String)
+     *
      * 
      * @param value
      *     required parameter

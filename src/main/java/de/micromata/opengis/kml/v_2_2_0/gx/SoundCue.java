@@ -117,7 +117,7 @@ public class SoundCue
 
     /**
      * fluent setter
-     * @see #setHref(String)
+     *
      * 
      * @param href
      *     required parameter
@@ -129,7 +129,7 @@ public class SoundCue
 
     /**
      * fluent setter
-     * @see #setDelayedStart(double)
+     *
      * 
      * @param delayedStart
      *     required parameter
