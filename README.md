@@ -71,3 +71,9 @@ The current JARs can be obtained via Maven or at the Download page:
       </repository>
 </repositories>
 ```
+### jitpack.io
+
+Alternative you can use [jitpack.IO](https://jitpack.io/#micromata/javaapiforkml) for this purposes
+
+
+
