@@ -6,6 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -493,7 +494,7 @@ public class Link
                 return false;
             }
         }
-        if (refreshInterval!= other.refreshInterval) {
+        if (!Objects.equals(refreshInterval, other.refreshInterval)) {
             return false;
         }
         if (viewRefreshMode == null) {
@@ -505,10 +506,10 @@ public class Link
                 return false;
             }
         }
-        if (viewRefreshTime!= other.viewRefreshTime) {
+        if (!Objects.equals(viewRefreshTime, other.viewRefreshTime)) {
             return false;
         }
-        if (viewBoundScale!= other.viewBoundScale) {
+        if (!Objects.equals(viewBoundScale, other.viewBoundScale)) {
             return false;
         }
         if (viewFormat == null) {
