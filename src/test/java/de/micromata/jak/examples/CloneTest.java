@@ -3,7 +3,7 @@ package de.micromata.jak.examples;
 import java.io.File;
 import java.util.List;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 
@@ -15,6 +15,8 @@ import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.MultiGeometry;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
 import de.micromata.opengis.kml.v_2_2_0.Polygon;
+
+import static de.micromata.jak.Utils.DOUBLE_CHECK_DELTA;
 
 public class CloneTest {
 
@@ -54,15 +56,15 @@ public class CloneTest {
         double longitude = c.getLongitude();
         double latitude = c.getLatitude();
         double altitude = c.getAltitude();
-        Assert.assertEquals(c.getLongitude(), coordinates.get(j).getLongitude());
-        Assert.assertEquals(c.getLatitude(), coordinates.get(j).getLatitude());
-        Assert.assertEquals(c.getAltitude(), coordinates.get(j).getAltitude());
+        Assert.assertEquals(c.getLongitude(), coordinates.get(j).getLongitude(), DOUBLE_CHECK_DELTA);
+        Assert.assertEquals(c.getLatitude(), coordinates.get(j).getLatitude(), DOUBLE_CHECK_DELTA);
+        Assert.assertEquals(c.getAltitude(), coordinates.get(j).getAltitude(), DOUBLE_CHECK_DELTA);
         c.setLongitude(0);
         c.setLatitude(0);
         c.setAltitude(0);
-        Assert.assertEquals(longitude, coordinates.get(j).getLongitude());
-        Assert.assertEquals(latitude, coordinates.get(j).getLatitude());
-        Assert.assertEquals(altitude, coordinates.get(j).getAltitude());
+        Assert.assertEquals(longitude, coordinates.get(j).getLongitude(), DOUBLE_CHECK_DELTA);
+        Assert.assertEquals(latitude, coordinates.get(j).getLatitude(), DOUBLE_CHECK_DELTA);
+        Assert.assertEquals(altitude, coordinates.get(j).getAltitude(), DOUBLE_CHECK_DELTA);
 
       }
       if (!p.getInnerBoundaryIs().isEmpty()) {
@@ -75,15 +77,15 @@ public class CloneTest {
             double longitude = c.getLongitude();
             double latitude = c.getLatitude();
             double altitude = c.getAltitude();
-            Assert.assertEquals(c.getLongitude(), coordinatesInner.get(k).getLongitude());
-            Assert.assertEquals(c.getLatitude(), coordinatesInner.get(k).getLatitude());
-            Assert.assertEquals(c.getAltitude(), coordinatesInner.get(k).getAltitude());
+            Assert.assertEquals(c.getLongitude(), coordinatesInner.get(k).getLongitude(), DOUBLE_CHECK_DELTA);
+            Assert.assertEquals(c.getLatitude(), coordinatesInner.get(k).getLatitude(), DOUBLE_CHECK_DELTA);
+            Assert.assertEquals(c.getAltitude(), coordinatesInner.get(k).getAltitude(), DOUBLE_CHECK_DELTA);
             c.setLongitude(0);
             c.setLatitude(0);
             c.setAltitude(0);
-            Assert.assertEquals(longitude, coordinatesInner.get(k).getLongitude());
-            Assert.assertEquals(latitude, coordinatesInner.get(k).getLatitude());
-            Assert.assertEquals(altitude, coordinatesInner.get(k).getAltitude());
+            Assert.assertEquals(longitude, coordinatesInner.get(k).getLongitude(), DOUBLE_CHECK_DELTA);
+            Assert.assertEquals(latitude, coordinatesInner.get(k).getLatitude(), DOUBLE_CHECK_DELTA);
+            Assert.assertEquals(altitude, coordinatesInner.get(k).getAltitude(), DOUBLE_CHECK_DELTA);
           }
           polygon.addToInnerBoundaryIs(innerBoundary);
         }
