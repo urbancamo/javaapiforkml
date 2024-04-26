@@ -419,13 +419,19 @@ public class Icon
         int result = super.hashCode();
         long temp;
         result = ((prime*result)+((refreshMode == null)? 0 :refreshMode.hashCode()));
-        temp = Double.doubleToLongBits(refreshInterval);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
+        if (refreshInterval != null) {
+            temp = Double.doubleToLongBits(refreshInterval);
+            result = ((prime * result) + ((int) (temp ^ (temp >>> (32)))));
+        }
         result = ((prime*result)+((viewRefreshMode == null)? 0 :viewRefreshMode.hashCode()));
-        temp = Double.doubleToLongBits(viewRefreshTime);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(viewBoundScale);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
+        if (viewRefreshTime != null) {
+            temp = Double.doubleToLongBits(viewRefreshTime);
+            result = ((prime * result) + ((int) (temp ^ (temp >>> (32)))));
+        }
+        if (viewBoundScale != null) {
+            temp = Double.doubleToLongBits(viewBoundScale);
+            result = ((prime * result) + ((int) (temp ^ (temp >>> (32)))));
+        }
         result = ((prime*result)+((viewFormat == null)? 0 :viewFormat.hashCode()));
         result = ((prime*result)+((httpQuery == null)? 0 :httpQuery.hashCode()));
         result = ((prime*result)+((linkSimpleExtension == null)? 0 :linkSimpleExtension.hashCode()));

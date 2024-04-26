@@ -20,7 +20,7 @@ import java.util.List;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

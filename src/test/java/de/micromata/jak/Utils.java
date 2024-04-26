@@ -39,6 +39,8 @@ import de.micromata.opengis.kml.v_2_2_0.Kml;
 public final class Utils {
 	private static final Logger LOG = LoggerFactory.getLogger(Utils.class.getName());
 
+	public static final double DOUBLE_CHECK_DELTA = 0.0001d;
+
 	/**
 	 * java.util.List<de.micromata.opengis.kml.v_2_2_0.Coordinate> --> de.micromata.opengis.kml.v_2_2_0.Coordinate
 	 *

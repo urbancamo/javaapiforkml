@@ -17,7 +17,7 @@ package de.micromata.jak;
 
 import java.lang.reflect.Field;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import org.junit.Test;
 
