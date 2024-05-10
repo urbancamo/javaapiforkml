@@ -2,6 +2,7 @@
 package de.micromata.opengis.kml.v_2_2_0;
 
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
+import de.micromata.opengis.kml.v_2_2_0.util.DoubleCompare;
 import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -397,7 +398,7 @@ public class Icon
      */
     public List<Object> getLinkSimpleExtension() {
         if (linkSimpleExtension == null) {
-            linkSimpleExtension = new ArrayList<Object>();
+            linkSimpleExtension = new ArrayList<>();
         }
         return this.linkSimpleExtension;
     }
@@ -408,7 +409,7 @@ public class Icon
      */
     public List<AbstractObject> getLinkObjectExtension() {
         if (linkObjectExtension == null) {
-            linkObjectExtension = new ArrayList<AbstractObject>();
+            linkObjectExtension = new ArrayList<>();
         }
         return this.linkObjectExtension;
     }
@@ -447,10 +448,10 @@ public class Icon
         if (obj == null) {
             return false;
         }
-        if (super.equals(obj) == false) {
+        if (!super.equals(obj)) {
             return false;
         }
-        if ((obj instanceof Icon) == false) {
+        if (!(obj instanceof Icon)) {
             return false;
         }
         Icon other = ((Icon) obj);
@@ -459,11 +460,11 @@ public class Icon
                 return false;
             }
         } else {
-            if (refreshMode.equals(other.refreshMode) == false) {
+            if (!refreshMode.equals(other.refreshMode)) {
                 return false;
             }
         }
-        if (refreshInterval!= other.refreshInterval) {
+        if (DoubleCompare.notEqual(refreshInterval, other.refreshInterval)) {
             return false;
         }
         if (viewRefreshMode == null) {
@@ -471,14 +472,14 @@ public class Icon
                 return false;
             }
         } else {
-            if (viewRefreshMode.equals(other.viewRefreshMode) == false) {
+            if (!viewRefreshMode.equals(other.viewRefreshMode)) {
                 return false;
             }
         }
-        if (viewRefreshTime!= other.viewRefreshTime) {
+        if (DoubleCompare.notEqual(viewRefreshTime, other.viewRefreshTime)) {
             return false;
         }
-        if (viewBoundScale!= other.viewBoundScale) {
+        if (DoubleCompare.notEqual(viewBoundScale, other.viewBoundScale)) {
             return false;
         }
         if (viewFormat == null) {
@@ -486,7 +487,7 @@ public class Icon
                 return false;
             }
         } else {
-            if (viewFormat.equals(other.viewFormat) == false) {
+            if (!viewFormat.equals(other.viewFormat)) {
                 return false;
             }
         }
@@ -495,7 +496,7 @@ public class Icon
                 return false;
             }
         } else {
-            if (httpQuery.equals(other.httpQuery) == false) {
+            if (!httpQuery.equals(other.httpQuery)) {
                 return false;
             }
         }
@@ -504,20 +505,15 @@ public class Icon
                 return false;
             }
         } else {
-            if (linkSimpleExtension.equals(other.linkSimpleExtension) == false) {
+            if (!linkSimpleExtension.equals(other.linkSimpleExtension)) {
                 return false;
             }
         }
         if (linkObjectExtension == null) {
-            if (other.linkObjectExtension!= null) {
-                return false;
-            }
+            return other.linkObjectExtension == null;
         } else {
-            if (linkObjectExtension.equals(other.linkObjectExtension) == false) {
-                return false;
-            }
+            return linkObjectExtension.equals(other.linkObjectExtension);
         }
-        return true;
     }
 
     /**
@@ -771,11 +767,9 @@ public class Icon
     public Icon clone() {
         Icon copy;
         copy = ((Icon) super.clone());
-        copy.linkSimpleExtension = new ArrayList<Object>((getLinkSimpleExtension().size()));
-        for (Object iter: linkSimpleExtension) {
-            copy.linkSimpleExtension.add(iter);
-        }
-        copy.linkObjectExtension = new ArrayList<AbstractObject>((getLinkObjectExtension().size()));
+        copy.linkSimpleExtension = new ArrayList<>((getLinkSimpleExtension().size()));
+        copy.linkSimpleExtension.addAll(linkSimpleExtension);
+        copy.linkObjectExtension = new ArrayList<>((getLinkObjectExtension().size()));
         for (AbstractObject iter: linkObjectExtension) {
             copy.linkObjectExtension.add(iter.clone());
         }
