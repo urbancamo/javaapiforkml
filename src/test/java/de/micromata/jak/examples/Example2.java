@@ -1,7 +1,7 @@
 package de.micromata.jak.examples;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -28,7 +28,7 @@ import de.micromata.opengis.kml.v_2_2_0.StyleSelector;
  */
 public class Example2 {
 
-  public static void main(String args[]) throws FileNotFoundException {
+  public static void main(String[] args) throws IOException {
 		int minPolyHeight = 308000; // set a minimum height used by the 3D shapes
 		int maxPolyHeight = 2692000; // real max = 3000000 - 308000 = 2692000
 
@@ -52,7 +52,7 @@ public class Example2 {
 
 			List<StyleSelector> styleSelector = placemaek2D.getStyleSelector();
 			Iterator<StyleSelector> iterator = styleSelector.iterator();
-			Style style = null;
+			Style style;
 			while (iterator.hasNext()) {
 				StyleSelector tmp = iterator.next();
 				if (tmp instanceof Style) {

@@ -20,6 +20,7 @@ import javax.xml.validation.SchemaFactory;
 import java.io.*;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -122,7 +123,7 @@ public class Kml implements Cloneable
      *   &lt;ExtendedData&gt;...&lt;/ExtendedData&gt;      &lt;!-- new in KML 2.2 --&gt;<br></span>&lt;-- /<em>Feature</em> --&gt;</pre>
      * 
      * Extends: 
-     *
+     * <br/>
      * 
      * Extended By: 
      *
@@ -237,7 +238,7 @@ public class Kml implements Cloneable
      *     
      */
     public void setFeature(Feature value) {
-        this.feature = ((Feature ) value);
+        this.feature = value;
     }
 
     /**
@@ -246,7 +247,7 @@ public class Kml implements Cloneable
      */
     public List<Object> getKmlSimpleExtension() {
         if (kmlSimpleExtension == null) {
-            kmlSimpleExtension = new ArrayList<Object>();
+            kmlSimpleExtension = new ArrayList<>();
         }
         return this.kmlSimpleExtension;
     }
@@ -257,7 +258,7 @@ public class Kml implements Cloneable
      */
     public List<AbstractObject> getKmlObjectExtension() {
         if (kmlObjectExtension == null) {
-            kmlObjectExtension = new ArrayList<AbstractObject>();
+            kmlObjectExtension = new ArrayList<>();
         }
         return this.kmlObjectExtension;
     }
@@ -306,7 +307,7 @@ public class Kml implements Cloneable
         if (obj == null) {
             return false;
         }
-        if ((obj instanceof Kml) == false) {
+        if (!(obj instanceof Kml)) {
             return false;
         }
         Kml other = ((Kml) obj);
@@ -315,7 +316,7 @@ public class Kml implements Cloneable
                 return false;
             }
         } else {
-            if (networkLinkControl.equals(other.networkLinkControl) == false) {
+            if (!networkLinkControl.equals(other.networkLinkControl)) {
                 return false;
             }
         }
@@ -324,7 +325,7 @@ public class Kml implements Cloneable
                 return false;
             }
         } else {
-            if (feature.equals(other.feature) == false) {
+            if (!feature.equals(other.feature)) {
                 return false;
             }
         }
@@ -333,7 +334,7 @@ public class Kml implements Cloneable
                 return false;
             }
         } else {
-            if (kmlSimpleExtension.equals(other.kmlSimpleExtension) == false) {
+            if (!kmlSimpleExtension.equals(other.kmlSimpleExtension)) {
                 return false;
             }
         }
@@ -342,25 +343,20 @@ public class Kml implements Cloneable
                 return false;
             }
         } else {
-            if (kmlObjectExtension.equals(other.kmlObjectExtension) == false) {
+            if (!kmlObjectExtension.equals(other.kmlObjectExtension)) {
                 return false;
             }
         }
         if (hint == null) {
-            if (other.hint!= null) {
-                return false;
-            }
+            return other.hint == null;
         } else {
-            if (hint.equals(other.hint) == false) {
-                return false;
-            }
+            return hint.equals(other.hint);
         }
-        return true;
     }
 
     /**
      * Creates a new instance of {@link NetworkLinkControl} and set it to networkLinkControl.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * NetworkLinkControl networkLinkControl = new NetworkLinkControl();
@@ -376,7 +372,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link Tour} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * Tour tour = new Tour();
@@ -392,7 +388,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link ScreenOverlay} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * ScreenOverlay screenOverlay = new ScreenOverlay();
@@ -408,7 +404,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link PhotoOverlay} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * PhotoOverlay photoOverlay = new PhotoOverlay();
@@ -424,7 +420,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link GroundOverlay} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * GroundOverlay groundOverlay = new GroundOverlay();
@@ -440,7 +436,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link NetworkLink} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * NetworkLink networkLink = new NetworkLink();
@@ -456,7 +452,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link Folder} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * Folder folder = new Folder();
@@ -472,7 +468,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link Document} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * Document document = new Document();
@@ -488,7 +484,7 @@ public class Kml implements Cloneable
 
     /**
      * Creates a new instance of {@link Placemark} and set it to feature.
-     * 
+     * <br/>
      * This method is a short version for:
      * {@code
      * Placemark placemark = new Placemark();
@@ -640,7 +636,7 @@ public class Kml implements Cloneable
         throws IOException
     {
         String fileName = null;
-        if (((kmzFile.getFeature() == null)||(kmzFile.getFeature().getName() == null))||(kmzFile.getFeature().getName().length() == 0)) {
+        if (((kmzFile.getFeature() == null)||(kmzFile.getFeature().getName() == null))||(kmzFile.getFeature().getName().isEmpty())) {
             fileName = (("noFeatureNameSet"+ missingNameCounter ++)+".kml");
         } else {
             fileName = kmzFile.getFeature().getName();
@@ -651,7 +647,7 @@ public class Kml implements Cloneable
         if (mainfile) {
             fileName = "doc.kml";
         }
-        out.putNextEntry(new ZipEntry(URLEncoder.encode(fileName, "UTF-8")));
+        out.putNextEntry(new ZipEntry(URLEncoder.encode(fileName, StandardCharsets.UTF_8)));
         kmzFile.marshal(out);
         out.closeEntry();
     }
@@ -741,10 +737,11 @@ public class Kml implements Cloneable
      * 
      */
     public boolean marshal(final File filename)
-        throws FileNotFoundException
+            throws IOException
     {
-        OutputStream out = new FileOutputStream(filename);
-        return this.marshal(out);
+        try (OutputStream out = new FileOutputStream(filename)) {
+            return this.marshal(out);
+        }
     }
 
     public boolean marshalAsKmz(
@@ -787,13 +784,12 @@ public class Kml implements Cloneable
     public static Kml unmarshal(final File file, final boolean validate) {
         try {
             Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
-            if (validate == true) {
+            if (validate) {
                 Kml.validate(unmarshaller);
             }
             InputSource input = new InputSource(new FileReader(file));
             SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(validate), input);
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
-            return jaxbRootElement;
+            return ((Kml) unmarshaller.unmarshal(saxSource));
         } catch (SAXException _x) {
             _x.printStackTrace();
         } catch (ParserConfigurationException _x) {
@@ -831,8 +827,7 @@ public class Kml implements Cloneable
             Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
             InputSource input = new InputSource(new StringReader(content));
             SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
-            return jaxbRootElement;
+            return ((Kml) unmarshaller.unmarshal(saxSource));
         } catch (SAXException _x) {
             _x.printStackTrace();
         } catch (ParserConfigurationException _x) {
@@ -856,8 +851,7 @@ public class Kml implements Cloneable
             Unmarshaller unmarshaller = JAXBContext.newInstance((Kml.class)).createUnmarshaller();
             InputSource input = new InputSource(content);
             SAXSource saxSource = new SAXSource(new NamespaceFilterXMLReader(false), input);
-            Kml jaxbRootElement = ((Kml) unmarshaller.unmarshal(saxSource));
-            return jaxbRootElement;
+            return ((Kml) unmarshaller.unmarshal(saxSource));
         } catch (SAXException _x) {
             _x.printStackTrace();
         } catch (ParserConfigurationException _x) {
@@ -896,7 +890,7 @@ public class Kml implements Cloneable
             if (entry.getName().contains("__MACOSX")||entry.getName().contains(".DS_STORE")) {
                 continue;
             }
-            String entryName = URLDecoder.decode(entry.getName(), "UTF-8");
+            String entryName = URLDecoder.decode(entry.getName(), StandardCharsets.UTF_8);
             if (!entryName.endsWith(".kml")) {
                 continue;
             }
@@ -919,9 +913,7 @@ public class Kml implements Cloneable
         copy.networkLinkControl = ((networkLinkControl == null)?null:((NetworkLinkControl) networkLinkControl.clone()));
         copy.feature = ((feature == null)?null:((Feature ) feature.clone()));
         copy.kmlSimpleExtension = new ArrayList<Object>((getKmlSimpleExtension().size()));
-        for (Object iter: kmlSimpleExtension) {
-            copy.kmlSimpleExtension.add(iter);
-        }
+        copy.kmlSimpleExtension.addAll(kmlSimpleExtension);
         copy.kmlObjectExtension = new ArrayList<AbstractObject>((getKmlObjectExtension().size()));
         for (AbstractObject iter: kmlObjectExtension) {
             copy.kmlObjectExtension.add(iter.clone());

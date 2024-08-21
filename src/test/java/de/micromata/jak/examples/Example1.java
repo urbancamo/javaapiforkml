@@ -1,7 +1,7 @@
 package de.micromata.jak.examples;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import de.micromata.opengis.kml.v_2_2_0.Document;
 import de.micromata.opengis.kml.v_2_2_0.Folder;
@@ -13,12 +13,13 @@ import de.micromata.opengis.kml.v_2_2_0.Style;
 /**
  * This example generates a KML file with a placemark and a chart for each continent. The chart is generated with the Google Chart API and
  * show the area (surface of the earth) of each continent.
- * 
- * Google Chart API example: http://chart.apis.google.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World
+ * <br/
+ * Google Chart API example:
+ * <a href="http://chart.apis.google.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World">http://chart.apis.google.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World</a>
  */
 public class Example1 {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 		final Kml kml = new Kml();
 		Document doc = kml.createAndSetDocument().withName("JAK Example1").withOpen(true);
 
