@@ -22,6 +22,8 @@ Version 3+ of the library supports Java 11+ and is built with Java 11.
 </dependency>
 ```
 
+The maven repository entry is https://mvnrepository.com/artifact/uk.m0nom/javaapiforkml
+
 ---
 
 The main goal of the Java API for KML (JAK) is to provide automatically generated full reference implementation of the 
