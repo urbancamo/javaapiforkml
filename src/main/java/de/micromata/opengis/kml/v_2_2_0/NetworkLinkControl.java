@@ -5,7 +5,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <NetworkLinkControl>}
@@ -510,136 +510,44 @@ public class NetworkLinkControl implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        long temp;
-        temp = Double.doubleToLongBits(minRefreshPeriod);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(maxSessionLength);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((cookie == null)? 0 :cookie.hashCode()));
-        result = ((prime*result)+((message == null)? 0 :message.hashCode()));
-        result = ((prime*result)+((linkName == null)? 0 :linkName.hashCode()));
-        result = ((prime*result)+((linkDescription == null)? 0 :linkDescription.hashCode()));
-        result = ((prime*result)+((linkSnippet == null)? 0 :linkSnippet.hashCode()));
-        result = ((prime*result)+((expires == null)? 0 :expires.hashCode()));
-        result = ((prime*result)+((update == null)? 0 :update.hashCode()));
-        result = ((prime*result)+((abstractView == null)? 0 :abstractView.hashCode()));
-        result = ((prime*result)+((networkLinkControlSimpleExtension == null)? 0 :networkLinkControlSimpleExtension.hashCode()));
-        result = ((prime*result)+((networkLinkControlObjectExtension == null)? 0 :networkLinkControlObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        NetworkLinkControl that = (NetworkLinkControl) object;
+        return Double.compare(minRefreshPeriod, that.minRefreshPeriod) == 0
+                && Double.compare(maxSessionLength, that.maxSessionLength) == 0
+                && Objects.equals(cookie, that.cookie)
+                && Objects.equals(message, that.message)
+                && Objects.equals(linkName, that.linkName)
+                && Objects.equals(linkDescription, that.linkDescription)
+                && Objects.equals(linkSnippet, that.linkSnippet)
+                && Objects.equals(expires, that.expires)
+                && Objects.equals(update, that.update)
+                && Objects.equals(abstractView, that.abstractView)
+                && Objects.equals(networkLinkControlSimpleExtension, that.networkLinkControlSimpleExtension)
+                && Objects.equals(networkLinkControlObjectExtension, that.networkLinkControlObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof NetworkLinkControl) == false) {
-            return false;
-        }
-        NetworkLinkControl other = ((NetworkLinkControl) obj);
-        if (minRefreshPeriod!= other.minRefreshPeriod) {
-            return false;
-        }
-        if (maxSessionLength!= other.maxSessionLength) {
-            return false;
-        }
-        if (cookie == null) {
-            if (other.cookie!= null) {
-                return false;
-            }
-        } else {
-            if (cookie.equals(other.cookie) == false) {
-                return false;
-            }
-        }
-        if (message == null) {
-            if (other.message!= null) {
-                return false;
-            }
-        } else {
-            if (message.equals(other.message) == false) {
-                return false;
-            }
-        }
-        if (linkName == null) {
-            if (other.linkName!= null) {
-                return false;
-            }
-        } else {
-            if (linkName.equals(other.linkName) == false) {
-                return false;
-            }
-        }
-        if (linkDescription == null) {
-            if (other.linkDescription!= null) {
-                return false;
-            }
-        } else {
-            if (linkDescription.equals(other.linkDescription) == false) {
-                return false;
-            }
-        }
-        if (linkSnippet == null) {
-            if (other.linkSnippet!= null) {
-                return false;
-            }
-        } else {
-            if (linkSnippet.equals(other.linkSnippet) == false) {
-                return false;
-            }
-        }
-        if (expires == null) {
-            if (other.expires!= null) {
-                return false;
-            }
-        } else {
-            if (expires.equals(other.expires) == false) {
-                return false;
-            }
-        }
-        if (update == null) {
-            if (other.update!= null) {
-                return false;
-            }
-        } else {
-            if (update.equals(other.update) == false) {
-                return false;
-            }
-        }
-        if (abstractView == null) {
-            if (other.abstractView!= null) {
-                return false;
-            }
-        } else {
-            if (abstractView.equals(other.abstractView) == false) {
-                return false;
-            }
-        }
-        if (networkLinkControlSimpleExtension == null) {
-            if (other.networkLinkControlSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (networkLinkControlSimpleExtension.equals(other.networkLinkControlSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (networkLinkControlObjectExtension == null) {
-            if (other.networkLinkControlObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (networkLinkControlObjectExtension.equals(other.networkLinkControlObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Double.hashCode(minRefreshPeriod);
+        result = 31 * result + Double.hashCode(maxSessionLength);
+        result = 31 * result + Objects.hashCode(cookie);
+        result = 31 * result + Objects.hashCode(message);
+        result = 31 * result + Objects.hashCode(linkName);
+        result = 31 * result + Objects.hashCode(linkDescription);
+        result = 31 * result + Objects.hashCode(linkSnippet);
+        result = 31 * result + Objects.hashCode(expires);
+        result = 31 * result + Objects.hashCode(update);
+        result = 31 * result + Objects.hashCode(abstractView);
+        result = 31 * result + Objects.hashCode(networkLinkControlSimpleExtension);
+        result = 31 * result + Objects.hashCode(networkLinkControlObjectExtension);
+        return result;
     }
 
     /**

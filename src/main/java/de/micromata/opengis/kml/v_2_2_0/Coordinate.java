@@ -117,41 +117,26 @@ public class Coordinate implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        long temp;
-        temp = java.lang.Double.doubleToLongBits(longitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = java.lang.Double.doubleToLongBits(latitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = java.lang.Double.doubleToLongBits(altitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Coordinate that = (Coordinate) object;
+        return Double.compare(longitude, that.longitude) == 0
+                && Double.compare(latitude, that.latitude) == 0
+                && Double.compare(altitude, that.altitude) == 0;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Coordinate) == false) {
-            return false;
-        }
-        Coordinate other = ((Coordinate) obj);
-        if (longitude!= other.longitude) {
-            return false;
-        }
-        if (latitude!= other.latitude) {
-            return false;
-        }
-        if (altitude!= other.altitude) {
-            return false;
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Double.hashCode(longitude);
+        result = 31 * result + Double.hashCode(latitude);
+        result = 31 * result + Double.hashCode(altitude);
+        return result;
     }
 
     /**

@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <schemadata schemaurl="anyuri">}
@@ -144,58 +144,29 @@ public class SchemaData
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((simpleData == null)? 0 :simpleData.hashCode()));
-        result = ((prime*result)+((schemaDataExtension == null)? 0 :schemaDataExtension.hashCode()));
-        result = ((prime*result)+((schemaUrl == null)? 0 :schemaUrl.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        SchemaData that = (SchemaData) object;
+        return Objects.equals(simpleData, that.simpleData)
+                && Objects.equals(schemaDataExtension, that.schemaDataExtension)
+                && Objects.equals(schemaUrl, that.schemaUrl);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof SchemaData) == false) {
-            return false;
-        }
-        SchemaData other = ((SchemaData) obj);
-        if (simpleData == null) {
-            if (other.simpleData!= null) {
-                return false;
-            }
-        } else {
-            if (simpleData.equals(other.simpleData) == false) {
-                return false;
-            }
-        }
-        if (schemaDataExtension == null) {
-            if (other.schemaDataExtension!= null) {
-                return false;
-            }
-        } else {
-            if (schemaDataExtension.equals(other.schemaDataExtension) == false) {
-                return false;
-            }
-        }
-        if (schemaUrl == null) {
-            if (other.schemaUrl!= null) {
-                return false;
-            }
-        } else {
-            if (schemaUrl.equals(other.schemaUrl) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(simpleData);
+        result = 31 * result + Objects.hashCode(schemaDataExtension);
+        result = 31 * result + Objects.hashCode(schemaUrl);
+        return result;
     }
 
     /**

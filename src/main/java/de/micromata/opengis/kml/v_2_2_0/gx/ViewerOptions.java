@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -56,38 +56,25 @@ public class ViewerOptions
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((option == null)? 0 :option.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ViewerOptions that = (ViewerOptions) object;
+        return Objects.equals(option, that.option);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ViewerOptions) == false) {
-            return false;
-        }
-        ViewerOptions other = ((ViewerOptions) obj);
-        if (option == null) {
-            if (other.option!= null) {
-                return false;
-            }
-        } else {
-            if (option.equals(other.option) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(option);
+        return result;
     }
 
     /**

@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Style>}
@@ -446,108 +446,39 @@ public class Style
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((iconStyle == null)? 0 :iconStyle.hashCode()));
-        result = ((prime*result)+((labelStyle == null)? 0 :labelStyle.hashCode()));
-        result = ((prime*result)+((lineStyle == null)? 0 :lineStyle.hashCode()));
-        result = ((prime*result)+((polyStyle == null)? 0 :polyStyle.hashCode()));
-        result = ((prime*result)+((balloonStyle == null)? 0 :balloonStyle.hashCode()));
-        result = ((prime*result)+((listStyle == null)? 0 :listStyle.hashCode()));
-        result = ((prime*result)+((styleSimpleExtension == null)? 0 :styleSimpleExtension.hashCode()));
-        result = ((prime*result)+((styleObjectExtension == null)? 0 :styleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Style style = (Style) object;
+        return Objects.equals(iconStyle, style.iconStyle)
+                && Objects.equals(labelStyle, style.labelStyle)
+                && Objects.equals(lineStyle, style.lineStyle)
+                && Objects.equals(polyStyle, style.polyStyle)
+                && Objects.equals(balloonStyle, style.balloonStyle)
+                && Objects.equals(listStyle, style.listStyle)
+                && Objects.equals(styleSimpleExtension, style.styleSimpleExtension)
+                && Objects.equals(styleObjectExtension, style.styleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Style) == false) {
-            return false;
-        }
-        Style other = ((Style) obj);
-        if (iconStyle == null) {
-            if (other.iconStyle!= null) {
-                return false;
-            }
-        } else {
-            if (iconStyle.equals(other.iconStyle) == false) {
-                return false;
-            }
-        }
-        if (labelStyle == null) {
-            if (other.labelStyle!= null) {
-                return false;
-            }
-        } else {
-            if (labelStyle.equals(other.labelStyle) == false) {
-                return false;
-            }
-        }
-        if (lineStyle == null) {
-            if (other.lineStyle!= null) {
-                return false;
-            }
-        } else {
-            if (lineStyle.equals(other.lineStyle) == false) {
-                return false;
-            }
-        }
-        if (polyStyle == null) {
-            if (other.polyStyle!= null) {
-                return false;
-            }
-        } else {
-            if (polyStyle.equals(other.polyStyle) == false) {
-                return false;
-            }
-        }
-        if (balloonStyle == null) {
-            if (other.balloonStyle!= null) {
-                return false;
-            }
-        } else {
-            if (balloonStyle.equals(other.balloonStyle) == false) {
-                return false;
-            }
-        }
-        if (listStyle == null) {
-            if (other.listStyle!= null) {
-                return false;
-            }
-        } else {
-            if (listStyle.equals(other.listStyle) == false) {
-                return false;
-            }
-        }
-        if (styleSimpleExtension == null) {
-            if (other.styleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (styleSimpleExtension.equals(other.styleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (styleObjectExtension == null) {
-            if (other.styleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (styleObjectExtension.equals(other.styleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(iconStyle);
+        result = 31 * result + Objects.hashCode(labelStyle);
+        result = 31 * result + Objects.hashCode(lineStyle);
+        result = 31 * result + Objects.hashCode(polyStyle);
+        result = 31 * result + Objects.hashCode(balloonStyle);
+        result = 31 * result + Objects.hashCode(listStyle);
+        result = 31 * result + Objects.hashCode(styleSimpleExtension);
+        result = 31 * result + Objects.hashCode(styleObjectExtension);
+        return result;
     }
 
     /**

@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Schema>}
@@ -161,65 +161,28 @@ public class Schema implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((simpleField == null)? 0 :simpleField.hashCode()));
-        result = ((prime*result)+((schemaExtension == null)? 0 :schemaExtension.hashCode()));
-        result = ((prime*result)+((name == null)? 0 :name.hashCode()));
-        result = ((prime*result)+((id == null)? 0 :id.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Schema schema = (Schema) object;
+        return Objects.equals(simpleField, schema.simpleField)
+                && Objects.equals(schemaExtension, schema.schemaExtension)
+                && Objects.equals(name, schema.name)
+                && Objects.equals(id, schema.id);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Schema) == false) {
-            return false;
-        }
-        Schema other = ((Schema) obj);
-        if (simpleField == null) {
-            if (other.simpleField!= null) {
-                return false;
-            }
-        } else {
-            if (simpleField.equals(other.simpleField) == false) {
-                return false;
-            }
-        }
-        if (schemaExtension == null) {
-            if (other.schemaExtension!= null) {
-                return false;
-            }
-        } else {
-            if (schemaExtension.equals(other.schemaExtension) == false) {
-                return false;
-            }
-        }
-        if (name == null) {
-            if (other.name!= null) {
-                return false;
-            }
-        } else {
-            if (name.equals(other.name) == false) {
-                return false;
-            }
-        }
-        if (id == null) {
-            if (other.id!= null) {
-                return false;
-            }
-        } else {
-            if (id.equals(other.id) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(simpleField);
+        result = 31 * result + Objects.hashCode(schemaExtension);
+        result = 31 * result + Objects.hashCode(name);
+        result = 31 * result + Objects.hashCode(id);
+        return result;
     }
 
     /**

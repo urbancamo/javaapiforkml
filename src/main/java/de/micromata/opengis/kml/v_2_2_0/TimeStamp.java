@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <TimeStamp>}
@@ -131,58 +131,29 @@ public class TimeStamp
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((when == null)? 0 :when.hashCode()));
-        result = ((prime*result)+((timeStampSimpleExtension == null)? 0 :timeStampSimpleExtension.hashCode()));
-        result = ((prime*result)+((timeStampObjectExtension == null)? 0 :timeStampObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        TimeStamp timeStamp = (TimeStamp) object;
+        return Objects.equals(when, timeStamp.when)
+                && Objects.equals(timeStampSimpleExtension, timeStamp.timeStampSimpleExtension)
+                && Objects.equals(timeStampObjectExtension, timeStamp.timeStampObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof TimeStamp) == false) {
-            return false;
-        }
-        TimeStamp other = ((TimeStamp) obj);
-        if (when == null) {
-            if (other.when!= null) {
-                return false;
-            }
-        } else {
-            if (when.equals(other.when) == false) {
-                return false;
-            }
-        }
-        if (timeStampSimpleExtension == null) {
-            if (other.timeStampSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (timeStampSimpleExtension.equals(other.timeStampSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (timeStampObjectExtension == null) {
-            if (other.timeStampObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (timeStampObjectExtension.equals(other.timeStampObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(when);
+        result = 31 * result + Objects.hashCode(timeStampSimpleExtension);
+        result = 31 * result + Objects.hashCode(timeStampObjectExtension);
+        return result;
     }
 
     /**

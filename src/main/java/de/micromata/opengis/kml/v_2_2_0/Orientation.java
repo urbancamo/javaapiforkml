@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Orientation>}
@@ -234,64 +234,33 @@ public class Orientation
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(heading);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(tilt);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(roll);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((orientationSimpleExtension == null)? 0 :orientationSimpleExtension.hashCode()));
-        result = ((prime*result)+((orientationObjectExtension == null)? 0 :orientationObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Orientation that = (Orientation) object;
+        return Double.compare(heading, that.heading) == 0
+                && Double.compare(tilt, that.tilt) == 0
+                && Double.compare(roll, that.roll) == 0
+                && Objects.equals(orientationSimpleExtension, that.orientationSimpleExtension)
+                && Objects.equals(orientationObjectExtension, that.orientationObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Orientation) == false) {
-            return false;
-        }
-        Orientation other = ((Orientation) obj);
-        if (heading!= other.heading) {
-            return false;
-        }
-        if (tilt!= other.tilt) {
-            return false;
-        }
-        if (roll!= other.roll) {
-            return false;
-        }
-        if (orientationSimpleExtension == null) {
-            if (other.orientationSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (orientationSimpleExtension.equals(other.orientationSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (orientationObjectExtension == null) {
-            if (other.orientationObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (orientationObjectExtension.equals(other.orientationObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(heading);
+        result = 31 * result + Double.hashCode(tilt);
+        result = 31 * result + Double.hashCode(roll);
+        result = 31 * result + Objects.hashCode(orientationSimpleExtension);
+        result = 31 * result + Objects.hashCode(orientationObjectExtension);
+        return result;
     }
 
     /**

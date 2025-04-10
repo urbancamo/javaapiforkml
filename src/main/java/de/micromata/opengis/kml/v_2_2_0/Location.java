@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <location>}
@@ -212,64 +212,33 @@ public class Location
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(longitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(latitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(altitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((locationSimpleExtension == null)? 0 :locationSimpleExtension.hashCode()));
-        result = ((prime*result)+((locationObjectExtension == null)? 0 :locationObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Location location = (Location) object;
+        return Double.compare(longitude, location.longitude) == 0
+                && Double.compare(latitude, location.latitude) == 0
+                && Double.compare(altitude, location.altitude) == 0
+                && Objects.equals(locationSimpleExtension, location.locationSimpleExtension)
+                && Objects.equals(locationObjectExtension, location.locationObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Location) == false) {
-            return false;
-        }
-        Location other = ((Location) obj);
-        if (longitude!= other.longitude) {
-            return false;
-        }
-        if (latitude!= other.latitude) {
-            return false;
-        }
-        if (altitude!= other.altitude) {
-            return false;
-        }
-        if (locationSimpleExtension == null) {
-            if (other.locationSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (locationSimpleExtension.equals(other.locationSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (locationObjectExtension == null) {
-            if (other.locationObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (locationObjectExtension.equals(other.locationObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(longitude);
+        result = 31 * result + Double.hashCode(latitude);
+        result = 31 * result + Double.hashCode(altitude);
+        result = 31 * result + Objects.hashCode(locationSimpleExtension);
+        result = 31 * result + Objects.hashCode(locationObjectExtension);
+        return result;
     }
 
     /**

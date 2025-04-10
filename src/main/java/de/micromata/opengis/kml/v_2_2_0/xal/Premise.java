@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -401,205 +401,58 @@ public class Premise implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((premiseName == null)? 0 :premiseName.hashCode()));
-        result = ((prime*result)+((premiseLocation == null)? 0 :premiseLocation.hashCode()));
-        result = ((prime*result)+((premiseNumber == null)? 0 :premiseNumber.hashCode()));
-        result = ((prime*result)+((premiseNumberRange == null)? 0 :premiseNumberRange.hashCode()));
-        result = ((prime*result)+((premiseNumberPrefix == null)? 0 :premiseNumberPrefix.hashCode()));
-        result = ((prime*result)+((premiseNumberSuffix == null)? 0 :premiseNumberSuffix.hashCode()));
-        result = ((prime*result)+((buildingName == null)? 0 :buildingName.hashCode()));
-        result = ((prime*result)+((subPremise == null)? 0 :subPremise.hashCode()));
-        result = ((prime*result)+((firm == null)? 0 :firm.hashCode()));
-        result = ((prime*result)+((mailStop == null)? 0 :mailStop.hashCode()));
-        result = ((prime*result)+((postalCode == null)? 0 :postalCode.hashCode()));
-        result = ((prime*result)+((premise == null)? 0 :premise.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        result = ((prime*result)+((xalPremiseDependency == null)? 0 :xalPremiseDependency.hashCode()));
-        result = ((prime*result)+((premiseDependency == null)? 0 :premiseDependency.hashCode()));
-        result = ((prime*result)+((premiseThoroughfareConnector == null)? 0 :premiseThoroughfareConnector.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Premise that = (Premise) object;
+        return Objects.equals(addressLine, that.addressLine)
+                && Objects.equals(premiseName, that.premiseName)
+                && Objects.equals(premiseLocation, that.premiseLocation)
+                && Objects.equals(premiseNumber, that.premiseNumber)
+                && Objects.equals(premiseNumberRange, that.premiseNumberRange)
+                && Objects.equals(premiseNumberPrefix, that.premiseNumberPrefix)
+                && Objects.equals(premiseNumberSuffix, that.premiseNumberSuffix)
+                && Objects.equals(buildingName, that.buildingName)
+                && Objects.equals(subPremise, that.subPremise)
+                && Objects.equals(firm, that.firm)
+                && Objects.equals(mailStop, that.mailStop)
+                && Objects.equals(postalCode, that.postalCode)
+                && Objects.equals(premise, that.premise)
+                && Objects.equals(any, that.any)
+                && Objects.equals(underscore, that.underscore)
+                && Objects.equals(xalPremiseDependency, that.xalPremiseDependency)
+                && Objects.equals(premiseDependency, that.premiseDependency)
+                && Objects.equals(premiseThoroughfareConnector, that.premiseThoroughfareConnector)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Premise) == false) {
-            return false;
-        }
-        Premise other = ((Premise) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (premiseName == null) {
-            if (other.premiseName!= null) {
-                return false;
-            }
-        } else {
-            if (premiseName.equals(other.premiseName) == false) {
-                return false;
-            }
-        }
-        if (premiseLocation == null) {
-            if (other.premiseLocation!= null) {
-                return false;
-            }
-        } else {
-            if (premiseLocation.equals(other.premiseLocation) == false) {
-                return false;
-            }
-        }
-        if (premiseNumber == null) {
-            if (other.premiseNumber!= null) {
-                return false;
-            }
-        } else {
-            if (premiseNumber.equals(other.premiseNumber) == false) {
-                return false;
-            }
-        }
-        if (premiseNumberRange == null) {
-            if (other.premiseNumberRange!= null) {
-                return false;
-            }
-        } else {
-            if (premiseNumberRange.equals(other.premiseNumberRange) == false) {
-                return false;
-            }
-        }
-        if (premiseNumberPrefix == null) {
-            if (other.premiseNumberPrefix!= null) {
-                return false;
-            }
-        } else {
-            if (premiseNumberPrefix.equals(other.premiseNumberPrefix) == false) {
-                return false;
-            }
-        }
-        if (premiseNumberSuffix == null) {
-            if (other.premiseNumberSuffix!= null) {
-                return false;
-            }
-        } else {
-            if (premiseNumberSuffix.equals(other.premiseNumberSuffix) == false) {
-                return false;
-            }
-        }
-        if (buildingName == null) {
-            if (other.buildingName!= null) {
-                return false;
-            }
-        } else {
-            if (buildingName.equals(other.buildingName) == false) {
-                return false;
-            }
-        }
-        if (subPremise == null) {
-            if (other.subPremise!= null) {
-                return false;
-            }
-        } else {
-            if (subPremise.equals(other.subPremise) == false) {
-                return false;
-            }
-        }
-        if (firm == null) {
-            if (other.firm!= null) {
-                return false;
-            }
-        } else {
-            if (firm.equals(other.firm) == false) {
-                return false;
-            }
-        }
-        if (mailStop == null) {
-            if (other.mailStop!= null) {
-                return false;
-            }
-        } else {
-            if (mailStop.equals(other.mailStop) == false) {
-                return false;
-            }
-        }
-        if (postalCode == null) {
-            if (other.postalCode!= null) {
-                return false;
-            }
-        } else {
-            if (postalCode.equals(other.postalCode) == false) {
-                return false;
-            }
-        }
-        if (premise == null) {
-            if (other.premise!= null) {
-                return false;
-            }
-        } else {
-            if (premise.equals(other.premise) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        if (xalPremiseDependency == null) {
-            if (other.xalPremiseDependency!= null) {
-                return false;
-            }
-        } else {
-            if (xalPremiseDependency.equals(other.xalPremiseDependency) == false) {
-                return false;
-            }
-        }
-        if (premiseDependency == null) {
-            if (other.premiseDependency!= null) {
-                return false;
-            }
-        } else {
-            if (premiseDependency.equals(other.premiseDependency) == false) {
-                return false;
-            }
-        }
-        if (premiseThoroughfareConnector == null) {
-            if (other.premiseThoroughfareConnector!= null) {
-                return false;
-            }
-        } else {
-            if (premiseThoroughfareConnector.equals(other.premiseThoroughfareConnector) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(premiseName);
+        result = 31 * result + Objects.hashCode(premiseLocation);
+        result = 31 * result + Objects.hashCode(premiseNumber);
+        result = 31 * result + Objects.hashCode(premiseNumberRange);
+        result = 31 * result + Objects.hashCode(premiseNumberPrefix);
+        result = 31 * result + Objects.hashCode(premiseNumberSuffix);
+        result = 31 * result + Objects.hashCode(buildingName);
+        result = 31 * result + Objects.hashCode(subPremise);
+        result = 31 * result + Objects.hashCode(firm);
+        result = 31 * result + Objects.hashCode(mailStop);
+        result = 31 * result + Objects.hashCode(postalCode);
+        result = 31 * result + Objects.hashCode(premise);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(xalPremiseDependency);
+        result = 31 * result + Objects.hashCode(premiseDependency);
+        result = 31 * result + Objects.hashCode(premiseThoroughfareConnector);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

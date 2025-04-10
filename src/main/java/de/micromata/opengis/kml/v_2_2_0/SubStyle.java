@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -57,48 +57,27 @@ public abstract class SubStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((subStyleSimpleExtension == null)? 0 :subStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((subStyleObjectExtension == null)? 0 :subStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        SubStyle subStyle = (SubStyle) object;
+        return Objects.equals(subStyleSimpleExtension, subStyle.subStyleSimpleExtension)
+                && Objects.equals(subStyleObjectExtension, subStyle.subStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof SubStyle) == false) {
-            return false;
-        }
-        SubStyle other = ((SubStyle) obj);
-        if (subStyleSimpleExtension == null) {
-            if (other.subStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (subStyleSimpleExtension.equals(other.subStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (subStyleObjectExtension == null) {
-            if (other.subStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (subStyleObjectExtension.equals(other.subStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(subStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(subStyleObjectExtension);
+        return result;
     }
 
     /**

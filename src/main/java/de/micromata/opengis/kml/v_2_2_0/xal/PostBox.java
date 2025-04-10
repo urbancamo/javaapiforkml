@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -279,125 +279,42 @@ public class PostBox implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((postBoxNumber == null)? 0 :postBoxNumber.hashCode()));
-        result = ((prime*result)+((postBoxNumberPrefix == null)? 0 :postBoxNumberPrefix.hashCode()));
-        result = ((prime*result)+((postBoxNumberSuffix == null)? 0 :postBoxNumberSuffix.hashCode()));
-        result = ((prime*result)+((postBoxNumberExtension == null)? 0 :postBoxNumberExtension.hashCode()));
-        result = ((prime*result)+((firm == null)? 0 :firm.hashCode()));
-        result = ((prime*result)+((postalCode == null)? 0 :postalCode.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        result = ((prime*result)+((indicator == null)? 0 :indicator.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        PostBox postBox = (PostBox) object;
+        return Objects.equals(addressLine, postBox.addressLine)
+                && Objects.equals(postBoxNumber, postBox.postBoxNumber)
+                && Objects.equals(postBoxNumberPrefix, postBox.postBoxNumberPrefix)
+                && Objects.equals(postBoxNumberSuffix, postBox.postBoxNumberSuffix)
+                && Objects.equals(postBoxNumberExtension, postBox.postBoxNumberExtension)
+                && Objects.equals(firm, postBox.firm)
+                && Objects.equals(postalCode, postBox.postalCode)
+                && Objects.equals(any, postBox.any)
+                && Objects.equals(underscore, postBox.underscore)
+                && Objects.equals(indicator, postBox.indicator)
+                && Objects.equals(otherAttributes, postBox.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof PostBox) == false) {
-            return false;
-        }
-        PostBox other = ((PostBox) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (postBoxNumber == null) {
-            if (other.postBoxNumber!= null) {
-                return false;
-            }
-        } else {
-            if (postBoxNumber.equals(other.postBoxNumber) == false) {
-                return false;
-            }
-        }
-        if (postBoxNumberPrefix == null) {
-            if (other.postBoxNumberPrefix!= null) {
-                return false;
-            }
-        } else {
-            if (postBoxNumberPrefix.equals(other.postBoxNumberPrefix) == false) {
-                return false;
-            }
-        }
-        if (postBoxNumberSuffix == null) {
-            if (other.postBoxNumberSuffix!= null) {
-                return false;
-            }
-        } else {
-            if (postBoxNumberSuffix.equals(other.postBoxNumberSuffix) == false) {
-                return false;
-            }
-        }
-        if (postBoxNumberExtension == null) {
-            if (other.postBoxNumberExtension!= null) {
-                return false;
-            }
-        } else {
-            if (postBoxNumberExtension.equals(other.postBoxNumberExtension) == false) {
-                return false;
-            }
-        }
-        if (firm == null) {
-            if (other.firm!= null) {
-                return false;
-            }
-        } else {
-            if (firm.equals(other.firm) == false) {
-                return false;
-            }
-        }
-        if (postalCode == null) {
-            if (other.postalCode!= null) {
-                return false;
-            }
-        } else {
-            if (postalCode.equals(other.postalCode) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        if (indicator == null) {
-            if (other.indicator!= null) {
-                return false;
-            }
-        } else {
-            if (indicator.equals(other.indicator) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(postBoxNumber);
+        result = 31 * result + Objects.hashCode(postBoxNumberPrefix);
+        result = 31 * result + Objects.hashCode(postBoxNumberSuffix);
+        result = 31 * result + Objects.hashCode(postBoxNumberExtension);
+        result = 31 * result + Objects.hashCode(firm);
+        result = 31 * result + Objects.hashCode(postalCode);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(indicator);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

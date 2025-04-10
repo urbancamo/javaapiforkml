@@ -10,7 +10,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * gx:LatLonQuad
@@ -105,38 +105,25 @@ public class LatLonQuad
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((coordinates == null)? 0 :coordinates.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LatLonQuad that = (LatLonQuad) object;
+        return Objects.equals(coordinates, that.coordinates);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LatLonQuad) == false) {
-            return false;
-        }
-        LatLonQuad other = ((LatLonQuad) obj);
-        if (coordinates == null) {
-            if (other.coordinates!= null) {
-                return false;
-            }
-        } else {
-            if (coordinates.equals(other.coordinates) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(coordinates);
+        return result;
     }
 
     /**

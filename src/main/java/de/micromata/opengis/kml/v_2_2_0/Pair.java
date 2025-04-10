@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Pair>} (required)
@@ -224,78 +224,33 @@ public class Pair
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((key == null)? 0 :key.hashCode()));
-        result = ((prime*result)+((styleUrl == null)? 0 :styleUrl.hashCode()));
-        result = ((prime*result)+((styleSelector == null)? 0 :styleSelector.hashCode()));
-        result = ((prime*result)+((pairSimpleExtension == null)? 0 :pairSimpleExtension.hashCode()));
-        result = ((prime*result)+((pairObjectExtension == null)? 0 :pairObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Pair pair = (Pair) object;
+        return key == pair.key
+                && Objects.equals(styleUrl, pair.styleUrl)
+                && Objects.equals(styleSelector, pair.styleSelector)
+                && Objects.equals(pairSimpleExtension, pair.pairSimpleExtension)
+                && Objects.equals(pairObjectExtension, pair.pairObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Pair) == false) {
-            return false;
-        }
-        Pair other = ((Pair) obj);
-        if (key == null) {
-            if (other.key!= null) {
-                return false;
-            }
-        } else {
-            if (key.equals(other.key) == false) {
-                return false;
-            }
-        }
-        if (styleUrl == null) {
-            if (other.styleUrl!= null) {
-                return false;
-            }
-        } else {
-            if (styleUrl.equals(other.styleUrl) == false) {
-                return false;
-            }
-        }
-        if (styleSelector == null) {
-            if (other.styleSelector!= null) {
-                return false;
-            }
-        } else {
-            if (styleSelector.equals(other.styleSelector) == false) {
-                return false;
-            }
-        }
-        if (pairSimpleExtension == null) {
-            if (other.pairSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (pairSimpleExtension.equals(other.pairSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (pairObjectExtension == null) {
-            if (other.pairObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (pairObjectExtension.equals(other.pairObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(key);
+        result = 31 * result + Objects.hashCode(styleUrl);
+        result = 31 * result + Objects.hashCode(styleSelector);
+        result = 31 * result + Objects.hashCode(pairSimpleExtension);
+        result = 31 * result + Objects.hashCode(pairObjectExtension);
+        return result;
     }
 
     /**

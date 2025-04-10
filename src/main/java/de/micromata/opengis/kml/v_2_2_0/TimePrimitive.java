@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <TimePrimitive>}
@@ -99,48 +99,27 @@ public abstract class TimePrimitive
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((timePrimitiveSimpleExtension == null)? 0 :timePrimitiveSimpleExtension.hashCode()));
-        result = ((prime*result)+((timePrimitiveObjectExtension == null)? 0 :timePrimitiveObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        TimePrimitive that = (TimePrimitive) object;
+        return Objects.equals(timePrimitiveSimpleExtension, that.timePrimitiveSimpleExtension)
+                && Objects.equals(timePrimitiveObjectExtension, that.timePrimitiveObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof TimePrimitive) == false) {
-            return false;
-        }
-        TimePrimitive other = ((TimePrimitive) obj);
-        if (timePrimitiveSimpleExtension == null) {
-            if (other.timePrimitiveSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (timePrimitiveSimpleExtension.equals(other.timePrimitiveSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (timePrimitiveObjectExtension == null) {
-            if (other.timePrimitiveObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (timePrimitiveObjectExtension.equals(other.timePrimitiveObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(timePrimitiveSimpleExtension);
+        result = 31 * result + Objects.hashCode(timePrimitiveObjectExtension);
+        return result;
     }
 
     /**

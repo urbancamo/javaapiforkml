@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <viewvolume>}
@@ -288,74 +288,37 @@ public class ViewVolume
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(leftFov);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(rightFov);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(bottomFov);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(topFov);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(near);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((viewVolumeSimpleExtension == null)? 0 :viewVolumeSimpleExtension.hashCode()));
-        result = ((prime*result)+((viewVolumeObjectExtension == null)? 0 :viewVolumeObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ViewVolume that = (ViewVolume) object;
+        return Double.compare(leftFov, that.leftFov) == 0
+                && Double.compare(rightFov, that.rightFov) == 0
+                && Double.compare(bottomFov, that.bottomFov) == 0
+                && Double.compare(topFov, that.topFov) == 0
+                && Double.compare(near, that.near) == 0
+                && Objects.equals(viewVolumeSimpleExtension, that.viewVolumeSimpleExtension)
+                && Objects.equals(viewVolumeObjectExtension, that.viewVolumeObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ViewVolume) == false) {
-            return false;
-        }
-        ViewVolume other = ((ViewVolume) obj);
-        if (leftFov!= other.leftFov) {
-            return false;
-        }
-        if (rightFov!= other.rightFov) {
-            return false;
-        }
-        if (bottomFov!= other.bottomFov) {
-            return false;
-        }
-        if (topFov!= other.topFov) {
-            return false;
-        }
-        if (near!= other.near) {
-            return false;
-        }
-        if (viewVolumeSimpleExtension == null) {
-            if (other.viewVolumeSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (viewVolumeSimpleExtension.equals(other.viewVolumeSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (viewVolumeObjectExtension == null) {
-            if (other.viewVolumeObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (viewVolumeObjectExtension.equals(other.viewVolumeObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(leftFov);
+        result = 31 * result + Double.hashCode(rightFov);
+        result = 31 * result + Double.hashCode(bottomFov);
+        result = 31 * result + Double.hashCode(topFov);
+        result = 31 * result + Double.hashCode(near);
+        result = 31 * result + Objects.hashCode(viewVolumeSimpleExtension);
+        result = 31 * result + Objects.hashCode(viewVolumeObjectExtension);
+        return result;
     }
 
     /**

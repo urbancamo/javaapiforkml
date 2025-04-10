@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Region>}
@@ -207,68 +207,31 @@ public class Region
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((latLonAltBox == null)? 0 :latLonAltBox.hashCode()));
-        result = ((prime*result)+((lod == null)? 0 :lod.hashCode()));
-        result = ((prime*result)+((regionSimpleExtension == null)? 0 :regionSimpleExtension.hashCode()));
-        result = ((prime*result)+((regionObjectExtension == null)? 0 :regionObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Region region = (Region) object;
+        return Objects.equals(latLonAltBox, region.latLonAltBox)
+                && Objects.equals(lod, region.lod)
+                && Objects.equals(regionSimpleExtension, region.regionSimpleExtension)
+                && Objects.equals(regionObjectExtension, region.regionObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Region) == false) {
-            return false;
-        }
-        Region other = ((Region) obj);
-        if (latLonAltBox == null) {
-            if (other.latLonAltBox!= null) {
-                return false;
-            }
-        } else {
-            if (latLonAltBox.equals(other.latLonAltBox) == false) {
-                return false;
-            }
-        }
-        if (lod == null) {
-            if (other.lod!= null) {
-                return false;
-            }
-        } else {
-            if (lod.equals(other.lod) == false) {
-                return false;
-            }
-        }
-        if (regionSimpleExtension == null) {
-            if (other.regionSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (regionSimpleExtension.equals(other.regionSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (regionObjectExtension == null) {
-            if (other.regionObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (regionObjectExtension.equals(other.regionObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(latLonAltBox);
+        result = 31 * result + Objects.hashCode(lod);
+        result = 31 * result + Objects.hashCode(regionSimpleExtension);
+        result = 31 * result + Objects.hashCode(regionObjectExtension);
+        return result;
     }
 
     /**

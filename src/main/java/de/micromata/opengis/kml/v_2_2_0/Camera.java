@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * Camera
@@ -468,89 +468,41 @@ public class Camera
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(longitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(latitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(altitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(heading);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(tilt);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(roll);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((cameraSimpleExtension == null)? 0 :cameraSimpleExtension.hashCode()));
-        result = ((prime*result)+((cameraObjectExtension == null)? 0 :cameraObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Camera camera = (Camera) object;
+        return altitudeMode == camera.altitudeMode
+                && Double.compare(longitude, camera.longitude) == 0
+                && Double.compare(latitude, camera.latitude) == 0
+                && Double.compare(altitude, camera.altitude) == 0
+                && Double.compare(heading, camera.heading) == 0
+                && Double.compare(tilt, camera.tilt) == 0
+                && Double.compare(roll, camera.roll) == 0
+                && Objects.equals(cameraSimpleExtension, camera.cameraSimpleExtension)
+                && Objects.equals(cameraObjectExtension, camera.cameraObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Camera) == false) {
-            return false;
-        }
-        Camera other = ((Camera) obj);
-        if (longitude!= other.longitude) {
-            return false;
-        }
-        if (latitude!= other.latitude) {
-            return false;
-        }
-        if (altitude!= other.altitude) {
-            return false;
-        }
-        if (heading!= other.heading) {
-            return false;
-        }
-        if (tilt!= other.tilt) {
-            return false;
-        }
-        if (roll!= other.roll) {
-            return false;
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (cameraSimpleExtension == null) {
-            if (other.cameraSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (cameraSimpleExtension.equals(other.cameraSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (cameraObjectExtension == null) {
-            if (other.cameraObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (cameraObjectExtension.equals(other.cameraObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(longitude);
+        result = 31 * result + Double.hashCode(latitude);
+        result = 31 * result + Double.hashCode(altitude);
+        result = 31 * result + Double.hashCode(heading);
+        result = 31 * result + Double.hashCode(tilt);
+        result = 31 * result + Double.hashCode(roll);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(cameraSimpleExtension);
+        result = 31 * result + Objects.hashCode(cameraObjectExtension);
+        return result;
     }
 
     /**

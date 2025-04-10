@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <imagepyramid>}
@@ -241,70 +241,35 @@ public class ImagePyramid
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+ tileSize);
-        result = ((prime*result)+ maxWidth);
-        result = ((prime*result)+ maxHeight);
-        result = ((prime*result)+((gridOrigin == null)? 0 :gridOrigin.hashCode()));
-        result = ((prime*result)+((imagePyramidSimpleExtension == null)? 0 :imagePyramidSimpleExtension.hashCode()));
-        result = ((prime*result)+((imagePyramidObjectExtension == null)? 0 :imagePyramidObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ImagePyramid that = (ImagePyramid) object;
+        return tileSize == that.tileSize
+                && maxWidth == that.maxWidth
+                && maxHeight == that.maxHeight
+                && gridOrigin == that.gridOrigin
+                && Objects.equals(imagePyramidSimpleExtension, that.imagePyramidSimpleExtension)
+                && Objects.equals(imagePyramidObjectExtension, that.imagePyramidObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ImagePyramid) == false) {
-            return false;
-        }
-        ImagePyramid other = ((ImagePyramid) obj);
-        if (tileSize!= other.tileSize) {
-            return false;
-        }
-        if (maxWidth!= other.maxWidth) {
-            return false;
-        }
-        if (maxHeight!= other.maxHeight) {
-            return false;
-        }
-        if (gridOrigin == null) {
-            if (other.gridOrigin!= null) {
-                return false;
-            }
-        } else {
-            if (gridOrigin.equals(other.gridOrigin) == false) {
-                return false;
-            }
-        }
-        if (imagePyramidSimpleExtension == null) {
-            if (other.imagePyramidSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (imagePyramidSimpleExtension.equals(other.imagePyramidSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (imagePyramidObjectExtension == null) {
-            if (other.imagePyramidObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (imagePyramidObjectExtension.equals(other.imagePyramidObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + tileSize;
+        result = 31 * result + maxWidth;
+        result = 31 * result + maxHeight;
+        result = 31 * result + Objects.hashCode(gridOrigin);
+        result = 31 * result + Objects.hashCode(imagePyramidSimpleExtension);
+        result = 31 * result + Objects.hashCode(imagePyramidObjectExtension);
+        return result;
     }
 
     /**

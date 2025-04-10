@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -76,58 +76,29 @@ public class SimpleArrayData
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((value == null)? 0 :value.hashCode()));
-        result = ((prime*result)+((simpleArrayDataExtension == null)? 0 :simpleArrayDataExtension.hashCode()));
-        result = ((prime*result)+((name == null)? 0 :name.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        SimpleArrayData that = (SimpleArrayData) object;
+        return Objects.equals(value, that.value)
+                && Objects.equals(simpleArrayDataExtension, that.simpleArrayDataExtension)
+                && Objects.equals(name, that.name);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof SimpleArrayData) == false) {
-            return false;
-        }
-        SimpleArrayData other = ((SimpleArrayData) obj);
-        if (value == null) {
-            if (other.value!= null) {
-                return false;
-            }
-        } else {
-            if (value.equals(other.value) == false) {
-                return false;
-            }
-        }
-        if (simpleArrayDataExtension == null) {
-            if (other.simpleArrayDataExtension!= null) {
-                return false;
-            }
-        } else {
-            if (simpleArrayDataExtension.equals(other.simpleArrayDataExtension) == false) {
-                return false;
-            }
-        }
-        if (name == null) {
-            if (other.name!= null) {
-                return false;
-            }
-        } else {
-            if (name.equals(other.name) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(value);
+        result = 31 * result + Objects.hashCode(simpleArrayDataExtension);
+        result = 31 * result + Objects.hashCode(name);
+        return result;
     }
 
     /**
