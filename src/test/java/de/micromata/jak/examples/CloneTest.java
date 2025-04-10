@@ -22,7 +22,7 @@ public class CloneTest {
 
   @Test
   public void testClonePlacemark() {
-    String path = "src/main/resources/exampledata/worldBorders.kml";
+    String path = "src/test/resources/exampledata/worldBorders.kml";
     Kml kml = Kml.unmarshal(new File(path));
     Document document = (Document) kml.getFeature();
     Folder folder = (Folder) document.getFeature().get(0);
