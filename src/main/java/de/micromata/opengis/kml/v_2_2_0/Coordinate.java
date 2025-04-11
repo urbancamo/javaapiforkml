@@ -44,8 +44,8 @@ public class Coordinate implements Cloneable
     }
 
     public Coordinate(final String coordinates) {
-        String[] coords = coordinates.replaceAll(",\\s+", ",").trim().split(",");
-        if ((coords.length< 1)&&(coords.length > 3)) {
+        String[] coords = coordinates.split("\\s*,\\s*");
+        if ((coords.length< 1)||(coords.length > 3)) {
             throw new IllegalArgumentException();
         }
         this.longitude = Double.parseDouble((coords[0]));

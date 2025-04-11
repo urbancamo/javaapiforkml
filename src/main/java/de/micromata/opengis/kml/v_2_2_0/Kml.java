@@ -621,11 +621,28 @@ public class Kml implements Cloneable
         throws JAXBException
     {
         if (marshaller == null) {
-            marshaller = getJaxbContext().createMarshaller();
+            JAXBContext context = getJaxbContext();
+            marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            //marshaller.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
+            decorateMarshaller(context, marshaller);
         }
         return marshaller;
+    }
+
+    /**
+     * Allow 3rd parties to decorate the marshaller to add additional functionality.
+     *
+     * @param context Context that created the marshaller.
+     * @param marshaller The marshaller to decorate.
+     */
+    protected void decorateMarshaller(JAXBContext context, Marshaller marshaller)
+    {
+        // no-op by default
+        //
+        // Child classes can use this to add additional properties to the marshaller such as NamespacePrefixMapper implementations
+        //
+        // Example:
+        //    marshaller.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
     }
 
     /**

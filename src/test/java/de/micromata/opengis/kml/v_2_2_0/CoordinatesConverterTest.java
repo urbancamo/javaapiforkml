@@ -1,8 +1,6 @@
 package de.micromata.opengis.kml.v_2_2_0;
 
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -58,7 +56,9 @@ public class CoordinatesConverterTest {
     @Test
     public void testTupleConversion() throws Exception {
         CoordinatesConverter converter = new CoordinatesConverter();
-        checkCoordsValid(converter.unmarshal(COMMA_COORDINATE_TUPLES), VALID_COORDINATE_TUPLES);
-        checkCoordsValid(converter.unmarshal(SPACE_COORDINATE_TUPLES), VALID_COORDINATE_TUPLES);
+        List<Coordinate> commaSeparated = converter.unmarshal(COMMA_COORDINATE_TUPLES);
+        List<Coordinate> spaceSeparated = converter.unmarshal(SPACE_COORDINATE_TUPLES);
+        checkCoordsValid(commaSeparated, VALID_COORDINATE_TUPLES);
+        checkCoordsValid(spaceSeparated, VALID_COORDINATE_TUPLES);
     }
 }
