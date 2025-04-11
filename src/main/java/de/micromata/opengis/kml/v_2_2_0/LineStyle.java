@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <LineStyle>}
@@ -150,54 +150,29 @@ public class LineStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(width);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((lineStyleSimpleExtension == null)? 0 :lineStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((lineStyleObjectExtension == null)? 0 :lineStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LineStyle lineStyle = (LineStyle) object;
+        return Double.compare(width, lineStyle.width) == 0
+                && Objects.equals(lineStyleSimpleExtension, lineStyle.lineStyleSimpleExtension)
+                && Objects.equals(lineStyleObjectExtension, lineStyle.lineStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LineStyle) == false) {
-            return false;
-        }
-        LineStyle other = ((LineStyle) obj);
-        if (width!= other.width) {
-            return false;
-        }
-        if (lineStyleSimpleExtension == null) {
-            if (other.lineStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lineStyleSimpleExtension.equals(other.lineStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (lineStyleObjectExtension == null) {
-            if (other.lineStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lineStyleObjectExtension.equals(other.lineStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(width);
+        result = 31 * result + Objects.hashCode(lineStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(lineStyleObjectExtension);
+        return result;
     }
 
     /**

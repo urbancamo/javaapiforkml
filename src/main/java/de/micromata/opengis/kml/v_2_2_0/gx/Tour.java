@@ -9,7 +9,7 @@ import de.micromata.opengis.kml.v_2_2_0.xal.AddressDetails;
 import jakarta.xml.bind.annotation.*;
 
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <gx:Tour>}
@@ -82,38 +82,25 @@ public class Tour
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((playlist == null)? 0 :playlist.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Tour tour = (Tour) object;
+        return Objects.equals(playlist, tour.playlist);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Tour) == false) {
-            return false;
-        }
-        Tour other = ((Tour) obj);
-        if (playlist == null) {
-            if (other.playlist!= null) {
-                return false;
-            }
-        } else {
-            if (playlist.equals(other.playlist) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(playlist);
+        return result;
     }
 
     /**

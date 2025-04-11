@@ -7,6 +7,7 @@ import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
+import java.util.Objects;
 
 /**
  * 
@@ -63,39 +64,24 @@ public class Option implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((name == null)? 0 :name.hashCode()));
-        result = ((prime*result)+(new Boolean(enabled).hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Option option = (Option) object;
+        return enabled == option.enabled
+                && Objects.equals(name, option.name);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Option) == false) {
-            return false;
-        }
-        Option other = ((Option) obj);
-        if (name == null) {
-            if (other.name!= null) {
-                return false;
-            }
-        } else {
-            if (name.equals(other.name) == false) {
-                return false;
-            }
-        }
-        if (enabled!= other.enabled) {
-            return false;
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(name);
+        result = 31 * result + Boolean.hashCode(enabled);
+        return result;
     }
 
     /**

@@ -3,6 +3,8 @@ package de.micromata.opengis.kml.v_2_2_0.xal;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAnyAttribute;
@@ -141,65 +143,30 @@ public class PremiseNumberSuffix implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((content == null)? 0 :content.hashCode()));
-        result = ((prime*result)+((numberSuffixSeparator == null)? 0 :numberSuffixSeparator.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        result = ((prime*result)+((code == null)? 0 :code.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        PremiseNumberSuffix that = (PremiseNumberSuffix) object;
+        return Objects.equals(content, that.content)
+                && Objects.equals(numberSuffixSeparator, that.numberSuffixSeparator)
+                && Objects.equals(underscore, that.underscore)
+                && Objects.equals(code, that.code)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof PremiseNumberSuffix) == false) {
-            return false;
-        }
-        PremiseNumberSuffix other = ((PremiseNumberSuffix) obj);
-        if (content == null) {
-            if (other.content!= null) {
-                return false;
-            }
-        } else {
-            if (content.equals(other.content) == false) {
-                return false;
-            }
-        }
-        if (numberSuffixSeparator == null) {
-            if (other.numberSuffixSeparator!= null) {
-                return false;
-            }
-        } else {
-            if (numberSuffixSeparator.equals(other.numberSuffixSeparator) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        if (code == null) {
-            if (other.code!= null) {
-                return false;
-            }
-        } else {
-            if (code.equals(other.code) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(content);
+        result = 31 * result + Objects.hashCode(numberSuffixSeparator);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(code);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

@@ -3,6 +3,7 @@ package de.micromata.opengis.kml.v_2_2_0.atom;
 
 import jakarta.xml.bind.annotation.*;
 
+import java.util.Objects;
 
 /**
  * {@code <Link>} (required). see {@code <Link>}.
@@ -254,85 +255,32 @@ public class Link implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((href == null)? 0 :href.hashCode()));
-        result = ((prime*result)+((rel == null)? 0 :rel.hashCode()));
-        result = ((prime*result)+((type == null)? 0 :type.hashCode()));
-        result = ((prime*result)+((hreflang == null)? 0 :hreflang.hashCode()));
-        result = ((prime*result)+((title == null)? 0 :title.hashCode()));
-        result = ((prime*result)+((length == null)? 0 :length.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Link link = (Link) object;
+        return Objects.equals(href, link.href)
+                && Objects.equals(rel, link.rel)
+                && Objects.equals(type, link.type)
+                && Objects.equals(hreflang, link.hreflang)
+                && Objects.equals(title, link.title)
+                && Objects.equals(length, link.length);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Link) == false) {
-            return false;
-        }
-        Link other = ((Link) obj);
-        if (href == null) {
-            if (other.href!= null) {
-                return false;
-            }
-        } else {
-            if (href.equals(other.href) == false) {
-                return false;
-            }
-        }
-        if (rel == null) {
-            if (other.rel!= null) {
-                return false;
-            }
-        } else {
-            if (rel.equals(other.rel) == false) {
-                return false;
-            }
-        }
-        if (type == null) {
-            if (other.type!= null) {
-                return false;
-            }
-        } else {
-            if (type.equals(other.type) == false) {
-                return false;
-            }
-        }
-        if (hreflang == null) {
-            if (other.hreflang!= null) {
-                return false;
-            }
-        } else {
-            if (hreflang.equals(other.hreflang) == false) {
-                return false;
-            }
-        }
-        if (title == null) {
-            if (other.title!= null) {
-                return false;
-            }
-        } else {
-            if (title.equals(other.title) == false) {
-                return false;
-            }
-        }
-        if (length == null) {
-            if (other.length!= null) {
-                return false;
-            }
-        } else {
-            if (length.equals(other.length) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(href);
+        result = 31 * result + Objects.hashCode(rel);
+        result = 31 * result + Objects.hashCode(type);
+        result = 31 * result + Objects.hashCode(hreflang);
+        result = 31 * result + Objects.hashCode(title);
+        result = 31 * result + Objects.hashCode(length);
+        return result;
     }
 
     /**

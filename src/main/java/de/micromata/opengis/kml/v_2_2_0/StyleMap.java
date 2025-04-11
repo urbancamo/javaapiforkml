@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <StyleMap>}
@@ -126,58 +126,29 @@ public class StyleMap
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((pair == null)? 0 :pair.hashCode()));
-        result = ((prime*result)+((styleMapSimpleExtension == null)? 0 :styleMapSimpleExtension.hashCode()));
-        result = ((prime*result)+((styleMapObjectExtension == null)? 0 :styleMapObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        StyleMap styleMap = (StyleMap) object;
+        return Objects.equals(pair, styleMap.pair)
+                && Objects.equals(styleMapSimpleExtension, styleMap.styleMapSimpleExtension)
+                && Objects.equals(styleMapObjectExtension, styleMap.styleMapObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof StyleMap) == false) {
-            return false;
-        }
-        StyleMap other = ((StyleMap) obj);
-        if (pair == null) {
-            if (other.pair!= null) {
-                return false;
-            }
-        } else {
-            if (pair.equals(other.pair) == false) {
-                return false;
-            }
-        }
-        if (styleMapSimpleExtension == null) {
-            if (other.styleMapSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (styleMapSimpleExtension.equals(other.styleMapSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (styleMapObjectExtension == null) {
-            if (other.styleMapObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (styleMapObjectExtension.equals(other.styleMapObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(pair);
+        result = 31 * result + Objects.hashCode(styleMapSimpleExtension);
+        result = 31 * result + Objects.hashCode(styleMapObjectExtension);
+        return result;
     }
 
     /**

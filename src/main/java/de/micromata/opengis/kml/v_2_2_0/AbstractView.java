@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -57,48 +57,27 @@ public abstract class AbstractView
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((abstractViewSimpleExtension == null)? 0 :abstractViewSimpleExtension.hashCode()));
-        result = ((prime*result)+((abstractViewObjectExtension == null)? 0 :abstractViewObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        AbstractView that = (AbstractView) object;
+        return Objects.equals(abstractViewSimpleExtension, that.abstractViewSimpleExtension)
+                && Objects.equals(abstractViewObjectExtension, that.abstractViewObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof AbstractView) == false) {
-            return false;
-        }
-        AbstractView other = ((AbstractView) obj);
-        if (abstractViewSimpleExtension == null) {
-            if (other.abstractViewSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (abstractViewSimpleExtension.equals(other.abstractViewSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (abstractViewObjectExtension == null) {
-            if (other.abstractViewObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (abstractViewObjectExtension.equals(other.abstractViewObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(abstractViewSimpleExtension);
+        result = 31 * result + Objects.hashCode(abstractViewObjectExtension);
+        return result;
     }
 
     /**

@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Feature>}
@@ -868,228 +868,63 @@ public abstract class Feature
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((name == null)? 0 :name.hashCode()));
-        result = ((prime*result)+((visibility == null)? 0 :visibility.hashCode()));
-        result = ((prime*result)+((open == null)? 0 :open.hashCode()));
-        result = ((prime*result)+((atomAuthor == null)? 0 :atomAuthor.hashCode()));
-        result = ((prime*result)+((atomLink == null)? 0 :atomLink.hashCode()));
-        result = ((prime*result)+((address == null)? 0 :address.hashCode()));
-        result = ((prime*result)+((xalAddressDetails == null)? 0 :xalAddressDetails.hashCode()));
-        result = ((prime*result)+((phoneNumber == null)? 0 :phoneNumber.hashCode()));
-        result = ((prime*result)+((snippet == null)? 0 :snippet.hashCode()));
-        result = ((prime*result)+((snippetd == null)? 0 :snippetd.hashCode()));
-        result = ((prime*result)+((description == null)? 0 :description.hashCode()));
-        result = ((prime*result)+((abstractView == null)? 0 :abstractView.hashCode()));
-        result = ((prime*result)+((timePrimitive == null)? 0 :timePrimitive.hashCode()));
-        result = ((prime*result)+((styleUrl == null)? 0 :styleUrl.hashCode()));
-        result = ((prime*result)+((styleSelector == null)? 0 :styleSelector.hashCode()));
-        result = ((prime*result)+((region == null)? 0 :region.hashCode()));
-        result = ((prime*result)+((metadata == null)? 0 :metadata.hashCode()));
-        result = ((prime*result)+((extendedData == null)? 0 :extendedData.hashCode()));
-        result = ((prime*result)+((featureSimpleExtension == null)? 0 :featureSimpleExtension.hashCode()));
-        result = ((prime*result)+((featureObjectExtension == null)? 0 :featureObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Feature feature = (Feature) object;
+        return Objects.equals(name, feature.name)
+                && Objects.equals(visibility, feature.visibility)
+                && Objects.equals(open, feature.open)
+                && Objects.equals(atomAuthor, feature.atomAuthor)
+                && Objects.equals(atomLink, feature.atomLink)
+                && Objects.equals(address, feature.address)
+                && Objects.equals(xalAddressDetails, feature.xalAddressDetails)
+                && Objects.equals(phoneNumber, feature.phoneNumber)
+                && Objects.equals(snippet, feature.snippet)
+                && Objects.equals(snippetd, feature.snippetd)
+                && Objects.equals(description, feature.description)
+                && Objects.equals(abstractView, feature.abstractView)
+                && Objects.equals(timePrimitive, feature.timePrimitive)
+                && Objects.equals(styleUrl, feature.styleUrl)
+                && Objects.equals(styleSelector, feature.styleSelector)
+                && Objects.equals(region, feature.region)
+                && Objects.equals(metadata, feature.metadata)
+                && Objects.equals(extendedData, feature.extendedData)
+                && Objects.equals(featureSimpleExtension, feature.featureSimpleExtension)
+                && Objects.equals(featureObjectExtension, feature.featureObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Feature) == false) {
-            return false;
-        }
-        Feature other = ((Feature) obj);
-        if (name == null) {
-            if (other.name!= null) {
-                return false;
-            }
-        } else {
-            if (name.equals(other.name) == false) {
-                return false;
-            }
-        }
-        if (visibility == null) {
-            if (other.visibility!= null) {
-                return false;
-            }
-        } else {
-            if (visibility.equals(other.visibility) == false) {
-                return false;
-            }
-        }
-        if (open == null) {
-            if (other.open!= null) {
-                return false;
-            }
-        } else {
-            if (open.equals(other.open) == false) {
-                return false;
-            }
-        }
-        if (atomAuthor == null) {
-            if (other.atomAuthor!= null) {
-                return false;
-            }
-        } else {
-            if (atomAuthor.equals(other.atomAuthor) == false) {
-                return false;
-            }
-        }
-        if (atomLink == null) {
-            if (other.atomLink!= null) {
-                return false;
-            }
-        } else {
-            if (atomLink.equals(other.atomLink) == false) {
-                return false;
-            }
-        }
-        if (address == null) {
-            if (other.address!= null) {
-                return false;
-            }
-        } else {
-            if (address.equals(other.address) == false) {
-                return false;
-            }
-        }
-        if (xalAddressDetails == null) {
-            if (other.xalAddressDetails!= null) {
-                return false;
-            }
-        } else {
-            if (xalAddressDetails.equals(other.xalAddressDetails) == false) {
-                return false;
-            }
-        }
-        if (phoneNumber == null) {
-            if (other.phoneNumber!= null) {
-                return false;
-            }
-        } else {
-            if (phoneNumber.equals(other.phoneNumber) == false) {
-                return false;
-            }
-        }
-        if (snippet == null) {
-            if (other.snippet!= null) {
-                return false;
-            }
-        } else {
-            if (snippet.equals(other.snippet) == false) {
-                return false;
-            }
-        }
-        if (snippetd == null) {
-            if (other.snippetd!= null) {
-                return false;
-            }
-        } else {
-            if (snippetd.equals(other.snippetd) == false) {
-                return false;
-            }
-        }
-        if (description == null) {
-            if (other.description!= null) {
-                return false;
-            }
-        } else {
-            if (description.equals(other.description) == false) {
-                return false;
-            }
-        }
-        if (abstractView == null) {
-            if (other.abstractView!= null) {
-                return false;
-            }
-        } else {
-            if (abstractView.equals(other.abstractView) == false) {
-                return false;
-            }
-        }
-        if (timePrimitive == null) {
-            if (other.timePrimitive!= null) {
-                return false;
-            }
-        } else {
-            if (timePrimitive.equals(other.timePrimitive) == false) {
-                return false;
-            }
-        }
-        if (styleUrl == null) {
-            if (other.styleUrl!= null) {
-                return false;
-            }
-        } else {
-            if (styleUrl.equals(other.styleUrl) == false) {
-                return false;
-            }
-        }
-        if (styleSelector == null) {
-            if (other.styleSelector!= null) {
-                return false;
-            }
-        } else {
-            if (styleSelector.equals(other.styleSelector) == false) {
-                return false;
-            }
-        }
-        if (region == null) {
-            if (other.region!= null) {
-                return false;
-            }
-        } else {
-            if (region.equals(other.region) == false) {
-                return false;
-            }
-        }
-        if (metadata == null) {
-            if (other.metadata!= null) {
-                return false;
-            }
-        } else {
-            if (metadata.equals(other.metadata) == false) {
-                return false;
-            }
-        }
-        if (extendedData == null) {
-            if (other.extendedData!= null) {
-                return false;
-            }
-        } else {
-            if (extendedData.equals(other.extendedData) == false) {
-                return false;
-            }
-        }
-        if (featureSimpleExtension == null) {
-            if (other.featureSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (featureSimpleExtension.equals(other.featureSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (featureObjectExtension == null) {
-            if (other.featureObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (featureObjectExtension.equals(other.featureObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(name);
+        result = 31 * result + Objects.hashCode(visibility);
+        result = 31 * result + Objects.hashCode(open);
+        result = 31 * result + Objects.hashCode(atomAuthor);
+        result = 31 * result + Objects.hashCode(atomLink);
+        result = 31 * result + Objects.hashCode(address);
+        result = 31 * result + Objects.hashCode(xalAddressDetails);
+        result = 31 * result + Objects.hashCode(phoneNumber);
+        result = 31 * result + Objects.hashCode(snippet);
+        result = 31 * result + Objects.hashCode(snippetd);
+        result = 31 * result + Objects.hashCode(description);
+        result = 31 * result + Objects.hashCode(abstractView);
+        result = 31 * result + Objects.hashCode(timePrimitive);
+        result = 31 * result + Objects.hashCode(styleUrl);
+        result = 31 * result + Objects.hashCode(styleSelector);
+        result = 31 * result + Objects.hashCode(region);
+        result = 31 * result + Objects.hashCode(metadata);
+        result = 31 * result + Objects.hashCode(extendedData);
+        result = 31 * result + Objects.hashCode(featureSimpleExtension);
+        result = 31 * result + Objects.hashCode(featureObjectExtension);
+        return result;
     }
 
     /**

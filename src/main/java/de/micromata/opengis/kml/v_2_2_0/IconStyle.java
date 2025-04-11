@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <IconStyle>}
@@ -324,79 +324,35 @@ public class IconStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(scale);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(heading);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((icon == null)? 0 :icon.hashCode()));
-        result = ((prime*result)+((hotSpot == null)? 0 :hotSpot.hashCode()));
-        result = ((prime*result)+((iconStyleSimpleExtension == null)? 0 :iconStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((iconStyleObjectExtension == null)? 0 :iconStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        IconStyle iconStyle = (IconStyle) object;
+        return Double.compare(scale, iconStyle.scale) == 0
+                && Double.compare(heading, iconStyle.heading) == 0
+                && Objects.equals(icon, iconStyle.icon)
+                && Objects.equals(hotSpot, iconStyle.hotSpot)
+                && Objects.equals(iconStyleSimpleExtension, iconStyle.iconStyleSimpleExtension)
+                && Objects.equals(iconStyleObjectExtension, iconStyle.iconStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof IconStyle) == false) {
-            return false;
-        }
-        IconStyle other = ((IconStyle) obj);
-        if (scale!= other.scale) {
-            return false;
-        }
-        if (heading!= other.heading) {
-            return false;
-        }
-        if (icon == null) {
-            if (other.icon!= null) {
-                return false;
-            }
-        } else {
-            if (icon.equals(other.icon) == false) {
-                return false;
-            }
-        }
-        if (hotSpot == null) {
-            if (other.hotSpot!= null) {
-                return false;
-            }
-        } else {
-            if (hotSpot.equals(other.hotSpot) == false) {
-                return false;
-            }
-        }
-        if (iconStyleSimpleExtension == null) {
-            if (other.iconStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (iconStyleSimpleExtension.equals(other.iconStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (iconStyleObjectExtension == null) {
-            if (other.iconStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (iconStyleObjectExtension.equals(other.iconStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(scale);
+        result = 31 * result + Double.hashCode(heading);
+        result = 31 * result + Objects.hashCode(icon);
+        result = 31 * result + Objects.hashCode(hotSpot);
+        result = 31 * result + Objects.hashCode(iconStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(iconStyleObjectExtension);
+        return result;
     }
 
     /**

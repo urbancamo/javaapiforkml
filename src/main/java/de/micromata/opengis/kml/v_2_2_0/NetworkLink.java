@@ -9,7 +9,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <NetworkLink>}
@@ -344,88 +344,35 @@ public class NetworkLink
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((refreshVisibility == null)? 0 :refreshVisibility.hashCode()));
-        result = ((prime*result)+((flyToView == null)? 0 :flyToView.hashCode()));
-        result = ((prime*result)+((url == null)? 0 :url.hashCode()));
-        result = ((prime*result)+((link == null)? 0 :link.hashCode()));
-        result = ((prime*result)+((networkLinkSimpleExtension == null)? 0 :networkLinkSimpleExtension.hashCode()));
-        result = ((prime*result)+((networkLinkObjectExtension == null)? 0 :networkLinkObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        NetworkLink that = (NetworkLink) object;
+        return Objects.equals(refreshVisibility, that.refreshVisibility)
+                && Objects.equals(flyToView, that.flyToView)
+                && Objects.equals(url, that.url)
+                && Objects.equals(link, that.link)
+                && Objects.equals(networkLinkSimpleExtension, that.networkLinkSimpleExtension)
+                && Objects.equals(networkLinkObjectExtension, that.networkLinkObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof NetworkLink) == false) {
-            return false;
-        }
-        NetworkLink other = ((NetworkLink) obj);
-        if (refreshVisibility == null) {
-            if (other.refreshVisibility!= null) {
-                return false;
-            }
-        } else {
-            if (refreshVisibility.equals(other.refreshVisibility) == false) {
-                return false;
-            }
-        }
-        if (flyToView == null) {
-            if (other.flyToView!= null) {
-                return false;
-            }
-        } else {
-            if (flyToView.equals(other.flyToView) == false) {
-                return false;
-            }
-        }
-        if (url == null) {
-            if (other.url!= null) {
-                return false;
-            }
-        } else {
-            if (url.equals(other.url) == false) {
-                return false;
-            }
-        }
-        if (link == null) {
-            if (other.link!= null) {
-                return false;
-            }
-        } else {
-            if (link.equals(other.link) == false) {
-                return false;
-            }
-        }
-        if (networkLinkSimpleExtension == null) {
-            if (other.networkLinkSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (networkLinkSimpleExtension.equals(other.networkLinkSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (networkLinkObjectExtension == null) {
-            if (other.networkLinkObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (networkLinkObjectExtension.equals(other.networkLinkObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(refreshVisibility);
+        result = 31 * result + Objects.hashCode(flyToView);
+        result = 31 * result + Objects.hashCode(url);
+        result = 31 * result + Objects.hashCode(link);
+        result = 31 * result + Objects.hashCode(networkLinkSimpleExtension);
+        result = 31 * result + Objects.hashCode(networkLinkObjectExtension);
+        return result;
     }
 
     /**

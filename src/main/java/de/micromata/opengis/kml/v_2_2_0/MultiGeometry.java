@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <MultiGeometry>}
@@ -138,58 +138,29 @@ public class MultiGeometry
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((geometry == null)? 0 :geometry.hashCode()));
-        result = ((prime*result)+((multiGeometrySimpleExtension == null)? 0 :multiGeometrySimpleExtension.hashCode()));
-        result = ((prime*result)+((multiGeometryObjectExtension == null)? 0 :multiGeometryObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        MultiGeometry that = (MultiGeometry) object;
+        return Objects.equals(geometry, that.geometry)
+                && Objects.equals(multiGeometrySimpleExtension, that.multiGeometrySimpleExtension)
+                && Objects.equals(multiGeometryObjectExtension, that.multiGeometryObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof MultiGeometry) == false) {
-            return false;
-        }
-        MultiGeometry other = ((MultiGeometry) obj);
-        if (geometry == null) {
-            if (other.geometry!= null) {
-                return false;
-            }
-        } else {
-            if (geometry.equals(other.geometry) == false) {
-                return false;
-            }
-        }
-        if (multiGeometrySimpleExtension == null) {
-            if (other.multiGeometrySimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (multiGeometrySimpleExtension.equals(other.multiGeometrySimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (multiGeometryObjectExtension == null) {
-            if (other.multiGeometryObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (multiGeometryObjectExtension.equals(other.multiGeometryObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(geometry);
+        result = 31 * result + Objects.hashCode(multiGeometrySimpleExtension);
+        result = 31 * result + Objects.hashCode(multiGeometryObjectExtension);
+        return result;
     }
 
     /**

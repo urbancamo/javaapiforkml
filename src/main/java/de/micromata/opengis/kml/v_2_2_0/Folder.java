@@ -10,7 +10,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Folder>}
@@ -175,58 +175,29 @@ public class Folder
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((feature == null)? 0 :feature.hashCode()));
-        result = ((prime*result)+((folderSimpleExtension == null)? 0 :folderSimpleExtension.hashCode()));
-        result = ((prime*result)+((folderObjectExtension == null)? 0 :folderObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Folder folder = (Folder) object;
+        return Objects.equals(feature, folder.feature)
+                && Objects.equals(folderSimpleExtension, folder.folderSimpleExtension)
+                && Objects.equals(folderObjectExtension, folder.folderObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Folder) == false) {
-            return false;
-        }
-        Folder other = ((Folder) obj);
-        if (feature == null) {
-            if (other.feature!= null) {
-                return false;
-            }
-        } else {
-            if (feature.equals(other.feature) == false) {
-                return false;
-            }
-        }
-        if (folderSimpleExtension == null) {
-            if (other.folderSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (folderSimpleExtension.equals(other.folderSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (folderObjectExtension == null) {
-            if (other.folderObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (folderObjectExtension.equals(other.folderObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(feature);
+        result = 31 * result + Objects.hashCode(folderSimpleExtension);
+        result = 31 * result + Objects.hashCode(folderObjectExtension);
+        return result;
     }
 
     /**

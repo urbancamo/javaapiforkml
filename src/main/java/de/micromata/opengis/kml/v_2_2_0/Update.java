@@ -5,7 +5,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * Update
@@ -149,55 +149,26 @@ public class Update implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((targetHref == null)? 0 :targetHref.hashCode()));
-        result = ((prime*result)+((createOrDeleteOrChange == null)? 0 :createOrDeleteOrChange.hashCode()));
-        result = ((prime*result)+((updateExtension == null)? 0 :updateExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Update update = (Update) object;
+        return Objects.equals(targetHref, update.targetHref)
+                && Objects.equals(createOrDeleteOrChange, update.createOrDeleteOrChange)
+                && Objects.equals(updateExtension, update.updateExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Update) == false) {
-            return false;
-        }
-        Update other = ((Update) obj);
-        if (targetHref == null) {
-            if (other.targetHref!= null) {
-                return false;
-            }
-        } else {
-            if (targetHref.equals(other.targetHref) == false) {
-                return false;
-            }
-        }
-        if (createOrDeleteOrChange == null) {
-            if (other.createOrDeleteOrChange!= null) {
-                return false;
-            }
-        } else {
-            if (createOrDeleteOrChange.equals(other.createOrDeleteOrChange) == false) {
-                return false;
-            }
-        }
-        if (updateExtension == null) {
-            if (other.updateExtension!= null) {
-                return false;
-            }
-        } else {
-            if (updateExtension.equals(other.updateExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(targetHref);
+        result = 31 * result + Objects.hashCode(createOrDeleteOrChange);
+        result = 31 * result + Objects.hashCode(updateExtension);
+        return result;
     }
 
     /**

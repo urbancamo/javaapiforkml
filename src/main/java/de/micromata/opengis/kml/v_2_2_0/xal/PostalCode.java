@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -139,85 +139,34 @@ public class PostalCode implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((postalCodeNumber == null)? 0 :postalCodeNumber.hashCode()));
-        result = ((prime*result)+((postalCodeNumberExtension == null)? 0 :postalCodeNumberExtension.hashCode()));
-        result = ((prime*result)+((postTown == null)? 0 :postTown.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        PostalCode that = (PostalCode) object;
+        return Objects.equals(addressLine, that.addressLine)
+                && Objects.equals(postalCodeNumber, that.postalCodeNumber)
+                && Objects.equals(postalCodeNumberExtension, that.postalCodeNumberExtension)
+                && Objects.equals(postTown, that.postTown)
+                && Objects.equals(any, that.any)
+                && Objects.equals(underscore, that.underscore)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof PostalCode) == false) {
-            return false;
-        }
-        PostalCode other = ((PostalCode) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (postalCodeNumber == null) {
-            if (other.postalCodeNumber!= null) {
-                return false;
-            }
-        } else {
-            if (postalCodeNumber.equals(other.postalCodeNumber) == false) {
-                return false;
-            }
-        }
-        if (postalCodeNumberExtension == null) {
-            if (other.postalCodeNumberExtension!= null) {
-                return false;
-            }
-        } else {
-            if (postalCodeNumberExtension.equals(other.postalCodeNumberExtension) == false) {
-                return false;
-            }
-        }
-        if (postTown == null) {
-            if (other.postTown!= null) {
-                return false;
-            }
-        } else {
-            if (postTown.equals(other.postTown) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(postalCodeNumber);
+        result = 31 * result + Objects.hashCode(postalCodeNumberExtension);
+        result = 31 * result + Objects.hashCode(postTown);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * <p>
@@ -134,55 +134,26 @@ public abstract class AbstractObject implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((objectSimpleExtension == null)? 0 :objectSimpleExtension.hashCode()));
-        result = ((prime*result)+((id == null)? 0 :id.hashCode()));
-        result = ((prime*result)+((targetId == null)? 0 :targetId.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        AbstractObject that = (AbstractObject) object;
+        return Objects.equals(objectSimpleExtension, that.objectSimpleExtension)
+                && Objects.equals(id, that.id)
+                && Objects.equals(targetId, that.targetId);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof AbstractObject) == false) {
-            return false;
-        }
-        AbstractObject other = ((AbstractObject) obj);
-        if (objectSimpleExtension == null) {
-            if (other.objectSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (objectSimpleExtension.equals(other.objectSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (id == null) {
-            if (other.id!= null) {
-                return false;
-            }
-        } else {
-            if (id.equals(other.id) == false) {
-                return false;
-            }
-        }
-        if (targetId == null) {
-            if (other.targetId!= null) {
-                return false;
-            }
-        } else {
-            if (targetId.equals(other.targetId) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(objectSimpleExtension);
+        result = 31 * result + Objects.hashCode(id);
+        result = 31 * result + Objects.hashCode(targetId);
+        return result;
     }
 
     /**

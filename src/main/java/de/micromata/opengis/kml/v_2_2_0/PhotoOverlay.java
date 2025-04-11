@@ -9,7 +9,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <PhotoOverlay>}
@@ -344,94 +344,37 @@ public class PhotoOverlay
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(rotation);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((viewVolume == null)? 0 :viewVolume.hashCode()));
-        result = ((prime*result)+((imagePyramid == null)? 0 :imagePyramid.hashCode()));
-        result = ((prime*result)+((point == null)? 0 :point.hashCode()));
-        result = ((prime*result)+((shape == null)? 0 :shape.hashCode()));
-        result = ((prime*result)+((photoOverlaySimpleExtension == null)? 0 :photoOverlaySimpleExtension.hashCode()));
-        result = ((prime*result)+((photoOverlayObjectExtension == null)? 0 :photoOverlayObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        PhotoOverlay that = (PhotoOverlay) object;
+        return shape == that.shape
+                && Double.compare(rotation, that.rotation) == 0
+                && Objects.equals(viewVolume, that.viewVolume)
+                && Objects.equals(imagePyramid, that.imagePyramid)
+                && Objects.equals(point, that.point)
+                && Objects.equals(photoOverlaySimpleExtension, that.photoOverlaySimpleExtension)
+                && Objects.equals(photoOverlayObjectExtension, that.photoOverlayObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof PhotoOverlay) == false) {
-            return false;
-        }
-        PhotoOverlay other = ((PhotoOverlay) obj);
-        if (rotation!= other.rotation) {
-            return false;
-        }
-        if (viewVolume == null) {
-            if (other.viewVolume!= null) {
-                return false;
-            }
-        } else {
-            if (viewVolume.equals(other.viewVolume) == false) {
-                return false;
-            }
-        }
-        if (imagePyramid == null) {
-            if (other.imagePyramid!= null) {
-                return false;
-            }
-        } else {
-            if (imagePyramid.equals(other.imagePyramid) == false) {
-                return false;
-            }
-        }
-        if (point == null) {
-            if (other.point!= null) {
-                return false;
-            }
-        } else {
-            if (point.equals(other.point) == false) {
-                return false;
-            }
-        }
-        if (shape == null) {
-            if (other.shape!= null) {
-                return false;
-            }
-        } else {
-            if (shape.equals(other.shape) == false) {
-                return false;
-            }
-        }
-        if (photoOverlaySimpleExtension == null) {
-            if (other.photoOverlaySimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (photoOverlaySimpleExtension.equals(other.photoOverlaySimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (photoOverlayObjectExtension == null) {
-            if (other.photoOverlayObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (photoOverlayObjectExtension.equals(other.photoOverlayObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(rotation);
+        result = 31 * result + Objects.hashCode(viewVolume);
+        result = 31 * result + Objects.hashCode(imagePyramid);
+        result = 31 * result + Objects.hashCode(point);
+        result = 31 * result + Objects.hashCode(shape);
+        result = 31 * result + Objects.hashCode(photoOverlaySimpleExtension);
+        result = 31 * result + Objects.hashCode(photoOverlayObjectExtension);
+        return result;
     }
 
     /**

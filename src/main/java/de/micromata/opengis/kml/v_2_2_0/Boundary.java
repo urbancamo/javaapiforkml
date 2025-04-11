@@ -5,7 +5,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -75,55 +75,26 @@ public class Boundary implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((linearRing == null)? 0 :linearRing.hashCode()));
-        result = ((prime*result)+((boundarySimpleExtension == null)? 0 :boundarySimpleExtension.hashCode()));
-        result = ((prime*result)+((boundaryObjectExtension == null)? 0 :boundaryObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Boundary boundary = (Boundary) object;
+        return Objects.equals(linearRing, boundary.linearRing)
+                && Objects.equals(boundarySimpleExtension, boundary.boundarySimpleExtension)
+                && Objects.equals(boundaryObjectExtension, boundary.boundaryObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Boundary) == false) {
-            return false;
-        }
-        Boundary other = ((Boundary) obj);
-        if (linearRing == null) {
-            if (other.linearRing!= null) {
-                return false;
-            }
-        } else {
-            if (linearRing.equals(other.linearRing) == false) {
-                return false;
-            }
-        }
-        if (boundarySimpleExtension == null) {
-            if (other.boundarySimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (boundarySimpleExtension.equals(other.boundarySimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (boundaryObjectExtension == null) {
-            if (other.boundaryObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (boundaryObjectExtension.equals(other.boundaryObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(linearRing);
+        result = 31 * result + Objects.hashCode(boundarySimpleExtension);
+        result = 31 * result + Objects.hashCode(boundaryObjectExtension);
+        return result;
     }
 
     /**

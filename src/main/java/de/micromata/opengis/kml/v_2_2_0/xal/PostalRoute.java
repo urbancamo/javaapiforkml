@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -170,85 +170,34 @@ public class PostalRoute implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((postalRouteName == null)? 0 :postalRouteName.hashCode()));
-        result = ((prime*result)+((postalRouteNumber == null)? 0 :postalRouteNumber.hashCode()));
-        result = ((prime*result)+((postBox == null)? 0 :postBox.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        PostalRoute that = (PostalRoute) object;
+        return Objects.equals(addressLine, that.addressLine)
+                && Objects.equals(postalRouteName, that.postalRouteName)
+                && Objects.equals(postalRouteNumber, that.postalRouteNumber)
+                && Objects.equals(postBox, that.postBox)
+                && Objects.equals(any, that.any)
+                && Objects.equals(underscore, that.underscore)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof PostalRoute) == false) {
-            return false;
-        }
-        PostalRoute other = ((PostalRoute) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (postalRouteName == null) {
-            if (other.postalRouteName!= null) {
-                return false;
-            }
-        } else {
-            if (postalRouteName.equals(other.postalRouteName) == false) {
-                return false;
-            }
-        }
-        if (postalRouteNumber == null) {
-            if (other.postalRouteNumber!= null) {
-                return false;
-            }
-        } else {
-            if (postalRouteNumber.equals(other.postalRouteNumber) == false) {
-                return false;
-            }
-        }
-        if (postBox == null) {
-            if (other.postBox!= null) {
-                return false;
-            }
-        } else {
-            if (postBox.equals(other.postBox) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(postalRouteName);
+        result = 31 * result + Objects.hashCode(postalRouteNumber);
+        result = 31 * result + Objects.hashCode(postBox);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -81,58 +81,29 @@ public class BasicLink
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((href == null)? 0 :href.hashCode()));
-        result = ((prime*result)+((basicLinkSimpleExtension == null)? 0 :basicLinkSimpleExtension.hashCode()));
-        result = ((prime*result)+((basicLinkObjectExtension == null)? 0 :basicLinkObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        BasicLink basicLink = (BasicLink) object;
+        return Objects.equals(href, basicLink.href)
+                && Objects.equals(basicLinkSimpleExtension, basicLink.basicLinkSimpleExtension)
+                && Objects.equals(basicLinkObjectExtension, basicLink.basicLinkObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof BasicLink) == false) {
-            return false;
-        }
-        BasicLink other = ((BasicLink) obj);
-        if (href == null) {
-            if (other.href!= null) {
-                return false;
-            }
-        } else {
-            if (href.equals(other.href) == false) {
-                return false;
-            }
-        }
-        if (basicLinkSimpleExtension == null) {
-            if (other.basicLinkSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (basicLinkSimpleExtension.equals(other.basicLinkSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (basicLinkObjectExtension == null) {
-            if (other.basicLinkObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (basicLinkObjectExtension.equals(other.basicLinkObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(href);
+        result = 31 * result + Objects.hashCode(basicLinkSimpleExtension);
+        result = 31 * result + Objects.hashCode(basicLinkObjectExtension);
+        return result;
     }
 
     /**

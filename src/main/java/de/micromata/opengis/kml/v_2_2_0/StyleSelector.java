@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <StyleSelector>}
@@ -103,48 +103,27 @@ public abstract class StyleSelector
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((styleSelectorSimpleExtension == null)? 0 :styleSelectorSimpleExtension.hashCode()));
-        result = ((prime*result)+((styleSelectorObjectExtension == null)? 0 :styleSelectorObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        StyleSelector that = (StyleSelector) object;
+        return Objects.equals(styleSelectorSimpleExtension, that.styleSelectorSimpleExtension)
+                && Objects.equals(styleSelectorObjectExtension, that.styleSelectorObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof StyleSelector) == false) {
-            return false;
-        }
-        StyleSelector other = ((StyleSelector) obj);
-        if (styleSelectorSimpleExtension == null) {
-            if (other.styleSelectorSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (styleSelectorSimpleExtension.equals(other.styleSelectorSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (styleSelectorObjectExtension == null) {
-            if (other.styleSelectorObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (styleSelectorObjectExtension.equals(other.styleSelectorObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(styleSelectorSimpleExtension);
+        result = 31 * result + Objects.hashCode(styleSelectorObjectExtension);
+        return result;
     }
 
     /**

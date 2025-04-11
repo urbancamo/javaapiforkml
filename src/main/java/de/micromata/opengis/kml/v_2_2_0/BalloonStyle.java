@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * BalloonStyle
@@ -335,98 +335,37 @@ public class BalloonStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((color == null)? 0 :color.hashCode()));
-        result = ((prime*result)+((bgColor == null)? 0 :bgColor.hashCode()));
-        result = ((prime*result)+((textColor == null)? 0 :textColor.hashCode()));
-        result = ((prime*result)+((text == null)? 0 :text.hashCode()));
-        result = ((prime*result)+((displayMode == null)? 0 :displayMode.hashCode()));
-        result = ((prime*result)+((balloonStyleSimpleExtension == null)? 0 :balloonStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((balloonStyleObjectExtension == null)? 0 :balloonStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        BalloonStyle that = (BalloonStyle) object;
+        return displayMode == that.displayMode
+                && Objects.equals(color, that.color)
+                && Objects.equals(bgColor, that.bgColor)
+                && Objects.equals(textColor, that.textColor)
+                && Objects.equals(text, that.text)
+                && Objects.equals(balloonStyleSimpleExtension, that.balloonStyleSimpleExtension)
+                && Objects.equals(balloonStyleObjectExtension, that.balloonStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof BalloonStyle) == false) {
-            return false;
-        }
-        BalloonStyle other = ((BalloonStyle) obj);
-        if (color == null) {
-            if (other.color!= null) {
-                return false;
-            }
-        } else {
-            if (color.equals(other.color) == false) {
-                return false;
-            }
-        }
-        if (bgColor == null) {
-            if (other.bgColor!= null) {
-                return false;
-            }
-        } else {
-            if (bgColor.equals(other.bgColor) == false) {
-                return false;
-            }
-        }
-        if (textColor == null) {
-            if (other.textColor!= null) {
-                return false;
-            }
-        } else {
-            if (textColor.equals(other.textColor) == false) {
-                return false;
-            }
-        }
-        if (text == null) {
-            if (other.text!= null) {
-                return false;
-            }
-        } else {
-            if (text.equals(other.text) == false) {
-                return false;
-            }
-        }
-        if (displayMode == null) {
-            if (other.displayMode!= null) {
-                return false;
-            }
-        } else {
-            if (displayMode.equals(other.displayMode) == false) {
-                return false;
-            }
-        }
-        if (balloonStyleSimpleExtension == null) {
-            if (other.balloonStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (balloonStyleSimpleExtension.equals(other.balloonStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (balloonStyleObjectExtension == null) {
-            if (other.balloonStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (balloonStyleObjectExtension.equals(other.balloonStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(color);
+        result = 31 * result + Objects.hashCode(bgColor);
+        result = 31 * result + Objects.hashCode(textColor);
+        result = 31 * result + Objects.hashCode(text);
+        result = 31 * result + Objects.hashCode(displayMode);
+        result = 31 * result + Objects.hashCode(balloonStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(balloonStyleObjectExtension);
+        return result;
     }
 
     /**

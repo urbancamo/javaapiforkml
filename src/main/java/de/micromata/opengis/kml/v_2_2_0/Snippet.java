@@ -3,6 +3,7 @@ package de.micromata.opengis.kml.v_2_2_0;
 
 import jakarta.xml.bind.annotation.*;
 
+import java.util.Objects;
 
 /**
  * {@code <snippet maxlines="2" >}
@@ -98,39 +99,24 @@ public class Snippet implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((value == null)? 0 :value.hashCode()));
-        result = ((prime*result)+ maxLines);
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Snippet snippet = (Snippet) object;
+        return maxLines == snippet.maxLines
+                && Objects.equals(value, snippet.value);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Snippet) == false) {
-            return false;
-        }
-        Snippet other = ((Snippet) obj);
-        if (value == null) {
-            if (other.value!= null) {
-                return false;
-            }
-        } else {
-            if (value.equals(other.value) == false) {
-                return false;
-            }
-        }
-        if (maxLines!= other.maxLines) {
-            return false;
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(value);
+        result = 31 * result + maxLines;
+        return result;
     }
 
     /**

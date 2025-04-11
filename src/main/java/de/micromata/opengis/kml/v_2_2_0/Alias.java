@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * alias contains a mapping from a sourceHref to a targetHref:
@@ -182,68 +182,31 @@ public class Alias
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((targetHref == null)? 0 :targetHref.hashCode()));
-        result = ((prime*result)+((sourceHref == null)? 0 :sourceHref.hashCode()));
-        result = ((prime*result)+((aliasSimpleExtension == null)? 0 :aliasSimpleExtension.hashCode()));
-        result = ((prime*result)+((aliasObjectExtension == null)? 0 :aliasObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Alias alias = (Alias) object;
+        return Objects.equals(targetHref, alias.targetHref)
+                && Objects.equals(sourceHref, alias.sourceHref)
+                && Objects.equals(aliasSimpleExtension, alias.aliasSimpleExtension)
+                && Objects.equals(aliasObjectExtension, alias.aliasObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Alias) == false) {
-            return false;
-        }
-        Alias other = ((Alias) obj);
-        if (targetHref == null) {
-            if (other.targetHref!= null) {
-                return false;
-            }
-        } else {
-            if (targetHref.equals(other.targetHref) == false) {
-                return false;
-            }
-        }
-        if (sourceHref == null) {
-            if (other.sourceHref!= null) {
-                return false;
-            }
-        } else {
-            if (sourceHref.equals(other.sourceHref) == false) {
-                return false;
-            }
-        }
-        if (aliasSimpleExtension == null) {
-            if (other.aliasSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (aliasSimpleExtension.equals(other.aliasSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (aliasObjectExtension == null) {
-            if (other.aliasObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (aliasObjectExtension.equals(other.aliasObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(targetHref);
+        result = 31 * result + Objects.hashCode(sourceHref);
+        result = 31 * result + Objects.hashCode(aliasSimpleExtension);
+        result = 31 * result + Objects.hashCode(aliasObjectExtension);
+        return result;
     }
 
     /**

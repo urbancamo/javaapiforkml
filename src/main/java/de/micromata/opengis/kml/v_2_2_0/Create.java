@@ -5,7 +5,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Create>}
@@ -94,35 +94,21 @@ public class Create implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((container == null)? 0 :container.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Create create = (Create) object;
+        return Objects.equals(container, create.container);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Create) == false) {
-            return false;
-        }
-        Create other = ((Create) obj);
-        if (container == null) {
-            if (other.container!= null) {
-                return false;
-            }
-        } else {
-            if (container.equals(other.container) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        return Objects.hashCode(container);
     }
 
     /**

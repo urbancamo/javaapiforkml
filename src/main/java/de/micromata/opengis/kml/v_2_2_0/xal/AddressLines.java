@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -79,45 +79,26 @@ public class AddressLines implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        AddressLines that = (AddressLines) object;
+        return Objects.equals(addressLine, that.addressLine)
+                && Objects.equals(any, that.any)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof AddressLines) == false) {
-            return false;
-        }
-        AddressLines other = ((AddressLines) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

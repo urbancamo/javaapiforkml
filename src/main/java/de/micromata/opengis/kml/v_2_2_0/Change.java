@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Change>}
@@ -74,35 +74,21 @@ public class Change implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((abstractObject == null)? 0 :abstractObject.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Change change = (Change) object;
+        return Objects.equals(abstractObject, change.abstractObject);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Change) == false) {
-            return false;
-        }
-        Change other = ((Change) obj);
-        if (abstractObject == null) {
-            if (other.abstractObject!= null) {
-                return false;
-            }
-        } else {
-            if (abstractObject.equals(other.abstractObject) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        return Objects.hashCode(abstractObject);
     }
 
     /**

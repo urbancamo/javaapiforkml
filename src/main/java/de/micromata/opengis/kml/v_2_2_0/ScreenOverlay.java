@@ -9,7 +9,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <ScreenOverlay>}
@@ -391,94 +391,37 @@ public class ScreenOverlay
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        result = ((prime*result)+((overlayXY == null)? 0 :overlayXY.hashCode()));
-        result = ((prime*result)+((screenXY == null)? 0 :screenXY.hashCode()));
-        result = ((prime*result)+((rotationXY == null)? 0 :rotationXY.hashCode()));
-        result = ((prime*result)+((size == null)? 0 :size.hashCode()));
-        temp = Double.doubleToLongBits(rotation);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((screenOverlaySimpleExtension == null)? 0 :screenOverlaySimpleExtension.hashCode()));
-        result = ((prime*result)+((screenOverlayObjectExtension == null)? 0 :screenOverlayObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ScreenOverlay that = (ScreenOverlay) object;
+        return Double.compare(rotation, that.rotation) == 0
+                && Objects.equals(overlayXY, that.overlayXY)
+                && Objects.equals(screenXY, that.screenXY)
+                && Objects.equals(rotationXY, that.rotationXY)
+                && Objects.equals(size, that.size)
+                && Objects.equals(screenOverlaySimpleExtension, that.screenOverlaySimpleExtension)
+                && Objects.equals(screenOverlayObjectExtension, that.screenOverlayObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ScreenOverlay) == false) {
-            return false;
-        }
-        ScreenOverlay other = ((ScreenOverlay) obj);
-        if (overlayXY == null) {
-            if (other.overlayXY!= null) {
-                return false;
-            }
-        } else {
-            if (overlayXY.equals(other.overlayXY) == false) {
-                return false;
-            }
-        }
-        if (screenXY == null) {
-            if (other.screenXY!= null) {
-                return false;
-            }
-        } else {
-            if (screenXY.equals(other.screenXY) == false) {
-                return false;
-            }
-        }
-        if (rotationXY == null) {
-            if (other.rotationXY!= null) {
-                return false;
-            }
-        } else {
-            if (rotationXY.equals(other.rotationXY) == false) {
-                return false;
-            }
-        }
-        if (size == null) {
-            if (other.size!= null) {
-                return false;
-            }
-        } else {
-            if (size.equals(other.size) == false) {
-                return false;
-            }
-        }
-        if (rotation!= other.rotation) {
-            return false;
-        }
-        if (screenOverlaySimpleExtension == null) {
-            if (other.screenOverlaySimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (screenOverlaySimpleExtension.equals(other.screenOverlaySimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (screenOverlayObjectExtension == null) {
-            if (other.screenOverlayObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (screenOverlayObjectExtension.equals(other.screenOverlayObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(overlayXY);
+        result = 31 * result + Objects.hashCode(screenXY);
+        result = 31 * result + Objects.hashCode(rotationXY);
+        result = 31 * result + Objects.hashCode(size);
+        result = 31 * result + Double.hashCode(rotation);
+        result = 31 * result + Objects.hashCode(screenOverlaySimpleExtension);
+        result = 31 * result + Objects.hashCode(screenOverlayObjectExtension);
+        return result;
     }
 
     /**

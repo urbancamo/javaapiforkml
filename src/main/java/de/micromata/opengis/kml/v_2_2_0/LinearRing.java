@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <LinearRing>}
@@ -296,88 +296,35 @@ public class LinearRing
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((extrude == null)? 0 :extrude.hashCode()));
-        result = ((prime*result)+((tessellate == null)? 0 :tessellate.hashCode()));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((coordinates == null)? 0 :coordinates.hashCode()));
-        result = ((prime*result)+((linearRingSimpleExtension == null)? 0 :linearRingSimpleExtension.hashCode()));
-        result = ((prime*result)+((linearRingObjectExtension == null)? 0 :linearRingObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LinearRing that = (LinearRing) object;
+        return altitudeMode == that.altitudeMode
+                && Objects.equals(extrude, that.extrude)
+                && Objects.equals(tessellate, that.tessellate)
+                && Objects.equals(coordinates, that.coordinates)
+                && Objects.equals(linearRingSimpleExtension, that.linearRingSimpleExtension)
+                && Objects.equals(linearRingObjectExtension, that.linearRingObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LinearRing) == false) {
-            return false;
-        }
-        LinearRing other = ((LinearRing) obj);
-        if (extrude == null) {
-            if (other.extrude!= null) {
-                return false;
-            }
-        } else {
-            if (extrude.equals(other.extrude) == false) {
-                return false;
-            }
-        }
-        if (tessellate == null) {
-            if (other.tessellate!= null) {
-                return false;
-            }
-        } else {
-            if (tessellate.equals(other.tessellate) == false) {
-                return false;
-            }
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (coordinates == null) {
-            if (other.coordinates!= null) {
-                return false;
-            }
-        } else {
-            if (coordinates.equals(other.coordinates) == false) {
-                return false;
-            }
-        }
-        if (linearRingSimpleExtension == null) {
-            if (other.linearRingSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (linearRingSimpleExtension.equals(other.linearRingSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (linearRingObjectExtension == null) {
-            if (other.linearRingObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (linearRingObjectExtension.equals(other.linearRingObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(extrude);
+        result = 31 * result + Objects.hashCode(tessellate);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(coordinates);
+        result = 31 * result + Objects.hashCode(linearRingSimpleExtension);
+        result = 31 * result + Objects.hashCode(linearRingObjectExtension);
+        return result;
     }
 
     public void setCoordinates(final List<Coordinate> coordinates) {

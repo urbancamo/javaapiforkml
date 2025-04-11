@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -40,38 +40,25 @@ public class Playlist
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((tourPrimitive == null)? 0 :tourPrimitive.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Playlist playlist = (Playlist) object;
+        return Objects.equals(tourPrimitive, playlist.tourPrimitive);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Playlist) == false) {
-            return false;
-        }
-        Playlist other = ((Playlist) obj);
-        if (tourPrimitive == null) {
-            if (other.tourPrimitive!= null) {
-                return false;
-            }
-        } else {
-            if (tourPrimitive.equals(other.tourPrimitive) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(tourPrimitive);
+        return result;
     }
 
     /**

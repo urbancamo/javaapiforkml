@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -210,118 +210,41 @@ public class Track
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((extrude == null)? 0 :extrude.hashCode()));
-        result = ((prime*result)+((tessellate == null)? 0 :tessellate.hashCode()));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((when == null)? 0 :when.hashCode()));
-        result = ((prime*result)+((coord == null)? 0 :coord.hashCode()));
-        result = ((prime*result)+((angles == null)? 0 :angles.hashCode()));
-        result = ((prime*result)+((model == null)? 0 :model.hashCode()));
-        result = ((prime*result)+((extendedData == null)? 0 :extendedData.hashCode()));
-        result = ((prime*result)+((trackSimpleExtension == null)? 0 :trackSimpleExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Track track = (Track) object;
+        return altitudeMode == track.altitudeMode
+                && Objects.equals(extrude, track.extrude)
+                && Objects.equals(tessellate, track.tessellate)
+                && Objects.equals(when, track.when)
+                && Objects.equals(coord, track.coord)
+                && Objects.equals(angles, track.angles)
+                && Objects.equals(model, track.model)
+                && Objects.equals(extendedData, track.extendedData)
+                && Objects.equals(trackSimpleExtension, track.trackSimpleExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Track) == false) {
-            return false;
-        }
-        Track other = ((Track) obj);
-        if (extrude == null) {
-            if (other.extrude!= null) {
-                return false;
-            }
-        } else {
-            if (extrude.equals(other.extrude) == false) {
-                return false;
-            }
-        }
-        if (tessellate == null) {
-            if (other.tessellate!= null) {
-                return false;
-            }
-        } else {
-            if (tessellate.equals(other.tessellate) == false) {
-                return false;
-            }
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (when == null) {
-            if (other.when!= null) {
-                return false;
-            }
-        } else {
-            if (when.equals(other.when) == false) {
-                return false;
-            }
-        }
-        if (coord == null) {
-            if (other.coord!= null) {
-                return false;
-            }
-        } else {
-            if (coord.equals(other.coord) == false) {
-                return false;
-            }
-        }
-        if (angles == null) {
-            if (other.angles!= null) {
-                return false;
-            }
-        } else {
-            if (angles.equals(other.angles) == false) {
-                return false;
-            }
-        }
-        if (model == null) {
-            if (other.model!= null) {
-                return false;
-            }
-        } else {
-            if (model.equals(other.model) == false) {
-                return false;
-            }
-        }
-        if (extendedData == null) {
-            if (other.extendedData!= null) {
-                return false;
-            }
-        } else {
-            if (extendedData.equals(other.extendedData) == false) {
-                return false;
-            }
-        }
-        if (trackSimpleExtension == null) {
-            if (other.trackSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (trackSimpleExtension.equals(other.trackSimpleExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(extrude);
+        result = 31 * result + Objects.hashCode(tessellate);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(when);
+        result = 31 * result + Objects.hashCode(coord);
+        result = 31 * result + Objects.hashCode(angles);
+        result = 31 * result + Objects.hashCode(model);
+        result = 31 * result + Objects.hashCode(extendedData);
+        result = 31 * result + Objects.hashCode(trackSimpleExtension);
+        return result;
     }
 
     /**

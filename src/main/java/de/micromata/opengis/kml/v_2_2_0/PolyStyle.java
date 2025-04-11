@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <PolyStyle>}
@@ -166,68 +166,31 @@ public class PolyStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((fill == null)? 0 :fill.hashCode()));
-        result = ((prime*result)+((outline == null)? 0 :outline.hashCode()));
-        result = ((prime*result)+((polyStyleSimpleExtension == null)? 0 :polyStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((polyStyleObjectExtension == null)? 0 :polyStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        PolyStyle polyStyle = (PolyStyle) object;
+        return Objects.equals(fill, polyStyle.fill)
+                && Objects.equals(outline, polyStyle.outline)
+                && Objects.equals(polyStyleSimpleExtension, polyStyle.polyStyleSimpleExtension)
+                && Objects.equals(polyStyleObjectExtension, polyStyle.polyStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof PolyStyle) == false) {
-            return false;
-        }
-        PolyStyle other = ((PolyStyle) obj);
-        if (fill == null) {
-            if (other.fill!= null) {
-                return false;
-            }
-        } else {
-            if (fill.equals(other.fill) == false) {
-                return false;
-            }
-        }
-        if (outline == null) {
-            if (other.outline!= null) {
-                return false;
-            }
-        } else {
-            if (outline.equals(other.outline) == false) {
-                return false;
-            }
-        }
-        if (polyStyleSimpleExtension == null) {
-            if (other.polyStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (polyStyleSimpleExtension.equals(other.polyStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (polyStyleObjectExtension == null) {
-            if (other.polyStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (polyStyleObjectExtension.equals(other.polyStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(fill);
+        result = 31 * result + Objects.hashCode(outline);
+        result = 31 * result + Objects.hashCode(polyStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(polyStyleObjectExtension);
+        return result;
     }
 
     /**

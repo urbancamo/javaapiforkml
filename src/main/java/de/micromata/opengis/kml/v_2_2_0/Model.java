@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Model>}
@@ -434,108 +434,39 @@ public class Model
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((location == null)? 0 :location.hashCode()));
-        result = ((prime*result)+((orientation == null)? 0 :orientation.hashCode()));
-        result = ((prime*result)+((scale == null)? 0 :scale.hashCode()));
-        result = ((prime*result)+((link == null)? 0 :link.hashCode()));
-        result = ((prime*result)+((resourceMap == null)? 0 :resourceMap.hashCode()));
-        result = ((prime*result)+((modelSimpleExtension == null)? 0 :modelSimpleExtension.hashCode()));
-        result = ((prime*result)+((modelObjectExtension == null)? 0 :modelObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Model model = (Model) object;
+        return altitudeMode == model.altitudeMode
+                && Objects.equals(location, model.location)
+                && Objects.equals(orientation, model.orientation)
+                && Objects.equals(scale, model.scale)
+                && Objects.equals(link, model.link)
+                && Objects.equals(resourceMap, model.resourceMap)
+                && Objects.equals(modelSimpleExtension, model.modelSimpleExtension)
+                && Objects.equals(modelObjectExtension, model.modelObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Model) == false) {
-            return false;
-        }
-        Model other = ((Model) obj);
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (location == null) {
-            if (other.location!= null) {
-                return false;
-            }
-        } else {
-            if (location.equals(other.location) == false) {
-                return false;
-            }
-        }
-        if (orientation == null) {
-            if (other.orientation!= null) {
-                return false;
-            }
-        } else {
-            if (orientation.equals(other.orientation) == false) {
-                return false;
-            }
-        }
-        if (scale == null) {
-            if (other.scale!= null) {
-                return false;
-            }
-        } else {
-            if (scale.equals(other.scale) == false) {
-                return false;
-            }
-        }
-        if (link == null) {
-            if (other.link!= null) {
-                return false;
-            }
-        } else {
-            if (link.equals(other.link) == false) {
-                return false;
-            }
-        }
-        if (resourceMap == null) {
-            if (other.resourceMap!= null) {
-                return false;
-            }
-        } else {
-            if (resourceMap.equals(other.resourceMap) == false) {
-                return false;
-            }
-        }
-        if (modelSimpleExtension == null) {
-            if (other.modelSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (modelSimpleExtension.equals(other.modelSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (modelObjectExtension == null) {
-            if (other.modelObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (modelObjectExtension.equals(other.modelObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(location);
+        result = 31 * result + Objects.hashCode(orientation);
+        result = 31 * result + Objects.hashCode(scale);
+        result = 31 * result + Objects.hashCode(link);
+        result = 31 * result + Objects.hashCode(resourceMap);
+        result = 31 * result + Objects.hashCode(modelSimpleExtension);
+        result = 31 * result + Objects.hashCode(modelObjectExtension);
+        return result;
     }
 
     /**

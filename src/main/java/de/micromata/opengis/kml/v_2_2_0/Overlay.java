@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Overlay>}
@@ -291,72 +291,33 @@ public abstract class Overlay
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((color == null)? 0 :color.hashCode()));
-        result = ((prime*result)+ drawOrder);
-        result = ((prime*result)+((icon == null)? 0 :icon.hashCode()));
-        result = ((prime*result)+((overlaySimpleExtension == null)? 0 :overlaySimpleExtension.hashCode()));
-        result = ((prime*result)+((overlayObjectExtension == null)? 0 :overlayObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Overlay overlay = (Overlay) object;
+        return drawOrder == overlay.drawOrder
+                && Objects.equals(color, overlay.color)
+                && Objects.equals(icon, overlay.icon)
+                && Objects.equals(overlaySimpleExtension, overlay.overlaySimpleExtension)
+                && Objects.equals(overlayObjectExtension, overlay.overlayObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Overlay) == false) {
-            return false;
-        }
-        Overlay other = ((Overlay) obj);
-        if (color == null) {
-            if (other.color!= null) {
-                return false;
-            }
-        } else {
-            if (color.equals(other.color) == false) {
-                return false;
-            }
-        }
-        if (drawOrder!= other.drawOrder) {
-            return false;
-        }
-        if (icon == null) {
-            if (other.icon!= null) {
-                return false;
-            }
-        } else {
-            if (icon.equals(other.icon) == false) {
-                return false;
-            }
-        }
-        if (overlaySimpleExtension == null) {
-            if (other.overlaySimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (overlaySimpleExtension.equals(other.overlaySimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (overlayObjectExtension == null) {
-            if (other.overlayObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (overlayObjectExtension.equals(other.overlayObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(color);
+        result = 31 * result + drawOrder;
+        result = 31 * result + Objects.hashCode(icon);
+        result = 31 * result + Objects.hashCode(overlaySimpleExtension);
+        result = 31 * result + Objects.hashCode(overlayObjectExtension);
+        return result;
     }
 
     /**

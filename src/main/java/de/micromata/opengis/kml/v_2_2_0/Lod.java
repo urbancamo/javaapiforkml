@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <lod>}
@@ -260,69 +260,35 @@ public class Lod
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(minLodPixels);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(maxLodPixels);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(minFadeExtent);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(maxFadeExtent);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((lodSimpleExtension == null)? 0 :lodSimpleExtension.hashCode()));
-        result = ((prime*result)+((lodObjectExtension == null)? 0 :lodObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Lod lod = (Lod) object;
+        return Double.compare(minLodPixels, lod.minLodPixels) == 0
+                && Double.compare(maxLodPixels, lod.maxLodPixels) == 0
+                && Double.compare(minFadeExtent, lod.minFadeExtent) == 0
+                && Double.compare(maxFadeExtent, lod.maxFadeExtent) == 0
+                && Objects.equals(lodSimpleExtension, lod.lodSimpleExtension)
+                && Objects.equals(lodObjectExtension, lod.lodObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Lod) == false) {
-            return false;
-        }
-        Lod other = ((Lod) obj);
-        if (minLodPixels!= other.minLodPixels) {
-            return false;
-        }
-        if (maxLodPixels!= other.maxLodPixels) {
-            return false;
-        }
-        if (minFadeExtent!= other.minFadeExtent) {
-            return false;
-        }
-        if (maxFadeExtent!= other.maxFadeExtent) {
-            return false;
-        }
-        if (lodSimpleExtension == null) {
-            if (other.lodSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lodSimpleExtension.equals(other.lodSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (lodObjectExtension == null) {
-            if (other.lodObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lodObjectExtension.equals(other.lodObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(minLodPixels);
+        result = 31 * result + Double.hashCode(maxLodPixels);
+        result = 31 * result + Double.hashCode(minFadeExtent);
+        result = 31 * result + Double.hashCode(maxFadeExtent);
+        result = 31 * result + Objects.hashCode(lodSimpleExtension);
+        result = 31 * result + Objects.hashCode(lodObjectExtension);
+        return result;
     }
 
     /**

@@ -6,7 +6,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import jakarta.xml.bind.annotation.*;
 
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * gx:AnimatedUpdate
@@ -207,46 +207,29 @@ public class AnimatedUpdate
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        long temp;
-        temp = Double.doubleToLongBits(duration);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((update == null)? 0 :update.hashCode()));
-        temp = Double.doubleToLongBits(delayedStart);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        AnimatedUpdate that = (AnimatedUpdate) object;
+        return Double.compare(duration, that.duration) == 0
+                && Double.compare(delayedStart, that.delayedStart) == 0
+                && Objects.equals(update, that.update);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof AnimatedUpdate) == false) {
-            return false;
-        }
-        AnimatedUpdate other = ((AnimatedUpdate) obj);
-        if (duration!= other.duration) {
-            return false;
-        }
-        if (update == null) {
-            if (other.update!= null) {
-                return false;
-            }
-        } else {
-            if (update.equals(other.update) == false) {
-                return false;
-            }
-        }
-        if (delayedStart!= other.delayedStart) {
-            return false;
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(duration);
+        result = 31 * result + Objects.hashCode(update);
+        result = 31 * result + Double.hashCode(delayedStart);
+        return result;
     }
 
     /**

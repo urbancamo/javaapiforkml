@@ -6,7 +6,7 @@ import org.w3c.dom.Element;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <metadata>} (deprecated in kml 2.2; use {@code <extendeddata>} instead)
@@ -41,35 +41,21 @@ public class Metadata implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Metadata metadata = (Metadata) object;
+        return Objects.equals(any, metadata.any);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Metadata) == false) {
-            return false;
-        }
-        Metadata other = ((Metadata) obj);
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        return Objects.hashCode(any);
     }
 
     /**

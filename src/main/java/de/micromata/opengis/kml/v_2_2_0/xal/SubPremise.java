@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -282,155 +282,48 @@ public class SubPremise implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((subPremiseName == null)? 0 :subPremiseName.hashCode()));
-        result = ((prime*result)+((subPremiseLocation == null)? 0 :subPremiseLocation.hashCode()));
-        result = ((prime*result)+((subPremiseNumber == null)? 0 :subPremiseNumber.hashCode()));
-        result = ((prime*result)+((subPremiseNumberPrefix == null)? 0 :subPremiseNumberPrefix.hashCode()));
-        result = ((prime*result)+((subPremiseNumberSuffix == null)? 0 :subPremiseNumberSuffix.hashCode()));
-        result = ((prime*result)+((buildingName == null)? 0 :buildingName.hashCode()));
-        result = ((prime*result)+((firm == null)? 0 :firm.hashCode()));
-        result = ((prime*result)+((mailStop == null)? 0 :mailStop.hashCode()));
-        result = ((prime*result)+((postalCode == null)? 0 :postalCode.hashCode()));
-        result = ((prime*result)+((subPremise == null)? 0 :subPremise.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        SubPremise that = (SubPremise) object;
+        return Objects.equals(addressLine, that.addressLine)
+                && Objects.equals(subPremiseName, that.subPremiseName)
+                && Objects.equals(subPremiseLocation, that.subPremiseLocation)
+                && Objects.equals(subPremiseNumber, that.subPremiseNumber)
+                && Objects.equals(subPremiseNumberPrefix, that.subPremiseNumberPrefix)
+                && Objects.equals(subPremiseNumberSuffix, that.subPremiseNumberSuffix)
+                && Objects.equals(buildingName, that.buildingName)
+                && Objects.equals(firm, that.firm)
+                && Objects.equals(mailStop, that.mailStop)
+                && Objects.equals(postalCode, that.postalCode)
+                && Objects.equals(subPremise, that.subPremise)
+                && Objects.equals(any, that.any)
+                && Objects.equals(underscore, that.underscore)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof SubPremise) == false) {
-            return false;
-        }
-        SubPremise other = ((SubPremise) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (subPremiseName == null) {
-            if (other.subPremiseName!= null) {
-                return false;
-            }
-        } else {
-            if (subPremiseName.equals(other.subPremiseName) == false) {
-                return false;
-            }
-        }
-        if (subPremiseLocation == null) {
-            if (other.subPremiseLocation!= null) {
-                return false;
-            }
-        } else {
-            if (subPremiseLocation.equals(other.subPremiseLocation) == false) {
-                return false;
-            }
-        }
-        if (subPremiseNumber == null) {
-            if (other.subPremiseNumber!= null) {
-                return false;
-            }
-        } else {
-            if (subPremiseNumber.equals(other.subPremiseNumber) == false) {
-                return false;
-            }
-        }
-        if (subPremiseNumberPrefix == null) {
-            if (other.subPremiseNumberPrefix!= null) {
-                return false;
-            }
-        } else {
-            if (subPremiseNumberPrefix.equals(other.subPremiseNumberPrefix) == false) {
-                return false;
-            }
-        }
-        if (subPremiseNumberSuffix == null) {
-            if (other.subPremiseNumberSuffix!= null) {
-                return false;
-            }
-        } else {
-            if (subPremiseNumberSuffix.equals(other.subPremiseNumberSuffix) == false) {
-                return false;
-            }
-        }
-        if (buildingName == null) {
-            if (other.buildingName!= null) {
-                return false;
-            }
-        } else {
-            if (buildingName.equals(other.buildingName) == false) {
-                return false;
-            }
-        }
-        if (firm == null) {
-            if (other.firm!= null) {
-                return false;
-            }
-        } else {
-            if (firm.equals(other.firm) == false) {
-                return false;
-            }
-        }
-        if (mailStop == null) {
-            if (other.mailStop!= null) {
-                return false;
-            }
-        } else {
-            if (mailStop.equals(other.mailStop) == false) {
-                return false;
-            }
-        }
-        if (postalCode == null) {
-            if (other.postalCode!= null) {
-                return false;
-            }
-        } else {
-            if (postalCode.equals(other.postalCode) == false) {
-                return false;
-            }
-        }
-        if (subPremise == null) {
-            if (other.subPremise!= null) {
-                return false;
-            }
-        } else {
-            if (subPremise.equals(other.subPremise) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(subPremiseName);
+        result = 31 * result + Objects.hashCode(subPremiseLocation);
+        result = 31 * result + Objects.hashCode(subPremiseNumber);
+        result = 31 * result + Objects.hashCode(subPremiseNumberPrefix);
+        result = 31 * result + Objects.hashCode(subPremiseNumberSuffix);
+        result = 31 * result + Objects.hashCode(buildingName);
+        result = 31 * result + Objects.hashCode(firm);
+        result = 31 * result + Objects.hashCode(mailStop);
+        result = 31 * result + Objects.hashCode(postalCode);
+        result = 31 * result + Objects.hashCode(subPremise);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

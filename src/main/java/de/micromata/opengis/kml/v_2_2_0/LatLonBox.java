@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * latlongbox
@@ -134,54 +134,29 @@ public class LatLonBox
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(rotation);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((latLonBoxSimpleExtension == null)? 0 :latLonBoxSimpleExtension.hashCode()));
-        result = ((prime*result)+((latLonBoxObjectExtension == null)? 0 :latLonBoxObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LatLonBox latLonBox = (LatLonBox) object;
+        return Double.compare(rotation, latLonBox.rotation) == 0
+                && Objects.equals(latLonBoxSimpleExtension, latLonBox.latLonBoxSimpleExtension)
+                && Objects.equals(latLonBoxObjectExtension, latLonBox.latLonBoxObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LatLonBox) == false) {
-            return false;
-        }
-        LatLonBox other = ((LatLonBox) obj);
-        if (rotation!= other.rotation) {
-            return false;
-        }
-        if (latLonBoxSimpleExtension == null) {
-            if (other.latLonBoxSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (latLonBoxSimpleExtension.equals(other.latLonBoxSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (latLonBoxObjectExtension == null) {
-            if (other.latLonBoxObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (latLonBoxObjectExtension.equals(other.latLonBoxObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(rotation);
+        result = 31 * result + Objects.hashCode(latLonBoxSimpleExtension);
+        result = 31 * result + Objects.hashCode(latLonBoxObjectExtension);
+        return result;
     }
 
     /**

@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Link>} (required). see {@code <Link>}.
@@ -450,104 +450,41 @@ public class Link
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        result = ((prime*result)+((refreshMode == null)? 0 :refreshMode.hashCode()));
-        temp = Double.doubleToLongBits(refreshInterval);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((viewRefreshMode == null)? 0 :viewRefreshMode.hashCode()));
-        temp = Double.doubleToLongBits(viewRefreshTime);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(viewBoundScale);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((viewFormat == null)? 0 :viewFormat.hashCode()));
-        result = ((prime*result)+((httpQuery == null)? 0 :httpQuery.hashCode()));
-        result = ((prime*result)+((linkSimpleExtension == null)? 0 :linkSimpleExtension.hashCode()));
-        result = ((prime*result)+((linkObjectExtension == null)? 0 :linkObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Link link = (Link) object;
+        return refreshMode == link.refreshMode
+                && viewRefreshMode == link.viewRefreshMode
+                && Objects.equals(refreshInterval, link.refreshInterval)
+                && Objects.equals(viewRefreshTime, link.viewRefreshTime)
+                && Objects.equals(viewBoundScale, link.viewBoundScale)
+                && Objects.equals(viewFormat, link.viewFormat)
+                && Objects.equals(httpQuery, link.httpQuery)
+                && Objects.equals(linkSimpleExtension, link.linkSimpleExtension)
+                && Objects.equals(linkObjectExtension, link.linkObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Link) == false) {
-            return false;
-        }
-        Link other = ((Link) obj);
-        if (refreshMode == null) {
-            if (other.refreshMode!= null) {
-                return false;
-            }
-        } else {
-            if (refreshMode.equals(other.refreshMode) == false) {
-                return false;
-            }
-        }
-        if (refreshInterval!= other.refreshInterval) {
-            return false;
-        }
-        if (viewRefreshMode == null) {
-            if (other.viewRefreshMode!= null) {
-                return false;
-            }
-        } else {
-            if (viewRefreshMode.equals(other.viewRefreshMode) == false) {
-                return false;
-            }
-        }
-        if (viewRefreshTime!= other.viewRefreshTime) {
-            return false;
-        }
-        if (viewBoundScale!= other.viewBoundScale) {
-            return false;
-        }
-        if (viewFormat == null) {
-            if (other.viewFormat!= null) {
-                return false;
-            }
-        } else {
-            if (viewFormat.equals(other.viewFormat) == false) {
-                return false;
-            }
-        }
-        if (httpQuery == null) {
-            if (other.httpQuery!= null) {
-                return false;
-            }
-        } else {
-            if (httpQuery.equals(other.httpQuery) == false) {
-                return false;
-            }
-        }
-        if (linkSimpleExtension == null) {
-            if (other.linkSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (linkSimpleExtension.equals(other.linkSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (linkObjectExtension == null) {
-            if (other.linkObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (linkObjectExtension.equals(other.linkObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(refreshMode);
+        result = 31 * result + Objects.hashCode(refreshInterval);
+        result = 31 * result + Objects.hashCode(viewRefreshMode);
+        result = 31 * result + Objects.hashCode(viewRefreshTime);
+        result = 31 * result + Objects.hashCode(viewBoundScale);
+        result = 31 * result + Objects.hashCode(viewFormat);
+        result = 31 * result + Objects.hashCode(httpQuery);
+        result = 31 * result + Objects.hashCode(linkSimpleExtension);
+        result = 31 * result + Objects.hashCode(linkObjectExtension);
+        return result;
     }
 
     /**

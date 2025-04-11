@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Point>}
@@ -242,80 +242,34 @@ public class Point
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((extrude == null)? 0 :extrude.hashCode()));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((coordinates == null)? 0 :coordinates.hashCode()));
-        result = ((prime*result)+((pointSimpleExtension == null)? 0 :pointSimpleExtension.hashCode()));
-        result = ((prime*result)+((pointObjectExtension == null)? 0 :pointObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Point point = (Point) object;
+        return altitudeMode == point.altitudeMode
+                && Objects.equals(extrude, point.extrude)
+                && Objects.equals(coordinates, point.coordinates)
+                && Objects.equals(pointSimpleExtension, point.pointSimpleExtension)
+                && Objects.equals(pointObjectExtension, point.pointObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Point) == false) {
-            return false;
-        }
-        Point other = ((Point) obj);
-        if (extrude == null) {
-            if (other.extrude!= null) {
-                return false;
-            }
-        } else {
-            if (extrude.equals(other.extrude) == false) {
-                return false;
-            }
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (coordinates == null) {
-            if (other.coordinates!= null) {
-                return false;
-            }
-        } else {
-            if (coordinates.equals(other.coordinates) == false) {
-                return false;
-            }
-        }
-        if (pointSimpleExtension == null) {
-            if (other.pointSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (pointSimpleExtension.equals(other.pointSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (pointObjectExtension == null) {
-            if (other.pointObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (pointObjectExtension.equals(other.pointObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(extrude);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(coordinates);
+        result = 31 * result + Objects.hashCode(pointSimpleExtension);
+        result = 31 * result + Objects.hashCode(pointObjectExtension);
+        return result;
     }
-
 
     public void setCoordinates(final List<Coordinate> coordinates) {
         this.coordinates = coordinates;

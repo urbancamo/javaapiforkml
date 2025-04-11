@@ -8,7 +8,7 @@ import jakarta.xml.bind.annotation.XmlType;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * <p>
@@ -55,35 +55,21 @@ public class Author implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((nameOrUriOrEmail == null)? 0 :nameOrUriOrEmail.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Author author = (Author) object;
+        return Objects.equals(nameOrUriOrEmail, author.nameOrUriOrEmail);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Author) == false) {
-            return false;
-        }
-        Author other = ((Author) obj);
-        if (nameOrUriOrEmail == null) {
-            if (other.nameOrUriOrEmail!= null) {
-                return false;
-            }
-        } else {
-            if (nameOrUriOrEmail.equals(other.nameOrUriOrEmail) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        return Objects.hashCode(nameOrUriOrEmail);
     }
 
     public void setNameOrUriOrEmail(final List<String> nameOrUriOrEmail) {

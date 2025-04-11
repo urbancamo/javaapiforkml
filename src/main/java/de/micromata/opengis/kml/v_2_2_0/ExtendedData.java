@@ -6,7 +6,7 @@ import org.w3c.dom.Element;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <extendeddata>}
@@ -141,55 +141,26 @@ public class ExtendedData implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((data == null)? 0 :data.hashCode()));
-        result = ((prime*result)+((schemaData == null)? 0 :schemaData.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        ExtendedData that = (ExtendedData) object;
+        return Objects.equals(data, that.data)
+                && Objects.equals(schemaData, that.schemaData)
+                && Objects.equals(any, that.any);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof ExtendedData) == false) {
-            return false;
-        }
-        ExtendedData other = ((ExtendedData) obj);
-        if (data == null) {
-            if (other.data!= null) {
-                return false;
-            }
-        } else {
-            if (data.equals(other.data) == false) {
-                return false;
-            }
-        }
-        if (schemaData == null) {
-            if (other.schemaData!= null) {
-                return false;
-            }
-        } else {
-            if (schemaData.equals(other.schemaData) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(data);
+        result = 31 * result + Objects.hashCode(schemaData);
+        result = 31 * result + Objects.hashCode(any);
+        return result;
     }
 
     /**

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -104,55 +104,28 @@ public class XAL implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((xalAddressDetails == null)? 0 :xalAddressDetails.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((version == null)? 0 :version.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        XAL xal = (XAL) object;
+        return Objects.equals(xalAddressDetails, xal.xalAddressDetails)
+                && Objects.equals(any, xal.any)
+                && Objects.equals(version, xal.version)
+                && Objects.equals(otherAttributes, xal.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof XAL) == false) {
-            return false;
-        }
-        XAL other = ((XAL) obj);
-        if (xalAddressDetails == null) {
-            if (other.xalAddressDetails!= null) {
-                return false;
-            }
-        } else {
-            if (xalAddressDetails.equals(other.xalAddressDetails) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (version == null) {
-            if (other.version!= null) {
-                return false;
-            }
-        } else {
-            if (version.equals(other.version) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(xalAddressDetails);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(version);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

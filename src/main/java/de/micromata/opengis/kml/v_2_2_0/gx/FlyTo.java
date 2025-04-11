@@ -8,7 +8,7 @@ import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
 import jakarta.xml.bind.annotation.*;
 
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <gx:FlyTo>}
@@ -194,51 +194,29 @@ public class FlyTo
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        long temp;
-        temp = Double.doubleToLongBits(duration);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((flyToMode == null)? 0 :flyToMode.hashCode()));
-        result = ((prime*result)+((abstractView == null)? 0 :abstractView.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        FlyTo flyTo = (FlyTo) object;
+        return flyToMode == flyTo.flyToMode
+                && Double.compare(duration, flyTo.duration) == 0
+                && Objects.equals(abstractView, flyTo.abstractView);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof FlyTo) == false) {
-            return false;
-        }
-        FlyTo other = ((FlyTo) obj);
-        if (duration!= other.duration) {
-            return false;
-        }
-        if (flyToMode == null) {
-            if (other.flyToMode!= null) {
-                return false;
-            }
-        } else {
-            if (flyToMode.equals(other.flyToMode) == false) {
-                return false;
-            }
-        }
-        if (abstractView == null) {
-            if (other.abstractView!= null) {
-                return false;
-            }
-        } else {
-            if (abstractView.equals(other.abstractView) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(duration);
+        result = 31 * result + Objects.hashCode(flyToMode);
+        result = 31 * result + Objects.hashCode(abstractView);
+        return result;
     }
 
     /**

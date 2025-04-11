@@ -2,6 +2,8 @@
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
 import java.util.List;
+import java.util.Objects;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -78,41 +80,27 @@ public class SoundCue
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        long temp;
-        result = ((prime*result)+((href == null)? 0 :href.hashCode()));
-        temp = Double.doubleToLongBits(delayedStart);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        SoundCue soundCue = (SoundCue) object;
+        return Double.compare(delayedStart, soundCue.delayedStart) == 0
+                && Objects.equals(href, soundCue.href);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof SoundCue) == false) {
-            return false;
-        }
-        SoundCue other = ((SoundCue) obj);
-        if (href == null) {
-            if (other.href!= null) {
-                return false;
-            }
-        } else {
-            if (href.equals(other.href) == false) {
-                return false;
-            }
-        }
-        if (delayedStart!= other.delayedStart) {
-            return false;
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(href);
+        result = 31 * result + Double.hashCode(delayedStart);
+        return result;
     }
 
     /**

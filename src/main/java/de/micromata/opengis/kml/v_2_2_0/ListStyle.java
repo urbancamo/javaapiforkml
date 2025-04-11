@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <ListStyle>}
@@ -262,82 +262,35 @@ public class ListStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((listItemType == null)? 0 :listItemType.hashCode()));
-        result = ((prime*result)+((bgColor == null)? 0 :bgColor.hashCode()));
-        result = ((prime*result)+((itemIcon == null)? 0 :itemIcon.hashCode()));
-        result = ((prime*result)+ maxSnippetLines);
-        result = ((prime*result)+((listStyleSimpleExtension == null)? 0 :listStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((listStyleObjectExtension == null)? 0 :listStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ListStyle listStyle = (ListStyle) object;
+        return maxSnippetLines == listStyle.maxSnippetLines
+                && listItemType == listStyle.listItemType
+                && Objects.equals(bgColor, listStyle.bgColor)
+                && Objects.equals(itemIcon, listStyle.itemIcon)
+                && Objects.equals(listStyleSimpleExtension, listStyle.listStyleSimpleExtension)
+                && Objects.equals(listStyleObjectExtension, listStyle.listStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ListStyle) == false) {
-            return false;
-        }
-        ListStyle other = ((ListStyle) obj);
-        if (listItemType == null) {
-            if (other.listItemType!= null) {
-                return false;
-            }
-        } else {
-            if (listItemType.equals(other.listItemType) == false) {
-                return false;
-            }
-        }
-        if (bgColor == null) {
-            if (other.bgColor!= null) {
-                return false;
-            }
-        } else {
-            if (bgColor.equals(other.bgColor) == false) {
-                return false;
-            }
-        }
-        if (itemIcon == null) {
-            if (other.itemIcon!= null) {
-                return false;
-            }
-        } else {
-            if (itemIcon.equals(other.itemIcon) == false) {
-                return false;
-            }
-        }
-        if (maxSnippetLines!= other.maxSnippetLines) {
-            return false;
-        }
-        if (listStyleSimpleExtension == null) {
-            if (other.listStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (listStyleSimpleExtension.equals(other.listStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (listStyleObjectExtension == null) {
-            if (other.listStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (listStyleObjectExtension.equals(other.listStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(listItemType);
+        result = 31 * result + Objects.hashCode(bgColor);
+        result = 31 * result + Objects.hashCode(itemIcon);
+        result = 31 * result + maxSnippetLines;
+        result = 31 * result + Objects.hashCode(listStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(listStyleObjectExtension);
+        return result;
     }
 
     /**

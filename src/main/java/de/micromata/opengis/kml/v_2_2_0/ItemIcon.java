@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <itemicon>}
@@ -159,68 +159,31 @@ public class ItemIcon
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((state == null)? 0 :state.hashCode()));
-        result = ((prime*result)+((href == null)? 0 :href.hashCode()));
-        result = ((prime*result)+((itemIconSimpleExtension == null)? 0 :itemIconSimpleExtension.hashCode()));
-        result = ((prime*result)+((itemIconObjectExtension == null)? 0 :itemIconObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ItemIcon itemIcon = (ItemIcon) object;
+        return Objects.equals(state, itemIcon.state)
+                && Objects.equals(href, itemIcon.href)
+                && Objects.equals(itemIconSimpleExtension, itemIcon.itemIconSimpleExtension)
+                && Objects.equals(itemIconObjectExtension, itemIcon.itemIconObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ItemIcon) == false) {
-            return false;
-        }
-        ItemIcon other = ((ItemIcon) obj);
-        if (state == null) {
-            if (other.state!= null) {
-                return false;
-            }
-        } else {
-            if (state.equals(other.state) == false) {
-                return false;
-            }
-        }
-        if (href == null) {
-            if (other.href!= null) {
-                return false;
-            }
-        } else {
-            if (href.equals(other.href) == false) {
-                return false;
-            }
-        }
-        if (itemIconSimpleExtension == null) {
-            if (other.itemIconSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (itemIconSimpleExtension.equals(other.itemIconSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (itemIconObjectExtension == null) {
-            if (other.itemIconObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (itemIconObjectExtension.equals(other.itemIconObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(state);
+        result = 31 * result + Objects.hashCode(href);
+        result = 31 * result + Objects.hashCode(itemIconSimpleExtension);
+        result = 31 * result + Objects.hashCode(itemIconObjectExtension);
+        return result;
     }
 
     /**

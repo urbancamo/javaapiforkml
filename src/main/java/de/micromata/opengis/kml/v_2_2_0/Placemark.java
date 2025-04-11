@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Placemark>}
@@ -192,58 +192,29 @@ public class Placemark
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((geometry == null)? 0 :geometry.hashCode()));
-        result = ((prime*result)+((placemarkSimpleExtension == null)? 0 :placemarkSimpleExtension.hashCode()));
-        result = ((prime*result)+((placemarkObjectExtension == null)? 0 :placemarkObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Placemark placemark = (Placemark) object;
+        return Objects.equals(geometry, placemark.geometry)
+                && Objects.equals(placemarkSimpleExtension, placemark.placemarkSimpleExtension)
+                && Objects.equals(placemarkObjectExtension, placemark.placemarkObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Placemark) == false) {
-            return false;
-        }
-        Placemark other = ((Placemark) obj);
-        if (geometry == null) {
-            if (other.geometry!= null) {
-                return false;
-            }
-        } else {
-            if (geometry.equals(other.geometry) == false) {
-                return false;
-            }
-        }
-        if (placemarkSimpleExtension == null) {
-            if (other.placemarkSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (placemarkSimpleExtension.equals(other.placemarkSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (placemarkObjectExtension == null) {
-            if (other.placemarkObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (placemarkObjectExtension.equals(other.placemarkObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(geometry);
+        result = 31 * result + Objects.hashCode(placemarkSimpleExtension);
+        result = 31 * result + Objects.hashCode(placemarkObjectExtension);
+        return result;
     }
 
     /**

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -376,165 +376,50 @@ public class Locality implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((localityName == null)? 0 :localityName.hashCode()));
-        result = ((prime*result)+((postBox == null)? 0 :postBox.hashCode()));
-        result = ((prime*result)+((largeMailUser == null)? 0 :largeMailUser.hashCode()));
-        result = ((prime*result)+((postOffice == null)? 0 :postOffice.hashCode()));
-        result = ((prime*result)+((postalRoute == null)? 0 :postalRoute.hashCode()));
-        result = ((prime*result)+((thoroughfare == null)? 0 :thoroughfare.hashCode()));
-        result = ((prime*result)+((premise == null)? 0 :premise.hashCode()));
-        result = ((prime*result)+((dependentLocality == null)? 0 :dependentLocality.hashCode()));
-        result = ((prime*result)+((postalCode == null)? 0 :postalCode.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        result = ((prime*result)+((usage == null)? 0 :usage.hashCode()));
-        result = ((prime*result)+((indicator == null)? 0 :indicator.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Locality locality = (Locality) object;
+        return Objects.equals(addressLine, locality.addressLine)
+                && Objects.equals(localityName, locality.localityName)
+                && Objects.equals(postBox, locality.postBox)
+                && Objects.equals(largeMailUser, locality.largeMailUser)
+                && Objects.equals(postOffice, locality.postOffice)
+                && Objects.equals(postalRoute, locality.postalRoute)
+                && Objects.equals(thoroughfare, locality.thoroughfare)
+                && Objects.equals(premise, locality.premise)
+                && Objects.equals(dependentLocality, locality.dependentLocality)
+                && Objects.equals(postalCode, locality.postalCode)
+                && Objects.equals(any, locality.any)
+                && Objects.equals(underscore, locality.underscore)
+                && Objects.equals(usage, locality.usage)
+                && Objects.equals(indicator, locality.indicator)
+                && Objects.equals(otherAttributes, locality.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Locality) == false) {
-            return false;
-        }
-        Locality other = ((Locality) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (localityName == null) {
-            if (other.localityName!= null) {
-                return false;
-            }
-        } else {
-            if (localityName.equals(other.localityName) == false) {
-                return false;
-            }
-        }
-        if (postBox == null) {
-            if (other.postBox!= null) {
-                return false;
-            }
-        } else {
-            if (postBox.equals(other.postBox) == false) {
-                return false;
-            }
-        }
-        if (largeMailUser == null) {
-            if (other.largeMailUser!= null) {
-                return false;
-            }
-        } else {
-            if (largeMailUser.equals(other.largeMailUser) == false) {
-                return false;
-            }
-        }
-        if (postOffice == null) {
-            if (other.postOffice!= null) {
-                return false;
-            }
-        } else {
-            if (postOffice.equals(other.postOffice) == false) {
-                return false;
-            }
-        }
-        if (postalRoute == null) {
-            if (other.postalRoute!= null) {
-                return false;
-            }
-        } else {
-            if (postalRoute.equals(other.postalRoute) == false) {
-                return false;
-            }
-        }
-        if (thoroughfare == null) {
-            if (other.thoroughfare!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfare.equals(other.thoroughfare) == false) {
-                return false;
-            }
-        }
-        if (premise == null) {
-            if (other.premise!= null) {
-                return false;
-            }
-        } else {
-            if (premise.equals(other.premise) == false) {
-                return false;
-            }
-        }
-        if (dependentLocality == null) {
-            if (other.dependentLocality!= null) {
-                return false;
-            }
-        } else {
-            if (dependentLocality.equals(other.dependentLocality) == false) {
-                return false;
-            }
-        }
-        if (postalCode == null) {
-            if (other.postalCode!= null) {
-                return false;
-            }
-        } else {
-            if (postalCode.equals(other.postalCode) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        if (usage == null) {
-            if (other.usage!= null) {
-                return false;
-            }
-        } else {
-            if (usage.equals(other.usage) == false) {
-                return false;
-            }
-        }
-        if (indicator == null) {
-            if (other.indicator!= null) {
-                return false;
-            }
-        } else {
-            if (indicator.equals(other.indicator) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(localityName);
+        result = 31 * result + Objects.hashCode(postBox);
+        result = 31 * result + Objects.hashCode(largeMailUser);
+        result = 31 * result + Objects.hashCode(postOffice);
+        result = 31 * result + Objects.hashCode(postalRoute);
+        result = 31 * result + Objects.hashCode(thoroughfare);
+        result = 31 * result + Objects.hashCode(premise);
+        result = 31 * result + Objects.hashCode(dependentLocality);
+        result = 31 * result + Objects.hashCode(postalCode);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(usage);
+        result = 31 * result + Objects.hashCode(indicator);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**
