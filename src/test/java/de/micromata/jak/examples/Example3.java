@@ -25,12 +25,12 @@ public class Example3 {
 
   public static void main(String args[]) throws IOException {
 
-HashMap<String, Double> data = Utils.readCSVDoubleData("src/main/resources/exampledata/mobile_phone_2008.csv", 0, 3);
+HashMap<String, Double> data = Utils.readCSVDoubleData("src/test/resources/exampledata/mobile_phone_2008.csv", 0, 3);
 double max = data.get("maximum");
 int minPolyHeight = 308000; // set a minimum height used by the 3D shapes
 int maxPolyHeight = 2692000; // real max = 3000000 - 308000 = 2692000
 
-Kml unmarshal = Kml.unmarshal(new File("src/main/resources/exampledata/worldBorders.kml"));
+Kml unmarshal = Kml.unmarshal(new File("src/test/resources/exampledata/worldBorders.kml"));
 Document document = (Document) unmarshal.getFeature();
 document.setName("JAK Example3");
 Folder folder = (Folder) document.getFeature().get(0);

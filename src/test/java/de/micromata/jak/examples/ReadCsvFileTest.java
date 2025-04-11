@@ -18,7 +18,7 @@ public class ReadCsvFileTest {
   @Ignore
   public void printAlphabeticalOrder() throws IOException {
 
-    HashMap<String, Double> data = Utils.readCSVDoubleData("src/main/resources/exampledata/mobile_phone_2008.csv", 0, 3);
+    HashMap<String, Double> data = Utils.readCSVDoubleData("src/test/resources/exampledata/mobile_phone_2008.csv", 0, 3);
     ArrayList<String> keys = new ArrayList<String>();
     keys.addAll(data.keySet());
     Collections.sort(keys);
@@ -29,7 +29,7 @@ public class ReadCsvFileTest {
 
   @Test
   public void readCsvFileTest() throws IOException {
-    HashMap<String, Double> data = Utils.readCSVDoubleData("src/main/resources/exampledata/mobile_phone_2008.csv", 0, 3);
+    HashMap<String, Double> data = Utils.readCSVDoubleData("src/test/resources/exampledata/mobile_phone_2008.csv", 0, 3);
     data.remove("maximum");
     data.remove("minimum");
 
@@ -60,7 +60,7 @@ public class ReadCsvFileTest {
   public void readMultiDataFromCsvFile() throws IOException {
 
     HashMap<String, HashMap<String, Double>> result = Utils.readMultiDataFromCVS(
-        "src/main/resources/exampledata/mobile_phone.csv", 0, 3, 2);
+        "src/test/resources/exampledata/mobile_phone.csv", 0, 3, 2);
     result.remove("info");
     Assert.assertEquals(217, result.size()); // check size
 

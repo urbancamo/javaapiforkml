@@ -30,13 +30,13 @@ public class Example4 {
 	public static void main(String args[]) throws IOException {
 
 HashMap<String, HashMap<String, Double>> result = Utils
-    .readMultiDataFromCVS("src/main/resources/exampledata/mobile_phone.csv", 0, 3, 2);
+    .readMultiDataFromCVS("src/test/resources/exampledata/mobile_phone.csv", 0, 3, 2);
 double max = result.get("info").get("maximum");
 result.remove("info");
 int minPolyHeight = 308000;
 int maxPolyHeight = 2692000; // real max = 3000000 - 308000 = 2692000
 
-String path = "src/main/resources/data/worldBorders.kml";
+String path = "src/test/resources/data/worldBorders.kml";
 Kml unmarshal = Kml.unmarshal(new File(path));
 
 Document document = (Document) unmarshal.getFeature();

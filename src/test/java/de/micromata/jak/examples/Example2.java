@@ -32,7 +32,7 @@ public class Example2 {
 		int minPolyHeight = 308000; // set a minimum height used by the 3D shapes
 		int maxPolyHeight = 2692000; // real max = 3000000 - 308000 = 2692000
 
-		Kml worldBorders = Kml.unmarshal(new File("src/main/resources/exampledata/worldBorders.kml"));
+		Kml worldBorders = Kml.unmarshal(new File("src/test/resources/exampledata/worldBorders.kml"));
 
 		Document document = (Document) worldBorders.getFeature().withName("JAK Example 2");
 		Folder rootFolder = document.createAndAddFolder().withName("choose").withStyleUrl("radioFolder");
