@@ -20,11 +20,11 @@ import java.util.List;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 
-import org.junit.Assert;
 
+import junit.framework.Assert;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.junit.Test;
 
 import de.micromata.jak.internal.IAtsConformanceLevel1;
 import de.micromata.opengis.kml.v_2_2_0.AbstractLatLonBox;

@@ -17,9 +17,9 @@ package de.micromata.jak;
 
 import java.lang.reflect.Field;
 
-import org.junit.Assert;
+import junit.framework.Assert;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import de.micromata.jak.internal.IAtsConformanceLevel3;
 import de.micromata.opengis.kml.v_2_2_0.BalloonStyle;

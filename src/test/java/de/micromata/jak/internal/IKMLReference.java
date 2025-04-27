@@ -1,6 +1,6 @@
 package de.micromata.jak.internal;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public interface IKMLReference
 {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import de.micromata.jak.internal.IKmlGxReference;
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;

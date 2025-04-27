@@ -2,8 +2,8 @@ package de.micromata.jak;
 
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.NamespaceFilterHandler;
-import org.junit.Assert;
-import org.junit.Test;
+import junit.framework.Assert;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests {@link NamespaceFilterHandler} allows registration of 3rd party KML specifications.

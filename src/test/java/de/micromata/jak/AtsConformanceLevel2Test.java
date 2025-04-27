@@ -2,12 +2,11 @@ package de.micromata.jak;
 
 import java.lang.reflect.Field;
 import java.util.List;
+
+import junit.framework.Assert;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.junit.Assert;
-
-import org.junit.Test;
 
 import de.micromata.jak.internal.IAtsConformanceLevel2;
 import de.micromata.opengis.kml.v_2_2_0.Alias;

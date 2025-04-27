@@ -3,9 +3,9 @@ package de.micromata.jak.examples;
 import java.io.File;
 import java.util.List;
 
-import org.junit.Assert;
+import junit.framework.Assert;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import de.micromata.opengis.kml.v_2_2_0.Boundary;
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;

@@ -6,27 +6,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import junit.framework.Assert;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests fot the reading CSV files
  */
 public class ReadCsvFileTest {
-
-  @Ignore
-  public void printAlphabeticalOrder() throws IOException {
-
-    HashMap<String, Double> data = Utils.readCSVDoubleData("src/test/resources/exampledata/mobile_phone_2008.csv", 0, 3);
-    ArrayList<String> keys = new ArrayList<String>();
-    keys.addAll(data.keySet());
-    Collections.sort(keys);
-    Iterator<String> iterator = keys.iterator();
-    while (iterator.hasNext())
-      System.out.println(iterator.next());
-  }
-
   @Test
   public void readCsvFileTest() throws IOException {
     HashMap<String, Double> data = Utils.readCSVDoubleData("src/test/resources/exampledata/mobile_phone_2008.csv", 0, 3);

@@ -10,7 +10,7 @@
 
   <groupId>uk.m0nom</groupId>
   <artifactId>javaapiforkml</artifactId>
-  <version>3.0.10</version>
+  <version>3.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Java Api for Kml</name>
   <description>This is JavaApiForKml, Micromata's library for use with applications that want to parse, generate and
@@ -33,34 +33,29 @@
   </developers>
 
   <properties>
-    <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
-    <maven-javadoc-plugin.version>3.6.2</maven-javadoc-plugin.version>
-    <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
-    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-    <maven-changelog-plugin.version>2.3</maven-changelog-plugin.version>
+    <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+    <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
+    <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+    <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+    <maven-changelog-plugin.version>3.0.0-M1</maven-changelog-plugin.version>
     <maven-wrapper-plugin.version>3.2.0</maven-wrapper-plugin.version>
-    <maven-project-info-reports-plugin.version>3.4.2</maven-project-info-reports-plugin.version>
-    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-    <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
-    <!--third-party plugin versions -->
-    <sortpom-maven-plugin.version>3.2.1</sortpom-maven-plugin.version>
+    <maven-project-info-reports-plugin.version>3.9.0</maven-project-info-reports-plugin.version>
+    <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
+    <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+
+    <sortpom-maven-plugin.version>4.0.0</sortpom-maven-plugin.version>
     <ossindex-maven-plugin.version>3.2.0</ossindex-maven-plugin.version>
     <ossindex-maven-enforcer-rules.version>${ossindex-maven-plugin.version}</ossindex-maven-enforcer-rules.version>
-    <extra-enforcer-rules.version>1.6.1</extra-enforcer-rules.version>
-    <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
+    <dependency-check-maven.version>12.1.1</dependency-check-maven.version>
 
-    <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
-    <!--third-party plugin versions -->
-    <sortpom-maven-plugin.version>3.2.1</sortpom-maven-plugin.version>
-    <ossindex-maven-enforcer-rules.version>3.2.0</ossindex-maven-enforcer-rules.version>
-    <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
-    <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
-    <log4j2.version>2.20.0</log4j2.version>
-    <slf4j.version>2.0.7</slf4j.version>
-    <junit.version>4.13.1</junit.version>
-    <xmlunit.version>1.6</xmlunit.version>
-    <jakarta-xml-bind-api.version>4.0.1</jakarta-xml-bind-api.version>
-    <jaxb-runtime.version>4.0.4</jaxb-runtime.version>
+    <jetbrains-annotations.version>26.0.2</jetbrains-annotations.version>
+    <log4j2.version>2.24.3</log4j2.version>
+    <slf4j.version>2.0.17</slf4j.version>
+    <junit-jupiter-api.version>5.12.2</junit-jupiter-api.version>
+    <xmlunit-legacy.version>2.10.0</xmlunit-legacy.version>
+    <junit.version>4.13.2</junit.version>
+    <jakarta-xml-bind-api.version>4.0.2</jakarta-xml-bind-api.version>
+    <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
   </properties>
 
   <dependencies>
@@ -93,16 +88,24 @@
       <version>${log4j2.version}</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-jupiter-api.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>xmlunit</groupId>
-      <artifactId>xmlunit</artifactId>
-      <version>${xmlunit.version}</version>
+      <groupId>org.xmlunit</groupId>
+      <artifactId>xmlunit-legacy</artifactId>
+      <version>${xmlunit-legacy.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

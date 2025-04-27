@@ -2,7 +2,7 @@ package de.micromata.jak;
 
 import java.util.List;
 
-import org.junit.Assert;
+import junit.framework.Assert;
 
 import de.micromata.opengis.kml.v_2_2_0.Alias;
 import de.micromata.opengis.kml.v_2_2_0.AltitudeMode;

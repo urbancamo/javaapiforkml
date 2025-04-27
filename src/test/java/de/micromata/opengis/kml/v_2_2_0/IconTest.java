@@ -1,6 +1,6 @@
 package de.micromata.opengis.kml.v_2_2_0;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class IconTest {
    @Test
