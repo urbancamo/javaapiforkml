@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * latlongbox
@@ -237,69 +237,35 @@ public abstract class AbstractLatLonBox
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(north);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(south);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(east);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(west);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((abstractLatLonBoxSimpleExtension == null)? 0 :abstractLatLonBoxSimpleExtension.hashCode()));
-        result = ((prime*result)+((abstractLatLonBoxObjectExtension == null)? 0 :abstractLatLonBoxObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        AbstractLatLonBox that = (AbstractLatLonBox) object;
+        return Double.compare(north, that.north) == 0
+                && Double.compare(south, that.south) == 0
+                && Double.compare(east, that.east) == 0
+                && Double.compare(west, that.west) == 0
+                && Objects.equals(abstractLatLonBoxSimpleExtension, that.abstractLatLonBoxSimpleExtension)
+                && Objects.equals(abstractLatLonBoxObjectExtension, that.abstractLatLonBoxObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof AbstractLatLonBox) == false) {
-            return false;
-        }
-        AbstractLatLonBox other = ((AbstractLatLonBox) obj);
-        if (north!= other.north) {
-            return false;
-        }
-        if (south!= other.south) {
-            return false;
-        }
-        if (east!= other.east) {
-            return false;
-        }
-        if (west!= other.west) {
-            return false;
-        }
-        if (abstractLatLonBoxSimpleExtension == null) {
-            if (other.abstractLatLonBoxSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (abstractLatLonBoxSimpleExtension.equals(other.abstractLatLonBoxSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (abstractLatLonBoxObjectExtension == null) {
-            if (other.abstractLatLonBoxObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (abstractLatLonBoxObjectExtension.equals(other.abstractLatLonBoxObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(north);
+        result = 31 * result + Double.hashCode(south);
+        result = 31 * result + Double.hashCode(east);
+        result = 31 * result + Double.hashCode(west);
+        result = 31 * result + Objects.hashCode(abstractLatLonBoxSimpleExtension);
+        result = 31 * result + Objects.hashCode(abstractLatLonBoxObjectExtension);
+        return result;
     }
 
     /**

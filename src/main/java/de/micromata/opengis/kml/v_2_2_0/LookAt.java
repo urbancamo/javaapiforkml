@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <LookAt>}
@@ -416,89 +416,41 @@ public class LookAt
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(longitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(latitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(altitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(heading);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(tilt);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(range);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((lookAtSimpleExtension == null)? 0 :lookAtSimpleExtension.hashCode()));
-        result = ((prime*result)+((lookAtObjectExtension == null)? 0 :lookAtObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LookAt lookAt = (LookAt) object;
+        return altitudeMode == lookAt.altitudeMode
+                && Double.compare(longitude, lookAt.longitude) == 0
+                && Double.compare(latitude, lookAt.latitude) == 0
+                && Double.compare(altitude, lookAt.altitude) == 0
+                && Double.compare(heading, lookAt.heading) == 0
+                && Double.compare(tilt, lookAt.tilt) == 0
+                && Double.compare(range, lookAt.range) == 0
+                && Objects.equals(lookAtSimpleExtension, lookAt.lookAtSimpleExtension)
+                && Objects.equals(lookAtObjectExtension, lookAt.lookAtObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LookAt) == false) {
-            return false;
-        }
-        LookAt other = ((LookAt) obj);
-        if (longitude!= other.longitude) {
-            return false;
-        }
-        if (latitude!= other.latitude) {
-            return false;
-        }
-        if (altitude!= other.altitude) {
-            return false;
-        }
-        if (heading!= other.heading) {
-            return false;
-        }
-        if (tilt!= other.tilt) {
-            return false;
-        }
-        if (range!= other.range) {
-            return false;
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (lookAtSimpleExtension == null) {
-            if (other.lookAtSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lookAtSimpleExtension.equals(other.lookAtSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (lookAtObjectExtension == null) {
-            if (other.lookAtObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lookAtObjectExtension.equals(other.lookAtObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(longitude);
+        result = 31 * result + Double.hashCode(latitude);
+        result = 31 * result + Double.hashCode(altitude);
+        result = 31 * result + Double.hashCode(heading);
+        result = 31 * result + Double.hashCode(tilt);
+        result = 31 * result + Double.hashCode(range);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(lookAtSimpleExtension);
+        result = 31 * result + Objects.hashCode(lookAtObjectExtension);
+        return result;
     }
 
     /**

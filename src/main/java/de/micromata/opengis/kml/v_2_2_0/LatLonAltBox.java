@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <latlonaltbox>}(required)
@@ -195,69 +195,33 @@ public class LatLonAltBox
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(minAltitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(maxAltitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((latLonAltBoxSimpleExtension == null)? 0 :latLonAltBoxSimpleExtension.hashCode()));
-        result = ((prime*result)+((latLonAltBoxObjectExtension == null)? 0 :latLonAltBoxObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LatLonAltBox that = (LatLonAltBox) object;
+        return altitudeMode == that.altitudeMode
+                && Double.compare(minAltitude, that.minAltitude) == 0
+                && Double.compare(maxAltitude, that.maxAltitude) == 0
+                && Objects.equals(latLonAltBoxSimpleExtension, that.latLonAltBoxSimpleExtension)
+                && Objects.equals(latLonAltBoxObjectExtension, that.latLonAltBoxObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LatLonAltBox) == false) {
-            return false;
-        }
-        LatLonAltBox other = ((LatLonAltBox) obj);
-        if (minAltitude!= other.minAltitude) {
-            return false;
-        }
-        if (maxAltitude!= other.maxAltitude) {
-            return false;
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (latLonAltBoxSimpleExtension == null) {
-            if (other.latLonAltBoxSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (latLonAltBoxSimpleExtension.equals(other.latLonAltBoxSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (latLonAltBoxObjectExtension == null) {
-            if (other.latLonAltBoxObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (latLonAltBoxObjectExtension.equals(other.latLonAltBoxObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(minAltitude);
+        result = 31 * result + Double.hashCode(maxAltitude);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(latLonAltBoxSimpleExtension);
+        result = 31 * result + Objects.hashCode(latLonAltBoxObjectExtension);
+        return result;
     }
 
     /**

@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Delete>}
@@ -93,35 +93,21 @@ public class Delete implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((feature == null)? 0 :feature.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Delete delete = (Delete) object;
+        return Objects.equals(feature, delete.feature);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Delete) == false) {
-            return false;
-        }
-        Delete other = ((Delete) obj);
-        if (feature == null) {
-            if (other.feature!= null) {
-                return false;
-            }
-        } else {
-            if (feature.equals(other.feature) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        return Objects.hashCode(feature);
     }
 
     /**

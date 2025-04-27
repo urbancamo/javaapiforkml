@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -273,125 +273,42 @@ public class AdministrativeArea implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((administrativeAreaName == null)? 0 :administrativeAreaName.hashCode()));
-        result = ((prime*result)+((subAdministrativeArea == null)? 0 :subAdministrativeArea.hashCode()));
-        result = ((prime*result)+((locality == null)? 0 :locality.hashCode()));
-        result = ((prime*result)+((postOffice == null)? 0 :postOffice.hashCode()));
-        result = ((prime*result)+((postalCode == null)? 0 :postalCode.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        result = ((prime*result)+((usage == null)? 0 :usage.hashCode()));
-        result = ((prime*result)+((indicator == null)? 0 :indicator.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        AdministrativeArea that = (AdministrativeArea) object;
+        return Objects.equals(addressLine, that.addressLine)
+                && Objects.equals(administrativeAreaName, that.administrativeAreaName)
+                && Objects.equals(subAdministrativeArea, that.subAdministrativeArea)
+                && Objects.equals(locality, that.locality)
+                && Objects.equals(postOffice, that.postOffice)
+                && Objects.equals(postalCode, that.postalCode)
+                && Objects.equals(any, that.any)
+                && Objects.equals(underscore, that.underscore)
+                && Objects.equals(usage, that.usage)
+                && Objects.equals(indicator, that.indicator)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof AdministrativeArea) == false) {
-            return false;
-        }
-        AdministrativeArea other = ((AdministrativeArea) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (administrativeAreaName == null) {
-            if (other.administrativeAreaName!= null) {
-                return false;
-            }
-        } else {
-            if (administrativeAreaName.equals(other.administrativeAreaName) == false) {
-                return false;
-            }
-        }
-        if (subAdministrativeArea == null) {
-            if (other.subAdministrativeArea!= null) {
-                return false;
-            }
-        } else {
-            if (subAdministrativeArea.equals(other.subAdministrativeArea) == false) {
-                return false;
-            }
-        }
-        if (locality == null) {
-            if (other.locality!= null) {
-                return false;
-            }
-        } else {
-            if (locality.equals(other.locality) == false) {
-                return false;
-            }
-        }
-        if (postOffice == null) {
-            if (other.postOffice!= null) {
-                return false;
-            }
-        } else {
-            if (postOffice.equals(other.postOffice) == false) {
-                return false;
-            }
-        }
-        if (postalCode == null) {
-            if (other.postalCode!= null) {
-                return false;
-            }
-        } else {
-            if (postalCode.equals(other.postalCode) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        if (usage == null) {
-            if (other.usage!= null) {
-                return false;
-            }
-        } else {
-            if (usage.equals(other.usage) == false) {
-                return false;
-            }
-        }
-        if (indicator == null) {
-            if (other.indicator!= null) {
-                return false;
-            }
-        } else {
-            if (indicator.equals(other.indicator) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(administrativeAreaName);
+        result = 31 * result + Objects.hashCode(subAdministrativeArea);
+        result = 31 * result + Objects.hashCode(locality);
+        result = 31 * result + Objects.hashCode(postOffice);
+        result = 31 * result + Objects.hashCode(postalCode);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(usage);
+        result = 31 * result + Objects.hashCode(indicator);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

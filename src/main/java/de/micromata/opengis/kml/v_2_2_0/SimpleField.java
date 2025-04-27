@@ -5,7 +5,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -108,65 +108,28 @@ public class SimpleField implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((displayName == null)? 0 :displayName.hashCode()));
-        result = ((prime*result)+((simpleFieldExtension == null)? 0 :simpleFieldExtension.hashCode()));
-        result = ((prime*result)+((type == null)? 0 :type.hashCode()));
-        result = ((prime*result)+((name == null)? 0 :name.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        SimpleField that = (SimpleField) object;
+        return Objects.equals(displayName, that.displayName)
+                && Objects.equals(simpleFieldExtension, that.simpleFieldExtension)
+                && Objects.equals(type, that.type)
+                && Objects.equals(name, that.name);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof SimpleField) == false) {
-            return false;
-        }
-        SimpleField other = ((SimpleField) obj);
-        if (displayName == null) {
-            if (other.displayName!= null) {
-                return false;
-            }
-        } else {
-            if (displayName.equals(other.displayName) == false) {
-                return false;
-            }
-        }
-        if (simpleFieldExtension == null) {
-            if (other.simpleFieldExtension!= null) {
-                return false;
-            }
-        } else {
-            if (simpleFieldExtension.equals(other.simpleFieldExtension) == false) {
-                return false;
-            }
-        }
-        if (type == null) {
-            if (other.type!= null) {
-                return false;
-            }
-        } else {
-            if (type.equals(other.type) == false) {
-                return false;
-            }
-        }
-        if (name == null) {
-            if (other.name!= null) {
-                return false;
-            }
-        } else {
-            if (name.equals(other.name) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(displayName);
+        result = 31 * result + Objects.hashCode(simpleFieldExtension);
+        result = 31 * result + Objects.hashCode(type);
+        result = 31 * result + Objects.hashCode(name);
+        return result;
     }
 
     /**

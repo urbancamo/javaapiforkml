@@ -3,6 +3,7 @@ package de.micromata.opengis.kml.v_2_2_0;
 
 import jakarta.xml.bind.annotation.*;
 
+import java.util.Objects;
 
 /**
  * Vec2
@@ -157,56 +158,28 @@ public class Vec2 implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        long temp;
-        temp = Double.doubleToLongBits(x);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(y);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((xunits == null)? 0 :xunits.hashCode()));
-        result = ((prime*result)+((yunits == null)? 0 :yunits.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Vec2 vec2 = (Vec2) object;
+        return Double.compare(x, vec2.x) == 0
+                && Double.compare(y, vec2.y) == 0
+                && xunits == vec2.xunits
+                && yunits == vec2.yunits;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Vec2) == false) {
-            return false;
-        }
-        Vec2 other = ((Vec2) obj);
-        if (x!= other.x) {
-            return false;
-        }
-        if (y!= other.y) {
-            return false;
-        }
-        if (xunits == null) {
-            if (other.xunits!= null) {
-                return false;
-            }
-        } else {
-            if (xunits.equals(other.xunits) == false) {
-                return false;
-            }
-        }
-        if (yunits == null) {
-            if (other.yunits!= null) {
-                return false;
-            }
-        } else {
-            if (yunits.equals(other.yunits) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Double.hashCode(x);
+        result = 31 * result + Double.hashCode(y);
+        result = 31 * result + Objects.hashCode(xunits);
+        result = 31 * result + Objects.hashCode(yunits);
+        return result;
     }
 
     /**

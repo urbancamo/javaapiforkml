@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <scale>}
@@ -176,64 +176,33 @@ public class Scale
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(x);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(y);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        temp = Double.doubleToLongBits(z);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((scaleSimpleExtension == null)? 0 :scaleSimpleExtension.hashCode()));
-        result = ((prime*result)+((scaleObjectExtension == null)? 0 :scaleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Scale scale = (Scale) object;
+        return Double.compare(x, scale.x) == 0
+                && Double.compare(y, scale.y) == 0
+                && Double.compare(z, scale.z) == 0
+                && Objects.equals(scaleSimpleExtension, scale.scaleSimpleExtension)
+                && Objects.equals(scaleObjectExtension, scale.scaleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Scale) == false) {
-            return false;
-        }
-        Scale other = ((Scale) obj);
-        if (x!= other.x) {
-            return false;
-        }
-        if (y!= other.y) {
-            return false;
-        }
-        if (z!= other.z) {
-            return false;
-        }
-        if (scaleSimpleExtension == null) {
-            if (other.scaleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (scaleSimpleExtension.equals(other.scaleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (scaleObjectExtension == null) {
-            if (other.scaleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (scaleObjectExtension.equals(other.scaleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(x);
+        result = 31 * result + Double.hashCode(y);
+        result = 31 * result + Double.hashCode(z);
+        result = 31 * result + Objects.hashCode(scaleSimpleExtension);
+        result = 31 * result + Objects.hashCode(scaleObjectExtension);
+        return result;
     }
 
     /**

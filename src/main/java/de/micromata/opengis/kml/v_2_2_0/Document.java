@@ -10,7 +10,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Document>}
@@ -235,68 +235,31 @@ public class Document
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((schema == null)? 0 :schema.hashCode()));
-        result = ((prime*result)+((feature == null)? 0 :feature.hashCode()));
-        result = ((prime*result)+((documentSimpleExtension == null)? 0 :documentSimpleExtension.hashCode()));
-        result = ((prime*result)+((documentObjectExtension == null)? 0 :documentObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Document document = (Document) object;
+        return Objects.equals(schema, document.schema)
+                && Objects.equals(feature, document.feature)
+                && Objects.equals(documentSimpleExtension, document.documentSimpleExtension)
+                && Objects.equals(documentObjectExtension, document.documentObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Document) == false) {
-            return false;
-        }
-        Document other = ((Document) obj);
-        if (schema == null) {
-            if (other.schema!= null) {
-                return false;
-            }
-        } else {
-            if (schema.equals(other.schema) == false) {
-                return false;
-            }
-        }
-        if (feature == null) {
-            if (other.feature!= null) {
-                return false;
-            }
-        } else {
-            if (feature.equals(other.feature) == false) {
-                return false;
-            }
-        }
-        if (documentSimpleExtension == null) {
-            if (other.documentSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (documentSimpleExtension.equals(other.documentSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (documentObjectExtension == null) {
-            if (other.documentObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (documentObjectExtension.equals(other.documentObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(schema);
+        result = 31 * result + Objects.hashCode(feature);
+        result = 31 * result + Objects.hashCode(documentSimpleExtension);
+        result = 31 * result + Objects.hashCode(documentObjectExtension);
+        return result;
     }
 
     /**

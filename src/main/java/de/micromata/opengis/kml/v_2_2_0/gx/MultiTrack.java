@@ -11,7 +11,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * 
@@ -99,58 +99,29 @@ public class MultiTrack
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((interpolate == null)? 0 :interpolate.hashCode()));
-        result = ((prime*result)+((track == null)? 0 :track.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        MultiTrack that = (MultiTrack) object;
+        return altitudeMode == that.altitudeMode
+                && Objects.equals(interpolate, that.interpolate)
+                && Objects.equals(track, that.track);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof MultiTrack) == false) {
-            return false;
-        }
-        MultiTrack other = ((MultiTrack) obj);
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (interpolate == null) {
-            if (other.interpolate!= null) {
-                return false;
-            }
-        } else {
-            if (interpolate.equals(other.interpolate) == false) {
-                return false;
-            }
-        }
-        if (track == null) {
-            if (other.track!= null) {
-                return false;
-            }
-        } else {
-            if (track.equals(other.track) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(interpolate);
+        result = 31 * result + Objects.hashCode(track);
+        return result;
     }
 
     /**

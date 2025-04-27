@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Polygon>}
@@ -336,98 +336,37 @@ public class Polygon
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((extrude == null)? 0 :extrude.hashCode()));
-        result = ((prime*result)+((tessellate == null)? 0 :tessellate.hashCode()));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((outerBoundaryIs == null)? 0 :outerBoundaryIs.hashCode()));
-        result = ((prime*result)+((innerBoundaryIs == null)? 0 :innerBoundaryIs.hashCode()));
-        result = ((prime*result)+((polygonSimpleExtension == null)? 0 :polygonSimpleExtension.hashCode()));
-        result = ((prime*result)+((polygonObjectExtension == null)? 0 :polygonObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Polygon polygon = (Polygon) object;
+        return altitudeMode == polygon.altitudeMode
+                && Objects.equals(extrude, polygon.extrude)
+                && Objects.equals(tessellate, polygon.tessellate)
+                && Objects.equals(outerBoundaryIs, polygon.outerBoundaryIs)
+                && Objects.equals(innerBoundaryIs, polygon.innerBoundaryIs)
+                && Objects.equals(polygonSimpleExtension, polygon.polygonSimpleExtension)
+                && Objects.equals(polygonObjectExtension, polygon.polygonObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Polygon) == false) {
-            return false;
-        }
-        Polygon other = ((Polygon) obj);
-        if (extrude == null) {
-            if (other.extrude!= null) {
-                return false;
-            }
-        } else {
-            if (extrude.equals(other.extrude) == false) {
-                return false;
-            }
-        }
-        if (tessellate == null) {
-            if (other.tessellate!= null) {
-                return false;
-            }
-        } else {
-            if (tessellate.equals(other.tessellate) == false) {
-                return false;
-            }
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (outerBoundaryIs == null) {
-            if (other.outerBoundaryIs!= null) {
-                return false;
-            }
-        } else {
-            if (outerBoundaryIs.equals(other.outerBoundaryIs) == false) {
-                return false;
-            }
-        }
-        if (innerBoundaryIs == null) {
-            if (other.innerBoundaryIs!= null) {
-                return false;
-            }
-        } else {
-            if (innerBoundaryIs.equals(other.innerBoundaryIs) == false) {
-                return false;
-            }
-        }
-        if (polygonSimpleExtension == null) {
-            if (other.polygonSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (polygonSimpleExtension.equals(other.polygonSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (polygonObjectExtension == null) {
-            if (other.polygonObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (polygonObjectExtension.equals(other.polygonObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(extrude);
+        result = 31 * result + Objects.hashCode(tessellate);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(outerBoundaryIs);
+        result = 31 * result + Objects.hashCode(innerBoundaryIs);
+        result = 31 * result + Objects.hashCode(polygonSimpleExtension);
+        result = 31 * result + Objects.hashCode(polygonObjectExtension);
+        return result;
     }
 
     /**

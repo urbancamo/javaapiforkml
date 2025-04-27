@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code {@code <ColorStyle>}}
@@ -193,68 +193,31 @@ public abstract class ColorStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((color == null)? 0 :color.hashCode()));
-        result = ((prime*result)+((colorMode == null)? 0 :colorMode.hashCode()));
-        result = ((prime*result)+((colorStyleSimpleExtension == null)? 0 :colorStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((colorStyleObjectExtension == null)? 0 :colorStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ColorStyle that = (ColorStyle) object;
+        return colorMode == that.colorMode
+                && Objects.equals(color, that.color)
+                && Objects.equals(colorStyleSimpleExtension, that.colorStyleSimpleExtension)
+                && Objects.equals(colorStyleObjectExtension, that.colorStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ColorStyle) == false) {
-            return false;
-        }
-        ColorStyle other = ((ColorStyle) obj);
-        if (color == null) {
-            if (other.color!= null) {
-                return false;
-            }
-        } else {
-            if (color.equals(other.color) == false) {
-                return false;
-            }
-        }
-        if (colorMode == null) {
-            if (other.colorMode!= null) {
-                return false;
-            }
-        } else {
-            if (colorMode.equals(other.colorMode) == false) {
-                return false;
-            }
-        }
-        if (colorStyleSimpleExtension == null) {
-            if (other.colorStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (colorStyleSimpleExtension.equals(other.colorStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (colorStyleObjectExtension == null) {
-            if (other.colorStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (colorStyleObjectExtension.equals(other.colorStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(color);
+        result = 31 * result + Objects.hashCode(colorMode);
+        result = 31 * result + Objects.hashCode(colorStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(colorStyleObjectExtension);
+        return result;
     }
 
     /**

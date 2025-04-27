@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <LabelStyle>}
@@ -142,54 +142,29 @@ public class LabelStyle
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(scale);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((labelStyleSimpleExtension == null)? 0 :labelStyleSimpleExtension.hashCode()));
-        result = ((prime*result)+((labelStyleObjectExtension == null)? 0 :labelStyleObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LabelStyle that = (LabelStyle) object;
+        return Double.compare(scale, that.scale) == 0
+                && Objects.equals(labelStyleSimpleExtension, that.labelStyleSimpleExtension)
+                && Objects.equals(labelStyleObjectExtension, that.labelStyleObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LabelStyle) == false) {
-            return false;
-        }
-        LabelStyle other = ((LabelStyle) obj);
-        if (scale!= other.scale) {
-            return false;
-        }
-        if (labelStyleSimpleExtension == null) {
-            if (other.labelStyleSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (labelStyleSimpleExtension.equals(other.labelStyleSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (labelStyleObjectExtension == null) {
-            if (other.labelStyleObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (labelStyleObjectExtension.equals(other.labelStyleObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(scale);
+        result = 31 * result + Objects.hashCode(labelStyleSimpleExtension);
+        result = 31 * result + Objects.hashCode(labelStyleObjectExtension);
+        return result;
     }
 
     /**

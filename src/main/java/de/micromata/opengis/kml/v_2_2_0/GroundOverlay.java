@@ -10,7 +10,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * GroundOverlay
@@ -269,74 +269,33 @@ public class GroundOverlay
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        long temp;
-        temp = Double.doubleToLongBits(altitude);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((latLonBox == null)? 0 :latLonBox.hashCode()));
-        result = ((prime*result)+((groundOverlaySimpleExtension == null)? 0 :groundOverlaySimpleExtension.hashCode()));
-        result = ((prime*result)+((groundOverlayObjectExtension == null)? 0 :groundOverlayObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        GroundOverlay that = (GroundOverlay) object;
+        return altitudeMode == that.altitudeMode
+                && Double.compare(altitude, that.altitude) == 0
+                && Objects.equals(latLonBox, that.latLonBox)
+                && Objects.equals(groundOverlaySimpleExtension, that.groundOverlaySimpleExtension)
+                && Objects.equals(groundOverlayObjectExtension, that.groundOverlayObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof GroundOverlay) == false) {
-            return false;
-        }
-        GroundOverlay other = ((GroundOverlay) obj);
-        if (altitude!= other.altitude) {
-            return false;
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (latLonBox == null) {
-            if (other.latLonBox!= null) {
-                return false;
-            }
-        } else {
-            if (latLonBox.equals(other.latLonBox) == false) {
-                return false;
-            }
-        }
-        if (groundOverlaySimpleExtension == null) {
-            if (other.groundOverlaySimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (groundOverlaySimpleExtension.equals(other.groundOverlaySimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (groundOverlayObjectExtension == null) {
-            if (other.groundOverlayObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (groundOverlayObjectExtension.equals(other.groundOverlayObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(altitude);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(latLonBox);
+        result = 31 * result + Objects.hashCode(groundOverlaySimpleExtension);
+        result = 31 * result + Objects.hashCode(groundOverlayObjectExtension);
+        return result;
     }
 
     /**

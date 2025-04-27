@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * xal:addressdetails
@@ -504,175 +504,52 @@ public class AddressDetails implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((postalServiceElements == null)? 0 :postalServiceElements.hashCode()));
-        result = ((prime*result)+((xalAddress == null)? 0 :xalAddress.hashCode()));
-        result = ((prime*result)+((addressLines == null)? 0 :addressLines.hashCode()));
-        result = ((prime*result)+((country == null)? 0 :country.hashCode()));
-        result = ((prime*result)+((administrativeArea == null)? 0 :administrativeArea.hashCode()));
-        result = ((prime*result)+((locality == null)? 0 :locality.hashCode()));
-        result = ((prime*result)+((thoroughfare == null)? 0 :thoroughfare.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((address == null)? 0 :address.hashCode()));
-        result = ((prime*result)+((currentStatus == null)? 0 :currentStatus.hashCode()));
-        result = ((prime*result)+((validFromDate == null)? 0 :validFromDate.hashCode()));
-        result = ((prime*result)+((validToDate == null)? 0 :validToDate.hashCode()));
-        result = ((prime*result)+((usage == null)? 0 :usage.hashCode()));
-        result = ((prime*result)+((addressDetailsKey == null)? 0 :addressDetailsKey.hashCode()));
-        result = ((prime*result)+((code == null)? 0 :code.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        AddressDetails that = (AddressDetails) object;
+        return Objects.equals(postalServiceElements, that.postalServiceElements)
+                && Objects.equals(xalAddress, that.xalAddress)
+                && Objects.equals(addressLines, that.addressLines)
+                && Objects.equals(country, that.country)
+                && Objects.equals(administrativeArea, that.administrativeArea)
+                && Objects.equals(locality, that.locality)
+                && Objects.equals(thoroughfare, that.thoroughfare)
+                && Objects.equals(any, that.any)
+                && Objects.equals(address, that.address)
+                && Objects.equals(currentStatus, that.currentStatus)
+                && Objects.equals(validFromDate, that.validFromDate)
+                && Objects.equals(validToDate, that.validToDate)
+                && Objects.equals(usage, that.usage)
+                && Objects.equals(addressDetailsKey, that.addressDetailsKey)
+                && Objects.equals(code, that.code)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof AddressDetails) == false) {
-            return false;
-        }
-        AddressDetails other = ((AddressDetails) obj);
-        if (postalServiceElements == null) {
-            if (other.postalServiceElements!= null) {
-                return false;
-            }
-        } else {
-            if (postalServiceElements.equals(other.postalServiceElements) == false) {
-                return false;
-            }
-        }
-        if (xalAddress == null) {
-            if (other.xalAddress!= null) {
-                return false;
-            }
-        } else {
-            if (xalAddress.equals(other.xalAddress) == false) {
-                return false;
-            }
-        }
-        if (addressLines == null) {
-            if (other.addressLines!= null) {
-                return false;
-            }
-        } else {
-            if (addressLines.equals(other.addressLines) == false) {
-                return false;
-            }
-        }
-        if (country == null) {
-            if (other.country!= null) {
-                return false;
-            }
-        } else {
-            if (country.equals(other.country) == false) {
-                return false;
-            }
-        }
-        if (administrativeArea == null) {
-            if (other.administrativeArea!= null) {
-                return false;
-            }
-        } else {
-            if (administrativeArea.equals(other.administrativeArea) == false) {
-                return false;
-            }
-        }
-        if (locality == null) {
-            if (other.locality!= null) {
-                return false;
-            }
-        } else {
-            if (locality.equals(other.locality) == false) {
-                return false;
-            }
-        }
-        if (thoroughfare == null) {
-            if (other.thoroughfare!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfare.equals(other.thoroughfare) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (address == null) {
-            if (other.address!= null) {
-                return false;
-            }
-        } else {
-            if (address.equals(other.address) == false) {
-                return false;
-            }
-        }
-        if (currentStatus == null) {
-            if (other.currentStatus!= null) {
-                return false;
-            }
-        } else {
-            if (currentStatus.equals(other.currentStatus) == false) {
-                return false;
-            }
-        }
-        if (validFromDate == null) {
-            if (other.validFromDate!= null) {
-                return false;
-            }
-        } else {
-            if (validFromDate.equals(other.validFromDate) == false) {
-                return false;
-            }
-        }
-        if (validToDate == null) {
-            if (other.validToDate!= null) {
-                return false;
-            }
-        } else {
-            if (validToDate.equals(other.validToDate) == false) {
-                return false;
-            }
-        }
-        if (usage == null) {
-            if (other.usage!= null) {
-                return false;
-            }
-        } else {
-            if (usage.equals(other.usage) == false) {
-                return false;
-            }
-        }
-        if (addressDetailsKey == null) {
-            if (other.addressDetailsKey!= null) {
-                return false;
-            }
-        } else {
-            if (addressDetailsKey.equals(other.addressDetailsKey) == false) {
-                return false;
-            }
-        }
-        if (code == null) {
-            if (other.code!= null) {
-                return false;
-            }
-        } else {
-            if (code.equals(other.code) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(postalServiceElements);
+        result = 31 * result + Objects.hashCode(xalAddress);
+        result = 31 * result + Objects.hashCode(addressLines);
+        result = 31 * result + Objects.hashCode(country);
+        result = 31 * result + Objects.hashCode(administrativeArea);
+        result = 31 * result + Objects.hashCode(locality);
+        result = 31 * result + Objects.hashCode(thoroughfare);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(address);
+        result = 31 * result + Objects.hashCode(currentStatus);
+        result = 31 * result + Objects.hashCode(validFromDate);
+        result = 31 * result + Objects.hashCode(validToDate);
+        result = 31 * result + Objects.hashCode(usage);
+        result = 31 * result + Objects.hashCode(addressDetailsKey);
+        result = 31 * result + Objects.hashCode(code);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -495,225 +495,62 @@ public class Thoroughfare implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((thoroughfareNumberOrThoroughfareNumberRange == null)? 0 :thoroughfareNumberOrThoroughfareNumberRange.hashCode()));
-        result = ((prime*result)+((thoroughfareNumberPrefix == null)? 0 :thoroughfareNumberPrefix.hashCode()));
-        result = ((prime*result)+((thoroughfareNumberSuffix == null)? 0 :thoroughfareNumberSuffix.hashCode()));
-        result = ((prime*result)+((thoroughfarePreDirection == null)? 0 :thoroughfarePreDirection.hashCode()));
-        result = ((prime*result)+((thoroughfareLeading == null)? 0 :thoroughfareLeading.hashCode()));
-        result = ((prime*result)+((thoroughfareName == null)? 0 :thoroughfareName.hashCode()));
-        result = ((prime*result)+((thoroughfareTrailing == null)? 0 :thoroughfareTrailing.hashCode()));
-        result = ((prime*result)+((thoroughfarePostDirection == null)? 0 :thoroughfarePostDirection.hashCode()));
-        result = ((prime*result)+((dependentThoroughfare == null)? 0 :dependentThoroughfare.hashCode()));
-        result = ((prime*result)+((dependentLocality == null)? 0 :dependentLocality.hashCode()));
-        result = ((prime*result)+((premise == null)? 0 :premise.hashCode()));
-        result = ((prime*result)+((firm == null)? 0 :firm.hashCode()));
-        result = ((prime*result)+((postalCode == null)? 0 :postalCode.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        result = ((prime*result)+((xalDependentThoroughfares == null)? 0 :xalDependentThoroughfares.hashCode()));
-        result = ((prime*result)+((dependentThoroughfaresIndicator == null)? 0 :dependentThoroughfaresIndicator.hashCode()));
-        result = ((prime*result)+((dependentThoroughfaresConnector == null)? 0 :dependentThoroughfaresConnector.hashCode()));
-        result = ((prime*result)+((dependentThoroughfares == null)? 0 :dependentThoroughfares.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        Thoroughfare that = (Thoroughfare) object;
+        return Objects.equals(addressLine, that.addressLine)
+                && Objects.equals(thoroughfareNumberOrThoroughfareNumberRange, that.thoroughfareNumberOrThoroughfareNumberRange)
+                && Objects.equals(thoroughfareNumberPrefix, that.thoroughfareNumberPrefix)
+                && Objects.equals(thoroughfareNumberSuffix, that.thoroughfareNumberSuffix)
+                && Objects.equals(thoroughfarePreDirection, that.thoroughfarePreDirection)
+                && Objects.equals(thoroughfareLeading, that.thoroughfareLeading)
+                && Objects.equals(thoroughfareName, that.thoroughfareName)
+                && Objects.equals(thoroughfareTrailing, that.thoroughfareTrailing)
+                && Objects.equals(thoroughfarePostDirection, that.thoroughfarePostDirection)
+                && Objects.equals(dependentThoroughfare, that.dependentThoroughfare)
+                && Objects.equals(dependentLocality, that.dependentLocality)
+                && Objects.equals(premise, that.premise)
+                && Objects.equals(firm, that.firm)
+                && Objects.equals(postalCode, that.postalCode)
+                && Objects.equals(any, that.any)
+                && Objects.equals(underscore, that.underscore)
+                && Objects.equals(xalDependentThoroughfares, that.xalDependentThoroughfares)
+                && Objects.equals(dependentThoroughfaresIndicator, that.dependentThoroughfaresIndicator)
+                && Objects.equals(dependentThoroughfaresConnector, that.dependentThoroughfaresConnector)
+                && Objects.equals(dependentThoroughfares, that.dependentThoroughfares)
+                && Objects.equals(otherAttributes, that.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Thoroughfare) == false) {
-            return false;
-        }
-        Thoroughfare other = ((Thoroughfare) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (thoroughfareNumberOrThoroughfareNumberRange == null) {
-            if (other.thoroughfareNumberOrThoroughfareNumberRange!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfareNumberOrThoroughfareNumberRange.equals(other.thoroughfareNumberOrThoroughfareNumberRange) == false) {
-                return false;
-            }
-        }
-        if (thoroughfareNumberPrefix == null) {
-            if (other.thoroughfareNumberPrefix!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfareNumberPrefix.equals(other.thoroughfareNumberPrefix) == false) {
-                return false;
-            }
-        }
-        if (thoroughfareNumberSuffix == null) {
-            if (other.thoroughfareNumberSuffix!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfareNumberSuffix.equals(other.thoroughfareNumberSuffix) == false) {
-                return false;
-            }
-        }
-        if (thoroughfarePreDirection == null) {
-            if (other.thoroughfarePreDirection!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfarePreDirection.equals(other.thoroughfarePreDirection) == false) {
-                return false;
-            }
-        }
-        if (thoroughfareLeading == null) {
-            if (other.thoroughfareLeading!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfareLeading.equals(other.thoroughfareLeading) == false) {
-                return false;
-            }
-        }
-        if (thoroughfareName == null) {
-            if (other.thoroughfareName!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfareName.equals(other.thoroughfareName) == false) {
-                return false;
-            }
-        }
-        if (thoroughfareTrailing == null) {
-            if (other.thoroughfareTrailing!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfareTrailing.equals(other.thoroughfareTrailing) == false) {
-                return false;
-            }
-        }
-        if (thoroughfarePostDirection == null) {
-            if (other.thoroughfarePostDirection!= null) {
-                return false;
-            }
-        } else {
-            if (thoroughfarePostDirection.equals(other.thoroughfarePostDirection) == false) {
-                return false;
-            }
-        }
-        if (dependentThoroughfare == null) {
-            if (other.dependentThoroughfare!= null) {
-                return false;
-            }
-        } else {
-            if (dependentThoroughfare.equals(other.dependentThoroughfare) == false) {
-                return false;
-            }
-        }
-        if (dependentLocality == null) {
-            if (other.dependentLocality!= null) {
-                return false;
-            }
-        } else {
-            if (dependentLocality.equals(other.dependentLocality) == false) {
-                return false;
-            }
-        }
-        if (premise == null) {
-            if (other.premise!= null) {
-                return false;
-            }
-        } else {
-            if (premise.equals(other.premise) == false) {
-                return false;
-            }
-        }
-        if (firm == null) {
-            if (other.firm!= null) {
-                return false;
-            }
-        } else {
-            if (firm.equals(other.firm) == false) {
-                return false;
-            }
-        }
-        if (postalCode == null) {
-            if (other.postalCode!= null) {
-                return false;
-            }
-        } else {
-            if (postalCode.equals(other.postalCode) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        if (xalDependentThoroughfares == null) {
-            if (other.xalDependentThoroughfares!= null) {
-                return false;
-            }
-        } else {
-            if (xalDependentThoroughfares.equals(other.xalDependentThoroughfares) == false) {
-                return false;
-            }
-        }
-        if (dependentThoroughfaresIndicator == null) {
-            if (other.dependentThoroughfaresIndicator!= null) {
-                return false;
-            }
-        } else {
-            if (dependentThoroughfaresIndicator.equals(other.dependentThoroughfaresIndicator) == false) {
-                return false;
-            }
-        }
-        if (dependentThoroughfaresConnector == null) {
-            if (other.dependentThoroughfaresConnector!= null) {
-                return false;
-            }
-        } else {
-            if (dependentThoroughfaresConnector.equals(other.dependentThoroughfaresConnector) == false) {
-                return false;
-            }
-        }
-        if (dependentThoroughfares == null) {
-            if (other.dependentThoroughfares!= null) {
-                return false;
-            }
-        } else {
-            if (dependentThoroughfares.equals(other.dependentThoroughfares) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(thoroughfareNumberOrThoroughfareNumberRange);
+        result = 31 * result + Objects.hashCode(thoroughfareNumberPrefix);
+        result = 31 * result + Objects.hashCode(thoroughfareNumberSuffix);
+        result = 31 * result + Objects.hashCode(thoroughfarePreDirection);
+        result = 31 * result + Objects.hashCode(thoroughfareLeading);
+        result = 31 * result + Objects.hashCode(thoroughfareName);
+        result = 31 * result + Objects.hashCode(thoroughfareTrailing);
+        result = 31 * result + Objects.hashCode(thoroughfarePostDirection);
+        result = 31 * result + Objects.hashCode(dependentThoroughfare);
+        result = 31 * result + Objects.hashCode(dependentLocality);
+        result = 31 * result + Objects.hashCode(premise);
+        result = 31 * result + Objects.hashCode(firm);
+        result = 31 * result + Objects.hashCode(postalCode);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(xalDependentThoroughfares);
+        result = 31 * result + Objects.hashCode(dependentThoroughfaresIndicator);
+        result = 31 * result + Objects.hashCode(dependentThoroughfaresConnector);
+        result = 31 * result + Objects.hashCode(dependentThoroughfares);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

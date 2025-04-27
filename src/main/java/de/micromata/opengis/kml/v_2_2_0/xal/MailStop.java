@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.Objects;
 
 /**
  * 
@@ -138,75 +138,32 @@ public class MailStop implements Cloneable
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((addressLine == null)? 0 :addressLine.hashCode()));
-        result = ((prime*result)+((mailStopName == null)? 0 :mailStopName.hashCode()));
-        result = ((prime*result)+((mailStopNumber == null)? 0 :mailStopNumber.hashCode()));
-        result = ((prime*result)+((any == null)? 0 :any.hashCode()));
-        result = ((prime*result)+((underscore == null)? 0 :underscore.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+
+        MailStop mailStop = (MailStop) object;
+        return Objects.equals(addressLine, mailStop.addressLine)
+                && Objects.equals(mailStopName, mailStop.mailStopName)
+                && Objects.equals(mailStopNumber, mailStop.mailStopNumber)
+                && Objects.equals(any, mailStop.any)
+                && Objects.equals(underscore, mailStop.underscore)
+                && Objects.equals(otherAttributes, mailStop.otherAttributes);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof MailStop) == false) {
-            return false;
-        }
-        MailStop other = ((MailStop) obj);
-        if (addressLine == null) {
-            if (other.addressLine!= null) {
-                return false;
-            }
-        } else {
-            if (addressLine.equals(other.addressLine) == false) {
-                return false;
-            }
-        }
-        if (mailStopName == null) {
-            if (other.mailStopName!= null) {
-                return false;
-            }
-        } else {
-            if (mailStopName.equals(other.mailStopName) == false) {
-                return false;
-            }
-        }
-        if (mailStopNumber == null) {
-            if (other.mailStopNumber!= null) {
-                return false;
-            }
-        } else {
-            if (mailStopNumber.equals(other.mailStopNumber) == false) {
-                return false;
-            }
-        }
-        if (any == null) {
-            if (other.any!= null) {
-                return false;
-            }
-        } else {
-            if (any.equals(other.any) == false) {
-                return false;
-            }
-        }
-        if (underscore == null) {
-            if (other.underscore!= null) {
-                return false;
-            }
-        } else {
-            if (underscore.equals(other.underscore) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = Objects.hashCode(addressLine);
+        result = 31 * result + Objects.hashCode(mailStopName);
+        result = 31 * result + Objects.hashCode(mailStopNumber);
+        result = 31 * result + Objects.hashCode(any);
+        result = 31 * result + Objects.hashCode(underscore);
+        result = 31 * result + Objects.hashCode(otherAttributes);
+        return result;
     }
 
     /**

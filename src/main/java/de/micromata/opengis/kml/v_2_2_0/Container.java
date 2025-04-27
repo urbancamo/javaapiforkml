@@ -9,7 +9,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Container>}
@@ -116,48 +116,27 @@ public abstract class Container
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((containerSimpleExtension == null)? 0 :containerSimpleExtension.hashCode()));
-        result = ((prime*result)+((containerObjectExtension == null)? 0 :containerObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Container container = (Container) object;
+        return Objects.equals(containerSimpleExtension, container.containerSimpleExtension)
+                && Objects.equals(containerObjectExtension, container.containerObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Container) == false) {
-            return false;
-        }
-        Container other = ((Container) obj);
-        if (containerSimpleExtension == null) {
-            if (other.containerSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (containerSimpleExtension.equals(other.containerSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (containerObjectExtension == null) {
-            if (other.containerObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (containerObjectExtension.equals(other.containerObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(containerSimpleExtension);
+        result = 31 * result + Objects.hashCode(containerObjectExtension);
+        return result;
     }
 
     /**

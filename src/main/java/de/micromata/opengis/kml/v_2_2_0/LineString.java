@@ -7,7 +7,7 @@ import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <LineString>}
@@ -291,88 +291,35 @@ public class LineString
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((extrude == null)? 0 :extrude.hashCode()));
-        result = ((prime*result)+((tessellate == null)? 0 :tessellate.hashCode()));
-        result = ((prime*result)+((altitudeMode == null)? 0 :altitudeMode.hashCode()));
-        result = ((prime*result)+((coordinates == null)? 0 :coordinates.hashCode()));
-        result = ((prime*result)+((lineStringSimpleExtension == null)? 0 :lineStringSimpleExtension.hashCode()));
-        result = ((prime*result)+((lineStringObjectExtension == null)? 0 :lineStringObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        LineString that = (LineString) object;
+        return altitudeMode == that.altitudeMode
+                && Objects.equals(extrude, that.extrude)
+                && Objects.equals(tessellate, that.tessellate)
+                && Objects.equals(coordinates, that.coordinates)
+                && Objects.equals(lineStringSimpleExtension, that.lineStringSimpleExtension)
+                && Objects.equals(lineStringObjectExtension, that.lineStringObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof LineString) == false) {
-            return false;
-        }
-        LineString other = ((LineString) obj);
-        if (extrude == null) {
-            if (other.extrude!= null) {
-                return false;
-            }
-        } else {
-            if (extrude.equals(other.extrude) == false) {
-                return false;
-            }
-        }
-        if (tessellate == null) {
-            if (other.tessellate!= null) {
-                return false;
-            }
-        } else {
-            if (tessellate.equals(other.tessellate) == false) {
-                return false;
-            }
-        }
-        if (altitudeMode == null) {
-            if (other.altitudeMode!= null) {
-                return false;
-            }
-        } else {
-            if (altitudeMode.equals(other.altitudeMode) == false) {
-                return false;
-            }
-        }
-        if (coordinates == null) {
-            if (other.coordinates!= null) {
-                return false;
-            }
-        } else {
-            if (coordinates.equals(other.coordinates) == false) {
-                return false;
-            }
-        }
-        if (lineStringSimpleExtension == null) {
-            if (other.lineStringSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lineStringSimpleExtension.equals(other.lineStringSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (lineStringObjectExtension == null) {
-            if (other.lineStringObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (lineStringObjectExtension.equals(other.lineStringObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(extrude);
+        result = 31 * result + Objects.hashCode(tessellate);
+        result = 31 * result + Objects.hashCode(altitudeMode);
+        result = 31 * result + Objects.hashCode(coordinates);
+        result = 31 * result + Objects.hashCode(lineStringSimpleExtension);
+        result = 31 * result + Objects.hashCode(lineStringObjectExtension);
+        return result;
     }
 
     public void setCoordinates(final List<Coordinate> coordinates) {

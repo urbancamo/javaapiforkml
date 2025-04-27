@@ -53,31 +53,25 @@ public class Wait
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        long temp;
-        temp = Double.doubleToLongBits(duration);
-        result = ((prime*result)+((int)(temp^(temp >>>(32)))));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Wait wait = (Wait) object;
+        return Double.compare(duration, wait.duration) == 0;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof Wait) == false) {
-            return false;
-        }
-        Wait other = ((Wait) obj);
-        if (duration!= other.duration) {
-            return false;
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Double.hashCode(duration);
+        return result;
     }
 
     /**

@@ -9,7 +9,7 @@ import jakarta.xml.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <Geometry>}
@@ -126,48 +126,27 @@ public abstract class Geometry
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((geometrySimpleExtension == null)? 0 :geometrySimpleExtension.hashCode()));
-        result = ((prime*result)+((geometryObjectExtension == null)? 0 :geometryObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Geometry geometry = (Geometry) object;
+        return Objects.equals(geometrySimpleExtension, geometry.geometrySimpleExtension)
+                && Objects.equals(geometryObjectExtension, geometry.geometryObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Geometry) == false) {
-            return false;
-        }
-        Geometry other = ((Geometry) obj);
-        if (geometrySimpleExtension == null) {
-            if (other.geometrySimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (geometrySimpleExtension.equals(other.geometrySimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (geometryObjectExtension == null) {
-            if (other.geometryObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (geometryObjectExtension.equals(other.geometryObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(geometrySimpleExtension);
+        result = 31 * result + Objects.hashCode(geometryObjectExtension);
+        return result;
     }
 
     /**

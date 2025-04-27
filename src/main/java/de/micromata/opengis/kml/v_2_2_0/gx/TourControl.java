@@ -2,6 +2,8 @@
 package de.micromata.opengis.kml.v_2_2_0.gx;
 
 import java.util.List;
+import java.util.Objects;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -53,35 +55,25 @@ public class TourControl
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = ((prime*result)+((playMode == null)? 0 :playMode.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        TourControl that = (TourControl) object;
+        return playMode == that.playMode;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if ((obj instanceof TourControl) == false) {
-            return false;
-        }
-        TourControl other = ((TourControl) obj);
-        if (playMode == null) {
-            if (other.playMode!= null) {
-                return false;
-            }
-        } else {
-            if (playMode.equals(other.playMode) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(playMode);
+        return result;
     }
 
     /**

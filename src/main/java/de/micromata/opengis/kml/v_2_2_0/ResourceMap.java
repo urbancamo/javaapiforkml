@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <resourcemap>}
@@ -101,58 +101,29 @@ public class ResourceMap
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((alias == null)? 0 :alias.hashCode()));
-        result = ((prime*result)+((resourceMapSimpleExtension == null)? 0 :resourceMapSimpleExtension.hashCode()));
-        result = ((prime*result)+((resourceMapObjectExtension == null)? 0 :resourceMapObjectExtension.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        ResourceMap that = (ResourceMap) object;
+        return Objects.equals(alias, that.alias)
+                && Objects.equals(resourceMapSimpleExtension, that.resourceMapSimpleExtension)
+                && Objects.equals(resourceMapObjectExtension, that.resourceMapObjectExtension);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof ResourceMap) == false) {
-            return false;
-        }
-        ResourceMap other = ((ResourceMap) obj);
-        if (alias == null) {
-            if (other.alias!= null) {
-                return false;
-            }
-        } else {
-            if (alias.equals(other.alias) == false) {
-                return false;
-            }
-        }
-        if (resourceMapSimpleExtension == null) {
-            if (other.resourceMapSimpleExtension!= null) {
-                return false;
-            }
-        } else {
-            if (resourceMapSimpleExtension.equals(other.resourceMapSimpleExtension) == false) {
-                return false;
-            }
-        }
-        if (resourceMapObjectExtension == null) {
-            if (other.resourceMapObjectExtension!= null) {
-                return false;
-            }
-        } else {
-            if (resourceMapObjectExtension.equals(other.resourceMapObjectExtension) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(alias);
+        result = 31 * result + Objects.hashCode(resourceMapSimpleExtension);
+        result = 31 * result + Objects.hashCode(resourceMapObjectExtension);
+        return result;
     }
 
     /**

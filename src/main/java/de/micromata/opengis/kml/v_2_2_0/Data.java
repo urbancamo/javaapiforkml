@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Objects;
 
 /**
  * {@code <data name ="string">}
@@ -187,68 +187,31 @@ public class Data
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = super.hashCode();
-        result = ((prime*result)+((displayName == null)? 0 :displayName.hashCode()));
-        result = ((prime*result)+((value == null)? 0 :value.hashCode()));
-        result = ((prime*result)+((dataExtension == null)? 0 :dataExtension.hashCode()));
-        result = ((prime*result)+((name == null)? 0 :name.hashCode()));
-        return result;
+    public boolean equals(Object object)
+    {
+        if (this == object)
+            return true;
+        if (object == null || getClass() != object.getClass())
+            return false;
+        if (!super.equals(object))
+            return false;
+
+        Data data = (Data) object;
+        return Objects.equals(displayName, data.displayName)
+                && Objects.equals(value, data.value)
+                && Objects.equals(dataExtension, data.dataExtension)
+                && Objects.equals(name, data.name);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (super.equals(obj) == false) {
-            return false;
-        }
-        if ((obj instanceof Data) == false) {
-            return false;
-        }
-        Data other = ((Data) obj);
-        if (displayName == null) {
-            if (other.displayName!= null) {
-                return false;
-            }
-        } else {
-            if (displayName.equals(other.displayName) == false) {
-                return false;
-            }
-        }
-        if (value == null) {
-            if (other.value!= null) {
-                return false;
-            }
-        } else {
-            if (value.equals(other.value) == false) {
-                return false;
-            }
-        }
-        if (dataExtension == null) {
-            if (other.dataExtension!= null) {
-                return false;
-            }
-        } else {
-            if (dataExtension.equals(other.dataExtension) == false) {
-                return false;
-            }
-        }
-        if (name == null) {
-            if (other.name!= null) {
-                return false;
-            }
-        } else {
-            if (name.equals(other.name) == false) {
-                return false;
-            }
-        }
-        return true;
+    public int hashCode()
+    {
+        int result = super.hashCode();
+        result = 31 * result + Objects.hashCode(displayName);
+        result = 31 * result + Objects.hashCode(value);
+        result = 31 * result + Objects.hashCode(dataExtension);
+        result = 31 * result + Objects.hashCode(name);
+        return result;
     }
 
     /**
