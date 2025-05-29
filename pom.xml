@@ -10,7 +10,7 @@
 
   <groupId>uk.m0nom</groupId>
   <artifactId>javaapiforkml</artifactId>
-  <version>3.0.11</version>
+  <version>3.0.12-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Java Api for Kml</name>
   <description>This is JavaApiForKml, Micromata's library for use with applications that want to parse, generate and
