@@ -10,7 +10,7 @@
 
   <groupId>uk.m0nom</groupId>
   <artifactId>javaapiforkml</artifactId>
-  <version>3.0.10</version>
+  <version>3.0.11</version>
   <packaging>jar</packaging>
   <name>Java Api for Kml</name>
   <description>This is JavaApiForKml, Micromata's library for use with applications that want to parse, generate and
@@ -22,6 +22,12 @@
     <name>Mark Wickens (urbancamo)</name>
     <url>https://urbancamo.github.io/</url>
   </organization>
+
+  <licenses>
+    <license>
+      <name>GPL-3.0</name>
+    </license>
+  </licenses>
 
   <developers>
     <developer>
@@ -217,142 +223,6 @@
           </execution>
         </executions>
       </plugin>
-
-      <!--
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <configuration>
-          <fail>true</fail>
-          <failFast>true</failFast>
-          <ignoreCache>false</ignoreCache>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.sonatype.ossindex.maven</groupId>
-            <artifactId>ossindex-maven-enforcer-rules</artifactId>
-            <version>${ossindex-maven-enforcer-rules.version}</version>
-          </dependency>
-        </dependencies>
-        <executions>
-          <execution>
-            <id>enforce-bytecode-version</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <enforceBytecodeVersion>
-                  <maxJdkVersion>${java.version}</maxJdkVersion>
-                  <excludes>
-                    <exclude>org.mindrot:jbcrypt</exclude>
-                  </excludes>
-                </enforceBytecodeVersion>
-              </rules>
-              <fail>true</fail>
-            </configuration>
-          </execution>
-          <execution>
-            <id>enforce-ban-circular-dependencies</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <banCircularDependencies/>
-              </rules>
-              <fail>true</fail>
-            </configuration>
-          </execution>
-          <execution>
-            <id>enforce-ban-duplicate-classes</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <banDuplicateClasses>
-                  <scopes>
-                    <scope>compile</scope>
-                    <scope>provided</scope>
-                  </scopes>
-                  <findAllDuplicates>true</findAllDuplicates>
-                  <ignoreWhenIdentical>true</ignoreWhenIdentical>
-                </banDuplicateClasses>
-              </rules>
-              <fail>true</fail>
-            </configuration>
-          </execution>
-          <execution>
-            <id>enforce-banned-dependencies</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <bannedDependencies>
-                  <excludes>
-                    <exclude>log4j:log4j</exclude>
-                    <exclude>org.apache.logging.log4j</exclude>
-                    <exclude>javax.annotation</exclude>
-                    <exclude>javax.ejb</exclude>
-                    <exclude>javax.el</exclude>
-                    <exclude>javax.mail</exclude>
-                    <exclude>javax.persistence</exclude>
-                    <exclude>javax.security.auth.message</exclude>
-                    <exclude>javax.servlet</exclude>
-                    <exclude>javax.transaction</exclude>
-                    <exclude>javax.websocket</exclude>
-                    <exclude>javax.activation</exclude>
-                    <exclude>javax.batch</exclude>
-                    <exclude>javax.decorator</exclude>
-                    <exclude>javax.enterprise</exclude>
-                    <exclude>javax.faces</exclude>
-                    <exclude>javax.jms</exclude>
-                    <exclude>javax.json</exclude>
-                    <exclude>javax.jws</exclude>
-                    <exclude>javax.interceptor</exclude>
-                    <exclude>javax.inject</exclude>
-                    <exclude>javax.management.j2ee</exclude>
-                    <exclude>javax.resource</exclude>
-                    <exclude>javax.security.auth.enterprise</exclude>
-                    <exclude>javax.security.auth.jacc</exclude>
-                    <exclude>javax.validation</exclude>
-                    <exclude>javax.ws.rs</exclude>
-                    <exclude>javax.xml.bind</exclude>
-                    <exclude>javax.xml.soap</exclude>
-                    <exclude>javax.xml.ws</exclude>
-                  </excludes>
-                  <includes>
-                    <include>org.apache.logging.log4j:*:[2.17.2,]</include>
-                  </includes>
-                  <searchTransitive>true</searchTransitive>
-                </bannedDependencies>
-              </rules>
-            </configuration>
-          </execution>
-          <execution>
-            <id>enforce-versions</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireMavenVersion>
-                  <version>[3.8.0,)</version>
-                </requireMavenVersion>
-                <requireJavaVersion>
-                  <version>${java.version}</version>
-                </requireJavaVersion>
-                <banDuplicatePomDependencyVersions/>
-                <dependencyConvergence/>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      -->
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
@@ -448,33 +318,18 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.13</version>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>0.7.0</version>
             <extensions>true</extensions>
             <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+              <publishingServerId>central</publishingServerId>
             </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>3.2.1</version>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.2.0</version>
+            <version>3.11.2</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -487,7 +342,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <version>3.2.7</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
