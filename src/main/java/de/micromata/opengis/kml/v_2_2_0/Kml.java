@@ -5,8 +5,10 @@ import de.micromata.opengis.kml.v_2_2_0.gx.Tour;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.PropertyException;
 import jakarta.xml.bind.Unmarshaller;
 import jakarta.xml.bind.annotation.*;
+import org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper;
 import org.jetbrains.annotations.NotNull;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.InputSource;
@@ -624,6 +626,21 @@ public class Kml implements Cloneable
             JAXBContext context = getJaxbContext();
             marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            // Force the KML namespace to be emitted as the default (unprefixed)
+            // namespace. Without this, the Jakarta/Glassfish JAXB runtime assigns
+            // either "kml:" (from @XmlNs hints) or an auto-generated prefix such
+            // as "ns4:" — both of which Google Maps rejects as INVALID_KML. See
+            // README, "Namespace prefix in output", for the subclass-override
+            // escape hatch if you actually want a prefix.
+            try {
+                marshaller.setProperty(
+                    "org.glassfish.jaxb.namespacePrefixMapper",
+                    new DefaultKmlNamespacePrefixMapper());
+            } catch (PropertyException ignored) {
+                // Non-Glassfish JAXB runtime: fall through and accept whatever
+                // prefix the runtime assigns. Users on alternative runtimes can
+                // still override decorateMarshaller to plug in their own mapper.
+            }
             decorateMarshaller(context, marshaller);
         }
         return marshaller;
@@ -631,6 +648,9 @@ public class Kml implements Cloneable
 
     /**
      * Allow 3rd parties to decorate the marshaller to add additional functionality.
+     * Called after the default prefix mapper is installed, so subclass overrides
+     * can replace it to restore the {@code kml:} prefix or add prefix mappings
+     * for other namespaces.
      *
      * @param context Context that created the marshaller.
      * @param marshaller The marshaller to decorate.
@@ -638,11 +658,16 @@ public class Kml implements Cloneable
     protected void decorateMarshaller(JAXBContext context, Marshaller marshaller)
     {
         // no-op by default
-        //
-        // Child classes can use this to add additional properties to the marshaller such as NamespacePrefixMapper implementations
-        //
-        // Example:
-        //    marshaller.setProperty("org.glassfish.jaxb.namespacePrefixMapper", new Kml.NameSpaceBeautyfier());
+    }
+
+    private static final class DefaultKmlNamespacePrefixMapper extends NamespacePrefixMapper {
+        @Override
+        public String getPreferredPrefix(String namespaceUri, String suggestion, boolean requirePrefix) {
+            if ("http://www.opengis.net/kml/2.2".equals(namespaceUri)) {
+                return "";
+            }
+            return suggestion;
+        }
     }
 
     /**
