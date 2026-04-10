@@ -1,3 +1,4 @@
 target
 .metadata/
 /.idea/
+.envrc
