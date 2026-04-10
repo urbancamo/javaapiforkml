@@ -49,6 +49,86 @@ API for KML (short: JAK) in order to enable this.
 An archive of high level documentation can be found at:
 https://web.archive.org/web/20170316194859/http://labs.micromata.de/projects/jak.html
 
+---
+
+## Namespace prefix in output
+
+Between version `2.x` and `3.x` the library migrated from `javax.xml.bind` to
+`jakarta.xml.bind` and switched to the Glassfish Jakarta JAXB runtime. That runtime
+honours the `@XmlNs(prefix = "kml", ...)` hint in `package-info.java` that the older
+Sun/Metro JAXB RI silently ignored, so identical source code that used to emit:
+
+```xml
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>...</Document>
+</kml>
+```
+
+began emitting the fully-prefixed form:
+
+```xml
+<kml:kml xmlns:kml="http://www.opengis.net/kml/2.2">
+  <kml:Document>...</kml:Document>
+</kml:kml>
+```
+
+Google Maps and several other consumers reject the prefixed form with `INVALID_KML`
+even though it is technically valid XML. (Simply removing the `@XmlNs` hint is *not*
+enough — the Jakarta runtime will then auto-assign a prefix like `ns4:`, which is
+worse.)
+
+As of this release, `Kml.createMarshaller()` installs a default
+`NamespacePrefixMapper` that forces the KML namespace to be emitted as the default
+(unprefixed) namespace. The `gx`, `atom` and `xal` extension namespaces still get
+their conventional prefixes when referenced, so output now looks like:
+
+```xml
+<kml xmlns:gx="http://www.google.com/kml/ext/2.2"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"
+     xmlns="http://www.opengis.net/kml/2.2">
+  <Document>...</Document>
+</kml>
+```
+
+which matches the `2.x` behaviour that Google Maps accepts.
+
+### Restoring the `kml:` prefix
+
+If you actually want the prefixed form, subclass `Kml` and override
+`decorateMarshaller(JAXBContext, Marshaller)`. It is called *after* the default
+prefix mapper is installed, so your replacement wins:
+
+```java
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.Marshaller;
+import org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper;
+import de.micromata.opengis.kml.v_2_2_0.Kml;
+
+public class PrefixedKml extends Kml {
+    @Override
+    protected void decorateMarshaller(JAXBContext context, Marshaller marshaller) {
+        try {
+            marshaller.setProperty(
+                "org.glassfish.jaxb.namespacePrefixMapper",
+                new NamespacePrefixMapper() {
+                    @Override
+                    public String getPreferredPrefix(String namespaceUri,
+                                                     String suggestion,
+                                                     boolean requirePrefix) {
+                        if ("http://www.opengis.net/kml/2.2".equals(namespaceUri)) {
+                            return "kml";
+                        }
+                        return suggestion;
+                    }
+                });
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+```
+
 
 
 
