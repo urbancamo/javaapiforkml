@@ -58,7 +58,7 @@ public class Example2 {
 				if (tmp instanceof Style) {
 					style = (Style) tmp;
 					style.getPolyStyle().withColor("FFFFFFFF").withColorMode(ColorMode.RANDOM);
-					style.createAndSetLineStyle().withWidth(1).withColor("FF000000").withColorMode(ColorMode.NORMAL);
+					style.createAndSetLineStyle().withWidth(1.0).withColor("FF000000").withColorMode(ColorMode.NORMAL);
 				}
 			}
 		}

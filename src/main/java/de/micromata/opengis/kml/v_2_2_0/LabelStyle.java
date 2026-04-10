@@ -28,10 +28,10 @@ import java.util.Objects;
  *   &lt;scale&gt;1&lt;/scale&gt;                   &lt;!-- float --&gt;
  * <strong>&lt;/LabelStyle&gt;</strong></pre>
  * 
- * Extends: 
- *
- * 
- * Contained By: 
+ * Extends:
+ * <p></p>
+ * Contained By:
+ * <p></p>
  *
  * 
  * 
@@ -66,7 +66,7 @@ public class LabelStyle
      * 
      */
     @XmlElement(defaultValue = "1.0")
-    protected double scale;
+    protected Double scale;
     @XmlElement(name = "LabelStyleSimpleExtensionGroup")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> labelStyleSimpleExtension;
@@ -103,19 +103,19 @@ public class LabelStyle
      *     {@link Double}
      *     
      */
-    public double getScale() {
+    public Double getScale() {
         return scale;
     }
 
     /**
      *
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setScale(double value) {
+    public void setScale(Double value) {
         this.scale = value;
     }
 
@@ -125,7 +125,7 @@ public class LabelStyle
      */
     public List<Object> getLabelStyleSimpleExtension() {
         if (labelStyleSimpleExtension == null) {
-            labelStyleSimpleExtension = new ArrayList<Object>();
+            labelStyleSimpleExtension = new ArrayList<>();
         }
         return this.labelStyleSimpleExtension;
     }
@@ -136,7 +136,7 @@ public class LabelStyle
      */
     public List<AbstractObject> getLabelStyleObjectExtension() {
         if (labelStyleObjectExtension == null) {
-            labelStyleObjectExtension = new ArrayList<AbstractObject>();
+            labelStyleObjectExtension = new ArrayList<>();
         }
         return this.labelStyleObjectExtension;
     }
@@ -152,7 +152,7 @@ public class LabelStyle
             return false;
 
         LabelStyle that = (LabelStyle) object;
-        return Double.compare(scale, that.scale) == 0
+        return Objects.equals(scale, that.scale)
                 && Objects.equals(labelStyleSimpleExtension, that.labelStyleSimpleExtension)
                 && Objects.equals(labelStyleObjectExtension, that.labelStyleObjectExtension);
     }
@@ -161,7 +161,7 @@ public class LabelStyle
     public int hashCode()
     {
         int result = super.hashCode();
-        result = 31 * result + Double.hashCode(scale);
+        result = 31 * result + Objects.hashCode(scale);
         result = 31 * result + Objects.hashCode(labelStyleSimpleExtension);
         result = 31 * result + Objects.hashCode(labelStyleObjectExtension);
         return result;
@@ -305,7 +305,7 @@ public class LabelStyle
      * @param scale
      *     required parameter
      */
-    public LabelStyle withScale(final double scale) {
+    public LabelStyle withScale(final Double scale) {
         this.setScale(scale);
         return this;
     }
@@ -401,11 +401,9 @@ public class LabelStyle
     public LabelStyle clone() {
         LabelStyle copy;
         copy = ((LabelStyle) super.clone());
-        copy.labelStyleSimpleExtension = new ArrayList<Object>((getLabelStyleSimpleExtension().size()));
-        for (Object iter: labelStyleSimpleExtension) {
-            copy.labelStyleSimpleExtension.add(iter);
-        }
-        copy.labelStyleObjectExtension = new ArrayList<AbstractObject>((getLabelStyleObjectExtension().size()));
+        copy.labelStyleSimpleExtension = new ArrayList<>((getLabelStyleSimpleExtension().size()));
+        copy.labelStyleSimpleExtension.addAll(labelStyleSimpleExtension);
+        copy.labelStyleObjectExtension = new ArrayList<>((getLabelStyleObjectExtension().size()));
         for (AbstractObject iter: labelStyleObjectExtension) {
             copy.labelStyleObjectExtension.add(iter.clone());
         }
