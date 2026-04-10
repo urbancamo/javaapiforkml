@@ -26,11 +26,10 @@ import java.util.Objects;
  *   &lt;width&gt;1&lt;/width&gt;                   &lt;!-- float --&gt;
  * <strong>&lt;/LineStyle&gt;</strong></pre>
  * 
- * Extends: 
- *
- * 
+ * Extends:
+ * <p></p>
  * Contained By: 
- *
+ * <p></p>
  * 
  * 
  * 
@@ -57,7 +56,7 @@ public class LineStyle
      * 
      */
     @XmlElement(defaultValue = "1.0")
-    protected double width;
+    protected Double width;
     /**
      * {@code <Object>}
      * <p>
@@ -111,19 +110,19 @@ public class LineStyle
      *     {@link Double}
      *     
      */
-    public double getWidth() {
+    public Double getWidth() {
         return width;
     }
 
     /**
      *
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setWidth(double value) {
+    public void setWidth(Double value) {
         this.width = value;
     }
 
@@ -133,7 +132,7 @@ public class LineStyle
      */
     public List<Object> getLineStyleSimpleExtension() {
         if (lineStyleSimpleExtension == null) {
-            lineStyleSimpleExtension = new ArrayList<Object>();
+            lineStyleSimpleExtension = new ArrayList<>();
         }
         return this.lineStyleSimpleExtension;
     }
@@ -144,7 +143,7 @@ public class LineStyle
      */
     public List<AbstractObject> getLineStyleObjectExtension() {
         if (lineStyleObjectExtension == null) {
-            lineStyleObjectExtension = new ArrayList<AbstractObject>();
+            lineStyleObjectExtension = new ArrayList<>();
         }
         return this.lineStyleObjectExtension;
     }
@@ -160,7 +159,7 @@ public class LineStyle
             return false;
 
         LineStyle lineStyle = (LineStyle) object;
-        return Double.compare(width, lineStyle.width) == 0
+        return Objects.equals(width, lineStyle.width)
                 && Objects.equals(lineStyleSimpleExtension, lineStyle.lineStyleSimpleExtension)
                 && Objects.equals(lineStyleObjectExtension, lineStyle.lineStyleObjectExtension);
     }
@@ -169,7 +168,7 @@ public class LineStyle
     public int hashCode()
     {
         int result = super.hashCode();
-        result = 31 * result + Double.hashCode(width);
+        result = 31 * result + Objects.hashCode(width);
         result = 31 * result + Objects.hashCode(lineStyleSimpleExtension);
         result = 31 * result + Objects.hashCode(lineStyleObjectExtension);
         return result;
@@ -313,7 +312,7 @@ public class LineStyle
      * @param width
      *     required parameter
      */
-    public LineStyle withWidth(final double width) {
+    public LineStyle withWidth(final Double width) {
         this.setWidth(width);
         return this;
     }
@@ -409,11 +408,9 @@ public class LineStyle
     public LineStyle clone() {
         LineStyle copy;
         copy = ((LineStyle) super.clone());
-        copy.lineStyleSimpleExtension = new ArrayList<Object>((getLineStyleSimpleExtension().size()));
-        for (Object iter: lineStyleSimpleExtension) {
-            copy.lineStyleSimpleExtension.add(iter);
-        }
-        copy.lineStyleObjectExtension = new ArrayList<AbstractObject>((getLineStyleObjectExtension().size()));
+        copy.lineStyleSimpleExtension = new ArrayList<>((getLineStyleSimpleExtension().size()));
+        copy.lineStyleSimpleExtension.addAll(lineStyleSimpleExtension);
+        copy.lineStyleObjectExtension = new ArrayList<>((getLineStyleObjectExtension().size()));
         for (AbstractObject iter: lineStyleObjectExtension) {
             copy.lineStyleObjectExtension.add(iter.clone());
         }

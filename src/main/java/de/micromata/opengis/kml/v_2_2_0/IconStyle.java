@@ -33,11 +33,10 @@ import java.util.Objects;
  *     xunits="fraction" yunits="fraction"/&gt;    &lt;!-- kml:vec2 --&gt;                    
  * <strong>&lt;/IconStyle&gt;</strong></pre>
  * 
- * Extends: 
- *
- * 
+ * Extends:
+ * <p>
  * Contains: 
- *
+ * <p>
  *
  * 
  * Contained By: 
@@ -78,7 +77,7 @@ public class IconStyle
      * 
      */
     @XmlElement(defaultValue = "1.0")
-    protected double scale;
+    protected Double scale;
     /**
      * {@code <heading>}
      * <p>
@@ -103,7 +102,7 @@ public class IconStyle
      * 
      */
     @XmlElement(defaultValue = "0.0")
-    protected double heading;
+    protected Double heading;
     /**
      * {@code <Icon>}
      * <p>
@@ -213,19 +212,19 @@ public class IconStyle
      *     {@link Double}
      *     
      */
-    public double getScale() {
+    public Double getScale() {
         return scale;
     }
 
     /**
      *
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setScale(double value) {
+    public void setScale(Double value) {
         this.scale = value;
     }
 
@@ -237,19 +236,19 @@ public class IconStyle
      *     {@link Double}
      *     
      */
-    public double getHeading() {
+    public Double getHeading() {
         return heading;
     }
 
     /**
      *
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Double}
-     *     
+     *
      */
-    public void setHeading(double value) {
+    public void setHeading(Double value) {
         this.heading = value;
     }
 
@@ -307,7 +306,7 @@ public class IconStyle
      */
     public List<Object> getIconStyleSimpleExtension() {
         if (iconStyleSimpleExtension == null) {
-            iconStyleSimpleExtension = new ArrayList<Object>();
+            iconStyleSimpleExtension = new ArrayList<>();
         }
         return this.iconStyleSimpleExtension;
     }
@@ -318,7 +317,7 @@ public class IconStyle
      */
     public List<AbstractObject> getIconStyleObjectExtension() {
         if (iconStyleObjectExtension == null) {
-            iconStyleObjectExtension = new ArrayList<AbstractObject>();
+            iconStyleObjectExtension = new ArrayList<>();
         }
         return this.iconStyleObjectExtension;
     }
@@ -334,8 +333,8 @@ public class IconStyle
             return false;
 
         IconStyle iconStyle = (IconStyle) object;
-        return Double.compare(scale, iconStyle.scale) == 0
-                && Double.compare(heading, iconStyle.heading) == 0
+        return Objects.equals(scale, iconStyle.scale)
+                && Objects.equals(heading, iconStyle.heading)
                 && Objects.equals(icon, iconStyle.icon)
                 && Objects.equals(hotSpot, iconStyle.hotSpot)
                 && Objects.equals(iconStyleSimpleExtension, iconStyle.iconStyleSimpleExtension)
@@ -346,8 +345,8 @@ public class IconStyle
     public int hashCode()
     {
         int result = super.hashCode();
-        result = 31 * result + Double.hashCode(scale);
-        result = 31 * result + Double.hashCode(heading);
+        result = 31 * result + Objects.hashCode(scale);
+        result = 31 * result + Objects.hashCode(heading);
         result = 31 * result + Objects.hashCode(icon);
         result = 31 * result + Objects.hashCode(hotSpot);
         result = 31 * result + Objects.hashCode(iconStyleSimpleExtension);
@@ -357,7 +356,7 @@ public class IconStyle
 
     /**
      * Creates a new instance of {@link Icon} and set it to icon.
-     * 
+     * <p>
      * This method is a short version for:
      * {@code
      * Icon icon = new Icon();
@@ -373,7 +372,7 @@ public class IconStyle
 
     /**
      * Creates a new instance of {@link Vec2} and set it to hotSpot.
-     * 
+     * <p>
      * This method is a short version for:
      * {@code
      * Vec2 vec2 = new Vec2();
@@ -525,7 +524,7 @@ public class IconStyle
      * @param scale
      *     required parameter
      */
-    public IconStyle withScale(final double scale) {
+    public IconStyle withScale(final Double scale) {
         this.setScale(scale);
         return this;
     }
@@ -537,7 +536,7 @@ public class IconStyle
      * @param heading
      *     required parameter
      */
-    public IconStyle withHeading(final double heading) {
+    public IconStyle withHeading(final Double heading) {
         this.setHeading(heading);
         return this;
     }
@@ -657,13 +656,11 @@ public class IconStyle
     public IconStyle clone() {
         IconStyle copy;
         copy = ((IconStyle) super.clone());
-        copy.icon = ((icon == null)?null:((Icon) icon.clone()));
-        copy.hotSpot = ((hotSpot == null)?null:((Vec2) hotSpot.clone()));
-        copy.iconStyleSimpleExtension = new ArrayList<Object>((getIconStyleSimpleExtension().size()));
-        for (Object iter: iconStyleSimpleExtension) {
-            copy.iconStyleSimpleExtension.add(iter);
-        }
-        copy.iconStyleObjectExtension = new ArrayList<AbstractObject>((getIconStyleObjectExtension().size()));
+        copy.icon = ((icon == null)?null: icon.clone());
+        copy.hotSpot = ((hotSpot == null)?null: hotSpot.clone());
+        copy.iconStyleSimpleExtension = new ArrayList<>((getIconStyleSimpleExtension().size()));
+        copy.iconStyleSimpleExtension.addAll(iconStyleSimpleExtension);
+        copy.iconStyleObjectExtension = new ArrayList<>((getIconStyleObjectExtension().size()));
         for (AbstractObject iter: iconStyleObjectExtension) {
             copy.iconStyleObjectExtension.add(iter.clone());
         }
