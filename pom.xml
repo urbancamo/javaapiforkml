@@ -25,7 +25,7 @@
 
   <licenses>
     <license>
-      <name>GPL-3.0</name>
+      <name>BSD-3-Clause</name>
     </license>
   </licenses>
 
@@ -61,7 +61,7 @@
     <ossindex-maven-enforcer-rules.version>3.2.0</ossindex-maven-enforcer-rules.version>
     <dependency-check-maven.version>8.2.1</dependency-check-maven.version>
     <jetbrains-annotations.version>24.1.0</jetbrains-annotations.version>
-    <log4j2.version>2.20.0</log4j2.version>
+    <log4j2.version>2.25.4</log4j2.version>
     <slf4j.version>2.0.7</slf4j.version>
     <junit.version>4.13.1</junit.version>
     <xmlunit.version>1.6</xmlunit.version>
@@ -320,7 +320,7 @@
           <plugin>
             <groupId>org.sonatype.central</groupId>
             <artifactId>central-publishing-maven-plugin</artifactId>
-            <version>0.7.0</version>
+            <version>0.10.0</version>
             <extensions>true</extensions>
             <configuration>
               <publishingServerId>central</publishingServerId>
@@ -329,7 +329,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.11.2</version>
+            <version>3.12.0</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -342,7 +342,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.2.7</version>
+            <version>3.2.8</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
