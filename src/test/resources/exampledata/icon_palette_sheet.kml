@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Minimal KML fixture exercising the Google gx: icon palette sheet extension
+  (gx:x, gx:y, gx:w, gx:h). Modeled after the example in the KML Reference:
+  https://developers.google.com/kml/documentation/kmlreference#icon
+
+  The Icon href would normally point to a sprite sheet containing many
+  weather icons in a grid; gx:x/gx:y/gx:w/gx:h identify the sub-rectangle
+  to render for this particular placemark.
+-->
+<kml xmlns="http://www.opengis.net/kml/2.2"
+     xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <Style id="palettedIcon">
+      <IconStyle>
+        <scale>1.2</scale>
+        <Icon>
+          <href>https://example.com/weather-sprites.png</href>
+          <gx:x>0</gx:x>
+          <gx:y>0</gx:y>
+          <gx:w>138</gx:w>
+          <gx:h>138</gx:h>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <Placemark>
+      <name>Sunny</name>
+      <styleUrl>#palettedIcon</styleUrl>
+      <Point>
+        <coordinates>-122.0822035425683,37.42228990140251,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

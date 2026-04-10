@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="d1_s_12">
+<name>Day 1 WPC PRBLTY of Snow &gt; 12"</name>
+  <open>1</open>
+  <snippet>Valid 12Z 04/10/2026 - 12Z 04/11/2026</snippet>
+  <description>
+    <![CDATA[
+      <table border=0 width="350"><tr><td>
+        <span style="font-size:1em;font-weight:bold;">
+	  Issued: 0831Z FRI APR 10, 2026</span></td></tr>
+	<tr><td>
+	<span style="font-size:1em;font-weight:bold;">
+	  Valid: 12Z FRI APR 10, 2026 - 12Z SAT APR 11, 2026</span></td></tr>
+	<tr><td>
+	<span style="font-size:1em;font-weight:bold;">
+	  Forecaster: WPC-WWD</span></td></tr>
+	<tr><td><br>
+	  <img src="https://www.wpc.ncep.noaa.gov/images/balloon_legend.png">
+	</td></tr>
+	<tr><td>
+          View additional WPC Winter Weather products at:<br>
+          https://www.wpc.ncep.noaa.gov/wwd/winter_wx.shtml
+	</font>
+	</td></tr></table>
+    ]]>
+  </description>
+    <Style id="poly_none">
+        <IconStyle>
+	    <scale>0.7</scale>
+	    <Icon>
+	      <href>https://www.wpc.ncep.noaa.gov/images/gray_circle.png</href>
+	    </Icon>
+	</IconStyle>
+	<LabelStyle>
+	    <color>ffCCCCCC</color>
+	    <scale>1.0</scale>
+	</LabelStyle>
+	<BalloonStyle>
+	  <text>
+	    <![CDATA[ <table border=0 width="300"><tr><td><font size="+1">
+	    The probability of snow accumulating greater than <b>12 Inches</b> is <b>less than 10%</b> in this enclosed area.
+	    <br/><br/>
+	    <b>$[id]</b>
+	    <br/><br/></font>
+	    </td></tr></table>]]>
+	  </text>
+	</BalloonStyle>
+    </Style>
+    
+    <Style id="poly_slight">
+        <LineStyle>
+	    <width>2.0</width>
+	    <color>ffffffff</color>
+	</LineStyle>
+	<PolyStyle>
+	    <color>7ff1c500</color>
+	</PolyStyle>
+	<IconStyle>
+	    <scale>0.7</scale>
+	    <Icon>
+	      <href>https://www.wpc.ncep.noaa.gov/images/blue_circle.png</href>
+	    </Icon>
+	</IconStyle>
+	<LabelStyle>
+	    <color>fff1c500</color>
+	    <scale>1.0</scale>
+	</LabelStyle>
+	<BalloonStyle>
+	  <text>
+	    <![CDATA[ <table border=0 width="300"><tr><td><font size="+1">
+	    The probability of snow accumulating greater than <b>12 Inches</b> is at least <b>10%</b> in this enclosed area.
+	    <br/><br/>
+	    <b>$[id]</b>
+	    <br/><br/></font>
+	    </td></tr></table>]]>
+	  </text>
+	</BalloonStyle>
+    </Style>
+
+    <Style id="poly_mod">
+        <LineStyle>
+	    <width>2.0</width>
+	    <color>ffffffff</color>
+	</LineStyle>
+	<PolyStyle>
+	    <color>7f008a00</color>
+	</PolyStyle>
+	<IconStyle>
+	    <scale>0.7</scale>
+	    <Icon>
+	      <href>https://www.wpc.ncep.noaa.gov/images/green_circle.png</href>
+	    </Icon>
+	</IconStyle>
+	<LabelStyle>
+	    <color>ff008a00</color>
+	    <scale>1.0</scale>
+	</LabelStyle>
+	<BalloonStyle>
+	  <text>
+	    <![CDATA[ <table border=0 width="300"><tr><td><font size="+1">
+	    The probability of snow accumulating greater than <b>12 Inches</b> is at least <b>40%</b> in this enclosed area.
+	    <br/><br/>
+	    <b>$[id]</b>
+	    <br/><br/></font>
+	    </td></tr></table>]]>
+	  </text>
+	</BalloonStyle>
+    </Style>
+
+    <Style id="poly_high">
+        <LineStyle>
+	    <width>2.0</width>
+	    <color>ffffffff</color>
+	</LineStyle>
+	<PolyStyle>
+	    <color>7f0000ff</color>
+	</PolyStyle>
+	<IconStyle>
+	    <scale>0.7</scale>
+	    <Icon>
+	      <href>https://www.wpc.ncep.noaa.gov/images/red_circle.png</href>
+	    </Icon>
+	</IconStyle>
+	<LabelStyle>
+	    <color>ff0000ff</color>
+	    <scale>1.0</scale>
+	</LabelStyle>
+	<BalloonStyle>
+	  <text>
+	    <![CDATA[ <table border=0 width="300"><tr><td><font size="+1">
+	    The probability of snow accumulating greater than <b>12 Inches</b> is at least <b>70%</b> in this enclosed area.
+	    <br/><br/>
+	    <b>$[id]</b>
+	    <br/><br/></font>
+	    </td></tr></table>]]>
+	  </text>
+	</BalloonStyle>
+    </Style>
+  <ScreenOverlay>
+    <name>Product Legend</name>
+    <Icon>
+      <href>https://www.wpc.ncep.noaa.gov/kml/winwx/legends/day1_snow_12inch_kml_legend.png</href>
+    </Icon>
+   <overlayXY x=".02" y=".01" xunits="fraction" yunits="fraction" />
+   <screenXY x=".02" y=".01" xunits="fraction" yunits="fraction" />
+   <rotationXY x="0" y="0" xunits="fraction" yunits="fraction" />
+   <size x="-1" y="-1" xunits="fraction" yunits="fraction" />
+  </ScreenOverlay>
+	<GroundOverlay>
+	  <name>Probability Contours</name>
+	  <description>
+	    <![CDATA[
+	    <table border="0" width="350"><tr><td><font size="+1">
+	    <b>The Probability of Receiving at Least 12 Inches of Snow on Day 1 over the Continental U.S. is Less Than 10%.</b>
+	    <br/><br/></font>
+	    </td></tr></table>]]>
+	  </description>
+	  <color>ffffffff</color>
+	  <drawOrder>1</drawOrder>
+	  <Icon>
+	    <href>https://www.wpc.ncep.noaa.gov/kml/winwx/no_areas_12inches.gif</href>
+	    <refreshMode>onChange</refreshMode>
+	    <viewBoundScale>1.0</viewBoundScale>
+	  </Icon>
+	  <LatLonBox>
+	    <north>46.0</north>
+	    <south>31.0</south>
+	    <east>-76.0</east>
+	    <west>-121.0</west>
+	    <rotation>0</rotation>
+	  </LatLonBox>
+	</GroundOverlay>
+    </Document>
+  </kml>
