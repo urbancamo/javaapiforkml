@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Source: https://github.com/google/libkml/blob/master/testdata/gx/all-gx.kml
+  Copyright 2008, Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Included unmodified in this repository as a reference fixture for KML 2.2
+  Google extension (gx:) elements, including the icon palette sheet
+  elements gx:x, gx:y, gx:w, gx:h that this project newly supports.
+
+  This file uses each gx element and enum at least once.  There is a section
+  for each gx element brought up to Feature level.
+-->
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+
+    <Style id="style0">
+      <IconStyle id="iconstyle0">
+        <scale>1.0</scale>
+      </IconStyle>
+    </Style>
+
+    <!-- <gx:altitudeMode>clampToSeaFloor</gx:altitudeMode> -->
+    <Placemark>
+      <LookAt>
+        <gx:altitudeMode>clampToSeaFloor</gx:altitudeMode>
+      </LookAt>
+    </Placemark>
+
+    <!-- <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode> -->
+    <Placemark>
+      <name>gx:altitudeMode Example</name>
+      <LookAt>
+        <longitude>146.806</longitude>
+        <latitude>12.219</latitude>
+        <heading>-60</heading>
+        <tilt>70</tilt>
+        <range>6300</range>
+        <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+      </LookAt>
+      <LineString>
+        <extrude>1</extrude>
+        <gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+        <coordinates> 146.825,12.233,400 146.820,12.222,400 146.812,12.212,400 146.796,12.209,400
+          146.788,12.205,400 </coordinates>
+      </LineString>
+    </Placemark>
+
+    <!-- <gx:balloonVisibility> -->
+    <Placemark id="placemark-eiffel-tower">
+      <name>Eiffel Tower</name>
+      <description> Located in Paris, France. This description balloon opens when the Placemark is
+        loaded. </description>
+      <gx:balloonVisibility>1</gx:balloonVisibility>
+      <Point>
+        <coordinates>2.294785,48.858093,0</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- <gx:duration> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:AnimatedUpdate>
+          <gx:duration>42</gx:duration>
+        </gx:AnimatedUpdate>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:flyToMode>smooth</gx:flyToMode> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:FlyTo>
+          <gx:flyToMode>smooth</gx:flyToMode>
+        </gx:FlyTo>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:flyToMode>bounce</gx:flyToMode> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:FlyTo>
+          <gx:flyToMode>bounce</gx:flyToMode>
+        </gx:FlyTo>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:playMode> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:TourControl>
+          <gx:playMode>pause</gx:playMode>
+        </gx:TourControl>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:AnimatedUpdate> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:AnimatedUpdate id="animated-update0">
+          <gx:duration>6.5</gx:duration>
+          <Update>
+            <targetHref/>
+            <Change>
+              <IconStyle targetId="iconstyle0">
+                <scale>10.0</scale>
+              </IconStyle>
+            </Change>
+          </Update>
+        </gx:AnimatedUpdate>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:FlyTo> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:FlyTo id="flyto-camera0">
+          <gx:duration>4.1</gx:duration>
+          <Camera>
+            <longitude>170.157</longitude>
+            <latitude>-43.671</latitude>
+            <altitude>9700</altitude>
+            <heading>-6.333</heading>
+            <tilt>33.5</tilt>
+            <roll>0</roll>
+          </Camera>
+        </gx:FlyTo>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:Playlist> -->
+    <gx:Tour>
+      <gx:Playlist> </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:SoundCue> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:SoundCue id="sound-cue0">
+          <href>cntowerfacts.mp3</href>
+        </gx:SoundCue>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:Tour> -->
+    <gx:Tour> </gx:Tour>
+
+    <!-- <gx:TimeStamp> -->
+    <Document>
+      <!-- This flies to the given range in space-time.
+        The time slider UI is initialized to the given range,
+        thus all Features with TimeStamps/TimeSpans within
+        this range (and view) are visible.
+      -->
+      <LookAt>
+        <gx:TimeSpan id="lookat-timespan">
+          <begin>2000-07-08T17:52:02Z</begin>
+          <end>2018-07-09T02:01:57Z</end>
+        </gx:TimeSpan>
+        <longitude>-122</longitude>
+        <latitude>37</latitude>
+      </LookAt>
+    </Document>
+
+    <!-- <gx:TimeSpan> -->
+    <Placemark>
+      <!-- This flies to a given _instant_ in time -->
+      <Camera>
+        <gx:TimeStamp id="camera-timestamp">
+          <when>1990-08-04</when>
+        </gx:TimeStamp>
+      </Camera>
+    </Placemark>
+
+    <!-- <gx:TourControl> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:TourControl> </gx:TourControl>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:Wait> -->
+    <gx:Tour>
+      <gx:Playlist>
+        <gx:Wait> </gx:Wait>
+      </gx:Playlist>
+    </gx:Tour>
+
+    <!-- <gx:LatLonQuad> -->
+    <GroundOverlay>
+      <gx:LatLonQuad> </gx:LatLonQuad>
+    </GroundOverlay>
+
+    <!-- <gx:MultiTrack> -->
+    <Placemark>
+      <gx:MultiTrack>
+        <gx:interpolate>1</gx:interpolate>
+        <gx:Track id="gx_track_0" />
+        <gx:Track id="gx_track_1" />
+        <gx:Track id="gx_track_2" />
+      </gx:MultiTrack>
+    </Placemark>
+
+    <!-- <gx:Track> -->
+    <Document>
+      <Schema id="schema_id">
+        <gx:SimpleArrayField name="SAF_name_1" type="string">
+          <displayName>SAF 1 display name</displayName>
+        </gx:SimpleArrayField>
+        <gx:SimpleArrayField name="SAF_name_2" type="int">
+          <displayName>SAF 2 display name</displayName>
+        </gx:SimpleArrayField>
+      </Schema>
+      <Placemark>
+        <ExtendedData>
+          <SchemaData schemaUrl="#schema_id">
+            <gx:SimpleArrayData name="SAD_1">
+              <gx:value>1st SAD value for SAF 1</gx:value>
+              <gx:value>2nd SAD value for SAF 1</gx:value>
+              <gx:value>3rd SAD value for SAF 1</gx:value>
+            </gx:SimpleArrayData>
+            <gx:SimpleArrayData name="SAD_2">
+              <gx:value>2</gx:value>
+              <gx:value>3</gx:value>
+              <gx:value>4</gx:value>
+            </gx:SimpleArrayData>
+          </SchemaData>
+        </ExtendedData>
+        <gx:Track>
+          <altitudeMode>absolute</altitudeMode>
+          <when>2010-02-07T19:57:44Z</when>
+          <when>2010-02-07T19:57:45Z</when>
+          <gx:coord>-122.250671 37.514194 14.08</gx:coord>
+          <gx:coord>-122.250671 37.514194 9.27</gx:coord>
+          <gx:angles>1 2 3</gx:angles>
+          <gx:angles>4 5 6</gx:angles>
+          <Model>
+            <Location>
+              <longitude>0</longitude>
+              <latitude>0</latitude>
+              <altitude>0</altitude>
+            </Location>
+            <Orientation>
+              <heading>180</heading>
+              <tilt>0</tilt>
+              <roll>0</roll>
+            </Orientation>
+            <Scale>
+              <x>1</x>
+              <y>1</y>
+              <z>1</z>
+            </Scale>
+            <Link>
+              <href>files/Untitled_0.dae</href>
+            </Link>
+            <ResourceMap></ResourceMap>
+          </Model>
+        </gx:Track>
+      </Placemark>
+    </Document>
+
+    <!-- <gx:w|h|x|y> -->
+    <Placemark>
+      <Style>
+        <IconStyle>
+          <Icon>
+            <gx:x>3.2</gx:x>
+            <gx:y>4.3</gx:y>
+            <gx:w>1.0</gx:w>
+            <gx:h>2.1</gx:h>
+          </Icon>
+        </IconStyle>
+      </Style>
+    </Placemark>
+
+  </Document>
+</kml>

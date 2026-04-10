@@ -6,9 +6,10 @@
 		The URL to this schema is: http://code.google.com/apis/kml/schema/kml22gx.xsd
 		Full documentation for these extensions is available at: https://developers.google.com/kml
 	-->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2"
-	xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xal="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0" targetNamespace="http://www.google.com/kml/ext/2.2"
-	elementFormDefault="qualified" version="090102 BETA">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gx="http://www.google.com/kml/ext/2.2"
+        xmlns:kml="http://www.opengis.net/kml/2.2"
+        targetNamespace="http://www.google.com/kml/ext/2.2"
+        elementFormDefault="qualified" version="090102 BETA">
 
 	<!-- Import the language we are extending: OGC KML 2.2 -->
 	<import namespace="http://www.opengis.net/kml/2.2" schemaLocation="ogckml22.xsd" />
@@ -46,6 +47,18 @@
 	<element name="duration" type="double" default="0.0" />
 	<element name="flyToMode" type="gx:flyToModeEnumType" default="bounce" />
 	<element name="playMode" type="gx:playModeEnumType" default="pause" />
+
+	<!--
+		Icon palette sheet extensions. When an <Icon><href> refers to a sprite
+		sheet, these four elements carve out a sub-rectangle of the image.
+		x/y default to 0 (lower-left corner of the palette); w/h default to -1
+		(use the full width/height of the image).
+		Reference: https://developers.google.com/kml/documentation/kmlreference#icon
+	-->
+	<element name="x" type="double" default="0" />
+	<element name="y" type="double" default="0" />
+	<element name="w" type="double" default="-1" />
+	<element name="h" type="double" default="-1" />
 
 	<!-- Complex types and elements -->
 

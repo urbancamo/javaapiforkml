@@ -2,7 +2,6 @@
 package de.micromata.opengis.kml.v_2_2_0;
 
 import de.micromata.opengis.kml.v_2_2_0.annotations.Obvious;
-import de.micromata.opengis.kml.v_2_2_0.util.DoubleCompare;
 import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -57,6 +56,10 @@ import java.util.Objects;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Icon", namespace = "", propOrder = {
+    "x",
+    "y",
+    "w",
+    "h",
     "refreshMode",
     "refreshInterval",
     "viewRefreshMode",
@@ -196,6 +199,50 @@ public class Icon
      */
     @XmlElement(namespace = "http://www.opengis.net/kml/2.2")
     protected String httpQuery;
+    /**
+     * {@code <gx:x>}
+     * <p>
+     * Google extension (<a href="http://www.google.com/kml/ext/2.2">...</a>). When the {@code <href>}
+     * points to an icon palette (sprite sheet), this element specifies the
+     * horizontal offset, in pixels, from the lower-left corner of the palette
+     * at which to start the sub-rectangle. Default is 0 when omitted.
+     * </p>
+     */
+    @XmlElement(name = "x", namespace = "http://www.google.com/kml/ext/2.2")
+    protected Double x;
+    /**
+     * {@code <gx:y>}
+     * <p>
+     * Google extension (<a href="http://www.google.com/kml/ext/2.2">...</a>). When the {@code <href>}
+     * points to an icon palette, this element specifies the vertical offset,
+     * in pixels, from the lower-left corner of the palette at which to start
+     * the sub-rectangle. Default is 0 when omitted.
+     * </p>
+     */
+    @XmlElement(name = "y", namespace = "http://www.google.com/kml/ext/2.2")
+    protected Double y;
+    /**
+     * {@code <gx:w>}
+     * <p>
+     * Google extension (<a href="http://www.google.com/kml/ext/2.2">...</a>). When the {@code <href>}
+     * points to an icon palette, this element specifies the width, in pixels,
+     * of the sub-rectangle to use from the palette. A value of -1 means
+     * "use the full width of the image".
+     * </p>
+     */
+    @XmlElement(name = "w", namespace = "http://www.google.com/kml/ext/2.2")
+    protected Double w;
+    /**
+     * {@code <gx:h>}
+     * <p>
+     * Google extension (<a href="http://www.google.com/kml/ext/2.2">...</a>). When the {@code <href>}
+     * points to an icon palette, this element specifies the height, in pixels,
+     * of the sub-rectangle to use from the palette. A value of -1 means
+     * "use the full height of the image".
+     * </p>
+     */
+    @XmlElement(name = "h", namespace = "http://www.google.com/kml/ext/2.2")
+    protected Double h;
     @XmlElement(name = "LinkSimpleExtensionGroup", namespace = "http://www.opengis.net/kml/2.2")
     @XmlSchemaType(name = "anySimpleType")
     protected List<Object> linkSimpleExtension;
@@ -393,8 +440,80 @@ public class Icon
     }
 
     /**
+     * Gets the value of the gx:x palette-sheet offset.
      *
-     * 
+     * @return possible object is {@link Double}
+     */
+    public Double getX() {
+        return x;
+    }
+
+    /**
+     * Sets the value of the gx:x palette-sheet offset.
+     *
+     * @param value allowed object is {@link Double}
+     */
+    public void setX(Double value) {
+        this.x = value;
+    }
+
+    /**
+     * Gets the value of the gx:y palette-sheet offset.
+     *
+     * @return possible object is {@link Double}
+     */
+    public Double getY() {
+        return y;
+    }
+
+    /**
+     * Sets the value of the gx:y palette-sheet offset.
+     *
+     * @param value allowed object is {@link Double}
+     */
+    public void setY(Double value) {
+        this.y = value;
+    }
+
+    /**
+     * Gets the value of the gx:w palette-sheet sub-rectangle width.
+     *
+     * @return possible object is {@link Double}
+     */
+    public Double getW() {
+        return w;
+    }
+
+    /**
+     * Sets the value of the gx:w palette-sheet sub-rectangle width.
+     *
+     * @param value allowed object is {@link Double}
+     */
+    public void setW(Double value) {
+        this.w = value;
+    }
+
+    /**
+     * Gets the value of the gx:h palette-sheet sub-rectangle height.
+     *
+     * @return possible object is {@link Double}
+     */
+    public Double getH() {
+        return h;
+    }
+
+    /**
+     * Sets the value of the gx:h palette-sheet sub-rectangle height.
+     *
+     * @param value allowed object is {@link Double}
+     */
+    public void setH(Double value) {
+        this.h = value;
+    }
+
+    /**
+     *
+     *
      */
     public List<Object> getLinkSimpleExtension() {
         if (linkSimpleExtension == null) {
@@ -432,6 +551,10 @@ public class Icon
                 && Objects.equals(viewBoundScale, icon.viewBoundScale)
                 && Objects.equals(viewFormat, icon.viewFormat)
                 && Objects.equals(httpQuery, icon.httpQuery)
+                && Objects.equals(x, icon.x)
+                && Objects.equals(y, icon.y)
+                && Objects.equals(w, icon.w)
+                && Objects.equals(h, icon.h)
                 && Objects.equals(linkSimpleExtension, icon.linkSimpleExtension)
                 && Objects.equals(linkObjectExtension, icon.linkObjectExtension);
     }
@@ -447,6 +570,10 @@ public class Icon
         result = 31 * result + Objects.hashCode(viewBoundScale);
         result = 31 * result + Objects.hashCode(viewFormat);
         result = 31 * result + Objects.hashCode(httpQuery);
+        result = 31 * result + Objects.hashCode(x);
+        result = 31 * result + Objects.hashCode(y);
+        result = 31 * result + Objects.hashCode(w);
+        result = 31 * result + Objects.hashCode(h);
         result = 31 * result + Objects.hashCode(linkSimpleExtension);
         result = 31 * result + Objects.hashCode(linkObjectExtension);
         return result;
@@ -634,9 +761,53 @@ public class Icon
     }
 
     /**
+     * fluent setter for the gx:x palette-sheet offset.
+     *
+     * @param x pixel offset from the lower-left corner of the palette image
+     * @return this Icon
+     */
+    public Icon withX(final Double x) {
+        this.setX(x);
+        return this;
+    }
+
+    /**
+     * fluent setter for the gx:y palette-sheet offset.
+     *
+     * @param y pixel offset from the lower-left corner of the palette image
+     * @return this Icon
+     */
+    public Icon withY(final Double y) {
+        this.setY(y);
+        return this;
+    }
+
+    /**
+     * fluent setter for the gx:w palette-sheet sub-rectangle width.
+     *
+     * @param w sub-rectangle width in pixels, or -1 for the full image width
+     * @return this Icon
+     */
+    public Icon withW(final Double w) {
+        this.setW(w);
+        return this;
+    }
+
+    /**
+     * fluent setter for the gx:h palette-sheet sub-rectangle height.
+     *
+     * @param h sub-rectangle height in pixels, or -1 for the full image height
+     * @return this Icon
+     */
+    public Icon withH(final Double h) {
+        this.setH(h);
+        return this;
+    }
+
+    /**
      * fluent setter
      *
-     * 
+     *
      * @param linkSimpleExtension
      *     required parameter
      */
