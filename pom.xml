@@ -10,7 +10,7 @@
 
   <groupId>uk.m0nom</groupId>
   <artifactId>javaapiforkml</artifactId>
-  <version>3.1.1</version>
+  <version>3.1.2-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>Java Api for Kml</name>
   <description>This is JavaApiForKml, Micromata's library for use with applications that want to parse, generate and
@@ -339,6 +339,9 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
             <version>3.2.8</version>
+            <configuration>
+              <keyname>893A85B05C986CD843FB8C87B8E90133B74536D0</keyname>
+            </configuration>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
