@@ -11,7 +11,10 @@ import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 public final class CoordinatesConverter
     extends XmlAdapter<String, List<Coordinate>>
 {
-    private static final Pattern COORDINATE_GROUP = Pattern.compile("(?<=,|\\s|^)([-.\\d]+,[-.\\d]+(?:,[-.\\d]+)?)");
+    private static final String NUMBER = "[-+]?[\\d]*\\.?\\d+(?:[eE][-+]?\\d+)?";
+
+    private static final Pattern COORDINATE_GROUP = Pattern.compile(
+        "(?<=,|\\s|^)(" + NUMBER + "," + NUMBER + "(?:," + NUMBER + ")?)");
 
     @Override
     public String marshal(final List<Coordinate> dt)
@@ -29,7 +32,7 @@ public final class CoordinatesConverter
     public List<Coordinate> unmarshal(final String s)
         throws Exception
     {
-        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        List<Coordinate> coordinates = new ArrayList<>();
         Matcher matcher = COORDINATE_GROUP.matcher(s);
         while (matcher.find()) {
             coordinates.add(new Coordinate(matcher.group()));

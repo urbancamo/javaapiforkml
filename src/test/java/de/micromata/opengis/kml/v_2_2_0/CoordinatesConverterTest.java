@@ -53,6 +53,18 @@ public class CoordinatesConverterTest {
         assert toCheck.equals(valid);
     }
 
+    private final static String SCIENTIFIC_NOTATION_COORDINATE_TUPLES =
+            "-1.28335529027655,51.999624910669,0 " +
+            "1.53475314522779E-05,52.657154061196,0 " +
+            "0.000370222607575313,52.6571776099103,0 " +
+            "-1.28335529027655,51.999624910669,0";
+
+    private final static List<Coordinate> VALID_SCIENTIFIC_NOTATION_COORDINATE_TUPLES =
+        Arrays.asList(new Coordinate(-1.28335529027655, 51.999624910669, 0),
+                new Coordinate(1.53475314522779E-05, 52.657154061196, 0),
+                new Coordinate(0.000370222607575313, 52.6571776099103, 0),
+                new Coordinate(-1.28335529027655, 51.999624910669, 0));
+
     @Test
     public void testTupleConversion() throws Exception {
         CoordinatesConverter converter = new CoordinatesConverter();
@@ -60,5 +72,12 @@ public class CoordinatesConverterTest {
         List<Coordinate> spaceSeparated = converter.unmarshal(SPACE_COORDINATE_TUPLES);
         checkCoordsValid(commaSeparated, VALID_COORDINATE_TUPLES);
         checkCoordsValid(spaceSeparated, VALID_COORDINATE_TUPLES);
+    }
+
+    @Test
+    public void testScientificNotationConversion() throws Exception {
+        CoordinatesConverter converter = new CoordinatesConverter();
+        List<Coordinate> coordinates = converter.unmarshal(SCIENTIFIC_NOTATION_COORDINATE_TUPLES);
+        checkCoordsValid(coordinates, VALID_SCIENTIFIC_NOTATION_COORDINATE_TUPLES);
     }
 }
