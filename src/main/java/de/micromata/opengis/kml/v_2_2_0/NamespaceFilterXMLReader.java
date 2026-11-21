@@ -2,6 +2,7 @@
 package de.micromata.opengis.kml.v_2_2_0;
 
 import java.io.IOException;
+import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.ContentHandler;
@@ -26,6 +27,13 @@ final class NamespaceFilterXMLReader
         SAXParserFactory parserFactory = SAXParserFactory.newInstance();
         parserFactory.setNamespaceAware(true);
         parserFactory.setValidating(validate);
+        // KML never needs a DOCTYPE. Refusing it blocks XXE, external DTD fetches (SSRF)
+        // and entity expansion attacks (Issue 69). Unsupported features fail closed.
+        parserFactory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+        parserFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+        parserFactory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        parserFactory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        parserFactory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
         xmlReader = parserFactory.newSAXParser().getXMLReader();
     }
 
